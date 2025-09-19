@@ -1,0 +1,144 @@
+
+===========================================
+Portal Sample Invoice Viewer CGI Application
+===========================================
+
+1. Introduction
+---------------
+
+Portal Sample Invoice Viewer is a sample CGI application that 
+showcases the different invoice formats Portal supports and 
+demonstrates XML-XSL technology for viewing and printing invoices.
+
+2. Application Components
+-------------------------
+
+   2.1 pin_inv_view.pl
+
+       The Perl5 program that does all the processing. The 
+       program's functionality is as follows:
+
+       * Displays the Invoiceviewer HTML form.
+
+       * Displays bills that meet the user's search criteria.
+
+       * Queries Portal for the invoice in the specified format 
+         and show.
+
+   2.2 pin_inv_view.conf
+
+       The configuration file for the sample application. Specify 
+       the following:
+
+       * Names of the stylesheets you want to use with the 
+         invoice viewer
+
+       * Name of the GIF file with your company's logo
+
+       * Location of the application, stylesheets, and GIF files
+
+       For more information, see the comments in the file.
+
+   2.3 pin.conf
+
+       Specify your CM port and machine name in this file. This file is 
+       similar to the pin.conf in the sys/test directory.
+
+   2.4 invoice.short.name.xsl
+
+       Sample XSL file, which transforms the invoice retrieved in XML 
+       format to HTML.  The transformation is performed by the browser.
+
+   2.5 image.gif
+
+       Sample logo image.  This is the Portal logo.
+
+3. Installation
+---------------
+
+   3.1 Copy pin_inv_view.pl to your web server's script directory. 
+
+   3.2 Copy the configuration files, pin_inv_view.conf 
+       and pin.conf, to the same location. 
+
+   3.3 Copy the invoice.short.name.xsl file and the image.gif file 
+       to a location under your web server's DocumentRoot. 
+
+   3.4 Update the pin_inv_view.conf file with the script, 
+       the stylesheet and the script locations. 
+
+   3.5 Update pin.conf with your CM information (machine and 
+       port).
+
+   3.6 If your web server is NOT running on the SAME MACHINE as 
+       Portal, do the following:
+
+       3.6.1 Edit the pin_inv_view.pl file and update the Perl 
+             binary location in the very first line. (if needed)
+
+             For example:
+
+             #!/usr/local/bin/perl
+
+             Note that the application depends on 5.004_01 version 
+             of Perl.  Also, it uses the following modules normally 
+             included in the standard Perl distribution:
+
+             lib.pm 
+             Carp.pm 
+             CGI.pm 
+             TIME::Local.pm
+
+       3.6.2 Copy the following files from the machine where 
+             Portal is installed to the location where you  
+             placed pin_inv_view.pl on the web server machine:
+
+             $PINDIR/lib 
+		(Unix)			(Windows)
+             	pcmif.pm 		pcmif.pm
+             	pcmif.so 		pcmif.dll
+             	libpcm.so 		pcm.lib
+             	libpcmext.so 		pcmext.lib
+             	libpcp.so 		pcp.lib
+             	libpinlog.so		pinlog.lib
+
+4. Testing
+----------
+
+   4.1 After you complete steps 1 through 3, verify that all 
+       Portal processes are up and running.
+
+   4.2 Point your browser to the pin_inv_view.pl URL:
+
+       http://<machine>:<port>/<scriptlocation>/pin_inv_view.pl
+
+       You should see a "Portal Invoice Viewer" form. 
+   4.3 Specify a valid account number, trial invoices or regular invoices, 
+       and/or specify the bill date range, and click the "Search".
+
+       If there are bills in the date range specified, they will appear 
+       in the right frame with a choice of invoice formats.  If there are 
+       no bills, or there is an error, you see a message in the 
+       right frame.
+
+5. Troubleshooting
+------------------
+
+   Turn on the $dump flag in pin_inv_view.pl script:
+
+   $dump = 1
+
+   This writes failure and information messages to Standard Error 
+   and depending on where your web server stores stderr output, check 
+   the appropriate locations.
+
+   Some web servers write the stderr messages to the error_log 
+   while others write it to a log[s]/stderr directory with the script 
+   name.  Check with your webmaster.
+
+6.  Customizing
+---------------
+
+   You can write your own XSL style sheets to view the XML invoices. 
+   Edit the pin_inv_view.conf with your stylesheet information. The 
+   style sheets appear in the stylesheet drop-down list.
