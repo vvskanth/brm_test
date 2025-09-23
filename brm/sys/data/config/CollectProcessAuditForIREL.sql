@@ -1,0 +1,67 @@
+Create Or Replace Procedure ProcCollectProcessAuditForIREL wrapped 
+a000000
+367
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+f3b 6d3
+O7Tcclm6nOJR0LkckX3JX17PRoowg5XquiAF344ZCtLV/ww4vYZ2rdU84pOeadN5Cut5FEMU
+rqKnRLo3Dj7T/jskPwcfoYl+FwRpft78JXofQdm/0XlCty00hnSDsMaYigju7vlIZND+cnLS
+2Sws/h7GsKwDZZ77n+XJ6sVjZQXFJjDHRLnknnKb6AF/RqiUOAQ5jZfso5vow3led2XdIOYl
+oxVKm34MOkL1QduludNvkwqg+ZUClIZZIaRydcWbzE255YlS1/lOE8RKLUN+THFq3pXk+Smf
+tQjrT5dNy9bYhlHu/5HPzO7pGixHpWJn7zFAUuGN0wn9kHJIMeRlQOZGN3Bs2RTj4hglbDvs
+4qd/tKqhBDaB4l+0JbyTXTZvbQTUIIVplDKJA9j6WHLGp7KW3+kuDCpobJGU/hV7tBbtiy5E
+fsYn9H5jxeWnyQkWvSY/BdMUS3xTg2VHuEV+JShNxTcMcAzB3NM5oP/3i+kcKRBwIyeWWGVC
+lVQAsrfJCGaOOf0Z9WIaeHySXSVA+gbWcC9fMcjZvT5CYxA0UGbY/9CZMDbQTN/TCzc8eHof
+Xvvbs4l6nML0HoR49CYM4rdQZu0XhBpbD4AN1lViPFhRTEpxBxvEfTCobegrlOGouKYDZIXl
+si+A6OEZTBtAnX7CDz1vjIdl52CfXiIJzRGtmCrkKjsh/mlJChSh4BS/rFKV4oI8J5nIC1eM
++z6EjlGklZJLkjvvORidNAeVMbvE+Jid/0G5LG/KxNhgNlEqpIAq+8meGA2fWrWt5XQDlto3
+hQzYIRiGIA+HthEvpYKuj8o7RUtQtTnJMIIyehj8ZFvA6Oh6UKk7kC3A3Nv79B//fYEa1w5I
+foiAkv9pSF0sil9rfuwr1SiLqnk/pXz6ZWGdCZtRGFM6biqGV/mSPUmuWaR8dvZ+U+qSIV3e
+bMNJbcLIeNmy5nkMlSuGOwv3/iKzUGYkQZ06KXl00SgikS7jTkqnH/+bHA0RxELmggskkjsL
+5mC2k2UlZC4tMB+U7bxRAhTxv1bfvuchd2CBuxJ+3vLd3qgEWbMgsvyz/DRb5FhGa8asxzu7
+rNQ7Lf/6MNwqU40he1ZuSqAdRjxxDrtFYGl4kw9ZKEiofhUynUFdzmlR6jHBHwFKSRxxfdSn
+qRuxaXjFsPHlKp+vaJmGfSTJuweN9Ks5peCpCqE1coyTQJKfjydto72QinsLOVxFvG5nwzoq
+f823EEp5UfZZGqA+iIyOiO56lXF0VeB9o7mFMUpn1IiNR5HwyVhI0vLGhwyDaSOcYG2qOI06
+eGBJ7C3uoMJs+z+844EFVXUlLIh8MDafX5nNSTxr7ioqG1G27YATKUQnUjMx0bj8KyC4YX8k
+uyD+6K22VPeGcx/9yPX5vKVQ8iS4Er/+zkPrGcW6dURKR39a3BGrhyM30oPVjwt8Kl7BwAly
+M04Wy3YzjKgShp7f5W07wRBN7TAcZLbh9Pb32I5H7bzUnAJdzLFhX0/82DZWvg/gUjuYRo3B
+GE5D/VdOljSTrSB6v/kf2v9b2tTfimIvgsffvlYCkHeMbJ8ybEgq3wGh3dwjCwcdOlfHxvAV
+iM8RSMBLYkdMuLokU2szBqLEQXVaLFmTbgv3gcpAu/MfSEePZhGAX8FlMO+VmDMz5K/WXteb
+JJkOCI/9Wy3+EUYYIil5+g97B6HJ+e/1z4nuX2SYCSAUQAFhjnIw5gCPvPj9ywo9FQ==
+
+/
+Create Or Replace Trigger CollectProcessAuditForIREL
+After Update On batch_t
+For Each Row
+
+Declare
+  v_new_batch_t_row  batch_t%rowtype;
+  
+Begin
+  
+  v_new_batch_t_row.poid_type := :new.poid_type;
+  v_new_batch_t_row.status    := :new.status ;
+  v_new_batch_t_row.POID_ID0  := :new.POID_ID0;
+  v_new_batch_t_row.poid_db   := :new.poid_db;
+  v_new_batch_t_row.start_t   := :new.start_t;
+  
+  ProcCollectProcessAuditForIREL(v_new_batch_t_row);
+
+End; 
+/
+Show Error;
+/

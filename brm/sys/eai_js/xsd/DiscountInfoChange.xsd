@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xs:schema elementFormDefault="qualified"
+            targetNamespace="http://www.portal.com/schemas/CRMSync"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.portal.com/schemas/CRMSync">
+	<xs:element name="DiscountInfoChange">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountObj"/>
+				<xs:element ref="DiscountInfo" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="InstanceId" use="required"/>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="DiscountInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DiscountPoid"/>
+				<xs:element ref="Name"/>
+				<xs:element ref="Code"/>
+				<xs:element ref="DiscountStartTime"/>
+				<xs:element ref="DiscountEndTime"/>
+				<xs:element ref="PermittedTypes"/>
+				<xs:element ref="Priority"/>
+				<xs:element ref="Type"/>
+				<xs:element ref="Description"/>
+                                <xs:element ref="UsageMap" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+        <xs:element name="UsageMap">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UsageEventType"/>
+				<xs:element ref="BalImpacts" minOccurs="1" maxOccurs="unbounded"/> 
+			</xs:sequence>
+		</xs:complexType>
+        </xs:element>
+        <xs:element name="BalImpacts">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:element ref="ResourceId"/>
+				<xs:element ref="Amount"/>
+				<xs:element ref="AmountType"/>
+			</xs:sequence>
+		</xs:complexType>
+        </xs:element>
+	<xs:element name="DiscountPoid" type="xs:string"/>
+	<xs:element name="DiscountStartTime" type="xs:string"/>
+	<xs:element name="DiscountEndTime" type="xs:string"/>	
+	<xs:element name="AccountObj" type="xs:string"/>
+	<xs:element name="Type" type="xs:int"/>
+	<xs:element name="Description" type="xs:string"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="Code" type="xs:string"/>
+	<xs:element name="PermittedTypes" type="xs:string"/>
+	<xs:element name="Priority" type="xs:int"/>	
+	<xs:attribute name="InstanceId" type="xs:string"/>
+        <xs:element name="UsageEventType" type="xs:string"/>
+        <xs:element name="ResourceId" type="xs:int"/>
+        <xs:element name="Amount" type="xs:decimal"/>
+        <xs:element name="AmountType" type="xs:string"/>
+</xs:schema>

@@ -1,0 +1,23 @@
+#
+# The PCM_OP_PUBLISH_GEN_PAYLOAD opcode is being configured to be called when the
+# following events happen.
+# For IPC, in case of offer profile creation/update/delete and for threshold breach
+# NOTE: This file will be published as part of EAI_FrameworkMgr optional manager.
+version 1
+1301    0      /event/notification/offer_profile/create
+1301    0      /event/notification/offer_profile/update
+1301    0      /event/notification/offer_profile/delete
+1301    0      /event/notification/offer_profile/ThresholdBreach
+#
+# For IPC to invoke PCM_OP_ACT_POL_EVENT_NOTIFY which would try to
+# enrich the events with offer_profile data and invoke
+# PCM_OP_PUBLISH_GEN_PAYLOAD
+#
+301     0       /event/billing/product/action/purchase
+301     0       /event/billing/product/action/modify
+301     0       /event/billing/product/action/cancel
+301     0       /event/billing/product/action/modify/status
+301     0       /event/billing/discount/action/purchase
+301     0       /event/billing/discount/action/modify
+301     0       /event/billing/discount/action/cancel
+301     0       /event/billing/discount/action/modify/status

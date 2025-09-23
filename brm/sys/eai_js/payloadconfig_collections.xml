@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<!--  $Header: optional_mgrs_vob/ifw_sync/config/payloadconfig_collections.xml /cgbubrm_7.5.0.portalbase/2 2012/10/11 19:19:00 mmakumar Exp $ -->
+
+<!-- 
+ Copyright (c) 2008, 2012, Oracle and/or its affiliates. All rights reserved. 
+
+	This material is the confidential property of Oracle Corporation
+	or its licensors and may be used, reproduced, stored or transmitted
+	only in accordance with a valid Oracle license or sublicense agreement.
+
+	NAME
+	payloadconfig_collections.xml 
+
+	DESCRIPTION
+	This file defines the payload data that will be published to EAI_JS. 
+
+	MODIFIED   (MM/DD/YY)
+	Manoj       10/10/12 - Replacing Timestamp fields with String fields for CollectionsInfoChange
+	Manoj       08/31/12 - Adding CollectionsInfoChange Business event to Support AIA Flow
+	sdganta     07/21/08 - Adding new payload file for Support Collections Flow
+				feature.
+	sdganta     07/21/08 - Creation
+
+-->
+
+<PayloadConfig>
+	<PublisherDefs>
+		<Publisher DB="0.0.9.7" Format="XML">
+			CollectionsAction,
+			CollectionsInfoChange
+		</Publisher>
+	</PublisherDefs>
+
+	<ElementDefs>
+		<Bills Source="EVENT" PinFld="PIN_FLD_BILLS"
+			DataFrom="PIN_FLD_BILLS" Tag="Bills" UseElementId="1">
+			<Field PinFld="PIN_FLD_POID" 	Tag="BillPoid"/>
+			<Field PinFld="PIN_FLD_BILL_NO" Tag="BillNumber"/>
+			<Field PinFld="PIN_FLD_DUE" 	Tag="BillDue"/>
+			<Field PinFld="PIN_FLD_DUE_T" 	Tag="BillDueDate"/>
+		</Bills>
+	</ElementDefs>
+
+	<EventDefs>
+		<CollectionsAction Source="EVENT"
+		Tag="CollectionsAction"
+		StartEvent="/event/audit/collections/action">
+			<Attribute Tag="InstanceId" Value="BRM"/>
+			<Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/CRMSync"/>
+			<Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+			<Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/CRMSync/CollectionsAction.xsd"/>
+			<Field PinFld="PIN_FLD_ACCOUNT_OBJ" 	Tag="AccountObj"/>
+			<Field PinFld="PIN_FLD_BILLINFO_OBJ" 	Tag="BillInfoObj"/>
+			<Field PinFld="PIN_FLD_ACTG_TYPE" 	Tag="AccountingType"/>
+			<Field PinFld="PIN_FLD_DESCR" 		Tag="EventDescr"/>
+			<Field PinFld="PIN_FLD_ACTION_OBJ" 	Tag="ActionPoid"/>
+			<Field PinFld="PIN_FLD_ACTION_NAME"  	Tag="ActionName"/>
+			<Field PinFld="PIN_FLD_ACTION_DESCR" 	Tag="ActionDescr"/>
+			<Field PinFld="PIN_FLD_ACTION_TYPE"  	Tag="ActionType"/>
+			<Field PinFld="PIN_FLD_DUE_T" 		Tag="DueDate"/>
+			<Field PinFld="PIN_FLD_OPCODE" 		Tag="OpcodeNumber"/>
+			<Field PinFld="PIN_FLD_COMPLETED_T" 	Tag="CompletedDate"/>
+			<Field PinFld="PIN_FLD_STATUS" 		Tag="ActionStatus"/>
+			<Field PinFld="PIN_FLD_OVERDUE_AMOUNT" 	Tag="OverdueAmount"/>
+			<Field PinFld="PIN_FLD_DAYS" 		Tag="OverdueDays"/>
+			<Field PinFld="PIN_FLD_CURRENCY" 	Tag="Currency"/>
+			<SubElement Name="Bills"
+			OnEvent="/event/audit/collections/action"/>
+		</CollectionsAction>
+		<CollectionsInfoChange Source="EVENT"
+		Tag="CollectionsInfoChange"
+		StartEvent="/event/notification/collections/info_change">
+			<Attribute Tag="InstanceId" Value="Portal"/>
+			<Attribute Tag="xmlns" Value="http://www.portal.com/schemas/CRMSync"/>
+			<Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+			<Attribute Tag="xsi:schemaLocation" Value="http://www.portal.com/schemas/CRMSync/CollectionsInfoChange.xsd"/>
+			<Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+			<Field PinFld="PIN_FLD_START_COLLECTIONS" Tag="CollectionsStartTime"/>
+			<Field PinFld="PIN_FLD_END_COLLECTIONS" Tag="CollectionsEndTime"/>
+		</CollectionsInfoChange>
+	</EventDefs>
+</PayloadConfig>

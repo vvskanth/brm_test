@@ -1,0 +1,148 @@
+--
+-- @(#)%Portal Version: create_indexes_telco.source:RWSmod7.3.1Int:1:2007-Aug-20 23:05:27 %
+--
+-- Copyright (c) 2004, 2024, Oracle and/or its affiliates. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- SOURCE OF sql file to create the telco indexes from the PIN database
+-- $PIN_CONF_TBLSPACEX		-- for tablespace to put all these in
+-- $PIN_CONF_STORAGE_SMALL	-- for storage phrase
+
+-- /active_session/telco
+create unique index i_active_sess_tlco__id on active_session_telco_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/active_session.INDEX_CLAUSE'} ;
+
+-- /active_session/telco
+create unique index i_as_telco_svc_codes__id on as_telco_svc_codes_t
+	( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/active_session.INDEX_CLAUSE'} ;
+
+-- Telco config
+-- /config/telco
+create unique index i_config_tlcs__id on config_telco_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_tlcs_features__id on config_telco_features_t
+	( obj_id0, rec_id2 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+create index i_config_tlcs_ext_ra__id on config_telco_ext_ra_t
+	( obj_id0, rec_id2 )
+	$PIN_CONF_TBLSPACEX1
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+
+-- /event/activity/telco
+create unique index i_event_actv_tlcs__id on event_activity_tlcs_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create index i_event_actv_tlcsid__id on event_activity_tlcs_t
+	( network_session_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_actv_tlcs_svc__id on event_actv_tlcs_svc_codes_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/svc_order/state
+create index i_event_svc_order_state__id on event_svc_order_state_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/session/telco
+create unique index i_event_sess_tlcs__id on event_session_tlcs_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create index i_event_sess_tlcsid__id on event_session_tlcs_t
+	( network_session_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create unique index i_event_sess_tlcs_svc__id on event_sess_tlcs_svc_codes_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/svc_order
+create index i_event_svc_order__id on event_svc_order_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- Telco services
+-- /service/telco
+create unique index i_service_tlcs__id on service_telco_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+create unique index i_service_tlcs_features__id on service_telco_features_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /service/telco
+create index i_service_telco_features__id on service_telco_features_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+-- /event/delayed/activity/telco
+create unique index i_event_dlay_actv_tlcs__id on event_dlay_actv_tlcs_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create unique index i_evt_dlay_ac_tlcs_svc_c__id on event_dlay_actv_tlcs_svc_cds_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/delayed/session/telco
+create unique index i_event_dlay_session_tlcs__id on event_dlay_sess_tlcs_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create unique index i_evt_dlay_ss_tlcs_svc_c__id on event_dlay_sess_tlcs_svc_cds_t
+	( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/provisioning/service_order/telco
+create index i_event_prov_serv_order_tlc__id on event_prov_serv_order_tlc_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+create index i_event_prov_order_tlc_param__id on event_prov_order_tlc_param_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;

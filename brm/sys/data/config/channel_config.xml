@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ChannelConfig xmlns="http://www.portal.com/schemas/BusinessConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig ../../../xsd/channel_config.xsd">
+
+  <Channel FldChannelId="30" FldFamilyId="100" FldOrder="1" FldMultithread="1" FldName="Account Creation Channel">
+    <ConsumersArray>
+      <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_account" />
+    </ConsumersArray>
+    <SuppliersArray>
+      <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/account" /> 
+    </SuppliersArray>
+  </Channel>
+	
+<Channel FldChannelId="10" FldFamilyId="100" FldOrder="2"  FldMultithread="1" FldName="Account Modification Channel">
+  <ConsumersArray>
+    <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_account" />
+  </ConsumersArray>
+  <SuppliersArray>
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/nameinfo" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/product_status" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/status" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/billinfo" />
+  </SuppliersArray>
+</Channel>
+
+<Channel FldChannelId="20" FldFamilyId="100" FldOrder="3"  FldMultithread="0" FldName="Service Creation Channel">
+  <ConsumersArray>
+    <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_service" />
+  </ConsumersArray>
+  <SuppliersArray>
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/service" />
+  </SuppliersArray>
+</Channel>
+
+<Channel FldChannelId="40" FldFamilyId="100" FldOrder="4"  FldMultithread="1" FldName="Service Modification Channel">
+  <ConsumersArray>
+    <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_service" />
+  </ConsumersArray>
+  <SuppliersArray>
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/login" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/password" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/notification/service" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/status" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/billing/product" />
+  </SuppliersArray>
+</Channel>
+
+<Channel FldChannelId="50" FldFamilyId="200" FldOrder="1"  FldMultithread="1" FldName="Account Creation Channel">
+  <ConsumersArray>
+    <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_account" />
+  </ConsumersArray>
+  <SuppliersArray>
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/account" />
+  </SuppliersArray>
+</Channel>
+
+<Channel FldChannelId="70" FldFamilyId="200" FldOrder="2"  FldMultithread="1" FldName="Account Modification Channel">
+  <ConsumersArray>
+    <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_account" />
+  </ConsumersArray>
+  <SuppliersArray>
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/nameinfo" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/status" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/customer/billinfo" />
+  </SuppliersArray>
+</Channel>
+
+<Channel FldChannelId="60" FldFamilyId="200" FldOrder="3"  FldMultithread="1" FldName="Broadband Creation Channel">
+  <ConsumersArray>
+    <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_service" />
+  </ConsumersArray>
+  <SuppliersArray>
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/service/broadband" />
+  </SuppliersArray>
+</Channel>
+
+<Channel FldChannelId="80" FldFamilyId="200" FldOrder="4"  FldMultithread="1" FldName="Broadband Usage Channel">
+  <ConsumersArray>
+    <FldConsumerObj FldPushOpcode="745" FldDatabase="0.0.5.1" FldConsumerName="/r_service" />
+  </ConsumersArray>
+  <SuppliersArray>
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/broadband" />
+    <FldSupplierObj FldDatabase="0.0.0.1" FldSupplierName="/event/broadband/usage" />
+  </SuppliersArray>
+</Channel>
+        </ChannelConfig>
+

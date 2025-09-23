@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+	
+	<!-- Sample file. Modify according to guidelines. -->
+	
+	<BusParamConfigurationClass>
+		
+		<BusParamsSelectiveLoading>
+			<CacheResidenciesForBatchPipeline>0,2</CacheResidenciesForBatchPipeline>
+			<CacheResidenciesForTimos>0,1</CacheResidenciesForTimos>
+		</BusParamsSelectiveLoading>
+
+	</BusParamConfigurationClass>
+</BusinessConfiguration>

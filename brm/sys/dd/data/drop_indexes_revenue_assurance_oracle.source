@@ -1,0 +1,50 @@
+--
+-- Copyright (c) 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	on Wed May 29 05:16:36 2024.
+--
+
+drop index i_proc_aud__id;
+drop index i_proc_aud_poid__id;
+drop index i_proc_aud_created_time__id;
+drop index i_proc_aud_bstat__id;
+drop index i_gdtls__id;
+drop index i_gdtls_batch__id;
+drop index i_gdtls_sts__id;
+drop index i_gdtls_sts_batch__id;
+drop index i_gdtls_stype__id;
+drop index i_gdtls_stype_batch__id;
+drop index i_gdtls_stype_sts__id;
+drop index i_gdtls_stype_sts_batch__id;
+drop index i_gdtls_rstrm__id;
+drop index i_gdtls_rstrm_batch__id;
+drop index i_gdtls_rstrm_sts__id;
+drop index i_gdtls_rstrm_sts_batch__id;
+drop index i_gdtls_rstrm_stype__id;
+drop index i_gdtls_rstrm_stype_batch__id;
+drop index i_gdtls_rstrm_stype_sts__id;
+drop index i_gdtls_rm_stype_sts_batch__id;
+drop index i_gdtls_stype_rstrm__id;
+drop index i_gdtls_stype_rstrm_batch__id;
+drop index i_gdtls_stype_rstrm_sts__id;
+drop index i_gdtls_stype_rm_sts_batch__id;
+drop index i_gdtls_ostrm__id;
+drop index i_gdtls_ostrm_batch__id;
+drop index i_gdtls_stype_rstrm_ostrm__id;
+drop index i_gdtls_st_rm_om_batch__id;
+drop index i_gdtls_suspense__id;
+drop index i_gdtls_suspense_batch__id;
+drop index i_gdtls_st_rm_sts_om__id;
+drop index i_gdtls_st_rm_sts_om_batch__id;
+drop index i_proc_aud_bill__id;
+drop index i_proc_aud_bill_segments__id;
+drop index i_proc_aud_bill_err_acct__id;
+drop index i_proc_aud_bill_suppress__id;
+drop index i_proc_aud_bill_revenues__id;

@@ -1,0 +1,44 @@
+#
+# @(#)pin_suspense_editable_flds 1.0 10/31/03
+#
+version 1
+#======================================================================
+#
+#      
+#      Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+#      
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+# 	Use this file to specify which fields are editable. 
+#
+#	The text data defined in this file will be loaded into the 
+#	/config/suspense_editable_flds.
+#
+# 	Loading this file will replace existing object with the one 
+#	defined below.
+#
+# 	Use the following syntax for defining the mapping between 
+#       the edr editable field name and Infranet PIN_FLD name.	
+#
+#	Infranet PIN_FLD Name 		EDR field Name
+# 	 PIN_FLD_CALL_DURATION		DETAIL.DURATION 
+#
+#
+# Usage:
+#	$ load_suspense_editable_flds <pin_suspense_editable_flds>
+#
+#======================================================================
+#
+# Sample file:
+#======================================================================
+#
+#     Infranet PIN_FLD Name		EDR field Name
+       PIN_FLD_CALLED_TO		DETAIL.B_NUMBER		
+       PIN_FLD_CALLING_FROM		DETAIL.A_NUMBER
+       PIN_FLD_START_TIME		DETAIL.CHARGING_START_TIMESTAMP
+       PIN_FLD_CALL_DURATION		DETAIL.DURATION	

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+        </Console>
+
+        <RollingFile name="KAFKA" fileName="${env:PIN_LOG}/dm_kafka/kafka_failed_message.log" filePattern="${env:PIN_LOG}/dm_kafka/kafka_failed_message.log.%i">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5p] [%t] %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="99"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.portal.dm.eai.plugin" level="INFO"/>
+        <Root level="INFO">
+            <AppenderRef ref="KAFKA" />
+        </Root>
+        <Logger name="org.apache.kafka" level="ERROR" additivity="true">
+            <appender-ref ref="console" />
+        </Logger>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration 
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+        <!-- Sample file. Modify according to guidelines -->
+
+	<LoginExclusionManagementComponent>
+		<ServiceList>
+			<Service>/service/telco/gsm</Service>
+			<Service>/service/telco/gsm/telephony</Service>
+			<Service>/service/telco/gsm/fax</Service>
+			<Service>/service/telco/gsm/data</Service>
+			<Service>/service/telco/gsm/sms</Service>
+		</ServiceList>
+	</LoginExclusionManagementComponent>
+
+</BusinessConfiguration> 
+
+	

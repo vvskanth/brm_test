@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==================================================================================
+		Copyright (c) 2006 Oracle. All rights reserved.
+		This material is the confidential property of Oracle Corporation or its
+		licensors and may be used, reproduced, stored or transmitted only in
+		accordance with a valid Oracle license or sublicense agreement.
+	=================================================================================-->
+
+<BusinessConfiguration 
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+	<ProvisioningTagConfiguration>
+	<ProvisioningTagList>
+
+		<ProvisioningTag name="__DEFAULT__">
+
+			<PermittedTypes>/service/email</PermittedTypes>
+			<PermittedTypes>/service/ip/gprs</PermittedTypes>
+			<PermittedTypes>/service/content</PermittedTypes>
+			<PermittedTypes>/service/vpdn</PermittedTypes>
+			<PermittedTypes>/service/ip</PermittedTypes>
+			<PermittedTypes>/service/ip/gprs</PermittedTypes>
+			<PermittedTypes>/service/telco</PermittedTypes>
+			<PermittedTypes>/service/telco/gsm</PermittedTypes>
+			<PermittedTypes>/service/telco/gsm/data</PermittedTypes>
+			<PermittedTypes>/service/telco/gsm/fax</PermittedTypes>
+			<PermittedTypes>/service/telco/gsm/sms</PermittedTypes>
+			<PermittedTypes>/service/telco/gsm/telephony</PermittedTypes>
+
+			<OpcodeList>
+				<OpcodeName>PCM_OP_SUBSCRIPTION_POL_PURCHASE_PROD_PROVISIONING</OpcodeName>
+				<OpcodeNumber>417</OpcodeNumber>
+				<OpcodeMode>0</OpcodeMode>
+
+				<OpcodeParamsList>
+					<OpcodeParamName>PIN_FLD_POID</OpcodeParamName>
+					<OpcodeParamValue>$SERVICE$</OpcodeParamValue>
+				</OpcodeParamsList>
+				<OpcodeParamsList>
+					<OpcodeParamName>PIN_FLD_PROVISIONING_TAG</OpcodeParamName>
+					<OpcodeParamValue>$PROVTAG$</OpcodeParamValue>
+				</OpcodeParamsList>
+			</OpcodeList>
+
+			<OpcodeList>
+				<OpcodeName>PCM_OP_SUBSCRIPTION_POL_CANCEL_PROD_PROVISIONING</OpcodeName>
+				<OpcodeNumber>418</OpcodeNumber>
+				<OpcodeMode>1</OpcodeMode>
+
+				<OpcodeParamsList>
+					<OpcodeParamName>PIN_FLD_POID</OpcodeParamName>
+					<OpcodeParamValue>$SERVICE$</OpcodeParamValue>
+				</OpcodeParamsList>
+				<OpcodeParamsList>
+					<OpcodeParamName>PIN_FLD_PROVISIONING_TAG</OpcodeParamName>
+					<OpcodeParamValue>$PROVTAG$</OpcodeParamValue>
+				</OpcodeParamsList>
+			</OpcodeList>
+
+		</ProvisioningTag>
+
+	</ProvisioningTagList>
+	</ProvisioningTagConfiguration>
+
+</BusinessConfiguration>

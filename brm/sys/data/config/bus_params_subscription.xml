@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  **************************************************************************
+  * Copyright (c) 2005, 2022, Oracle and/or its affiliates. All rights reserved.
+  *
+  * This material is the confidential property of Oracle Corporation
+  * or its licensors and may be used, reproduced, stored or transmitted
+  * only in accordance with a valid Oracle license or sublicense agreement.
+  **************************************************************************
+-->
+
+
+<BusinessConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+	<!-- Sample file. Modify according to guidelines. -->
+	<BusParamConfigurationClass>
+
+	<BusParamsSubscription>
+		<DiscountBasedOnContractDaysFeature>disabled</DiscountBasedOnContractDaysFeature>
+		<BestPricing>disabled</BestPricing>
+		<RolloverTransfer>disabled</RolloverTransfer>
+		<AutomatedMonitorSetup>disabled</AutomatedMonitorSetup>
+		<BillTimeDiscountWhen>disabled</BillTimeDiscountWhen>
+		<ProductLevelValidation>disabled</ProductLevelValidation>
+                <MaxServicesToSearch>5</MaxServicesToSearch>
+                <CancelFullDiscountImmediate>disabled</CancelFullDiscountImmediate>
+		<TailormadeProductsSearch>enabled</TailormadeProductsSearch>
+		<CancelledOfferingsSearch>enabled</CancelledOfferingsSearch>
+		<AllowBackdateNoRerate>disabled</AllowBackdateNoRerate>
+		<SubsDis74BackDateValidations>disabled</SubsDis74BackDateValidations>
+		<TransferScheduledActions>disabled</TransferScheduledActions>
+		<TransferRerateRequests>enabled</TransferRerateRequests>
+		<EventAdjustmentsDuringCancellation>0</EventAdjustmentsDuringCancellation>
+                <MultiplePlan>disabled</MultiplePlan>
+                <UsePrioritySubscriptionFees>disabled</UsePrioritySubscriptionFees>
+		<RecreateDuringSubscriptionTransfer>disabled</RecreateDuringSubscriptionTransfer>
+		<CreateTwoEventsInFirstCycle>disabled</CreateTwoEventsInFirstCycle>
+		<ApplyProrationRules>disabled</ApplyProrationRules>
+		<TimestampRounding>enabled</TimestampRounding>
+		<GetRatePlanFromCache>enabled</GetRatePlanFromCache>
+                <ApplyValidityDiscountRules>0</ApplyValidityDiscountRules>
+		<CreateRerateJobDuringCancel>disabled</CreateRerateJobDuringCancel>
+		<DefaultZoneMapName>DefaultZonemap</DefaultZoneMapName>
+		<MaxRetryCount>0</MaxRetryCount>
+		<ApplyChargeOnInactiveOrCancelProduct>disabled</ApplyChargeOnInactiveOrCancelProduct>
+		<LoanRepaymentPercent>100</LoanRepaymentPercent>
+		<ApplyRolloverBeforeCycleFees>disabled</ApplyRolloverBeforeCycleFees>
+		<ServiceTransferEnabled>enabled</ServiceTransferEnabled>
+		<AutomatedGroupSharingSetup>0</AutomatedGroupSharingSetup>
+                <BackdateTriggerAutoRerate>disabled</BackdateTriggerAutoRerate>
+		<ReduceLoanBalDuringRecovery>0</ReduceLoanBalDuringRecovery>
+		<NumBillingCycles>1</NumBillingCycles>
+		<EventFetchSize>10000</EventFetchSize>
+		<PropagateDiscount>disabled</PropagateDiscount>
+		<RateChange>disabled</RateChange>
+		<KeepCancelledProductsOrDiscounts>enabled</KeepCancelledProductsOrDiscounts>
+                <CdcLineCancelDayInclude>1</CdcLineCancelDayInclude>
+                <CdcLineCreateDayInclude>1</CdcLineCreateDayInclude>
+		<TimestampRoundingDuringApplyLoan>disabled</TimestampRoundingDuringApplyLoan>
+		<DeleteSharingGroupDuringTermination>disabled</DeleteSharingGroupDuringTermination>
+	</BusParamsSubscription>
+
+	</BusParamConfigurationClass>
+</BusinessConfiguration>

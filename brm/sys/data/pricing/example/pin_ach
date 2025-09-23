@@ -1,0 +1,60 @@
+#
+# @(#)pin_ach 1.0 04/02/18
+#
+#======================================================================
+# Automatic Clearing House Pointers
+#======================================================================
+#
+#      Copyright (c) 2003 - 2006 Oracle. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#======================================================================
+# Use this file to define the routing poids and merchant information
+# for all the clearing houses.
+#
+# After defining run load_pin_ach to create a new /config/ach object. 
+# Note the system will expect to have only one /config/ach object. Each
+# time the load program is run, it will delete and re-create.
+#
+#======================================================================
+
+#======================================================================
+# Syntax for ACH declerations.
+#
+# Use this sytnax to define an ach routing poid.
+#
+#  <ach_name>	<routing_poid>	<ach_merchant>  <channel_id>
+#
+# The following sections describe each of these fields.
+#======================================================================
+# ach_name
+# The ach_name is the clearing house identifier. This will identify
+# that a given payment method will be routed to which clearing house.
+#
+#======================================================================
+# routing_poid 
+# The routing_poid will indicate which dm interface to contact for the
+# given ach_name. 
+#
+#======================================================================
+# ach_merchant
+# The merchant will be the clearing house merchant.
+#
+#======================================================================
+# channel_id
+# The payment channel id. 
+# channel_id: Identifies the channel from which payment is received.
+# Value must match with payment channel id configured in /strings
+# object so that channel id can be translated to a
+# specific channel name.
+#======================================================================
+
+
+#======================================================================
+# Default for fusa
+#======================================================================
+fusa		0.0.1.1 /payment -1	test	0

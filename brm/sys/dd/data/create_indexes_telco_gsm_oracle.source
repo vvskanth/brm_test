@@ -1,0 +1,56 @@
+--
+-- @(#)%Portal Version: create_indexes_telco_gsm.source:BillingVelocityInt:4:2006-Aug-02 14:28:45 %
+--
+-- Copyright (c) 2004, 2024, Oracle and/or its affiliates.All rights reserved. 
+--
+--      This material is the confidential property of Oracle Corporation 
+--     	or licensors and may be used, reproduced, stored  or transmitted
+--      only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- SOURCE OF sql file to create the telco/gsm indexes from the PIN database
+-- $PIN_CONF_TBLSPACEX		-- for tablespace to put all these in
+-- $PIN_CONF_STORAGE_SMALL	-- for storage phrase
+
+-- /active_session/telco/gsm
+create unique index i_active_sess_tlcogsm__id on active_session_telco_gsm_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_INFO{'/active_session.INDEX_CLAUSE'} ;
+
+-- /event/session/telco/gsm
+create unique index i_event_sess_tlcogsm__id on event_session_tlco_gsm_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /service/telco/gsm
+create unique index i_service_tlcsgsm__id on service_telco_gsm_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+
+
+-- /event/delayed/session/telco/gsm
+create unique index i_event_dlay_ss_tlcsgsm__id on event_dlyd_session_tlco_gsm_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX13
+	$PIN_CONF_STORAGE_LARGE_INS
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/billing/cycle/discount/mostcalled
+create unique index i_event_bill_cdisc_mcall__id on event_billing_cdisc_mostcall_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS
+        $PIN_CONF_PARTITION_IND ;
+
+-- /profile/mostcalled
+create unique index i_profile_mostcalled__id on profile_mostcalled_t ( obj_id0, offering_obj_id0 )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;
+
+-- /profile/mostcalled
+create index i_au_profile_mostcalled__id on au_profile_mostcalled_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED_INS
+	$PIN_CONF_PARTITION_INFO{'/profile.INDEX_CLAUSE'} ;

@@ -1,0 +1,73 @@
+#############################################################################
+# @(#)% %
+#
+# Copyright (c) 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#############################################################################
+
+
+##########################################################################
+#
+#  Sample provisioning tags input file for load_pin_telco_tags
+#  utility program.
+# 
+#  The file will be in simple text format, as described below :
+#  
+#  The file contains two types/blocks of information in the text file :
+# 	-> Provisioning tag
+# 	-> Account ERA
+#  
+#  Provisioning tag related info starts with the keyword 'provisioning_tag' 
+#  and the account ERA related info starts with the keyword 'account_era'.
+# 
+#  The "provisioning tag" contains information about
+# 
+# 	provisioning tag
+# 		- class name (/config/telco/gprs)
+# 		- name of the provisioning tag
+# 		- description of the provisioning tag
+#
+# 	features
+# 		- one or more string values for feature names
+#
+# 	service ERA
+# 		- name of service ERA (Integrate DB Key)
+#		- String Id for name of service ERA. Key to local display.
+# 		- String Id for description of service ERA. Key to local display.
+# 		- if provisioning is required or not
+#
+# 	service extension
+# 		- service extension name
+#		- service extension value
+#
+#  The "account ERA" tag contains information about
+# 	account ERA
+# 		- name of account ERA
+#		- String Id for name of account ERA. Key to local display.
+# 		- String Id for description of account ERA. Key to local display.
+#  
+# 
+#  The format of file is (keywords and the values that follow) :
+# 
+#  provisioning_tag	<Class> <ProvTag> <PTDescription> <DelayedProvReqd>
+#  features		<OneOrMoreFeatureNameStringValues>
+#  service_era		<ServiceERA> <StringIdERA> <StringIdServiceERADesc> <ProvBool>
+#  service_extn		<Extention Type Name> <Extention Value>
+#  account_era		<AccountERA> <StringIdERA> <StringIdAccountERADesc>
+# 
+########################################################################################
+
+provisioning_tag	"/config/telco/gprs"	"Data Premium"	"Data Service"	"y"
+service_extn	"BEARER_SERVICE" "BS 70" 
+service_extn	"APN"	"apn.portal.com"
+service_extn	"QOS"	"Platinum"
+service_era	"FRIENDS_FAMILY"	12 13 "n"    
+service_era	"HOME_CELL" 		16 17 "y"
+service_era	"HOME_REGION"		14 15 "y"
+service_era	"SERVICELEVEL"		10 11 "n" 
+service_era	"RATEPLAN"		18 19 "n"

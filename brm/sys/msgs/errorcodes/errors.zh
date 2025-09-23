@@ -1,0 +1,956 @@
+##########################################################################
+#
+# Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored
+# or transmitted only in accordance with a valid Oracle license or
+# sublicense agreement.
+#
+#
+##########################################################################
+#
+#   File:  errors.zh
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  zh ( Simplified Chinese )
+#
+#	Domain:  Errors
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#	    The STRING and optional HELPSTR are localizable.  This file must be 
+#	    in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#	    to be ASCII (no extended-ASCII characters nor multiple byte 
+#	    characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "zh" ;
+
+DOMAIN = "Errors" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "无错误" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "内存不足" ;
+	HELPSTR = "内存不足，无法完成尝试的操作。检查系统内存和/或内存泄漏。" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "无法找到匹配项" ;
+	HELPSTR = "Portal 未能找到它要查找的值。" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "找不到条目" ;
+	HELPSTR = "Portal 未能找到值。" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "参数错误，无法执行" ;
+	HELPSTR = "flist 中的某个所需字段不正确。这是严重的编程错误。" ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "XDR 数据错误" ;
+	HELPSTR = "应用程序意外丢失与 Portal 数据库的连接。" ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "未使用" ;
+	HELPSTR = "未使用。" ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "读操作期间出错" ;
+	HELPSTR = "Portal 无法从网络或某个其它 IO 设备读取，可能是因为通讯被意外切断。" ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "套接字创建错误" ;
+	HELPSTR = "计算机或进程可能超载并已经达到套接字/文件描述符的限制。" ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "字段或对象类型无效" ;
+	HELPSTR = "Portal 遇到一个错误字段或对象类型。" ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "存储对象重复" ;
+	HELPSTR = "Portal 无法创建可存储对象，因为请求的 ID 已被使用。" ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "非错误代码" ;
+	HELPSTR = "此错误代码不指示错误。计费 FM 将此代码用于内部操作。" ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "非错误代码" ;
+	HELPSTR = "此错误代码不指示错误。计费 FM 将此代码用于内部操作。" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "缺少参数" ;
+	HELPSTR = "缺少所需的参数。如果日志文件不指示字段，请参阅操作码的规范。" ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "POID 类型错误" ;
+	HELPSTR = "Portal 遇到错误的对象类型。" ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "无法解密/验证标题" ;
+	HELPSTR = "无法解密/验证标题。" ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "写入套接字时出错" ;
+	HELPSTR = "写入套接字时出错。" ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "子结构重复" ;
+	HELPSTR = "子结构重复。" ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "搜索参数错误" ;
+	HELPSTR = "搜索模板/flist 中的参数未知/错误。" ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "记录 ID 无效" ;
+	HELPSTR = "搜索中的记录 ID 错误。" ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "搜索参数重复" ;
+	HELPSTR = "参数列表中的条目重复。" ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "POID 值不存在" ;
+	HELPSTR = "Portal 无法在数据库中找到该可存储对象。" ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "POID DB 号为零" ;
+	HELPSTR = "确保例程传递的是有效的数据库号，该号码与配置文件中的号码相匹配。" ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "DB 号无效" ;
+	HELPSTR = "要连接的 DM 的 DB 号码无效。" ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "套接字创建错误" ;
+	HELPSTR = "计算机或进程可能超载并已经达到套接字/文件描述符的限制。" ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "无法连接到 DM" ;
+	HELPSTR = "Portal 未能找到运行数据管理器的计算机的 IP 地址。检查数据库别名。" ;
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "无法连接到 DM" ;
+	HELPSTR = "Portal 无法连接到数据管理器。CM 的配置文件可能指向错误的 DM 或 DM 没有运行。" ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "无法连接到 CM" ;
+	HELPSTR = "应用程序的配置文件可能指向错误的 CM；CM 可能没有运行，或者可能没有更多可用的连接。" ;
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "记录 ID 无效" ;
+	HELPSTR = "该阵列中指定元素的 ID 无效。指定的 ID 可能大于最大记录 ID。" ;
+END
+STR
+	ID = 29 ;
+	VERSION = 1 ;
+	STRING = "pin.conf 条目过时" ;
+	HELPSTR = "pin.conf 条目无效。" ;
+END
+STR
+	ID = 30 ;
+	VERSION = 1 ;
+	STRING = "pin.conf 条目无效" ;
+	HELPSTR = "pin.conf 文件中可能存在语法错误。" ;
+END
+STR
+	ID = 31 ;
+	VERSION = 1 ;
+	STRING = "DB 错误" ;
+	HELPSTR = "POID DB 号错误。" ;
+END
+STR
+	ID = 32 ;
+	VERSION = 1 ;
+	STRING = "参数重复" ;
+	HELPSTR = "flist 中的字段重复。" ;
+END
+STR
+	ID = 33 ;
+	VERSION = 1 ;
+	STRING = "无法设置对象 ID" ;
+	HELPSTR = "Portal 无法分配可存储对象 ID。" ;
+END
+STR
+	ID = 34 ;
+	VERSION = 1 ;
+	STRING = "无法创建对象" ;
+	HELPSTR = "例程无法创建对象。" ;
+END
+STR
+	ID = 35 ;
+	VERSION = 1 ;
+	STRING = "字段名错误" ;
+	HELPSTR = "无法将字段名映射到有效的 Portal 类型。" ;
+END
+STR
+	ID = 36 ;
+	VERSION = 1 ;
+	STRING = "操作码错误" ;
+	HELPSTR = "调用的操作码不属于已知的 Portal 基本操作码集。" ;
+END
+STR
+	ID = 37 ;
+	VERSION = 1 ;
+	STRING = "交易已经打开" ;
+	HELPSTR = "当一个交易已经打开时，应用程序尝试在同一可存储对象上再打开一个交易。" ;
+END
+STR
+	ID = 38 ;
+	VERSION = 1 ;
+	STRING = "没有打开的交易" ;
+	HELPSTR = "应用程序尝试提交或中止交易，但没有打开的交易。" ;
+END
+STR
+	ID = 39 ;
+	VERSION = 1 ;
+	STRING = "空值" ;
+	HELPSTR = "例程无法获得值，因为已将其设置为“空”。" ;
+END
+STR
+	ID = 40 ;
+	VERSION = 1 ;
+	STRING = "无法释放内存" ;
+	HELPSTR = "例程尝试释放不再需要的内存，但操作失败。" ;
+END
+STR
+	ID = 41 ;
+	VERSION = 1 ;
+	STRING = "文件 IO 错误" ;
+	HELPSTR = "读取/写入文件或加载/打开共享库时出错。" ;
+END
+STR
+	ID = 42 ;
+	VERSION = 1 ;
+	STRING = "元素不存在" ;
+	HELPSTR = "指定可存储对象中的阵列不包含指定的元素。" ;
+END
+STR
+	ID = 43 ;
+	VERSION = 1 ;
+	STRING = "与 DB 的连接丢失" ;
+	HELPSTR = "Portal 在交易当中失去了与数据库的连接。" ;
+END
+STR
+	ID = 44 ;
+	VERSION = 1 ;
+	STRING = "尝试的交易过多" ;
+	HELPSTR = "Portal 尝试与过多的 DM 进行交易。" ;
+END
+STR
+	ID = 45 ;
+	VERSION = 1 ;
+	STRING = "交易丢失" ;
+	HELPSTR = "交易丢失。数据管理器在交易期间失败。" ;
+END
+STR
+	ID = 46 ;
+	VERSION = 1 ;
+	STRING = "无法解释数据" ;
+	HELPSTR = "Portal 无法解释来自数据库的数据。数据在当前上下文中无效，Portal 无法解决冲突。" ;
+END
+STR
+	ID = 47 ;
+	VERSION = 1 ;
+	STRING = "处理了一部分信用卡" ;
+	HELPSTR = "将一批交易发送到信用卡数据管理器时，只处理了一部分信用卡，而其它信用卡则没有处理。" ;
+END
+STR
+	ID = 48 ;
+	VERSION = 1 ;
+	STRING = "操作未完成" ;
+	HELPSTR = "Portal 尚未完成某个操作（如操作码或交易）。" ;
+END
+STR
+	ID = 49 ;
+	VERSION = 1 ;
+	STRING = "数据流上的 IO 错误" ;
+	HELPSTR = "向 Portal 数据库或从该数据库发送数据时，应用程序遇到错误。通常，此错误代码表示与网络的连接丢失。如果网络工作正常，服务器可能已经死机。" ;
+END
+STR
+	ID = 50 ;
+	VERSION = 1 ;
+	STRING = "数据流上的 EOF" ;
+	HELPSTR = "应用程序意外丢失与 Portal 数据库的连接。通常，此错误代码表示与网络的连接丢失。如果网络工作正常，服务器可能已经死机。" ;
+END
+STR
+	ID = 51 ;
+	VERSION = 1 ;
+	STRING = "没有正在进行的操作" ;
+	HELPSTR = "没有正在进行的操作。" ;
+END
+STR
+	ID = 52 ;
+	VERSION = 1 ;
+	STRING = "操作正在进行中" ;
+	HELPSTR = "操作已经在进行。" ;
+END
+STR
+	ID = 53 ;
+	VERSION = 1 ;
+	STRING = "操作已经完成" ;
+	HELPSTR = "操作已经完成；没有设置回叫。" ;
+END
+STR
+	ID = 54 ;
+	VERSION = 1 ;
+	STRING = "flist 中没有数据字段" ;
+	HELPSTR = "数据管理器接收到一个没有数据字段的 flist。检查输入 flist。" ;
+END
+STR
+	ID = 55 ;
+	VERSION = 1 ;
+	STRING = "字段无效" ;
+	HELPSTR = "Portal 无法创建对象，因为一个或多个值无效或者字段不允许更新。" ;
+END
+STR
+	ID = 56 ;
+	VERSION = 1 ;
+	STRING = "无法连接到 CM" ;
+	HELPSTR = "应用程序无法连接到 CM。请检查登录名和密码。" ;
+END
+STR
+	ID = 57 ;
+	VERSION = 1 ;
+	STRING = "无法查找 CM 地址" ;
+	HELPSTR = " 应用程序找不到运行 CM 的计算机。绑定（或 DNS）服务指向错误的 TCP/IP 地址或者网络出现问题。尝试对 CM 执行 Ping 来验证网络连接。" ;
+END
+STR
+	ID = 58 ;
+	VERSION = 1 ;
+	STRING = "无法转接连接" ;
+	HELPSTR = "连接转接信息不正确。" ;
+END
+STR
+	ID = 59 ;
+	VERSION = 1 ;
+	STRING = "登录转接太多" ;
+	HELPSTR = "连接转接太多。[??审阅者：从哪里转接到哪里???]
+此错误可能因配置中的循环所致。检查应用程序、CM 和 DM 的配置文件。" ;
+END
+STR
+	ID = 60 ;
+	VERSION = 1 ;
+	STRING = "分步搜索错误" ;
+	HELPSTR = "分步搜索操作未找到预期的 STEP_NEXT/STEP_END。" ;
+END
+STR
+	ID = 61 ;
+	VERSION = 1 ;
+	STRING = "与 DB 的连接丢失" ;
+	HELPSTR = "Portal 在交易过程中丢失与数据库的连接，并且无法重新建立连接。" ;
+END
+STR
+	ID = 62 ;
+	VERSION = 1 ;
+	STRING = "不是组的根" ;
+	HELPSTR = "不是组的根。" ;
+END
+STR
+	ID = 63 ;
+	VERSION = 1 ;
+	STRING = "操作系统锁定错误" ;
+	HELPSTR = "操作系统中的锁定错误。" ;
+END
+STR
+	ID = 64 ;
+	VERSION = 1 ;
+	STRING = "授权失败" ;
+	HELPSTR = "授权失败。" ;
+END
+STR
+	ID = 65 ;
+	VERSION = 1 ;
+	STRING = "不可写" ;
+	HELPSTR = "该字段不能修改。" ;
+END
+STR
+	ID = 66 ;
+	VERSION = 1 ;
+	STRING = "未知的 C++ 异常" ;
+	HELPSTR = "未知的 C++ 异常。" ;
+END
+STR
+	ID = 67 ;
+	VERSION = 1 ;
+	STRING = "无法启动服务器" ;
+	HELPSTR = "Portal 无法启动进程。" ;
+END
+STR
+	ID = 68 ;
+	VERSION = 1 ;
+	STRING = "无法停止服务器" ;
+	HELPSTR = "Portal 无法停止进程。" ;
+END
+STR
+	ID = 69 ;
+	VERSION = 1 ;
+	STRING = "队列无效" ;
+	HELPSTR = "队列无效。" ;
+END
+STR
+	ID = 70 ;
+	VERSION = 1 ;
+	STRING = "有些东西太大" ;
+	HELPSTR = "有些东西太大。" ;
+END
+STR
+	ID = 71 ;
+	VERSION = 1 ;
+	STRING = "区域设置无效"  ;
+	HELPSTR = "Portal 不识别此区域设置。检查运行客户应用程序的计算机的区域设置。" ;
+END
+STR
+	ID = 72 ;
+	VERSION = 1 ;
+	STRING = "多字节编码转换错误" ;
+	HELPSTR = "客户应用程序在将数据从 UTF-8 格式（在 Portal 数据库中的存储格式）转换到多字节格式时出现问题。客户端的区域设置错误或数据被破坏。" ;
+END
+STR
+	ID = 73 ;
+	VERSION = 1 ;
+	STRING = "Unicode 编码转换错误" ;
+	HELPSTR = "客户应用程序在将数据从 UTF-8 格式（在 Portal 数据库中的存储格式）转换到 unicode 格式时出现问题。客户端的区域设置错误或数据被破坏。" ;
+END
+STR
+	ID = 74 ;
+	VERSION = 1 ;
+	STRING = "MBCS 格式无效" ;
+	HELPSTR = "输入 flist 包括的某个字符串不是有效的多字节格式。" ;
+END
+STR
+	ID = 75 ;
+	VERSION = 1 ;
+	STRING = "Unicode 格式无效" ;
+	HELPSTR = "输入 flist 包括的某个字符串不是有效的 unicode 格式。" ;
+END
+STR
+	ID = 76 ;
+	VERSION = 1 ;
+	STRING = "规范化中有错" ;
+	HELPSTR = "规范化中出现转换错误。" ;
+END
+STR
+	ID = 77 ;
+	VERSION = 1 ;
+	STRING = "不支持的用于规范化的区域设置" ;
+	HELPSTR = "Portal 不支持对客户应用程序的区域设置进行规范化。" ;
+END
+STR
+	ID = 78 ;
+	VERSION = 1 ;
+	STRING = "父/子货币不匹配" ;
+	HELPSTR = "从属帐户或赞助帐户有不同于父帐户或赞助帐户的货币。" ;
+END
+STR
+	ID = 79 ;
+	VERSION = 1 ;
+	STRING = "交易由于资源争用而被回滚" ;
+	HELPSTR = "到 SQL Server 数据库的两个线程尝试访问相同的内存资源。其中一个失败，该交易已被回滚。数据管理器应自动重试该交易。如果您看到该错误，但随后没有收到数据管理器已经重试操作的通知，则请与 Portal Software 代表联系。" ;
+END
+STR
+	ID = 80 ;
+	VERSION = 1 ;
+	STRING = "回填时出错" ;
+	HELPSTR = "Portal 无法回填调整、注销或其它交易，因为已经将 G/L 报表过帐。" ;
+END
+STR
+	ID = 81 ;
+	VERSION = 1 ;
+	STRING = "已超过信用限额" ;
+	HELPSTR = "分类帐报表已经过帐。" ;
+END
+STR
+	ID = 82 ;
+	VERSION = 1 ;
+	STRING = "该值是“空 - 未设置。" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 83 ;
+	VERSION = 1 ;
+	STRING = "详细的错误——msg_id 使用增强的 ebuf" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 84 ;
+	VERSION = 1 ;
+	STRING = "请先解决帐单信息的待结应收帐款操作，再移动结余组" ;
+	HELPSTR = "" ;
+END
+STR
+        ID = 85 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法回溯在帐户创建日期之后产生的交易。";
+        HELPSTR = "BRM 无法回溯在帐户创建日期之后产生的交易。";
+END
+STR
+        ID = 86 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法回溯此交易，因为 G/L 报表已经过帐。";
+        HELPSTR = "BRM 无法回溯此交易，因为 G/L 报表已经过帐。";
+END
+STR
+        ID = 87 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法回溯在服务创建日期之后产生的交易。";
+        HELPSTR = "BRM 无法回溯在服务创建日期之后产生的交易。";
+END
+STR
+        ID = 88 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法回溯在产品或折扣创建日期之后产生的交易。";
+        HELPSTR = "BRM 无法回溯在产品或折扣创建日期之后产生的交易。";
+END
+STR
+        ID = 89 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法回溯起始日期，因为已经收取采购或周期费用。";
+        HELPSTR = "BRM 无法回溯起始日期，因为已经收取采购或周期费用。";
+END
+STR
+        ID = 90 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法回溯此交易，因为已存在状态更改。";
+        HELPSTR = "BRM 无法回溯此交易，因为已存在状态更改。";
+END
+STR
+        ID = 91 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法回溯此交易至采购起始时间以前。";
+        HELPSTR = "BRM 无法回溯此交易至采购起始时间以前。";
+END
+STR
+        ID = 92 ;
+        VERSION = 1 ;
+        STRING = "BRM 无法运行计费程序，因为计费时间与当前时间之间的差值超过 cm pin.conf 条目 \valid_forward_interval\ 或 \valid_backward_interval\ 中指定的值。"; 
+        HELPSTR = "BRM 无法运行计费程序，因为计费时间与当前时间之间的差值超过 cm pin.conf 条目 \valid_forward_interval\ 或 \valid_backward_interval\ 中指定的值。"; 
+END
+STR
+        ID = 93 ;
+        VERSION = 1 ;
+        STRING = "没使用 Flist 格式的发票对象。";
+        HELPSTR = "没使用 Flist 格式的发票对象。";
+END
+STR
+        ID = 94 ;
+        VERSION = 1 ;
+        STRING = "无法重嵌帐单信息的默认结余组。";
+        HELPSTR = "无法重嵌帐单信息的默认结余组。";
+END
+STR
+        ID = 95 ;
+        VERSION = 1 ;
+        STRING = "无法重嵌帐单信息的默认结余组。";
+        HELPSTR = "无法重嵌帐单信息的默认结余组。";
+END
+STR
+        ID = 96 ;
+        VERSION = 1 ;
+        STRING = "概要信息验证失败。";
+        HELPSTR = "概要信息验证失败。";
+END
+STR
+        ID = 97 ;
+        VERSION = 1 ;
+        STRING = "更正开票功能已禁用。";
+        HELPSTR = "更正开票功能已禁用。";
+END
+STR
+        ID = 98 ;
+        VERSION = 1 ;
+        STRING = "无法为从属帐单生成更正帐单。";
+        HELPSTR = "无法为从属帐单生成更正帐单。";
+END
+STR
+        ID = 99 ;
+        VERSION = 1 ;
+        STRING = "必须最终确定帐单才能生成更正帐单。";
+        HELPSTR = "必须最终确定帐单才能生成更正帐单。";
+END
+STR
+        ID = 100 ;
+        VERSION = 1 ;
+        STRING = "REASON_ID 和 REASON_DOMAIN_ID 这两个字段都必须显示在输入中。";
+        HELPSTR = "REASON_ID 和 REASON_DOMAIN_ID 这两个字段都必须显示在输入中。";
+END
+STR
+        ID = 101 ;
+        VERSION = 1 ;
+        STRING = "如果没有应收帐款费用，发票类型应为“替换”。";
+        HELPSTR = "如果没有应收帐款费用，发票类型应为“替换”。";
+END
+STR
+        ID = 102 ;
+        VERSION = 1 ;
+        STRING = "没有应收帐款费用。";
+        HELPSTR = "没有应收帐款费用。";
+END
+STR
+        ID = 103 ;
+        VERSION = 1 ;
+        STRING = "帐单不是向前结余记帐类型的最后一个帐单。";
+        HELPSTR = "帐单不是向前结余记帐类型的最后一个帐单。";
+END
+STR
+        ID = 104 ;
+        VERSION = 1 ;
+        STRING = "帐单已完全付款。";
+        HELPSTR = "帐单已完全付款。";
+END
+STR
+        ID = 105 ;
+        VERSION = 1 ;
+        STRING = "帐单已付款。";
+        HELPSTR = "帐单已付款。";
+END
+STR
+        ID = 106 ;
+        VERSION = 1 ;
+        STRING = "应收帐款费用太小。";
+        HELPSTR = "应收帐款费用太小。";
+END
+STR
+        ID = 108 ;
+        VERSION = 1 ;
+        STRING = "REASON_ID 或 REASON_DOMAIN_ID 不正确。";
+        HELPSTR = "REASON_ID 或 REASON_DOMAIN_ID 不正确。";
+END
+STR
+        ID = 109 ;
+        VERSION = 1 ;
+        STRING = "必须先创建帐单的发票，才能生成更正帐单。";
+        HELPSTR = "必须先创建帐单的发票，才能生成更正帐单。";
+END
+STR
+        ID = 110 ;
+        VERSION = 1 ;
+        STRING = "除了付款之外，没有应收帐款费用。";
+        HELPSTR = "除了付款之外，没有应收帐款费用。";
+END
+STR
+        ID = 122 ;
+        VERSION = 1 ;
+        STRING = "密码无效。密码以无效前缀开头。";
+        HELPSTR = "密码无效。密码以无效前缀开头。";
+END
+STR
+        ID = 123 ;
+        VERSION = 1 ;
+        STRING = "仅允许折扣额和百分比中的一个。";
+        HELPSTR = "仅允许折扣额和百分比中的一个。";
+END
+STR
+        ID = 124 ;
+        VERSION = 1 ;
+        STRING = "无法取消强制操作";
+        HELPSTR = "无法取消强制操作";
+END
+STR
+        ID = 125 ;
+        VERSION = 1 ;
+        STRING = "无法在取消操作之前/之间插入操作。";
+        HELPSTR = "无法在取消操作之前/之间插入操作。";
+END
+STR
+	ID = 126 ;
+	VERSION = 1 ;
+	STRING = "此帐单信息已是收帐组的一部分。";
+	HELPSTR = "此帐单信息已是收帐组的一部分。";
+END
+STR
+        ID = 127 ;
+	VERSION = 1 ;
+	STRING = "此账单信息已在承诺付款义务中。无法调用其他承诺。";
+	HELPSTR = "此账单信息已在承诺付款义务中。无法调用其他承诺。";
+END
+STR
+        ID = 128 ;
+	VERSION = 1 ;
+	STRING = "无法调用过去日期的承诺。";
+	HELPSTR = "无法调用过去日期的承诺。";
+END
+STR        
+	ID = 129 ;
+	VERSION = 1 ;
+	STRING = "无法在承诺付款期间添加此操作。";
+	HELPSTR = "无法在承诺付款期间添加此操作。";
+END
+STR
+	ID = 130 ;
+	VERSION = 1 ;
+	STRING = "账单信息不在承诺付款义务中时无法添加承诺付款操作。";
+	HELPSTR = "账单信息不在承诺付款义务中时无法添加承诺付款操作。";
+END
+STR
+	ID = 131 ;
+	VERSION = 1 ;
+	STRING = "仅在承诺付款期间方可添加承诺付款操作。";
+	HELPSTR = "仅在承诺付款期间方可添加承诺付款操作。";
+END
+STR
+	ID = 132 ;
+	VERSION = 1 ;
+	STRING = "操作不处于待定状态。无法更新里程碑金额。";
+	HELPSTR = "操作不处于待定状态。无法更新里程碑金额。";
+END
+STR
+	ID = 133 ;
+	VERSION = 1 ;
+	STRING = "找不到里程碑金额和里程碑数。必须指定这两者中的一个。";
+	HELPSTR = "找不到里程碑金额和里程碑数。必须指定这两者中的一个。";
+END
+STR
+	ID = 134 ;
+	VERSION = 1 ;
+	STRING = "里程碑金额必须少于或等于逾期金额，或者必须是退出金额的最小值。";
+	HELPSTR = "里程碑金额必须少于或等于逾期金额，或者必须是退出金额的最小值。";
+END
+STR
+	ID = 135 ;
+	VERSION = 1 ;
+	STRING = "找不到里程碑间隔和总天数。必须指定这两者中的一个。";
+	HELPSTR = "找不到里程碑间隔和总天数。必须指定这两者中的一个。";
+END
+STR
+	ID = 136 ;
+	VERSION = 1 ;
+	STRING = "其中一个输入参数为零。";
+	HELPSTR = "其中一个输入参数为零。";
+END
+STR
+	ID = 137 ;
+	VERSION = 1 ;
+	STRING = "承诺金额必须大于退出金额。";
+	HELPSTR = "承诺金额必须大于退出金额。";
+END
+STR
+        ID = 138 ;
+        VERSION = 1 ;
+        STRING = "无法免除 billinfo，因为它是 collections_targets 组的成员。";
+        HELPSTR = "无法免除 billinfo，因为它是 collections_targets 组的成员。";
+END
+STR
+        ID = 139 ;
+        VERSION = 1 ;
+        STRING = "父项和成员之间存在循环关系。";
+        HELPSTR = "父项和成员之间存在循环关系。";
+END
+STR
+        ID = 140 ;
+        VERSION = 1 ;
+        STRING = "组名重复。无法更改组。";
+        HELPSTR = "组名重复。无法更改组。";
+END
+STR
+        ID = 141 ;
+        VERSION = 1 ;
+        STRING = "Billinfo 是从属项。无法添加到组。";
+        HELPSTR = "Billinfo 是从属项。无法添加到组。";
+END
+STR
+        ID = 142 ;
+        VERSION = 1 ;
+        STRING = "Billinfo 已免除。无法再次免除。";
+        HELPSTR = "Billinfo 已免除。无法再次免除。";
+END
+STR
+        ID = 143 ;
+        VERSION = 1 ;
+        STRING = "Billinfo 已是收帐组成员。无法添加到组。";
+        HELPSTR = "Billinfo 已是收帐组成员。无法添加到组。";
+END
+STR
+        ID = 144 ;
+        VERSION = 1 ;
+        STRING = "Billinfo 已是收帐组父帐户。无法添加到组。";
+        HELPSTR = "Billinfo 已是收帐组父帐户。无法添加到组。";
+END
+STR
+        ID = 145 ;
+        VERSION = 1 ;
+        STRING = "Billinfo 已在收帐组中。无法修改组。";
+        HELPSTR = "Billinfo 已在收帐组中。无法修改组。";
+END
+STR
+        ID = 146 ;
+        VERSION = 1 ;
+        STRING = "对于“单一欧元支付区”支付类型,，帐户货币应为欧元。";
+        HELPSTR = "对于“单一欧元支付区”支付类型,，帐户货币应为欧元。"; 
+END
+STR
+        ID = 147 ;
+        VERSION = 1 ;
+        STRING = "IBAN 长度不符合 ISO 13616:2007 标准。";
+        HELPSTR = "IBAN 长度不符合 ISO 13616:2007 标准。";
+END
+STR
+        ID = 148 ;
+        VERSION = 1 ;
+        STRING = "IBAN 不符合 ISO 13616:2007 标准。";
+        HELPSTR = "IBAN 不符合 ISO 13616:2007 标准。";
+END
+STR
+        ID = 149 ;
+        VERSION = 1 ;
+        STRING = "IBAN 不符合 mod97。";
+        HELPSTR = "IBAN 不符合 mod97。";
+END
+STR
+        ID = 150 ;
+        VERSION = 1 ;
+        STRING = "BIC 长度不符合标准。应为 8 个或 11 个字符。";
+        HELPSTR = "BIC 长度不符合标准。应为 8 个或 11 个字符。";
+END
+STR
+        ID = 151 ;
+        VERSION = 1 ;
+        STRING = "BIC 不符合 ISO 9362:2009 标准。";
+        HELPSTR = "BIC 不符合 ISO 9362:2009 标准。";
+END
+STR
+        ID = 152 ;
+        VERSION = 1 ;
+        STRING = "系统中已存在此唯一授权参考编号。请更正此值，或将其留空，以便系统可以生成一个。";
+        HELPSTR = "系统中已存在此唯一授权参考编号。请更正此值，或将其留空，以便系统可以生成一个。";
+END
+STR
+        ID = 153 ;
+        VERSION = 1 ;
+        STRING = "MANDATE_SIGNED_T 不能是将来的日期也不能早于帐户创建日期。";
+        HELPSTR = "MANDATE_SIGNED_T 不能是将来的日期也不能早于帐户创建日期。";
+END
+STR
+        ID = 154 ;
+        VERSION = 1 ;
+        STRING = "未找到债权人 ID/债权人名称相同。";
+        HELPSTR = "未找到债权人 ID/债权人名称相同。";
+END
+STR
+        ID = 155 ;
+        VERSION = 1 ;
+        STRING = "债权人 ID 不存在。";
+        HELPSTR = "债权人 ID 不存在。";
+END
+STR
+        ID = 156 ;
+        VERSION = 1 ;
+        STRING = "不存在此债权人 ID/债权人名称组合。";
+        HELPSTR = "不存在此债权人 ID/债权人名称组合。";
+END
+STR
+        ID = 157 ;
+        VERSION = 1 ;
+        STRING = "此支付信息有待处理的单一欧元支付区请求，因此无法删除。";
+        HELPSTR = "此支付信息有待处理的单一欧元支付区请求，因此无法删除。";
+END

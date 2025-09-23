@@ -1,0 +1,482 @@
+#
+# (#)$Id: pin_notify /portalbase 2021/08/19 01:43:38 mkothari Exp $ $
+#
+version 1
+#======================================================================
+#
+# Copyright (c) 1999, 2022, Oracle and/or its affiliates. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation
+#      or its licensors and may be used, reproduced, stored or transmitted
+#      only in accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+# Use this file to map an event to the policy opcode you want 
+# Infranet to call when that event occurs.
+# 
+# After defining the events and the corresponding opcodes,
+# run the 'load_pin_notify' utility to create the new config/notify
+# storable object and load this notification list into the Infranet
+# database. Then restart the Connection Manager for these changes
+# to take effect. When the event occurs, the system passes the
+# entire /event storable object as the input flist to the opcode.
+#
+# Use the following syntax for defining event notification:
+#
+# <opcode_number>  <opcode_flag>  <event>
+#
+# Where:
+#  <opcode_number> is the identifying number of the policy opcode 
+#       that you want called when the event occurs. You can find 
+#       the identifying numbers for standard policy opcodes in the
+#       pcm_ops.h file in the /include directory. For custom 
+#       opcodes, define their numbers either in the pcm_ops.h file
+#       or in a different header file that you link with the code.
+#       The numbers from 1 through 10000 are reserved for standard
+#       Infranet opcodes.
+#  <opcode_flag> is the flag that is passed to the opcode when
+#       Infranet calls the opcode.
+#  <event> is the event that triggers the notification. You can use
+#       standard event types or a custom event type, as long as
+#       the event type has a corresponding /event storable
+#       object in the database.
+#
+# Note: You can have more than one notification opcode for an
+#       event. Infranet calls the opcodes in the order they appear
+#       in the list.
+#======================================================================
+#
+#
+#======================================================================
+# The following entries set up Infranet to automatically notify a
+# customer by email about the status of their purchase order. When
+# they approach their purchase order amount (threshold) or expiration
+# date (datethreshold), the event calls the PCM_OP_ACT_POL_EVENT_NOTIFY
+# opcode (#301), which sends the customer a reminder. When the
+# customer exceeds the purchase order amount or the purchase order
+# expires, the event calls the PCM_OP_ACT_POL_EVENT_LIMIT opcode
+# (#304), which notifies the customer. This opcode can also deactivate
+# the account.
+#
+301	0	/event/session
+301	0	/event/session/dialup
+301	0	/event/notification/threshold
+301	0	/event/notification/datethreshold
+304	0	/event/notification/limit
+304	0	/event/notification/datexpire
+
+#
+# The following entries set up Infranet to automatically log the 
+# the activities that need to be audited. this happens by calling the 
+# opcode PCM_OP_ACT_LOG_USER_ACTIVITY(#179), which stores information in 
+# user_activity storable class. Only activities that are 
+# configured for auditing are recorded. The information that is tracked 
+# is the type of activity, the date and time and the IP Address of the 
+# client machine are stored on the server side.Later if the user wants to 
+# more information then he can customize it by using the policy opcode
+# PCM_OP_ACT_POL_LOG_USER_ACTIVITY.
+#
+179     0       /event/audit/collections/action
+179     0       /event/audit/customer/payinfo/cc
+179     0       /event/audit/customer/payinfo/dd
+179     0       /event/audit/customer/payinfo/invoice
+179     0       /event/audit/customer/payinfo/sepa
+179     0       /event/billing/adjustment/account
+179     0       /event/billing/adjustment/bill
+179     0       /event/billing/adjustment/event
+179     0       /event/billing/adjustment/event/deferred
+179     0       /event/billing/adjustment/item
+179     0       /event/billing/adjustment/tax_event
+179     0       /event/billing/best_pricing
+179     0       /event/billing/bundle/create
+179     0       /event/billing/bundle/modify
+179     0       /event/billing/cdc_update
+179     0       /event/billing/cdcd_update
+179     0       /event/billing/charge/cc
+179     0       /event/billing/charge/dd
+179     0       /event/billing/charge/ddebit
+179     0       /event/billing/charge/invoice
+179     0       /event/billing/corrective_bill
+179     0       /event/billing/credit
+179     0       /event/billing/cycle/discount
+179     0       /event/billing/cycle/fold
+179     0       /event/billing/cycle/rollover
+179     0       /event/billing/cycle/rollover/monthly
+179     0       /event/billing/cycle/rollover_correction
+179     0       /event/billing/cycle/rollover_transfer
+179     0       /event/billing/cycle/tax
+179     0       /event/billing/deal/cancel
+179     0       /event/billing/deal/purchase
+179     0       /event/billing/debit
+179     0       /event/billing/discount/action/cancel
+179     0       /event/billing/discount/action/modify
+179     0       /event/billing/discount/action/modify/status
+179     0       /event/billing/discount/action/purchase
+179     0       /event/billing/discount/action/set_validity
+179     0       /event/billing/dispute
+179     0       /event/billing/dispute/bill
+179     0       /event/billing/dispute/event
+179     0       /event/billing/dispute/item
+179     0       /event/billing/dispute/tax_event
+179     0       /event/billing/fee/failed_payment
+179     0       /event/billing/finance_charge
+179     0       /event/billing/incentive
+179     0       /event/billing/invoice
+179     0       /event/billing/item
+179     0       /event/billing/item/transfer
+179     0       /event/billing/late_fee
+179     0       /event/billing/lcupdate
+179     0       /event/billing/limit
+179     0       /event/billing/mfuc_update
+179     0       /event/billing/monitor/delete
+179     0       /event/billing/monitor/update
+179     0       /event/billing/ordered_balgrp/create
+179     0       /event/billing/ordered_balgrp/delete
+179     0       /event/billing/ordered_balgrp/modify
+179     0       /event/billing/payment
+179     0       /event/billing/payment/cash
+179     0       /event/billing/payment/cc
+179     0       /event/billing/payment/check
+179     0       /event/billing/payment/dd
+179     0       /event/billing/payment/ddebit
+179     0       /event/billing/payment/failed
+179     0       /event/billing/payment/payorder
+179     0       /event/billing/payment/postalorder
+179     0       /event/billing/payment/sap
+179     0       /event/billing/payment/sepa
+179     0       /event/billing/payment/voucher
+179     0       /event/billing/payment/wtransfer
+179     0       /event/billing/product/action/cancel
+179     0       /event/billing/product/action/modify
+179     0       /event/billing/product/action/modify/status
+179     0       /event/billing/product/action/purchase
+179     0       /event/billing/product/action/set_validity
+179     0       /event/billing/product/fee/cancel
+179     0       /event/billing/product/fee/cycle/cycle_arrear
+179     0       /event/billing/product/fee/cycle/cycle_forward_annual
+179     0       /event/billing/product/fee/cycle/cycle_forward_arrear
+179     0       /event/billing/product/fee/cycle/cycle_forward_bimonthly
+179     0       /event/billing/product/fee/cycle/cycle_forward_monthly
+179     0       /event/billing/product/fee/cycle/cycle_forward_quarterly
+179     0       /event/billing/product/fee/cycle/cycle_forward_semiannual
+179     0       /event/billing/product/fee/purchase
+179     0       /event/billing/provision
+179     0       /event/billing/provision/dd
+179     0       /event/billing/purchase_fee
+179     0       /event/billing/refund
+179     0       /event/billing/refund/cash
+179     0       /event/billing/refund/cc
+179     0       /event/billing/refund/check
+179     0       /event/billing/refund/dd
+179     0       /event/billing/refund/ddebit
+179     0       /event/billing/refund/payorder
+179     0       /event/billing/refund/postalorder
+179     0       /event/billing/refund/sepa
+179     0       /event/billing/refund/voucher
+179     0       /event/billing/refund/wtransfer
+179     0       /event/billing/remittance
+179     0       /event/billing/reversal/cash
+179     0       /event/billing/reversal/cc
+179     0       /event/billing/reversal/check
+179     0       /event/billing/reversal/dd
+179     0       /event/billing/reversal/ddebit
+179     0       /event/billing/reversal/failed
+179     0       /event/billing/reversal/payorder
+179     0       /event/billing/reversal/postalorder
+179     0       /event/billing/reversal/sepa
+179     0       /event/billing/reversal/voucher
+179     0       /event/billing/reversal/wtransfer
+179     0       /event/billing/sap
+179     0       /event/billing/sap/sap_charges
+179     0       /event/billing/settlement/bill
+179     0       /event/billing/settlement/event
+179     0       /event/billing/settlement/item
+179     0       /event/billing/settlement/tax_event
+179     0       /event/billing/sub_bal_validity
+179     0       /event/billing/suppression
+179     0       /event/billing/suppression/exception
+179     0       /event/billing/validate
+179     0       /event/billing/validate/cc
+179     0       /event/billing/validate/dd
+179     0       /event/billing/vouchertopup
+179     0       /event/billing/writeoff
+179     0       /event/billing/writeoff/account
+179     0       /event/billing/writeoff/bill
+179     0       /event/billing/writeoff/billinfo
+179     0       /event/billing/writeoff/item
+179     0       /event/billing/writeoff/tax_account
+179     0       /event/billing/writeoff/tax_bill
+179     0       /event/billing/writeoff/tax_billinfo
+179     0       /event/billing/writeoff/tax_item
+179     0       /event/billing/writeoff_reversal
+179     0       /event/billing/writeoff_reversal/tax
+179     0       /event/broadband
+179     0       /event/broadband/usage
+179     0       /event/control_rerate
+179     0       /event/customer/actginfo
+179     0       /event/customer/billinfo/create
+179     0       /event/customer/billinfo/delete
+179     0       /event/customer/billinfo/modify
+179     0       /event/customer/locale
+179     0       /event/customer/login
+179     0       /event/customer/nameinfo
+179     0       /event/customer/password
+179     0       /event/customer/status
+179     0       /event/device/associate
+179     0       /event/device/attribute
+179     0       /event/device/brand
+179     0       /event/device/create
+179     0       /event/device/delete
+179     0       /event/device/disassociate
+179     0       /event/device/replace
+179     0       /event/device/state
+179     0       /event/group
+179     0       /event/group/collections_targets
+179     0       /event/group/member
+179     0       /event/group/parent
+179     0       /event/group/sharing/charges
+179     0       /event/group/sharing/charges/create
+179     0       /event/group/sharing/charges/delete
+179     0       /event/group/sharing/charges/modify
+179     0       /event/group/sharing/discounts
+179     0       /event/group/sharing/discounts/create
+179     0       /event/group/sharing/discounts/delete
+179     0       /event/group/sharing/discounts/modify
+179     0       /event/group/sharing/monitor
+179     0       /event/group/sharing/monitor/create
+179     0       /event/group/sharing/monitor/delete
+179     0       /event/group/sharing/monitor/modify
+179     0       /event/group/sharing/profiles
+179     0       /event/group/sharing/profiles/create
+179     0       /event/group/sharing/profiles/delete
+179     0       /event/group/sharing/profiles/modify
+179     0       /event/notification/account/create
+179     0       /event/notification/bill_now/start
+179     0       /event/notification/billing/start
+179     0       /event/notification/refund/create
+179     0       /event/notification/service_item/make_bill
+179     0       /event/process_audit
+179     0       /event/schedule/create
+179     0       /event/schedule/delete
+179     0       /event/schedule/execute
+179     0       /event/schedule/modify
+179     0       /event/activity/job_request
+
+#
+# Device Management Framework related event notification
+# For regesting new Event notification provide the Complete event object name
+2706	0	/event/notification/device/state
+2706	0	/event/notification/device/state/in_transition
+
+#
+# Settlements and disputes related event notifications
+#2354	0	/event/billing/settlement/notify
+#2355	0	/event/billing/dispute/notify
+#
+# Rerating related event notification
+3787	0	/event/notification/auto_rerate
+3787	0	/event/notification/rate_change
+3787	0	/event/notification/rollover_correction/rerate
+#
+# Rate change related event notification
+3768    0       /event/audit/price/product_update
+3768    0       /event/audit/price/product_complete
+#
+# Events impacting discounts based on number of lines
+#3773    0       /event/notification/billing/start$
+#3773    0       /event/notification/billing/start_partial$
+#3773    0       /event/group/sharing/discounts/create
+#
+# Automated Monitor Setup related event notification
+# Uncomment these lines when AMS feature is enabled
+#7853    0       /event/group/sharing/monitor/create
+#7854    0       /event/notification/service/pre_purchase
+#7855    0       /event/notification/service/pre_purchase
+#7856    0       /event/notification/service/pre_purchase
+#7857    0       /event/customer/billinfo/modify
+#7855    0       /event/customer/billinfo/modify
+#7857    0       /event/group/member
+#7854    0       /event/group/member
+#7857    0       /event/notification/bal_grp/modify
+#7855    0       /event/notification/bal_grp/modify
+#7854    0       /event/audit/subscription/transfer
+#3787    0       /event/billing/monitor/update
+
+# Automated Group Setup related event notification
+# Uncomment these lines when feature is enabled
+#7853    0       /event/group/sharing/discounts/create
+#7853    0       /event/group/sharing/products/create
+
+# Event notifications related to aggregation counter (JP1035/36)
+#3774   0       /event/billing/adjustment/account
+#3774   0       /event/billing/adjustment/event
+#3774   0       /event/billing/adjustment/item
+#3774   0       /event/billing/adjustment/tax_event
+#
+# Event notifications related to contract days counter (JP1033)
+#3775   0       /event/notification/billing/start_partial$
+#3775   0       /event/notification/billing/start$
+#3775   0       /event/notification/billing/end$
+#3775   0       /event/customer/status
+#
+# Event notifications related to Rollover Enhancements across accounts
+#9069   0       /event/billing/cycle/rollover/monthly
+#9069   0       /event/billing/cycle/rollover_correction
+
+# Event notifications related to Automated subscription to sharing groups
+#3788   0	/event/group/sharing/profiles/create
+#3788   0	/event/group/sharing/profiles/modify
+#3789   0	/event/notification/service/create
+
+# Event notifications related to Trinity - Newsfeed
+#180    0       /event/activity/collections/exemption
+#180	0	/event/audit/collections/action
+#180	0	/event/audit/customer/payinfo/cc
+#180	0	/event/audit/customer/payinfo/dd
+#180	0	/event/audit/customer/payinfo/invoice
+#180	0	/event/audit/customer/payinfo/sepa
+#180	0	/event/audit/service_balgrp_transfer	
+#180	0	/event/billing/adjustment/account
+#180	0	/event/billing/adjustment/bill
+#180	0	/event/billing/adjustment/item
+#180	0	/event/billing/adjustment/event
+#180	0	/event/billing/adjustment/tax_event
+#180	0	/event/billing/corrective_bill
+#180	0	/event/billing/debit
+#180    0       /event/billing/discount/action/modify/status
+#180	0	/event/billing/dispute/bill
+#180	0	/event/billing/dispute/item
+#180	0	/event/billing/dispute/event
+#180	0	/event/billing/dispute/tax_event
+#180	0	/event/billing/deal/cancel
+#180	0	/event/billing/deal/purchase
+#180	0	/event/billing/discount/action/cancel
+#180	0	/event/notification/plan/transition
+#180	0	/event/notification/deal/transition	
+#180	0	/event/billing/limit
+#180	0	/event/billing/product/action/cancel
+#180    0       /event/billing/product/action/modify/status
+#180	0	/event/billing/product/fee/cycle/cycle_arrear
+#180	0	/event/billing/product/fee/cycle/cycle_forward_annual
+#180	0	/event/billing/product/fee/cycle/cycle_forward_arrear
+#180	0	/event/billing/product/fee/cycle/cycle_forward_bimonthly
+#180	0	/event/billing/product/fee/cycle/cycle_forward_monthly
+#180	0	/event/billing/product/fee/cycle/cycle_forward_quarterly
+#180	0	/event/billing/product/fee/cycle/cycle_forward_semiannual
+#180	0	/event/billing/product/fee/purchase
+#180	0	/event/billing/item/transfer
+#180	0	/event/billing/payment/check
+#180	0	/event/billing/payment/cash
+#180	0	/event/billing/payment/cc
+#180	0	/event/billing/payment/dd
+#180	0	/event/billing/payment/payorder
+#180	0	/event/billing/payment/postalorder
+#180	0	/event/billing/payment/sepa
+#180	0	/event/billing/payment/voucher
+#180	0	/event/billing/payment/wtransfer
+#180	0	/event/billing/refund/cash
+#180	0	/event/billing/refund/cc
+#180	0	/event/billing/refund/check
+#180	0	/event/billing/refund/dd
+#180	0	/event/billing/refund/payorder
+#180	0	/event/billing/refund/postalorder
+#180	0	/event/billing/refund/sepa
+#180	0	/event/billing/refund/voucher
+#180	0	/event/billing/refund/wtransfer
+#180	0	/event/billing/reversal/cash
+#180	0	/event/billing/reversal/cc
+#180	0	/event/billing/reversal/check
+#180	0	/event/billing/reversal/dd
+#180	0	/event/billing/reversal/payorder
+#180	0	/event/billing/reversal/postalorder
+#180	0	/event/billing/reversal/sepa
+#180	0	/event/billing/reversal/voucher
+#180	0	/event/billing/reversal/wtransfer
+#180	0	/event/billing/settlement/bill
+#180	0	/event/billing/settlement/item
+#180	0	/event/billing/settlement/event
+#180	0	/event/billing/settlement/tax_event
+#180	0	/event/billing/writeoff/bill
+#180	0	/event/billing/writeoff/billinfo
+#180	0	/event/billing/writeoff/item
+#180	0	/event/billing/writeoff/tax_item
+#180	0	/event/billing/writeoff/tax_bill
+#180	0	/event/billing/writeoff/tax_billinfo
+#180    0       /event/billing/writeoff_reversal
+#180    0       /event/billing/writeoff_reversal/tax
+#180	0	/event/customer/billinfo/create
+#180	0	/event/customer/billinfo/delete
+#180	0	/event/customer/billinfo/modify
+#180	0	/event/customer/nameinfo
+#180	0	/event/customer/status
+#180	0	/event/device/associate
+#180	0	/event/device/disassociate
+#180	0	/event/group/collections_targets	
+#180	0	/event/group/sharing/charges/create	
+#180	0	/event/group/sharing/charges/modify	
+#180	0	/event/group/sharing/charges/delete	
+#180	0	/event/group/sharing/discounts/create	
+#180	0	/event/group/sharing/discounts/modify	
+#180	0	/event/group/sharing/discounts/delete	
+#180	0	/event/group/sharing/profiles/create	
+#180	0	/event/group/sharing/profiles/modify	
+#180	0	/event/group/sharing/profiles/delete	
+#180	0	/event/notification/bill_now/end
+#180	0	/event/notification/refund/create
+#180	0	/event/notification/service_item/make_bill
+#180	0	/event/schedule/create
+#180	0	/event/schedule/execute
+
+# OCOMC suspense and recycling
+1301    0      /event/notification/suspense/recycle
+1301    0      /event/notification/suspense/batch_resubmit
+1301    0      /event/notification/create/notification_spec
+
+# Trigger CYCLE_FORWARD for below event
+#102     0       /event/billing/topup
+
+#For Installment feature - Commenting till opcodes are
+# available
+#
+#Commented Creating error in purchase deposit
+
+5827	0	/event/notification/billing/start
+5825	0	/event/billing/item/transfer
+4859    0       /event/billing/item/transfer
+4874    0       /event/customer/billinfo/modify
+4860	0	/event/billing/product/fee/purchase/deposit
+
+1301    0      /event/notification/balance/expiry
+1301    0      /event/notification/product/expiry
+1301    0      /event/notification/billing/due
+1301    0      /event/notification/billing/temp_limit
+1301	0      /event/notification/billing/temp_limit/expiry
+1301    0     /event/notification/subscription/renewal_due
+1301    0     /event/notification/subscription/renewal
+1301    0	/event/notification/collections_action/due
+1301    0	/event/notification/installment_schedule/due
+1301    0      /event/notification/subscription/post_renewal_due
+1301    0      /event/notification/balance/post_expiry
+1301    0      /event/notification/billing/post_due
+1301    0      /event/notification/product/post_expiry
+1301    0      /event/notification/collections_action/post_due
+1301    0      /event/notification/installment_schedule/post_due
+1301    0      /event/billing/fee/balance_transfer
+
+1301	0	/event/notification/rental_failure
+1301	0	/event/notification/minimum_amount
+
+1301	0	/event/notification/offering_override/create
+1301	0	/event/notification/offering_override/modify
+1301	0	/event/notification/offering_override/delete
+
+#Events for tracking failed transaction
+1301	0	/event/notification/request/create
+
+1301    0       /event/group/sharing/products/create
+1301    0       /event/group/sharing/products/delete
+1301    0       /event/group/sharing/products/modify
+
+#Events for service life state change 
+1301    0      /event/notification/service/state_change/pre_expiry
+1301    0      /event/notification/service/state_change/post_expiry

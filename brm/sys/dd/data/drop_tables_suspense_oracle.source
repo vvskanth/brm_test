@@ -1,0 +1,32 @@
+--
+-- Copyright (c) 2015, 2017, Oracle and/or its affiliates. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	from object specifications on Wed May 29 05:16:06 2024.
+--
+--	USE THIS FILE WITH CAUTION: NOT FOR USE IN PRODUCTION ENVIRONMENTS
+--
+
+
+drop table susp_batch_resubmit_t;
+drop table susp_usage_edit_t;
+drop table susp_usage_undo_data_t;
+drop table cfg_batch_susp_ode_res_t;
+drop table cfg_batch_susp_reason_t;
+drop table cfg_susp_edfld_t;
+drop table cfg_susp_ode_res_t;
+drop table suspended_batch_t;
+drop table susp_batch_actions_t;
+drop table susp_usage_telco_info_t;
+drop table susp_usage_telco_gprs_info_t;
+drop table susp_usage_telco_gsm_info_t;
+drop table susp_usage_rap_info_t;
+drop table suspended_usage_edits_t;
+drop table susp_usage_edit_actions_t;
+drop table recycle_suspended_usage_t;

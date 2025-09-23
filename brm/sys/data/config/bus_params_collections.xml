@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  $Header: bus_platform_vob/financial/config/xml_utils/bus_params_collections.xml /cgbubrm_7.5.0.portalbase/1 2016/03/09 22:03:31 ansiddha Exp $ -->
+
+<!-- 
+  **************************************************************************
+* Copyright (c) 2015, 2016, Oracle and/or its affiliates. All rights reserved.
+  *
+  * This material is the confidential property of Oracle Corporation
+  * or its licensors and may be used, reproduced, stored or transmitted
+  * only in accordance with a valid Oracle license or sublicense agreement.
+  **************************************************************************
+
+   NAME
+     bus_params_collections.xml
+
+   DESCRIPTION
+     Collections, or debt management, is a proactive process used by businesses to collect overdue payments from their customers. 
+
+   MODIFIED
+   ansiddha    12/03/15 - Creation
+
+-->
+<BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+        <BusParamConfigurationClass>
+                <BusParamsCollections>
+                         <DeliveryPreference>email</DeliveryPreference>
+                </BusParamsCollections>
+        </BusParamConfigurationClass>
+</BusinessConfiguration>

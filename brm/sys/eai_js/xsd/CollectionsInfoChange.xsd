@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xs:schema elementFormDefault="qualified"
+            targetNamespace="http://www.portal.com/schemas/CRMSync"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.portal.com/schemas/CRMSync">
+        <xs:element name="CollectionsInfoChange">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="AccountObj" minOccurs="1" maxOccurs="1"/>
+                                <xs:element ref="CollectionsStartTime" minOccurs="1" maxOccurs="1"/>
+                                <xs:element ref="CollectionsEndTime" minOccurs="1" maxOccurs="1"/>
+                        </xs:sequence>
+                        <xs:attribute ref="InstanceId" use="required"/>
+                </xs:complexType>
+        </xs:element>
+        <xs:element name="AccountObj" type="xs:string"/>
+        <xs:element name="CollectionsStartTime" type="xs:string"/>
+        <xs:element name="CollectionsEndTime" type="xs:string"/>
+        <xs:attribute name="InstanceId" type="xs:string"/>
+</xs:schema>

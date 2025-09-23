@@ -1,0 +1,15 @@
+<!--
+Infranet Bill Info update event..
+-->
+
+<!--
+Common element definitions....
+-->
+
+<!ENTITY % Common SYSTEM "common.dtd">
+%Common;
+
+<!ELEMENT Portal.Infranet.Events.BillInfoUpdate (AccountObj,BillInfo,
+	PayInfo?)>
+<!ATTLIST Portal.Infranet.Events.BillInfoUpdate Version 
+	CDATA #FIXED "1.0" >

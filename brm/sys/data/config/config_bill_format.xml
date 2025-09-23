@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--  $Header: bus_platform_vob/customer/config/load/config_bill_format.xml /cgbubrm_12.0.0.portalbase/2 2021/08/01 05:33:32 vmoteth Exp $ -->
+
+<!-- 
+ Copyright (c) 2021, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     config_bill_format.xml
+
+   DESCRIPTION
+     A skeleton XML file compliant with the /config/bill_format schema.
+
+   NOTES
+     This is just a skeleton XML. Values must be populated before loading.
+
+   MODIFIED   (MM/DD/YY)
+   vmoteth     08/03/21 - Creation
+
+-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_bill_format.xsd">
+
+  <ConfigObject>
+        <ACCOUNT_OBJ>0.0.0.1 /account 1 0</ACCOUNT_OBJ>
+        <DESCR>Bill format of invoice summary</DESCR>
+        <NAME>Summary invoice</NAME>
+  </ConfigObject>
+
+</ObjectList>

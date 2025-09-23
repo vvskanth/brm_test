@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<KafkaConfig version="2.0">
+    <BootstrapServerList>${KAFKA_BOOTSTRAP_SERVER_LIST}</BootstrapServerList>
+    <!-- Optional section for enable security and SSL and also configure ProducerClient parameters. Sample for enabling SSL and SASL PLAIN Auth shown below.
+ -->
+
+    <ProducerConfigs>
+        <!-- Optional section for enable security and SSL. Sample for enabling SSL and SASL PLAIN Auth shown below
+        <ProducerConfig>ssl.truststore.location=${HOME}/kafka/store/client/client.truststore.jks</ProducerConfig>
+        <ProducerConfig>ssl.truststore.password={TrustStorePassword}</ProducerConfig>
+        <ProducerConfig>ssl.keystore.location=${HOME}/kafka/store/client/client.jks</ProducerConfig>
+        <ProducerConfig>ssl.keystore.password={KeyStorePassword}</ProducerConfig>
+        <ProducerConfig>ssl.key.password={KeyPassword}</ProducerConfig>
+        <ProducerConfig>security.protocol=SASL_SSL</ProducerConfig>
+        <ProducerConfig>sasl.mechanism=PLAIN</ProducerConfig>
+        <ProducerConfig>sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required  username="dmkafka" password="{Password}";</ProducerConfig>-->
+
+        <!--set the value of max.block.ms to 3000 (milliseconds) or more, if KafkaAsyncMode is set to false
+                         set the value of max.block.ms to 500  (milliseconds) or less, if KafkaAsyncMode is set to true-->
+        <ProducerConfig>max.block.ms=3000</ProducerConfig>
+    </ProducerConfigs>
+    <KafkaAsyncMode>true</KafkaAsyncMode>   
+    <TopicDefinitions>
+        <!-- Attribute key is optional.
+            Attribute
+                name: Name of the Kafka topic to write to.
+                format: The format for the message
+                    Possible values XML, JSON.
+                style:
+                    For format=XML, possible values for style are
+                        ShortName, NewShortName, CamelCase, OC3CNotification.
+                    For format=JSON, possible values for style are ShortName.
+                key: Possible values are
+                    {PayloadName} : The message payload name ex. CustDelete, CustCreate etc.
+                    {Random} : A random number would be generated and passed as a key.
+		    {Dynamic} : A Dynamic key, NOTIFICATION_KEY is passed.it can be filled from PCM_OP_PUBLISH_POL_PREP_EVENT in the payload.
+                    Static Value: Anything apart from above two values, would be used as is for the key.
+                    Not configured: Payload name would be used as key,
+                                    if the attribute is not configure. -->
+        <DefaultTopicDefinition name="BrmTopic" format="XML" style="CamelCase">
+            <!--
+            Optional list of headers.
+            <Headers>
+                Examples shown below.
+                <Header key="NOTIFICATION_TYPE" value="BRM_{PayloadName}_NOTIFICATION_EVENT" style="UpperCaseUnderscore"/>
+                <Header key="NOTIFICATION_TAG" value="Brm{PayloadName}Event" style="CamelCase"/>
+                <Header key="NOTIFICATION_VERSION" value="1.0.0.0.0"/>
+            </Headers>
+             Optional field mapping
+            <FieldMaps>
+                <FieldMap pinfld="PIN_FLD_ACCOUNT_OBJ" tag="AccountPoid1"/>
+            </FieldMaps>
+            -->
+        </DefaultTopicDefinition>
+        <!--
+        Attributes key is optional.
+        Attribute
+            name: Name of the Kafka topic to write to.
+            format: The format for the message
+                Possible values XML, JSON.
+            style:
+                For format=XML, possible values for style are
+                    ShortName, NewShortName, CamelCase, OC3CNotification.
+                For format=JSON, possible values for style are ShortName.
+            key: Possible values are
+                       {PayloadName} : The message payload name ex. CustDelete, CustCreate etc.
+                       {Random} : A random number would be generated and passed as a key.
+		       {Dynamic} : A Dynamic key, NOTIFICATION_KEY is passed.it can be filled from PCM_OP_PUBLISH_POL_PREP_EVENT in the payload.
+                       Static Value: Anything apart from above two values, would be used as is for the key.
+                       Not configured: Payload name would be used as key,
+                                       if the attribute is not configure.
+        <TopicDefinition name="MessageTopic" format="XML" style="ShortName" key="{Random}">
+            Optional list of headers.
+            <Headers>
+                <Header key="NOTIFICATION_VERSION" value="2.0.0.0.0"/>
+            <Headers/>
+            Optional field mapping. Global for all payloads in topic NotificationTopic.
+            <FieldMaps>
+                <FieldMap pinfld="PIN_FLD_ACCOUNT_OBJ" tag="AccountPoid2"/>
+                <FieldMap pinfld="PIN_FLD_BILL_OBJ" tag="BillPoid2"/>
+            </FieldMaps>
+            * If the same field mapping is present at both Topic level and Payload level,
+              the payload level mapping overrides the Topic level mapping.
+            * If a payload mapping is present at Topic level but not defined at the
+              Payload level, the one in the Topic level would be used.
+            * If a payload mapping is present in Payload level but not defined at the
+              Topic level, the one in the Payload level would be used.
+            <Payloads>
+                Attributes key and partition are optional. key attribute specified at
+                Payload level overrides the attribute specified at the
+                TopicDefinition level.
+                <Payload name="CustDelete" key="{PayloadName}" partition="2">
+                    Optional field mapping. Local to payload CustDelete.
+                    Field mappings available for Payload CustDelete as per this
+                    configuration is
+                            PIN_FLD_ACCOUNT_OBJ=AccountPoid3
+                            PIN_FLD_BILL_OBJ=BillPoid2
+                            PIN_FLD_BAL_GRP_OBJ=BalGrpPoid3
+                    <FieldMaps>
+                        <FieldMap pinfld="PIN_FLD_ACCOUNT_OBJ" tag="AccountPoid3"/>
+                        <FieldMap pinfld="PIN_FLD_BAL_GRP_OBJ" tag="BalGrpPoid3"/>
+                    </FieldMaps>
+                </Payload>
+                <Payload name="BillInfoUpdate" key="{Random}">
+                    Optional field mapping. Local to payload BillInfoUpdate.
+                    Field mappings available for Payload CustDelete as per this
+                    configuration is
+                            PIN_FLD_ACCOUNT_OBJ=AccountPoid4
+                            PIN_FLD_BILL_OBJ=BillPoid2
+                    <FieldMaps>
+                        <FieldMap pinfld="PIN_FLD_ACCOUNT_OBJ" tag="AccountPoid4"/>
+                    </FieldMaps>
+                </Payload>
+                    Field mappings available for Payload ProductPurchase and ProductCancel
+                    as per this configuration is
+                            PIN_FLD_ACCOUNT_OBJ=AccountPoid2
+                <Payload name="ProductPurchase"/>
+                <Payload name="ProductCancel"/>
+            </Payloads>
+        </TopicDefinition>
+        -->
+    </TopicDefinitions>
+</KafkaConfig>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--==================================================================================
+ Copyright (c) 2004, 2023, Oracle and/or its affiliates.
+        This material is the confidential property of Oracle Corporation or its
+        licensors and may be used, reproduced, stored or transmitted only in
+        accordance with a valid Oracle license or sublicense agreement.
+        =================================================================================--> 
+ <BusinessConfiguration 
+	xmlns="http://www.portal.com/schemas/BusinessConfig" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation=
+		"http://www.portal.com/schemas/BusinessConfig 
+			       	business_configuration.xsd">
+
+ <!-- Sample file. Modify according to guidelines -->
+
+ <BusinessProfileConfiguration>
+	
+	<!-- List business profiles -->
+	<BusinessProfileList>
+ 	
+		<BusinessProfile name="Prepaid" >
+
+  			<Desc> Description of the business profile </Desc>
+
+			<!-- List templates -->
+  			<TemplateId name="Service A" type="/service" /> 
+  			<TemplateId name="Balance Group" type="/balance_group" /> 
+			<TemplateId name="Billinfo" type="/billinfo" />
+			<TemplateId name="Sharing" type="/group/sharing" />
+
+			<!-- List key values -->
+  			<NameValue key="Prepaid" value="yes" /> 
+			<!-- Default_Accounting_Type 
+			     Provided values are:
+			     1. Open_Item - The PIN_FLD_ACTG_TYPE is set to PIN_ACTG_TYPE_OPEN_ITEMS (1)- Default setting.
+			     2. Balance_Forward  - The PIN_FLD_ACTG_TYPE is set to PIN_ACTG_TYPE_BALANCE_FORWARD (2)
+			     3. none  - The PIN_FLD_ACTG_TYPE is set to OOB BRM default system setting PIN_ACTG_TYPE_BALANCE_FORWARD (2)
+			     Given any other value - Throws an error
+			-->
+			<NameValue key="Default_Accounting_Type" value="Open_Item" />
+			<!-- Sharing_Groups_Enabled
+                             Possible values are: yes or no. Default is yes.
+                             yes - sharing is used for prepaid accounts
+                             no - sharing is not used for prepaid accounts
+                        -->
+			<NameValue key="Sharing_Groups_Enabled" value="yes" />
+                        
+                        <!-- Comma separated list of opcodes for which trigger billing should be skipped.
+                             Uncomment the following line entry and set the value appropriately to skip.
+                        <NameValue key="Skip_Trigger_Billing_Opcodes" value="PCM_OP_BILL_DEBIT,PCM_OP_PYMT_TOPUP" />
+                        -->
+
+  		</BusinessProfile>
+
+		<BusinessProfile name="WholesaleBilling" >
+        		<Desc> Description of the business profile. </Desc>
+
+        		<!-- List key values -->
+        		<NameValue key="WholesaleBilling" value="yes" />
+		</BusinessProfile>
+
+		<BusinessProfile name="PurchaseRounding" >
+                        <Desc> configure offer validity and scale rounding when default value is used, 
+				at the product level </Desc>
+
+                        <!-- List key values -->
+                        <NameValue key="DISCOUNT_VALIDITY_ROUNDING" value="NOT_SET" />
+                        <NameValue key="OFFER_VALIDITY_ROUNDING" value="NOT_SET" />
+                        <NameValue key="SCALE_ROUNDING" value="OFF" />
+                        <!-- Discount_validity_rounding/Offer_validity_rounding 
+                             Possible values are: NOT_SET, ON, OFF
+				NOT_SET - Use timestamp rounding at system level. This is the default value.
+				ON	- override timestamp rounding at system level and start at 00:00 of day.
+				OFF	- override timestamp rounding at system level and start at purchase time.
+			     
+			     scale_rounding
+                             Possible values are: ON, OFF
+				OFF	- Calculate scale based on the validity. This is the default value.
+				ON	- Scale based on full day.
+                        -->
+                </BusinessProfile>
+
+                <BusinessProfile name="ExtendProductBasedOnDates" >
+                        <Desc> Skip extending product validity based on purchase dates and 
+                                create new instance of product offering. </Desc>
+
+                        <!-- List key values -->
+                        <NameValue key="EXTEND_PRODUCT_BASED_ON_DATES" value="0" />
+                        <!-- Possible values are:
+                             0  - disable
+                             1  - enable 
+                        -->
+                </BusinessProfile>
+		
+                <BusinessProfile name="RetainPurchaseDatesDuringCancel" >
+                        <Desc> Retain purchase date during cancel of a future dated offer 
+				that has not yet started when end_t is less than
+				cycle/usage/purchase start_t </Desc>
+
+                        <!-- List key values -->
+                        <NameValue key="RETAIN_PURCHASE_DATES_DURING_CANCEL" value="0" />
+                        <!-- Possible values are:
+                             0  - disable
+                             1  - enable
+                        -->
+                </BusinessProfile>
+		
+		<BusinessProfile name="CorporateAutoSharingGroupType" >
+                        <Desc> Description of the business profile. </Desc>
+
+                        <!-- List key values -->
+                        <NameValue key="H_DSG" value="1" />
+                        <NameValue key="PR_DSG" value="0" />
+                        <NameValue key="H_PSG" value="1" />
+                        <NameValue key="PR_PSG" value="0" />
+                        <!-- Sharing Hierarchy Type enable or disable
+                                                          Possible values are: 
+                             0  - disable
+                             1  - enable
+                        -->
+                </BusinessProfile>
+
+                <BusinessProfile name="PostpaidAutoSharingGroupType" >
+                        <Desc> Description of the business profile. </Desc>
+
+                        <!-- List key values -->
+                        <NameValue key="H_DSG" value="0" />
+                        <NameValue key="PR_DSG" value="1" />
+                        <NameValue key="H_PSG" value="0" />
+                        <NameValue key="PR_PSG" value="1" />
+                        <!-- Sharing Hierarchy Type enable or disable
+                                                          Possible values are: 
+                             0  - disable
+                             1  - enable
+                        -->
+                </BusinessProfile>
+
+		<BusinessProfile name="ConsumerInvoice" type="Invoice">
+
+                        <Desc> Description of the business profile </Desc>
+
+                        <!-- List templates -->
+                        <TemplateId name="InvoiceIntegration" type="/billinfo" />
+
+                        <!-- List key values -->
+                        <NameValue key="Report_Name" value="BRM_Consumer_Invoice_Report" />
+                        <NameValue key="Template_Name" value="BRM_Consumer_Invoice" />
+			<NameValue key="Replacement_Report_Name" value="BRM_Consumer_Replacement_Invoice_Report"/>
+			<NameValue key="Replacement_Template_Name" value="BRM_Consumer_Replacement_Invoice"/>
+
+			<NameValue key="Correction_Report_Name" value="BRM_Consumer_Correction_Invoice_Report"/>
+			<NameValue key="Correction_Template_Name" value="BRM_Consumer_Correction_Invoice"/>
+
+                </BusinessProfile>
+                <BusinessProfile name="CorporateInvoice" type="Invoice">
+
+                        <Desc> Description of the business profile </Desc>
+
+                        <!-- List templates -->
+                        <TemplateId name="InvoiceIntegration" type="/billinfo" />
+
+                        <!-- List key values -->
+                        <NameValue key="Report_Name" value="BRM_Corporate_Invoice_Report" />
+                        <NameValue key="Template_Name" value="BRM_Corporate_Invoice" />
+			<NameValue key="Replacement_Report_Name" value="BRM_Corporate_Replacement_Invoice_Report"/>
+			<NameValue key="Replacement_Template_Name" value="BRM_Corporate_Replacement_Invoice"/>
+
+			<NameValue key="Correction_Report_Name" value="BRM_Corporate_Correction_Invoice_Report"/>
+			<NameValue key="Correction_Template_Name" value="BRM_Corporate_Correction_Invoice"/>
+
+                </BusinessProfile>
+
+		<!-- List business profiles to delete -->
+		<BusinessProfile name="Postpaid" action = "delete" />
+
+  	</BusinessProfileList>
+
+	<!-- List templates -->
+ 	<TemplateList>
+ 
+ 		<Template name="Service A" type="/service" >
+
+ 			<Desc> Description of the template </Desc>
+			
+			<!-- List the rules for validating the service -->
+  			<Iscript>
+ 			</Iscript>
+
+			<!-- List key values -->
+  			<NameValue key="Service Gold" value="Yes" /> 
+
+ 		 </Template>
+
+		<Template  name="InvoiceIntegration"  type="/billinfo">
+                        <Desc> Description of the template </Desc>
+                        <!-- List the rules for validating the billinfo -->
+                       <Iscript>
+
+                        Long parentFlags = flistGetLong(IN,PIN_FLD_PARENT_FLAGS);
+                        if (parentFlags == 0) {
+                                flistSetEnum( OUT, PIN_FLD_RESULT, 1);
+		   		flistSetStr(OUT, PIN_FLD_NAME, "ConsumerInvoice");
+                        } else if(parentFlags > 0) {
+                                flistSetEnum(OUT, PIN_FLD_RESULT, 1);
+                                flistSetStr(OUT, PIN_FLD_NAME, "CorporateInvoice");
+                        }
+                        </Iscript>
+                        <!-- List key values -->
+		</Template>
+
+
+		<Template name="Balance Group" type="/balance_group">
+
+		  <Desc>Balance group with a check for zero limit </Desc>
+			
+		  <!-- List the rules for validating the balance group -->
+		  <Iscript>
+		   Decimal CREDIT_LIMIT_ALLOWED = 0;
+		   Poid inPoid = flistGetPoid(IN,PIN_FLD_POID);
+		   String dbID = poidGetDbStr( inPoid );
+
+		   Flist search = flistCreate();
+		   Poid p = poidCreate (dbID,"/search", 500);
+		   flistSetPoid( search, PIN_FLD_POID, p );
+		   flistSetStr(search, PIN_FLD_PARAMETERS, "credit_profile");
+
+		   Flist argFlist = flistCreate();
+                   Poid cpPoid = poidCreate (dbID,"/config/credit_profile", -1);
+                   flistSetPoid( argFlist, PIN_FLD_POID, cpPoid );
+                   flistSetElem( search, PIN_FLD_ARGS, argFlist, 1 );
+
+                   Flist result = flistCreate();
+                   flistSetElem(search, PIN_FLD_RESULTS,result, 0);
+
+                   pinlog(3, "Search Flist\n" + flistToStr( search ) );
+
+                   // Do a readobject
+                   Flist out = pcmOpCatch(7, 0, search, PINERR);
+                   pinlog(3, "Result Flist\n\n" + flistToStr( out) );
+
+                   Flist creditFlist = flistGetElem(out, PIN_FLD_RESULTS, 0);
+                   flistSetEnum( OUT, PIN_FLD_RESULT, 1);
+
+                   // Get the credit profile index from each balances 
+		   // in the input flist
+                   Iterator j = flistGetElements( IN, PIN_FLD_BALANCES );
+                   while( iteratorHasMore( j ) ) {
+                       Flist h = iteratorGetNext( j );
+                       Long recid = iteratorGetRecId( j );
+                       if( flistFldExists( h, PIN_FLD_CREDIT_PROFILE )) {
+                           Long index = flistGetLong( h, PIN_FLD_CREDIT_PROFILE );
+                           Flist tmpFlist = flistGetElem
+			       (creditFlist,PIN_FLD_PROFILES, index);
+                           Decimal creditLimit = flistGetDecimal
+			       (tmpFlist, PIN_FLD_CREDIT_LIMIT);
+                           pinlog(3, " Credit Profile Index :" + longToStr(index) +
+                                 " Credit Limit :" + decimalToStr(creditLimit) );
+                           if ( creditLimit > CREDIT_LIMIT_ALLOWED ) {
+                                   flistSetEnum( OUT, PIN_FLD_RESULT, 0);
+                           }
+                        }
+                        else {
+                            pinlog(2,  "PIN_FLD_CREDIT_PROFILE not found");
+                                flistSetEnum( OUT, PIN_FLD_RESULT, 0);
+                        }
+                   }
+         	  </Iscript>
+
+		  <!-- List key values -->
+  		  <NameValue key="Credit Limit" value="0" /> 
+
+		</Template>
+
+  		<Template name="Billinfo" type="/billinfo">
+
+ 			<Desc> Description of the template </Desc>
+
+			<!-- List the rules for validating the billinfo 
+				Default_Accounting_Type is set to Open_Items
+				Modification of billinfo goes through
+				validation against what is specified 
+				for Default_Accounting_Type.
+			-->
+ 			<Iscript>
+				pinlog(3, "Input Flist\n" + flistToStr( IN ) );
+                                // Get the config business_profile poid
+                                if( flistFldExists( IN, PIN_FLD_BUSINESS_PROFILE_OBJ)) {
+                                        pinlog(2,  " Business_profile Validation for ACTG_TYPE");
+
+                                        Long default_accounting_type_set = 0; // none
+
+                                        Poid biPoid = flistGetPoid(IN, PIN_FLD_POID);
+                                        Poid bpPoid = flistGetPoid(IN, PIN_FLD_BUSINESS_PROFILE_OBJ);
+
+                                        // Call GET_BUSINESS_PROFILE_INFO to get the key value pair
+                                        Flist readFlist = flistCreate();
+                                        flistSetPoid(readFlist, PIN_FLD_POID, bpPoid);
+                                        Flist proFlist  = flistCreate();
+                                        flistSetStr(proFlist, PIN_FLD_PAIR_KEY, "Default_Accounting_Type");
+                                        flistSetStr(proFlist, PIN_FLD_OBJ_TYPE, "");
+                                        flistSetElem(readFlist, PIN_FLD_PROFILES, proFlist, 0);
+                                        Flist out = pcmOpCatch(3909, 0, readFlist, PINERR);
+                                        pinlog(3, "Iscript call Get_business_profile_info return Flist\n\n" + flistToStr( out) );
+
+                                        Iterator p = flistGetElements( out, PIN_FLD_PROFILES );
+                                        while ( iteratorHasMore(p) ) {
+                                                Flist profilesFlist = iteratorGetNext(p);
+                                                String accounting_type = flistGetStr(profilesFlist, PIN_FLD_PAIR_VALUE);
+
+                                                if ((accounting_type == "Open_Item") OR
+                                                        (accounting_type == "Balance_Forward") OR (accounting_type == "none")) {
+							flistSetEnum(OUT, PIN_FLD_RESULT, 1);
+                                                        if (accounting_type == "none") {
+                                                                pinlog(2,  "None set for ACTG_TYPE");
+                                                        } else {
+                                                                // Billinfo Creation Time set it to default.
+                                                                if ( poidIsTypeOnly( biPoid ) ) {
+                                                                        if (accounting_type == "Open_Item"){
+                                                                                flistSetEnum( OUT, PIN_FLD_ACTG_TYPE, 1);
+										pinlog(2,  "Open_Item set for ACTG_TYPE");
+                                                                        }
+                                                                        if (accounting_type == "Balance_Forward") {
+                                                                                flistSetEnum( OUT, PIN_FLD_ACTG_TYPE, 2);
+										pinlog(2,  "Balance_Forward set for ACTG_TYPE");
+                                                                        }
+                                                                } else {
+                                                                        // If ACTG_TYPE provided in the input because of
+                                                                        // CHANGE_BUSINESS_PROFILE and MODIFY_BILLINFO
+                                                                        if (flistFldExists( IN, PIN_FLD_ACTG_TYPE)) {
+                                                                           Long newActgType = flistGetEnum(IN,PIN_FLD_ACTG_TYPE);
+                                                                           if (accounting_type == "Open_Item") {
+                                                                                default_accounting_type_set = 1;
+                                                                           }
+                                                                           if (accounting_type == "Balance_Forward") {
+                                                                                default_accounting_type_set = 2;
+                                                                           }
+                                                                           if (newActgType != default_accounting_type_set) {
+                                                                               pinlog(2,  "PIN_FLD_ACTG_TYPE  cannot be changed");
+                                                                                flistSetEnum( OUT, PIN_FLD_RESULT, 0);
+                                                                           }
+                                                                        }
+                                                                }
+                                                        }
+                                                } else {
+                                                        pinlog(2,  "Error undefined Default_Accounting_type: "
+                                                                "Defined Values are Open_Item or Balance_Forward or none");
+                                                        flistSetEnum( OUT, PIN_FLD_RESULT, 0);
+                                                }
+                                        } // while
+                                }
+ 			</Iscript>
+			<!-- List key values -->
+                        <NameValue key="Prepaid" value="yes" />
+
+                </Template>
+		<Template name="Sharing" type="/group/sharing">
+
+                        <Desc> Description of the template </Desc>
+                        <!-- List the rules for validating the /group/sharing 
+				When Sharing_Groups_Enabled is set to NO
+				then sharing groups objects are not searched in system
+			-->
+                        <Iscript>
+                                pinlog(3, "Input Flist\n" + flistToStr( IN ) );
+                                if( flistFldExists( IN, PIN_FLD_BUSINESS_PROFILE_OBJ)) {
+                                        pinlog(2,  " Business_profile Validations for Sharing_Groups");
+                                        Bool found = false;
+
+                                        Poid biPoid = flistGetPoid(IN, PIN_FLD_POID);
+                                        Poid bpPoid = flistGetPoid(IN, PIN_FLD_BUSINESS_PROFILE_OBJ);
+
+                                        flistSetEnum( OUT, PIN_FLD_RESULT, 1);
+
+                                        // Call GET_BUSINESS_PROFILE_INFO to get the key value pair
+                                        Flist readFlist = flistCreate();
+                                        flistSetPoid(readFlist, PIN_FLD_POID, bpPoid);
+                                        Flist proFlist  = flistCreate();
+                                        flistSetStr(proFlist, PIN_FLD_PAIR_KEY, "Sharing_Groups_Enabled");
+                                        flistSetStr(proFlist, PIN_FLD_OBJ_TYPE, "/config/business_profile");
+                                        flistSetStr(proFlist, PIN_FLD_OBJ_TYPE, "");
+                                        flistSetElem(readFlist, PIN_FLD_PROFILES, proFlist, 0);
+                                        Flist out = pcmOpCatch(3909, 0, readFlist, PINERR);
+
+                                        // Check if Sharing_Group_Enabled is set.
+                                        Iterator j = flistGetElements(out, PIN_FLD_PROFILES );
+                                        while( iteratorHasMore( j ) )  {
+                                           //break; doesn't work in for loop
+                                           Long recid = iteratorGetRecId( j );
+                                           Flist profFlist = iteratorGetNext( j );
+                                            if (found == false) {
+                                                String key_pair = flistGetStr(profFlist, PIN_FLD_PAIR_KEY);
+                                                if (key_pair == "Sharing_Groups_Enabled")
+                                                {
+							pinlog(3, "Business_profiles PROFILES\n\n" + flistToStr( profFlist) );
+                                                        String key_value = flistGetStr(profFlist, PIN_FLD_PAIR_VALUE);
+							if ((key_value == "no") or (key_value == "yes")) {
+								if (key_value == "no") {
+								   pinlog(2,  "KeyValue set to no for Sharing_Groups");
+								   flistSetEnum( OUT, PIN_FLD_RESULT, 0);
+								 } else if (key_value == "yes") {
+								   pinlog(2,  "KeyValue set to yes for Sharing_Groups");
+								   flistSetEnum( OUT, PIN_FLD_RESULT, 1);
+								 }
+								found = true;
+							} else {
+								pinlog(2,  "Error undefined Sharing_Groups_Enabled value: "
+									"Defined Values are yes or no - case sensitive");
+								flistSetEnum( OUT, PIN_FLD_RESULT, 0);
+							}
+                                                }
+                                            } // found is false
+                                        } //while
+                                } // IF BUSINESS_PROFILE_OBJ exists
+                        </Iscript>
+
+			<!-- List key values -->
+  			<NameValue key="Prepaid" value="yes" />
+
+		</Template>
+
+		<!-- List templates to delete -->
+		 <Template name="Service X" type="/service" action = "delete"/>
+
+  	</TemplateList>
+
+  </BusinessProfileConfiguration>
+
+  </BusinessConfiguration>

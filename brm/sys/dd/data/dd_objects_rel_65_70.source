@@ -1,0 +1,268 @@
+#
+# Copyright (c) 2005, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet.This file is the difference between the 65 and 70 
+#	releases. 
+#
+
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 2
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/batch/rel"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_DESCR           STR [0] "A batch subclass used to record Rated Event Loader session information. The session object of the events loaded by this Batch REL session refer to this object's Portal object id."
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 17
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_DESCR           STR [0] "Substruct containing information about this Batch REL session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "batch_rel_t"
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REL_INFO"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 11
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_LENGTH          INT [0] 32
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "An optional label representing the name of the process which created the input data file. Example labels include: RATING_PIPELINE, RERATING_PIPELINE, PIN_REL_TRANSFORM_CDR."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATION_PROCESS"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "creation_process"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the last object loaded."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_END_POID_ID0"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "end_poid_id0"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 11
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "Fully-qualified name of the data file loaded by this Batch REL session."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INPUT_FILE_NAME"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "input_file_name"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "The quantity of records read in from the data file.  This is not necessarily equivalent to the line count of the data file."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_TOTAL_RECORDS"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_total_records"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "This value represents the load partition used by the Batch REL session to load data.  The partition number (1 to 8) is embedded in the four high-bits of the Portal object id for the objects which the session loads.  Note that this partition data is not tied directly to the time based partitions."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARTITION_NUMBER"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "partition_number"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "An optional value related to the input file which can be used for tracking and auditing purposes.  For example, Infranet re-rating functionality in the Event Extraction Tool can select objects based on this value."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SEQUENCE_NUM"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sequence_num"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the first object loaded."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_POID_ID0"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "start_poid_id0"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "A unique identifier for this Batch REL session used for synchronizing critical sections with other running Batch REL sessions."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SYNC_ID"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sync_id"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 11
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "A semicolon delimited list of the table names loaded by this session."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TABLES"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "tables"
+3             PIN_FLD_ACTION          STR [0] "NOOP"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_DESCR           STR [0] "Each element in this array corresponds to a sub-process of this batch REL session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "rel_sub_processes_t"
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUB_PROCESSES"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "The number of database operations (i.e. updates) to perform before committing the work."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_SIZE"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "batch_size"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_LENGTH          INT [0] 32
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "An optional label representing the name of the process which created the input data file. Example labels include: RATING_PIPELINE, RERATING_PIPELINE, PIN_REL_TRANSFORM_CDR."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATION_PROCESS"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "creation_process"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the last object processed."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_END_POID_ID0"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "end_poid_id0"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "The name of the process to operate on this element."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "The quantity of records processed thus far."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_PROCESSED"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_processed"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "The quantity of sub-balance records processed thus far."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_SUB_BAL_PROCESSED"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_sub_bal_processed"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "Additional parameters the process uses to operate on this element."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARAMETERS"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "parameters"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the first object processed."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_POID_ID0"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "start_poid_id0"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "Status for this sub-process."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "The failure message reported from processing this sub-process element."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS_MSG"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status_msg"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "A semicolon delimited list of the table names used to process this sub-process element."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TABLES"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "tables"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_DESCR           STR [0] "The number of objects which should be processed between the PIN_FLD_START_POID_ID0 and PIN_FLD_END_POID_ID0 values."
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TOTAL_RECORDS"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "total_records"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+1     PIN_FLD_ACTION          STR [0] "NOOP"
+</PCM_OP>

@@ -1,0 +1,14 @@
+<!--
+Infranet Payinfo update update event.
+-->
+
+<!--
+Common element definitions....
+-->
+
+<!ENTITY % Common SYSTEM "common.dtd">
+%Common;
+
+<!ELEMENT Portal.Infranet.Events.PayInfoUpdate (AccountObj,PayInfo)>
+<!ATTLIST Portal.Infranet.Events.PayInfoUpdate Version 
+CDATA #FIXED "1.0" >

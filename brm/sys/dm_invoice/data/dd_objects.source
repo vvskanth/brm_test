@@ -1,0 +1,338 @@
+#
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:52 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 3
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 41, used 28
+1     PIN_FLD_NAME            STR [0] "/invoice"
+1     PIN_FLD_DESCR           STR [0] "Invoice objects represent invoices. Each bill object can have a corresponding invoice object. Invoice objects can be stored in another database for the purpose of performance improvement."
+1     PIN_FLD_SEQ_START       INT [0] 1000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "This is a link to the account object for which this object was created."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILL_OBJ"
+2         PIN_FLD_DESCR           STR [0] "This is a link to the bill object for which the invoice is created."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "bill_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_DESCR           STR [0] "This is the time that the invoice object was first created."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILL_NO"
+2         PIN_FLD_DESCR           STR [0] "This is the corresponding bill number for the invoice object."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_LENGTH          INT [0] 60
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "bill_no"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILL_DATE_T"
+2         PIN_FLD_DESCR           STR [0] "Time the billing cycle ends, equal toPIN_FLD_END_T in /bill objects"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "bill_date_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 17
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_HEADER_NUM"
+2         PIN_FLD_DESCR           STR [0] "This is a generic user-definable header number field."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "header_num"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_HEADER_STR"
+2         PIN_FLD_DESCR           STR [0] "This is a generic user-definable header string field."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "header_string"
+1     PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INV_FLAGS"
+2         PIN_FLD_DESCR           STR [0] "This is the invoice type, html, xml, xslt, doc1 or  plain text."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "inv_flags"
+1     PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CHECK_SPLIT_FLAGS"
+2         PIN_FLD_DESCR           STR [0] "This is split mode of the invoice whether the invoice is consolidated or split :  0 - no split. All parent and subord details are at the parent invoice.   1 - parent invoice has its own details and invoices of subords have their own details."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "check_split_flags"
+1     PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUSES"
+2         PIN_FLD_DESCR           STR [0] "This holds the statuses for each invoice. Statuses are invoice created, emailed and printed."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "The invoice status"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EFFECTIVE_T"
+3             PIN_FLD_DESCR           STR [0] "This is the time the status becomes effective."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "effective_t"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "invoice_statuses_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/invoice.PIN_FLD_STATUSES'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FORMATS"
+2         PIN_FLD_DESCR           STR [0] "This array contains the invoice in each format: text/pin_flist, text/xml, text/html, and text/doc1. Each invoice object must be saved  in at least one format. The default format is text/pin_flist"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 6
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BUFFER"
+3             PIN_FLD_DESCR           STR [0] "This holds the content of an invoice in a specific format."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "C=buffer T=invoice_formats_buf_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/invoice.PIN_FLD_FORMATS.PIN_FLD_BUFFER'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 17
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_HEADER_NUM"
+3             PIN_FLD_DESCR           STR [0] "A generic user-definable header number field for each format"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "header_num_arr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INV_SIZE"
+3             PIN_FLD_DESCR           STR [0] "Invoice Size in KB"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "inv_size"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_HEADER_STR"
+3             PIN_FLD_DESCR           STR [0] "A generic user definable header string field for each format"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "header_str_arr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOCALE"
+3             PIN_FLD_DESCR           STR [0] "This holds the preferred locale for invoice. It is used by applicatios. It may be used to drive UI in self-care web pages. The format is Windows NT 3-letter locale code (ISO 639 two letter language and one letter sublanguage). For example for US English the value is ENU."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "locale"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE_STR"
+3             PIN_FLD_DESCR           STR [0] "Invoice file format type string in mime, Default: text/pin_flist "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "type_str"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EFFECTIVE_T"
+3             PIN_FLD_DESCR           STR [0] "This is the time the status becomes effective."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "effective_t"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "invoice_formats_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/invoice.PIN_FLD_FORMATS'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_DESCR           STR [0] "The time that invoice object was last modified."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_DESCR           STR [0] "Object ID. Guaranteed unique system-wide"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "This is System managed read access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group and (A)ncestral Lineage."
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "This is System managed write access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group and (A)ncestral Lineage."
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+2         PIN_FLD_DESCR           STR [0] "Status of the Invoice object whether the Final Invoice Document has been generated or not. Possible values PIN_INV_STATUS_PENDING (0), PIN_INV_STATUS_GENERATED (1), PIN_INV_STATUS_REGENERATED (2), PIN_INV_STATUS_SCHEDULED(3), PIN_INV_STATUS_ERRORED(4), PIN_INV_STATUS_DUPLICATED(5). "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+1     PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the billinfo object for this Invoice object is created."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [17] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REPORT_NAME"
+2         PIN_FLD_DESCR           STR [0] "Link to the BIP Report Name configured in the report name of Invoicing Business Profile pointed by the billinfo whose invoice is generated."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "report_name"
+1     PIN_FLD_OBJ_ELEM      ARRAY [18] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TEMPLATE_NAME"
+2         PIN_FLD_DESCR           STR [0] "Link to the template name configured in the template name of Invoicing Business Profile pointed by the billinfo whose invoice is generated."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "template_name"
+1     PIN_FLD_OBJ_ELEM      ARRAY [19] allocated 20, used 14
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLS"
+2         PIN_FLD_DESCR           STR [0] "Bill related information for trial billing "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_T"
+3             PIN_FLD_DESCR           STR [0] "The start_t of bill period "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "start_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_END_T"
+3             PIN_FLD_DESCR           STR [0] "The end_t of the bill period"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "end_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AR_BILLINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to AR billinfo object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ar_billinfo_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DUE"
+3             PIN_FLD_DESCR           STR [0] "Total charges from items directly owned by this bill"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "due"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ADJUSTED"
+3             PIN_FLD_DESCR           STR [0] "Total amount of adjustments that have been made to this bill."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "adjusted"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITEOFF"
+3             PIN_FLD_DESCR           STR [0] "Total amount of write-off applied against against the bill."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "writeoff"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DISPUTED"
+3             PIN_FLD_DESCR           STR [0] "Total amount of disputes that are currently open against the bill."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "disputed"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECVD"
+3             PIN_FLD_DESCR           STR [0] "Total amount of payments or credits applied against this bill."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "recvd"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "invoice_bills_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/invoice.PIN_FLD_BILLS'}"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "invoice_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/invoice'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/data/sequence"
+1     PIN_FLD_DESCR           STR [0] "A singleton configuration object of this class is used to maintain various sequence number generators used by the system to stamp bills, items etc. with unique and usually monotonically increasing identifiers. This is also used to generate transaction ids for correlating information with external system like payment engines. A predefined instance is loaded from init_objects.source during installation. It is recommended that you configure the various sequence number formats only once. You may define additional sequences for your use by using element ids greater than 1000000 or  you may define other sequence objects with poid id."
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Global"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/data/sequence_lock"
+1     PIN_FLD_READ_ACCESS     STR [0] "Self"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_DESCR           STR [0] "Reserved for internal use only.  Each object for this storable-class correlates to the database mechanism for allocating new poid_id0 values.  It is specifically used to support retrieving a range of poid_id0 values; it uses the object with the 'name' of the database sequence to hold a lock on the record when making alterations to the sequence.  Consequently, there should be one object for each poid_id0-generating sequence in the database which supports range retrieval."
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

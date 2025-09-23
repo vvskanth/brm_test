@@ -1,0 +1,121 @@
+#
+# @(#)$Id: init_objects_collections.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:44:14 nishahan Exp $
+#
+#
+# Copyright (c) 2002, 2012, Oracle and/or its affiliates. All rights reserved. 
+#
+#	This material is the confidential property of Oracle Corporation
+#	or its licensors and may be used, reproduced, stored or transmitted
+#	only in accordance with a valid Oracle license or sublicense agreement.
+#
+#=============================================================================#
+
+# /config/collections/profile/default - Default profile
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/collections/profile/default 801
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "config collections profile"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "config collections profile"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+0 PIN_FLD_PROFILE_INFO  SUBSTRUCT [0]
+1	PIN_FLD_PROFILE_NAME	STR [0] "Default (USD)"
+1	PIN_FLD_PROFILE_DESCR	STR [0] "Default profile for US Dollar currency"
+1	PIN_FLD_CURRENCY	INT [0] 840
+</PCM_OP> 
+
+# /config/collections/action - Writeoff Billinfo 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/collections/action 821 
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "config collections actions"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "config collections actions"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+0 PIN_FLD_CONFIG_ACTION_INFO  SUBSTRUCT [0]
+1	PIN_FLD_ACTION_NAME	STR [0] "Writeoff Billinfo"
+1	PIN_FLD_ACTION_DESCR	STR [0] "Writeoff Billinfo"
+1	PIN_FLD_ACTION_TYPE	STR [0] "writeoff_billinfo"
+1	PIN_FLD_OPCODE		INT [0] 4512
+1	PIN_FLD_TEMPLATE_OBJ	POID [0] NULL
+</PCM_OP> 
+
+# /config/collections/action - Close Billinfo 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/collections/action 822 
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "config collections actions"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "config collections actions"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+0 PIN_FLD_CONFIG_ACTION_INFO  SUBSTRUCT [0]
+1	PIN_FLD_ACTION_NAME	STR [0] "Close Services of Billinfo"
+1	PIN_FLD_ACTION_DESCR	STR [0] "Close Services of Billinfo"
+1	PIN_FLD_ACTION_TYPE	STR [0] "close_billinfo"
+1	PIN_FLD_OPCODE		INT [0] 62
+1	PIN_FLD_TEMPLATE_OBJ	POID [0] NULL
+</PCM_OP> 
+
+# /config/collections/action - Inactivate Billinfo 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/collections/action 823 
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "config collections actions"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "config collections actions"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+0 PIN_FLD_CONFIG_ACTION_INFO  SUBSTRUCT [0]
+1	PIN_FLD_ACTION_NAME	STR [0] "Inactivate Services of Billinfo"
+1	PIN_FLD_ACTION_DESCR	STR [0] "Inactivate Services of Billinfo"
+1	PIN_FLD_ACTION_TYPE	STR [0] "inactivate_billinfo"
+1	PIN_FLD_OPCODE		INT [0] 62
+1	PIN_FLD_TEMPLATE_OBJ	POID [0] NULL
+</PCM_OP> 
+
+# /config/collections/action - Refer to outside agency
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/collections/action 824 
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "config collections actions"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "config collections actions"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+0 PIN_FLD_CONFIG_ACTION_INFO  SUBSTRUCT [0]
+1	PIN_FLD_ACTION_NAME	STR [0] "Refer to outside agency"
+1	PIN_FLD_ACTION_DESCR	STR [0] "Refer to outside agency"
+1	PIN_FLD_ACTION_TYPE	STR [0] "refer_to_outside_agency"
+1	PIN_FLD_OPCODE		INT [0] 3894
+1	PIN_FLD_TEMPLATE_OBJ	POID [0] NULL
+</PCM_OP> 
+
+# /config/collections/action - Promise to Pay
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/collections/action 825
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "config collections actions"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "config collections actions"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+0 PIN_FLD_CONFIG_ACTION_INFO  SUBSTRUCT [0]
+1       PIN_FLD_ACTION_NAME     STR [0] "Promise to Pay"
+1       PIN_FLD_ACTION_DESCR    STR [0] "Promise to Pay"
+1       PIN_FLD_ACTION_TYPE     STR [0] "promise_to_pay"
+1       PIN_FLD_OPCODE          INT [0] 3826
+1       PIN_FLD_TEMPLATE_OBJ    POID [0] NULL
+</PCM_OP>
+
+# /config/collections/action - Collect Payment
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/collections/action 826
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "config collections actions"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "config collections actions"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+0 PIN_FLD_CONFIG_ACTION_INFO  SUBSTRUCT [0]
+1     PIN_FLD_ACTION_NAME     STR [0] "Collect Payment"
+1     PIN_FLD_ACTION_DESCR    STR [0] "Collect Payment"
+1     PIN_FLD_ACTION_TYPE     STR [0] "collect_payment"
+1     PIN_FLD_OPCODE        INT [0]  3890 
+1     PIN_FLD_TEMPLATE_OBJ    POID [0] NULL
+</PCM_OP>

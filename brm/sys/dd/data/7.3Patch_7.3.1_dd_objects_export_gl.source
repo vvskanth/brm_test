@@ -1,0 +1,306 @@
+#
+#	Copyright (c) 1996 - 2007 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#       This file contains the definitions of Storable Classes used by
+#       PortalBase created on Jul 06 2007.
+#       Revision Date: 24/08/2007 
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/config/export_gl"
+1     PIN_FLD_DESCR           STR [0] "This object contains schedule information for the application that generates GL reports and exports them as XML files "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 11
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains basic information common to all segment entries in configuration."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SOURCE"
+3             PIN_FLD_DESCR           STR [0] "A user-defined identifier for the source system from which GL reports are exported. When there are multiple systems generating XML export files, this field will uniquely indentify the source system. This field is not used within the billing system but simply copied in the header of the output XML file for use by the external consumer of the exported data."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "source"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DIRECTORY"
+3             PIN_FLD_DESCR           STR [0] "Pathname of directory under which the exported GL report data files will be created."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "directory"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FILENAME_PREFIX"
+3             PIN_FLD_DESCR           STR [0] "String to prefix the internally-generated GL report file name. This can be blank in which case the basic file name will be used."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "filename_prefix"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_export_gl_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/export_gl.PIN_FLD_CONFIG_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_DATES"
+2         PIN_FLD_DESCR           STR [0] "The start date for each GL report is the end date for the previous GL report. This date is normally determined by examining the process audit table. The date specified in this array will be used when there are no entries in the process audit table for the associated segment (like when the application is run for the first ever time or it is a new segment configured since the last run of the application). A value of '.' (dot) indicates any segment. If there is one element with '.' as segment name and another with a specific segment name, the start date in latter will apply for that segment."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_SEGMENT"
+3             PIN_FLD_DESCR           STR [0] "Name of GL segment for which start date is specified."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "segment"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EFFECTIVE_START_T"
+3             PIN_FLD_DESCR           STR [0] "The start date for the first-ever report for this segment."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "effective_start_t"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_export_gl_start_dates_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/export_gl.PIN_FLD_START_DATES'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 16
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_SEGMENTS"
+2         PIN_FLD_DESCR           STR [0] "Contains the list of GL segments for which to produce the GL reports. It is possible to have multiple array elements for the same GL segment but with different revenue types to report."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_SEGMENT"
+3             PIN_FLD_DESCR           STR [0] "Name of GL segment for which to produce the GL reports"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "segment"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_REPORT_FREQUENCY_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Indicates the frequency of running ledger reports. Possible types are 1 (daily - PIN_GL_REPORT_FREQUENCY_DAILY), 2 (weekly - PIN_GL_REPORT_FREQUENCY_WEEKLY), 3 (monthly - PIN_GL_REPORT_FREQUENCY_MONTHLY), 4 (yearly - PIN_GL_REPORT_FREQUENCY_YEARLY), 5 (specified dates - PIN_GL_REPORT_FREQUENCY_SPECIFIED_DATES)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "report_frequency_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DAY"
+3             PIN_FLD_DESCR           STR [0] "Day of week. Valid for frequency type of 'weekly'. Possible values are 0 through 6 (Sunday through Saturday)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "day_of_week"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALENDAR_DOM"
+3             PIN_FLD_DESCR           STR [0] "Day of month. Valid for frequency type of 'monthly'. Possible values are 1 through 31."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "calendar_dom"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALENDAR_DATE"
+3             PIN_FLD_DESCR           STR [0] "Valid for frequency type of 'yearly' or 'specified dates'."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALENDAR_DOM"
+4                 PIN_FLD_DESCR           STR [0] "Day of month. Possible values are 1 through 31."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "calendar_dom"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALENDAR_MOY"
+4                 PIN_FLD_DESCR           STR [0] "Month of year. Possible values are 1 through 12."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "calendar_month"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_export_gl_dates_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/export_gl.PIN_FLD_GL_SEGMENTS.PIN_FLD_CALENDAR_DATE'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REVENUES"
+3             PIN_FLD_DESCR           STR [0] "Contains the list of revenue types for which to produce the GL reports."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 3
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE"
+4                 PIN_FLD_DESCR           STR [0] "Indicates the type of revenue to report. Possible types are 0x01 (Unbilled - PIN_GL_TYPE_UNBILLED), 0x02 (Billed - PIN_GL_TYPE_BILLED), 0x04 (Unbilled earned - PIN_GL_TYPE_UNBILLED_EARNED), 0x08 (Billed earned - PIN_GL_TYPE_BILLED_EARNED), 0x10 (Unbilled unearned - PIN_GL_TYPE_UNBILLED_UNEARNED), 0x20 (Billed unearned - PIN_GL_TYPE_BILLED_UNEARNED), 0x40 (Previously billed earned - PIN_GL_TYPE_PREV_BILLED_EARNED)."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "revenue_type"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_export_gl_revenues_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/export_gl.PIN_FLD_GL_SEGMENTS.PIN_FLD_REVENUES'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_REPORT_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether the GL report should be a summary one (0 - PIN_GL_REPORT_TYPE_SUMMARY) or a detailed one (1 - PIN_GL_REPORT_TYPE_DETAIL)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "report_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_RESOURCE_CATEGORY"
+3             PIN_FLD_DESCR           STR [0] "Indicates if the report should include only currency resources, only non-currency resources or both types of resources. Possible types are 0 (non-currency only - PIN_GL_RESOURCE_NON_CURRENCY_TYPE), 1 (currency only - PIN_GL_RESOURCE_CURRENCY_TYPE) and 2 (both - PIN_GL_RESOURCE_BOTH_TYPES)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "resource_category"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_NON_MONETARY_FLAG"
+3             PIN_FLD_DESCR           STR [0] "Indicates if the list of non-monetary resource IDs provided in PIN_FLD_RESOURCE_ID_LIST are to be included in or excluded from the report. Possible values are 1 (include - PIN_GL_INCLUDE_NON_MONETARY_RESOURCE) and 0 (exclude - PIN_GL_EXCLUDE_NON_MONETARY_RESOURCE). This field will be unused if PIN_FLD_GL_RESOURCE_CATEGORY indicates currency-only."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "non_monetary_flag"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RESOURCE_ID_LIST"
+3             PIN_FLD_DESCR           STR [0] "Contains a blank-separated list of non-monetary resource IDs that are to be included in or excluded from the report. This field is used in conjunction with PIN_FLD_GL_NON_MONETARY_FLAG and will be unused if report is to only include currency resources."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1023
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "resource_id_list"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_export_gl_segments_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/export_gl.PIN_FLD_GL_SEGMENTS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/process_audit/export_gl"
+1     PIN_FLD_DESCR           STR [0] "This object contains audit information about each run of the application pin_ledger_report in export mode. While this information is used internally by the application, the end-user can also use this audit in order to regenerate (and export) reports for earlier periods. There will be one instance of this object for each run of the application (including when the application is run with any of the optional switches). There will be an array element for each individual ledger report generated within the run."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 12
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXPORT_GL_AUDIT_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains audit information for a single exported report"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SESSION_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the object that represents the session within which the application ran. It thus captures the login information for the CM connection session."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "session_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROGRAM_NAME"
+3             PIN_FLD_DESCR           STR [0] "Command-line string that was used to invoke pin_ledger_report. The primary purpose of this string is to record the switches used to invoke the application."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1023
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "program_command"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS_STR"
+3             PIN_FLD_DESCR           STR [0] "This field is used primarily for allowing parallel runs of the export application. This status string acts as a locking mechanism such that only one instance of the application can process a given GL segment in the configuration. It has the secondary purpose of flagging the case when the export application terminates abnormally (that is, crashes) without resetting this field to indicate the run has completed. After abnormal termination, the value of this field will remain as '<segment_name>_IN_PROGRESS' where <segment_name> is the name of the segment against which the application was run. If all segments were being processed, <segment_name> will be 'All'. When the application is run again with switch -restart, this field is set to '<segment_name>_INCOMPLETE'. When application exits normally (with or without any processing error), this field is set to '<segment_name>_COMPLETED'."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 127
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status_str"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROCESS_AUDIT_OBJ"
+3             PIN_FLD_DESCR           STR [0] "If the application was invoked with the option to resend or regenerate a previously generated report or reports, this field will contain the POID of the audit object appropriate to the relevant previous run of the application. This will be a NULL POID (POID ID 0) otherwise."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "process_audit_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "proc_aud_export_gl_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/export_gl.PIN_FLD_EXPORT_GL_AUDIT_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_REPORT_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains audit information for a single exported report"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_SEGMENT"
+3             PIN_FLD_DESCR           STR [0] "GL segment for which the ledger report was run"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "gl_segment"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Indicates the type of revenue reported. Possible types are 0x01 (Unbilled - PIN_GL_TYPE_UNBILLED), 0x02 (Billed - PIN_GL_TYPE_BILLED), 0x04 (Unbilled earned - PIN_GL_TYPE_UNBILLED_EARNED), 0x08 (Billed earned - PIN_GL_TYPE_BILLED_EARNED), 0x10 (Unbilled unearned - PIN_GL_TYPE_UNBILLED_UNEARNED), 0x20 (Billed unearned - PIN_GL_TYPE_BILLED_UNEARNED), 0x40 (Previously billed earned - PIN_GL_TYPE_PREV_BILLED_EARNED)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_REPORT_FREQUENCY_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Indicates the frequency of running ledger reports. Possible types are 1 (daily - PIN_GL_REPORT_FREQUENCY_DAILY), 2 (weekly - PIN_GL_REPORT_FREQUENCY_WEEKLY), 3 (monthly - PIN_GL_REPORT_FREQUENCY_MONTHLY), 4 (yearly - PIN_GL_REPORT_FREQUENCY_YEARLY), 5 (specified dates - PIN_GL_REPORT_FREQUENCY_SPECIFIED_DATES)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "gl_report_frequency_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_END_T"
+3             PIN_FLD_DESCR           STR [0] "End time of the ledger reporting period"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "end_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_NON_MONETARY_FLAG"
+3             PIN_FLD_DESCR           STR [0] "Indicates if the list of non-monetary resource IDs provided in PIN_FLD_RESOURCE_ID_LIST were included in or excluded from the report. Possible values are 1 (include - PIN_GL_INCLUDE_NON_MONETARY_RESOURCE) and 0 (exclude - PIN_GL_EXCLUDE_NON_MONETARY_RESOURCE). This field will be unused if PIN_FLD_RESOURCE_ID_LIST is blank."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "non_monetary_flag"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RESOURCE_ID_LIST"
+3             PIN_FLD_DESCR           STR [0] "Contains a blank-separated list of non-monetary resource IDs that were included in or excluded from the report. This field is used in conjunction with PIN_FLD_GL_NON_MONETARY_FLAG and could be empty to indicate that no filtering of non-monetary resources was done."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1023
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "resource_id_list"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GL_REPORT_POID_LIST"
+3             PIN_FLD_DESCR           STR [0] "Contains a list of 3 /ledger_report POIDs that represent the basic report generated using ledger report opcode, the report created by customizing a basic report and the incremental report created using ledger report for previous period. The basic report POID must be a valid /ledger_report object. The other two may be NULL POIDs (with POID ID as 0). An example string is as follows - '0.0.0.1|/ledger_report 123456 0|0 0 0|/ledger_report 789012 0'. Here, there is no customized report."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ledger_report_poid_list"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "proc_aud_export_gl_report_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/export_gl.PIN_FLD_GL_REPORT_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0 
+</PCM_OP>
+

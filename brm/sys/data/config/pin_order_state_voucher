@@ -1,0 +1,61 @@
+#
+#(#)$Id: pin_order_state_voucher /cgbubrm_7.5.0.portalbase/1 2015/11/27 04:14:39 nishahan Exp $ 
+#
+version 1
+#======================================================================
+#
+# Copyright (c) 2001, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+# This input file is used to load the life cycle definitions of voucher order
+# into the database. 
+#
+
+#	
+# Note :
+#  Order state types are defined in pin_order.h
+# Usage:
+#   $ load_order_state <pin_order_state-file>
+#
+#======================================================================
+# FORMAT
+#======================================================================
+# <state from> : <state type> : <string id> : <string ver> 
+# 	: <state to> 
+#======================================================================
+
+ORDER_SUBTYPE : /voucher
+
+# RAW => NEW
+0 	:0	:0	:1
+  	:1
+
+# 1. NEW => REQUESTED
+# 2. NEW => CANCELLED
+1 	:1 	:1 	:1
+  	:2
+  	:5
+
+# REQUESTED => PARTIAL RECEIVE
+# REQUESTED => RECEIVED
+2 	:2	:2 	:1
+  	:4
+  	:3
+
+# RECEIVED : Terminating state 
+3 	:3	:3 	:1
+
+# PARTIAL RECEIVE => PARTIAL RECEIVE
+# PARTIAL RECEIVE => RECEIVED
+4 	:2 	:4 	:1
+  	:4
+  	:3
+
+# CANCELLED : Terminating state 
+5 	:3	:5 	:1

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AuthReauthInfoConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig /home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_config_auth_reauth_info.xsd">
+
+  <!-- Sample file. Modify according to guidelines. -->
+
+  <ServiceConfig>
+    <ServiceType>/service/gsm/telephony</ServiceType>
+    <ReauthFlag>1</ReauthFlag>
+    <MaxTimeDelay>600</MaxTimeDelay>
+    <AllowQuickReject>1</AllowQuickReject>
+    <ResourceConfig ResourceId="978">
+      <UpperThreshold>10</UpperThreshold>
+      <LowerThreshold>5</LowerThreshold>
+      <ReservedAmt>3</ReservedAmt>
+    </ResourceConfig>
+    <ResourceConfig ResourceId="250">
+      <UpperThreshold>60</UpperThreshold>
+      <LowerThreshold>30</LowerThreshold>
+      <ReservedAmt>18</ReservedAmt>
+    </ResourceConfig>
+  </ServiceConfig>
+
+  <ServiceConfig>
+    <ServiceType>/service/telco/gsm</ServiceType>
+    <ReauthFlag>1</ReauthFlag>
+    <MaxTimeDelay>800</MaxTimeDelay>
+    <AllowQuickReject>0</AllowQuickReject>
+    <ResourceConfig ResourceId="978">
+      <UpperThreshold>15</UpperThreshold>
+      <LowerThreshold>7</LowerThreshold>
+      <ReservedAmt>2</ReservedAmt>
+    </ResourceConfig>
+    <ResourceConfig ResourceId="250">
+      <UpperThreshold>90</UpperThreshold>
+      <LowerThreshold>48</LowerThreshold>
+      <ReservedAmt>12</ReservedAmt>
+    </ResourceConfig>
+  </ServiceConfig>
+
+</AuthReauthInfoConfiguration>

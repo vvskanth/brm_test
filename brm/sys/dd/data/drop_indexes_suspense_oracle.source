@@ -1,0 +1,25 @@
+--
+-- Copyright (c) 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	on Wed May 29 05:16:37 2024.
+--
+
+drop index i_susp_usage_edit__id;
+drop index i_susp_usage_recycle__id;
+drop index i_suspended_usage__id;
+drop index i_susp_usage__rec_id;
+drop index i_susp_usage__rec_key;
+drop index i_susp_usage_actions__id;
+drop index i_susp_usage_edr_buf__id;
+drop index i_susp_usage_telco__id;
+drop index i_susp_usage_rapin__id;
+drop index i_susp_rapin__sender_rap_tap;
+drop index i_su_u_tl_gsm__id;
+drop index i_su_u_tl_gprs__id;

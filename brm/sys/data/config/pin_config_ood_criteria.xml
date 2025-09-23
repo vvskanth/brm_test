@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OodCriteriaConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig /home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_config_ood_criteria.xsd">
+
+	<!-- This file is a sample file. -->
+	<!-- This file needs to be modified based on the out-of-order configuration required -->
+	<!-- for an installation. THIS FILE SHOULD NOT BE LOADED WITH THE DATA SUPPLIED HERE.-->
+	  <OodCriteriaElement>
+      	    <CriteriaName>TEL_SERVICE</CriteriaName>
+      	    <ParameterList>
+      	    <Parameter Type="Service">/service/gsm/telephony</Parameter>
+      	    <Parameter Type="Event">/event/delayed/session/gsm/telephony</Parameter>
+      	    </ParameterList>
+          </OodCriteriaElement>
+	  <OodCriteriaElement>
+      	    <CriteriaName>GSM_SERVICE</CriteriaName>
+      	    <ParameterList>
+      	    <Parameter Type="Service">/service/telco/gsm</Parameter>
+      	    <Parameter Type="Event">/event/delayed/session/telco/gsm/telephony</Parameter>
+      	    </ParameterList>
+          </OodCriteriaElement>
+	  <OodCriteriaElement>
+      	    <CriteriaName>A_MULTI_TEL_SERVICE</CriteriaName>
+      	    <ParameterList>
+      	    <Parameter Type="Service">/service/tel</Parameter>
+      	    <Parameter Type="Event">/event/session/tel</Parameter>
+      	    <Parameter Type="Product">Tel product</Parameter>
+      	    <Parameter Type="Discount">Tel discount</Parameter>
+      	    </ParameterList>
+          </OodCriteriaElement>
+</OodCriteriaConfiguration>

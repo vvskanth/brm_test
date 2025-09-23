@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<!--  $Header: bus_platform_vob/financial/config/xml_utils/pin_slm_business_profile.xml /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:18:21 nishahan Exp $ -->
+
+<!-- 
+ Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved. 
+
+   NAME
+     pin_slm_business_profile.xml - <Business profile for SLM feature>
+
+   DESCRIPTION
+     <The xml will define the business profiles, the associated services and lifecycle>
+
+   NOTES
+     <For the 'key' - 'lifecycle_obj', the 'value' needs to have lifecycle config name>
+
+   MODIFIED   (MM/DD/YY)
+   ajena       02/06/12 - Creation
+
+-->
+
+ <BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation=
+                "http://www.portal.com/schemas/BusinessConfig
+                                business_configuration.xsd">
+
+ <!-- Sample file. Modify according to guidelines -->
+
+ <BusinessProfileConfiguration>
+
+        <!-- List business profiles -->
+        <BusinessProfileList>
+
+                <BusinessProfile name="SLM" >
+
+                        <Desc> Description of the business profile </Desc>
+
+                        <!-- List templates -->
+                        <TemplateId name="ServiceTelcoGprs" type="/service/telco/gprs" />
+                        <TemplateId name="ServiceTelcoGsm" type="/service/telco/gsm" />
+                        <TemplateId name="ServiceTelcoGsmTel" type="/service/telco/gsm/telephony" />
+
+                        <!-- List key values -->
+                        <NameValue key="Prepaid" value="yes" />
+                        <NameValue key="CacheResidency" value="REALTIME" />
+
+                </BusinessProfile>
+
+        </BusinessProfileList>
+
+        <!-- List templates -->
+        <TemplateList>
+
+                <Template name="ServiceTelcoGprs" type="/service/telco/gprs" >
+
+                        <Desc> Description of the template </Desc>
+                <Iscript>
+                </Iscript>
+                        <NameValue key="Prepaid" value="yes" />
+                        <NameValue key="CacheResidency" value="REALTIME" />
+                 </Template>
+
+                <Template name="ServiceTelcoGsmTel" type="/service/telco/gsm/telephony" >
+
+                        <Desc> Description of the template </Desc>
+                <Iscript>
+                </Iscript>
+                        <NameValue key="Prepaid" value="yes" />
+                        <NameValue key="CacheResidency" value="REALTIME" />
+                        <NameValue key="lifecycle_obj" value="Default Lifecycle Configuration" />
+                 </Template>
+
+                <Template name="ServiceTelcoGsm" type="/service/telco/gsm" >
+
+                        <Desc> Description of the template </Desc>
+                <Iscript>
+                </Iscript>
+                        <NameValue key="Prepaid" value="yes" />
+                        <NameValue key="CacheResidency" value="REALTIME" />
+                 </Template>
+
+        </TemplateList>
+
+  </BusinessProfileConfiguration>
+
+  </BusinessConfiguration>
+

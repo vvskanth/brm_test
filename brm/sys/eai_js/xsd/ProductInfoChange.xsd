@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<xs:schema elementFormDefault="qualified"
+            targetNamespace="http://www.portal.com/schemas/CRMSync"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.portal.com/schemas/CRMSync">
+	<xs:element name="ProductInfoChange">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountObj"/>
+				<xs:element ref="ProductInfo" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="InstanceId" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProductInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProductPoid"/>
+				<xs:element ref="Name"/>
+				<xs:element ref="Code"/>
+				<xs:element ref="ProductStartTime"/>
+				<xs:element ref="ProductEndTime"/>
+				<xs:element ref="PermittedTypes"/>
+				<xs:element ref="Priority"/>
+				<xs:element ref="Type"/>
+				<xs:element ref="Description"/>
+				<xs:element ref="UsageMap" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ProvisioningTagInfo" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UsageMap">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UsageEventType"/>
+				<xs:element ref="RatePlanName"/>
+				<xs:element ref="RumName"/>
+				<xs:element ref="RatePlanSelectorObj"/>
+				<xs:element ref="RatePlanSelector"/>
+				<xs:element ref="RatePlan"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RatePlanSelector">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SelectorPoid"/>
+				<xs:element ref="Columns"/>
+				<xs:element ref="ValueRanges"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Columns">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Separator"/>
+				<xs:element ref="Operator"/>
+				<xs:element ref="FieldName"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ValueRanges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Value"/>
+				<xs:element ref="RatePlanName"/>
+				<xs:element ref="ImpactCategory"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RatePlan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name"/>
+				<xs:element ref="Currency"/>
+				<xs:element ref="RateTiers" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="RateDetails" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RateTiers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name"/>
+				<xs:element ref="DateRangeType"/>
+				<xs:element ref="RateObj"/>
+				<xs:element ref="Priority"/>
+				<xs:element ref="RateIndex"/>
+				<xs:element ref="DateRanges"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DateRanges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RateObj"/>
+				<xs:element ref="Name"/>
+				<xs:element ref="RateIndex"/>
+				<xs:element ref="Lineage"/>
+				<xs:element ref="RelativeEndUnit"/>
+				<xs:element ref="RelativeStartUnit"/>
+				<xs:element ref="EndT"/>
+				<xs:element ref="StartT"/>
+				<xs:element ref="RelativeEndOffset"/>
+				<xs:element ref="RelativeStartOffset"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RateDetails">
+		<xs:element ref="RateObj"/>
+		<xs:element ref="RatePlanObj"/>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="QuantityTiers" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+		<xs:element name="QuantityTiers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BalImpacts" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BalImpacts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResourceId"/>
+				<xs:element ref="FixedAmount"/>
+				<xs:element ref="ScaledAmount"/>
+				<xs:element ref="ScaledUnit"/>
+				<xs:element ref="StartT"/>
+				<xs:element ref="EndT"/>
+				<xs:element ref="RelativeStartOffset"/>
+				<xs:element ref="RelativeEndOffset"/>
+				<xs:element ref="RelativeStartUnit"/>
+				<xs:element ref="RelativeEndUnit"/>
+				<xs:element ref="Flags"/>
+				<xs:element ref="GlId"/>
+				<xs:element ref="ImpactCategory"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProvisioningTagInfo">
+	   	<xs:complexType>
+	      		<xs:sequence>
+	         		<xs:element ref="ProvisioningTagName"/>
+	         		<xs:element ref="EraDetails" minOccurs="0" maxOccurs="unbounded"/>
+	      		</xs:sequence>
+	   	</xs:complexType>
+	</xs:element>
+	<xs:element name="EraDetails">
+	   	<xs:complexType>
+	      		<xs:sequence>
+	         		<xs:element ref="EraCode"/>
+	         		<xs:element ref="EraName"/>
+	         		<xs:element ref="EraDescription"/>
+	         		<xs:element ref="EraLabel"/>
+	      		</xs:sequence>
+	   	</xs:complexType>
+	</xs:element>
+
+	<xs:element name="AccountObj" type="xs:string"/>
+	<xs:element name="RatePlanName" type="xs:string"/>
+	<xs:element name="RumName" type="xs:string"/>
+	<xs:element name="RatePlanSelectorObj" type="xs:string"/>
+	<xs:element name="SelectorPoid" type="xs:string"/>
+	<xs:element name="Separator" type="xs:string"/>
+	<xs:element name="FieldName" type="xs:string"/>
+	<xs:element name="Operator" type="xs:string"/>
+	<xs:element name="ImpactCategory" type="xs:string"/>
+	<xs:element name="DateRangeType" type="xs:int"/>
+	<xs:element name="RateObj" type="xs:string"/>
+	<xs:element name="RatePlanObj" type="xs:string"/>
+	<xs:element name="RateIndex" type="xs:int"/>
+	<xs:element name="Lineage" type="xs:string"/>
+	<xs:element name="RelativeEndUnit" type="xs:int"/>
+	<xs:element name="RelativeStartUnit" type="xs:int"/>
+	<xs:element name="EndT" type="xs:string"/>
+	<xs:element name="StartT" type="xs:string"/>
+	<xs:element name="Value" type="xs:string"/>
+	<xs:element name="RelativeEndOffset" type="xs:int"/>
+	<xs:element name="RelativeStartOffset" type="xs:int"/>
+	<xs:element name="Flags" type="xs:int"/>
+	<xs:element name="GlId" type="xs:int"/>
+	<xs:element name="ScaledAmount" type="xs:decimal"/>
+	<xs:element name="ScaledUnit" type="xs:int"/>
+	<xs:element name="Type" type="xs:int"/>
+	<xs:element name="UsageEventType" type="xs:string"/>
+	<xs:element name="ProductPoid" type="xs:string"/>
+	<xs:element name="ProductStartTime" type="xs:string"/>
+	<xs:element name="Currency" type="xs:int"/>
+	<xs:element name="Description" type="xs:string"/>
+	<xs:element name="ResourceId" type="xs:int"/>
+	<xs:element name="FixedAmount" type="xs:decimal"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="Code" type="xs:string"/>
+	<xs:element name="PermittedTypes" type="xs:string"/>
+	<xs:element name="Priority" type="xs:int"/>
+	<xs:element name="ProductEndTime" type="xs:string"/>
+	<xs:element name="ProvisioningTagName" type="xs:string"/>
+	<xs:element name="EraCode" type="xs:string"/>
+	<xs:element name="EraName" type="xs:string"/>
+	<xs:element name="EraDescription" type="xs:string"/>
+	<xs:element name="EraLabel" type="xs:string"/>
+	<xs:attribute name="InstanceId" type="xs:string"/>
+</xs:schema>

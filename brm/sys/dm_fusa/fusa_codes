@@ -1,0 +1,85 @@
+#
+# @(#)$Id: fusa_codes /cgbubrm_mainbrm.portalbase/1 2018/10/03 00:16:23 agangrad Exp $
+#======================================================================
+#
+# Copyright (c) 1996, 2021, Oracle and/or its affiliates. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+# This file maps Paymentech authorization codes to Portal charge
+# result codes.
+# 
+# Syntax:
+#
+#	<fusa_code> <pin_code>
+#
+# Where <fusa_code> is the three-character string returned from 
+# Paymentech and <pin_code> is the corresponding Portal charge
+# result value (string).
+# 
+# See Paymentech specifications for an explanation of each of their
+# authorization codes.
+#======================================================================
+#
+000	PIN_CHARGE_RES_FAIL_NO_ANS
+#
+100	PIN_CHARGE_RES_PASS
+101	PIN_CHARGE_RES_PASS
+102	PIN_CHARGE_RES_PASS
+104	PIN_CHARGE_RES_PASS
+#
+201	PIN_CHARGE_RES_FAIL_CARD_BAD
+202	PIN_CHARGE_RES_FAIL_DECL_HARD
+204	PIN_CHARGE_RES_FAIL_DECL_HARD
+225	PIN_CHARGE_RES_FAIL_DECL_HARD
+227     PIN_CHARGE_RES_FAIL_DECL_HARD
+238	PIN_CHARGE_RES_FAIL_DECL_HARD
+239	PIN_CHARGE_RES_FAIL_DECL_SOFT 
+241	PIN_CHARGE_RES_FAIL_DECL_HARD	
+247	PIN_CHARGE_RES_FAIL_DECL_HARD	
+253	PIN_CHARGE_RES_FAIL_DECL_HARD
+275	PIN_CHARGE_RES_FAIL_DECL_HARD
+279	PIN_CHARGE_RES_FAIL_INVALID_MT
+281     PIN_CHARGE_RES_FAIL_NO_TOKEN
+#
+301	PIN_CHARGE_RES_FAIL_NO_ANS
+302	PIN_CHARGE_RES_FAIL_DECL_SOFT
+303	PIN_CHARGE_RES_FAIL_DECL_SOFT
+#
+401	PIN_CHARGE_RES_FAIL_DECL_SOFT
+402	PIN_CHARGE_RES_FAIL_DECL_SOFT
+#
+501	PIN_CHARGE_RES_FAIL_DECL_HARD
+502	PIN_CHARGE_RES_FAIL_DECL_HARD
+519	PIN_CHARGE_RES_FAIL_DECL_HARD
+522	PIN_CHARGE_RES_FAIL_DECL_HARD
+530	PIN_CHARGE_RES_FAIL_DECL_SOFT
+#
+602	PIN_CHARGE_RES_FAIL_CARD_BAD
+605	PIN_CHARGE_RES_FAIL_CARD_BAD
+606	PIN_CHARGE_RES_FAIL_DECL_HARD
+607	PIN_CHARGE_RES_FAIL_DECL_HARD
+#
+740	PIN_CHARGE_RES_FAIL_DECL_HARD
+741     PIN_CHARGE_RES_FAIL_DECL_HARD
+742	PIN_CHARGE_RES_FAIL_DECL_SOFT
+750	PIN_CHARGE_RES_FAIL_DECL_HARD
+751	PIN_CHARGE_RES_FAIL_DECL_HARD
+754	PIN_CHARGE_RES_FAIL_DECL_HARD
+755	PIN_CHARGE_RES_FAIL_DECL_HARD
+756	PIN_CHARGE_RES_FAIL_DECL_HARD
+757	PIN_CHARGE_RES_FAIL_DECL_HARD
+758	PIN_CHARGE_RES_FAIL_DECL_SOFT
+759	PIN_CHARGE_RES_FAIL_DECL_HARD
+760	PIN_CHARGE_RES_FAIL_DECL_HARD
+763	PIN_CHARGE_RES_FAIL_DECL_HARD
+764	PIN_CHARGE_RES_FAIL_DECL_SOFT
+768	PIN_CHARGE_RES_FAIL_DECL_HARD
+#
+806	PIN_CHARGE_RES_FAIL_DECL_HARD
+811	PIN_CHARGE_RES_FAIL_DECL_HARD
+834	PIN_CHARGE_RES_FAIL_DECL_HARD
+#

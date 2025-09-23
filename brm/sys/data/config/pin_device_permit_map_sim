@@ -1,0 +1,34 @@
+#
+# File: pin_device_permit_map_sim
+#
+# Copyright (c) 2001 - 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+#
+######################################################################
+#
+# device_type:<service>
+#            :<service>
+#                .
+#                .
+#            :<service>
+#
+# device_type - The type of the device to
+# service     - A service to associate to the "device type".  There
+#               can be an arbitrary number of services.
+#
+######################################################################
+
+# The sim device is associated with the following services
+#       Service GSM Telephony
+#       Service GSM Data
+#       Service GSM Fax
+#       Service GSM Short Messages
+#
+/device/sim     :/service/gsm/telephony
+                :/service/gsm/sms
+                :/service/gsm/fax
+                :/service/gsm/data

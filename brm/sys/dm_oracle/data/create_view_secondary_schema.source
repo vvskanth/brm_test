@@ -1,0 +1,133 @@
+-- @(#)$Id: create_view_secondary_schema.source /portalbase/1 2023/12/11 02:19:20 njuturu Exp $
+-- Copyright (c) 2023 Oracle and/or its affiliates.
+-- stored procedure to create the view in secondary schema's
+
+set serveroutput on size 1000000
+CREATE or REPLACE PROCEDURE create_view_for_secondary(
+        tname IN VARCHAR2,
+        p_schema IN VARCHAR2,
+        curr_db_no IN VARCHAR2
+)
+AS
+        cursor subquery_cur is
+        SELECT column_name, table_name
+        FROM all_tab_columns
+        WHERE OWNER=UPPER(p_schema)
+        AND table_name = UPPER(tname);
+
+        t_name        subquery_cur%ROWTYPE;
+        cid           int;
+        ret           int;
+        select_string VARCHAR2(2048);
+        col_str       VARCHAR2(1024);
+        col_name      VARCHAR2(1024);
+        view_column   VARCHAR2(1024);
+        ddl_stmt      VARCHAR2(4000);
+        v_count       INT;
+        v_iterator    INT;
+
+BEGIN
+
+        FOR v_iterator in 0 .. 100 LOOP
+            dbms_output.put_line('value of v_iterator: ' || v_iterator);
+            SELECT COUNT(*) INTO v_count FROM ALL_TABLES WHERE TABLE_NAME = UPPER(tname) and OWNER = UPPER(p_schema);
+            IF v_count = 0 THEN
+                sys.dbms_session.sleep(10);
+            ELSE 
+                exit;
+            END IF;
+            IF v_iterator = 100 THEN
+                dbms_output.put_line('Secondary Schema installation not successful, because primary Schema Not initialized : ' || v_iterator);
+            END IF;
+        END LOOP;
+
+        select_string := 'SELECT ';
+        col_str := '';
+        FOR t_name IN subquery_cur
+        LOOP
+                select_string := select_string || col_str ;
+                col_name := t_name.column_name ;
+                view_column := t_name.column_name ;
+
+                if t_name.table_name like 'UNIQUENESS%' then
+                        view_column := t_name.column_name ;         --No fixup for UNIQUENESS
+                else if col_name = 'ACCOUNT_OBJ_DB' then
+                        view_column := '( CASE ACCOUNT_OBJ_ID0 ' ||
+                                ' WHEN 1 THEN ' || curr_db_no ||     --Fixup for root account
+                                ' ELSE ACCOUNT_OBJ_DB ' ||           --No fixup for non root acct
+                                ' END ) ' ||
+                                ' AS ' || t_name.column_name;
+                else if col_name = 'REMIT_ACCOUNT_OBJ_DB' then
+                        view_column := '( CASE REMIT_ACCOUNT_OBJ_ID0 ' ||
+                                ' WHEN 1 THEN ' || curr_db_no ||     --Fixup for root account
+                                ' ELSE REMIT_ACCOUNT_OBJ_DB ' ||     --No fixup for non root acct
+                                ' END ) ' ||
+                                ' AS ' || t_name.column_name;
+                else if col_name = 'POID_VAL_DB' and
+                        t_name.table_name = 'CONFIG_ACH_T' then
+                        view_column := t_name.column_name ;         --no fixup ever
+                else if (col_name like '%_DB' ) then
+                        view_column := 'CAST(( CASE ' || t_name.column_name ||
+                                ' WHEN 0 THEN ' || t_name.column_name ||  --no fixup for null poid
+                                ' ELSE ' || curr_db_no ||                 --fixup for non-null poid
+                                ' END ) AS NUMBER(38))' ||
+                                ' AS ' || t_name.column_name;
+                end if;
+                end if;
+                end if;
+                end if;
+                end if;
+                col_str := view_column || ',';
+        END LOOP;
+
+        select_string := select_string || view_column ||
+                ' FROM ' || p_schema || '.' || tname ;
+
+        cid := DBMS_SQL.OPEN_CURSOR;
+        DBMS_SQL.PARSE (cid,
+                'CREATE OR REPLACE VIEW ' ||
+                tname ||' AS ' ||
+                select_string,
+                dbms_sql.native);
+        DBMS_SQL.CLOSE_CURSOR(cid);
+
+END create_view_for_secondary;
+/
+show errors;
+
+
+-- stored procedure to convert the audit conf related tables to views.
+create or replace PROCEDURE convert_au_tables_to_views( p_schema IN VARCHAR2 )
+AS
+    cursor subquery_cur is
+    SELECT TABLE_NAME FROM USER_TABLES 
+    WHERE TABLE_NAME LIKE 'AU_CONF_%' 
+    OR table_name like 'AU_CFG_%'
+    OR table_name like 'JOB_TEMPLATE%'
+    OR table_name like 'OFFER_ATTRIBUTE%'
+    OR table_name like '%DEPOSIT_SPECIFICATION_T'
+    OR table_name like 'REVENUE_BASIS_ITEM_T'
+    OR table_name like 'RATE_RBI_INFO_T'
+    OR table_name like 'JOB_DEFINITION%';
+
+    drop_string varchar2(2048);
+    view_string varchar2(2048);
+
+BEGIN
+
+    FOR t_name IN subquery_cur
+    LOOP
+        drop_string := 'DROP TABLE ' || t_name.table_name ;
+        EXECUTE IMMEDIATE drop_string;
+        view_string := 'CREATE OR REPLACE VIEW ' || t_name.table_name || ' AS SELECT * FROM ' || p_schema || '.' || t_name.table_name;
+        EXECUTE IMMEDIATE view_string;
+    END LOOP;
+    EXCEPTION
+    WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('Failed to convert the audit related config tables in the secondary Schema.');
+      DBMS_OUTPUT.put_line (SQLERRM);
+
+END convert_au_tables_to_views;
+/
+show errors;
+

@@ -1,0 +1,59 @@
+#
+# @(#)pin_config_ra_flows 1.0
+#
+# Copyright (c) 2004, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+#       This material is the confidential property of Oracle Corporation 
+#       or its licensors and may be used, reproduced, stored or transmitted
+#       only in accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains config info for /config/ra_flows object.
+#	The format for the file is defined as:
+#	The line starting with # defines comment
+#	The first noncommented line is expected to be "version" number.
+
+#	Every Flow information should start with the identifier 
+#				RA_Flow:(The word is case sensitive).
+# 	Following the flow identifier is the name of the flow and description 
+#	of the flow and they should be in  the same line.
+
+#	If the description contains more than one word with spaces 
+#	they should be enclosed in doublequotes " ".
+#	After Flowidentifier is the controlpoint name, object type and 
+#	control pt descr and they should be in the same line.
+#	The field delimiter in a line may be space or tab.
+#	A sample format is given below
+#	No Space or Tab is allowed between a single field 
+#	other than description field
+	
+
+#	RA_Flow:  <Flow Name>  <Flow Description> 
+# 	<Control_Point_Name 1> <Object Type> <Control Point Description> 
+#	<Control_Point_Name 2> <Object Type> <Control Point Description> 
+#	<Control_Point_Name 3> <Object Type> <Control Point Description> 
+
+#	RA_Flow:  <Flow Name>  <Flow Description> 
+#	<Control_Point_Name 4> <Object Type> <Control Point Description> 
+#	<Control_Point_Name 5> <Object Type> <Control Point Description> 
+#	<Control_Point_Name 6> <Object Type> <Control Point Description> 
+
+
+#	 Version 1
+
+#RA_Flow:	Flow1  "This is a flow with three control points."
+#	CP_AfterRating_Sts    /process_audit/batchstat/status  "Contains CP Info"
+#	CP_AfterRating_Simple   /process_audit/batchstat/simple  "Contains CP INFO1"
+#	CP_AfterRating_STyp /process_audit/batchstat/svctype  	ContainsCPINFO2
+
+#RA_Flow:	Flow2  "This is a flow with three control points."
+#	CP_AfterRating_Sts   /process_audit/batchstat/status      "Audit Info1"
+#	CP_AfterRating_RStrm  /process_audit/batchstat/revstream      AuditInfo2
+#	CP_AfterRating_RStrm_Sts /process_audit/batchstat/revstream_status AuditInfo3
+
+#RA_Flow:	Flow3 "This is a flow with four control points."
+#	CP_AfterRating_RStrm_SType   /process_audit/batchstat/revstream_svctype    AuditInfo1
+#	CP_AfterRating_Sts    /process_audit/batchstat/status  ContainsCPInfo2
+#	CP_AfterRating_RStrm_SType_Sts  /process_audit/batchstat/revstream_svctype_status ContainsCPInfo3
+#	CP_AfterRating_SType_Sts   /process_audit/batchstat/svctype_status   "ContainsCPInfo4"
+
+

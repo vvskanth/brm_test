@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  **************************************************************************
+* Copyright (c) 2005, 2024, Oracle and/or its affiliates.
+  *
+  * This material is the confidential property of Oracle Corporation
+  * or its licensors and may be used, reproduced, stored or transmitted
+  * only in accordance with a valid Oracle license or sublicense agreement.
+  **************************************************************************
+-->
+<BusinessConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+	
+	<!-- Sample file. Modify according to guidelines. -->
+	<BusParamConfigurationClass>
+
+		<BusParamsBilling>
+			<BillingCycleOffset>0</BillingCycleOffset>
+			<MoveDayForward>firstDay</MoveDayForward>
+			<RemoveSponsoree>enabled</RemoveSponsoree>
+			<ProdEndOffsetPlanTransition>10</ProdEndOffsetPlanTransition>
+			<GenerateJournalEpsilon>disabled</GenerateJournalEpsilon>
+			<ApplyCycleFeeForBillNow>disabled</ApplyCycleFeeForBillNow>
+			<RerateDuringBilling>disabled</RerateDuringBilling>
+			<AutoTriggeringLimit>2</AutoTriggeringLimit>
+			<ValidateDiscountDependency>disabled</ValidateDiscountDependency>
+			<RolloverCorrectionDuringBilling>disabled</RolloverCorrectionDuringBilling>
+			<EnableARA>disabled</EnableARA>
+			<CreateTwoBillNowBillsInDelay>disabled</CreateTwoBillNowBillsInDelay>	
+			<SubBalValidity>Cut</SubBalValidity>	
+			<SequentialCycleDiscounting>disabled</SequentialCycleDiscounting>
+			<CacheResidencyDistinction>disabled</CacheResidencyDistinction>	
+			<DefaultBusinessProfile>Convergent</DefaultBusinessProfile>	
+			<AcctCycleDelayPeriod>-1</AcctCycleDelayPeriod>
+			<GeneralLedgerReporting>enabled</GeneralLedgerReporting>
+			<BackdatingPastGlPostedDate>disabled</BackdatingPastGlPostedDate>
+			<CustomJournalUpdate>disabled</CustomJournalUpdate>
+			<PerfAdvancedTuningSettings>0</PerfAdvancedTuningSettings>
+			<EnableCorrectiveInvoices>disabled</EnableCorrectiveInvoices>
+			<AllowCorrectivePaidBills>disabled</AllowCorrectivePaidBills>
+			<RejectPaymentsForPreviousBill>disabled</RejectPaymentsForPreviousBill>
+			<CorrectiveBillThreshold>0</CorrectiveBillThreshold>
+			<GenerateCorrectiveBillNo>enabled</GenerateCorrectiveBillNo>
+			<ExchangeRateRefreshInterval>0</ExchangeRateRefreshInterval>
+			<ApplyARParentCycleFeeFirst>disabled</ApplyARParentCycleFeeFirst>
+			<GenerateBillForChildBillNow>disabled</GenerateBillForChildBillNow>
+			<SplitSponsorItemByMember>disabled</SplitSponsorItemByMember>	
+			<SkipCheckForSubordinatesBilled>disabled</SkipCheckForSubordinatesBilled>
+			<StagedBillingFeeProcessing>0</StagedBillingFeeProcessing>
+			<NonCurrencyResourceJournaling>All</NonCurrencyResourceJournaling>
+			<LocationModeForTaxation>0</LocationModeForTaxation>
+			<ItemEventChargeDiscountMode>0</ItemEventChargeDiscountMode>
+			<ZeroEventBalances>0</ZeroEventBalances>
+			<StopBillClosedAccounts>disabled</StopBillClosedAccounts>
+			<SSPRevenueRecognition>disabled</SSPRevenueRecognition>
+			<ActgType>balance_forward</ActgType>
+			<DeferredTaxJournaling>2</DeferredTaxJournaling>
+			<WholesaleBillingSystem>disabled</WholesaleBillingSystem>
+			<CycleTaxInterval>accounting</CycleTaxInterval>
+			<DealPurchaseForClosedAccount>disabled</DealPurchaseForClosedAccount>
+			<CycleDelayAlign>disabled</CycleDelayAlign>
+			<ShortCycle>disabled</ShortCycle>
+			<Billing31Day>disabled</Billing31Day>
+			<ConfigBillingDelay>0</ConfigBillingDelay>
+			<ConfigBillingCycle>0</ConfigBillingCycle>
+			<BillDomChargesOnCurrentBill>disabled</BillDomChargesOnCurrentBill>
+			<ExcludePercentForZeroTaxAmt>disabled</ExcludePercentForZeroTaxAmt>
+			<ItemizedTaxCalculation>disabled</ItemizedTaxCalculation>
+			<ApplyFolds>enabled</ApplyFolds>
+			<ApplyRollover>enabled</ApplyRollover>
+			<CancelTolerance>15</CancelTolerance>
+			<AddChildDueInIntermediateParentBill>0</AddChildDueInIntermediateParentBill>
+		</BusParamsBilling>
+	</BusParamConfigurationClass>
+</BusinessConfiguration>

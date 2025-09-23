@@ -1,0 +1,15 @@
+<!--
+Infranet Service login modification event.
+-->
+
+<!--
+Common element definitions....
+-->
+
+<!ENTITY % Common SYSTEM "common.dtd">
+%Common;
+
+<!ELEMENT Portal.Infranet.Events.ServiceLogin (AccountObj,ServiceObj,
+Logins)>
+<!ATTLIST Portal.Infranet.Events.ServiceLogin Version 
+CDATA #FIXED "1.0" >

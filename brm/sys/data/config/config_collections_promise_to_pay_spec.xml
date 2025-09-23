@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<!--  $Header: optional_mgrs_vob/collections/config/config_collections_promise_to_pay_spec.xml /cgbubrm_2.0.0.collections/6 2022/06/10 07:15:34 udg Exp $ -->
+
+<!-- 
+ Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     config_collections_promise_to_pay_spec.xml 
+
+   DESCRIPTION
+     Defines the promise to pay specifications.
+
+   MODIFIED   (MM/DD/YY)
+   udg		06/10/22 - Creation
+
+-->
+
+
+<ObjectList
+    xmlns="http://www.oracle.com/schemas/BusinessConfig"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_collections_promise_to_pay_spec.xsd">	
+    <ConfigObject>
+        <DESCR>Collections promise to pay specifications</DESCR>
+        <NAME>Collections promise to pay specifications</NAME>        
+        <PROGRAM_NAME>load_config</PROGRAM_NAME>
+	<PROMISE_TO_PAY_SPEC elem="0">
+		<MINIMUM>5</MINIMUM>
+		<MIN_PERCENTAGE_THRESHOLD>10</MIN_PERCENTAGE_THRESHOLD>
+		<TYPE>0</TYPE>
+		<MAX_UNEQUAL_INSTALLMENTS>10</MAX_UNEQUAL_INSTALLMENTS>
+		<MAX_UNEQUAL_INTERVALS>50</MAX_UNEQUAL_INTERVALS>
+		<CREDIT_LIMIT_FLAG>0</CREDIT_LIMIT_FLAG>
+	</PROMISE_TO_PAY_SPEC>
+     </ConfigObject>
+</ObjectList>

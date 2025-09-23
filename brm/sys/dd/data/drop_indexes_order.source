@@ -1,0 +1,20 @@
+--
+-- Copyright (c) 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	on Wed May 29 05:16:37 2024.
+--
+
+drop index i_order__id;
+drop index i_event_order__id;
+drop index i_event_order_associate__id;
+drop index i_event_order_attribute__id;
+drop index i_event_order_brand__id;
+drop index i_event_order_disassociate__id;
+drop index i_event_order_state__id;

@@ -1,0 +1,55 @@
+#!/bin/sh
+# continuus file information --- %full_filespec: init-d.pin.qm.sh~4:shsrc:1 %
+#
+#  @(#) %full_filespec: init-d.pin.qm.sh~4:shsrc:1 %
+#
+#      Copyright (c) 1994 - 2006 Oracle. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+
+#
+# /etc/init.d/pin.qm
+#
+# used to start/stop the QM via init(1m).
+# ought to be linked to:
+#	/etc/rc2.d/S96pin.dm_vertex
+#	/etc/rc2.d/K04pin.dm_vertex
+# (ie after pretty much everything else - especially
+#  after the database if running on same machine)
+#
+PATH=/usr/bin:/bin
+
+VERSION=15.0
+
+DIR=/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/bin
+
+QM=dm_vertex
+START_QM=${DIR}/start_${QM}
+STOP_QM=${DIR}/stop_${QM}
+
+case $1 in
+'start')
+	if [ ! -x ${START_QM} ]; then
+		echo "$0: HELP: no executable ${START_QM} !"
+		exit 1
+	fi       
+	${START_QM}
+	rc=$?
+	;;
+'stop')
+	if [ ! -x ${STOP_QM} ]; then
+		echo "$0: HELP: no executable ${STOP_QM} !"
+		exit 1
+	fi       
+	${STOP_QM}
+	rc=$?
+	;;
+*)
+	echo "usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+exit ${rc}

@@ -1,0 +1,47 @@
+#
+# @(#)pin_config_audit_conf 1.0
+#
+# Copyright (c) 2003, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+#       This material is the confidential property of Oracle
+#       or its subsidiaries or licensors and may be used, reproduced, stored
+#       or transmitted only in accordance with a valid Oracle license or
+#       sublicense agreement.
+#
+# You use this file to create config object for process audit object creation
+# When process audit objects are created process_audit_pol_create opcode reads
+# the config object and setes the threshold vlue for error list and provides the 
+# fileds of the sub class for the duplication check. 
+# the fields required for duplication check should have substruct name to  which the
+# the filed belongs to and field name seperated by ".".
+#
+# After defining the config file , run the 'load_ara_config_object'
+# utility to load the process audit config object into the Infranet database.
+#
+#
+# Use the following syntax for specifying values for the process audit config:
+#
+#   <tag>:<value>
+#   where:
+#       <tag> can be one of the following:
+#               ProcessClass  (for sub classes like /process_audit/billing)
+#              	ThresholdValue ( limit the number of error list )
+#               FieldName (field name along with substruct filed name required for duplication check )
+#
+#       Sample file:
+#       #comment
+#       #comment
+#
+#
+#================================================================
+version 1.0
+
+ProcessClass:/process_audit/billing
+ThresholdValue:20
+FieldName:PIN_FLD_BILLING_INFO.PIN_FLD_TOTAL_REVENUE_BILLED
+FieldName:PIN_FLD_BILLING_INFO.PIN_FLD_REVENUE_TO_BE_COLLECTED
+
+ProcessClass:/process_audit/pipeline
+ThresholdValue:20
+FieldName:PIN_FLD_PIPE_LINE_INFO.PIN_FLD_CDR_FILE_NAME
+FieldName:PIN_FLD_PIPE_LINE_INFO.PIN_FLD_CDR_BATCH_ID

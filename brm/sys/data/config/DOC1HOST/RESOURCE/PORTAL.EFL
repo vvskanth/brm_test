@@ -1,0 +1,888 @@
+VERSION 300  * LFL version 220 *
+* IFL PORTALJ 16:23 09-Aug-98
+
+CALS TABLE2 003 17 061 *
+* Library PORTALJ Section 0 
+000 004 0 000  *
+001 004 18 000  *
+002 004 34 000  *
+003 004 70 000  *
+004 004 92 000  *
+005 004 99 000  *
+006 004 141 000  *
+007 004 148 000  *
+008 004 156 000  *
+009 004 168 000  *
+010 004 178 000  *
+011 004 197 000  *
+012 004 205 000  *
+013 004 227 000  *
+014 004 240 000  *
+015 004 253 000  *
+016 004 261 000  *
+
+OUTPUT 004 275 *
+*
+* Firm Data Library rules commands referenced by
+* Firm Data Reference Records in the Output Rules
+*
+OUTF 0999 0028 =SCPP +002.300 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STL  01 %Lz000 14012.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 009 =STLN     *
+OUTF 0999 022 =STL  01 %Lz000 14011.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -002.300          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 021 =STL  01 Date of Bill  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 016 =STL  01 Bill No  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +000.200 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 L *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 02 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTK 0999 024 =STB  02 x'486848594020' *
+OUTF 0999 020 =STB  01 Arcstar GCN *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP -000.100 -000.130  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0049 =DHRB 000.010 000 000.750 000.000 000.000 006.500  *  Draw morphable horizontal box. *
+RETN *
+OUTF 0999 0028 =SCPP +004.500 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 023 =STL  01 %Lz000 14010.   *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 009 =STLN     *
+OUTF 0999 023 =STL  01 %Lz000 14009.   *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 022 =STL  01 %Lz000 14008.  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 022 =STL  01 %Lz000 14007.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTK 0999 024 =STL  02 x'4ae8456049a0'  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTK 0999 024 =STL  02 x'45e046a94ae8'  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTK 0999 020 =STL  02 x'4ae849a0'  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTK 0999 020 =STL  02 x'477b4981'  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -003.000 +000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 022 =STL  01 Billing Month  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 032 =STL  01 Total Charges for Month  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 023 =STL  01 Billing Period  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 017 =STL  01 Due Date  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +004.500 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STL  01 %Lz000 14013.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 009 =STLN     *
+OUTF 0999 022 =STL  01 %Lz000 14012.  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 022 =STL  01 %Lz000 14011.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -004.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 024 =STL  01 Discount Amount  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 019 =STL  01 Tax Amount  *  Font id and left-justified text string. *
+OUTF 0999 009 =STLN     *
+OUTF 0999 026 =STL  01 <<Grandd Charge>>  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0023 =SCPP +000.100 +000.150  *  Set Current Print Position part 1. X and Y. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0037 =DHRR 000.020 000.000 000.000 004.250  *  Draw morphable horizontal line. *
+OUTF 0999 0023 =SCPP          -000.050  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DHRR 000.020 000.000 000.000 004.250  *  Draw morphable horizontal line. *
+RETN *
+OUTF 0999 0023 =SCPP +002.900 +000.100  *  Set Current Print Position part 1. X and Y. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0049 =DHRB 000.010 000 000.600 000.000 000.000 002.100  *  Draw morphable horizontal box. *
+OUTF 0999 0031 =SCPP -002.770 +000.130 007.500  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 L *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 02 000.000 %Lz000 19832. *
+OUTK 0999 036 =STB  02 x'448548f644ae484144a547a2' *
+OUTF 0999 006 =STBP  *
+OUTK 0999 048 =STB  02 x'44e044e0478c45a4402045874882477b4854' *
+OUTF 0999 006 =STBP  *
+OUTK 0999 032 =STB  02 x'458848b148b948e24020' *
+OUTF 0999 017 =STB  01 12345678 *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP +002.795 -000.010  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 L *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 02 000.000 %Lz000 19832. *
+OUTK 0999 036 =STB  02 x'448546e4448245a0448f47a2' *
+OUTF 0999 006 =STBP  *
+OUTF 0999 021 =STB  01 0120­000­000 *
+OUTK 0999 048 =STB  02 x'424d439f43ae426043ca438243a943af425d' *
+OUTF 0999 006 =STBP  *
+OUTK 0999 032 =STB  02 x'484c475d465145c14020' *
+OUTF 0999 014 =STB  01 10:00 *
+OUTK 0999 016 =STB  02 x'43a1' *
+OUTF 0999 014 =STB  01 17:00 *
+OUTF 0999 006 =STBP  *
+OUTK 0999 036 =STB  02 x'4684456245624446496d4488' *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP -002.825 -000.120  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0049 =DHRB 000.010 000 000.600 000.000 000.000 002.100  *  Draw morphable horizontal box. *
+RETN *
+OUTF 0999 0023 =SCPP +000.100 +000.300  *  Set Current Print Position part 1. X and Y. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0037 =DHRR 000.000 000.000 000.000 000.300  *  Draw morphable horizontal line. *
+OUTF 0999 0028 =SCPP -000.100 -000.170 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 022 =STL  01 %Lz000 14011.  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.110 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 02  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 025 =STL  02 %Lk000404014011.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.110 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 050 =STL  01 %Lz000 14006. %Lz000 14005. %Lz000 14004.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 009 =STLN     *
+OUTF 0999 022 =STL  01 %Lz000 14003.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +003.000 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 02  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTK 0999 020 =STL  02 x'4ae84560'  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -003.000 +000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 016 =STL  01 Summary  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +006.850 +000.100 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STB  01 %Lz000 14014. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 022 =STL  01 %Lz000 14013.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -001.700 +000.010 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 025 =STL  02 %Lk000404014012.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -004.150 +000.020 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 022 =STL  01 %Lz000 14011.  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STL  01 %Lz000 14002.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STL  01 %Lz000 14013.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +002.200 -000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 025 =STL  02 %Lk000404014012.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +002.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 022 =STL  01 %Lz000 14011.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +001.500 +000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14001. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +006.850 +000.100 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STB  01 %Lz000 14001. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +006.850 +000.100 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STB  01 %Lz000 14000. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STL  01 %Lz000 14011.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 L *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 012 =STB  01 NTT *
+OUTK 0999 028 =STB  02 x'486a48674869486a' *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+
+*
+
+CALS TABLE2 002 0 0 *
+* Library PORTALJ Section 0 (keyed) 
+
+OUTPUT 003 000 *
+*
+* Firm Data Library key redirection rules.
+*
+
+*ERSION 300  * LFL version 220
+* IFL PORTAL 16:23 09-Aug-98
+
+CALS TABLE2 001 17 061 *
+* Library PORTAL Section 0 
+000 002 0 000  *
+001 002 30 000  *
+002 002 47 000  *
+003 002 54 000  *
+004 002 231 000  *
+005 002 273 000  *
+006 002 281 000  *
+007 002 289 000  *
+008 002 294 000  *
+009 002 302 000  *
+010 002 314 000  *
+011 002 330 000  *
+012 002 349 000  *
+013 002 375 000  *
+014 002 406 000  *
+015 002 497 000  *
+016 002 511 000  *
+
+OUTPUT 002 533 *
+*
+* Firm Data Library rules commands referenced by
+* Firm Data Reference Records in the Output Rules
+*
+OUTF 0999 0028 =SCPP +000.000 +000.300 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 020 =STL  01 PAGE NUMBER  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +003.100          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14012. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP          -000.170 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14011. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -003.100          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 023 =STL  01 ACCOUNT NUMBER  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0023 =SCPP          +000.100  *  Set Current Print Position part 1. X and Y. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0049 =DHRB 000.010 005 000.400 000.000 000.000 001.800  *  Draw morphable horizontal box. *
+OUTF 0999 0028 =SCPP +001.700 +000.225 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14011. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.600 +000.005 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 017 =STL  01 Due Date  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0023 =SCPP          +000.100  *  Set Current Print Position part 1. X and Y. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0049 =DHRB 000.010 000 000.500 000.000 000.000 004.400  *  Draw morphable horizontal box. *
+OUTF 0999 0028 =SCPP +000.600 +000.300 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 047 =STL  01 THANK YOU FOR ALLOWING US TO SERVE YOU  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +000.500 +000.900 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STB  01 %Lz000 14017. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14016. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14015. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14014. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14013. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP          -000.600 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 014 =STB  01 Total *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 016 =STB  01 Current *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -000.950          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 020 =STB  01 Adjustments *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.050          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 017 =STB  01 Payments *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 017 =STB  01 Previous *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP +004.500 -000.200  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DVRR 000.010 000.000 000.000 001.000  *  Draw morphable vertical line. *
+OUTF 0999 0014 =SCPP -001.000  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DVRR 000.010 000.000 000.000 001.000  *  Draw morphable vertical line. *
+OUTF 0999 0014 =SCPP -001.000  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DVRR 000.010 000.000 000.000 001.000  *  Draw morphable vertical line. *
+OUTF 0999 0014 =SCPP -001.000  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DVRR 000.010 000.000 000.000 001.000  *  Draw morphable vertical line. *
+OUTF 0999 0014 =SCPP -001.000  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DVRR 000.010 000.000 000.000 001.000  *  Draw morphable vertical line. *
+OUTF 0999 0023 =SCPP -000.900 +000.400  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DHRR 000.010 000.000 000.000 003.900  *  Draw morphable horizontal line. *
+OUTF 0999 0028 =SCPP +002.400 -000.050 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 03 000.000 %Lz000 19832. *
+OUTF 0999 027 =STB  03 Thru %Lz000 14012. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 03 000.000 %Lz000 19832. *
+OUTF 0999 027 =STB  03 Thru %Lz000 14011. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +003.000 +000.250 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 012 =STB  01 Due *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 015 =STB  01 Amount *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.000 -000.050 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 016 =STB  01 Charges *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -003.000          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 016 =STB  01 Balance *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP -000.400 -000.350  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0049 =DHRB 000.010 000 001.000 000.000 000.000 004.900  *  Draw morphable horizontal box. *
+RETN *
+OUTF 0999 0028 =SCPP +000.200 +000.930 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 030 =STL  01 TOTAL CURRENT CHARGES  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -000.000 -000.430 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 044 =STL  01 ASSOCIATED ACCOUNTS CARRIED FORWARD  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +005.000 +000.500 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14012. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP          -000.500 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14013. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP          -000.270 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14011. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -004.200 -000.030 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 035 =STL  01 SUMMARY OF CURRENT CHARGES  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.117 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 03  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 066 =STL  03 Please Pay Total Amount Due by %Lz000 14011. - Thank you.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.117 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 03  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 059 =STL  03 FOR INQUIRIES SEE NUMBERS LISTED ON THE LAST PAGE.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0023 =SCPP +000.100 +000.100  *  Set Current Print Position part 1. X and Y. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0037 =DHRR 000.050 000.000 000.000 006.800  *  Draw morphable horizontal line. *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.117 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 03  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STL  03 %Lz000 14011.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+RETN *
+OUTF 0999 0028 =SCPP +000.400 +000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 03  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 045 =STL  03 Check box to indicate address change  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP          +000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 037 =STL  03 and or comments on the back.  *  Font id and left-justified text string. *
+OUTF 0999 0023 =SCPP -000.400 -000.300  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0049 =DHRB 000.010 000 000.300 000.000 000.000 000.300  *  Draw morphable horizontal box. *
+RETN *
+OUTF 0999 0028 =SCPP +000.000 +000.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 030 =STL  01 Portal Software, Inc.  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP          +000.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 018 =STL  01 Suite 200  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 038 =STL  01 20863 Stevens Creek Boulevard  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -000.000 +000.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 032 =STL  01 Cupertino, CA 95014 USA  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +000.000 -000.883 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 031 =STL  03 Make Check Payable To:  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +007.500 +000.130 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STB  01 %Lz000 14013. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -006.200 -000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 022 =STL  01 %Lz000 14012.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -001.300 +000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 022 =STL  01 %Lz000 14011.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +003.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 022 =STL  01 %Lz000 14014.  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +000.100 +000.300 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STL  01 Event Details  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +003.400 +000.330 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 020 =STL  01 Description  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -003.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 020 =STL  01 Account No.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +001.300 -000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 013 =STL  01 Date  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +006.200 +000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 015 =STB  01 Amount *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP -007.500 -000.630  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0049 =DHRB 000.010 005 000.500 000.000 000.000 007.600  *  Draw morphable horizontal box. *
+RETN *
+OUTF 0999 0023 =SCPP +000.100 +000.100  *  Set Current Print Position part 1. X and Y. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0049 =DHRB 000.010 005 000.500 000.000 000.000 006.900  *  Draw morphable horizontal box. *
+OUTF 0999 0028 =SCPP          +000.900 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 021 =STL  01 OFFICE HOURS  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          +000.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 034 =STL  01 8:00 a.m. - 5:00 p.m. CST  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 027 =STL  01 Monday thru Friday  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +004.300 +000.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 055 =STL  01 Technical Support               1-888-815-5992  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 051 =STL  01 Sales/Order Processing      1-888-483-7638  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 060 =STL  01 Billing Inquiries                    1-800-358-3648  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 024 =STL  01 NUMBERS TO CALL  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -002.100 +000.600 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 018 =STL  01 Suite 200  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 038 =STL  01 20863 Stevens Creek Boulevard  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 030 =STL  01 Portal Software, Inc.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 024 =STL  01 OFFICE LOCATION  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP          +000.800 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 032 =STL  01 Cupertino, CA 95014 USA  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +000.400 -001.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 028 =STL  01 GENERAL INFORMATION  *  Font id and left-justified text string. *
+RETN *
+OUTF 0999 0028 =SCPP +003.500 +000.800 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 022 =STB  01 %Lz000 14013. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.200          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14012. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 %Lz000 14011. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +002.700 -000.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 015 =STB  01 Amount *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.300          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 021 =STB  01 Total Amount *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 022 =STB  01 Please Pay By *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP -000.600 +000.200  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DHRR 000.010 000.000 000.000 003.900  *  Draw morphable horizontal line. *
+OUTF 0999 0023 =SCPP +002.900 -000.500  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DVRR 000.010 000.000 000.000 000.800  *  Draw morphable vertical line. *
+OUTF 0999 0014 =SCPP -001.500  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0037 =DVRR 000.010 000.000 000.000 000.800  *  Draw morphable vertical line. *
+OUTF 0999 0028 =SCPP +002.000 +000.450 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 017 =STB  01 Enclosed *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -001.300          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 C *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 012 =STB  01 Due *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0023 =SCPP -002.100 -000.450  *  Set Current Print Position part 1. X and Y. *
+OUTF 0999 0049 =DHRB 000.010 000 000.800 000.000 000.000 003.900  *  Draw morphable horizontal box. *
+RETN *
+OUTF 0999 0028 =SCPP          +000.500 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+OUTF 0999 009 =STLU 01  *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 018 =STL  01 Suite 200  *  Font id and left-justified text string. *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP +000.000 -000.200 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 038 =STL  01 20863 Stevens Creek Boulevard  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -000.000 +000.400 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 032 =STL  01 Cupertino, CA 95014 USA  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +000.000 -000.570 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 030 =STL  01 Portal Software, Inc.  *  Font id and left-justified text string. *
+RETN *
+JNZ  0001 19815 *
+OUTF 0999 010 =COLR 0001  *  Set current colour. *
+OUTF 0999 0049 =DHRB 000.010 005 000.500 000.000 000.000 007.600  *  Draw morphable horizontal box. *
+OUTF 0999 0028 =SCPP +007.500 +000.630 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 0014 =PSHE 00000001 *
+SLEN 19832 19825 *
+JNZ  0002 19832 *
+STOR 19832 0001 R *
+JUMP 0001 *
+COPY 19832 19825 *
+OUTF 0999 030 =STBM 01 000.000 %Lz000 19832. *
+OUTF 0999 015 =STB  01 Amount *
+OUTF 0999 0014 =POPE 00000001 *
+OUTF 0999 0028 =SCPP -006.200 -000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 017 =STL  01 Item No.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -001.300 +000.000 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 020 =STL  01 Account No.  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP +003.500          AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 020 =STL  01 Description  *  Font id and left-justified text string. *
+OUTF 0999 0028 =SCPP -003.400 -000.330 AUTO  *  Set Current Print Position part 2. Line spacing. *
+OUTF 0999 021 =STL  01 Item Summary  *  Font id and left-justified text string. *
+RETN *
+
+*
+
+CALS TABLE2 000 0 0 *
+* Library PORTAL Section 0 (keyed) 
+
+OUTPUT 001 000 *
+*
+* Firm Data Library key redirection rules.
+*
+
+* End of C:\DOC1WS\RESOURCE\NTT\PORTAL11.EFL 16:23 09-Aug-98 ( TOE 3.0p323 )
+~2421560

@@ -1,0 +1,247 @@
+
+##########################################################################
+#
+# Copyright (c) 2001, 2011, Oracle and/or its affiliates. All rights reserved. 
+#     This material is the confidential property of Oracle Corporation 
+#     or its  licensors and may be used, reproduced, stored
+#     or transmitted only in accordance with a valid Oracle license or 
+#     sublicense agreement.
+#
+##########################################################################
+#
+#   File:  era_descr.ko
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  ko ( Korean )
+#
+#	Domain:  era_descr (version = 1)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#         The STRING and optional HELPSTR are localizable.  This file must
+#	    be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#         to be ASCII (no extended-ASCII characters nor multiple byte
+#         characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTES:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. Please see the note about 
+#	    uniqueness above.
+#
+#	    The id's and version's chosen in this file should be kept in
+#	    sync with the pin_device_state_sim configuration file.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "ko" ;
+
+DOMAIN = "era_descr" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "분류" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 기업, 학교 또는 사조직 등의 조직에 속하는 계정 그룹에 계정을 할당합니다. 그룹 구성원 간의 통화는 할인됩니다. 계정은 한 그룹에만 속할 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 종류라고 입력하고 값 필드에 그룹 이름을 입력하십시오. 이 옵션은 회사에서 정하는 대로 다양한 할인을 제공하기도 합니다. 계정은 여러 품질 종류 옵션을 가질 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 품질이라고 입력하고 값 필드에 품질 프로모션 코드를 입력하십시오." ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "특별한 날" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 생일날의 통화를 할인해줍니다. 계정마다 생일을 하나만 가질 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 생일이라고 입력하고 값 필드에 고객의 생일을 입력하십시오." ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "법인" ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 특정 텔레포니 속성을 공유하는 계정 그룹, 예를 들면 서로 회사 내부 통화가 가능한 계정 그룹에 계정을 할당합니다. 그룹 구성원 사이의 통화는 할인됩니다. 계정은 한 그룹에만 속할 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 계약이라고 입력하고 값 필드에 프로모션 이름을 입력하십시오." ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "데이터 창고" ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 마케팅 데이터를 수집하기 위한 계정을 나타냅니다. 계정은 이 프로모션 종류를 하나 이상 가질 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 세그먼트라고 입력하고 값 필드에 프로모션 이름을 입력하십시오." ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "폐쇄 사용자 그룹" ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 폐쇄 사용자 그룹을 만듭니다. 같은 그룹에 속한 번호 간의 통화는 할인됩니다. 이 프로모션을 제공하려면 이름 필드에 전화 번호나 계정 로그인 ID를 입력하고 값 필드에 폐쇄 사용자 그룹의 이름을 입력하십시오." ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "서비스 수준" ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 서비스에 서비스의 품질을 할당합니다. 서비스에는 여러 종류의 서비스의 품질 옵션을 사용할 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 계약이라고 입력하고 값 필드에 프로모션 이름을 입력하십시오." ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "친구 및 가족" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 친구, 가족과 같은 특정 번호와의 통화를 할인해줍니다. 한 계정에 여러 친구와 가족 번호가 포함될 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 번호라고 입력하고 값 필드에 전화 번호를 입력하십시오. 전화 번호 대신에 다른 고객의 로그인 ID를 입력할 수 있습니다." ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "홈 지역" ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 특정 국가 번호나 지역 번호가 포함된 모든 번호와 같이 특정 지역 또는 특정 번호와의 통화를 할인해줍니다. 한 계정에 여러 홈 지역 번호가 포함될 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 번호라고 입력하십시오. 값 필드에는 전화 번호, 로그인 ID, 국가 번호나 지역 번호 같은 지역 특수 번호를 입력하십시오." ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "홈 셀" ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 계정의 홈 셀을 정의합니다. 홈 셀 밖에서 이루어지는 통화는 홈 셀 내부에서 이루어지는 통화와 다르게 요금이 부과됩니다. 한 계정에 여러 홈 셀 항목이 포함될 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 CELL_ID라고 입력하십시오. 값 필드에는 홈 셀 코드를 입력하십시오." ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "요율표" ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 고객의 제품에 포함되지 않은 추가 요율 정보를 제공합니다. 이 프로모션을 제공하려면 이름 필드에 요율표 우선 순위를 입력하십시오. 숫자가 낮을수록 등급이 높습니다. 값 필드에 IntegRate 요율표 코드를 입력하십시오." ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "할인 모델" ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 고객의 프로덕트에 포함되지 않은 추가 요율 정보를 제공합니다. 이 프로모션을 제공하려면 이름 필드에 통합이라고 입력하십시오. 값 필드에는 IntegRate 할인 모델 코드를 입력하십시오." ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "할인 계정" ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 여러 계정에 볼륨 할인을 제공하는 계정을 지정합니다. 한 계정에 이 프로모션 중 하나만 포함될 수 있습니다. 이 프로모션을 제공하려면 이름 필드에 통합이라고 입력하고 값 필드에 마스터 할인 계정의 계정 ID를 입력하십시오." ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "할인 계정" ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 할인 과정에서 고려되는 할인 규칙의 하위 세트를 지정합니다. 할인 규칙은 할인 모델에 정의된 우선순위 순서에 따라 순차적으로 고려되지만 각 할인 규칙은 더 높은 모든 우선순위의 할인 규칙이 이미 완전히 사용된 경우에만 적용됩니다. 할인 모델에 대한 모든 할인 규칙은 지정된 DiscountBundle ERA가 없는 경우에 고려됩니다. 이 프로모션을 제공하려면 값 필드에 할인 규칙 코드를 입력하십시오.";
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "할인 번들" ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 할인 규칙에 대한 할인 잔액 소유자를 지정합니다. 이를 통해 여러 계정에서 할인을 분담할 수 있습니다. 현재 할인은 지정된 DiscountOwner ERA가 없는 경우에 할인 소유자로 취급됩니다. 이 프로모션을 제공하려면 이름 필드에 할인 규칙 이름을 입력하고 값 필드에 할인 소유자의 계정 POID를 입력하십시오.";
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "할인 소유자" ;
+END
+STR
+	ID = 29 ;
+	VERSION = 1 ;
+	STRING = "이 옵션은 연속 통화 도중 끊긴 통화에 대한 할인을 제공합니다. 이 프로모션을 제공하려면 이름 필드에 SAME_CALLED_PARTY, MAX_TIME_TO_CONTINUATION_CALL, MAX_INTERVENING_CALLS를 입력하고 값 필드에 해당 값을 입력하십시오. SAME_CALLED_PARTY는 재개 통화를 위해 끊긴 통화와 동일한 번호로 전화를 걸어야 하는지, 또는 다른 번호로 전화를 걸어도 재개 통화가 가능한지 여부를 지정합니다. MAX_TIME_TO_CONTINUATION_CALL은 끊긴 통화의 마지막부터 재개 통화의 시작까지 허용가능한 지속 시간을 초 단위로 지정합니다. 값을 지정하지 않는 경우, 동일 과금 주기 내에 있기만 하다면 끊긴 통화와 재개 통화 사이에 시간 제한이 없습니다. MAX_INTERVENING_CALLS는 끊긴 통화와 재개 통화 사이의 중간 통화에 대한 허용가능한 횟수를 지정합니다. 값을 지정하지 않으면 모든 통화가 고려됩니다.";
+END

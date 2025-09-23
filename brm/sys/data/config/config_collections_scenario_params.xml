@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<!--  $Header: optional_mgrs_vob/collections/config/config_collections_scenario_params.xml /cgbubrm_2.0.0.collections/6 2013/08/29 07:15:34 kpramod Exp $ -->
+
+<!-- 
+ Copyright (c) 2012, 2013, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     config_collections_scenario_params.xml 
+
+   DESCRIPTION
+     Defines the additional parameters and its properties to be considered 
+     while assigning/replacing a Collections Scenario to a billinfo 
+     under Collections process.
+
+   NOTES
+     In the PIN_FLD_PARAMS array, the TYPE defines the datatype of the value(s)
+     Below are the supported types:
+     STR (1), INT (2), ENUM (3), DECIMAL (4), TSTAMP (5) 
+
+     In case of ENUM, there will be multiple arrays to hold name/value pair in VALUES array.
+     All these values are displayed in the UI. 
+
+     Important Note
+     1. The STRING_ID and STR_VERSION must match to an unique ID and version in strings_t table for localization impact.
+     For any additional parameters added, specify the STRING_ID, STR_VERSION and it also needs to be updated in the 
+     localization file and loaded.
+
+     2. FIELD_NAME should specify the complete path of the attribute. For fields present at level 1 under array/substruct,
+     the field name should be specified along with array/substruct field under which it is present.
+
+   MODIFIED   (MM/DD/YY)
+   kpramod     08/28/13 - XbranchMerge kpramod_bug-16854496 from
+                          cgbubrm_7.5.0.4.0custfix.portalbase
+   sdoddi      04/27/12 - Creation
+
+-->
+
+
+<ObjectList
+    xmlns="http://www.oracle.com/schemas/BusinessConfig"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_collections_scenario_params.xsd">
+	
+    <ConfigObject>
+        <POID>0.0.0.1 /config/collections/scenario_params 1 0</POID>
+        <ACCOUNT_OBJ>0.0.0.1 /account 1 0</ACCOUNT_OBJ>
+        <DESCR>Collections Scenario Evaluation Parameters</DESCR>
+        <HOSTNAME>-</HOSTNAME>
+        <NAME>Collections Scenario Evaluation Parameters</NAME>        
+        <PROGRAM_NAME>load_config</PROGRAM_NAME>
+        <PARAMS elem="0">
+            <PARAM_NAME>Payment Method</PARAM_NAME>
+            <STRING_ID>1</STRING_ID>
+            <STR_VERSION>1</STR_VERSION>
+            <TYPE>3</TYPE>
+	    <CLASS_NAME>/billinfo</CLASS_NAME>
+	    <FIELD_NAME>PIN_FLD_PAY_TYPE</FIELD_NAME>
+	    <VALUES elem="0">
+		<NAME>CC</NAME>
+	        <VALUE>10003</VALUE>
+                <STRING_ID>100</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+	    </VALUES>
+	    <VALUES elem="1">
+	        <NAME>DD</NAME>
+	        <VALUE>10005</VALUE>
+                <STRING_ID>101</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+	    </VALUES>
+	    <VALUES elem="2">
+	        <NAME>CASH</NAME>
+	        <VALUE>10011</VALUE>
+                <STRING_ID>102</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+	    </VALUES>
+	    <VALUES elem="3">
+	        <NAME>CHECK</NAME>
+	        <VALUE>10012</VALUE>
+                <STRING_ID>103</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+	    </VALUES>
+	</PARAMS>
+	<PARAMS elem="1">
+            <PARAM_NAME>Business type</PARAM_NAME>
+            <STRING_ID>2</STRING_ID>
+	    <STR_VERSION>1</STR_VERSION>
+	    <TYPE>3</TYPE>
+	    <CLASS_NAME>/account</CLASS_NAME>
+	    <FIELD_NAME>PIN_FLD_BUSINESS_TYPE</FIELD_NAME>
+	    <VALUES elem="0">
+	        <NAME>Consumer</NAME>
+	        <VALUE>1</VALUE>
+                <STRING_ID>200</STRING_ID>
+		<STR_VERSION>1</STR_VERSION>
+	    </VALUES>
+	    <VALUES elem="1">
+	        <NAME>Business</NAME>
+	        <VALUE>2</VALUE>
+                <STRING_ID>201</STRING_ID>
+		<STR_VERSION>1</STR_VERSION>
+	    </VALUES>
+	</PARAMS>
+        <PARAMS elem="2">
+            <PARAM_NAME>Account Status</PARAM_NAME>
+            <STRING_ID>3</STRING_ID>
+	    <STR_VERSION>1</STR_VERSION>
+            <TYPE>3</TYPE>
+            <CLASS_NAME>/account</CLASS_NAME>
+            <FIELD_NAME>PIN_FLD_STATUS</FIELD_NAME>
+            <VALUES elem="0">
+                <NAME>Defunct</NAME>
+                <VALUE>0</VALUE>
+                <STRING_ID>300</STRING_ID>
+		<STR_VERSION>1</STR_VERSION>
+            </VALUES>
+            <VALUES elem="1">
+                <NAME>Active</NAME>
+                <VALUE>10100</VALUE>
+                <STRING_ID>301</STRING_ID>
+		<STR_VERSION>1</STR_VERSION>
+            </VALUES>
+            <VALUES elem="2">
+                <NAME>Inactive</NAME>
+                <VALUE>10102</VALUE>
+                <STRING_ID>302</STRING_ID>
+		<STR_VERSION>1</STR_VERSION>
+            </VALUES>
+            <VALUES elem="3">
+                <NAME>Closed</NAME>
+                <VALUE>10103</VALUE>
+                <STRING_ID>303</STRING_ID>
+		<STR_VERSION>1</STR_VERSION>
+            </VALUES>
+        </PARAMS>
+     </ConfigObject>
+</ObjectList>
+

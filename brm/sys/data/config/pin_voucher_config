@@ -1,0 +1,29 @@
+#
+# @(#)% %
+#
+version 1
+#======================================================================
+#
+# Copyright (c) 2001 - 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+#   This input file is used to specify the batch part number and
+#   possible set of part numbers along with the batch and part quantity 
+#   for voucher orders.
+#
+# Usage:
+#   $ load_pin_voucher_config <pin_voucher_config>
+#
+#======================================================================
+# FORMAT
+#======================================================================
+# <Batch part No>
+# 	: <Pack part No> : <Pack quantity> : <Batch quantity>
+#======================================================================
+

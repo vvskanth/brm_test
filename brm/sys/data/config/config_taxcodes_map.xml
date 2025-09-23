@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+================================================================================
+Copyright (c) 2021, Oracle and/or its affiliates. All rights reserved.
+This material is the confidential property of Oracle Corporation or its
+licensors and may be used, reproduced, stored or transmitted only in
+accordance with a valid Oracle license or sublicense agreement.
+================================================================================
+-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_object.xsd">
+
+  <ConfigObject configName="/config/taxcodes_map" configMode="recreate">
+    <DESCR>Taxcodes Map Configuration</DESCR>
+    <NAME>taxcodes_map</NAME>
+    <TAXES elem="1">
+      <TAX_CODE>qt_usage</TAX_CODE>
+      <TAXPKG_TAX_CODE>Q</TAXPKG_TAX_CODE>
+      <CODE1>01</CODE1>
+      <CODE2>01</CODE2>
+      <SALES_INDICATOR>S</SALES_INDICATOR>
+    </TAXES>
+    <TAXES elem="2">
+      <TAX_CODE>qt_cycle</TAX_CODE>
+      <TAXPKG_TAX_CODE>Q</TAXPKG_TAX_CODE>
+      <CODE1>01</CODE1>
+      <CODE2>01</CODE2>
+      <SALES_INDICATOR>S</SALES_INDICATOR>
+    </TAXES>
+    <TAXES elem="3">
+      <TAX_CODE>ct_direct</TAX_CODE>
+      <TAXPKG_TAX_CODE>C</TAXPKG_TAX_CODE>
+      <CODE1>01</CODE1>
+      <CODE2>01</CODE2>
+      <SALES_INDICATOR>S</SALES_INDICATOR>
+    </TAXES>
+    <TAXES elem="4">
+      <TAX_CODE>ct_toll</TAX_CODE>
+      <TAXPKG_TAX_CODE>C</TAXPKG_TAX_CODE>
+      <CODE1>04</CODE1>
+      <CODE2>02</CODE2>
+      <SALES_INDICATOR>S</SALES_INDICATOR>
+    </TAXES>
+    <TAXES elem="5">
+      <TAX_CODE>user_code</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <CODE1>10.0</CODE1>
+    </TAXES>
+    <TAXES elem="6">
+      <TAX_CODE>usage</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>4.0</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Fed</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>US</TAX_JURISDICTION_LIST>
+      <DESCR>USF</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="7">
+      <TAX_CODE>cycle</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>3.5</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Fed</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>US</TAX_JURISDICTION_LIST>
+      <DESCR>Excise</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="8">
+      <TAX_CODE>purchase</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>6.0</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Sta</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>CA</TAX_JURISDICTION_LIST>
+      <DESCR>Sales</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="9">
+      <TAX_CODE>purchase</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>1.25</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Cou</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>*</TAX_JURISDICTION_LIST>
+      <DESCR>Sales</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="10">
+      <TAX_CODE>purchase</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>1.0</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Cit</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>*</TAX_JURISDICTION_LIST>
+      <DESCR>Sales</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="11">
+      <TAX_CODE>toll</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>2.0</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Fed</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>US</TAX_JURISDICTION_LIST>
+      <DESCR>TRS</DESCR>
+      <RULE_TYPE>Tax</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="12">
+      <TAX_CODE>toll</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>1.5</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Sta</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>CA</TAX_JURISDICTION_LIST>
+      <DESCR>911</DESCR>
+      <RULE_TYPE>Tax</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="13">
+      <TAX_CODE>toll</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>2.0</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Sta</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>CA</TAX_JURISDICTION_LIST>
+      <DESCR>B-O</DESCR>
+      <RULE_TYPE>Tax</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="14">
+      <TAX_CODE>toll</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>3.15</PERCENT>
+      <VALID_FROM_STR>02/01/01</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Cit</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>Cupertino</TAX_JURISDICTION_LIST>
+      <DESCR>Deaf</DESCR>
+      <RULE_TYPE>Tax</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="15">
+      <TAX_CODE>VAT</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>5.0</PERCENT>
+      <VALID_FROM_STR>02/01/02</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Fed</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>GB;FR</TAX_JURISDICTION_LIST>
+      <DESCR>VAT-EU</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="16">
+      <TAX_CODE>VAT</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>4.5</PERCENT>
+      <VALID_FROM_STR>02/01/02</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Fed</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>GB</TAX_JURISDICTION_LIST>
+      <DESCR>VAT-GB</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+    <TAXES elem="17">
+      <TAX_CODE>VAT</TAX_CODE>
+      <TAXPKG_TAX_CODE>U</TAXPKG_TAX_CODE>
+      <PERCENT>4.0</PERCENT>
+      <VALID_FROM_STR>02/01/02</VALID_FROM_STR>
+      <VALID_TO_STR>01/31/30</VALID_TO_STR>
+      <TAX_JURISDICTION>Fed</TAX_JURISDICTION>
+      <TAX_JURISDICTION_LIST>FR</TAX_JURISDICTION_LIST>
+      <DESCR>VAT-FR</DESCR>
+      <RULE_TYPE>Std</RULE_TYPE>
+    </TAXES>
+  </ConfigObject>
+
+</ObjectList>

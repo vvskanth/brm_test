@@ -1,0 +1,48 @@
+#
+# (#)$Id: pin_suspense_edr_fld_map /cgbubrm_7.5.0.portalbase/1 2015/11/27 04:11:28 nishahan Exp $
+#
+version 1
+#======================================================================
+#
+# Copyright (c) 2003, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+# 	Use this file to define the relation between edr field name, 
+#	edr field value and brand poid mapping.
+#
+#	The text data defined in this file will be loaded into the 
+#	/config/suspense_edr_fld_map.
+#
+# 	Loading this file will replace existing object with the one 
+#	defined below.
+#
+# 	Use the following syntax for defining the suspense edr field and
+#	brand poid mapping
+#
+#	edr_field_name  DETAIL.A_NUMBER
+#	EDR Field Value		Valid From	Valid To	Brand Object
+# 	   1	 		20031231	20371231	0.0.0.1 /account 1 1
+#	
+#	The valid to and valid from values should be defined in YYYYMMDD 
+#	format.
+#
+# Usage:
+#	$ load_pin_suspense_edr_fld_map <pin_suspense_edr_fld_map>
+#
+#======================================================================
+#
+# Sample file:
+#======================================================================
+#
+	edr_field_name  DETAIL.A_NUMBER	
+	881768*		20031231        20371231        0.0.0.1 /account 1 1
+	881759*		20031231        20371231        0.0.0.1 /account 1 1
+	edr_field_name  DETAIL.ASS_GSMW_EXT.PORT_NUMBER
+	66325*		20031231        20371231        0.0.0.1 /account 1 1
+	66324*		20031231        20371231        0.0.0.1 /account 1 1

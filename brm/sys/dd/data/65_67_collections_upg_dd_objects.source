@@ -1,0 +1,96 @@
+#
+# @(#)65_67_collections_upg_dd_objects.source 1.0 11/29/04
+#
+#
+#       Copyright (c) 2004-2007 Oracle Software, Inc. All rights reserved.
+#
+#       This material is the confidential property of Oracle Software, Inc.
+#       or its subsidiaries or licensors and may be used, reproduced,
+#       stored or transmitted only in accordance with a valid Oracle license
+#       or sublicense agreement.
+#      
+#       This file upgrades the collections from 6.5 to 6.7 architecture
+#
+#       Following fields are added in respective STORABLE CLASS 
+#
+#	In /config/collections/scenario 
+#		 under PIN_FLD_ACTIONS array adding  ACTION_MODE field
+#
+#	In /collections_action/ 
+#		adding this extra fields  1.BILLINFO_OBJ 2.ACTION_MODE 
+#
+# 	In /collections_scenario 
+#		 adding BILLINFO_OBJ
+#
+#=============================================================================#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/collections/scenario"
+1     PIN_FLD_DESCR           STR [0] "Collections scenario object.  Contains information for  each scenario. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTIONS"
+2         PIN_FLD_DESCR           STR [0] "List all actions to be conducted in this scenario. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_MODE"
+3             PIN_FLD_DESCR           STR [0] "This value indicates whether the respective action must be executed, in case, if, billinfo enters the collections after the action execution date. PIN_ACTION_MUST_EXECUTE (0) This action will be executed in any case.  PIN_ACTION_OPTIONAL_EXECUTE (1) This actions will be executed only if execution date is not passed. "
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action_mode"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_actions_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/scenario.PIN_FLD_ACTIONS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+1     PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 41, used 24
+1     PIN_FLD_NAME            STR [0] "/collections_action"
+1     PIN_FLD_DESCR           STR [0] "Defines an instance of a collections action. "
+1     PIN_FLD_SEQ_START       INT [0] 2000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /billinfo object. "
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_MODE"
+2         PIN_FLD_DESCR           STR [0] "This value indicates whether the respective action must be executed, in case, if, billinfo enters the collections after the action execution date. PIN_ACTION_MUST_EXECUTE (0) This action will be executed in any case. PIN_ACTION_OPTIONAL_EXECUTE (1) This actions will be executed only if execution date is not passed. "
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "action_mode"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "collections_action_t"
+1     PIN_FLD_ACTION          STR [0] "MODIFY"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_action'}"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 41, used 24
+1     PIN_FLD_NAME            STR [0] "/collections_scenario"
+1     PIN_FLD_DESCR           STR [0] "Defines an instance of a collections scenario. "
+1     PIN_FLD_SEQ_START       INT [0] 2000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /billinfo object that is in collections. "
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "collections_scenario_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_scenario'}"
+1     PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

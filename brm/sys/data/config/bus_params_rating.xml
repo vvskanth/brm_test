@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+	
+	<!-- Sample file. Modify according to guidelines. -->
+	
+	<BusParamConfigurationClass>
+		
+		<BusParamsRating>
+			<OverrideCreditLimit>disabled</OverrideCreditLimit>
+			<EnableEras>serviceAndAccount</EnableEras>
+			<EnableTailormadeCache>disabled</EnableTailormadeCache>
+			<EnableGlobalChargeSharing>disabled</EnableGlobalChargeSharing>
+			<ProductsDiscountsThreshold>0</ProductsDiscountsThreshold>
+			<TimeStampRoundingForPurchaseGrant>enabled</TimeStampRoundingForPurchaseGrant>
+			<OverrideInProductCurrency>disabled</OverrideInProductCurrency>
+			<RatePreCacheProductAndDisc>0</RatePreCacheProductAndDisc>
+			<ApplyDiscountOnZeroCharge>enabled</ApplyDiscountOnZeroCharge>
+			<ResetMemberCreditLimit>enabled</ResetMemberCreditLimit>
+			<SharingGroupsEnabled>enabled</SharingGroupsEnabled>
+			<ExtraRateFlags>0</ExtraRateFlags>
+			<TaxReturnJuris>summarize</TaxReturnJuris>
+		</BusParamsRating>
+
+	</BusParamConfigurationClass>
+</BusinessConfiguration>

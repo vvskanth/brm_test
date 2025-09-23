@@ -1,0 +1,21 @@
+--
+-- Copyright (c) 2015, 2017, Oracle and/or its affiliates. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	from object specifications on Wed May 29 05:16:05 2024.
+--
+--	USE THIS FILE WITH CAUTION: NOT FOR USE IN PRODUCTION ENVIRONMENTS
+--
+
+
+drop table active_session_telco_gsm_t;
+drop table event_session_tlco_gsm_t;
+drop table event_dlyd_session_tlco_gsm_t;
+drop table service_telco_gsm_t;
+drop table au_service_telco_gsm_t;

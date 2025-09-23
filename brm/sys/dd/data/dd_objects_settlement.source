@@ -1,0 +1,197 @@
+#
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:51 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 5
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/service/settlement"
+1     PIN_FLD_DESCR           STR [0] "Settlement Service Object. Use to settle roaming or inter carrier exchange"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/service/settlement/roaming"
+1     PIN_FLD_DESCR           STR [0] "Service Roaming Settlement Object. Use to track the settlement info for the roaming partners"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/service/settlement/roaming/incollect"
+1     PIN_FLD_DESCR           STR [0] "Service Roaming Settlement (Incollect) Object. Use to track the settlement info for the roaming partners (incollect usage)"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/service/settlement/roaming/outcollect"
+1     PIN_FLD_DESCR           STR [0] "Service Roaming Settlement (Outcollect) Object. Use to track the settlement info for the roaming partners (OutCollect usage)"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 9
+1     PIN_FLD_NAME            STR [0] "/event/activity/settlement"
+1     PIN_FLD_DESCR           STR [0] "Records aggregated settlement information for inter-network usage such as roaming. Each event contains information for one network partner."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_PREPAID"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 24
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SETTLEMENT_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing settlement information"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Related network model to which the settlement bill belongs "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MSID"
+3             PIN_FLD_DESCR           STR [0] "Related network operator to whom the settlement bill belongs"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SEQUENCE_NUM"
+3             PIN_FLD_DESCR           STR [0] "Optional stream/file sequence number of the aggregated settlement bill part"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sequence_num"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILL_RUN"
+3             PIN_FLD_DESCR           STR [0] "Defines the bill run period for the bill,  format BCYYYYMMxx"
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bill_run"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SWITCH"
+3             PIN_FLD_DESCR           STR [0] "Name and network operator of a switch"
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 15
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "switch"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POI"
+3             PIN_FLD_DESCR           STR [0] "Name and areacode of a physical/virtual point of interconnect"
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 15
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "poi"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TRUNK"
+3             PIN_FLD_DESCR           STR [0] "Name of the trunk connected to points of interconnect"
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 15
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "trunk"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ICPRODUCT"
+3             PIN_FLD_DESCR           STR [0] "Interconnect product on which the bill has been aggregated"
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "icproduct"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILL_DIRECTION"
+3             PIN_FLD_DESCR           STR [0] "Type of billing, defines the cash-flow (I=incoming, O=outgoing). Possible values:I or O"
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bill_direction"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RATE_PLAN"
+3             PIN_FLD_DESCR           STR [0] "Interconnect rate plan on which the bill has been aggregated"
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "rate_plan"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENTRY_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Normal Booking: N, Cancellation/Reversal: R, Correction: C, Storno: S"
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_LENGTH          INT [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "entry_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENTRY_TYPE_SEQ"
+3             PIN_FLD_DESCR           STR [0] "Identifier for more than one correction"
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "entry_type_seq"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_ITEMS"
+3             PIN_FLD_DESCR           STR [0] "Aggregation result: count of all single edrs"
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_items"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_CODE"
+3             PIN_FLD_DESCR           STR [0] "Interconnect service code on which the bill has been aggregated"
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_LENGTH          INT [0] 5
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_CLASS"
+3             PIN_FLD_DESCR           STR [0] "Interconnect service class on which the bill has been aggregated"
+3             PIN_FLD_ORDER        DECIMAL [0] 14
+3             PIN_FLD_LENGTH          INT [0] 5
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "service_class"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TIMEMODEL"
+3             PIN_FLD_DESCR           STR [0] "Interconnect time model on which the bill has been aggregated"
+3             PIN_FLD_ORDER        DECIMAL [0] 15
+3             PIN_FLD_LENGTH          INT [0] 5
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "timemodel"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_activity_settlement_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/activity/settlement.PIN_FLD_SETTLEMENT_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

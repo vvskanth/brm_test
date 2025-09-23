@@ -1,0 +1,113 @@
+﻿##########################################################################
+#
+# Copyright (c) 2012, 2013, Oracle and/or its affiliates. All rights reserved.
+#     This material is the confidential property of Oracle Corporation 
+#     or its  licensors and may be used, reproduced, stored
+#     or transmitted only in accordance with a valid Oracle license or 
+#     sublicense agreement.
+#
+##########################################################################
+#
+#   File:  ra_alert_message.ru_RU
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  ru_RU ( Russian )
+#
+#	Domain:  Email Alert for RA Notification (version = 1)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    Domain can not be changed and is case sensitive
+#	    It should be same for all locale
+#	    DOMAIN = "Email Alert for RA Notification" ;
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#
+#	    Substitution parameters will be replaced with actual details at run time.
+#	    Different parameters that can be used are
+#
+#	    %ALERT_NAME => Will be replaced with alert name as in PIN_FLD_NAME
+#
+#	    %START_TIME => Will be replaced with start timestamp of the 
+#	    period for which alert was generated
+#
+#	    %END_TIME => Will be replaced with end timestamp of the period 
+#	    for which alert was generated
+#
+#	    %OBJECT_TYPE => Will be replaced with object type value configured 
+#	    for the alert in /config/ra_thresholds
+#
+#	    %FILTERS => Will be replaced with field-value pair(s) configured 
+#	    as filter for the alert in /config/ra_thresholds. If more than one 
+#	    field are used in specifying the filter then list of 
+#	    fields will be comma separated.
+#
+#	    %THRESHOLD_VALUES => Will be replaced with the field and corresponding 
+#	    minimum and maximum limits 
+#	    specified in  /config/ra_thresholds
+#
+#	    %LINE_BREAK => Will be replaced with new line. This parameter is 
+#	    applicable for message body only.
+#
+#
+#         The STRING and optional HELPSTR are localizable.  This file must
+#	    be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#         to be ASCII (no extended-ASCII characters nor multiple byte
+#         characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    String with ID=1 is used for subject of the e-mail
+#	    String with ID=2 is used for message body of the e-mail
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "ru_RU" ;
+
+DOMAIN = "Email Alert for RA Notification" ;
+STR
+     ID = 1 ;
+     VERSION = 1 ;
+     STRING = "Сигнал %ALERT_NAME вышел за пределы определенных пороговых значений." ;
+END
+STR
+     ID = 2 ;
+     VERSION = 1 ;
+     STRING = "Сигнал %ALERT_NAME вышел за пределы\n определенных пороговых значений для периода %START_TIME -\n %END_TIME. %LINE_BREAK Конфигурация сигнала\n указана ниже: %LINE_BREAK ObjectType = %OBJECT_TYPE\n %LINE_BREAK Фильтр = %FILTERS %LINE_BREAK Пороговые\n значения = %THRESHOLD_VALUES" ;
+END
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_business_profile.xsd">
+
+<ConfigObject>
+        <POID>0.0.0.1 /config/business_profile 1 0</POID>
+        <ACCOUNT_OBJ>0.0.0.1 /account 1 0</ACCOUNT_OBJ>
+        <DESCR>Description of the business profile</DESCR>
+        <HOSTNAME>-</HOSTNAME>
+        <NAME>Prepaid</NAME>
+        <PROGRAM_NAME>load_config</PROGRAM_NAME>
+        <PAIR elem="0">
+                <PAIR_KEY>Prepaid</PAIR_KEY>
+                <PAIR_VALUE>yes</PAIR_VALUE>
+        </PAIR>
+        <PAIR elem="1">
+                <PAIR_KEY>Default_Accounting_Type</PAIR_KEY>
+                <PAIR_VALUE>Open_Item</PAIR_VALUE>
+        </PAIR>
+        <PAIR elem="2">
+                <PAIR_KEY>Sharing_Groups_Enabled</PAIR_KEY>
+                <PAIR_VALUE>yes</PAIR_VALUE>
+        </PAIR>
+        <TEMPLATE_ARRAY elem="0">
+                <TEMPLATE_NAME>Service A</TEMPLATE_NAME>
+                <TEMPLATE>/config/template/service</TEMPLATE>
+        </TEMPLATE_ARRAY>
+        <TEMPLATE_ARRAY elem="1">
+                <TEMPLATE_NAME>Balance Group</TEMPLATE_NAME>
+                <TEMPLATE>/config/template/balance_group</TEMPLATE>
+        </TEMPLATE_ARRAY>
+        <TEMPLATE_ARRAY elem="2">
+                <TEMPLATE_NAME>Billinfo</TEMPLATE_NAME>
+                <TEMPLATE>/config/template/billinfo</TEMPLATE>
+        </TEMPLATE_ARRAY>
+        <TEMPLATE_ARRAY elem="3">
+                <TEMPLATE_NAME>Sharing</TEMPLATE_NAME>
+                <TEMPLATE>/config/template/group/sharing</TEMPLATE>
+        </TEMPLATE_ARRAY>
+</ConfigObject>
+</ObjectList>

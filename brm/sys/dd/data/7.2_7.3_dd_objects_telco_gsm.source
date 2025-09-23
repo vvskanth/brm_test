@@ -1,0 +1,25 @@
+#
+#	Copyright (c) 2006, 2009, Oracle and/or its affiliates. All rights reserved. 
+#	This material is the confidential property of Oracle Corporation
+#	or its licensors and may be used, reproduced, stored or transmitted
+#	only in accordance with a valid Oracle license or sublicense agreement.
+#
+#  	This file contains the definitions of GSM AAA Storable Class used by
+#  	PortalBase.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 2
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/event/delayed/session/telco/gsm/roaming"
+1     PIN_FLD_DESCR           STR [0] "This describes a roaming gsm call, which should be billed to a subscriber."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/service/telco/gsm/roaming"
+1     PIN_FLD_DESCR           STR [0] "Service telco gsm Roaming Object. Use to track the roaming gsm service for roaming subscribers"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

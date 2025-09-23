@@ -1,0 +1,148 @@
+#
+# This causes PCM_OP_PUBLISH_GEN_PAYLOAD opcode to be called when the
+# following events happen.  
+#
+version 1
+1301    0      /event/notification/account/create
+1301    0      /event/notification/customer/reg_complete
+1301    0      /event/notification/account/delete
+3626    0      /event/billing/product/action/purchase
+1301    0      /event/billing/product/action/cancel
+1301    0      /event/billing/discount/action/purchase
+1301    0      /event/billing/discount/action/cancel
+1301    0      /event/customer/status
+1301    0      /event/billing/product/action/modify/status
+1301    0      /event/billing/product/action/modify
+1301    0      /event/billing/discount/action/modify/status
+1301    0      /event/billing/discount/action/modify
+1301    0      /event/group/sharing/charges/create
+1301    0      /event/group/sharing/charges/modify
+1301    0      /event/group/sharing/charges/delete
+1301    0      /event/group/sharing/discounts/create
+1301    0      /event/group/sharing/discounts/modify
+1301    0      /event/group/sharing/discounts/delete
+1301    0      /event/group/sharing/products/create
+1301    0      /event/group/sharing/products/modify
+1301    0      /event/group/sharing/products/delete
+1301    0      /event/group/sharing/monitor/create
+1301    0      /event/group/sharing/monitor/modify
+1301    0      /event/group/sharing/monitor/delete
+1301    0      /event/group/sharing/profiles/create
+1301    0      /event/group/sharing/profiles/modify
+1301    0      /event/group/sharing/profiles/delete
+1301    0      /event/billing/ordered_balgrp/delete
+1301    0      /event/billing/mapping_table/modify
+1301    0      /event/notification/profile/create
+1301    0      /event/notification/profile/modify
+1301    0      /event/notification/profile/delete
+1301    0      /event/notification/service/post_change
+1301    0      /event/device/replace
+1301    0      /event/notification/service_item/bill_now
+1301    0      /event/notification/service_item/bill_delay
+1301    0      /event/notification/cycle/start
+1301    0      /event/notification/cycle/end
+1301    0      /event/notification/billing/start_partial
+1301    0      /event/notification/billing/end_partial
+1301    0      /event/notification/billing/start
+1301    0      /event/notification/billing/end
+1301    0      /event/notification/rollover/start
+1301    0      /event/notification/rollover/end
+1301    0      /event/notification/rerating/start
+1301    0      /event/notification/rerating/end
+1301    0      /event/notification/service_item/make_bill_start
+3626    0      /event/notification/service_item/make_bill
+
+# New events for Integrate Framework resource balance synchronization
+3626    0      /event/customer/billinfo/create
+3626    0      /event/customer/billinfo/modify
+3626    0      /event/notification/bal_grp/create
+3626    0      /event/notification/bal_grp/modify
+3626    0      /event/billing/ordered_balgrp/create
+3626    0      /event/billing/ordered_balgrp/modify
+3626    0      /event/customer/login
+3626    0      /event/billing/adjustment/event
+3626    0      /event/billing/debit
+3626    0      /event/billing/product/fee/cycle/cycle_forward_monthly
+3626    0      /event/billing/product/fee/cycle/cycle_forward_bimonthly
+3626    0      /event/billing/product/fee/cycle/cycle_forward_quarterly
+3626    0      /event/billing/product/fee/cycle/cycle_forward_semiannual
+3626    0      /event/billing/product/fee/cycle/cycle_forward_annual
+3626    0      /event/billing/product/fee/cycle/cycle_forward_arrear
+3626    0      /event/billing/product/fee/purchase
+3626    0      /event/billing/cycle/fold
+3626    0      /event/billing/cycle/rollover/monthly
+3626    0      /event/billing/best_pricing
+3626    0      /event/audit/subscription/transfer
+3626    0      /event/billing/sub_bal_validity
+
+# New events for suspense manager
+1301    0      /event/notification/suspense/recycle
+1301    0      /event/notification/suspense/batch_resubmit
+
+# New events for AMT account migration process
+1301    0      /event/notification/amt/HoldCDRProcessing
+1301    0      /event/notification/amt/ResumeCDRProcessing
+1301    0      /event/notification/amt/MigrateAcct
+1301    0      /event/notification/amt/MigrateSource
+1301    0      /event/notification/amt/MigrateDestination
+
+# New events for AMT_TT account migration process
+1301    0      /event/notification/amt_tt/UpdateLogicalPartition
+
+# New events for Rerating
+1301    0      /event/notification/rerating/PrepareToRerate
+1301    0      /event/notification/rerating/ReratingCompleted
+
+# New events for products updation
+1301    0      /event/notification/price/products/modify
+
+# New events for TailorMadePlan updation
+1301    0      /event/notification/price/tailormade_products/create
+1301    0      /event/notification/price/tailormade_products/modify
+
+#New events for First Usage validity
+1301    0      /event/billing/product/action/set_validity
+3626    0      /event/billing/discount/action/set_validity
+
+#New events for change in ACCOUNT_NO
+1301    0       /event/audit/customer/account
+
+# Service Balance Group transfer event
+3626    0       /event/notification/service_balgrp_transfer/data
+
+#Events for balance expiry notification
+1301    0      /event/notification/balance/expiry
+
+# Events for product expiry notification
+1301    0      /event/notification/product/expiry
+1301    0      /event/notification/billing/due
+
+#Events for Subscription renewal notification
+1301    0       /event/notification/subscription/renewal_due
+1301    0       /event/notification/subscription/renewal
+
+1301	0	/event/notification/collections_action/due
+1301	0	/event/notification/installment_schedule/due
+
+#Events for Service state cycle expiry notification
+1301    0      /event/notification/service/state_change/pre_expiry
+1301    0      /event/notification/service/state_change/post_expiry
+
+#AR notifications
+1301    0       /event/notification/billinfo/paytype/modify
+1301    0       /event/notification/payment
+1301    0       /event/notification/payment/failed
+1301    0       /event/billing/refund/cc
+1301    0       /event/billing/refund/dd
+1301    0       /event/billing/refund/check
+1301    0       /event/billing/refund/cash
+1301    0       /event/billing/refund/sepa
+1301    0       /event/billing/reversal/cc
+1301    0       /event/billing/reversal/dd
+1301    0       /event/billing/reversal/check
+1301    0       /event/billing/reversal/cash
+1301    0       /event/billing/reversal/sepa
+
+#Events for tracking failed transaction
+1301	0	    /event/notification/request/create
+

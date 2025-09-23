@@ -1,0 +1,34 @@
+#
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:51 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 3
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/device_state/apn"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_DESCR           STR [0] "Unextended subclass used to support a state model for /device/apn state transitions."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/apn"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_DESCR           STR [0] "This object is depricated. This will be removed in future release. Used for brand specific configuration information regarding /device/apn's."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/device/apn"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_DESCR           STR [0] "Used to represent APN device info."
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

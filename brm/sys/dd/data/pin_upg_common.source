@@ -1,0 +1,607 @@
+-- @(#)$Id: pin_upg_common.source /cgbubrm_mainbrm.portalbase/5 2019/03/27 05:05:08 njuturu Exp $
+--
+-- Copyright (c) 2009, 2022, Oracle and/or its affiliates.
+--
+--      This material is the confidential property of Oracle Corporation or
+--      its licensors and may be used, reproduced, stored or transmitted only
+--      in accordance with a valid Oracle license or sublicense agreement.
+--
+-- sql file to create all the common APIs for Upgrade Process.
+--
+
+SET SERVEROUTPUT ON SIZE 100000
+
+/****************************************
+ * This package contains the common routines
+ * used by the upgrade scripts
+ ****************************************/
+
+CREATE or REPLACE PACKAGE pin_upg_common AS
+
+-- constant to define the no of seconds in a day.
+
+C_NO_OF_SECONDS_IN_A_DAY CONSTANT PLS_INTEGER := 86400;
+
+-- api to check the existence of a table in the database.
+-- This takes table name as input and returns boolean based on the existence.
+
+FUNCTION table_exists (i_table_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- api to check the existence of a constraint in the database.
+-- This takes table name and constraint name as input and returns boolean based on the existence.
+FUNCTION constraint_exists (i_table_name IN VARCHAR2, i_cons_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN;
+
+-- api to check the existence of a type in the database.
+-- This takes type name as input and returns boolean based on the existence.
+
+FUNCTION type_exists (i_type_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- api to check the existence of a view in the database.
+-- This takes view name as input and returns boolean based on the existence.
+
+FUNCTION view_exists (i_view_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN; 
+
+-- api to check the existence of a index in the database.
+-- This takes index name as input and returns boolean based on the existence.
+
+FUNCTION index_exists (i_index_name VARCHAR2, io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- api to check the whether table is partitioned or not.
+-- This takes table name as input and returns boolean based on the partition existence.
+
+FUNCTION is_table_partitioned (i_table_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN;
+
+-- api to check the existence of a index in the database.
+-- this api takes index name besides additional parameters like table name and uniqueness type 
+-- of the index and returns boolean based on the existence.
+-- i_is_unique parameter will take a value of "YES" or "NO" to denote 
+-- whether this is a unique index or not.
+
+FUNCTION index_exists (i_index_name VARCHAR2, i_table_name IN VARCHAR2, 
+			i_is_unique VARCHAR2, io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- api to check the existence of a index in the database.
+-- this api takes index name besides additional parameters like table name, column name and uniqueness type
+-- of the index and returns boolean based on the existence.
+-- i_column_list is a ',' comma-seperated list of column values in case of a composite index.
+-- i_is_unique will take a value of "YES" or "NO" to denote whether this is a unique index or not. 
+
+FUNCTION index_exists (i_index_name VARCHAR2, i_table_name IN VARCHAR2, i_column_list IN VARCHAR2,  
+			i_is_unique VARCHAR2, io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- this api takes table name and column name
+-- of the index and returns boolean based on the existence.
+-- i_column_list is a ',' comma-seperated list of column values in case of a composite index.
+
+FUNCTION index_exist_on_column (i_index_name VARCHAR2, i_table_name IN VARCHAR2, i_column_list IN VARCHAR2,
+                        io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- this api takes index name besides additional parameters like table name, column name
+-- of the index and returns boolean based on the existence.
+-- i_column_list is a ',' comma-seperated list of column values in case of a composite index.
+
+FUNCTION index_exist_on_table (i_index_name VARCHAR2, i_table_name IN VARCHAR2, i_column_list IN VARCHAR2,
+                        io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- api to check the existence of a column in the database.
+-- this api takes column name and returns boolean based on the existence.
+ 
+FUNCTION column_exists (i_table_name IN VARCHAR2, i_column_name IN VARCHAR2,
+			io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+
+-- api to check the existence of a sequence in the database.
+-- this api takes sequence name and returns boolean based on the existence.
+
+FUNCTION sequence_exists (i_sequence_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN;
+
+-- api to check the existence of a partition in the database.
+-- this api takes detailed parameters related to partitioning.
+-- i_high_value takes the hi-value parameter of a partition.
+-- i_partition_position is the partition position.
+-- It returns boolean based on the existence.
+
+FUNCTION partition_exists (i_table_name IN VARCHAR2, i_partition_name IN VARCHAR2,
+                           i_high_value IN VARCHAR2, i_partition_position IN INT,
+                           io_errmsg IN OUT VARCHAR2) 
+RETURN BOOLEAN;     
+
+-- api to check the existence of a synonym in the database.
+-- this api takes synonym name and returns boolean based on the existence.
+
+FUNCTION synonym_exists (i_synonym_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN;     
+
+-- api to check the existence of a partition in the database.
+-- this api just takes as input the basic partition parameters to check the existence.  
+-- i_partition_position is the partition position.
+-- It returns boolean based on the existence.
+
+FUNCTION partition_exists (i_table_name IN VARCHAR2, i_partition_name IN VARCHAR2,
+                           i_partition_position IN INT, io_errmsg IN OUT VARCHAR2) 
+RETURN BOOLEAN;                      
+
+-- api to check whether an index is a partitioned index or not
+
+FUNCTION is_index_partitioned (i_index_name VARCHAR2, i_table_name IN VARCHAR2,
+                        io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN;
+ 
+-- api to create the index in database.
+
+FUNCTION create_index (i_index_name IN VARCHAR2, i_table_name IN VARCHAR2, i_column_names IN VARCHAR2, i_tablespace_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+
+RETURN BOOLEAN;
+
+-- api to create the unique index in database.
+FUNCTION create_unique_index (i_index_name IN VARCHAR2, i_table_name IN VARCHAR2, i_column_names IN VARCHAR2, i_tablespace_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+
+RETURN BOOLEAN;
+ 
+END pin_upg_common;
+/
+
+CREATE or REPLACE PACKAGE BODY pin_upg_common AS
+
+FUNCTION table_exists (i_table_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+	v_dummy VARCHAR2(1);
+BEGIN
+	SELECT '*' INTO v_dummy
+	FROM user_tables
+	WHERE table_name = UPPER(i_table_name);
+
+	RETURN true;
+EXCEPTION
+	WHEN no_data_found THEN
+		RETURN false;
+	WHEN others THEN
+		io_errmsg := sqlerrm;
+		RETURN false;
+END table_exists;
+
+
+  FUNCTION constraint_exists (i_table_name IN VARCHAR2, i_cons_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+  RETURN BOOLEAN AS
+  	v_dummy VARCHAR2(1);
+  BEGIN
+  	SELECT '*' INTO v_dummy
+  	FROM USER_CONSTRAINTS
+  	WHERE table_name = UPPER(i_table_name)
+	AND constraint_name = UPPER(i_cons_name);
+  
+  	RETURN true;
+  EXCEPTION
+  	WHEN no_data_found THEN
+  		RETURN false;
+  	WHEN others THEN
+  		io_errmsg := sqlerrm;
+  		RETURN false;
+  END constraint_exists;
+
+FUNCTION type_exists (i_type_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_types
+        WHERE type_name = UPPER(i_type_name);
+
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END type_exists;
+
+FUNCTION view_exists (i_view_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_views
+        WHERE view_name = UPPER(i_view_name);
+
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END view_exists;
+
+
+FUNCTION index_exists (i_index_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_indexes
+        WHERE index_name = UPPER(i_index_name);
+
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END index_exists;
+
+
+FUNCTION index_exists (i_index_name VARCHAR2, i_table_name IN VARCHAR2, 
+			i_is_unique VARCHAR2, io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN AS
+	v_dummy VARCHAR2(1);
+BEGIN
+	SELECT '*' INTO v_dummy
+	FROM user_indexes
+	WHERE table_name = UPPER(i_table_name)
+	AND index_name = UPPER(i_index_name)
+	AND uniqueness = DECODE (UPPER(i_is_unique), 'YES', 'UNIQUE', 'NO', 'NONUNIQUE');
+
+	RETURN true;
+EXCEPTION
+	WHEN no_data_found THEN
+		RETURN false;
+	WHEN others THEN
+		io_errmsg := sqlerrm;
+		RETURN false;
+END index_exists;
+
+
+FUNCTION index_exists (i_index_name VARCHAR2, i_table_name IN VARCHAR2, i_column_list IN VARCHAR2,  
+			i_is_unique VARCHAR2, io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN AS
+	v_dummy VARCHAR2(1);
+	occurrence INT := 1;
+	prev_comma_position INT := 0;
+	comma_position INT;
+	col_name VARCHAR2(30);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_indexes
+        WHERE table_name = UPPER(i_table_name)
+        AND index_name = UPPER(i_index_name)
+        AND uniqueness = DECODE (UPPER(i_is_unique), 'YES', 'UNIQUE', 'NO', 'NONUNIQUE');
+
+	-- i_column_list contains the list of columns (seperated by commas) in the index,
+	-- in the order it is in the index. Let us parse it now.
+	
+	LOOP 
+		comma_position := instr(i_column_list, ',', 1, occurrence);
+
+		IF (comma_position = 0) THEN
+			col_name := substr(i_column_list, prev_comma_position+1);
+		ELSE
+			col_name := substr(i_column_list, prev_comma_position+1, comma_position - prev_comma_position - 1);
+			prev_comma_position := comma_position;
+		END IF; 
+
+		col_name := UPPER (LTRIM(RTRIM(col_name)));
+
+		SELECT '*' INTO v_dummy
+		FROM user_ind_columns
+		WHERE index_name = UPPER(i_index_name)
+		AND column_name = col_name
+		AND column_position = occurrence;
+
+		occurrence := occurrence + 1;
+
+		EXIT WHEN ( comma_position = 0 );
+	END LOOP;
+
+	-- If we are here, all the conditions are met.
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+
+END index_exists;
+
+FUNCTION index_exist_on_column (i_index_name VARCHAR2, i_table_name IN VARCHAR2, i_column_list IN VARCHAR2,
+                       io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+        occurrence INT := 1;
+        prev_comma_position INT :=0;
+        comma_position INT;
+        col_name VARCHAR2(30);
+BEGIN
+        -- i_column_list contains the list of columns (seperated by commas) in the index,
+        -- in the order it is in the index. Let us parse it now.
+
+        LOOP
+                comma_position := instr(i_column_list, ',', 1, occurrence);
+
+                IF (comma_position = 0) THEN
+                        col_name := substr(i_column_list, prev_comma_position+1);
+                ELSE
+                        col_name := substr(i_column_list, prev_comma_position+1, comma_position - prev_comma_position - 1);
+                        prev_comma_position := comma_position;
+                END IF;
+
+                col_name := UPPER (LTRIM(RTRIM(col_name)));
+
+                SELECT '*' INTO v_dummy
+                FROM user_ind_columns
+                WHERE table_name = UPPER(i_table_name)
+                AND column_name = UPPER(col_name)
+                AND index_name = UPPER(i_index_name)
+                AND column_position = occurrence;
+
+                occurrence := occurrence + 1;
+
+                EXIT WHEN ( comma_position = 0 );
+        END LOOP;
+        -- If we are here, all the conditions are met.
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+
+END index_exist_on_column;
+
+FUNCTION index_exist_on_table (i_index_name VARCHAR2, i_table_name IN VARCHAR2, i_column_list IN VARCHAR2,
+                        io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN AS
+BEGIN
+        IF (index_exists(i_index_name,io_errmsg) AND index_exist_on_column(i_index_name,i_table_name,i_column_list,io_errmsg)) THEN
+                RETURN true;
+        END IF;
+		
+		IF (index_exist_on_column(i_index_name,i_table_name,i_column_list,io_errmsg)) THEN
+                RETURN true;
+        END IF;		
+		
+    RETURN false;
+
+EXCEPTION
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN true;
+
+END index_exist_on_table;
+
+FUNCTION column_exists (i_table_name VARCHAR2, i_column_name IN VARCHAR2,
+			io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN AS
+	v_dummy VARCHAR2(1);
+BEGIN
+	SELECT '*' INTO v_dummy
+	FROM user_tab_columns
+	WHERE table_name = UPPER(i_table_name)
+	AND column_name = UPPER(i_column_name);
+
+	RETURN true;
+EXCEPTION
+	WHEN no_data_found THEN
+		RETURN false;
+	WHEN others THEN
+		io_errmsg := sqlerrm;
+		RETURN false;
+END column_exists;
+
+FUNCTION sequence_exists (i_sequence_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_sequences
+        WHERE sequence_name = UPPER(i_sequence_name);
+
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END sequence_exists;
+
+FUNCTION partition_exists (i_table_name IN VARCHAR2, i_partition_name IN VARCHAR2,
+                           i_high_value IN VARCHAR2, i_partition_position IN INT,
+                           io_errmsg IN OUT VARCHAR2) 
+RETURN BOOLEAN AS
+        v_high_value VARCHAR2(100);
+BEGIN
+        SELECT high_value INTO v_high_value
+        FROM user_tab_partitions
+        WHERE table_name = UPPER(i_table_name)
+        AND partition_name = UPPER(i_partition_name)
+        AND partition_position = i_partition_position;
+
+	IF (v_high_value = i_high_value) THEN
+		RETURN TRUE;
+	ELSE
+		RETURN FALSE;
+	END IF;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END partition_exists;
+
+FUNCTION partition_exists (i_table_name IN VARCHAR2, i_partition_name IN VARCHAR2,
+                           i_partition_position IN INT, io_errmsg IN OUT VARCHAR2) 
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_tab_partitions
+        WHERE table_name = UPPER(i_table_name)
+        AND partition_name = UPPER(i_partition_name)
+        AND partition_position = i_partition_position;
+
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END partition_exists;
+
+
+FUNCTION synonym_exists (i_synonym_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_synonyms
+        WHERE synonym_name = UPPER(i_synonym_name);
+
+        RETURN true;
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+        WHEN others THEN
+		io_errmsg := sqlerrm;
+                RETURN false;
+END synonym_exists;
+
+FUNCTION is_index_partitioned  (i_index_name VARCHAR2, i_table_name IN VARCHAR2,
+                        io_errmsg IN OUT VARCHAR2 )
+RETURN BOOLEAN AS
+        v_dummy VARCHAR2(1);
+BEGIN
+        SELECT '*' INTO v_dummy
+        FROM user_part_indexes
+        WHERE index_name = UPPER(i_index_name)
+        AND table_name = UPPER(i_table_name);
+
+        RETURN true;
+
+EXCEPTION
+        WHEN no_data_found THEN
+                RETURN false;
+	WHEN too_many_rows THEN
+                RETURN TRUE;
+        WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END is_index_partitioned;
+
+FUNCTION is_table_partitioned (i_table_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+            v_dummy VARCHAR2(1);
+BEGIN
+            SELECT '*' INTO v_dummy
+            FROM user_tab_partitions
+            WHERE table_name = UPPER(i_table_name);
+
+            RETURN true;
+EXCEPTION
+            WHEN no_data_found THEN
+                RETURN false;
+            WHEN too_many_rows THEN
+                RETURN TRUE;
+            WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN false;
+END is_table_partitioned;
+
+FUNCTION create_index (i_index_name IN VARCHAR2, i_table_name IN VARCHAR2, i_column_names IN VARCHAR2, i_tablespace_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+            ddl_stmt VARCHAR2(500);
+            column_list_already_indexed EXCEPTION;
+            PRAGMA EXCEPTION_INIT(column_list_already_indexed, -1408);
+            resource_busy EXCEPTION;
+            PRAGMA EXCEPTION_INIT(resource_busy, -54);
+BEGIN
+                IF (NOT index_exist_on_table(i_index_name,i_table_name,i_column_names, io_errmsg)) THEN
+                    IF (table_exists(i_table_name, io_errmsg)) THEN
+
+                        ddl_stmt := 'CREATE INDEX ' || i_index_name ||' ON '|| i_table_name ||'('|| i_column_names || ')  '||i_tablespace_name;
+
+                        EXECUTE IMMEDIATE ddl_stmt;
+
+                    END IF;
+                END IF;
+
+            RETURN TRUE;
+EXCEPTION
+            WHEN column_list_already_indexed THEN
+                RETURN TRUE;
+            WHEN resource_busy THEN
+
+                BEGIN
+                    DBMS_LOCK.Sleep( 15 );            
+                    ddl_stmt := 'CREATE INDEX ' || i_index_name ||' ON '|| i_table_name ||'('|| i_column_names || ')  '||i_tablespace_name;
+                    EXECUTE IMMEDIATE ddl_stmt;
+
+                    RETURN TRUE;
+                EXCEPTION
+                    WHEN others THEN
+                        io_errmsg := sqlerrm;
+                        RETURN FALSE;
+                END;
+            WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN FALSE;
+END create_index;
+
+FUNCTION create_unique_index (i_index_name IN VARCHAR2, i_table_name IN VARCHAR2, i_column_names IN VARCHAR2, i_tablespace_name IN VARCHAR2, io_errmsg IN OUT VARCHAR2)
+RETURN BOOLEAN AS
+            ddl_stmt VARCHAR2(500);
+            column_list_already_indexed EXCEPTION;
+            PRAGMA EXCEPTION_INIT(column_list_already_indexed, -1408);
+            resource_busy EXCEPTION;
+            PRAGMA EXCEPTION_INIT(resource_busy, -54);
+BEGIN
+                IF (NOT index_exist_on_table(i_index_name,i_table_name,i_column_names, io_errmsg)) THEN
+                    IF (table_exists(i_table_name, io_errmsg)) THEN
+
+                       ddl_stmt := 'CREATE UNIQUE INDEX ' || i_index_name ||' ON '|| i_table_name ||'('|| i_column_names || ')  '||i_tablespace_name;
+                       EXECUTE IMMEDIATE ddl_stmt;
+
+                    END IF;
+                END IF;
+
+            RETURN TRUE;
+EXCEPTION
+            WHEN column_list_already_indexed THEN
+                RETURN TRUE;
+            WHEN resource_busy THEN
+
+                BEGIN
+                    DBMS_LOCK.Sleep( 15 );            
+                    ddl_stmt := 'CREATE INDEX ' || i_index_name ||' ON '|| i_table_name ||'('|| i_column_names || ')  '||i_tablespace_name;
+                    EXECUTE IMMEDIATE ddl_stmt;
+
+                    RETURN TRUE;
+                EXCEPTION
+                    WHEN others THEN
+                        io_errmsg := sqlerrm;
+                        RETURN FALSE;
+                END;
+            WHEN others THEN
+                io_errmsg := sqlerrm;
+                RETURN FALSE;
+END create_unique_index;
+
+END pin_upg_common;
+/
+

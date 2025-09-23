@@ -1,0 +1,277 @@
+#
+# @(#)% %
+#
+# Copyright (c) 2006-2007 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+##########################################################################
+#
+#  Sample provisioning tags input file for load_pin_telco_tags
+#  utility program.
+# 
+#  The file will be in simple text format, as described below :
+#  
+#  The file contains two types/blocks of information in the text file :
+# 	-> Provisioning tag
+# 	-> Account ERA
+#  
+#  Provisioning tag related info starts with the keyword 'provisioning_tag' 
+#  and the account ERA related info starts with the keyword 'account_era'.
+# 
+#  The "provisioning tag" contains information about
+# 
+# 	provisioning tag
+# 		- class name (/config/telco/xxx/xxx)
+# 		- name of the provisioning tag
+# 		- description of the provisioning tag
+# 		- indicate if cancellation of the product should 
+#		  trigger unprovisioning (for a VMBOX product it could be 
+#		  "n" to avoid resting the mailbox parameters, for example)
+# 	features
+# 		- one or more string values for feature names
+# 	service ERA
+# 		- name of service ERA (Integrate DB Key)
+#		- String Id for name of service ERA. Key to local display.
+# 		- String Id for description of service ERA. Key to local display.
+# 		- if provisioning is required or not
+# 		- Service ERA Label to store type of ERA. This is an optional field.
+# 	service extension
+# 		- service extension name
+#		- service extension value
+#
+#  The "account ERA" tag contains information about
+# 	account ERA
+# 		- name of account ERA
+#		- String Id for name of account ERA. Key to local display.
+# 		- String Id for description of account ERA. Key to local display.
+#  
+# 
+#  The format of file is (keywords and the values that follow) :
+# 
+#  provisioning_tag	<Class> <ProvTag> <PTDescription> <DelayedProvReqd>
+#  features		<OneOrMoreFeatureNameStringValues>
+#  service_era		<ServiceERA> <StringIdERA> <StringIdServiceERADesc> <ProvBool> <ERALabel>
+#  service_extn		<Extention Type Name> <Extention Value>
+#  account_era		<AccountERA> <StringIdERA> <StringIdAccountERADesc>
+# 
+#  Example 1 : (Note : Refer to data/config/msgs/eradescr/era_descr.* file for the
+#		correct string id mappings.)
+# 
+#  provisioning_tag	"/config/telco" "VoicePremium" "Desc" "y"
+#  features		"CFU" "BICRO"
+#  service_era		"HCA" 3  4 "y"
+#  service_era		"FAF" 5  6 "n"
+#  service_extn		"BEARER_SERVICE" "BS70"
+# 
+#  Example 2 :
+#
+#  provisioning_tag	"/config/telco" "VoiceFamily"  "Desc" "n"
+#  features		"CLIP"
+#  service_era		"FAF" 5  6 "n"
+# 
+#  Example 3 :
+#
+#  provisioning_tag	"/config/telco/gsm/telephony" "VoiceStandard"  "Desc" "n"
+#  features		"CLIP"
+#  service_era		"FAF" 5  6 "n"
+#  service_era          "FAF" 5  6 "y" "Official"
+#  service_era          "FAF" 5  6 "n" "Personal"
+# 
+#  Example 4 :
+# 
+#  account_era		"CA" 7  8
+#  account_era		"BD" 9  10
+#
+#  In above examples, the string ids 3 and 5 are HCA and FAF; 4 and 6 are HCA and
+#  FAF descriptions; 7 and 9 are CA and BD; 8 and 10 are CA and BD descriptions.
+#  
+#  Note that each keyword followed by the value(s) must be in a single line.
+#  The input text file can contain zero or more occurences of provisioning
+#  tags and account ERA definitions.
+# 
+##########################################################################
+
+
+####################### Sample Price Plan Tags ###########################
+
+##### Corporate Premium #####
+# Premium Telephony Package
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Corporate Premium"	"Voice Premium Service package with Called ID, Call Waiting, Call Barring (BAICR and BIOC), Call Forwarding Unconditional, Voice mail, Auto Roam and Conference Calling" "y"
+# Telephony
+service_extn		"BEARER_SERVICE" "T11"
+features		"CLIP" "CW" "BAICR" "BOIC" "CFU" "VMBOX" "ROAM" "MPTY"
+# SMS 
+provisioning_tag	"/config/telco/gsm/sms"	"SMS Corporate Premium" 	"SMS International service package"	"y"
+# All Short Message Service
+service_extn		"BEARER_SERVICE" "T20"
+# to allow inter operator SMS
+features		"BAOC" "BICRO"  
+# Data 
+provisioning_tag	"/config/telco/gsm/data"	"Data Corporate Premium"	"Basic Premium Data service"	"y"
+# Alt. Speech/Synch. 9600bps unrest'd digital c.d.a
+service_extn		"BEARER_SERVICE" "B66"
+# Fax			
+provisioning_tag	"/config/telco/gsm/fax"	"Fax Corporate Premium"		"Basic Premium Fax Service"    "y"
+# Automatic Facsimile Group 3
+service_extn		"BEARER_SERVICE" "T63"
+
+##### Corporate Plus #####
+# Plus Telephony Package
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Corporate Plus"	"Voice Plus Service package with Called ID, Call Waiting, Call Barring (BAICR and BIOC), Call Forwarding Unconditional, Voice mail and Auto Roam" "y"
+# Telephony
+service_extn		"BEARER_SERVICE" "T11"
+features		"CLIP" "CW" "BAICR" "BOIC" "CFU" "VMBOX" "ROAM" 
+# SMS 
+provisioning_tag	"/config/telco/gsm/sms"	"SMS Corporate Plus" 	"SMS International service package"	"y"
+# All Short Message Service
+service_extn		"BEARER_SERVICE" "T20"
+# to allow inter operator SMS
+features		"BAOC" "BICRO"  
+# Add On data service 
+# (same as Corporate, but better to put two entries in case of once
+# want to add features or service_era)
+provisioning_tag	"/config/telco/gsm/data"	"Data Corporate Plus"	"Basic Plus Data service"	"y"
+# Duplex Asynch. 9600bps PAD access
+service_extn		"BEARER_SERVICE" "B46"
+# Add On Fax services (same as Corporate, but better to put two entries in 
+# case of once want to add features or service_era)
+provisioning_tag	"/config/telco/gsm/fax"	"Fax Corporate Plus"		"Basic Plus Fax Service"    "y"
+# Automatic Facsimile Group 3
+service_extn		"BEARER_SERVICE" "T62"
+# Add on on Voice Corporate Plus: Conference Calling and Friends and Family
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Add On Corporate Plus: Promotions and SS"	"Promotion and SS (currently: MPTY and F&F)" "y"
+features		"MPTY"
+service_era		"FRIENDS_FAMILY" 12 13 "n"
+
+##### Standard #####
+# Standard Telephony Package
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Standard"	"Voice Standard Service package with Called ID, Call Waiting, Voice mail and Friends and Family" "y"
+# Telephony
+service_extn		"BEARER_SERVICE" "T11"
+features		"CLIP" "CW" "VMBOX" 
+service_era		"FRIENDS_FAMILY" 12 13 "n" "Official"
+service_era		"DISCOUNTBUNDLE" 24 25 "n"
+service_era		"DISCOUNTOWNER" 26 27 "n"
+# SMS 
+provisioning_tag	"/config/telco/gsm/sms"	"SMS Standard" 	"SMS service package"	"y"
+# All Short Message Service
+service_extn		"BEARER_SERVICE" "T20"
+# to allow inter operator SMS
+features		"BAOC" "BICRO"  
+# Add on on Voice Standard Package:  
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Add On Standard: Promotions and SS"	"Current Promotion: Home Cell and Current SS: Call Barring (BAICR and BIOC), Call Forwarding Unconditional and Auto Roam" "y"
+features		"BAICR" "BOIC" "CFU" "ROAM" 
+service_era		"HOME_CELL" 	16 17 "y"
+# Add on on SMS Standard   
+provisioning_tag	"/config/telco/gsm/sms"	"SMS Add On Standard: Promotions and SS"	"Current SS: Call Barring (BAICR and BIOC)" "y"
+# Add On data service 
+# (same as Corporate, but better to put two entries in case of once
+# want to add features or service_era)
+provisioning_tag	"/config/telco/gsm/data"	"Data Standard Add-on"	"Standard Data service"	"y"
+# Duplex Asynch. 9600bps PAD access
+service_extn		"BEARER_SERVICE" "B46"
+# Add On Fax services (same as Corporate, but better to put two entries in 
+# case of once want to add features or service_era)
+provisioning_tag	"/config/telco/gsm/fax"	"Fax Standard Add-on"		"Standard Data Service"    "y"
+# Automatic Facsimile Group 3
+service_extn		"BEARER_SERVICE" "T62"
+
+##### Teen #####
+# Teen Telephony Package
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Teen"	"Voice Teen Service package with Called ID, Call Waiting, Voice mail" "y"
+# Telephony
+service_extn		"BEARER_SERVICE" "T11"
+features		"CLIP" "CW" "VMBOX" 
+# SMS 
+provisioning_tag	"/config/telco/gsm/sms"	"SMS Teen" 	"SMS service package"	"y"
+# All Short Message Service
+service_extn		"BEARER_SERVICE" "T20"
+# Add on on Voice Teen Package:  
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Add On Teen: Promotions and SS"	"Current SS: Call Barring (BAICR and BIOC), Call Forwarding Unconditional and Auto Roam" "y"
+features		"BAICR" "BOIC" "CFU" "ROAM" 
+service_era		"HOME_CELL" 	16 17 "y"
+# Add on on SMS Teen   
+provisioning_tag	"/config/telco/gsm/sms"	"SMS Teen Add On: Promotions and SS"	"Current Promotion: Call Barring (BAICR and BIOC)" "y"
+# to allow inter operator SMS
+features		"BAOC" "BICRO"  
+# Add On data service 
+# (same as Corporate, but better to put two entries in case of once
+# want to add features or service_era)
+provisioning_tag	"/config/telco/gsm/data"	"Data Teen Add-on"	"Teen Data service"	"y"
+# Duplex Asynch. 9600bps PAD access
+service_extn		"BEARER_SERVICE" "B46"
+# Add On Fax services (same as Corporate, but better to put two entries in 
+# case of once want to add features or service_era)
+provisioning_tag	"/config/telco/gsm/fax"	"Fax Teen Add-on"		"Teen Data Service"    "y"
+# Automatic Facsimile Group 3
+service_extn		"BEARER_SERVICE" "T62"
+
+
+####################### Other Examples ###########################
+# Note: these examples are not fully implemented out of the box on both
+# Infranet and Integrate. They are here to show the flexibility and 
+# the possibility of the system
+####################### Other Examples ###########################
+
+# Telephony service provisioning tag examples.
+
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Basic"		"Basic voice service package, without any SS or ERA"	"y"
+service_extn		"BEARER_SERVICE" "T11"
+
+provisioning_tag	"/config/telco/gsm/telephony"	"Discount Extension for Voice Basic"		"Discount extension for Basic Voice Service package. Includes discounts for friends and family and home call"	"y"
+service_era		"FRIENDS_FAMILY" 12 13 "n"
+service_era		"HOME_REGION" 	14 15 "y"
+
+provisioning_tag	"/config/telco/gsm/telephony"	"SS Extension for Voice Basic"		"SS extension for Basic Voice Service package with Voice mail, Caller ID, Call forwarding and Call waiting"	"y"
+features		"VMBOX" "CLIP" "CFU" "CW" 	
+
+provisioning_tag	"/config/telco/gsm/telephony"	"Voice Premium"		"Voice Premium Service package with Voice mail, Caller ID, Call forwarding, Call waiting, call holding, call deflection plus discount for friends and family and home region call"	"y"
+service_extn		"BEARER_SERVICE" "T00"
+features		"VMBOX" "CLIP" "CFU" "CW" "HOLD" "CD"	
+service_era		"FRIENDS_FAMILY" 12 13 "n"
+service_era		"HOME_REGION" 	14 15 "y"
+service_era		"SERVICELEVEL" 	10 11 "n"
+service_era		"HOME_CELL" 	16 17 "y"
+service_era		"DISCOUNT_MODEL" 	20 21 "n"
+service_era		"RATEPLAN" 	18 19 "n"
+service_era		"DISCOUNTACCOUNT" 	22 23 "n"
+
+
+# Data service provisioning tag examples.
+
+provisioning_tag	"/config/telco/gsm/data"	"Data Basic"		"Basic Data service package, without any SS or ERA"	"y"
+service_extn		"BEARER_SERVICE" "B46"
+
+provisioning_tag	"/config/telco/gsm/data"	"Data Premium"		"Premium Data Service package with Caller ID and Call Waiting plus discount for home call"	"y"
+service_extn		"BEARER_SERVICE" "B46"
+features		"CLIP" "CW" 	
+service_era		"HOME_REGION" 	14 15 "y"
+
+
+# Fax service provisioning tag example.
+
+provisioning_tag	"/config/telco/gsm/fax"	"Fax Premium"		"Premium Fax Service package with Caller ID, Call Deflection, CAll waiting and Call forwarding"  "y"
+service_extn		"BEARER_SERVICE" "T62"
+features		"CLIP" "CD" "CW" "CFU" 
+
+
+# SMS service provisioning tag example.
+provisioning_tag	"/config/telco/gsm/sms"	"SMS Basic"		"SMS basic service package"	"y"
+service_extn		"BEARER_SERVICE" "T20"
+
+provisioning_tag	"/config/telco/gsm/sms"	"SMS International"		"SMS International service package"	"y"
+service_extn		"BEARER_SERVICE" "T20"
+features		"BAOC" "BICRO"  
+
+
+# Account ERA for the sample price plan
+
+account_era		"SPECIAL_DAY" 	2 3
+account_era		"CLOSEDUSERGROUP" 	8 9
+account_era		"CLASSIFICATION" 	0 1
+account_era		"CORPORATE" 	4 5
+account_era		"DATAWAREHOUSE" 	6 7
+account_era		"RATEPLAN" 	18 19

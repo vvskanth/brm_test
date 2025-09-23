@@ -1,0 +1,179 @@
+#
+# Class Definitions:
+# All attributes need to be defined in the directory server
+# All the entry_type objectclasses and attrval objectclasses need to be
+# defined in the directory server.
+#
+STORABLE CLASS /r_user {
+	POID PIN_FLD_POID {
+		CREATE = System;
+		MODIFY = System;
+	}
+	TIMESTAMP PIN_FLD_CREATED_T {
+		CREATE = System;
+		MODIFY = System;
+	}
+	TIMESTAMP PIN_FLD_MOD_T {
+		CREATE = System;
+		MODIFY = System;
+	}
+	STRING PIN_FLD_NAME {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	POID PIN_FLD_ACCOUNT_OBJ {
+		CREATE = Required;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_ACCOUNT_NO {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_FIRST_NAME {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_LAST_NAME {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_ACCOUNT_STATUS {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_BILL_TYPE_NAME {
+		CREATE = Optional;
+                MODIFY = Writeable;
+        }
+	STRING PIN_FLD_ADDRESS {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_CURRENCY_NAME {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_LOGIN {
+		CREATE = Required;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_PASSWD {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_EMAIL_LOGIN {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_EMAIL_STATUS {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_IP_LOGIN {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	STRING PIN_FLD_IP_STATUS {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	INT PIN_FLD_MAX_MBOX_SIZE {
+		CREATE = Optional;
+		MODIFY = Writeable;
+	}
+	INT PIN_FLD_MAX_MSG_CNT {
+                CREATE = Optional;
+                MODIFY = Writeable;
+	}
+	INT PIN_FLD_MAX_MSG_SIZE {
+                CREATE = Optional;
+                MODIFY = Writeable;
+	}
+        ARRAY PIN_FLD_ARGS {
+                STRING PIN_FLD_ARG {
+                        CREATE = Optional;
+                        MODIFY = Writeable;
+                }
+        }
+}
+
+STORABLE CLASS /r_user IMPLEMENTATION LDAPV3 {
+	ATTRVAL = "objectClass: top";
+	ATTRVAL = "objectClass: person";
+	ATTRVAL = "objectClass: inetOrgPerson";
+
+	ENTRY_TYPE = "ruser";
+
+	LOCATION = "o=portal.com";
+	
+	POID PIN_FLD_POID {
+		ATTRIBUTE = "pinpoid";
+	}
+	TIMESTAMP PIN_FLD_CREATED_T {
+		ATTRIBUTE = "pincreatedt";
+	}
+	TIMESTAMP PIN_FLD_MOD_T {
+		ATTRIBUTE = "pinmodt";
+	}
+	STRING PIN_FLD_NAME {
+		ATTRIBUTE = "cn";
+	}
+	POID PIN_FLD_ACCOUNT_OBJ {
+		ATTRIBUTE = "billingid";
+	}
+	STRING PIN_FLD_ACCOUNT_NO {
+		ATTRIBUTE = "accountno";
+	}
+	STRING PIN_FLD_FIRST_NAME {
+		ATTRIBUTE = "givenName";
+	}
+	STRING PIN_FLD_LAST_NAME {
+		ATTRIBUTE = "sn";
+	}
+	STRING PIN_FLD_ACCOUNT_STATUS {
+		ATTRIBUTE = "billingstatus";
+	}
+	STRING PIN_FLD_BILL_TYPE_NAME {
+		ATTRIBUTE = "billingtype";
+	}
+	STRING PIN_FLD_ADDRESS {
+		ATTRIBUTE = "billingaddress";
+	}
+	STRING PIN_FLD_CURRENCY_NAME {
+		ATTRIBUTE = "currency";
+	}
+	STRING PIN_FLD_LOGIN {
+		ATTRIBUTE = "uid";
+		RDN_PIECE = 1;
+	}
+	STRING PIN_FLD_PASSWD {
+		ATTRIBUTE = "userPassword";
+	}
+	STRING PIN_FLD_EMAIL_LOGIN {
+		ATTRIBUTE = "mail";
+	}
+	STRING PIN_FLD_EMAIL_STATUS {
+		ATTRIBUTE = "mailstatus";
+	}
+	STRING PIN_FLD_IP_LOGIN {
+		ATTRIBUTE = "iplogin";
+	}
+	STRING PIN_FLD_IP_STATUS {
+		ATTRIBUTE = "ipstatus";
+	}
+	INT PIN_FLD_MAX_MBOX_SIZE {
+		ATTRIBUTE = "mailQuota";
+	}
+	INT PIN_FLD_MAX_MSG_CNT {
+		ATTRIBUTE = "mailmaxmsgcnt";
+	}
+	INT PIN_FLD_MAX_MSG_SIZE {
+		ATTRIBUTE = "mailmaxmsgsize";
+	}
+        ARRAY PIN_FLD_ARGS {
+                STRING PIN_FLD_ARG {
+                        ATTRIBUTE = "ipargs";
+                        MULTIVALUED = 1;
+                }
+        }
+}

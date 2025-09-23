@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+================================================================
+ Copyright (c) 2005, 2009, Oracle and/or its affiliates. All rights reserved. 
+
+This material is the confidential property of Oracle Corporation
+or its licensors and may be used, reproduced, stored or transmitted
+only in accordance with a valid Oracle license or sublicense agreement.
+================================================================
+-->
+<PinRerate_flds xmlns="http://www.portal.com/PortalXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.portal.com/PortalXMLSchema ../../../xsd/pin_rerate_flds.xsd">
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_START_T</Name>
+		<value>startTime</value>
+	</PinRerate>
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_END_T</Name>
+		<value>endTime</value>
+	</PinRerate>
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_BAL_IMPACTS.PIN_FLD_IMPACT_CATEGORY</Name>
+		<value>impactCategory </value>
+	</PinRerate>
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_ITEM_OBJ</Name>
+		<value>itemObject</value>
+	</PinRerate>
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_DEAL</Name>
+		<value>deal</value>
+	</PinRerate>
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_SERVICE_OBJ</Name>
+		<value>service</value>
+	</PinRerate>
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_BAL_IMPACTS.PIN_FLD_PRODUCT_OBJ</Name>
+		<value>product</value>
+	</PinRerate>
+	<PinRerate>
+		<Name>EVENT.PIN_FLD_TELCO_INFO.PIN_FLD_CALLED_TO</Name>
+		<value>DestinationNumber</value>
+	</PinRerate>
+</PinRerate_flds>

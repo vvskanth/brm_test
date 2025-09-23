@@ -1,0 +1,422 @@
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:52 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 8
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/order/voucher"
+1     PIN_FLD_DESCR           STR [0] "Order voucher object. Contains information that is specific to order of the vouchers "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VOUCHER_ORDERS"
+2         PIN_FLD_DESCR           STR [0] "Array containing information about the order of the vouchers. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Name of the carrier "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QUANTITY"
+3             PIN_FLD_DESCR           STR [0] "Quantity associated with orderthis order."
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "quantity"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_TOTAL"
+3             PIN_FLD_DESCR           STR [0] "Total amount of batches withinthe order."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "batch_total"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_SERIAL_NO"
+3             PIN_FLD_DESCR           STR [0] "The starting serial number for thedevices "
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "start_serial_no"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENCRYPTION_TYPE"
+3             PIN_FLD_DESCR           STR [0] "The types used to encrypt the request and response files  "
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "encryption_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_NAME"
+3             PIN_FLD_DESCR           STR [0] "Name of the service provider "
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_CODE"
+3             PIN_FLD_DESCR           STR [0] "Code of the service provider "
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECHARGE_CARD_TYPE"
+3             PIN_FLD_DESCR           STR [0] "type of card associated with the recharge card "
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "card_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECHARGE_CARD_CODE"
+3             PIN_FLD_DESCR           STR [0] "Code associated with the recharge card "
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "card_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_QUANTITY"
+3             PIN_FLD_DESCR           STR [0] "Batch quantity associated with this order."
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "batch_qty"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PACK_QUANTITY"
+3             PIN_FLD_DESCR           STR [0] "Pack quantity associated with this order."
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pack_qty"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_PART_NO"
+3             PIN_FLD_DESCR           STR [0] "Batch number associated with the order "
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "batch_part_no"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PACK_PART_NO"
+3             PIN_FLD_DESCR           STR [0] "Pack number associated with the order "
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pack_part_no"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEAL_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Deal object which has the products to impact the balanceassociated with the card "
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "deal_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXPIRATION_T"
+3             PIN_FLD_DESCR           STR [0] "Time the expiration time of vouchers associated with the card "
+3             PIN_FLD_ORDER        DECIMAL [0] 14
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "expiration_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CARD_EXPIRATION"
+3             PIN_FLD_DESCR           STR [0] "The expiration days of the voucher card "
+3             PIN_FLD_ORDER        DECIMAL [0] 15
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "card_expiration"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "order_voucher_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/order/voucher.PIN_FLD_VOUCHER_ORDERS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/device/voucher"
+1     PIN_FLD_DESCR           STR [0] "Used to represent a unique Voucher Device. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEVICE_VOUCHER"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing information about this voucher device."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VOUCHER_PIN"
+3             PIN_FLD_DESCR           STR [0] "Voucher personal identification  number. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1024
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ENCRYPTABLE     INT [0] 1
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "voucher_pin"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_NAME"
+3             PIN_FLD_DESCR           STR [0] "Name of the service provider "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_CODE"
+3             PIN_FLD_DESCR           STR [0] "Code of the service provoider "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEAL_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Deal object which has the products to impact the balance"
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "deal_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECHARGE_CARD_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Type of the voucher card "
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "recharge_card_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECHARGE_CARD_CODE"
+3             PIN_FLD_DESCR           STR [0] "Code associated with the recharge card "
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "recharge_card_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXPIRATION_T"
+3             PIN_FLD_DESCR           STR [0] "Expiration date of the voucher "
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "expiration"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "device_voucher_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/device/voucher.PIN_FLD_DEVICE_VOUCHER'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/voucher"
+1     PIN_FLD_DESCR           STR [0] "A singleton configuration object of thisclass is used to set up voucher order related information. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VOUCHERS_INFO"
+2         PIN_FLD_DESCR           STR [0] "Array of vouchers information. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_PART_NO"
+3             PIN_FLD_DESCR           STR [0] "Batch number associated with the order "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "batch_part_no"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PACKAGE_INFO"
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PACK_PART_NO"
+4                 PIN_FLD_DESCR           STR [0] "Pack number associated with the order "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "pack_part_no"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 14
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PACK_QUANTITY"
+4                 PIN_FLD_DESCR           STR [0] "Pack quantity associated with this order."
+4                 PIN_FLD_ORDER        DECIMAL [0] 1
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "pack_qty"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 14
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_QUANTITY"
+4                 PIN_FLD_DESCR           STR [0] "Batch quantity associated with this order."
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "batch_qty"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_voucher_pack_info_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/voucher.PIN_FLD_VOUCHERS_INFO.PIN_FLD_PACKAGE_INFO'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_voucher_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/voucher.PIN_FLD_VOUCHERS_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/dealers"
+1     PIN_FLD_DESCR           STR [0] "A singleton configuration object of thisclass is used to set up the list of dealers. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALERS"
+2         PIN_FLD_DESCR           STR [0] "Array of dealers. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_NAME"
+3             PIN_FLD_DESCR           STR [0] "Name of the dealer."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_CODE"
+3             PIN_FLD_DESCR           STR [0] "The code of the dealer."
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_code"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_dealers_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/dealers.PIN_FLD_DEALERS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/device_state/voucher"
+1     PIN_FLD_DESCR           STR [0] "Storable class to store device state of voucher"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/order_state/voucher"
+1     PIN_FLD_DESCR           STR [0] "Storable class to store order state of voucher"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [6] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/inventory_mgmt_template"
+1     PIN_FLD_DESCR           STR [0] "Stores an XML object containing parameters which specify how a Request or Response file should be parsed by the Inventory Management Center tool.  Options include how the file is delimited (by record and field), fields to map, ..."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INVENTORY_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing the XML object."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 6
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INVENTORY_TEMPLATE"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_DESCR           STR [0] "The XML object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "C=inventory_template T=config_invtry_template_buf_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/inventory_mgmt_template.PIN_FLD_INVENTORY_INFO.PIN_FLD_INVENTORY_TEMPLATE'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_invtry_template_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/inventory_mgmt_template.PIN_FLD_INVENTORY_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [7] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/recharge_card_type"
+1     PIN_FLD_DESCR           STR [0] "Stores the voucher card type information "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Global"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 11
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECHARGE_CARDS"
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_DESCR           STR [0] "Array containing the voucher recharge card types."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALERS"
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_DESCR           STR [0] "Array containing the dealers"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_NAME"
+4                 PIN_FLD_DESCR           STR [0] "Name of the dealer."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEALER_CODE"
+4                 PIN_FLD_DESCR           STR [0] "The code of the dealer."
+4                 PIN_FLD_ORDER        DECIMAL [0] 1
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "dealer_code"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_recharge_dealers_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/recharge_card_type.PIN_FLD_RECHARGE_CARDS.PIN_FLD_DEALERS'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECHARGE_CARD_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Type of the voucher card "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "recharge_card_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECHARGE_CARD_CODE"
+3             PIN_FLD_DESCR           STR [0] "Code associated with the recharge card "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "recharge_card_code"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_recharge_card_type_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/recharge_card_type.PIN_FLD_RECHARGE_CARDS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

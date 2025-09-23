@@ -1,0 +1,63 @@
+#
+# @(#)pin_transition_type 1.00 10/01/2003 
+#############################################################################
+#
+#  Copyright (c) 1999 - 2006 Oracle. All rights reserved.
+#
+#  This material is the confidential property of Oracle Corporation
+#  or its subsidiaries or licensors and may be used, reproduced, stored
+#  or transmitted only in accordance with a valid Oracle license or
+#  sublicense agreement.
+#	     
+#############################################################################
+# 
+#
+# You use this file to define the transitions types available for use
+# in the transition objects.
+# After defining the transition types, run the load_transition_type application
+# to load the resources into the Portal database, and create a new config 
+# object, /config/transition_type
+#
+# Use the following syntax for defining the transition types.
+#	<tt_id>   <tt_str>
+# 
+# tt_id is the id of the transition type (this will be the value in the 
+# transition object)
+# tt_str is the transition name which is visible in the Pricing Tool.
+# Use these rules for assigning resource numbers:
+#
+#   * Do NOT assign a resource number of 0.
+#   * Resource numbers 1 - 100 are reserved and are portal internal.
+
+# WARNING!
+# Do NOT change these once you have loaded them 
+# into a database, or the data will be corrupted.
+##############################
+version 1
+################################
+#
+# <tt_id>	<tt_str>
+
+
+##################################
+# Portal Reserved
+##################################
+# 0
+1	Upgrade
+2	Downgrade
+3	Generation Change
+#.
+#.
+#.
+# 99
+# 100
+#
+#################################
+# End Portal Reserved           #
+#################################
+# EDIT *only* the lines below.  #
+#################################
+#
+101		Red
+102		Blue
+103		Green

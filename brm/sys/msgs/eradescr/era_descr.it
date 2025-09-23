@@ -1,0 +1,242 @@
+
+##########################################################################
+#
+# Copyright (c) 2001, 2010, Oracle and/or its affiliates. All rights reserved. 
+#     This material is the confidential property of Oracle Corporation 
+#     or its  licensors and may be used, reproduced, stored
+#     or transmitted only in accordance with a valid Oracle license or 
+#     sublicense agreement.
+#
+##########################################################################
+#
+#   File:  era_descr.it
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  it ( Italian )
+#
+#	Domain:  era_descr (version = 1)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#         The STRING and optional HELPSTR are localizable.  This file must
+#	    be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#         to be ASCII (no extended-ASCII characters nor multiple byte
+#         characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTES:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. Please see the note about 
+#	    uniqueness above.
+#
+#	    The id's and version's chosen in this file should be kept in
+#	    sync with the pin_device_state_sim configuration file.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "it" ;
+
+DOMAIN = "era_descr" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "Classificazione" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione assegna il conto a un gruppo di conti appartenenti a un'organizzazione aziendale, scolastica o privata. Vengono applicati sconti alle chiamate effettuate tra membri del gruppo. Un conto può appartenere ad un solo gruppo. Per assegnare questa promozione, immettere la parola TYPE nel campo Nome e il nome del gruppo nel campo Valore. Questa opzione assegna inoltre diversi sconti definiti dalla propria società. Un conto può avere più tipi di opzioni di qualità. Per assegnare questa promozione, immettere la parola QUALITY nel campo Nome e il codice della promozione di qualità nel campo Valore." ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "Giorno speciale" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione assegna sconti su chiamate effettuate il giorno del proprio compleanno. Un conto può avere un solo compleanno. Per assegnare questa promozione, immettere la parola BIRTHDAY nel campo Nome e la data di compleanno del cliente nel campo Valore." ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "Conto societario" ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione assegna il conto a un gruppo di conti che condividono determinate proprietà telefoniche, ad esempio un gruppo di conti in grado di effettuare chiamate reciproche all'interno della stessa società. Vengono applicati sconti alle chiamate effettuate tra membri del gruppo. Un conto può appartenere ad un solo gruppo. Per assegnare questa promozione, immettere la parola AGREEMENT nel campo Nome e il nome della promozione nel campo Valore." ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "Datawarehouse" ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione identifica conti in funzione della raccolta dati relativi al marketing. Un conto può avere più promozioni di questo tipo. Per assegnare questa promozione, immettere la parola SEGMENT nel campo Nome e il nome della promozione nel campo Valore." ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "Gruppo utenti chiuso" ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione crea gruppi utenti chiusi. Vengono applicati sconti alle chiamate effettuate tra numeri dello stesso gruppo. Per assegnare questa promozione, immettere il numero di telefono o l'ID login del conto nel campo Nome e il nome del gruppo utenti chiuso nel campo Valore." ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "Livello di servizio" ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione assegna una qualità di servizio ad un servizio. Un servizio può avere più tipi di opzioni di qualità di servizio. Per assegnare questa promozione, immettere la parola AGREEMENT nel campo Nome e il nome della promozione nel campo Valore." ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "Amici e familiari" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione fornisce sconti per chiamate effettuate verso numeri specifici, ad esempio di amici e familiari. Un conto può includere più numeri di amici e familiari. Per assegnare questa promozione, immettere la parola NUMBER nel campo Nome e il numero di telefono nel campo Valore. Al posto del numero di telefono è possibile immettere l'ID login di un altro cliente." ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "Area locale" ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione fornisce sconti per chiamate effettuate verso numeri specifici o verso aree, ad esempio tutti i numeri di un paese o con lo stesso indicativo di località. Un conto può includere più numeri di aree locali. Per assegnare questa promozione, immettere la parola NUMBER nel campo Nome. Nel campo Valore, immettere un numero di telefono, un ID login o un indicatore di area, ad esempio l'indicativo del paese o l'indicativo di località." ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "Cella locale" ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione definisce le celle locali per un conto. Le chiamate effettuate al di fuori di una cella locale vengono addebitate in modo diverso rispetto a quelle effettuate all'interno della cella locale. Un conto può includere più voci di celle locali. Per assegnare questa promozione, immettere la parola CELL_ID nel campo Nome. Nel campo Valore, immettere il codice della cella locale." ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "Piano tariffario" ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione fornisce ultierori informazioni tariffarie non incluse nei prodotti del cliente. Per assegnare questa promozione, immettere la priorità del piano tariffario nel campo Nome. Un numero basso indica una priorità alta. Immettere il codice del piano tariffario IntegRate nel campo Valore." ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "Modello di sconto" ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione fornisce ultierori informazioni tariffarie non incluse nei prodotti del cliente. Per assegnare questa promozione, immettere la parola INTEGRATE nel campo Nome.  Immettere il codice del modello di sconto IntegRate nel campo Valore." ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "Conto sconti" ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione specifica un conto che fornisce sconti per volume a più conti. Un conto può avere una sola promozione di questo tipo. Per assegnare questa promozione, immettere la parola INTEGRATE nel campo Nome, e l'ID del conto sconti principale nel campo Valore." ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "Raggruppamento sconti" ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione specifica l'insieme secondario delle regole sconti che verràconsiderato durante l'applicazione dello sconto. Le regole sconti verranno considerate in sequenza nell'ordine di priorità definito per il modello di sconto, tuttavia ogni regola sconti verràapplicata solo dopo che tutte le regole con prioritàsuperiore saranno state utilizzate completamente. Tutte le regole sconti di un modello di sconto verranno considerate se non sono stati specificati attributi di tariffazione estesi DiscountBundle. Per assegnare questa promozione, immettere il codice della regola sconti nel campo VALUE.";
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "Proprietario sconto" ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "Questa opzione specifica il proprietario del saldo sconti per una regola sconti. Ciò consente a più conti di condividere uno sconto. Il conto corrente verràtrattato come proprietario dello sconto se non viene specificato l'attributo di tariffazione esteso DiscountOwner. Per assegnare questa promozione, immettere il nome della regola sconti nel campo NAME e il POID del conto corrispondente al proprietario dello sconto nel campo VALUE.";
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "Chiamata interrotta" ;
+END

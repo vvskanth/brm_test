@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!--
+Copyright (c) 2006 Oracle. All rights reserved.
+
+This material is the confidential property of Oracle Corporation or its
+licensors and may be used, reproduced, stored or transmitted only in
+accordance with a valid Oracle license or sublicense agreement.
+-->
+<TaxSupplierConfiguration 
+   xmlns="http://www.portal.com/PortalXMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://www.portal.com/PortalXMLSchema ../../../xsd/pin_tax_supplier.xsd">
+   <TaxSupplierElement>
+      <Name>TS1</Name>
+      <Description>Tax Supplier 1</Description>
+      <Address>Cupertino;CA;95014;US</Address>
+      <NexusInfo>*</NexusInfo>
+      <RegulatedFlag>0</RegulatedFlag>
+      <DefaultFlag>1</DefaultFlag>
+      <VATInfo>
+        <CanonCountry>US</CanonCountry>
+        <VATCertificate>vat_cert_US</VATCertificate>
+      </VATInfo>
+   </TaxSupplierElement>
+</TaxSupplierConfiguration>

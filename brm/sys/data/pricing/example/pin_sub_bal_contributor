@@ -1,0 +1,86 @@
+#
+# @(#)pin_sub_bal_contributor 1.0 2003/7/24 
+#
+#############################################################################
+#
+#      Copyright (c) 2003 - 2006 Oracle. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#############################################################################
+#
+#
+#======================================================================
+# Use this file to specify the per resource, per event type
+# contributor specification; this is to control contributor-based
+# sub-balances in the /balance_group object.
+# 
+#======================================================================
+#
+#======================================================================
+# After editing the file, run the load_pin_sub_bal_contributor program to load 
+# the contents of the file into the Infranet database and create the 
+# /config/sub_bal_contributor object. 
+#======================================================================
+#
+#======================================================================
+# Syntax:
+# <resource_id> : <event_type> : <retrieving_contributor> : <updating_contributor> : <edr_retrieving_contributor> : <edr_updating_contributor>
+#
+# Parameters:
+#
+#    <resource_id>
+#      Indicates the resource id such as 840, 100001.  
+#      So you need to first successfully load the pin_beid before loading this file.
+#		If this field is left empty, then the previous <resource_id> will be assumed
+#
+#    <event_type>
+#      Indicates the event type for this <resource_id> you want to configure
+#		The values could be /event to indicate all the event class and the sub-classes
+#		Or /event/session to indicate all the event session class and the sub-classes
+#		The event type will be best matched when the configuration is used to figure out
+#		the contributor for a particular event type.
+#
+#    <retrieving_contributor>
+#      The value can be either '*', means really there's no contributor when getting balances
+#		for the associated resource and event_type, or a field definition in the event
+#		container such as PIN_FLD_ACCOUNT_OBJ to indicate using the event's account object
+#		as the contributor when getting.  You can also specify field in the substruct or array 
+#		such as PIN_FLD_GSM_INFO.PIN_FLD_CALLING_NUMBER, or PIN_FLD_BAL_IMPACTS.PIN_FLD_NODE_LOC.
+#		For PIN_FLD_BAL_IMPACTS, you can't specify any record id, even though it's an array.  For
+#		other arrays in the /event class or its sub-classes, you must specify a particular record
+#		id; for example, PIN_FLD_TAX_JURISDICTIONS[1].PIN_FLD_TAX_CODE 
+#
+#		'*' can match any value in the contributor_str in the balance group's sub-balances.
+#		Also the empty contributor_str in the balance_group's sub-balances can match any 
+#		contributor specified in this entry and the following <updating_contributor> entry.
+#
+#    <updating_contributor>
+#      the value range will be the same as that of <retrieving_contributor>, but this field is
+#		used as the contributor when updating.
+#
+#		When updating, the validity of the sub-balance bucket will take precedence than a 
+#		specific contributor.
+#
+#    <edr_retrieving_contributor>
+#      The equivalent of <retrieving_contributor> for the EDR container, such as '*', 
+#       or 'detail.a_number'.  But here no validation will be provided.
+#
+#    <edr_updating_contributor>
+#      The equivalent of <updating_contributor> for the EDR container, such as '*', 
+#       or 'detail.a_number'.  But here no validation will be provided.
+#
+#	If for any resource, and any event_type combination, there's no configuration here, then
+#	the default contributors will be '*'.
+
+# 	Following is an example:
+#	840		:	/event					:	*					:	*	:	*	:	*
+#	100002	:	/event/session/ipt		:	PIN_FLD_SESSION_OBJ :	PIN_FLD_SESSION_OBJ : * : *
+#			:	/event/session/dialup	:	PIN_FLD_SERVICE_OBJ :	PIN_FLD_SERVICE_OBJ : * : * 
+#	1000003	:	/event/session/ipt		:	*					: 	PIN_FLD_BAL_IMPACTS.PIN_FLD_NODE_LOCATION : * : *
+#======================================================================
+#
+#======================================================================
+840		:	/event					:	*					:	*	:	*	:	*

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+================================================================================
+Copyright (c) 2022, 2024 Oracle and/or its affiliates.
+This material is the confidential property of Oracle Corporation or its
+licensors and may be used, reproduced, stored or transmitted only in
+accordance with a valid Oracle license or sublicense agreement.
+================================================================================
+-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_stored_procedure.xsd">
+
+  <ConfigObject>
+    <DESCR>Configured list of stored procedure which can be invoked from client</DESCR>
+    <NAME>stored_procedure</NAME>
+    <VERSION>1</VERSION>
+    <RESULTS elem="0">
+      <NAME>ARA_SUMMARY_PROC</NAME>
+      <DESCR>fetch the data for billable and A/R items by service type and item type</DESCR>
+    </RESULTS>
+    <RESULTS elem="1">
+      <NAME>billing_updates</NAME>
+      <DESCR>To update item table with item number, AR_BILL_OBJ, due_t, effective_t, Opened_t, Closed_t, Status</DESCR>
+    </RESULTS>
+    <RESULTS elem="2">
+      <NAME>BOC_ANALYTICS.get_accounts_by_status</NAME>
+      <DESCR>To get subscriber account metrics, Returns Total number of accounts in each status ACTIVE/INACTIVE/CLOSED</DESCR>
+    </RESULTS>
+    <RESULTS elem="3">
+      <NAME>BOC_ANALYTICS.get_accounts_by_subscription</NAME>
+      <DESCR>Compute subscription metrics and returns details on number of subscription per product</DESCR>
+    </RESULTS>
+    <RESULTS elem="4">
+      <NAME>BOC_ANALYTICS.get_accounts_receivable</NAME>
+      <DESCR>Computes accounts receivable Metric and returns details on amount to be collected for each month of last 1 year</DESCR>
+    </RESULTS>
+    <RESULTS elem="5">
+      <NAME>BOC_ANALYTICS.get_billed_revenue</NAME>
+      <DESCR>Computes billing metrics and returns details on amount billed</DESCR>
+    </RESULTS>
+    <RESULTS elem="6">
+      <NAME>BOC_ANALYTICS.get_payments_collected</NAME>
+      <DESCR>Computes payment metrics and returns details on payment billed</DESCR>
+    </RESULTS>
+    <RESULTS elem="7">
+      <NAME>BOC_PROCESS_NAME_ACC_BY_STATUS</NAME>
+      <DESCR>To get subscriber account metrics, Returns Total number of accounts in each status ACTIVE/INACTIVE/CLOSED</DESCR>
+    </RESULTS>
+    <RESULTS elem="8">
+      <NAME>BOC_PROCESS_NAME_ACC_BY_SUBS</NAME>
+      <DESCR>Compute subscription metrics and returns details on number of subscription per product</DESCR>
+    </RESULTS>
+    <RESULTS elem="9">
+      <NAME>BOC_PROCESS_NAME_ACCS_RECEIVALBE</NAME>
+      <DESCR>Computes accounts receivable Metric and returns details on amount to be collected for each month of last 1 year</DESCR>
+    </RESULTS>
+    <RESULTS elem="10">
+      <NAME>BOC_PROCESS_NAME_BILLED_REVENUE</NAME>
+      <DESCR>Computes billing metrics and returns details on amount billed</DESCR>
+    </RESULTS>
+    <RESULTS elem="11">
+      <NAME>BOC_PROCESS_NAME_PYMT_COLLECTED</NAME>
+      <DESCR>Computes payment metrics and returns details on payment billed</DESCR>
+    </RESULTS>
+    <RESULTS elem="12">
+      <NAME>BRMC_METRIC_SPROC_ACCOUNT</NAME>
+      <DESCR>To get subscriber account metrics</DESCR>
+    </RESULTS>
+    <RESULTS elem="13">
+      <NAME>BRMC_METRIC_SPROC_BILLING</NAME>
+      <DESCR>To compute billing metrics</DESCR>
+    </RESULTS>
+    <RESULTS elem="14">
+      <NAME>BRMC_METRIC_SPROC_GET_COUNT</NAME>
+      <DESCR>To get compute payment metrics</DESCR>
+    </RESULTS>
+    <RESULTS elem="15">
+      <NAME>BRMC_METRIC_SPROC_PAYMENT</NAME>
+      <DESCR>To get the computed payment metrics</DESCR>
+    </RESULTS>
+    <RESULTS elem="16">
+      <NAME>BRMC_METRIC_SPROC_SUBSCRIPTION</NAME>
+      <DESCR>To compute subscription metrics</DESCR>
+    </RESULTS>
+    <RESULTS elem="17">
+      <NAME>CMT_DEPLOY_UPDATE</NAME>
+      <DESCR>Set the accounts active by replacing staging poid_db with target poid_db</DESCR>
+    </RESULTS>
+    <RESULTS elem="18">
+      <NAME>create_incr_report</NAME>
+      <DESCR>Creates incremental report by comparing the previous and current report</DESCR>
+    </RESULTS>
+    <RESULTS elem="19">
+      <NAME>create_journal</NAME>
+      <DESCR>It journals the events and creates journal entries for all events created at or before the input end time</DESCR>
+    </RESULTS>
+    <RESULTS elem="20">
+      <NAME>dmttRepStateGet</NAME>
+      <DESCR>To return the current state by checking information from ttRepStateGet</DESCR>
+    </RESULTS>
+    <RESULTS elem="21">
+      <NAME>failed_transactions_pkg.get_failed_trans_data</NAME>
+      <DESCR>Required by BOC to display history page</DESCR>
+    </RESULTS>
+    <RESULTS elem="22">
+      <NAME>FM_PRICE_GET_MODELSEL_SPROC</NAME>
+      <DESCR>To retrieve model selectors, selector rules, selector details</DESCR>
+    </RESULTS>
+    <RESULTS elem="23">
+      <NAME>FM_PRICE_GET_PIPELINE_DISC_DISCOUNTMODEL</NAME>
+      <DESCR>It is used by PCM_OP_PRICE_GET_DISCOUNT_INFO of Pricing Manager</DESCR>
+    </RESULTS>
+    <RESULTS elem="24">
+      <NAME>FM_PRICE_GET_PRICEMDL_SPROC</NAME>
+      <DESCR>To get the price model details</DESCR>
+    </RESULTS>
+    <RESULTS elem="25">
+      <NAME>FM_PRICE_GET_RATEPLAN_BY_RP_SPROC</NAME>
+      <DESCR>Used to retrieve one version that is passed for rate plan</DESCR>
+    </RESULTS>
+    <RESULTS elem="26">
+      <NAME>FM_PRICE_GET_RATEPLAN_SPROC</NAME>
+      <DESCR>Retrieve the latest valid rate plam available for the provided date or system date</DESCR>
+    </RESULTS>
+    <RESULTS elem="27">
+      <NAME>FM_PRICE_SET_MODELSEL_SPROC</NAME>
+      <DESCR>Used to create model selectors, selector rules, selector details, selector rule link and model selector rule set</DESCR>
+    </RESULTS>
+    <RESULTS elem="28">
+      <NAME>FM_PRICE_SET_PRICEMDL_SPROC</NAME>
+      <DESCR>Used to update pipeline price model and price model steps</DESCR>
+    </RESULTS>
+    <RESULTS elem="29">
+      <NAME>FM_PRICE_SET_RATEPLAN_SPROC</NAME>
+      <DESCR>Used to update rate plan, rate plan version and rate plan configuration data</DESCR>
+    </RESULTS>
+    <RESULTS elem="30">
+      <NAME>get_fields_proc</NAME>
+      <DESCR>to get the encryptable fields info along with details of the first and second level array</DESCR>
+    </RESULTS>
+    <RESULTS elem="31">
+      <NAME>GET_LATEST_DATA_FROM_ALL_NODES</NAME>
+      <DESCR>Fetch the count of latest poids and the mod_time</DESCR>
+    </RESULTS>
+    <RESULTS elem="32">
+      <NAME>GET_LATEST_POIDS_FROM_TT</NAME>
+      <DESCR>Fetch the count of latest poids and the mod_time from all the TT nodes</DESCR>
+    </RESULTS>
+    <RESULTS elem="33">
+      <NAME>GET_TABLE_NAME_FROM_CLASS</NAME>
+      <DESCR>It takes an input the class name and gets the corresponding table</DESCR>
+    </RESULTS>
+    <RESULTS elem="34">
+      <NAME>get_tax_config_data</NAME>
+      <DESCR>Fetches the tax configuration data based on the input parameters</DESCR>
+    </RESULTS>
+    <RESULTS elem="35">
+      <NAME>gl.create_aggregate_report_data</NAME>
+      <DESCR>To create aggregate report data based on the exported reports</DESCR>
+    </RESULTS>
+    <RESULTS elem="36">
+      <NAME>gl.create_journal</NAME>
+      <DESCR>It journal the events and creates journal entries for all events created at or before the input end time</DESCR>
+    </RESULTS>
+    <RESULTS elem="37">
+      <NAME>gl.get_gl_accts_data</NAME>
+      <DESCR>It return PIN_FLD_GL_ACCTS fields for the ledger_report</DESCR>
+    </RESULTS>
+    <RESULTS elem="38">
+      <NAME>job_history_pkg.get_job_history_data</NAME>
+      <DESCR>It select list of jobs from the system based on filtering and soring criteria</DESCR>
+    </RESULTS>
+    <RESULTS elem="39">
+      <NAME>OCSP_002_IN_OUT</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="40">
+    <NAME>OCSP_003</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="41">
+      <NAME>OCSP_004</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="42">
+      <NAME>OCSP_006</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="43">
+      <NAME>OCSP_007</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="44">
+      <NAME>OCSP_008</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="45">
+      <NAME>OCSP_009</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="46">
+      <NAME>OCSP_010</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="47">
+      <NAME>OCSP_011</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="48">
+    <NAME>PCM_RECID_ALL</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="49">
+      <NAME>perflib.get_rel_cumulative</NAME>
+      <DESCR>Get REL monitor cumulative results.</DESCR>
+    </RESULTS>
+    <RESULTS elem="50">
+      <NAME>perflib.get_rel_summary</NAME>
+      <DESCR>Get REL summary results.</DESCR>
+    </RESULTS>
+    <RESULTS elem="51">
+      <NAME>PERFLIB.GET_RT_SNAPSHOT</NAME>
+      <DESCR>To retrieve real-time snapshot data</DESCR>
+    </RESULTS>
+    <RESULTS elem="52">
+      <NAME>PIN_RERATE_UPDATE_RERATE_JOB_SPROC_SQL</NAME>
+      <DESCR>Update the rerate job status to ACCOUNT_LOCKED or STATUS_RECYCLE based on string ACKPrepareToRerate</DESCR>
+    </RESULTS>
+    <RESULTS elem="53">
+      <NAME>PIN_RERATE_UPDATE_RERATE_JOB_SPROC</NAME>
+      <DESCR>Update the rerate job status to ACCOUNT_LOCKED or STATUS_RECYCLE</DESCR>
+    </RESULTS>
+    <RESULTS elem="54">
+      <NAME>pin_update_poid_to_null.update_poid_to_null</NAME>
+      <DESCR>Updates obj_id fields of a given class from zero to null</DESCR>
+    </RESULTS>
+    <RESULTS elem="55">
+      <NAME>PRICING_DISCOUNTMODEL.SET_DISCOUNT_MODELS</NAME>
+      <DESCR>Used with PCM_OP_PRICE_COMMIT_DISCOUNT to commit discount model information</DESCR>
+    </RESULTS>
+    <RESULTS elem="56">
+    <NAME>proc_cycle_deferred_tax</NAME>
+      <DESCR>summarizes the deferred taxable amounts from events, and insert them in the event_billing_taxes_t table</DESCR>
+    </RESULTS>
+    <RESULTS elem="57">
+      <NAME>process_tmp_ar_items</NAME>
+      <DESCR>To prcess the account receivable items based on the actual sector boundaries of event storage</DESCR>
+    </RESULTS>
+    <RESULTS elem="58">
+      <NAME>RA_SEARCH_PACK.RA_GET_REL_BID_PROC</NAME>
+      <DESCR>fFetches the audit data from the process_audit tables for all the /process_audit/batchstat/rel objects for search by batch Id</DESCR>
+    </RESULTS>
+    <RESULTS elem="59">
+      <NAME>RA_SEARCH_PACK.RA_GET_REL_PROC</NAME>
+      <DESCR>Fetches the audit data from the process_audit tables for all the /process_audit/batchstat/rel objects for search by processing period</DESCR>
+    </RESULTS>
+    <RESULTS elem="60">
+      <NAME>RA_SEARCH_PACK.RA_GET_REL_VBID_PROC</NAME>
+      <DESCR>Fetches the audit data from the process_audit tables for all the /process_audit/batchstat/rel objects for view by Batch Id and search by processing period</DESCR>
+    </RESULTS>
+    <RESULTS elem="61">
+      <NAME>RA_SEARCH_PACK.RA_GET_RERATE_SUM_DETAIL_PROC</NAME>
+      <DESCR>Fetches the audit data for all the /process_audit/batchstat objects except /process_audit/batchstat/rel</DESCR>
+    </RESULTS>
+    <RESULTS elem="62">
+      <NAME>RA_SEARCH_PACK.RA_GET_RRATE_SUM_DTL_BID_PROC</NAME>
+      <DESCR>Fetches the audit data for all the /process_audit/batchstat objects except /process_audit/batchstat/rel for search by Batch Id</DESCR>
+    </RESULTS>
+    <RESULTS elem="63">
+      <NAME>RA_SEARCH_PACK.RA_GET_RRATE_SUM_DTL_VBID_PROC</NAME>
+      <DESCR>Fetches the audit data for all the /process_audit/batchstat objects except /process_audit/batchstat/rel for view by Batch Id and Search by processing period</DESCR>
+    </RESULTS>
+    <RESULTS elem="64">
+      <NAME>RA_SEARCH_PACK.RA_GET_SUMM_DETAIL_VBID_PROC</NAME>
+      <DESCR>Fetches the audit data for all the /process_audit/batchstat objects except /process_audit/batchstat/rel for view by Batch Id and Search by processing period for Rating scope</DESCR>
+    </RESULTS>
+    <RESULTS elem="65">
+      <NAME>RA_SEARCH_PACK.RA_GET_SUMMARY_DETAIL_BID_PROC</NAME>
+      <DESCR>Fetches the audit data for all the /process_audit/batchstat objects except /process_audit/batchstat/rel for search by Batch Id for Rating scope</DESCR>
+    </RESULTS>
+    <RESULTS elem="66">
+      <NAME>RA_SEARCH_PACK.RA_GET_SUMMARY_DETAIL_PROC</NAME>
+      <DESCR>Fetches the audit data for all the /process_audit/batchstat objects except /process_audit/batchstat/rel for search by processing period/ServiceType/RevenueStream</DESCR>
+    </RESULTS>
+    <RESULTS elem="67">
+    <NAME>RERATING.PURGE_RERATE_JOBS</NAME>
+      <DESCR>To purge the rerated jobs</DESCR>
+    </RESULTS>
+    <RESULTS elem="68">
+      <NAME>rollup_subords_charges</NAME>
+      <DESCR>To Rollup subordinates charges into wholesale billing account</DESCR>
+    </RESULTS>
+    <RESULTS elem="69">
+      <NAME>test_clob</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="70">
+      <NAME>test_clob1</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="71">
+      <NAME>TPrc4</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="72">
+      <NAME>unknown</NAME>
+      <DESCR>Used in unit testing of base opcode</DESCR>
+    </RESULTS>
+    <RESULTS elem="73">
+      <NAME>update_credit_profile_ps7</NAME>
+      <DESCR>For the given input credit profile, it tries to match with the existing /config/credit_profile with PIN_FLD_DYNAMIC_CREDIT_FLOOR</DESCR>
+    </RESULTS>
+        <RESULTS elem="74">
+      <NAME>validate_cycle_fee_processing</NAME>
+      <DESCR>This will check if the cycle charges are applied for all applicable products which are due in the system.</DESCR>
+    </RESULTS>
+        <RESULTS elem="75">
+      <NAME>VERIFY_MULTI_NODE_DATA_IN_DB</NAME>
+      <DESCR>count of the poids and verifies whether they are present in db or not.</DESCR>
+    </RESULTS>
+        <RESULTS elem="76">
+      <NAME>VERIFY_POIDS_IN_DB</NAME>
+      <DESCR>verifies whether input table name, mod_time and list poids are in db or not</DESCR>
+    </RESULTS>
+    <RESULTS elem="77">
+      <NAME>wholesale_btd_merge_balances</NAME>
+      <DESCR>Stored procedure which is called to merge balances /balance_group and its sub tables </DESCR>
+    </RESULTS>
+    <RESULTS elem="78">
+      <NAME>inv.get_invoice_chunk</NAME>
+      <DESCR>Stored procedure which returns the invoice details based on the input invoice type</DESCR>
+    </RESULTS>
+    <RESULTS elem="79">
+      <NAME>update_data_sequence</NAME>
+      <DESCR>Stored procedure which returns the incremented sequence value. </DESCR>
+    </RESULTS>
+    <RESULTS elem="80">
+      <NAME>job_history_pkg.get_workflow_sub_job_data</NAME>
+      <DESCR>It select the list of Sub jobs from the system for the required Workflow jobs</DESCR>
+    </RESULTS>
+  </ConfigObject>
+
+</ObjectList>
+

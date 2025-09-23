@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+	
+	<!-- Sample file. Modify according to guidelines. -->
+	
+	<BusParamConfigurationClass>
+		
+		<BusParamsInvoicing>
+			<ADSTTaxHandle>disabled</ADSTTaxHandle>
+			<ThresholdSubordsSummary>0</ThresholdSubordsSummary>
+			<ThresholdSubordsDetail>0</ThresholdSubordsDetail>
+			<SubARItemsIncluded>disabled</SubARItemsIncluded>
+			<PromotionDetailDisplay>1</PromotionDetailDisplay>
+			<EnableInvoicingIntegration>disabled</EnableInvoicingIntegration>
+			<InvoiceStorageType>0</InvoiceStorageType>
+			<InOperatorSize>500</InOperatorSize>
+    		        <DropExtraSeqDiscEvents>disabled</DropExtraSeqDiscEvents>
+    		        <IncludeExtendedAttr>disabled</IncludeExtendedAttr>
+			<ARItemsInCorrectiveInvoice>disabled</ARItemsInCorrectiveInvoice>
+			<InvEventFetchSize>10000</InvEventFetchSize>
+			<InvItemFetchSize>10000</InvItemFetchSize>
+			<EventCache>enabled</EventCache>
+			<DisableFilterItemByPruneTime>disabled</DisableFilterItemByPruneTime>
+		</BusParamsInvoicing>		
+
+	</BusParamConfigurationClass>
+</BusinessConfiguration>

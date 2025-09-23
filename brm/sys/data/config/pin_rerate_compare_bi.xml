@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+================================================================
+ Copyright (c) 2005, 2008, Oracle and/or its affiliates. All rights reserved.
+
+This material is the confidential property of Oracle Corporation
+or its licensors and may be used, reproduced, stored or transmitted
+only in accordance with a valid Oracle license or sublicense agreement.
+================================================================
+-->
+<RerateCompareBalImpacts_flds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.portal.com/PortalXMLSchema" xsi:schemaLocation="http://www.portal.com/PortalXMLSchema ../../../xsd/pin_rerate_flds.xsd">
+
+	<RerateCompareBalImpacts>
+		<Name>PIN_FLD_RESOURCE_ID</Name>
+	</RerateCompareBalImpacts>
+	<RerateCompareBalImpacts>
+		<Name>PIN_FLD_BAL_GRP_OBJ</Name>
+	</RerateCompareBalImpacts>
+	<RerateCompareBalImpacts>
+		<Name>PIN_FLD_GL_ID</Name>
+	</RerateCompareBalImpacts>
+	<RerateCompareBalImpacts>
+		<Name>PIN_FLD_TAX_CODE</Name>
+	</RerateCompareBalImpacts>
+	<RerateCompareBalImpacts>
+		<Name>PIN_FLD_PRODUCT_OBJ</Name>
+	</RerateCompareBalImpacts>
+</RerateCompareBalImpacts_flds>

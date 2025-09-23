@@ -1,0 +1,35 @@
+--
+-- Copyright (c) 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	on Wed May 29 05:16:36 2024.
+--
+
+drop index i_active_sess_tlco__id;
+drop index i_as_telco_svc_codes__id;
+drop index i_config_tlcs__id;
+drop index i_config_tlcs_features__id;
+drop index i_config_tlcs_ext_ra__id;
+drop index i_event_actv_tlcs__id;
+drop index i_event_actv_tlcsid__id;
+drop index i_event_actv_tlcs_svc__id;
+drop index i_event_svc_order_state__id;
+drop index i_event_sess_tlcs__id;
+drop index i_event_sess_tlcsid__id;
+drop index i_event_sess_tlcs_svc__id;
+drop index i_event_svc_order__id;
+drop index i_service_tlcs__id;
+drop index i_service_tlcs_features__id;
+drop index i_service_telco_features__id;
+drop index i_event_dlay_actv_tlcs__id;
+drop index i_evt_dlay_ac_tlcs_svc_c__id;
+drop index i_event_dlay_session_tlcs__id;
+drop index i_evt_dlay_ss_tlcs_svc_c__id;
+drop index i_event_prov_serv_order_tlc__id;
+drop index i_event_prov_order_tlc_param__id;

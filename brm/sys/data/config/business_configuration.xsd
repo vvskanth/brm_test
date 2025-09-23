@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema 
+	targetNamespace="http://www.portal.com/schemas/BusinessConfig" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			Copyright (c) 2004 - 2007 Oracle. All rights reserved.
+			This material is the confidential property of Oracle Corporation or its
+			licensors and may be used, reproduced, stored or transmitted only in
+			accordance with a valid Oracle license or sublicense agreement.
+		</xs:documentation>
+	</xs:annotation>
+	
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_bill_suppression.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_calendar.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_payment_term.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_billing_segment.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_customer_segment.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_excluded_logins.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_bus_params.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/bus_params_conf.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_business_profile.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_config_provisioning_tags.xsd"/>
+	<xs:include schemaLocation="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_config_export_gl.xsd"/>
+
+	<xs:element name="BusinessConfiguration" type="BusinessConfigurationType"/>
+	<xs:complexType name="BusinessConfigurationType">
+		<xs:choice>
+			<xs:element name="BillSuppressionConfiguration" type="BillSuppressionConfigurationType"/> 
+			<xs:element name="CalendarConfiguration" type="CalendarConfigurationType"/>
+			<xs:element name="PaymentTermConfiguration" type="PaymentTermConfigurationType"/>
+			<xs:element name="BillingSegmentConfiguration" type="BillingSegmentConfigurationType"/>
+			<xs:element name="CustomerSegmentConfiguration" type="CustomerSegmentConfigurationType"/>
+			<xs:element name="LoginExclusionManagementComponent" type="LoginExclusionManagementComponentType"/>
+			<xs:element name="BusParamConfiguration" type="BusParamConfigurationType"/>
+			<xs:element name="BusParamConfigurationClass" type="BusParamConfigurationClassType"/>
+			<xs:element name="BusinessProfileConfiguration" type="BusinessProfileConfigurationType"/>
+			<xs:element name="ProvisioningTagConfiguration" type="ProvisioningTagConfigurationType"/>
+			<xs:element name="GLReportConfiguration" type="GLReportConfigurationType"/>
+		</xs:choice>
+	</xs:complexType>
+
+</xs:schema>

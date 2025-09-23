@@ -1,0 +1,954 @@
+##########################################################################
+#
+# Copyright (c) 1999, 2015, Oracle and/or its affiliates. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation 
+# or its licensors and may be used, reproduced, stored or transmitted 
+# only in accordance with a valid Oracle license or sublicense agreement.
+##########################################################################
+#
+#   File:  errors.pt_BR
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  pt_BR (Portuguese - Brazilian)
+#
+#	Domain:  Errors
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#	    The STRING and optional HELPSTR are localizable.  This file must be 
+#	    in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#	    to be ASCII (no extended-ASCII characters nor multiple byte 
+#	    characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "pt_BR" ;
+
+DOMAIN = "Errors" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "Sem erro" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "Memória insuficiente" ;
+	HELPSTR = "Não havia memória suficiente para concluir a operação solicitada. Verifique a memória do sistema e/ou perdas de memória." ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "Não foi possível localizar correspondência" ;
+	HELPSTR = "O Infranet não pôde localizar o valor procurado." ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "Entrada não localizada" ;
+	HELPSTR = "O Infranet não pôde localizar um valor." ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "Argumento incorreto para função" ;
+	HELPSTR = "Um campo obrigatório em um flist está incorreto. Este é um erro sério de programação." ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "Dados XDR incorretos" ;
+	HELPSTR = "A conexão do aplicativo com o banco de dados do Infranet foi encerrada inesperadamente." ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "Não usado" ;
+	HELPSTR = "Não usado." ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "Erro durante uma operação de leitura" ;
+	HELPSTR = "O Infranet não pôde ler a partir da rede ou de algum outro dispositivo de E/S, talvez porque a comunicação tenha sido interrompida inesperadamente." ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "Erro na criação de soquete" ;
+	HELPSTR = "É possível que a máquina ou o processo esteja sobrecarregado e tenha atingido um limite nos descritores de soquete/arquivo." ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "Tipo de objeto ou campo inválido" ;
+	HELPSTR = "O Infranet encontrou um tipo de objeto ou campo incorreto." ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "Objeto de armazenamento duplicado" ;
+	HELPSTR = "O Infranet não pôde criar um objeto armazenável porque a ID solicitada já foi usada." ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "Código de ausência de erro" ;
+	HELPSTR = "Este código de erro não indica um erro. O FM de cobrança usa o código para operações internas." ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "Código de ausência de erro" ;
+	HELPSTR = "Este código de erro não indica um erro. O FM de cobrança usa o código para operações internas." ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "Argumento ausente" ;
+	HELPSTR = "Um argumento obrigatório está ausente. Se o arquivo de log não indicar o campo, consulte a especificação do código de operação." ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "Tipo de POID incorreto" ;
+	HELPSTR = "O Infranet encontrou um tipo de objeto incorreto." ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "Não é possível decriptografar/verificar o cabeçalho" ;
+	HELPSTR = "Não é possível decriptografar/verificar o cabeçalho." ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "Erro ao gravar no soquete" ;
+	HELPSTR = "Erro ao gravar no soquete." ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "Subestrutura duplicada" ;
+	HELPSTR = "Subestrutura duplicada." ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "Argumento de pesquisa incorreto" ;
+	HELPSTR = "Argumento desconhecido/incorreto no modelo/flist de pesquisa." ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "Id de registro inválida" ;
+	HELPSTR = "Id de registro incorreta na pesquisa." ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "Argumento de pesquisa duplicado" ;
+	HELPSTR = "Entrada duplicada na lista de argumentos." ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "Valor de POID inexistente" ;
+	HELPSTR = "O Infranet não pode localizar o objeto armazenável no banco de dados." ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "O número BD POID é zero" ;
+	HELPSTR = "Certifique-se de que a rotina esteja informando um número de banco de dados válido, que corresponda ao número no arquivo de configuração." ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "Número BD inválido" ;
+	HELPSTR = "Não há um número BD válido do DM para estabelecer conexão." ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "Erro na criação de soquete" ;
+	HELPSTR = "É possível que a máquina ou o processo esteja sobrecarregado e tenha atingido um limite nos descritores de soquete/arquivo." ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "Não é possível estabelecer conexão com o DM" ;
+	HELPSTR = "O Infranet não pôde localizar o endereço IP do computador que está executando o Gerenciador de dados. Verifique o identificador do banco de dados." ;
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "Não é possível estabelecer conexão com o DM" ;
+	HELPSTR = "O Infranet não pôde estabelecer conexão com o Gerenciador de dados. Talvez o arquivo de configuração do CM esteja apontando para o DM incorreto ou o DM não esteja em execução." ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "Não é possível estabelecer conexão com o CM" ;
+	HELPSTR = "Talvez o arquivo de configuração do aplicativo esteja apontando para o CM incorreto; o CM não esteja em execução; ou não haja mais nenhuma conexão disponível." ;
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "ID de registro inválida" ;
+	HELPSTR = "A ID do elemento especificado na matriz é inválida. Talvez a identificação especificada seja maior do que a ID de registro máxima." ;
+END
+STR
+	ID = 29 ;
+	VERSION = 1 ;
+	STRING = "Entrada pin.conf antiga" ;
+	HELPSTR = "Entrada pin.conf inválida." ;
+END
+STR
+	ID = 30 ;
+	VERSION = 1 ;
+	STRING = "Entrada pin.conf inválida" ;
+	HELPSTR = "Possível erro de sintaxe no arquivo pin.conf." ;
+END
+STR
+	ID = 31 ;
+	VERSION = 1 ;
+	STRING = "BD incorreto" ;
+	HELPSTR = "Número BD POID incorreto." ;
+END
+STR
+	ID = 32 ;
+	VERSION = 1 ;
+	STRING = "Argumentos duplicados" ;
+	HELPSTR = "Há campos duplicados no flist." ;
+END
+STR
+	ID = 33 ;
+	VERSION = 1 ;
+	STRING = "Não é possível definir ID de objeto" ;
+	HELPSTR = "O Infranet não pôde atribuir um ID de objeto armazenável." ;
+END
+STR
+	ID = 34 ;
+	VERSION = 1 ;
+	STRING = "Não é possível criar objeto" ;
+	HELPSTR = "Uma rotina não pôde criar um objeto." ;
+END
+STR
+	ID = 35 ;
+	VERSION = 1 ;
+	STRING = "Nome de campo incorreto" ;
+	HELPSTR = "Não é possível mapear o nome de campo para um tipo válido do Infranet." ;
+END
+STR
+	ID = 36 ;
+	VERSION = 1 ;
+	STRING = "Código de operação incorreto" ;
+	HELPSTR = "O código de operação chamado não pertence ao conjunto de códigos de operação básicos e conhecidos do Infranet." ;
+END
+STR
+	ID = 37 ;
+	VERSION = 1 ;
+	STRING = "Transação já aberta" ;
+	HELPSTR = "Um aplicativo tentou abrir uma transação quando já havia uma aberta no mesmo objeto armazenável." ;
+END
+STR
+	ID = 38 ;
+	VERSION = 1 ;
+	STRING = "Nenhuma transação aberta" ;
+	HELPSTR = "Um aplicativo tentou confirmar ou anular uma transação, mas não havia nenhuma aberta." ;
+END
+STR
+	ID = 39 ;
+	VERSION = 1 ;
+	STRING = "Valor nulo" ;
+	HELPSTR = "Uma rotina não pôde obter um valor porque ele foi definido como \"nulo\"." ;
+END
+STR
+	ID = 40 ;
+	VERSION = 1 ;
+	STRING = "Falha ao liberar memória" ;
+	HELPSTR = "Uma rotina tentou liberar memória que não era mais necessária, mas não obteve êxito." ;
+END
+STR
+	ID = 41 ;
+	VERSION = 1 ;
+	STRING = "Erro de E/S de arquivo" ;
+	HELPSTR = "Erro ao ler/gravar em um arquivo OU ao carregar/abrir uma biblioteca compartilhada." ;
+END
+STR
+	ID = 42 ;
+	VERSION = 1 ;
+	STRING = "Elemento inexistente" ;
+	HELPSTR = "A matriz no objeto armazenável especificado não possui o elemento indicado." ;
+END
+STR
+	ID = 43 ;
+	VERSION = 1 ;
+	STRING = "Perda de conexão com o BD" ;
+	HELPSTR = "O Infranet perdeu a conexão com o banco de dados no meio de uma transação." ;
+END
+STR
+	ID = 44 ;
+	VERSION = 1 ;
+	STRING = "Excesso de tentativas de transações" ;
+	HELPSTR = "O Infranet tentou efetuar transações com um número excessivo de Gerenciadores de dados." ;
+END
+STR
+	ID = 45 ;
+	VERSION = 1 ;
+	STRING = "Transação perdida" ;
+	HELPSTR = "A transação foi perdida. Houve falha no Gerenciador de dados durante uma transação." ;
+END
+STR
+	ID = 46 ;
+	VERSION = 1 ;
+	STRING = "Não é possível interpretar dados" ;
+	HELPSTR = "O Infranet não pôde interpretar dados do banco de dados. Os dados não são válidos no contexto atual e o Infranet não pode resolver o conflito." ;
+END
+STR
+	ID = 47 ;
+	VERSION = 1 ;
+	STRING = "Processamento parcial de cartões de crédito" ;
+	HELPSTR = "Durante o envio de um lote de transações para os Gerenciadores de dados de cartões de crédito, alguns cartões foram processados e outros não." ;
+END
+STR
+	ID = 48 ;
+	VERSION = 1 ;
+	STRING = "Operação incompleta" ;
+	HELPSTR = "O Infranet ainda não concluiu uma operação (como um código de operação ou uma transação)." ;
+END
+STR
+	ID = 49 ;
+	VERSION = 1 ;
+	STRING = "Erro de E/S no fluxo de dados" ;
+	HELPSTR = "O aplicativo encontrou um erro durante o envio ou o recebimento de dados do banco de dados do Infranet. Em geral, este código de erro significa que a conexão com a rede foi perdida. Se a rede estiver funcionando corretamente, talvez o servidor tenha parado de funcionar." ;
+END
+STR
+	ID = 50 ;
+	VERSION = 1 ;
+	STRING = "EOF em fluxo de dados" ;
+	HELPSTR = "A conexão do aplicativo com o banco de dados do Infranet foi encerrada inesperadamente. Em geral, este código de erro significa que a conexão com a rede foi perdida. Se a rede estiver funcionando corretamente, talvez o servidor tenha parado de funcionar." ;
+END
+STR
+	ID = 51 ;
+	VERSION = 1 ;
+	STRING = "Nenhuma operação em andamento" ;
+	HELPSTR = "Nenhuma operação em andamento." ;
+END
+STR
+	ID = 52 ;
+	VERSION = 1 ;
+	STRING = "Operação em andamento" ;
+	HELPSTR = "Operação já em andamento." ;
+END
+STR
+	ID = 53 ;
+	VERSION = 1 ;
+	STRING = "Operação já concluída" ;
+	HELPSTR = "Operação já concluída; nenhum callback definido." ;
+END
+STR
+	ID = 54 ;
+	VERSION = 1 ;
+	STRING = "Nenhum campo de dados no flist" ;
+	HELPSTR = "O Gerenciador de dados recebeu um flist sem campos de dados. Verifique o flist de entrada." ;
+END
+STR
+	ID = 55 ;
+	VERSION = 1 ;
+	STRING = "Campos inválidos" ;
+	HELPSTR = "O Infranet não pôde criar um objeto porque um ou mais valores eram inválidos ou os campos não permitem atualização." ;
+END
+STR
+	ID = 56 ;
+	VERSION = 1 ;
+	STRING = "Não é possível estabelecer conexão com o CM" ;
+	HELPSTR = "O aplicativo não pôde estabelecer conexão com o CM. Verifique o nome de logon e a senha." ;
+END
+STR
+	ID = 57 ;
+	VERSION = 1 ;
+	STRING = "Não é possível procurar o endereço do CM" ;
+	HELPSTR = " O aplicativo não pôde encontrar o computador que está executando o CM. O serviço Vincular (ou DNS) está apontando para o endereço TCP/IP incorreto ou a rede está com problemas. Tente efetuar ping no CM para verificar a conexão de rede." ;
+END
+STR
+	ID = 58 ;
+	VERSION = 1 ;
+	STRING = "Não é possível redirecionar a conexão" ;
+	HELPSTR = "As informações de redirecionamento de conexão estão incorretas." ;
+END
+STR
+	ID = 59 ;
+	VERSION = 1 ;
+	STRING = "Excesso de redirecionamentos de logon" ;
+	HELPSTR = "Excesso de redirecionamentos de conexão. [??Reviewer: Redirects from what to what???]
+Este erro talvez seja proveniente de um loop na configuração. Verifique os arquivos de configuração do aplicativo, do CM e do DM." ;
+END
+STR
+	ID = 60 ;
+	VERSION = 1 ;
+	STRING = "Erro na pesquisa de etapa" ;
+	HELPSTR = "A operação de pesquisa de etapa não encontrou um STEP_NEXT/STEP_END esperado." ;
+END
+STR
+	ID = 61 ;
+	VERSION = 1 ;
+	STRING = "Perda de conexão com o BD" ;
+	HELPSTR = "O Infranet perdeu a conexão com o banco de dados no meio de uma transação e não pôde restabelecer a conexão." ;
+END
+STR
+	ID = 62 ;
+	VERSION = 1 ;
+	STRING = "Não é a raiz de um grupo" ;
+	HELPSTR = "Não é a raiz de um grupo." ;
+END
+STR
+	ID = 63 ;
+	VERSION = 1 ;
+	STRING = "Erro de bloqueio no SO" ;
+	HELPSTR = "Erro de bloqueio no sistema operacional." ;
+END
+STR
+	ID = 64 ;
+	VERSION = 1 ;
+	STRING = "Falha na autorização" ;
+	HELPSTR = "Falha na autorização." ;
+END
+STR
+	ID = 65 ;
+	VERSION = 1 ;
+	STRING = "Não gravável" ;
+	HELPSTR = "Não é possível modificar o campo." ;
+END
+STR
+	ID = 66 ;
+	VERSION = 1 ;
+	STRING = "Exceção C++ desconhecida" ;
+	HELPSTR = "Exceção C++ desconhecida." ;
+END
+STR
+	ID = 67 ;
+	VERSION = 1 ;
+	STRING = "Falha ao iniciar servidores" ;
+	HELPSTR = "O Infranet não pôde iniciar o processo." ;
+END
+STR
+	ID = 68 ;
+	VERSION = 1 ;
+	STRING = "Falha ao interromper servidores" ;
+	HELPSTR = "O Infranet não pôde interromper o processo." ;
+END
+STR
+	ID = 69 ;
+	VERSION = 1 ;
+	STRING = "Fila inválida" ;
+	HELPSTR = "Fila inválida." ;
+END
+STR
+	ID = 70 ;
+	VERSION = 1 ;
+	STRING = "Algo excedeu o tamanho" ;
+	HELPSTR = "Algo excedeu o tamanho." ;
+END
+STR
+	ID = 71 ;
+	VERSION = 1 ;
+	STRING = "Localidade inválida"  ;
+	HELPSTR = "O Infranet não entende o local. Verifique o local do computador que está executando o aplicativo de cliente." ;
+END
+STR
+	ID = 72 ;
+	VERSION = 1 ;
+	STRING = "Erro de conversão de codificação de vários bytes" ;
+	HELPSTR = "Um aplicativo de cliente apresentou um problema ao converter dados do formato UTF-8, como eles estão armazenados no banco de dados do Infranet, para o formato de vários bytes. A localidade do cliente está incorreta ou os dados estão danificados." ;
+END
+STR
+	ID = 73 ;
+	VERSION = 1 ;
+	STRING = "Erro de conversão de codificação unicode" ;
+	HELPSTR = "Um aplicativo de cliente apresentou um problema ao converter dados do formato UTF-8, como eles estão armazenados no banco de dados do Infranet, para o formato unicode. A localidade do cliente está incorreta ou os dados estão danificados." ;
+END
+STR
+	ID = 74 ;
+	VERSION = 1 ;
+	STRING = "Formato MBCS inválido" ;
+	HELPSTR = "Um flist de entrada inclui uma seqüência de caracteres que não possui um formato de vários bytes válido." ;
+END
+STR
+	ID = 75 ;
+	VERSION = 1 ;
+	STRING = "Formato Unicode inválido" ;
+	HELPSTR = "Um flist de entrada inclui uma seqüência de caracteres que não possui um formato unicode válido." ;
+END
+STR
+	ID = 76 ;
+	VERSION = 1 ;
+	STRING = "Erro na canonização" ;
+	HELPSTR = "Erro de conversão na canonização." ;
+END
+STR
+	ID = 77 ;
+	VERSION = 1 ;
+	STRING = "Local sem suporte para canonização" ;
+	HELPSTR = "O Infranet não oferece suporte à canonização para a localidade do aplicativo de cliente." ;
+END
+STR
+	ID = 78 ;
+	VERSION = 1 ;
+	STRING = "Não há correspondência na moeda pai/filho" ;
+	HELPSTR = "Uma conta subordinada ou patrocinada possui uma moeda de conta diferente da conta pai ou do patrocínio." ;
+END
+STR
+	ID = 79 ;
+	VERSION = 1 ;
+	STRING = "A transação retrocedeu devido à disputa por recursos" ;
+	HELPSTR = "Dois segmentos para um banco de dados SQL Server tentaram acessar o mesmo recurso de memória. Um deles falhou e a transação retrocedeu. O Gerenciador de dados deverá repetir a transação automaticamente. Se este erro ocorrer sem uma notificação subseqüente de que o Gerenciador de dados tentou repetir a operação, entre em contato com o representante do Portal Software." ;
+END
+STR
+	ID = 80 ;
+	VERSION = 1 ;
+	STRING = "Erro ao pré-datar" ;
+	HELPSTR = "O Infranet não pode pré-datar o ajuste, reduzir ou efetuar outra transação porque o relatório de R/G já foi enviado." ;
+END
+STR
+	ID = 81 ;
+	VERSION = 1 ;
+	STRING = "O limite de crédito foi excedido" ;
+	HELPSTR = "O relatório de razão já foi enviado." ;
+END
+STR
+	ID = 82 ;
+	VERSION = 1 ;
+	STRING = "O valor é \"NULO\" - não definido." ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 83 ;
+	VERSION = 1 ;
+	STRING = "Erro detalhado - msg_id utiliza ebuf avançado" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 84 ;
+	VERSION = 1 ;
+	STRING = "Resolva ações AR em aberto para informações de cobrança antes de mover o grupo de saldo" ;
+	HELPSTR = "" ;
+END
+STR
+        ID = 85 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode pré-datar a transação além da data de criação da conta.";
+        HELPSTR = "O BRM não pode pré-datar a transação além da data de criação da conta.";
+END
+STR
+        ID = 86 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode pré-datar a transação porque o relatório de R/G já foi enviado.";
+        HELPSTR = "O BRM não pode pré-datar a transação porque o relatório de R/G já foi enviado.";
+END
+STR
+        ID = 87 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode pré-datar a transação além da data de criação do serviço.";
+        HELPSTR = "O BRM não pode pré-datar a transação além da data de criação do serviço.";
+END
+STR
+        ID = 88 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode pré-datar a transação além da data de criação do produto ou desconto.";
+        HELPSTR = "O BRM não pode pré-datar a transação além da data de criação do produto ou desconto.";
+END
+STR
+        ID = 89 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode pré-datar a data inicial porque as taxas de compra ou ciclo já foram aplicadas.";
+        HELPSTR = "O BRM não pode pré-datar a data inicial porque as taxas de compra ou ciclo já foram aplicadas.";
+END
+STR
+        ID = 90 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode pré-datar a transação porque ocorreu uma alteração de status.";
+        HELPSTR = "O BRM não pode pré-datar a transação porque ocorreu uma alteração de status.";
+END
+STR
+        ID = 91 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode pré-datar a transação para antes da data inicial da compra.";
+        HELPSTR = "O BRM não pode pré-datar a transação para antes da data inicial da compra.";
+END
+STR
+        ID = 92 ;
+        VERSION = 1 ;
+        STRING = "O BRM não pode executar a cobrança porque a diferença entre a hora da cobrança e a hora atual é maior do que o valor especificado nas entradas \valid_forward_interval\ ou \valid_backward_interval\ de cm pin.conf.";        
+        HELPSTR = "O BRM não pode executar a cobrança porque a diferença entre a hora da cobrança e a hora atual é maior do que o valor especificado nas entradas \valid_forward_interval\ ou \valid_backward_interval\ de cm pin.conf."; 
+END
+STR
+        ID = 93 ;
+        VERSION = 1 ;
+        STRING = "O objeto de fatura não está no formato Flist.";
+        HELPSTR = "O objeto de fatura não está no formato Flist.";
+END
+STR
+        ID = 94 ;
+        VERSION = 1 ;
+        STRING = "Não é possível apontar novamente o grupo de saldo padrão das informações de cobrança.";
+        HELPSTR = "Não é possível apontar novamente o grupo de saldo padrão das informações de cobrança.";
+END
+STR
+        ID = 95 ;
+        VERSION = 1 ;
+        STRING = "Não é possível apontar novamente o grupo de saldo no nível da conta.";
+        HELPSTR = "Não é possível apontar novamente o grupo de saldo no nível da conta.";
+END
+STR
+        ID = 96 ;
+        VERSION = 1 ;
+        STRING = "Falha na Validação do Perfil.";
+        HELPSTR = "Falha na Validação do Perfil.";
+END
+STR
+        ID = 97 ;
+        VERSION = 1 ;
+        STRING = "O recurso de Fatura Corretiva está desativado.";
+        HELPSTR = "O recurso de Fatura Corretiva está desativado.";
+END
+STR
+        ID = 98 ;
+        VERSION = 1 ;
+        STRING = "A Cobrança Corretiva não pode ser produzida para uma cobrança subordinada.";
+        HELPSTR = "A Cobrança Corretiva não pode ser produzida para uma cobrança subordinada.";
+END
+STR
+        ID = 99 ;
+        VERSION = 1 ;
+        STRING = "A cobrança deve ser finalizada para produzir uma cobrança corretiva.";
+        HELPSTR = "A cobrança deve ser finalizada para produzir uma cobrança corretiva.";
+END
+STR
+        ID = 100 ;
+        VERSION = 1 ;
+        STRING = "Os campos REASON_ID e REASON_DOMAIN_ID devem ser apresentados na entrada.";
+        HELPSTR = "Os campos REASON_ID e REASON_DOMAIN_ID devem ser apresentados na entrada.";
+END
+STR
+        ID = 101 ;
+        VERSION = 1 ;
+        STRING = "O tipo de fatura deverá ser 'Substituição' se não houver nenhum débito C/R.";
+        HELPSTR = "O tipo de fatura deverá ser 'Substituição' se não houver nenhum débito C/R.";
+END
+STR
+        ID = 102 ;
+        VERSION = 1 ;
+        STRING = "Não há nenhum débitos C/R.";
+        HELPSTR = "Não há nenhum débitos C/R.";
+END
+STR
+        ID = 103 ;
+        VERSION = 1 ;
+        STRING = "A cobrança não é a última para o tipo de contabilidade balance_forward.";
+        HELPSTR = "A cobrança não é a última para o tipo de contabilidade balance_forward.";
+END
+STR
+        ID = 104 ;
+        VERSION = 1 ;
+        STRING = "A cobrança está totalmente paga.";
+        HELPSTR = "A cobrança está totalmente paga.";
+END
+STR
+        ID = 105 ;
+        VERSION = 1 ;
+        STRING = "A cobrança está paga.";
+        HELPSTR = "A cobrança está paga.";
+END
+STR
+        ID = 106 ;
+        VERSION = 1 ;
+        STRING = "Os débitos C/R são muito pequenos.";
+        HELPSTR = "Os débitos C/R são muito pequenos.";
+END
+STR
+        ID = 108 ;
+        VERSION = 1 ;
+        STRING = "REASON_ID ou REASON_DOMAIN_ID não está correto.";
+        HELPSTR = "REASON_ID ou REASON_DOMAIN_ID não está correto.";
+END
+STR
+        ID = 109 ;
+        VERSION = 1 ;
+        STRING = "A fatura da cobrança deve ser criada antes da geração da cobrança corretiva.";
+        HELPSTR = "A fatura da cobrança deve ser criada antes da geração da cobrança corretiva.";
+END
+STR
+        ID = 110 ;
+        VERSION = 1 ;
+        STRING = "Não há nenhum débito C/R, com exceção dos pagamentos.";
+        HELPSTR = "Não há nenhum débito C/R, com exceção dos pagamentos.";
+END
+STR
+        ID = 122 ;
+        VERSION = 1 ;
+        STRING = "Senha inválida. A senha começa com um prefixo inválido.";
+        HELPSTR = "Senha inválida. A senha começa com um prefixo inválido.";
+END
+STR
+        ID = 123 ;
+        VERSION = 1 ;
+        STRING = "Somente um valor de desconto e uma porcentagem são permitidos.";
+        HELPSTR = "Somente um valor de desconto e uma porcentagem são permitidos.";
+END
+STR
+        ID = 124 ;
+        VERSION = 1 ;
+        STRING = "Ação Obrigatória não pode ser cancelada";
+        HELPSTR = "Ação Obrigatória não pode ser cancelada";
+END
+STR
+        ID = 125 ;
+        VERSION = 1 ;
+        STRING = "As ações não podem ser inseridas antes das ações de cancelamento ou entre elas.";
+        HELPSTR = "As ações não podem ser inseridas antes das ações de cancelamento ou entre elas.";
+END
+STR
+	ID = 126 ;
+	VERSION = 1 ;
+	STRING = "Estas informações de fatura já fazem parte do grupo de cobranças.";
+	HELPSTR = "Estas informações de fatura já fazem parte do grupo de cobranças.	";
+END
+STR
+        ID = 127 ;
+	VERSION = 1 ;
+	STRING = "Estas informações de fatura já estão na obrigação da promessa de pagamento. Não é possível chamar outra promessa.";
+	HELPSTR = "Estas informações de fatura já estão na obrigação da promessa de pagamento. Não é possível chamar outra promessa.";
+END
+STR
+        ID = 128 ;
+	VERSION = 1 ;
+	STRING = "A promessa não pode ser chamada para uma data no passado.";
+	HELPSTR = "A promessa não pode ser chamada para uma data no passado.";
+END
+STR        
+	ID = 129 ;
+	VERSION = 1 ;
+	STRING = "Esta ação não pode ser adicionada no período da promessa de pagamento.";
+	HELPSTR = "Esta ação não pode ser adicionada no período da promessa de pagamento.";
+END
+STR
+	ID = 130 ;
+	VERSION = 1 ;
+	STRING = "As ações de promessa de pagamento não poderão ser adicionadas quando as informações de fatura não estiverem na obrigação da promessa de pagamento.";
+	HELPSTR = "As ações de promessa de pagamento não poderão ser adicionadas quando as informações de fatura não estiverem na obrigação da promessa de pagamento.";
+END
+STR
+	ID = 131 ;
+	VERSION = 1 ;
+	STRING = "As ações de promessa de pagamento somente poderão ser adicionadas durante o período da promessa de pagamento.";
+	HELPSTR = "As ações de promessa de pagamento somente poderão ser adicionadas durante o período da promessa de pagamento.";
+END
+STR
+	ID = 132 ;
+	VERSION = 1 ;
+	STRING = "O status da ação não está pendente. Não é possível atualizar a quantia de marco.";
+	HELPSTR = "O status da ação não está pendente. Não é possível atualizar a quantia de marco.";
+END
+STR
+	ID = 133 ;
+	VERSION = 1 ;
+	STRING = "A quantia de marco e o número de marcos não foram encontrados. Um deles deverá ser especificado.";
+	HELPSTR = "A quantia de marco e o número de marcos não foram encontrados. Um deles deverá ser especificado.";
+END
+STR
+	ID = 134 ;
+	VERSION = 1 ;
+	STRING = "A quantia de marco deve ser menor que ou igual à quantia em atraso, ou deve ser o mínimo da quantia de saída.";
+	HELPSTR = "A quantia de marco deve ser menor que ou igual à quantia em atraso, ou deve ser o mínimo da quantia de saída.";
+END
+STR
+	ID = 135 ;
+	VERSION = 1 ;
+	STRING = "O intervalo de marco e o total de dias não foram encontrados. Um deles deverá ser especificado.";
+	HELPSTR = "O intervalo de marco e o total de dias não foram encontrados. Um deles deverá ser especificado.";
+END
+STR
+	ID = 136 ;
+	VERSION = 1 ;
+	STRING = "Um dos parâmetros de entrada é zero.";
+	HELPSTR = "Um dos parâmetros de entrada é zero.";
+END
+STR
+	ID = 137 ;
+	VERSION = 1 ;
+	STRING = "A quantia de promessa deve ser maior que a quantia de saída.";
+	HELPSTR = "A quantia de promessa deve ser maior que a quantia de saída.";
+END
+STR
+        ID = 138 ;
+        VERSION = 1 ;
+        STRING = "Não é possível isentar as informações de fatura porque fazem parte do grupo collections_targets.";
+        HELPSTR = "Não é possível isentar as informações de fatura porque fazem parte do grupo collections_targets.";
+END
+STR
+        ID = 139 ;
+        VERSION = 1 ;
+        STRING = "Há uma relação cíclica entre pai e membro.";
+        HELPSTR = "Há uma relação cíclica entre pai e membro.";
+END
+STR
+        ID = 140 ;
+        VERSION = 1 ;
+        STRING = "Nome de grupo duplicado. Não é possível alterar o grupo.";
+        HELPSTR = "Nome de grupo duplicado. Não é possível alterar o grupo.";
+END
+STR
+        ID = 141 ;
+        VERSION = 1 ;
+        STRING = "As informações de fatura são subordinadas. Não é possível adicionar ao grupo.";
+        HELPSTR = "As informações de fatura são subordinadas. Não é possível adicionar ao grupo.";
+END
+STR
+        ID = 142 ;
+        VERSION = 1 ;
+        STRING = "As informações de fatura já são isentas. Não é possível isentar novamente.";
+        HELPSTR = "As informações de fatura já são isentas. Não é possível isentar novamente.";
+END
+STR
+        ID = 143 ;
+        VERSION = 1 ;
+        STRING = "As informações de fatura já são um membro do grupo de cobranças. Não é possível adicionar ao grupo.";
+        HELPSTR = "As informações de fatura já são um membro do grupo de cobranças. Não é possível adicionar ao grupo.";
+END
+STR
+        ID = 144 ;
+        VERSION = 1 ;
+        STRING = "As informações de fatura já são um pai do grupo de cobranças. Não é possível adicionar ao grupo.";
+        HELPSTR = "As informações de fatura já são um pai do grupo de cobranças. Não é possível adicionar ao grupo.";
+END
+STR
+        ID = 145 ;
+        VERSION = 1 ;
+        STRING = "As informações de fatura já estão nas cobranças. Não é possível modificar o grupo.";
+        HELPSTR = "As informações de fatura já estão nas cobranças. Não é possível modificar o grupo.";
+END
+STR
+        ID = 146 ;
+        VERSION = 1 ;
+        STRING = "Para tipo de pagamento SEPA, a moeda da conta deve ser EURO.";
+        HELPSTR = "Para tipo de pagamento SEPA, a moeda da conta deve ser EURO."; 
+END
+STR
+        ID = 147 ;
+        VERSION = 1 ;
+        STRING = "O tamanho de IBAN não está de acordo com a norma ISO 13616:2007.";
+        HELPSTR = "O tamanho de IBAN não está de acordo com a norma ISO 13616:2007.";
+END
+STR
+        ID = 148 ;
+        VERSION = 1 ;
+        STRING = "IBAN não está de acordo com a norma ISO 13616:2007.";
+        HELPSTR = "IBAN não está de acordo com a norma ISO 13616:2007.";
+END
+STR
+        ID = 149 ;
+        VERSION = 1 ;
+        STRING = "IBAN não está em conformidade com mod97.";
+        HELPSTR = "IBAN não está em conformidade com mod97.";
+END
+STR
+        ID = 150 ;
+        VERSION = 1 ;
+        STRING = "O tamanho de BIC não está de acordo com as normas. Deve ter 8 ou 11 caracteres.";
+        HELPSTR = "O tamanho de BIC não está de acordo com as normas. Deve ter 8 ou 11 caracteres.";
+END
+STR
+        ID = 151 ;
+        VERSION = 1 ;
+        STRING = "BIC não está de acordo com a norma ISO 9362:2009.";
+        HELPSTR = "BIC não está de acordo com a norma ISO 9362:2009.";
+END
+STR
+        ID = 152 ;
+        VERSION = 1 ;
+        STRING = "Este UMR já está presente no sistema. Corrija este valor ou deixe-o vazio para que possamos gerar um.";
+        HELPSTR = "Este UMR já está presente no sistema. Corrija este valor ou deixe-o vazio para que possamos gerar um.";
+END
+STR
+        ID = 153 ;
+        VERSION = 1 ;
+        STRING = "MANDATE_SIGNED_T não pode ser uma data futura e nem anterior à data de criação da conta.";
+        HELPSTR = "MANDATE_SIGNED_T não pode ser uma data futura e nem anterior à data de criação da conta.";
+END
+STR
+        ID = 154 ;
+        VERSION = 1 ;
+        STRING = "O ID do Credor não foi encontrado/O Nome do Credor é o mesmo.";
+        HELPSTR = "O ID do Credor não foi encontrado/O Nome do Credor é o mesmo.";
+END
+STR
+        ID = 155 ;
+        VERSION = 1 ;
+        STRING = "ID de credor inexistente.";
+        HELPSTR = "ID de credor inexistente.";
+END
+STR
+        ID = 156 ;
+        VERSION = 1 ;
+        STRING = "A combinação ID do Credor/Nome do Credor é inexistente.";
+        HELPSTR = "A combinação ID do Credor/Nome do Credor é inexistente.";
+END
+STR
+        ID = 157 ;
+        VERSION = 1 ;
+        STRING = "Estas informações de pagamento têm solicitação de SEPA pendente e, portanto, não podem ser excluídas.";
+        HELPSTR = "Estas informações de pagamento têm solicitação de SEPA pendente e, portanto, não podem ser excluídas.";
+END

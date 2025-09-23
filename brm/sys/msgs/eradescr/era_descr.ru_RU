@@ -1,0 +1,248 @@
+﻿
+##########################################################################
+#
+# Copyright (c) 2012, 2013, Oracle and/or its affiliates. All rights reserved.
+# 
+#   This material is the confidential property of Oracle Corporation or its
+#   licensors and may be used, reproduced, stored or transmitted only in
+#   accordance with a valid Oracle license or sublicense agreement.
+#
+##########################################################################
+#
+#   File:  era_descr.ru_RU
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  ru_RU ( Russian )
+#
+#	Domain:  era_descr (version = 1)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character and should be limited to
+#	    1023 characters.  The quotes will not be part of the string 
+#	    stored in the database.  A double-quote character can be an 
+#	    element of the string if it is escaped with a backslash, for 
+#	    example "Delete \"unneeded\" files." will be stored as 
+#	    "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#         The STRING and optional HELPSTR are localizable.  This file must
+#	    be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#         to be ASCII (no extended-ASCII characters nor multiple byte
+#         characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTES:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. Please see the note about 
+#	    uniqueness above.
+#
+#	    The id's and version's chosen in this file should be kept in
+#	    sync with the pin_device_state_sim configuration file.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "ru_RU" ;
+
+DOMAIN = "era_descr" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "Классификация" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "This option assigns the account to a group of accounts that belong to an organization such as a business, school, or private organization. Calls made between members of the group are discounted. An account can belong to only one group.To give this promotion, enter the word TYPE in the Name field, and enter the name of the group in the Value field. This option also gives various discounts as defined by your company. An account can have more than one type of quality option.To give this promotion, enter the word QUALITY in the Name field, and enter the quality promotion code in the Value field." ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "Особый день" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для предоставления скидок на\n вызовы в день рождения клиента. Для лицевого счета можно\n указать только один день рождения. Чтобы предоставить\n скидку по этой рекламной акции, в поле Имя введите слово\n BIRTHDAY, а в поле Значение - день рождения клиента." ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "Корпоративный" ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для назначения лицевого счета\n группе лицевых счетов, совместно использующих\n определенные свойства телефонии, например группе\n лицевых счетов, выполняющих вызовы друг другу внутри\n компании. Вызовы между членами группы тарифицируются\n со скидкой. Лицевой счет может принадлежать\n только одной группе. Чтобы предоставить скидку по этой\n рекламной акции, в поле Имя введите слово AGREEMENT,\n а в поле Значение - имя рекламной акции." ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "Хранилище данных" ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для определения лицевых\n счетов с целью сбора маркетинговых данных.\n Для лицевого счета можно назначить несколько типов\n данной рекламной акции. Чтобы включить эту\n рекламную акцию, в поле Имя введите слово\n SEGMENT, а в поле Значение - имя рекламной акции." ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "Закрытая группа пользователей" ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для создания закрытых\n групп пользователей. Для вызовов между\n номерами одной группы применяются скидки.\n Чтобы предоставить скидку по этой рекламной\n акции, в поле Имя введите номер телефона\n или идентификатор входа для лицевого счета, а в поле\n Значение - имя закрытой группы пользователей." ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "Уровень обслуживания" ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр позволяет назначить контроль\n качества для услуги. Услуге можно\n назначить более одного типа параметра контроля\n качества. Чтобы включить эту рекламную акцию,\n в поле Имя введите слово AGREEMENT, а в поле\n Значение - имя рекламной акции." ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "Друзья и семья" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр позволяет назначать скидки для вызовов\n на определенные номера, например друзьям и семье. Лицевой счет может включать несколько номеров друзей и членов семьи. Чтобы предоставить скидку по этой рекламной акции, в поле Имя введите слово NUMBER, а в поле Значение - номер телефона. Вместо номера телефона можно ввести идентификатор входа для лицевого счета другого клиента." ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "Домашний регион" ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр позволяет назначать скидки для\n вызовов на определенные номера или в регионы,\n например для всех номеров в стране или для номеров\n с определенным кодом города. Лицевой счет может\n включать несколько номеров домашнего региона.\n Чтобы предоставить скидку по этой рекламной акции,\n в поле Имя введите слово NUMBER. В поле\n Значение введите номер телефона, идентификатор\n входа или индикатор региона, например код страны\n или код города." ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "Домашняя сота" ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для определения\n домашних сот для лицевого счета. Вызовы вне домашней соты\n тарифицируются не так, как вызовы внутри домашней соты.\n Лицевой счет может включать несколько записей домашних\n сот. Чтобы предоставить скидку по этой рекламной\n акции, в поле Имя введите слово CELL_ID. В поле\n Значение введите код для домашней соты." ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "Тарифный план" ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр предоставляет дополнительные\n сведения о тарификации, не включенные в продукты клиента.\n Чтобы включить эту рекламную акцию,\n в поле Имя введите приоритет тарифного плана. Маленькое\n число означает высокий ранг. В поле\n Значение введите код тарифного плана IntegRate." ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "Модель скидки" ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр предоставляет дополнительные\n сведения о тарификации, не включенные в продукты клиента.\n Чтобы включить эту рекламную акцию,\n в поле Имя введите слово INTEGRATE. В поле\n Значение введите код модели скидки IntegRate." ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "Лицевой счет учета скидок" ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для указания лицевого счета для\n скидок за объем для нескольких лицевых счетов. Для лицевого счета можно указать\n только одну такую рекламную акцию. Чтобы предоставить\n скидку по этой рекламной акции, в поле Имя введите слово\n INTEGRATE, а в поле Значение - идентификатор\n лицевого счета основной скидки." ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "Набор скидок" ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для указания подмножества\n правил скидки, применяемых при предоставлении\n скидки. Правила скидки применяются последовательно\n в порядке приоритета, определенного для модели скидок.\n Однако правило скидки будет применено только\n в том случае, если правила скидки с более высоким\n приоритетом уже использованы. Если не указаны атрибуты\n ERA DiscountBundle, будут применены все правила скидки для\n модели скидки. Чтобы предоставить скидку по этой\n рекламной акции, в поле Значение введите код\n правила скидки.";
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "Владелец скидки" ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "Этот параметр служит для указания владельца\n остатка скидки для правила скидки. Это позволяет совместно использовать скидку для нескольких лицевых счетов. Если не указан атрибут ERA DiscountOwner, текущий лицевой счет будет считаться владельцем скидки. Чтобы предоставить скидку по этой рекламной акции, в поле Имя введите имя правила скидки, а в поле Значение - poid лицевого счета владельца скидки.";
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "Разъединенный вызов" ;
+END
+STR
+	ID = 29 ;
+	VERSION = 1 ;
+	STRING = "This option provides discounts to the dropped call in the continuous call. To give this promotion enter the SAME_CALLED_PARTY, MAX_TIME_TO_CONTINUATION_CALL, MAX_INTERVENING_CALLS in the Name field and their corresponding value in the Value fields. SAME_CALLED_PARTY specify whether continuation calls must be to the same called number as the dropped call or if calls to other numbers can be continuation calls. If value is not specified, continuation calls must be to the same called number as the dropped call. MAX_TIME_TO_CONTINUATION_CALL specifies the allowable duration, in seconds, between the end of the dropped call and the start of the continuation call. If value is not specified, there's no time limit between the dropped call and the continuation call, as long as they both occur within the same billing cycle. MAX_INTERVENING_CALLS specifies the allowable number of intermediate calls between a dropped call and a continuation call. If value is not specified, all the calls are considered.";
+END

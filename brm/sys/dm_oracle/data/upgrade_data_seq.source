@@ -1,0 +1,72 @@
+--
+-- @(#) upgrade_data_seq.source 1
+--
+--  Copyright (c) 2023, Oracle and/or its affiliates. 
+--  
+--  This material is the confidential property of Oracle Corporation or its
+--  licensors and may be used, reproduced, stored or transmitted only in
+--  accordance with a valid Oracle license or sublicense agreement.
+--
+--   This file creates a new row and updates the header_num of /data/sequence row in accordance to existing poid_ids2 sequence
+--
+
+set serveroutput on;
+DECLARE
+    v_curr_poid_id0 int;
+    v_start int;
+    v_count int := 0;
+    v_SQL VARCHAR2(400);
+    v_inc_by int;
+    v_header_num int;
+    v_type int := 0;
+    v_dummy int := 0;
+
+BEGIN
+
+    -- check data_t table if inc_by column is present or not. if not, add it.
+    SELECT count(*) INTO v_dummy FROM user_tab_columns WHERE table_name='DATA_T' AND column_name='INC_BY';
+    IF v_dummy = 0 THEN
+        v_SQL := 'ALTER TABLE DATA_T ADD INC_BY INT';
+        EXECUTE IMMEDIATE v_SQL;
+        dbms_output.put_line('DATA_T table altered : new column INC_BY added');
+    END IF;
+
+
+    -- update the data type of HEADER_NUM in dd_objects_fields_t to PIN_FLD_INT64
+    SELECT field_type into v_type FROM dd_objects_fields_t WHERE field_name='PIN_FLD_HEADER_NUM' and obj_id0=(SELECT obj_id0 FROM dd_objects_t WHERE name='/data');
+    IF v_type = 1 THEN
+        UPDATE dd_objects_fields_t SET field_type=17 WHERE field_name='PIN_FLD_HEADER_NUM';
+        dbms_output.put_line('Updated the data type of PIN_FLD_HEADER_NUM to INT64');
+    END IF;
+
+
+    -- select the nextval from poid_ids2 sequence
+    SELECT poid_ids2.nextval into v_curr_poid_id0 from sys.dual;
+
+
+    -- check if /data/sequence row STANDARD_POIDS already exists
+    SELECT count(*) into v_count FROM DATA_T where name='STANDARD_POIDS';
+    IF v_count = 0 THEN
+        SELECT count(*) into v_inc_by from config_distribution_t;
+
+        v_start := v_curr_poid_id0 + (100 * v_inc_by); -- skip some poids just so it doesn't clash
+        
+        -- add new /data/sequence row for STANDARD_POIDS starting from this new poid_id
+        v_SQL := 'INSERT INTO data_t VALUES (1, 326, ''/data/sequence'', 0,' || $PIN_CONF_DATE_NOW || ',' || $PIN_CONF_DATE_NOW || ', ''G'', ''G'', 1, 1, ''/account'', 0, 0,'|| v_start || ', '''', ''STANDARD_POIDS'', 0, 0, '''', 0,' || v_inc_by || ')';
+        EXECUTE IMMEDIATE v_SQL;
+        dbms_output.put_line('New /data/sequence row added for STANDARD_POIDS');
+    ELSE -- row already exists, if poid_ids2 is greater, only then update it.
+        SELECT header_num into v_header_num FROM DATA_T where name='STANDARD_POIDS';
+        IF v_curr_poid_id0 > v_header_num THEN
+            v_start := v_curr_poid_id0;
+            
+            -- Update the header_num to new start value
+            UPDATE DATA_T set HEADER_NUM=v_start WHERE name='STANDARD_POIDS';
+            dbms_output.put_line('/data/sequence row updated for STANDARD_POIDS');
+        END IF;
+    END IF;
+
+    COMMIT;
+
+END;
+/

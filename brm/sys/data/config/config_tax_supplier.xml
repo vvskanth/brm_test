@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_tax_supplier.xsd">
+
+  <ConfigObject>
+    <DESCR>Tax Supplier configuration</DESCR>
+    <NAME>Tax Supplier</NAME>
+    <TAX_SUPPLIERS elem="1">
+      <ADDRESS>Cupertino;CA;95014;US</ADDRESS>
+      <DEFAULT_FLAG>1</DEFAULT_FLAG>
+      <DESCR>Tax Supplier 1</DESCR>
+      <NAME>TS1</NAME>
+      <NEXUSINFO>*</NEXUSINFO>
+      <REGULATED_FLAG>0</REGULATED_FLAG>
+      <VATINFO elem="0">
+        <CANON_COUNTRY>US</CANON_COUNTRY>
+        <VAT_CERT>vat_cert_US</VAT_CERT>
+      </VATINFO>
+    </TAX_SUPPLIERS>
+  </ConfigObject>
+
+</ObjectList>

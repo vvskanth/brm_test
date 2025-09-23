@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==================================================================================
+	Copyright (c) 2003 - 2006 Oracle. All rights reserved.
+	This material is the confidential property of Oracle Corporation or its
+	licensors and may be used, reproduced, stored or transmitted only in
+	accordance with a valid Oracle license or sublicense agreement.
+	=================================================================================-->
+<BusinessConfiguration xmlns="http://www.portal.com/schemas/BusinessConfig" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig  business_configuration.xsd">
+
+	<BillingSegmentConfiguration>
+		<BillingSegments>
+			<BillingSegment ID="101">First Billing Segment</BillingSegment>
+			<BillingSegment ID="102">Second Billing Segment</BillingSegment>
+			<BillingSegment ID="103">Third Billing Segment</BillingSegment>
+		</BillingSegments>
+		<DomAssignments>
+			<DomAssignment billingSegmentRef="101" status=" restricted " dom="  ---31  " maxAccounts="7400" maxServices="70033">
+				<NumAccounts>4</NumAccounts>
+				<NumServices>5</NumServices>
+				<TotalProcessTime>PT20S</TotalProcessTime>
+			</DomAssignment>
+			<DomAssignment billingSegmentRef="102" status="open" dom="---07" maxAccounts="7400" maxServices="733">
+				<NumAccounts>76</NumAccounts>
+				<NumServices>5</NumServices>
+				<TotalProcessTime>P1D</TotalProcessTime>
+			</DomAssignment>
+		</DomAssignments>
+	</BillingSegmentConfiguration>
+</BusinessConfiguration>

@@ -1,0 +1,22 @@
+--
+-- @(#)%Portal Version: create_indexes_config_accountera.source:BillingVelocityInt:2:2006-Mar-26 20:24:26 %
+--
+-- Copyright (c) 2003, 2009, Oracle and/or its affiliates. All rights reserved. 
+--
+--      This material is the confidential property of Oracle Corporation 
+--     	or licensors and may be used, reproduced, stored or transmitted 
+--      only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- SOURCE OF sql file to create the telco indexes from the PIN database
+-- $PIN_CONF_TBLSPACEX		-- for tablespace to put all these in
+-- $PIN_CONF_STORAGE_SMALL	-- for storage phrase
+
+--  Account ERA Config
+-- /config/account_era
+create unique index i_config_account_era__id on config_account_era_t
+        ( obj_id0, rec_id )
+        $PIN_CONF_TBLSPACEX1
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/config.INDEX_CLAUSE'} ;
+

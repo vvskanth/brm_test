@@ -1,0 +1,16 @@
+<!--
+Infranet Product cancel event.
+-->
+
+<!--
+Common element definitions....
+-->
+
+<!ENTITY % Common SYSTEM "common.dtd">
+%Common;
+
+<!ELEMENT Portal.Infranet.Events.ProductCancel (AccountObj,ServiceObj?,
+ProductInfo)>
+<!ATTLIST Portal.Infranet.Events.ProductCancel Version 
+CDATA #FIXED "1.0" >
+

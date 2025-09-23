@@ -1,0 +1,31 @@
+#
+#=======================================================================
+#
+# @(#)% % 
+# 
+# Copyright (c) 2001, 2009, Oracle and/or its affiliates. All rights reserved. 
+# 
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#======================================================================
+
+#======================================================================
+# This is the input file that the load_pin_config_business_type
+# utility reads to load business types definitions into the Infranet database.
+#
+# Use this file to define all the business types you want on your system.
+#
+# The format is an integer value plus a quoated string.  The string may be 
+# placed on several lines by closing the quote before the carage return and
+# reopening it on the next line such as
+# 10 "this is the 10th"
+#    "Business type";
+# always end a business type def with a ';'.
+# the total string length must be less than 1024 characters.
+
+0    "Unknown business type";
+1    "Consumer";
+2    "Business";

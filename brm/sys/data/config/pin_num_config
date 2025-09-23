@@ -1,0 +1,33 @@
+#
+# @(#)pin_num_config 1.0 01/05/21
+#
+version 1
+#======================================================================
+#
+# @(#)% %
+#
+# Copyright (c) 2001 - 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+#   Use this file to define and load the number of days a number should
+#   be quarantined after being disassociated from its service(s).  The
+#   listed value is interpreted as the number of days to remain in the
+#   quarantine state.
+#
+# Note:
+#   This file can be loaded for each brand in a branded environment,
+#   else the default value used by PCM_OP_NUM_QUARANTINE is 90 days.
+#
+# Usage:
+#   $ load_pin_num_config <pin_num_config>
+#
+#======================================================================
+#
+quarantine_period 90
+#

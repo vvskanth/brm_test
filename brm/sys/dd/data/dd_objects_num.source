@@ -1,0 +1,226 @@
+#
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:51 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 4
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 18
+1     PIN_FLD_NAME            STR [0] "/block"
+1     PIN_FLD_SEQ_START       INT [0] 1000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_DESCR           STR [0] "Used for inventory management of /device/num ranges."
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CANON_NAME"
+2         PIN_FLD_DESCR           STR [0] "Given canonicalized name - unique system wide."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "canon_name"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_END_NUMBER"
+2         PIN_FLD_DESCR           STR [0] "Highest number in the contiguous range."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 30
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "end_number"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+2         PIN_FLD_DESCR           STR [0] "Given name for the block."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_NUMBER"
+2         PIN_FLD_DESCR           STR [0] "Lowest number in the contiguous range."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 30
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "start_number"
+1     PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "block_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/block'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/device_state/num"
+1     PIN_FLD_READ_ACCESS     STR [0] "Brand"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_DESCR           STR [0] "Unextended subclass used to support a state model for /device/num state transitions."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/num"
+1     PIN_FLD_READ_ACCESS     STR [0] "Brand"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Brand"
+1     PIN_FLD_DESCR           STR [0] "Used for brand specific configuration information regarding /device/num's."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/device/num"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_DESCR           STR [0] "Used to represent a unique telephone number."
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 15
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEVICE_NUM"
+2         PIN_FLD_DESCR           STR [0] "Used to contain /device/num attributes."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CATEGORY_ID"
+3             PIN_FLD_DESCR           STR [0] "Used to reference a localized string."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "category_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CATEGORY_VERSION"
+3             PIN_FLD_DESCR           STR [0] "Used to reference a localized string."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "category_version"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_ELEMENT"
+3             PIN_FLD_DESCR           STR [0] "HLR identifier."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_element"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VANITY"
+3             PIN_FLD_DESCR           STR [0] "Used to indicate special handling."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "vanity"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PERMITTED"
+3             PIN_FLD_DESCR           STR [0] "Service type to which this /device/num object can be associated (restricted through policy)."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "permitted"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIG_NETWORK_ID"
+3             PIN_FLD_DESCR           STR [0] "Original Network identifier."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "orig_network_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECENT_NETWORK_ID"
+3             PIN_FLD_DESCR           STR [0] "Recent Network identifier."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "recent_network_id"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "device_num_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/device/num.PIN_FLD_DEVICE_NUM'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

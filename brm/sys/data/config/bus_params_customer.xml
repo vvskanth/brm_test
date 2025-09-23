@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  $Header: bus_platform_vob/financial/config/xml_utils/bus_params_customer.xml /cgbubrm_mainbrm.portalbase/1 2018/07/25 04:17:48 nameen Exp $ -->
+
+<!-- 
+ Copyright (c) 2012, 2018, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     bus_params_customer.xml - <one-line expansion of the name>
+
+   DESCRIPTION
+     <short description of component this file declares/defines>
+
+   NOTES
+     <other useful comments, qualifications, etc.>
+
+   MODIFIED   (MM/DD/YY)
+   nameen     07/12/18 - XbranchMerge nameen_bug-28244588 from
+                         cgbubrm_7.5.0.portalbase
+   ajena      01/12/12 - Creation
+
+-->
+<BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+        <BusParamConfigurationClass>
+                <BusParamsCustomer>
+                         <SubscriberLifeCycle>disabled</SubscriberLifeCycle>
+                         <EnablePasswordRestriction>enabled</EnablePasswordRestriction>
+                         <ClosedAcctsRetentionMonths>0</ClosedAcctsRetentionMonths>
+                         <ActgDom>0</ActgDom>
+                         <BillWhen>1</BillWhen>
+                         <CCchecksum>enabled</CCchecksum>
+                </BusParamsCustomer>
+        </BusParamConfigurationClass>
+</BusinessConfiguration>
+

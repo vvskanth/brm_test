@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration 
+	xmlns="http://www.portal.com/schemas/BusinessConfig" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+	<!-- Sample file. Modify according to guidelines -->
+	<CustomerSegmentConfiguration>
+		<CustomerSegments>
+			<CustomerSegment ID="1"> Business class Customers </CustomerSegment>
+			<CustomerSegment ID="2"> Corporate customers </CustomerSegment>
+			<CustomerSegment ID="3"> Senior citizen customers </CustomerSegment>
+			<CustomerSegment ID="4"> VIP customers </CustomerSegment>
+		</CustomerSegments>
+	</CustomerSegmentConfiguration>
+</BusinessConfiguration>

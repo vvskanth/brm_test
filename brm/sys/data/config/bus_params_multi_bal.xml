@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+	
+	<!-- Sample file. Modify according to guidelines. -->
+
+	<BusParamConfigurationClass>
+		
+		<BusParamsMultiBal>
+			<SortValidityBy>ESTEET</SortValidityBy>
+			<RestrictResourceValidityToOffer>FALSE</RestrictResourceValidityToOffer>
+			<BalanceMonitoring>disabled</BalanceMonitoring>
+			<LockConcurrency>high</LockConcurrency>
+			<CreditThresholdChecking>disabled</CreditThresholdChecking>
+			<ConsumeSubType>loan</ConsumeSubType>
+			<SkipBalMonitorImpact>0</SkipBalMonitorImpact>
+		</BusParamsMultiBal>
+		
+	</BusParamConfigurationClass>
+
+</BusinessConfiguration>

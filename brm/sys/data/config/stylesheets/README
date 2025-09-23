@@ -1,0 +1,30 @@
+
+  Infranet  6.1 - Sample XSL Stylesheets
+  --------------------------------------
+
+  We have included a few sample XSL stylesheets, showcasing the ease
+  of use and customizability of the XSL scheme of formatting invoices
+  for presentation.
+
+  sample1.xsl - This stylesheet, reproduces the HTML invoice produced 
+		out of the box by the PIN_INV_POL_FORMAT_INVOICE_HTML
+		opcode.  It supports just the primary currency and 
+		utilizes client side JavaScript to format dates.
+
+  sample1.html- A sample HTML output using sample1.xsl
+
+  sample2.xsl - This stylesheet outputs rich HTML with a mixture of client side
+		JavaScript and CSS for a more dynamic Invoice presentation.
+  sample3.xsl - This stylesheet outputs rich HTML with a mixture of pxslt.jar's
+		below static methods for displaying date in required format,
+		since Oracle XDK XSLT library does not support overloaded java
+		methods in XSL templates.
+
+		Date_format and time zone argument confirms to Java's SimpleDateFormat Specification
+
+		1)public static String getFormattedDate(String timeInSec,String date_format)
+		2)public static String getFormattedDateWithTimeZone(String timeInSec,String date_format,String srcTimeZone)
+
+  sample2.html- A sample HTML+CSS output using sample2.xsl
+
+  *.gif,*.jpg - Images used in the outputs

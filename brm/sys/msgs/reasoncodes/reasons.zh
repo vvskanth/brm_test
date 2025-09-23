@@ -1,0 +1,1092 @@
+###########################################################################
+#
+# Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored
+# or transmitted only in accordance with a valid Oracle license or
+# sublicense agreement.
+#
+###########################################################################
+#
+#   File:  reasons.zh
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  zh ( Simplified Chinese )
+#
+#	Domain:  Reason Codes-Active Status Reasons (version = 2)
+#		 Reason Codes-Charge Reasons  (version = 5)
+#		 Reason Codes-Closed Status Reasons (version = 4)
+#		 Reason Codes-Credit Reasons (version = 8)
+#		 Reason Codes-Credit Limit Reasons (version = 7)
+#		 Reason Codes-Debit Reasons (version = 1)
+#		 Reason Codes-Inactive Status Reasons (version = 3)
+#		 Reason Codes-Refund Reasons (version = 6)
+#		 
+#		 Reason Domains for Payment Processing
+#		 reserved from 13 - 20
+#
+#		 Reason Codes-Failed Payment Reasons (version = 13)
+#		 Reason Codes-Suspense Payment Reasons (version = 14)
+#		 Reason Codes-Payment Suspense Management Action Owner (version = 15)
+#		 Reason Codes-Payment Suspense Management, Reversal Reasons (version = 16)
+#
+#		 Reason Domains for Adjustments, Disputes and settlements
+#		 reserved from 21 - 50
+#
+#		 Reason Codes-Credit Reasons Non-Currency Account
+#			      Adjustments(version = 21)
+#		 Reason Codes-Debit Reasons Non-Currency Account
+#			      Adjustments(version = 22)
+#
+#		 Reason Codes-Credit Reasons Bill Adjustments (version = 23)
+#		 Reason Codes-Debit Reasons Bill Adjustments (version = 24)
+#		 Reason Codes-Credit Reasons Bill Disputes (version = 25)
+#		 Reason Codes-Debit Reasons Bill Disputes (version = 26)
+#		 Reason Codes-Reasons Bill Settlements (version = 27)
+#
+#		 Reason Codes-Credit Reasons Currency Connection
+#			      Adjustments (version = 28)
+#		 Reason Codes-Debit Reasons Currency Connection
+#			      Adjustments (version = 29)
+#		 Reason Codes-Credit Reasons Non-Currency Connection
+#			      Disputes (version = 30)
+#		 Reason Codes-Debit Reasons Non-Currency Connection
+#			      Disputes (version = 31)
+#
+#		 Reason Codes-Credit Reasons Item Adjustments (version = 32)
+#		 Reason Codes-Debit Reasons Item Adjustments (version = 33)
+#		 Reason Codes-Credit Reasons Item Disputes (version = 34)
+#		 Reason Codes-Debit Reasons Item Disputes (version = 35)
+#		 Reason Codes-Reasons Item Settlements (version = 36)
+#		 
+#		 Reason Codes-Credit Reasons Event Adjustments (version = 37)
+#		 Reason Codes-Debit Reasons Event Adjustments (version = 38)
+#		 Reason Codes-Credit Reasons Event Disputes (version = 39)
+#		 Reason Codes-Debit Reasons Event Disputes (version = 40)
+#		 Reason Codes-Reasons Event Settlements (version = 41)
+#		 Reason Codes-Reasons Write-off level (version = 42)
+#
+#		 Reason Codes-Others (version = 100)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this Reason Codes file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected,
+#	    except for the Event-GLID mappings which are always 
+#	    overwritten.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#           The STRING and optional HELPSTR are localizable.  This file must be
+#           in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#           to be ASCII (no extended-ASCII characters nor multiple byte
+#           characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this Reason Codes file. Please see the note about 
+#	    uniqueness above.
+#
+#	[6] String Version:
+#
+#	    For reason codes, this field will be used to specify the
+#	    domain that the reason belongs to, for example, Credit or 
+#           Debit. The values have been predefined; they must not be 
+#	    changed.
+#
+#	[7] Event to G/L ID mapping:
+#
+#	    These mappings are specified in this file. 
+#
+#	    G/L IDs can now be assigned based on Reason Codes. This is
+#	    currently applicable for Account level adjustments only.
+#
+#	    Events associated with specific Debit or Credit reasons are 
+#	    listed under the corresponding reason code and they start
+#	    with the header "EVENT-GLID" and end with "EVENT-GLID-END".
+#
+#	    In the earlier releases of Infranet, G/L ID mappings
+#	    for pre-rated events could be specified using the 
+#	    Policy Configuration tool. Now these mappings must
+#	    be specified in this file. A new domain named "Others"
+#	    has been created for providing the G/L ID mappings
+#	    for these events. 
+#   
+#	    All the mappings shown are examples and need to be
+#	    changed appropriately during setup.
+#
+##########################################################################
+
+LOCALE = "zh" ;
+
+DOMAIN = "Reason Codes-Active Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 2 ;
+	STRING = "客户请求的重新激活" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 2 ;
+	STRING = "客户支付的过期收费" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 2 ;
+	STRING = "信用卡正在工作" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 2 ;
+	STRING = "已经解决的其他问题" ;
+END
+
+DOMAIN = "Reason Codes-Charge Reasons" ;
+STR
+	ID = 11 ;
+	VERSION = 5 ;
+	STRING = "重新激活的帐户" ;
+END
+STR
+	ID = 12 ;
+	VERSION = 5 ;
+	STRING = "已验证的信用卡" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 5 ;
+	STRING = "客户请求的预付" ;
+END
+STR
+	ID = 14 ;
+	VERSION = 5 ;
+	STRING = "新的信用卡" ;
+END
+
+DOMAIN = "Reason Codes-Closed Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 4 ;
+	STRING = "重复帐户" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 4 ;
+	STRING = "移出区域" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 4 ;
+	STRING = "对服务不满" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 4 ;
+	STRING = "违反了公司政策" ;
+END
+
+DOMAIN = "Reason Codes-Credit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 8 ;
+	STRING = "客户对服务不满" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2 ;
+	VERSION = 8 ;
+	STRING = "客户不知道要收费" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 3 ;
+	VERSION = 8 ;
+	STRING = "误记入借方的帐户" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4 ;
+	VERSION = 8 ;
+	STRING = "用于自动注销撤消功能的注销" ;
+	EVENT-GLID
+		"/event/billing/writeoff"			110 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 5 ;
+	VERSION = 8 ;
+	STRING = "赞助的充值。被赞助者贷记" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+
+
+DOMAIN = "Reason Codes-Debit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "技术费用和支持费用" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "服务费用" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "误记入贷方的帐户" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "赞助的充值。被赞助者借记" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+
+
+DOMAIN = "Reason Codes-Credit Limit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 7 ;
+	STRING = "应客户请求" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 7 ;
+	STRING = "信用良好，经常超过限额" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 7 ;
+	STRING = "出于服务费增长的需要" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 7 ;
+	STRING = "特殊情况" ;
+END
+
+DOMAIN = "Reason Codes-Inactive Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 3 ;
+	STRING = "客户请求的??" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 3 ;
+	STRING = "信用限额/信用卡问题" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 3 ;
+	STRING = "未支付的票据" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 3 ;
+	STRING = "怀疑客户处理不当" ;
+END
+
+DOMAIN = "Reason Codes-Refund Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 6 ;
+	STRING = "客户对服务不满" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 6 ;
+	STRING = "客户不知道要收费" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 6 ;
+	STRING = "客户拒绝打开帐户" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 6 ;
+	STRING = "对帐户误收费" ;
+END
+
+DOMAIN = "Reason Codes-Insert Action" ;
+STR
+        ID = 1 ;
+        VERSION = 10 ;
+        STRING = "客户承诺在指定日期前付款";
+END
+STR
+        ID = 2 ;
+        VERSION = 10 ;
+        STRING = "无法联系到客户";
+END
+STR
+        ID = 3 ;
+        VERSION = 10 ;
+        STRING = "客户未收到原始催讨信";
+END
+STR
+        ID = 4 ;
+        VERSION = 10 ;
+        STRING = "客户没有按要求回电话";
+END
+
+DOMAIN = "Reason Codes-Reschedule Action" ;
+STR
+        ID = 1 ;
+        VERSION = 9 ;
+        STRING = "无法联系到客户";
+END
+STR
+        ID = 2 ;
+        VERSION = 9 ;
+        STRING = "客户承诺在指定日期前付款";
+END
+STR
+        ID = 3 ;
+        VERSION = 9 ;
+        STRING = "客户未收到原始催讨信";
+END
+STR
+        ID = 4 ;
+        VERSION = 9 ;
+        STRING = "客户没有按要求回电话";
+END
+
+DOMAIN = "Reason Codes-Exempt Account" ;
+STR
+        ID = 1 ;
+        VERSION = 11 ;
+        STRING = "已申请破产";
+END
+STR
+        ID = 2 ;
+        VERSION = 11 ;
+        STRING = "法律审查未决";
+END
+STR
+        ID = 3 ;
+        VERSION = 11 ;
+        STRING = "诉讼未决" ;
+END
+STR
+        ID = 4 ;
+        VERSION = 11 ;
+        STRING = "具有特殊合同/付款条款的战略性帐户";
+END
+
+DOMAIN = "Reason codes-Payment Failure Reasons" ;
+STR
+	ID = 1001 ;
+	VERSION = 13 ;
+	STRING = "卡无效";
+END
+STR
+	ID = 1002 ;
+	VERSION = 13 ;
+	STRING = "金额错误";
+END
+STR
+	ID = 1003 ;
+	VERSION = 13 ;
+	STRING = "未知错误";
+END
+STR
+	ID = 1004 ;
+	VERSION = 13 ;
+	STRING = "网络错误";
+END
+STR
+	ID = 1005 ;
+	VERSION = 13 ;
+	STRING = "资金不足/超过信用限额";
+END
+STR
+	ID = 1006 ;
+	VERSION = 13 ;
+	STRING = "卡被拒绝";
+END
+STR
+	ID = 1007 ;
+	VERSION = 13 ;
+	STRING = "发卡方想要与持卡人进行语音联系 ";
+END
+STR
+	ID = 1008 ;
+	VERSION = 13 ;
+	STRING = "批准/拒绝";
+END
+STR
+	ID = 1009 ;
+	VERSION = 13 ;
+	STRING = "发卡方想要收回卡";
+END
+STR
+	ID = 1010 ;
+	VERSION = 13 ;
+	STRING = "卡已挂失/被窃";
+END
+STR
+	ID = 1011 ;
+	VERSION = 13 ;
+	STRING = "卡已失效。";
+END
+STR
+	ID = 1012 ;
+	VERSION = 13 ;
+	STRING = "普通拒绝 – 发卡方未提供其他信息";
+END
+STR
+	ID = 1013 ;
+	VERSION = 13 ;
+	STRING = "卡错误，但通过了 10 模校验位例程";
+END
+STR
+	ID = 1014 ;
+	VERSION = 13 ;
+	STRING = "卡已失效或发送日期错误。请确定正确的日期";
+END
+STR
+	ID = 1015 ;
+	VERSION = 13 ;
+	STRING = "发卡方不允许此类交易";
+END
+STR
+	ID = 1016 ;
+	VERSION = 13 ;
+	STRING = "金额不被网络接受";
+END
+STR
+	ID = 1017 ;
+	VERSION = 13 ;
+	STRING = "卡受限";
+END
+STR
+	ID = 1018 ;
+	VERSION = 13 ;
+	STRING = "Paymentech 未从授权网络收到应答";
+END
+STR
+	ID = 1019 ;
+	VERSION = 13 ;
+	STRING = "编辑错误 - AVS 日期无效";
+END
+STR
+	ID = 1020 ;
+	VERSION = 13 ;
+	STRING = "指定的地点无效";
+END
+STR
+	ID = 1021 ;
+	VERSION = 13 ;
+	STRING = "指定的邮政编码无效";
+END
+STR
+	ID = 1022 ;
+	VERSION = 13 ;
+	STRING = "卡错误，但通过了 10 模校验位例程";
+END
+STR
+	ID = 1023 ;
+	VERSION = 13 ;
+	STRING = "软拒绝";
+END
+STR
+	ID = 1024 ;
+	VERSION = 13 ;
+	STRING = "系统不可用或超时";
+END
+STR
+	ID = 1025 ;
+	VERSION = 13 ;
+	STRING = "硬拒绝";
+END
+STR
+	ID = 1026 ;
+	VERSION = 13 ;
+	STRING = "没有要收取的金额";
+END
+STR
+	ID = 1027 ;
+	VERSION = 13 ;
+	STRING = "命令无效";
+END
+STR
+	ID = 1028 ;
+	VERSION = 13 ;
+	STRING = "选择项目失败";
+END
+STR
+	ID = 1029 ;
+	VERSION = 13 ;
+	STRING = "CVV 无效";
+END
+STR
+	ID = 1030 ;
+	VERSION = 13 ;
+	STRING = "资金不足/超过信用限额";
+END
+STR
+	ID = 1031 ;
+	VERSION = 13 ;
+	STRING = "逻辑问题";
+END
+STR
+	ID = 1032 ;
+	VERSION = 13 ;
+	STRING = "帐号格式错误";
+END
+STR
+	ID = 1033 ;
+	VERSION = 13 ;
+	STRING = "帐号中的字符无效。";
+END
+STR
+	ID = 1034 ;
+	VERSION = 13 ;
+	STRING = "发卡方系统错误/故障";
+END
+
+DOMAIN = "Reason codes-Payment Suspense Management" ;
+STR
+	ID = 2999 ;
+	VERSION = 14 ;
+	STRING = "默认原因标识";
+	HELPSTR = "未指定原因标识" ;
+END
+STR
+	ID = 2001 ;
+	VERSION = 14 ;
+	STRING = "未找到帐号";
+	HELPSTR = "在数据库中未找到帐号" ;
+END
+STR
+	ID = 2002 ;
+	VERSION = 14 ;
+	STRING = "帐户状态为已关闭。";
+	HELPSTR = "帐户状态为已关闭。" ;
+END
+STR
+	ID = 2003 ;
+	VERSION = 14 ;
+	STRING = "未找到帐单";
+	HELPSTR = "在数据库中未找到帐单" ;
+END
+STR
+	ID = 2004 ;
+	VERSION = 14 ;
+	STRING = "交易标识无效";
+	HELPSTR = "指定的付款交易标识无效" ;
+END
+STR
+	ID = 2005 ;
+	VERSION = 14 ;
+	STRING = "缺少交易标识";
+	HELPSTR = "失败的付款缺少交易标识" ;
+END
+STR
+	ID = 2006 ;
+	VERSION = 14 ;
+	STRING  = "由于再循环而付款";
+	HELPSTR = "由于再循环而付款";
+	EVENT-GLID
+		"/event/billing/payment"		113 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2007 ;
+	VERSION = 14 ;
+	STRING = "需要 MBI 分布 ";
+	HELPSTR = "需要此付款的 MBI 分布信息";
+END
+
+DOMAIN = "Reason Codes-Payment Suspense Management Action Owner" ;
+STR
+	ID = 3999 ;
+	VERSION = 15 ;
+	STRING = "默认的操作所有者";
+	HELPSTR = "付款挂起管理的默认操作所有者" ;
+END
+
+DOMAIN = "Reason Codes-Payment Suspense Management, Reversal Reasons" ;
+STR
+	ID = 4999 ;
+	VERSION = 16 ;
+	STRING	= "无法更正付款" ;
+	HELPSTR = "无法更正付款" ; 
+	EVENT-GLID
+		"/event/billing/reversal"		112 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4001 ;
+	VERSION = 16 ;
+	STRING	= "由于再循环而撤消" ;
+	HELPSTR = "由于再循环而撤消" ; 
+	EVENT-GLID
+		"/event/billing/reversal"		113 ;
+	EVENT-GLID-END
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Non-Currency Account Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 21 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Non-Currency Account Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 22 ;
+        STRING = "误记入贷方的帐户";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Bill Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 23 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Bill Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 24 ;
+        STRING = "服务费用";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Bill Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 25 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Bill Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 26 ;
+        STRING = "误记入贷方的帐单";
+END
+
+DOMAIN = "Reason Codes-Reasons Bill Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 27 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Currency Connection Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 28 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Currency Connection Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 29 ;
+        STRING = "误记入贷方";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Non-Currency Connection Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 30 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Non-Currency Connection Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 31 ;
+        STRING = "误记入贷方";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Item Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 32 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Item Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 33 ;
+        STRING = "误记入贷方";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Item Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 34 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Item Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 35 ;
+        STRING = "误记入贷方";
+END
+
+DOMAIN = "Reason Codes-Reasons Item Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 36 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Event Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 37 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Event Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 38 ;
+        STRING = "误记入贷方";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Event Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 39 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Event Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 40 ;
+        STRING = "误记入贷方";
+END
+
+DOMAIN = "Reason Codes-Reasons Event Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 41 ;
+        STRING = "客户对此服务不满意";
+END
+
+DOMAIN = "Reason Codes-Reasons Write-off level" ;
+STR
+        ID = 1 ;
+        VERSION = 42 ;
+        STRING = "帐户注销";
+END
+STR
+        ID = 2 ;
+        VERSION = 42 ;
+        STRING = "帐单信息注销";
+END
+DOMAIN = "Reason Codes-Bill Correction Reasons" ;
+STR
+        ID = 0 ;
+        VERSION = 43 ;
+        STRING = "其它";
+END
+STR
+        ID = 1 ;
+        VERSION = 43 ;
+        STRING = "更新到发票地址";
+END
+STR
+        ID = 2 ;
+        VERSION = 43 ;
+        STRING = "手动调整";
+END
+STR
+        ID = 3 ;
+        VERSION = 43 ;
+        STRING = "价格更正";
+END
+DOMAIN = "Reason Codes-Tax-exemptions" ;
+STR
+	ID = 1 ;
+	VERSION = 44 ;
+	STRING = "基于客户状态的免税" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 44 ;
+	STRING = "基于地点的免税" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 44 ;
+	STRING = "免税状态重新分类" ;
+END
+
+DOMAIN = "Reason Codes-Write off" ;
+STR
+	ID = 1 ;
+	VERSION = 45 ;
+	STRING = "欺骗性收费" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 45 ;
+	STRING = "无法收款" ;
+END
+STR
+        ID = 3 ;
+        VERSION = 45 ;
+        STRING = "错误的收费" ;
+END
+
+DOMAIN = "Reason Codes-Write off Reversal" ;
+STR
+	ID = 1 ;
+	VERSION = 46 ;
+	STRING = "Re-establish service" ;
+END
+
+DOMAIN = "Reason Codes-SEPA Reject Reasons" ;
+STR
+        ID = 1 ;
+        VERSION = 51 ;
+        STRING = "AC01";
+	HELPSTR = "帐户标识符不正确（例如 IBAN 无效） ";
+END
+STR
+        ID = 2 ;
+        VERSION = 51 ;
+        STRING = "AC04";
+	HELPSTR = "帐户已关闭";
+END
+STR
+        ID = 3 ;
+        VERSION = 51 ;
+        STRING = "AC06";
+	HELPSTR = "帐户被冻结。禁止债务人直接借记此帐户 ";
+END
+STR
+        ID = 4 ;
+        VERSION = 51 ;
+        STRING = "AG01";
+	HELPSTR = "由于监管原因，禁止对此帐户直接借记";
+END
+STR
+        ID = 5 ;
+        VERSION = 51 ;
+        STRING = "AG02";
+	HELPSTR = "操作/交易代码不正确，文件格式无效。用于指示操作/交易代码不正确  ";
+END
+STR
+        ID = 6 ;
+        VERSION = 51 ;
+        STRING = "AM04";
+	HELPSTR = "资金不足";
+END
+STR
+        ID = 7 ;
+        VERSION = 51 ;
+        STRING = "AM05";
+	HELPSTR = "重复收款 ";
+END
+STR
+        ID = 8 ;
+        VERSION = 51 ;
+        STRING = "BE01";
+	HELPSTR = "债务人姓名与帐户持有者姓名不匹配";
+END
+STR
+        ID = 9 ;
+        VERSION = 51 ;
+        STRING = "FF01";
+	HELPSTR = "操作/交易代码不正确，文件格式无效。用于指示文件格式无效 ";
+END
+STR
+        ID = 10 ;
+        VERSION = 51 ;
+        STRING = "MD01";
+	HELPSTR = "无授权数据 ";
+END
+STR
+        ID = 11 ;
+        VERSION = 51 ;
+        STRING = "MD02";
+	HELPSTR = "授权数据缺失或不正确 ";
+END
+STR
+        ID = 12 ;
+        VERSION = 51 ;
+        STRING = "MD07";
+	HELPSTR = "债务人死亡 ";
+END
+STR
+        ID = 13 ;
+        VERSION = 51 ;
+        STRING = "MS02";
+	HELPSTR = "债务人拒绝 ";
+END
+STR
+        ID = 14 ;
+        VERSION = 51 ;
+        STRING = "MS03";
+	HELPSTR = "未指定原因 ";
+END
+STR
+        ID = 15 ;
+        VERSION = 51 ;
+        STRING = "RC01";
+	HELPSTR = "银行标识符不正确（例如 BIC 无效） ";
+END
+STR
+        ID = 16 ;
+        VERSION = 51 ;
+        STRING = "RR01";
+	HELPSTR = "监管原因 ";
+END
+STR
+        ID = 17 ;
+        VERSION = 51 ;
+        STRING = "RR02";
+	HELPSTR = "监管原因 ";
+END
+STR
+        ID = 18 ;
+        VERSION = 51 ;
+        STRING = "RR03";
+	HELPSTR = "监管原因 ";
+END
+STR
+        ID = 19 ;
+        VERSION = 51 ;
+        STRING = "RC04";
+	HELPSTR = "监管原因 ";
+END
+STR
+        ID = 20 ;
+        VERSION = 51 ;
+        STRING = "SL01";
+	HELPSTR = "S债务人银行提供的特定服务 ";
+END
+STR
+        ID = 21 ;
+        VERSION = 51 ;
+        STRING = "DNOR";
+	HELPSTR = "在 CSM 中，债务人银行未注册在此 BIC 下 ";
+END
+STR
+        ID = 22 ;
+        VERSION = 51 ;
+        STRING = "CNOR";
+	HELPSTR = "在 CSM 中，债权人银行未注册在此 BIC 下 ";
+END
+STR
+        ID = 23 ;
+        VERSION = 51 ;
+        STRING = "SL01";
+	HELPSTR = "债务人银行提供的特定服务 ";
+END
+
+DOMAIN = "Reason Codes-SEPA Reversal Reasons" ;
+STR
+        ID = 1 ;
+        VERSION = 52 ;
+        STRING = "AM05";
+	HELPSTR = "重复输入 ";
+END
+STR
+        ID = 2 ;
+        VERSION = 52 ;
+        STRING = "MS02";
+	HELPSTR = "未指定原因 ";
+END
+
+DOMAIN = "Others" ;
+STR
+	EVENT-GLID
+		"/event/billing/adjustment"		105 ;
+		"/event/billing/adjustment/account"	105 ;
+		"/event/billing/adjustment/item"   	105 ;
+		"/event/billing/payment"		109 ;
+		"/event/billing/reversal"		109 ;
+		"/event/billing/dispute"		107 ;
+		"/event/billing/dispute/item"		107 ;
+		"/event/billing/settlement"		108 ;
+		"/event/billing/settlement/item"	108 ;
+ 		"/event/billing/writeoff"		106 ;
+		"/event/billing/writeoff/item"		106 ;
+		"/event/billing/refund"			109 ;
+		"/event/billing/writeoff_reversal"	111 ;
+		"/event/journal/epsilon"		1512 ;
+	EVENT-GLID-END
+END

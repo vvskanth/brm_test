@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  $Header: bus_platform_vob/financial/config/xml_utils/bus_params_system.xml /cgbubrm_mainbrm.portalbase/1 2018/09/13 10:48:13 mnarasim Exp $ -->
+
+<!-- 
+  **************************************************************************
+* Copyright (c) 2016, 2022, Oracle and/or its affiliates. All rights reserved.
+  *
+  * This material is the confidential property of Oracle Corporation
+  * or its licensors and may be used, reproduced, stored or transmitted
+  * only in accordance with a valid Oracle license or sublicense agreement.
+  **************************************************************************
+
+   NAME
+     bus_params_system.xml
+
+   DESCRIPTION
+     This object is used to store system information.
+
+   MODIFIED   (MM/DD/YY)
+   ansiddha    12/03/15 - Creation
+   abgeorg     03/03/22 - Added SilentDaysCalendarName entry.
+
+-->
+<BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+        <BusParamConfigurationClass>
+                <BusParamsSystem>
+                         <ConfigCacheRefreshInterval>0</ConfigCacheRefreshInterval>
+                         <PrepaidEngine>0</PrepaidEngine>
+			 <PrepaidPartitionSet>0</PrepaidPartitionSet>
+                         <NotificationSubscriberPreferences>" "</NotificationSubscriberPreferences>
+                         <NotificationSilentPeriod>21:00-07:00</NotificationSilentPeriod>
+                         <AcceptableDelayTime>02:00</AcceptableDelayTime>
+                         <SilentDaysCalendarName>NotificationSilentDays</SilentDaysCalendarName>
+                         <EnableExternalIds>0</EnableExternalIds>
+                         <CrossSchemaSharingGroup>disabled</CrossSchemaSharingGroup>
+			 <CMAuthorization>enabled</CMAuthorization>
+                </BusParamsSystem>
+        </BusParamConfigurationClass>
+</BusinessConfiguration>

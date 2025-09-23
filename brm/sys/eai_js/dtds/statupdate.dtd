@@ -1,0 +1,25 @@
+<!--
+Infranet Account Status update event.
+-->
+
+<!--
+Common element definitions....
+-->
+
+<!ENTITY % Common SYSTEM "common.dtd">
+%Common;
+
+<!--
+Status can be one of these
+10100 - Active
+10102 - Inactive
+10103 - Closed
+If ServiceObj is present, the event refers to the service status update.
+The status flags in the Statuses indicates the reason for the status 
+update.
+-->
+
+<!ELEMENT Portal.Infranet.Events.StatusUpdate (AccountObj,ServiceObj?,
+Statuses)>
+<!ATTLIST Portal.Infranet.Events.StatusUpdate Version 
+CDATA #FIXED "1.0" >

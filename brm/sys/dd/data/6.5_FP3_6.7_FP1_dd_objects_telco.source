@@ -1,0 +1,45 @@
+#
+# 	Copyright (c) 2005, 2009, Oracle and/or its affiliates. All rights reserved. 
+#	This material is the confidential property of Oracle Corporation
+#	or its licensors and may be used, reproduced, stored or transmitted
+#	only in accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	PortalBase.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 13
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 10
+1     PIN_FLD_NAME            STR [0] "/event/session/telco"
+1     PIN_FLD_DESCR           STR [0] "This describes a transaction (which could be a call, a connection or any other network usage) which should be billed to a subscriber."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing information about a call."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ERA_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Has the type of the ERA such as closed-user-group, friends & family, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "era_type"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLED_NUM_MODIF_MARK"
+3             PIN_FLD_DESCR           STR [0] "An indicator to show whether the called number is to be modified.Permitted values: 00     Default (undefined) and Normal. 01     Social Number. 02     Anonymize Number. 04     Special Number (e.g. Premium Rate). 08     Modified Number (e.g. Vanity-Routing or Short-Number-Translation)."
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "called_num_modif_mark"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>
