@@ -372,7 +372,7 @@ fm_cust_pol_prep_acctinfo_new(
 		/* Close the context */		
 		PCM_CONTEXT_CLOSE(new_ctxp, 0, ebufp);
 
-		pin_snprintf(acctno,sizeof(acctno),"%s%s%ld", sequence_id, separator, account_seq);
+		pin_snprintf(acctno,sizeof(acctno),"CDS-%s%s%ld", sequence_id, separator, account_seq);
 		PIN_FLIST_FLD_SET(ac_flistp, PIN_FLD_ACCOUNT_NO,
 			(void *)acctno, ebufp);
 	} /* if... */

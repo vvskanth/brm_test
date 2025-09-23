@@ -11,6 +11,7 @@
 			<PaymentTerm ID="1">17 days</PaymentTerm>
 			<PaymentTerm ID="2">14 business days</PaymentTerm>
 			<PaymentTerm ID="3">3rd Tuesday of the month</PaymentTerm>
+			<PaymentTerm ID="4">1st Monday of the month </PaymentTerm>
 		</PaymentTerms>
 	</PaymentTermConfiguration>
 
