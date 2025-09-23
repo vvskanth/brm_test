@@ -1,0 +1,415 @@
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 16
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/admin_action/suspended_batch"
+1     PIN_FLD_DESCR           STR [0] "Administrator action related to batch suspense handling."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/admin_action/suspended_batch/resubmit"
+1     PIN_FLD_DESCR           STR [0] "Audit information for resubmitting suspended batches."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RESUBMIT_INFO"
+2         PIN_FLD_DESCR           STR [0] "Attributes of resubmitting."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OVERRIDE_REASONS"
+3             PIN_FLD_DESCR           STR [0] "Batch suspense override reasons."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "override_reasons"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "susp_batch_resubmit_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/admin_action/suspended_batch/resubmit.PIN_FLD_RESUBMIT_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/admin_action/suspended_batch/writeoff"
+1     PIN_FLD_DESCR           STR [0] "Audit information for writing off suspended batches."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/batch_suspense_override_reason"
+1     PIN_FLD_DESCR           STR [0] "A single instance of this class is used to set up the list of the batch suspense override reason codes."
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSE_REASONS"
+2         PIN_FLD_DESCR           STR [0] "Array of batch suspense override reasons. Each element in this array represents a different batch suspense override reason code."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSE_REASON"
+3             PIN_FLD_DESCR           STR [0] "User defined batch suspense override reason code."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "override_reason"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_batch_susp_ode_res_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/batch_suspense_override_reason.PIN_FLD_SUSPENSE_REASONS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/batch_suspense_reason_code"
+1     PIN_FLD_DESCR           STR [0] "A single instance of this class is used to set up the mapping of pipeline error code to batch suspense reason code."
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSE_REASONS"
+2         PIN_FLD_DESCR           STR [0] "Array of batch suspense reasons. Each element in this array represents a different error code and element id is the error code."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSE_REASON"
+3             PIN_FLD_DESCR           STR [0] "User defined batch suspense reason code."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "batch_suspense_reason"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_batch_susp_reason_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/batch_suspense_reason_code.PIN_FLD_SUSPENSE_REASONS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [8] allocated 41, used 32
+1     PIN_FLD_NAME            STR [0] "/suspended_batch"
+1     PIN_FLD_DESCR           STR [0] "Data for a suspended batch."
+1     PIN_FLD_SEQ_START       INT [0] 1
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTIONS"
+2         PIN_FLD_DESCR           STR [0] "Actions performed on suspended batch."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to object recording action."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "susp_batch_actions_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/suspended_batch.PIN_FLD_ACTIONS'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the account object with which this suspended_batch object is created."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_ID"
+2         PIN_FLD_DESCR           STR [0] "Original batch id related to this suspended_batch object."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 80
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "batch_id"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SEQUENCE_NUM"
+2         PIN_FLD_DESCR           STR [0] "sequence number for the batch "
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "seq_num"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_DESCR           STR [0] "Time the suspended_batch object was created."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INPUT_FILE_NAME"
+2         PIN_FLD_DESCR           STR [0] "Name of input file. i.e. Name of the batch before suspension. E.g. MED_001.edr"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "input_file"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DIRECTORY"
+2         PIN_FLD_DESCR           STR [0] "Physical location (directory) of the suspended batch."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "directory"
+1     PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FILENAME"
+2         PIN_FLD_DESCR           STR [0] "Name of the batch file after suspension (present in the pipeline error directory), E.g MED_001.sus"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "filename"
+1     PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_DESCR           STR [0] "Time the suspended_batch object was last modified."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_RESUBMISSIONS"
+2         PIN_FLD_DESCR           STR [0] "Number of times the batch has been resubmitted."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "num_resubmissions"
+1     PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RESUBMIT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "While resubmitting, contains link to action object for the resubmission."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "resubmit_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSION_T"
+2         PIN_FLD_DESCR           STR [0] "Date and time batch was suspended."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "suspension_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RESUBMIT_T"
+2         PIN_FLD_DESCR           STR [0] "Date and time batch was last resubmitted."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "resubmit_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PIPELINE_NAME"
+2         PIN_FLD_DESCR           STR [0] "Name of pipeline (from pipeline registry) which suspended the batch."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 60
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "pipeline_name"
+1     PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PIPELINE_CATEGORY"
+2         PIN_FLD_DESCR           STR [0] "Name of pipeline pipeline category or group"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 60
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "pipeline_category"
+1     PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POINT_OF_ORIGIN"
+2         PIN_FLD_DESCR           STR [0] "Point of origin of the batch (Switch/Mediation ID)"
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 60
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "point_of_origin"
+1     PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_DESCR           STR [0] "Portal object id of the suspended batch object."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [17] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed read access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [18] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TAP_INFO"
+2         PIN_FLD_DESCR           STR [0] "Additional information about TAP processing."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 1024
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "tap_info"
+1     PIN_FLD_OBJ_ELEM      ARRAY [19] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSE_REASON"
+2         PIN_FLD_DESCR           STR [0] "Code for reason why batch was suspended."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "suspense_reason"
+1     PIN_FLD_OBJ_ELEM      ARRAY [20] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PIPELINE_ERROR_CODE"
+2         PIN_FLD_DESCR           STR [0] "Pipeline error code."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "error_code"
+1     PIN_FLD_OBJ_ELEM      ARRAY [21] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+2         PIN_FLD_DESCR           STR [0] "Current status of suspended batch."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+1     PIN_FLD_OBJ_ELEM      ARRAY [22] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed write access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "suspended_batch_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/suspended_batch'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [9] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/suspended_batch/cdr"
+1     PIN_FLD_DESCR           STR [0] "Suspended CDR Batch"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [10] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/suspended_batch/rapin"
+1     PIN_FLD_DESCR           STR [0] "Suspended TAP Batch"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [12] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/suspended_usage/rapin"
+1     PIN_FLD_DESCR           STR [0] "Queryable Fields"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 11
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RAP_INFO"
+2         PIN_FLD_DESCR           STR [0] "Queryable fields from EDR."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TAP_FILE_SEQ_NO"
+3             PIN_FLD_DESCR           STR [0] "tap file sequence number"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "TAP_FILE_SEQ_NO"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RAP_FILE_SEQ_NO"
+3             PIN_FLD_DESCR           STR [0] "rap file sequence number"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "RAP_FILE_SEQ_NO"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SENDER"
+3             PIN_FLD_DESCR           STR [0] "rap file sender"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "SENDER"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "susp_usage_rap_info_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/suspended_usage/rapin.PIN_FLD_RAP_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] 0.0.0.1 /dd/objects 0 0
+</PCM_OP>

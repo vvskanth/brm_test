@@ -1,0 +1,507 @@
+;
+; NB Any line starting with ';' is a comment.
+;
+;*********************************************************
+; $Logfile:   P:/lynx/emfe/messages.dav  $
+;    $Date: 2015/11/27 04:51:38 $
+;$Revision: /cgbubrm_7.5.0.portalbase/1 $
+;*********************************************************
+;
+; The first 8 digits are not line numbers; they are option flags.
+;
+; The 1st digit is 1 if input record is to be dumped.
+; The 2nd digit is 1 if rule info is to be dumped.
+; The 3rd digit is 1 if message is suppressed (if not fatal).
+; The 4th digit is 1 if the message is to be displayed even after a fatal crash
+;                    (Usually to prevent cascade error reporting, no
+;                     messages can report after a fatal error. This bit
+;                     allows message to be reported anyway.)
+;
+; The rest are reserved for future use.
+;
+;
+11000000 LEM0000A Reference to non-existent input rule %1
+11000000 LEM0001A Reference to non-existent input format %1
+10000000 LEM0002A Invalid input format %1
+10000000 LEM0003A Invalid input format %1
+00000000 LEM0004A Cannot open data format file "%1"
+00000000 LEM0005A Invalid first line in %1
+00000000 LEM0006A Invalid tag line in %1
+01000000 LEM0007A Excessive rule id %1
+11000000 LEM0008A Invalid data type
+00000000 LEM0009A Cannot open text-substitution file "%1"
+00000000 LEM0010A Software bug in TEXT.C
+00000000 LEM0011W Missing MAPP terminator
+00000000 LEM0012W No match for text substitution label
+00000000 LEM0013A Cannot open acronym file "%1"
+00000000 LEM0014A Internal error in MIXEDC.C
+00000000 LEM0015A Internal error
+00000000 LEM0016A Internal error
+00000000 LEM0017A Internal error %1
+00000000 LEM0018A Out of memory !
+00000000 LEM0019A Cannot open run-time configuration file "%1"
+00000000 LEM0020A Run-time configuration file has a bad format
+00000000 LEM0021W Unable to open input file "%1"
+00000000 LEM0022W Unable to open output file "%1"
+00000000 LEM0023W Close (input) failed
+00000000 LEM0024W Close (output) failed
+00000000 LEM0025A Cannot open preference file "%1"
+01000000 LEM0026A Reference to non-existent rule %1
+01000000 LEM0027W Reference to non-existent rule %1
+01000000 LEM0028A Unknown instruction %1
+00000000 LEM0029A Cannot open Application Rules file "%1"
+00000000 LEM0030A Cannot open Firm Data Libraryfile "%1"
+00000000 LEM0031A Invalid first line in %1
+01000000 LEM0032A Excessive rule id %1 in %2
+00000000 LEM0033W Reference to invalid file number %1
+00000000 LEM0034W Missing MAPP terminator
+00000000 LEM0035A Internal error in TXTSUB.C
+01000000 LEM0036A Reference to invalid output file number %1
+00000000 LEM0037W Attempt to MAPP a non character memory location %1
+00000000 LEM0038W Index access from MAPP command is not valid using VSAM
+00000000 LEM0039A VSAM method is not valid under this Operating System
+00000000 LEM0040A Rules have been terminated by QUIT command
+00000000 LEM0041A Internal error in CALS.C
+00000000 LEM0042W Keyed firm data "%1" not found.
+00000000 LEM0043? **** RETIRED -- DO NOT REUSE ****
+00000000 LEM0044W Invalid use of DOW operation
+00000000 LEM0045W Invalid use of CDOW operation
+00000000 LEM0046A Bad table header in line %1 of character table
+00000000 LEM0047A Character table not fully populated
+11000000 LEM0048A Infinite seeking loop detected
+00000000 LEM0049? **** RETIRED -- DO NOT REUSE ****
+00000000 LEM0050? **** RETIRED -- DO NOT REUSE ****
+01000000 LEM0051W Reference to non-existent memory variable
+01000000 LEM0052W Invalid arithmetic operation on non-numbers
+01000000 LEM0053W Reference to non-existent memory variable
+01000000 LEM0054W Invalid arithmetic operation on non-numbers
+01000000 LEM0055W Reference to non-existent memory variable
+01000000 LEM0056W Attempt to divide by zero
+01000000 LEM0057W Attempt to divide by zero
+01000000 LEM0058W Attempt to perform arithmetic on two non-numbers
+01000000 LEM0059W Reference to non-existent memory variable
+01000000 LEM0060W Attempt to divide by zero
+01000000 LEM0061W Attempt to divide by zero
+01000000 LEM0062W Invalid attempt to ADD two non-numbers
+01000000 LEM0063W Reference to non-existent memory variable
+01000000 LEM0064W Invalid arithmetic operation on non-numbers
+01000000 LEM0065W Invalid attempt to read a string from location %1
+01000000 LEM0066W Invalid attempt to read a string from location %1
+01000000 LEM0067W Invalid attempt to read a number
+01000000 LEM0068W Invalid attempt to read a date
+01000000 LEM0069W Number of entries in format %1 invalid
+01000000 LEM0070W Invalid checksum in input format
+01000000 LEM0071W Internal error in RULES.C
+01000000 LEM0072W Invalid checksum in output Firm Data Library file
+01000000 LEM0073W Arithmetic overflow
+01000000 LEM0074W Attempt to code translate a non-string
+00000000 LEM0075? **** RETIRED -- DO NOT REUSE ****
+00000000 LEM0076? **** RETIRED -- DO NOT REUSE ****
+00000000 LEM0077? **** RETIRED -- DO NOT REUSE ****
+00000000 LEM0078? **** RETIRED -- DO NOT REUSE ****
+00000000 LEM0079? **** RETIRED -- DO NOT REUSE ****
+01000000 LEM0080W Attempt to format a non-string
+01000000 LEM0081W Attempt to format a non-number with %%Jd
+01000000 LEM0082W Attempt to format a non-number with %%Jg or %%Jf
+01000000 LEM0083W Attempt to format a DAY from a non-date
+01000000 LEM0084W Attempt to format a MONTH from a non-date
+01000000 LEM0085W Attempt to format a YEAR from a non-date
+01000000 LEM0086W Attempt to string copy using a non-string
+01000000 LEM0087W Attempt to string copy to an invalid offset
+01000000 LEM0088W Attempt to remove spaces from a non-string
+01000000 LEM0089W Attempt to output a non-string with string format
+11000000 LEM0090W Cannot read data for ( and after ) field '%2' of key '%1'
+01000000 LEM0091W Attempt to perform mixed case conversion with a non-string
+01000000 LEM0092W Attempt to convert text to integer with a non-string
+01000000 LEM0093W Attempt to substring using a non-string
+01000000 LEM0094W Insufficient width to output number
+01000000 LEM0095W Error writing to %1
+11000000 LEM0096W Invalid packed data for field '%1'
+11000000 LEM0097W Invalid day range for field '%1'
+11000000 LEM0098W Invalid month range for field '%1'
+00000000 LEM0099? **** RETIRED -- DO NOT REUSE ****
+00000000 LEM0100A Incorrectly formed label %1 in line %2 of %3
+00000000 LEM0101W UserExit %1 is not currently supported
+00000000 LEM0102A Cannot have a label greater than 9999 in line %2 of %3 :  %1
+00000000 LEM0103A Missing label terminator %1 in line %2 of %3
+00000000 LEM0104A Incorrectly terminated label %1 in line %2 of %3
+00000000 LEM0105A IN RANGE badly formatted in line %2 of %3 :  %1
+00010000 LEM0106A Errors encountered in PCE script file  Processing terminated
+00000000 LEM0107A EQUALS badly formatted in line %2 of %3 :  %1
+00000000 LEM0108A Input file number %1 contains invalid data for specified data type
+00000000 LEM0109A Substitute/Replace badly formatted in line %2 of %3 :  %1
+00000000 LEM0110A STRING ASSIGNMENT badly formatted in line %2 of %3 :  %1
+;00010000 LEM0111A Undeclared label %1 in line %2 of %3
+00010000 LEM0111A Undeclared label %1 of %3
+00000000 LEM0112W Badly formed array access in line %1 of %2 :  %3
+00000000 LEM0113A Hash table full
+00000000 LEM0114A Hash table full
+00000000 LEM0115W Unknown command in line %2 of %3 :  %1
+00000000 LEM0116W Unbalanced LOOP/END LOOP in line %2 of %3 :  %1
+00000000 LEM0117W Unbalanced IF/END IF in line %2 of %3 :  %1
+00000000 LEM0118W Unbalanced FOR/NEXT in line %2 of %3 :  %1
+00000000 LEM0119A Badly formed OPEN statement in line %1 of %2 :  %3
+00000000 LEM0120A Cannot open PCE rules file "%1"
+00000000 LEM0121A Cannot create EMFE rules file "%1"
+00000000 LEM0122A Cannot open a PCE temporary file
+00000000 LEM0123W Type mismatch for operands in SRCH instruction
+00000000 LEM0124W Type mismatch for operands in REPL instruction
+00000000 LEM0125W Type mismatch for operands in PARS instruction
+00000000 LEM0126W Type mismatch for operands in RDPG instruction
+00000000 LEM0127W Type mismatch for operands in WRPG instruction
+00000000 LEM0128A Cannot READ from a FORMATTED datafile
+00000000 LEM0129W Cannot WRITE a number or a date from cell %1
+01000000 LEM0130A Cannot open a file for STREAM read
+01000000 LEM0131W Invalid memory cell reference in INITIALISE
+01000000 LEM0132W Type mismatch for operands of USER-EXIT 10
+01000000 LEM0133W Type mismatch for operands of USER-EXIT 11
+01000000 LEM0134A Unsupported open mode for this operating system
+01000000 LEM0135A Invalid command format in line %2 of %3 :  %1
+01000000 LEM0136W Invalid parameter types for MERGE command
+00000000 LEM0137W Cannot MOVE a non-page
+00000000 LEM0138W Cannot MERGE non-pages
+01000000 LEM0139W Unknown font %1 in line %2 of %3
+00000000 LEM0140A BEGIN CE must refer to a page of composed data
+00000000 LEM0141A Invalid WRITE command in line %1 of %2
+00000000 LEM0142A Invalid READ command in line %1 of %2
+00000000 LEM0143A UserExit '%1' definition not found for this operating system
+00000000 LEM0144A UserExit '%1' could not be loaded
+00000000 LEM0145W UserExit '%1' reports :  "%2"
+00000000 LEM0146A UserExit '%1' reports :  "%2"
+00000000 LEM0147A Suspect PTX record in AFPDS
+00000000 LEM0148A Invalid PCE command :  %1
+00000000 LEM0149W Type mismatch for operands of USER-EXIT 13
+00000000 LEM0150A Invalid PCE command :  %1
+00000000 LEM0151W Type mismatch for operands of USER-EXIT 14
+00000000 LEM0152A BEGIN CE used, but no font metrics supplied
+00000000 LEM0153I ** Slot not allocated -- ready for use **
+00000000 LEM0154I ** Slot not allocated -- ready for use **
+00000000 LEM0155I ** Slot not allocated -- ready for use **
+00000000 LEM0156I ** Slot not allocated -- ready for use **
+00000000 LEM0157I ** Slot not allocated -- ready for use **
+00000000 LEM0158A Cannot open character translation file "%1"
+00000000 LEM0159I ** Slot not allocated -- ready for use **
+01000000 LEM0160W Memory location %1 does not reference an array
+01000000 LEM0161W Memory location %1 is not a fully two-dimensional array
+01000000 LEM0162W Subarray %1 of array at location %2 does not have sufficient entries
+01000000 LEM0163W Unidentical data types in cell %1 of array at location %2
+01000000 LEM0164W Array references must be arrays of NUMBERs
+01000000 LEM0165W Invalid array reference at location %1
+01000000 LEM0166W Invalid indirect reference at location %1
+01000000 LEM0167W Arrays are of differing lengths at addresses %1 and %2
+01000000 LEM0168W First elements of arrays differ at addresses %1 and %2
+01000000 LEM0169W Invalid array reference during array iteration
+01000000 LEM0170W Array at location %1 is not homogeneous
+01000000 LEM0171W Cannot sort by the value of a linked list
+01000000 LEM0172W Array is not completely single-dimensioned
+01000000 LEM0173W Cannot RDIM non-array referenced by %1
+00000000 LEM0174I **** UNUSED ****
+00000000 LEM0175W Preference number %1 is not defined
+00000000 LEM0176W Output Filename is missing
+00000000 LEM0177W Cannot open translation table file "%1", all translations ignored
+00000000 LEM0178A Cannot open user exit table "%1"
+00000000 LEM0179A %1 already specified as datastream type, cannot respecify as %2
+00000000 LEM0180A Trying to access unallocated Memory Block
+00000000 LEM0181A Command queue name missing from INI file
+00000000 LEM0182A Unable to open command queue %1
+00000000 LEM0183I Command received: %1
+00000000 LEM0184A Invalid command syntax in above command - job aborted
+00000000 LEM0185W Job Start not specified - above command ignored
+00000000 LEM0186A No print file specified - job aborted
+00000000 LEM0187A No input file specified - job aborted
+00000000 LEM0188A Above command duplicates earlier command - job aborted
+00010000 LEM0189A Job failed
+00000000 LEM0190I File %1 deleted
+00000000 LEM0191I EMFE shutting down
+00000000 LEM0192A Neither Q nor R was specified for job - no action taken
+00000000 LEM0193A Q command must appear immediately after S command - job aborted
+00000000 LEM0194A Premature end of file encountered on command queue - EMFE shutting down
+00000000 LEM0195I Job completed OK
+00000000 LEM0196A System command "%1" failed
+00000000 LEM0197W Line data GridHeight Limit %1 exceeded at Line %2, page %3
+00000000 LEM0198I Starting with data document %1 in range <%2>
+00000000 LEM0199A Input file '%1' has fewer data documents than starting value %2
+00000000 LEM0200I Data Document range <%1> completed
+00000000 LEM0201A Cannot open checkpoint file '%1'
+00000000 LEM0202A Character %1 ('%2') in DataDocument range is invalid
+00000000 LEM0203I Checkpoint: data document %1 processed
+00000000 LEM0204W No CheckPoint Interval specified - CheckPointing disabled
+00000000 LEM0205W Fewer Data Documents found than expected in range <%1>
+00000000 LEM0206I Two-digit date format handling option must be specified in INI file:
+00000000 LEM0207I <System>TwoDigitYearHandling=2 to leave as two-digit dates or
+00000000 LEM0208I <System>TwoDigitYearHandling=4 to convert to four digits using
+00000000 LEM0209I Boundary rule of 50, with  0-49 becoming 2000-2049
+00000000 LEM0210A                       and 50-99 becoming 1950-1999
+00000000 LEM0211A Single-digit year date format is not supported
+00000000 LEM0212W Cannot convert 'yy' to 'yyyy' year format, left as '%1'
+00000000 LEM0213A Syntax error in validation: document %1, line %2
+00000000 LEM0214W Validation of Record id %1:"%2" failed in document %3, line %4
+00000000 LEM0215A Invalid ZIP Code value '%1'. PostNet barcodes must be 5,9 or 11 digits
+00000000 LEM0216A Invalid value '%1', 2of5 barcodes must be an even number of digits
+00000000 LEM0217A Invalid value '%1', Code128(c) barcodes must be digits.
+00000000 LEM0218A Value '%1' contains invalid characters for barcode type '%2'.
+00000000 LEM0219A Unrecognised type '%1' for BARCODE command.
+00000000 LEM0220A Filename missing for journal file.
+00000000 LEM0221A Filename missing for journal overflow file.
+00000000 LEM0222A Incompatible host resource files specified.
+00000000 LEM0223A File %1 does not contain version information.
+00000000 LEM0224A Data Format file %1, version %2 incompatible with Firm Data Library version %3.
+00000000 LEM0225A Invalid separator for the keyword %1, must be %2.
+00000000 LEM0226A Error writing to binary rules file.
+00000000 LEM0227A Binary rules file corrupted or of invalid format.
+00000000 LEM0228A Error reading binary rules file.
+00000000 LEM0229A Attempting to write to binary rules file that already contains binary rules.
+00010000 LEM0230A Error in file '%1' at line %2: %3
+00000000 LEM0231A Non-specific format error in source rule.
+00000000 LEM0232A Date format or range error in source rule.
+00000000 LEM0233A String size error in source rule.
+00000000 LEM0234A Numeric range error in source rule.
+00000000 LEM0235A Error reading rules file.
+00000000 LEM0236W Checkpointing disabled.  Incompatible with supplied Data Format.
+00010000 LEM0237A Binary rules compile failed.
+00000000 LEM0238A Reference to instruction %1 beyond scope of rule %2.
+00000000 LEM0239A Unable to open binary rules file %1.
+00000000 LEM0240A Invalid op code in rules file.
+00000000 LEM0241I Command received: Job submission comment: %1
+00000000 LEM0242I Command received: Input filename: %1
+00000000 LEM0243I Command received: Print filename: %1
+00000000 LEM0244I Command received: Emfe return code: %1
+00000000 LEM0245I Command received: Server command %1: %2
+00000000 LEM0246I Command received: Journal file %1: %2
+00000000 LEM0247I Command received: Overflow journal file %1: %2
+00000000 LEM0248I Command received: Quit:
+00000000 LEM0249I Command received: Print filename: %1
+00000000 LEM0250I Command received: Overflow print filename: %1
+00000000 LEM0251A Compulsory record missing from application data file.
+00000000 LEM0252A Unable to open image file '%1'.
+00000000 LEM0253A BoundaryValue of '%1' in INI file is out of range (0 - 100).
+00000000 LEM0254W Column control item has exceeded page boundary on page %1, document %2.
+00000000 LEM0255A Invalid document '%1' in INI file DataDocument specification.
+00000000 LEM0256W Possible positioning error detected in HRF's - check output for correctness.
+00000000 LEM0257A Grid width must be in the range 1 to 500.
+00000000 LEM0258W Column header has been dropped in order to fit column item.
+00000000 LEM0259W Column footer has been dropped in order to fit column item.
+00000000 LEM0260A Keycode must be in the form of "%1-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX".
+00000000 LEM0261A Keycode "%1" is invalid.
+00000000 LEM0262A Keycode has expired.
+00000000 LEM0263W Keycode expires in %1 days.
+00000000 LEM0264W Keycode expires TODAY.
+00000000 LEM0265I Please contact your Group 1 Account Manager for a new keycode.
+00000000 LEM0266I Registered customer: "%1"
+00000000 LEM0267A DBCS support is not covered by your keycode.
+00000000 LEM0268A Single CPU batch mode is not covered by your keycode.
+00000000 LEM0269A Multiple CPU batch mode is not covered by your keycode.
+00000000 LEM0270A Single CPU server mode is not covered by your keycode.
+00000000 LEM0271A Multiple CPU server mode is not covered by your keycode.
+00000000 LEM0272I Above condition occurred with File %1, Record %2, Rule %3:%4
+00000000 LEM0273A Cannot write to trace file %1.
+00000000 LEM0274A Cannot write to log file %1.
+00000000 LEM0275W Duplicate image file entry %1 in file %2 ignored.
+00010000 LEM0276W INI entry <%1>%2 is obsolete and will be ignored.
+00000000 LEM0277A <System>MaxRecEntries value in INI file greater than permitted maximum.
+00000000 LEM0278W Unable to load image file '%1', file format is not supported.
+00000000 LEM0279W Error reading image file '%1', file may be corrupt.
+00000000 LEM0280A Cannot open trace file %1
+00000000 LEM0281A Cannot open log file %1
+00000000 LEM0282A Physical page size must be set before logical page is defined
+00000000 LEM0283A Logical page offset must start within physical page boundary
+00000000 LEM0284A Error reading CE source file %1 at line %2.
+00000000 LEM0285W Error writing to checkpoint file.
+00000000 LEM0286A Font metric resolution %1 ppi conflicts with the output resolution %2 ppi.
+00000000 LEM0287A Resource metric resolution %1 ppi conflicts with the output resolution %2 ppi.
+00000000 LEM0288A Symbol name '%1' invalid. Symbols names must not start with digits.
+00000000 LEM0289A Grid height must be greater than 0
+00000000 LEM0290? ** Slot not allocated -- ready for use **
+00000000 LEM0291? ** Slot not allocated -- ready for use **
+00000000 LEM0292? ** Slot not allocated -- ready for use **
+00000000 LEM0293? ** Slot not allocated -- ready for use **
+00000000 LEM0294? ** Slot not allocated -- ready for use **
+00000000 LEM0295? ** Slot not allocated -- ready for use **
+00000000 LEM0296? ** Slot not allocated -- ready for use **
+00000000 LEM0297? ** Slot not allocated -- ready for use **
+00000000 LEM0298? ** Slot not allocated -- ready for use **
+00000000 LEM0299? ** Slot not allocated -- ready for use **
+00000000 LEM0300? ** Slot not allocated -- ready for use **
+00000000 LEM0301A Unknown device type '%1' specified.
+00000000 LEM0302A %1 print driver is not covered by the keycode.
+00000000 LEM0303A Bad XPos in PPO specified.
+00000000 LEM0304A Bad YPos in PPO specified.
+00000000 LEM0305W Image '%1' in DIL does not have S1 prefix.
+00000000 LEM0306A Image '%1' in '%2' undefined.
+00000000 LEM0307A Bad XPos in '%1' specified.
+00000000 LEM0308A Bad YPos in '%1' specified.
+00000000 LEM0309A Bad XPos in SCPP specified.
+00000000 LEM0310A Bad line spacing specified.
+00000000 LEM0311A Invalid line spacing specified.
+00000000 LEM0312A Relative line spacing not valid.
+00000000 LEM0313A Bad XPos in SCPP specified.
+00000000 LEM0314A Negative thickness for rule for '%1' is not allowed.
+00000000 LEM0315A Negative thickness for box line is not allowed.
+00000000 LEM0316W Tab char is undefined in '%2'.
+00000000 LEM0317W 2nd Column is off the page in '%1'.
+00000000 LEM0318W 3rd Column is off the page in '%1'.
+00000000 LEM0319W 4th Column is off the page in '%1'.
+00000000 LEM0320W Tab char is undefined.
+00000000 LEM0321W 2nd Column is off the page.
+00000000 LEM0322W 3rd Column is off the page.
+00000000 LEM0323W 4th Column is off the page.
+00000000 LEM0324A The '%1' command is incomplete.
+00000000 LEM0325A Empty font metrics file.
+00000000 LEM0326A Cannot open font metrics file.
+00000000 LEM0327A Cannot open input file.
+00000000 LEM0328A Cannot open output file '%1'.
+00000000 LEM0329W Cannot close input file.
+00000000 LEM0330A Cannot close output file.
+00000000 LEM0331A Error writing to output file \'%1\'.
+00000000 LEM0332A Error writing end of record.
+00000000 LEM0333A Usage --  DOC1CE input output fontfile imfile [rtcfile]
+00000000 LEM0334A Out of Memory.
+00000000 LEM0335W Unrecognised command '%1'.
+00000000 LEM0336A Expected DVN command.
+00000000 LEM0337W Invalid command '%1' for the output device.
+00000000 LEM0338A DVN must be the first command.
+00000000 LEM0339A DLP must be immediately after the DVN command.
+00000000 LEM0340A DIL must be after the DVN command and before any non-setup command.
+00000000 LEM0341A Image placement command '%1' not allowed because no DIL was processed during setup.
+00000000 LEM0342A Unit of measure '%1' is invalid.
+00000000 LEM0343W Empty image metrics file.
+00000000 LEM0344A Cannot open image metrics file.
+00000000 LEM0345W Name '%1' in DPOL does not have O1 prefix.
+00000000 LEM0346A Negative thickness for rule is not allowed.
+00000000 LEM0347A Negative thickness for rule is not allowed.
+00000000 LEM0348A DPOL must be after the DVN and before the DIL command (or any non-setup command).
+00000000 LEM0349A Overlay placement command '%1' not allowed because no DPOL was processed during setup.
+00000000 LEM0350W Image metrics table was not specified;  Metacode image placement will be incorrect.
+00000000 LEM0351A The DVN command is defined as version %1 but this version of software only supports version %2.
+00000000 LEM0352A The DVN command does not specify the source version number.
+00000000 LEM0353A "Font %1 was used in '%2' while the font metrics table only contains %3 fonts.
+00000000 LEM0354W DOC1 command expected.
+00000000 LEM0355W Double semi-colon expected.
+00000000 LEM0356W Command not in API command set.
+00000000 LEM0357A Invalid text inline direction "of %1 degrees found.
+00000000 LEM0358A Rotation %1 degrees not supported by this device.
+00000000 LEM0359A 'RPP ' command found out of context. It must be before the first drawing command on the page.
+00000000 LEM0360A Version 001 of source is no longer supported.
+00000000 LEM0361W Image %1 not in metrics file. Positioning of images may be incorrect.
+00000000 LEM0362A '%1' command found out of context; it must be before any RPP command and the first drawing command on the page.
+00000000 LEM0363W Text which is transformed %1 degrees started off the page so it will not print.
+00000000 LEM0364A An entry for font name '%1' could not be found in the master font metrics table.
+00000000 LEM0365A Invalid font section x%1 found in '%2'.
+00000000 LEM0366A Invalid SOSI mode %1 found in '%2'; Defaults to 0.
+00000000 LEM0367A Invalid text baseline direction of %1 degrees found.
+00000000 LEM0368A Invalid text character rotation of %1 degrees found.
+00000000 LEM0369A Invalid text inline direction of %1 degrees found.
+00000000 LEM0370A First font %1 was used in '%2' while the font metrics table only contains %3 fonts.
+00000000 LEM0371A Second font %1 was used in '%2' while the font metrics table only contains %3 fonts.
+00000000 LEM0372A Invalid DBCS text string of length %1 found.
+00000000 LEM0373A No fonts have been loaded from the font table %1.
+00000000 LEM0374A The command %1 has an invalid format for CE v2.0+.
+00000000 LEM0375A The command %1 has an invalid format for CE pre v2.0.
+00000000 LEM0376A The font table %1 is not valid for CE pre v2.0.
+00000000 LEM0377A The font table %1 is not valid for CE v2.0+.
+00000000 LEM0378A The Run-Time Control %1 file cannot be found.
+00000000 LEM0379A Invalid text orientation.
+00000000 LEM0380A Invalid terminator "%1" specified.
+00000000 LEM0381W Overlay %1 not in metrics file. Positioning of overlays may be incorrect.
+00000000 LEM0382A Unrecognised "%1" in SDFO format "%2".
+00000000 LEM0383A Font table %1 for font "%2" contains more than 256 code points.
+00000000 LEM0384A Conflicting resolution specified in font metrics table entry for %1.
+00000000 LEM0385A Conflicting resolution specified in resource metrics table entry for %1.
+00000000 LEM0386W Producing old-style 300 ppi AFPDS.
+00000000 LEM0387? **** RETIRED -- DO NOT REUSE. Replaced by LEM1007 built in **
+00010000 LEM0388A Unrecognised section <%1> encountered.
+00010000 LEM0389A Unrecognised keyword '%1' in section <%2> encountered.
+00010000 LEM0390A Unrecognised INI symbol '%1' referenced in '%2'.
+00010000 LEM0391A Mandatory INI keyword <%2>%1 required.
+00010000 LEM0392A Conflicting keywords <%2>%1 and <%4>%3 have been specified.
+00010000 LEM0393A Invalid value "%1" for keyword <%3>%2.
+00010000 LEM0394A End-of-file reached in %1 when looking for #else.
+00010000 LEM0395A End-of-file reached in %1 when looking for #endif.
+00010000 LEM0396A Abending due to INI error.
+00010000 LEM0397A INI file %2:%1 '%3' is invalid.
+00000000 LEM0398W Unknown invocation parameter '%1' ignored.
+00000000 LEM0399I %1
+00000000 LEM0400W Symbol definition(s) after INI= invocation parameter have been ignored.
+00000000 LEM0401I Operating System is %1
+00000000 LEM0402I Available drivers: %1
+00000000 LEM0403A Resolution of %1 ppi is not supported by %2 device.
+00000000 LEM0404I %1 composition driver selected.
+00000000 LEM0405I Completed successfully.
+00000000 LEM0406I    %1 commands ignored
+00000000 LEM0407I    %1 commands throughput
+00000000 LEM0408I    %1 composition commands processed
+00000000 LEM0409I    %1 physical pages produced
+00000000 LEM0410I Estimated time for completion is %1:%2.%3
+00000000 LEM0411A %1 driver unavailable.
+00000000 LEM0412A No value specified for <%2>%1.
+00000000 LEM0413A Record length %1 exceeds block length %2 - where records cannot span blocks.
+00000000 LEM0414? **** RETIRED -- DO NOT REUSE. **
+00000000 LEM0415I    %1 bytes of memory were pre-allocated.
+00000000 LEM0416I    %1 bytes of allocated memory were unused.
+00000000 LEM0417I    %1 bytes of additional memory were allocated for job.
+00000000 LEM0418I    The largest block of memory allocated for job was %1 bytes.
+00000000 LEM0419W    Failed to pre-allocate %d memory blocks of %ld bytes.
+00000000 LEM0420A Line in INI file expands beyond permitted maximum length.
+00000000 LEM0421? **** RETIRED -- DO NOT REUSE. Replaced by LEM1011 built in **
+00000000 LEM0422? **** RETIRED -- DO NOT REUSE. Replaced by LEM1009 built in **
+00000000 LEM0423A Invalid font orientation %1.
+00000000 LEM0424A Invalid baseline direction %1.
+00000000 LEM0425A Column control item has exceeded page boundary.
+00000000 LEM0426A Incompatible resolution types. Check datastream input and/or INI settings.
+00000000 LEM0427A Compulsory record id %1:"%2" missing from document %3.
+00000000 LEM0428? ** Slot not allocated -- ready for use **
+00000000 LEM0429? ** Slot not allocated -- ready for use **
+00000000 LEM0430? ** Slot not allocated -- ready for use **
+;
+; Messages LEM0431 to LEM040 are reserved for DIME. They are not
+; used for EMFE or PCE.
+;
+00000000 LIM0001I %1 documents sent successfully.
+00000000 LIM0002I %1 documents skipped because E-Mail address not found.
+00000000 LIM0003A The E-Mail feature is not supported on this platform.
+00000000 LIM0004W Skipping document %1 because E-Mail address could not be found.
+00000000 LIM0005I Document sent to "%1" using "%2".
+00000000 LIM0006I Loading CMC API...
+00000000 LIM0007I Logging into Mail Services...
+00000000 LIM0008I Logging off of Mail Services...
+00000000 LIM0009I Unloading CMC API...
+00000000 LIM0010A Cannot load CMC API name (%1).
+00000000 LIM0011A Cannot load CMC API function (%1) from module (%2).
+00000000 LIM0012I Split document written to %1.
+00000000 LIM0013I %1 documents separated.
+00000000 LIM0014A Unable to open %1 for input.
+00000000 LIM0015A Unable to read document from %1.
+00000000 LIM0016A Document %1 in file %2 is not recognisable as PDF format.
+00000000 LIM0017A Unable to write to %1.
+00010000 LIM0018A Processing of documents have been aborted.
+00000000 LIM0019A Unable to send document to %1.
+00000000 LIM0020I Connecting to Mail Services...
+00000000 LIM0021A CMC failed to establish a valid session (cmc_error=%1).
+00000000 LIM0022A One or more names could not be resolved in the address book.
+00000000 LIM0023I Initializing Window services...
+00000000 LIM0024A Unable to initialize Window services.
+00000000 LIM0025A Unable to open mail message file %1.
+00000000 LIM0026A Unable to open %1 for PDF output.
+00000000 LIM0027W Name "%1" is ambiguous so E-Mail address cannot be resolved.
+00000000 LIM0028W No E-Mail address found for name "%1".
+00000000 LIM0029W No name available to look up E-Mail address.`
+00000000 LIM0030W Unexpected error %u during lookup of address name.
+00000000 LIM0031? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0032? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0033? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0034? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0035? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0036? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0037? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0038? ** Slot not allocated -- ready for use for DIME **
+00000000 LIM0039? ** Slot not allocated -- ready for use for DIME **
+;
+; These are now LEM messages again.
+;
+00000000 LEM0470? ** Slot not allocated -- ready for use **
+00000000 LEM0471? ** Slot not allocated -- ready for use **
+;
+;
+; ^ Please USE up LEM range 280 to 300 first. Cheers. ^
+;
+;

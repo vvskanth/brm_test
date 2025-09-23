@@ -1,0 +1,83 @@
+# SAMPLE FOR TESTING - ALLOW ALL TRANSITIONS - FULLY CONNNECTED GRAPH
+# NOT FOR RELEASE
+######################################################################
+# File: pin_telco_service_order_state_gsm_telephony
+#
+# @(#)% %
+#
+# Copyright (c) 2003 - 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+######################################################################
+
+
+# The storable class to be loaded
+/config/telco/service_order_state/gsm/telephony
+
+######################################################################
+# Syntax:
+# State_id: state_type: opcode_num: flags
+#		next_id1: opcode_num1: flags1
+#		next_id2: opcode_num2: flags2
+#		next_id2: opcode_num3: flags3
+#
+# note: You can invoke multiple opcodes for a single state transition. 
+# This is specified by having multiple rows with identical state 
+# transitions. In example above the transition from state_id to 
+# next_id2. In this case, two opcodes are called one after the other 
+# in the same order as specified in the config file. 
+# First opcode_num2 is called and after return from this opcode, 
+# opcode_num3 is called.
+#
+# state_id   - Defined in pin_service_order.h file
+#
+# state_type - Possible value are start (1), intermediate (2) and 
+# 		end (3) state. Defined in pin_device.h 
+#
+# opcode_num - The opcode to be called when the transition is made
+#              (For no opcode, provide a '0')
+######################################################################
+
+# NEW -> READY (starting state)
+1: 1: 0: 0
+	2: 0:0
+	3: 0:0
+	4: 0:0
+	5: 0:0
+
+# READY -> PROCESSING
+2: 2: 0: 0
+	1: 0: 0
+	2: 0: 0
+	3: 0: 0
+	4: 0: 0
+	5: 0: 0
+
+# PROCESSING -> FAILED or COMPLETED
+3: 2: 0: 0
+	1: 0: 0
+	2: 0: 0
+	3: 0: 0
+	4: 0: 0
+	5: 0: 0
+
+# Completed Provisioning -> Completed Provisioning (terminating state)
+4: 3: 0: 0
+	1: 0: 0
+	2: 0: 0
+	3: 0: 0
+	4: 0: 0
+	5: 0: 0
+
+
+# Failed Provisioning -> Failed Provisioning (terminating state)
+5: 3: 0: 0
+	1: 0: 0
+	2: 0: 0
+	3: 0: 0
+	4: 0: 0
+	5: 0: 0
+

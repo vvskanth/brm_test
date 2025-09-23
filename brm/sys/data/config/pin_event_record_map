@@ -1,0 +1,54 @@
+#	@(#) %full_filespec: pin_event_record_map~2:ascii:1 %
+#
+#      Copyright (c) 1999 - 2006 Oracle. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation
+#      or its licensors and may be used, reproduced, stored or transmitted
+#      only in accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+# Use this file to map the events (that have no balance impacts)
+# to not be recorded into Infranet, when they occur.
+# 
+# After defining the events and the flag values,
+# run the 'load_pin_event_record_map' utility to create the new 
+# /config/event_record_map storable object and load this notification 
+# list into the Infranet database. Then restart the Connection Manager 
+# for these changes to take effect. The config object is cached at 
+# Connection Manager startup time. When any event occurs, PCM_OP_ACT_USAGE
+# would check the event type against the cache and not record the event, 
+# if it was configured to not be recorded.
+#
+# Use the following syntax for defining event notification:
+# (One line for one record)
+#
+# <event_type>:  <flag>
+#
+# Where:
+#  <event_type> is the event_type string. This is the POID_TYPE for
+#       the event. Make sure that you do not
+#	set /event/session for not recording. This event is ususally
+#	recorded on LOGIN (or START-SESSION) (eg., start testnap or 
+#	start Customer Center, etc). The same event (event that is 
+#	created on LOGIN) is updated when you LOGOUT (or END-SESSION)
+#	(eg., quit Testnap or Quit Customer Center, etc). If you 
+#	configure this event for not recording, on LOGIN (or START-SESSION),
+#	the event would not be recorded and when you LOGOUT (or END-SESSION),
+#	it will throw an error when it attempts to update the same event.
+#	This error, however, can be ignored. If you have cases where the
+#	same event would be updated again, do not configure those events
+#	for not recording.
+#  <flag> is a integer value of 0 or 1.
+#       If value is 0, then the event for event_type would not be recorded.
+#       If value is 1, then the event for event_type would be recorded.
+#
+#======================================================================
+# As explained in <event_type> above, event session is never to be 
+# configured for not recording, so the following entry is put by
+# default. Note that the <flag> value for that is 1. This should not
+# be changed. However you can add other entries in new lines.
+#
+/event/session:   1
+
+# Configure to not record folds with no balance impacts
+/event/billing/cycle/fold:   0

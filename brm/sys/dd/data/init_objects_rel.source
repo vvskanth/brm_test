@@ -1,0 +1,19 @@
+#
+# @(#)init_objects_rel.source 1.0 
+#
+# Copyright (c) 2002, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+
+#=============================================================================#
+# /rel_event_extract_sync  - default sync row
+<PCM_OP $PIN_OPNAME=PCM_OP_CREATE_OBJ; $PIN_OPFLAGS=0x00>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /rel_event_extract_sync -1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_SESSION_ID     INT [0] -999
+0 PIN_FLD_BATCH_TYPE     INT [0] 0
+0 PIN_FLD_COUNT          INT [0] 0
+</PCM_OP>

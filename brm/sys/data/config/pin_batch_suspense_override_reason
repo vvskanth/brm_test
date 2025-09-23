@@ -1,0 +1,41 @@
+#
+# @(#)pin_batch_suspense_override_reason 1.0 08/30/05
+#
+version 1
+#======================================================================
+#
+#      
+#      Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+#      
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+# 	Use this file to define the batch suspense override reason codes 
+#	that will be overridden during the recycling process.
+#
+#	The text data defined in this file will be loaded into the 
+#	/config/batch_suspense_override_reason.
+#
+# 	Loading this file will replace existing object with the one 
+#	defined below.
+#
+# 	Use the following syntax for defining the batch suspense override 
+#	reason codes.	
+#
+#	Override Batch Suspense Reason	
+# 	   1	 
+#
+# Usage:
+#	$ load_pin_batch_suspense_override_reason <pin_batch_suspense_override_reason>
+#
+#======================================================================
+#
+# Sample file:
+#======================================================================
+#
+#	Override Batch Suspense Reason		
+#	00001    

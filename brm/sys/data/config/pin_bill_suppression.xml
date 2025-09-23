@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration 
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+	<!-- Sample file. Modify according to guidelines -->
+	<BillSuppressionConfiguration>
+		<CustomerSegmentList>
+			<CustomerSegment ID="1001">
+				<!-- Bad customer -->
+				<MinBillAmount>5.55</MinBillAmount>
+				<MaxSuppressionCycles>2</MaxSuppressionCycles>
+			</CustomerSegment>
+			<CustomerSegment ID="1002">
+				<!-- Good customer -->
+				<MinBillAmount>99.99</MinBillAmount>
+				<MaxSuppressionCycles>5</MaxSuppressionCycles>
+			</CustomerSegment>
+		</CustomerSegmentList>
+	</BillSuppressionConfiguration>
+
+</BusinessConfiguration>

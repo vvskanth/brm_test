@@ -1,0 +1,233 @@
+--
+-- @(#)$Id: create_md_primary.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:40:25 nishahan Exp $
+--
+-- Copyright (c) 2003, 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+-- sql file to create the list of objects needed for replication
+
+set serveroutput on;
+
+-- set residency_type property for /uniqueness and /unique_account_no object
+update dd_objects_t set residency_type=101 where name in ('/uniqueness', '/au_uniqueness', '/unique_account_no', '/au_unique_account_no', '/config/credit_profile');
+commit;
+
+-- update residency_type property for all global objects, except /uniqueness objects.
+update dd_objects_t set residency_type=8 where (name LIKE '/config%'  OR
+                                        name LIKE '/deal%'              OR
+					name LIKE '/au_deal%'           OR
+					name LIKE '/plan%'              OR
+					name LIKE '/au_plan%'           OR
+					name LIKE '/product%'           OR
+					name LIKE '/au_product%'        OR
+					name LIKE '/rate%'              OR
+					name LIKE '/au_rate%'           OR
+					name LIKE '/rollover%'          OR
+					name LIKE '/au_rollover%'       OR
+					name LIKE '/sponsorship%'       OR
+					name LIKE '/au_sponsorship%'    OR
+					name LIKE '/discount%'          OR
+					name LIKE '/au_discount%'       OR
+					name LIKE '/zone%'              OR
+					name LIKE '/transition%'        OR
+					name LIKE '/au_transition%'     OR
+					name LIKE '/dependency%'        OR
+					name LIKE '/au_dependency%'     OR
+					name LIKE '/fold%'              OR
+					name LIKE '/strings%'           OR
+					name LIKE '/channel'            OR
+					name LIKE '/search%'            OR
+					name LIKE '/edr_field_mapping%' OR
+					name LIKE '/subscription_terms%' OR
+					name LIKE '/deliverable%' OR
+					name LIKE '/entitlement%' OR
+					name LIKE '/revenue_basis_item%' OR
+					name LIKE '/job_template%' OR
+					name LIKE '/job_definition%' OR
+					name LIKE '/deposit_specification%' OR
+					name LIKE '/offer_attribute_group' OR
+					name LIKE '/offer_profile%'   ) AND
+					name NOT LIKE '/config/credit_profile';
+commit;
+
+--------------------------------------------------------------------------
+-- Populate data into MD_STATIC_OBJECTS_T 
+--------------------------------------------------------------------------
+
+DECLARE
+	cursor cfg_cur is 
+	SELECT UPPER(DOF.sm_item_name) table_name FROM dd_objects_t DO, 
+	dd_objects_fields_t DOF
+	WHERE
+		DOF.obj_id0 = DO.obj_id0 AND
+		(DO.name LIKE '/config%' OR
+		 DO.name LIKE '/deliverable%' OR
+                 DO.name LIKE '/entitlement%' OR
+                 DO.name LIKE '/deposit_specification%' OR
+                 DO.name LIKE '/revenue_basis_item%' ) AND
+		DOF.field_type IN 
+		 (6, 9, 10, 11, 16);
+
+	cursor price_cur is 
+	SELECT UPPER(DOF.sm_item_name) table_name FROM dd_objects_t DO, 
+	dd_objects_fields_t DOF
+	WHERE
+		DOF.obj_id0 = DO.obj_id0 	 AND
+		(DO.name LIKE '/deal%' 		 OR 
+		 DO.name LIKE '/au_deal%' 	 OR 
+		 DO.name LIKE '/plan%' 	 	 OR
+		 DO.name LIKE '/au_plan%'	 OR 
+		 DO.name LIKE '/product%'	 OR 
+		 DO.name LIKE '/au_product%'	 OR 
+		 DO.name LIKE '/rate%'		 OR 
+		 DO.name LIKE '/au_rate%'	 OR 
+		 DO.name LIKE '/rollover%'	 OR 
+		 DO.name LIKE '/au_rollover%'	 OR 
+		 DO.name LIKE '/sponsorship%'	 OR 
+		 DO.name LIKE '/au_sponsorship%' OR 
+		 DO.name LIKE '/discount%' 	 OR 
+		 DO.name LIKE '/au_discount%' 	 OR 
+		 DO.name LIKE '/zone%' 	 	 OR 
+		 DO.name LIKE '/transition%' 	 OR 
+		 DO.name LIKE '/au_transition%'	 OR 
+		 DO.name LIKE '/dependency%'	 OR 
+		 DO.name LIKE '/au_dependency%'	 OR 
+		 DO.name LIKE '/fold%' 	 	 OR
+		 DO.name LIKE '/subscription_terms%' OR
+		 DO.name LIKE '/job_template%' OR
+		 DO.name LIKE '/job_definition%' OR
+		 DO.name LIKE '/offer_attribute_group' OR
+		 DO.name LIKE '/offer_profile%' 
+		) 				 AND
+		DOF.field_type IN 
+		 (6, 9, 10, 11, 16);
+
+	cursor general_cur is 
+	SELECT UPPER(DOF.sm_item_name) table_name FROM dd_objects_t DO, 
+	dd_objects_fields_t DOF
+	WHERE
+		DOF.obj_id0 = DO.obj_id0 	 AND
+		(DO.name LIKE '/strings%'	 OR 
+		 (DO.name LIKE '/channel%' 	 AND 
+		  UPPER(DOF.sm_item_name) NOT LIKE 'CHANNEL_EVE%'
+		 )				 OR
+		 DO.name LIKE '/search%' 	 OR 
+		 DO.name LIKE '/edr_field_mapping%'
+		) 				 AND
+		DOF.field_type IN 
+		 (6, 9, 10, 11, 16);
+
+	t_name  varchar2(255);
+	tblspace_name  varchar2(255);
+	tmp	int := 0;
+
+BEGIN
+	
+	dbms_output.enable(200000);
+
+--	For CONFIG group
+
+	FOR c_tname in cfg_cur
+	LOOP
+		tmp := 0;
+		SELECT INSTR(c_tname.table_name, 'T=') INTO tmp FROM dual;
+		IF tmp = 0 THEN
+			t_name := c_tname.table_name;
+		ELSE
+			SELECT SUBSTR(c_tname.table_name, tmp+2) INTO t_name FROM dual;
+		END IF;
+
+		SELECT UT.tablespace_name into tblspace_name from user_tables UT
+		WHERE UT.table_name = t_name;
+
+		INSERT INTO md_static_objects_t 
+		VALUES (
+			t_name,
+			tblspace_name,
+			NULL,
+			0,
+			'CONFIG',
+			NULL,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0 );
+	END LOOP;
+
+--	For PRICE group
+
+	FOR c_tname in price_cur
+	LOOP
+		tmp := 0;
+		SELECT INSTR(c_tname.table_name, 'T=') INTO tmp FROM dual;
+		IF tmp = 0 THEN
+			t_name := c_tname.table_name;
+		ELSE
+			SELECT SUBSTR(c_tname.table_name, tmp+2) INTO t_name FROM dual;
+		END IF;
+
+		SELECT UT.tablespace_name into tblspace_name from user_tables UT
+		WHERE UT.table_name = t_name;
+
+		INSERT INTO md_static_objects_t 
+		VALUES (
+			t_name,
+			tblspace_name,
+			NULL,
+			0,
+			'PRICE',
+			NULL,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0 );
+	END LOOP;
+
+--	For GENERAL group
+
+	FOR c_tname in general_cur
+	LOOP
+		tmp := 0;
+		SELECT INSTR(c_tname.table_name, 'T=') INTO tmp FROM dual;
+		IF tmp = 0 THEN
+			t_name := c_tname.table_name;
+		ELSE
+			SELECT SUBSTR(c_tname.table_name, tmp+2) INTO t_name FROM dual;
+		END IF;
+
+		SELECT UT.tablespace_name into tblspace_name from user_tables UT
+		WHERE UT.table_name = t_name;
+
+		INSERT INTO md_static_objects_t 
+		VALUES (
+			t_name,
+			tblspace_name,
+			NULL,
+			0,
+			'GENERAL',
+			NULL,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0 );
+	END LOOP;
+END;
+/
+

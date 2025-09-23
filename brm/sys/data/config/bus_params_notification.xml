@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+  **************************************************************************
+* Copyright (c) 2023, Oracle and/or its affiliates.
+  *
+  * This material is the confidential property of Oracle Corporation
+  * or its licensors and may be used, reproduced, stored or transmitted
+  * only in accordance with a valid Oracle license or sublicense agreement.
+  **************************************************************************
+
+   NAME
+     bus_params_notification.xml
+
+   DESCRIPTION
+     This object is used to store notification related information.
+
+   MODIFIED   (MM/DD/YY)
+   satkp      12/05/22 - Creation
+   
+
+-->
+<BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+        <BusParamConfigurationClass>
+                <BusParamsNotification>
+                         <KafkaDBNumber>0.0.9.6 / 0</KafkaDBNumber>
+                </BusParamsNotification>
+        </BusParamConfigurationClass>
+</BusinessConfiguration>

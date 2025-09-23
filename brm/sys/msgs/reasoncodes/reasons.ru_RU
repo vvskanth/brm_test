@@ -1,0 +1,1095 @@
+﻿###########################################################################
+#
+# Copyright (c) 2012, 2015, Oracle and/or its affiliates. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation
+#      or its  licensors and may be used, reproduced, stored
+#      or transmitted  only in accordance with a valid Oracle license or
+#      sublicense agreement.
+#
+###########################################################################
+#
+#   File:  reasons.ru_RU
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  ru_RU ( Russian )
+#
+#	Domain:  Reason Codes-Active Status Reasons (version = 2)
+#		 Reason Codes-Charge Reasons  (version = 5)
+#		 Reason Codes-Closed Status Reasons (version = 4)
+#		 Reason Codes-Credit Reasons (version = 8)
+#		 Reason Codes-Credit Limit Reasons (version = 7)
+#		 Reason Codes-Debit Reasons (version = 1)
+#		 Reason Codes-Inactive Status Reasons (version = 3)
+#		 Reason Codes-Refund Reasons (version = 6)
+#		 
+#		 Reason Domains for Payment Processing
+#		 reserved from 13 - 20
+#
+#		 Reason Codes-Failed Payment Reasons (version = 13)
+#		 Reason Codes-Suspense Payment Reasons (version = 14)
+#		 Reason Codes-Payment Suspense Management Action Owner (version = 15)
+#		 Reason Codes-Payment Suspense Management, Reversal Reasons (version = 16)
+#
+#		 Reason Domains for Adjustments, Disputes and settlements
+#		 reserved from 21 - 50
+#
+#		 Reason Codes-Credit Reasons Non-Currency Account
+#			      Adjustments(version = 21)
+#		 Reason Codes-Debit Reasons Non-Currency Account
+#			      Adjustments(version = 22)
+#
+#		 Reason Codes-Credit Reasons Bill Adjustments (version = 23)
+#		 Reason Codes-Debit Reasons Bill Adjustments (version = 24)
+#		 Reason Codes-Credit Reasons Bill Disputes (version = 25)
+#		 Reason Codes-Debit Reasons Bill Disputes (version = 26)
+#		 Reason Codes-Reasons Bill Settlements (version = 27)
+#
+#		 Reason Codes-Credit Reasons Currency Connection
+#			      Adjustments (version = 28)
+#		 Reason Codes-Debit Reasons Currency Connection
+#			      Adjustments (version = 29)
+#		 Reason Codes-Credit Reasons Non-Currency Connection
+#			      Disputes (version = 30)
+#		 Reason Codes-Debit Reasons Non-Currency Connection
+#			      Disputes (version = 31)
+#
+#		 Reason Codes-Credit Reasons Item Adjustments (version = 32)
+#		 Reason Codes-Debit Reasons Item Adjustments (version = 33)
+#		 Reason Codes-Credit Reasons Item Disputes (version = 34)
+#		 Reason Codes-Debit Reasons Item Disputes (version = 35)
+#		 Reason Codes-Reasons Item Settlements (version = 36)
+#		 
+#		 Reason Codes-Credit Reasons Event Adjustments (version = 37)
+#		 Reason Codes-Debit Reasons Event Adjustments (version = 38)
+#		 Reason Codes-Credit Reasons Event Disputes (version = 39)
+#		 Reason Codes-Debit Reasons Event Disputes (version = 40)
+#		 Reason Codes-Reasons Event Settlements (version = 41)
+#		 Reason Codes-Reasons Write-off level (version = 42)
+#		 Reason Codes-Reasons Bill Correction Reasons (version = 43)
+#
+#		 Reason Codes-Others (version = 100)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this Reason Codes file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected,
+#	    except for the Event-GLID mappings which are always 
+#	    overwritten.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#           The STRING and optional HELPSTR are localizable.  This file must be
+#           in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#           to be ASCII (no extended-ASCII characters nor multiple byte
+#           characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this Reason Codes file. Please see the note about 
+#	    uniqueness above.
+#
+#	[6] String Version:
+#
+#	    For reason codes, this field will be used to specify the
+#	    domain that the reason belongs to, for example, Credit or 
+#           Debit. The values have been predefined; they must not be 
+#	    changed.
+#
+#	[7] Event to G/L ID mapping:
+#
+#	    These mappings are specified in this file. 
+#
+#	    G/L IDs can now be assigned based on Reason Codes. This is
+#	    currently applicable for Account level adjustments only.
+#
+#	    Events associated with specific Debit or Credit reasons are 
+#	    listed under the corresponding reason code and they start
+#	    with the header "EVENT-GLID" and end with "EVENT-GLID-END".
+#
+#	    In the earlier releases of Infranet, G/L ID mappings
+#	    for pre-rated events could be specified using the 
+#	    Policy Configuration tool. Now these mappings must
+#	    be specified in this file. A new domain named "Others"
+#	    has been created for providing the G/L ID mappings
+#	    for these events. 
+#   
+#	    All the mappings shown are examples and need to be
+#	    changed appropriately during setup.
+#
+##########################################################################
+
+LOCALE = "ru_RU" ;
+
+DOMAIN = "Reason Codes-Active Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 2 ;
+	STRING = "Заказчик запросил повторную активацию" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 2 ;
+	STRING = "Заказчик оплатил просроченные сборы" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 2 ;
+	STRING = "Кредитная карта теперь работает" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 2 ;
+	STRING = "Разрешен другой вопрос" ;
+END
+
+DOMAIN = "Reason Codes-Charge Reasons" ;
+STR
+	ID = 11 ;
+	VERSION = 5 ;
+	STRING = "Повторно активированный лицевой счет" ;
+END
+STR
+	ID = 12 ;
+	VERSION = 5 ;
+	STRING = "Проверенная кредитная карта" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 5 ;
+	STRING = "Заказчик запросил предоплату" ;
+END
+STR
+	ID = 14 ;
+	VERSION = 5 ;
+	STRING = "Новая кредитная карта" ;
+END
+
+DOMAIN = "Reason Codes-Closed Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 4 ;
+	STRING = "Дубликат лицевого счета" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 4 ;
+	STRING = "Перемещение из области" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 4 ;
+	STRING = "Не удовлетворен услугой" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 4 ;
+	STRING = "Нарушил политику компании" ;
+END
+
+DOMAIN = "Reason Codes-Credit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 8 ;
+	STRING = "Заказчик не удовлетворен услугой" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2 ;
+	VERSION = 8 ;
+	STRING = "Заказчик не знает о сборах" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 3 ;
+	VERSION = 8 ;
+	STRING = "По ошибке дебетован лицевой счет" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4 ;
+	VERSION = 8 ;
+	STRING = "Списание для возможности сторнирования автоматического списания" ;
+	EVENT-GLID
+		"/event/billing/writeoff"			110 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 5 ;
+	VERSION = 8 ;
+	STRING = "Пополнение спонсируемого счета. Кредитование получателя средств" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+
+
+DOMAIN = "Reason Codes-Debit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "Технические сборы и сборы за поддержку" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "Сборы за услуги" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "По ошибке кредитован лицевой счет" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "Пополнение спонсируемого счета. Дебетование спонсора" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+
+
+DOMAIN = "Reason Codes-Credit Limit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 7 ;
+	STRING = "Запрошено заказчиком" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 7 ;
+	STRING = "Удовлетворительная кредитоспособность, частое превышение предела" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 7 ;
+	STRING = "Требуется из-за возросших сборов за обслуживание" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 7 ;
+	STRING = "Особые обстоятельства" ;
+END
+
+DOMAIN = "Reason Codes-Inactive Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 3 ;
+	STRING = "Заказчик запросил деактивацию" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 3 ;
+	STRING = "Проблемы с предельной суммой кредита или кредитной картой" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 3 ;
+	STRING = "Счет не оплачен" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 3 ;
+	STRING = "Подозрение на неправильное поведение заказчика" ;
+END
+
+DOMAIN = "Reason Codes-Refund Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 6 ;
+	STRING = "Заказчик не удовлетворен услугой" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 6 ;
+	STRING = "Заказчик не знает о сборах" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 6 ;
+	STRING = "Заказчик отклонил открытие лицевого счета" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 6 ;
+	STRING = "По ошибке списаны средства с лицевого счета" ;
+END
+
+DOMAIN = "Reason Codes-Insert Action" ;
+STR
+        ID = 1 ;
+        VERSION = 10 ;
+        STRING = "Заказчик пообещал заплатить к указанной дате";
+END
+STR
+        ID = 2 ;
+        VERSION = 10 ;
+        STRING = "Заказчик был недоступен";
+END
+STR
+        ID = 3 ;
+        VERSION = 10 ;
+        STRING = "Заказчик не получил исходное напоминание";
+END
+STR
+        ID = 4 ;
+        VERSION = 10 ;
+        STRING = "Заказчик не сделал ответный звонок, о чем его просили";
+END
+
+DOMAIN = "Reason Codes-Reschedule Action" ;
+STR
+        ID = 1 ;
+        VERSION = 9 ;
+        STRING = "Заказчик был недоступен";
+END
+STR
+        ID = 2 ;
+        VERSION = 9 ;
+        STRING = "Заказчик пообещал заплатить к указанной дате";
+END
+STR
+        ID = 3 ;
+        VERSION = 9 ;
+        STRING = "Заказчик не получил исходное напоминание";
+END
+STR
+        ID = 4 ;
+        VERSION = 9 ;
+        STRING = "Заказчик не сделал ответный звонок, о чем его просили";
+END
+
+DOMAIN = "Reason Codes-Exempt Account" ;
+STR
+        ID = 1 ;
+        VERSION = 11 ;
+        STRING = "Подано заявление о банкротстве";
+END
+STR
+        ID = 2 ;
+        VERSION = 11 ;
+        STRING = "Ожидается юридический анализ";
+END
+STR
+        ID = 3 ;
+        VERSION = 11 ;
+        STRING = "Ожидается судебный иск" ;
+END
+STR
+        ID = 4 ;
+        VERSION = 11 ;
+        STRING = "Стратегический лицевой счет с особыми условиями контракта/платежа";
+END
+
+DOMAIN = "Reason codes-Payment Failure Reasons" ;
+STR
+	ID = 1001 ;
+	VERSION = 13 ;
+	STRING = "Недопустимая карта";
+END
+STR
+	ID = 1002 ;
+	VERSION = 13 ;
+	STRING = "Неправильная сумма";
+END
+STR
+	ID = 1003 ;
+	VERSION = 13 ;
+	STRING = "Неизвестная ошибка";
+END
+STR
+	ID = 1004 ;
+	VERSION = 13 ;
+	STRING = "Ошибка сети";
+END
+STR
+	ID = 1005 ;
+	VERSION = 13 ;
+	STRING = "Недостаточно средств/превышение предельной суммы кредита";
+END
+STR
+	ID = 1006 ;
+	VERSION = 13 ;
+	STRING = "Карта отклонена";
+END
+STR
+	ID = 1007 ;
+	VERSION = 13 ;
+	STRING = "Эмитенту требуется голосовой контакт с держателем карты";
+END
+STR
+	ID = 1008 ;
+	VERSION = 13 ;
+	STRING = "Утвердить/отклонить";
+END
+STR
+	ID = 1009 ;
+	VERSION = 13 ;
+	STRING = "Эмитент карты требует ее возврата";
+END
+STR
+	ID = 1010 ;
+	VERSION = 13 ;
+	STRING = "Сообщено, что карта потеряна или украдена";
+END
+STR
+	ID = 1011 ;
+	VERSION = 13 ;
+	STRING = "Срок действия карты истек";
+END
+STR
+	ID = 1012 ;
+	VERSION = 13 ;
+	STRING = "Общий отказ - эмитент не предоставил больше\n никакой информации";
+END
+STR
+	ID = 1013 ;
+	VERSION = 13 ;
+	STRING = "Неправильная карта, но она прошла проверку с использованием контрольного числа (Mod 10) ";
+END
+STR
+	ID = 1014 ;
+	VERSION = 13 ;
+	STRING = "Срок действия карты истек, или отправлена\n неправильная дата. Подтвердите правильную дату";
+END
+STR
+	ID = 1015 ;
+	VERSION = 13 ;
+	STRING = "Эмитент запрещает этот тип транзакций";
+END
+STR
+	ID = 1016 ;
+	VERSION = 13 ;
+	STRING = "Сумма не принята сетью";
+END
+STR
+	ID = 1017 ;
+	VERSION = 13 ;
+	STRING = "К карте применено ограничение";
+END
+STR
+	ID = 1018 ;
+	VERSION = 13 ;
+	STRING = "Компания Paymentech не получила ответа от сети авторизации";
+END
+STR
+	ID = 1019 ;
+	VERSION = 13 ;
+	STRING = "Ошибка при изменении - данные AVS недопустимы";
+END
+STR
+	ID = 1020 ;
+	VERSION = 13 ;
+	STRING = "Указано недопустимое расположение";
+END
+STR
+	ID = 1021 ;
+	VERSION = 13 ;
+	STRING = "Указан недопустимый индекс";
+END
+STR
+	ID = 1022 ;
+	VERSION = 13 ;
+	STRING = "Неправильная карта, но она прошла проверку с использованием контрольного числа (Mod 10) ";
+END
+STR
+	ID = 1023 ;
+	VERSION = 13 ;
+	STRING = "Мягкий отказ";
+END
+STR
+	ID = 1024 ;
+	VERSION = 13 ;
+	STRING = "Система недоступна, или истекло время ожидания";
+END
+STR
+	ID = 1025 ;
+	VERSION = 13 ;
+	STRING = "Жесткий отказ";
+END
+STR
+	ID = 1026 ;
+	VERSION = 13 ;
+	STRING = "Нет суммы для списания";
+END
+STR
+	ID = 1027 ;
+	VERSION = 13 ;
+	STRING = "Недопустимая команда";
+END
+STR
+	ID = 1028 ;
+	VERSION = 13 ;
+	STRING = "Не удалось выбрать позиции";
+END
+STR
+	ID = 1029 ;
+	VERSION = 13 ;
+	STRING = "Недопустимый CVV";
+END
+STR
+	ID = 1030 ;
+	VERSION = 13 ;
+	STRING = "Недостаточно средств/превышение предельной суммы кредита";
+END
+STR
+	ID = 1031 ;
+	VERSION = 13 ;
+	STRING = "Логическая проблема";
+END
+STR
+	ID = 1032 ;
+	VERSION = 13 ;
+	STRING = "Неправильное форматирование номера лицевого счета";
+END
+STR
+	ID = 1033 ;
+	VERSION = 13 ;
+	STRING = "Недопустимые символы в номере лицевого счета";
+END
+STR
+	ID = 1034 ;
+	VERSION = 13 ;
+	STRING = "Системная ошибка/неисправность у эмитента";
+END
+
+DOMAIN = "Reason codes-Payment Suspense Management" ;
+STR
+	ID = 2999 ;
+	VERSION = 14 ;
+	STRING = "Код основания, используемый по умолчанию";
+	HELPSTR = "Код основания не указан" ;
+END
+STR
+	ID = 2001 ;
+	VERSION = 14 ;
+	STRING = "Номер лицевого счета не найден";
+	HELPSTR = "Номер лицевого счета не найден в базе данных" ;
+END
+STR
+	ID = 2002 ;
+	VERSION = 14 ;
+	STRING = "Статус лицевого счета: закрыт";
+	HELPSTR = "Статус лицевого счета: закрыт" ;
+END
+STR
+	ID = 2003 ;
+	VERSION = 14 ;
+	STRING = "Счет не найден";
+	HELPSTR = "Счет не найден в базе данных" ;
+END
+STR
+	ID = 2004 ;
+	VERSION = 14 ;
+	STRING = "Недопустимый код транзакции ";
+	HELPSTR = "Указан недопустимый код транзакции платежа" ;
+END
+STR
+	ID = 2005 ;
+	VERSION = 14 ;
+	STRING = "Отсутствует код транзакции";
+	HELPSTR = "Для платежа с ошибками отсутствует код транзакции" ;
+END
+STR
+	ID = 2006 ;
+	VERSION = 14 ;
+	STRING  = "Платеж в результате повторного использования";
+	HELPSTR = "Платеж в результате повторного использования";
+	EVENT-GLID
+		"/event/billing/payment"		113 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2007 ;
+	VERSION = 14 ;
+	STRING = "Требуется распределение MBI ";
+	HELPSTR = "Для этого платежа требуется распределение MBI";
+END
+
+DOMAIN = "Reason Codes-Payment Suspense Management Action Owner" ;
+STR
+	ID = 3999 ;
+	VERSION = 15 ;
+	STRING = "Владелец действия по умолчанию";
+	HELPSTR = "Владелец действия по умолчанию для управления приостановкой платежей " ;
+END
+
+DOMAIN = "Reason Codes-Payment Suspense Management, Reversal Reasons" ;
+STR
+	ID = 4999 ;
+	VERSION = 16 ;
+	STRING	= "Не удалось исправить платеж" ;
+	HELPSTR = "Не удалось исправить платеж" ; 
+	EVENT-GLID
+		"/event/billing/reversal"		112 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4001 ;
+	VERSION = 16 ;
+	STRING	= "Сторнирование в результате повторного использования" ;
+	HELPSTR = "Сторнирование в результате повторного использования" ; 
+	EVENT-GLID
+		"/event/billing/reversal"		113 ;
+	EVENT-GLID-END
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Non-Currency Account Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 21 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Non-Currency Account Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 22 ;
+        STRING = "По ошибке кредитован лицевой счет";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Bill Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 23 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Bill Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 24 ;
+        STRING = "Сборы за услуги";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Bill Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 25 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Bill Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 26 ;
+        STRING = "Кредитован по ошибке";
+END
+
+DOMAIN = "Reason Codes-Reasons Bill Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 27 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Currency Connection Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 28 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Currency Connection Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 29 ;
+        STRING = "Кредитован по ошибке";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Non-Currency Connection Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 30 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Non-Currency Connection Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 31 ;
+        STRING = "Кредитован по ошибке";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Item Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 32 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Item Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 33 ;
+        STRING = "Кредитован по ошибке";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Item Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 34 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Item Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 35 ;
+        STRING = "Кредитован по ошибке";
+END
+
+DOMAIN = "Reason Codes-Reasons Item Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 36 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Event Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 37 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Event Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 38 ;
+        STRING = "Кредитован по ошибке";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Event Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 39 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Event Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 40 ;
+        STRING = "Кредитован по ошибке";
+END
+
+DOMAIN = "Reason Codes-Reasons Event Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 41 ;
+        STRING = "Заказчик не удовлетворен услугой";
+END
+
+DOMAIN = "Reason Codes-Reasons Write-off level" ;
+STR
+        ID = 1 ;
+        VERSION = 42 ;
+        STRING = "Account Write-off";
+END
+STR
+        ID = 2 ;
+        VERSION = 42 ;
+        STRING = "Billinfo Write-off";
+END
+
+DOMAIN = "Reason Codes-Bill Correction Reasons" ;
+STR
+        ID = 0 ;
+        VERSION = 43 ;
+        STRING = "Другое";
+END
+STR
+        ID = 1 ;
+        VERSION = 43 ;
+        STRING = "Обновление адреса по счету-фактуре";
+END
+STR
+        ID = 2 ;
+        VERSION = 43 ;
+        STRING = "Корректировка вручную";
+END
+STR
+        ID = 3 ;
+        VERSION = 43 ;
+        STRING = "Исправление цены";
+END
+DOMAIN = "Reason Codes-Tax-exemptions" ;
+STR
+	ID = 1 ;
+	VERSION = 44 ;
+	STRING = "Исключение на основе статуса клиента" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 44 ;
+	STRING = "Исключение на основе расположения" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 44 ;
+	STRING = "Изменение классификации статуса исключения" ;
+END
+
+DOMAIN = "Reason Codes-Write off" ;
+STR
+	ID = 1 ;
+	VERSION = 45 ;
+	STRING = "Мошеннические списания" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 45 ;
+	STRING = "Не удалось собрать" ;
+END
+STR
+        ID = 3 ;
+        VERSION = 45 ;
+        STRING = "Ошибочные списания" ;
+END
+
+DOMAIN = "Reason Codes-Write off Reversal" ;
+STR
+	ID = 1 ;
+	VERSION = 46 ;
+	STRING = "Re-establish service" ;
+END
+
+DOMAIN = "Reason Codes-SEPA Reject Reasons" ;
+STR
+        ID = 1 ;
+        VERSION = 51 ;
+        STRING = "AC01";
+	HELPSTR = "Неверный идентификатор лицевого счета (т.е. недопустимый номер IBAN) ";
+END
+STR
+        ID = 2 ;
+        VERSION = 51 ;
+        STRING = "AC04";
+	HELPSTR = "Лицевой счет закрыт ";
+END
+STR
+        ID = 3 ;
+        VERSION = 51 ;
+        STRING = "AC06";
+	HELPSTR = "Лицевой счет блокирован. Лицевой счет блокирован для прямого списания должником ";
+END
+STR
+        ID = 4 ;
+        VERSION = 51 ;
+        STRING = "AG01";
+	HELPSTR = "Прямое списание с этого счета запрещено по законодательным причинам ";
+END
+STR
+        ID = 5 ;
+        VERSION = 51 ;
+        STRING = "AG02";
+	HELPSTR = "Неверный код операции/транзакции. Недопустимый формат. Следует использовать для указания неверного кода операции/транзакции ";
+END
+STR
+        ID = 6 ;
+        VERSION = 51 ;
+        STRING = "AM04";
+	HELPSTR = "Недостаточно средств ";
+END
+STR
+        ID = 7 ;
+        VERSION = 51 ;
+        STRING = "AM05";
+	HELPSTR = "Дубликат сбора задолженности ";
+END
+STR
+        ID = 8 ;
+        VERSION = 51 ;
+        STRING = "BE01";
+	HELPSTR = "Имя должника не соответствует имени владельца лицевого счета ";
+END
+STR
+        ID = 9 ;
+        VERSION = 51 ;
+        STRING = "FF01";
+	HELPSTR = "Неверный код операции/транзакции. Недопустимый формат. Следует использовать для указания недопустимого формата файла";
+END
+STR
+        ID = 10 ;
+        VERSION = 51 ;
+        STRING = "MD01";
+	HELPSTR = "Нет предписания ";
+END
+STR
+        ID = 11 ;
+        VERSION = 51 ;
+        STRING = "MD02";
+	HELPSTR = "Данные предписания отсутствуют или являются неверными ";
+END
+STR
+        ID = 12 ;
+        VERSION = 51 ;
+        STRING = "MD07";
+	HELPSTR = "Должник умер ";
+END
+STR
+        ID = 13 ;
+        VERSION = 51 ;
+        STRING = "MS02";
+	HELPSTR = "Отказ должника ";
+END
+STR
+        ID = 14 ;
+        VERSION = 51 ;
+        STRING = "MS03";
+	HELPSTR = "Основание не указано";
+END
+STR
+        ID = 15 ;
+        VERSION = 51 ;
+        STRING = "RC01";
+	HELPSTR = "Неверный идентификатор банка (т.е. недопустимый БИК) ";
+END
+STR
+        ID = 16 ;
+        VERSION = 51 ;
+        STRING = "RR01";
+	HELPSTR = "Законодательная причина ";
+END
+STR
+        ID = 17 ;
+        VERSION = 51 ;
+        STRING = "RR02";
+	HELPSTR = "Законодательная причина ";
+END
+STR
+        ID = 18 ;
+        VERSION = 51 ;
+        STRING = "RR03";
+	HELPSTR = "Законодательная причина ";
+END
+STR
+        ID = 19 ;
+        VERSION = 51 ;
+        STRING = "RC04";
+	HELPSTR = "Законодательная причина ";
+END
+STR
+        ID = 20 ;
+        VERSION = 51 ;
+        STRING = "SL01";
+	HELPSTR = "Конкретная услуга, предлагаемая банком-должником ";
+END
+STR
+        ID = 21 ;
+        VERSION = 51 ;
+        STRING = "DNOR";
+	HELPSTR = "Банк-должник не зарегистрирован под этим БИК в CSM ";
+END
+STR
+        ID = 22 ;
+        VERSION = 51 ;
+        STRING = "CNOR";
+	HELPSTR = "Банк-кредитор не зарегистрирован под этим БИК в CSM";
+END
+STR
+        ID = 23 ;
+        VERSION = 51 ;
+        STRING = "SL01";
+	HELPSTR = "Конкретная услуга, предлагаемая банком-должником ";
+END
+
+DOMAIN = "Reason Codes-SEPA Reversal Reasons" ;
+STR
+        ID = 1 ;
+        VERSION = 52 ;
+        STRING = "AM05";
+	HELPSTR = "Повторяющаяся запись ";
+END
+STR
+        ID = 2 ;
+        VERSION = 52 ;
+        STRING = "MS02";
+	HELPSTR = "Reason not specified ";
+END
+
+DOMAIN = "Others" ;
+STR
+	EVENT-GLID
+		"/event/billing/adjustment"		105 ;
+		"/event/billing/adjustment/account"	105 ;
+		"/event/billing/adjustment/item"   	105 ;
+		"/event/billing/payment"		109 ;
+		"/event/billing/reversal"		109 ;
+		"/event/billing/dispute"		107 ;
+		"/event/billing/dispute/item"		107 ;
+		"/event/billing/settlement"		108 ;
+		"/event/billing/settlement/item"	108 ;
+ 		"/event/billing/writeoff"		106 ;
+		"/event/billing/writeoff/item"		106 ;
+		"/event/billing/refund"			109 ;
+		"/event/billing/writeoff_reversal"	111 ;
+		"/event/journal/epsilon"		1512 ;
+	EVENT-GLID-END
+END

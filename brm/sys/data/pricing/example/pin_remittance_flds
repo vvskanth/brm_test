@@ -1,0 +1,127 @@
+#
+# "@(#)$Id: pin_remittance_flds /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:15:04 nishahan Exp $"
+#
+#======================================================================
+# Remittance Fields Definition 
+#======================================================================
+# Copyright (c) 1999, 2009, Oracle and/or its affiliates.All rights reserved. 
+#
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+# Use this file to define remittance fields. A remittance field is an 
+# attribute of an Infranet storable class used to define remittance 
+# criteria. You define remittance criteria in the remittance 
+# specification file. 
+# 
+# Loading this file into Infranet is a prerequisite for defining
+# remittance specifications.
+# 
+# This file contains these reserved remittance fields:
+# 
+# service_type: The name of the service associated with the event. 
+#      For example: /service/ip.
+# 
+# event_type: The type of event. For example: /event/session/dialup.
+# 
+# product_name: The name of a product associated with the event.
+#      For example: IP Unlimited. 
+# 
+# profile_name: The name of a customer profile associated with an 
+#      Infranet account. 
+# 
+# Do not remove or modify these reserved fields. 
+# 
+# You can create custom fields. A custom remittance field
+# definition contains four columns separated by one or more spaces:
+# 
+# <remittance field name>   <base class>  <substruct>  <attribute>
+# 
+# For example: 
+# 
+# field Origination_gw   EVENT   PIN_FLD_CALL   PIN_FLD_ORIGIN_GW
+# 
+# Following is a description of each part of the definition: 
+# 
+# Remittance field name 
+# ---------------------
+#    The name you assign to the remittance field. This is the
+#    same name you enter in the remittance specification file when 
+#    you define criteria. Precede the name with the word "field."  
+#    For example: "field origination_gw". 
+# 
+#    You cannot use a reserved field name for a custom field. 
+# 
+# Base class
+# ----------
+#    Enter one of these storable class names: EVENT, ACCOUNT or 
+#    PROFILE. These are the only classes you can use to define a 
+#    remittance field.
+# 
+# Substruct 
+# ---------
+#    Enter the name of a substruct that contains the attribute you're
+#    using to define the field. This must be a valid substruct name 
+#    as it exists in the Infranet data dictionary. In the previous 
+#    example, PIN_FLD_CALL is the substruct of EVENT that contains 
+#    the attribute PIN_FLD_ORIGIN_GW.
+#  
+#    If there are no substructs, specify NONE. 
+# 
+#    Arrays are not supported. You cannot use an attribute within an 
+#    array.
+# 
+# Attribute 
+# ---------
+#    This is the name of the attribute as it exists in Infranet data 
+#    dictionary
+# 
+#    In the previous example, PIN_FLD_ORIGIN_GW is the attribute and 
+#    PIN_FLD_CALL is the substruct containing this attribute. 
+# 
+# Use the 'load_pin_remittance_flds' utility to load this file into
+# Infranet. Even if you don't define any custom fields, load this 
+# file to make the reserved fields available for your remittance
+# specifications. Any time you modify this file, load the complete 
+# file into Infranet again.
+# 
+# The load utility checks for the following:
+# 
+# *  that the four reserved fields exist
+# *  that the base class name for each custom field is EVENT, ACCOUNT 
+#    or PROFILE
+# *  that the substruct and attribute names for each custom field 
+#    exist
+# 
+# See the pin_remittance_spec file for a description of how to use
+# remittance fields to define remittance criteria.
+# 
+# This is an example of a remittance field file with both reserved
+# fields and custom field definitions:
+# 
+#fields (
+#     service_type           RESERVED
+#     event_type             RESERVED
+#     product_name           RESERVED
+#     profile_name           RESERVED
+#     field Origination_gw   EVENT  PIN_FLD_CALL   PIN_FLD_ORIGIN_GW
+#     field Destination_gw   EVENT  PIN_FLD_CALL   PIN_FLD_DESTINATION_GW
+#     field Brand_name       ACCOUNT   NONE        PIN_FLD_GL_SEGMENT
+#     field Profile_value    PROFILE   PIN_FLD_LDAP_INFO   PIN_FLD_DN
+#     )
+#
+#======================================================================
+# Enter new remittance fields below.
+#
+# IMPORTANT !!!
+# Don't change or remove the fields marked RESERVED. 
+#======================================================================
+
+fields (
+     service_type      RESERVED
+     event_type        RESERVED
+     product_name      RESERVED
+     profile_name      RESERVED
+)

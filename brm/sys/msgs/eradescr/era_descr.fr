@@ -1,0 +1,248 @@
+
+##########################################################################
+#
+# Copyright (c) 2001, 2012, Oracle and/or its affiliates. All rights reserved. 
+#     This material is the confidential property of Oracle Corporation 
+#     or its  licensors and may be used, reproduced, stored
+#     or transmitted only in accordance with a valid Oracle license or 
+#     sublicense agreement.
+#
+##########################################################################
+#
+#   File:  era_descr.fr
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  fr ( French )
+#
+#	Domain:  era_descr (version = 1)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#         The STRING and optional HELPSTR are localizable.  This file must
+#	    be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#         to be ASCII (no extended-ASCII characters nor multiple byte
+#         characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTES:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. Please see the note about 
+#	    uniqueness above.
+#
+#	    The id's and version's chosen in this file should be kept in
+#	    sync with the pin_device_state_sim configuration file.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "fr" ;
+
+DOMAIN = "era_descr" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "Classification" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'attribuer le compte à un groupe de comptes qui appartiennent à une organisation, comme une entreprise, une école ou une organisation privée. Une remise est accordée sur les appels passés entre les membres du groupe. Un compte ne peut appartenir qu'à un seul groupe. Pour accorder cette promotion, entrez le mot TYPE dans le champ Nom et le nom du groupe dans le champ Valeur. Cette option permet également d'accorder différentes remises définies par votre société. Un compte peut disposer de plus d'un type d'option qualité. Pour accorder cette promotion, entrez le mot QUALITY dans le champ Nom et le code de la promotion qualité dans le champ Valeur." ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "Jour spécial" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'accorder des remises sur les appels passés le jour de votre anniversaire. Un compte ne peut disposer que d'une seule date d'anniversaire. Pour accorder cette promotion, entrez le mot BIRTHDAY dans le champ Nom et la date d'anniversaire du client dans le champ Valeur." ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "Entreprise" ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'attribuer le compte à un groupe de comptes qui partagent certaines propriétés d'appel. C'est le cas, par exemple, d'un groupe dont les comptes peuvent passer des appels téléphoniques internes. Une remise est accordée sur les appels entre les membres du groupe. Un compte ne peut appartenir qu'à un seul groupe. Pour accorder cette promotion, entrez le mot AGREEMENT dans le champ Nom et le nom de la promotion dans le champ Valeur." ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "Centrale de données" ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'identifier les comptes afin de collecter des données marketing. Un compte peut disposer de plus d'un type de cette promotion. Pour accorder cette promotion, entrez le mot SEGMENT dans le champ Nom et le nom de la promotion dans le champ Valeur." ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "Groupe fermé d'utilisateurs" ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet de créer des groupes fermés d'utilisateurs. Une remise est accordée sur les appels passés entre les numéros d'un même groupe. Pour accorder cette promotion, entrez le numéro de téléphone ou l'identifiant du compte dans le champ Nom et le nom du groupe fermé d'utilisateurs dans le champ Valeur." ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "Niveau de service" ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'attribuer une qualité de service à un service. Un service peut disposer de plus d'un type de qualité de service. Pour accorder cette promotion, entrez le mot AGREEMENT dans le champ Nom et le nom de la promotion dans le champ Valeur." ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "Amis et famille" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'attribuer des remises sur les appels passés vers des numéros particuliers, comme ceux des amis et des membres de la famille. Un compte peut disposer de plusieurs numéros d'amis et de famille. Pour accorder cette promotion, entrez le mot NUMBER dans le champ Nom et le numéro de téléphone dans le champ Valeur.  À la place du numéro de téléphone, vous pouvez entrer un autre identifiant de client." ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "Région d'origine" ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'accorder des remises sur les appels passés vers des numéros particuliers ou vers des régions, comme tous les numéros d'un pays ou les numéros ayant le même indicatif. Un compte peut disposer de plusieurs numéros de région d'origine. Pour accorder cette promotion, entrez le mot NUMBER dans le champ Nom. Dans le champ Valeur, entrez un numéro de téléphone, un identifiant ou un indicatif, comme un indicatif de pays ou de région." ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "Cellule d'origine" ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet de déterminer les cellules d'origine d'un compte. Les appels passés à l'extérieur d'une cellule d'origine sont facturés différemment des appels passés à l'intérieur. Un compte peut disposer de plusieurs cellules d'origine. Pour accorder cette promotion, entrez le mot CELL_ID dans le champ Nom. Dans le champ Valeur, entrez le code de la cellule d'origine." ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "Plan de Rates" ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "Cette option fournit des informations d'évaluation supplémentaires qui ne sont pas comprises dans les produits du client. Pour accorder cette promotion, entrez la priorité du plan de Rates dans le champ Nom. Un nombre faible correspond à un haut rang. Entrez le code de plan de Rates IntegRate dans le champ Valeur." ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "Modèle de remise" ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "Cette option fournit des informations d'évaluation supplémentaires qui ne sont pas comprises dans les produits du client. Pour accorder cette promotion, entrez le mot INTEGRATE dans le champ Nom.  Entrez le code du modèle de remise IntegRate dans le champ Valeur." ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "Compte de remise" ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet de définir un compte qui peut attribuer des remises sur le volume à plusieurs comptes. Un compte ne peut disposer que d'une seule de ces promotions. Pour accorder cette promotion, entrez le mot INTEGRATE dans le champ Nom et l'identifiant du compte global de remise dans le champ Valeur." ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "Lot de remises" ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'indiquer le sous-ensemble de règles de remise qui sera pris en compte lors de l'application de la remise. Les règles de remise seront prises en compte de façon séquentielle dans l'ordre de priorité défini pour le modèle de remise. Toutefois, chaque règle de remise ne sera appliquée que si toutes les règles de remise de priorité plus élevée ont déjà été utilisées dans leur intégralité. Toutes les règles de remise associées à un modèle de remise seront prises en compte si aucun attribut d'évaluation étendu DiscountBundle n'est indiqué. Pour accorder cette promotion, entrez le code règle de remise dans le champ VALEUR.";
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "Propriétaire de remise" ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "Cette option permet d'indiquer le propriétaire du solde de remise pour une règle de remise. Elle permet de partager une remise entre plusieurs comptes. Le compte actuel sera traité en tant que propriétaire de la remise si aucun ERA DiscountOwner n'est indiqué. Pour accorder cette promotion, entrez le nom de la règle de remise dans le champ NOM et le POID compte du propriétaire de la remise dans le champ VALEUR.";
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "Appel interrompu" ;
+END
+STR
+	ID = 29 ;
+	VERSION = 1 ;
+	STRING = "Cette option accorde remises sur appels interrompus pour rappel après interruption. Définissez paramètres SAME_CALLED_PARTY, MAX_TIME_TO_CONTINUATION_CALL, MAX_INTERVENING_CALLS ds champ Nom et indiquez valeur ds champs Valeur. SAME_CALLED_PARTY précise si rappels après interrupt. doivent être effectués au même num que celui de appel interrompu ou si appels vers autres num peuvent faire partie des rappels après interrupt. Si pas de valeur indiquée, rappels après interrupt. se font au même num que celui appel interrompu. MAX_TIME_TO_CONTINUATION_CALL définit durée autorisée (sec) entre fin appel interrompu et début rappel après interrupt. En outre, il n'existe aucune limite de tps entre appel interrompu et rappel après interrupt. mais ces 2 appels doivent être passés ds même cycle de fact. MAX_INTERVENING_CALLS indique nb appels intermédiaires autorisés entre appel interrompu et rappel après interrupt. Si pas de valeur indiquée, tous les appels sont pris en compte.";
+END
+

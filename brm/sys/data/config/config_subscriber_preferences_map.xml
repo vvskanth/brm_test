@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--  $Header: optional_mgrs_vob/wireless/config/config_subscriber_preferences_map.xml /cgbubrm_7.5.0.portalbase/4 2012/06/25 05:01:05 sdoddi Exp $ -->
+
+<!-- 
+ Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved. 
+
+   NAME
+     config_subscriber_preferences_map.xml - For piggyback notifications(Active Mediation)
+
+   DESCRIPTION
+     For Active Mediation Feature:
+     This XML is used to seed the subscriber preferences into the /config/subscriber_preferences_map obj.
+     Each Subscriber Preference has an unique prefernce ID. OOB the subscriber preferences are:
+     Language, Channel, Time of Notification, 
+     Notification Expiry - Number of days before which notification must be sent, 
+     Notification Interval - Interval between each notification,
+     Streaming Threshold  - Value given in MB, notification for every MB of usage of data,
+     Resource ID for Streaming Thresholds.
+
+     Each field is read as follows:
+     Name . Name of the preference
+     ID . ID associated with the preference
+     Type . The type of value that the preference can assume. 
+       .	STR [1]
+       .	INT [2]
+       .	ENUM [3] List of Values which the user can choose from. Example Different channels, Languages etc.
+       .	DECIMAL [4]
+       .	TSTAMP [5]
+     String ID . The ID in the strings_t class which would be associated with the localized string associated with the preference. 
+                 This would be read by the customer center to display the preference name in a localized string form.
+     String Version: The version of the string ID specified.
+                     Domain: active_mediation
+     Default . This field would contain the default value that the preference can assume. In case of ENUM, this field will 
+               contain STRING_ID of the value in VALUES array.
+     
+
+     NOTE: For localization, the STRING_ID and STR_VERSION must map to an entry in strings_t table 
+           for the domain: active_mediation 
+     
+   MODIFIED   (MM/DD/YY)
+   sdoddi      01/19/12 - Creation
+
+-->
+        <ObjectList
+        xmlns="http://www.oracle.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_subscriber_preferences_map.xsd">
+
+          <ConfigObject>
+            <DESCR>Subscriber Prefs Map</DESCR>
+            <NAME>Subscriber Prefs Map</NAME>
+            <SUBSCRIBER_PREFERENCES elem="0">
+              <NAME>Language</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>1</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>1</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT>101</DEFAULT>
+              <TYPE>3</TYPE>
+                <VALUES elem="0">
+                        <VALUE>English</VALUE>
+                        <STRING_ID>101</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+                <VALUES elem="1">
+                        <VALUE>French</VALUE>
+                        <STRING_ID>102</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+                <VALUES elem="2">
+                        <VALUE>Spanish</VALUE>
+                        <STRING_ID>103</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+                <VALUES elem="3">
+                        <VALUE>Russian</VALUE>
+                        <STRING_ID>104</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="1">
+              <NAME>Channel</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>2</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>2</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT>203</DEFAULT>
+              <TYPE>7</TYPE>
+                <VALUES elem="0">
+                        <VALUE>IVR</VALUE>
+                        <STRING_ID>201</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+                <VALUES elem="1">
+                        <VALUE>SMS</VALUE>
+                        <STRING_ID>202</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+                <VALUES elem="2">
+			<VALUE>EMAIL</VALUE>
+			<STRING_ID>204</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+		<VALUES elem="3">
+                        <VALUE>USSD</VALUE>
+                        <STRING_ID>205</STRING_ID>
+                        <STR_VERSION>1</STR_VERSION>
+                </VALUES>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="2">
+              <NAME>Notification Expiry</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>3</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>3</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT>5</DEFAULT>
+              <TYPE>2</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="3">
+              <NAME>Notification Interval</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>4</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>4</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT>1</DEFAULT>
+              <TYPE>2</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="4">
+              <NAME>Streaming Threshold</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>5</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>5</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT>1024</DEFAULT>
+              <TYPE>2</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="5">
+              <NAME>Resource For Threshold</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>6</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>6</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT>1000009</DEFAULT>
+              <TYPE>2</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="6">
+              <NAME>Notification Time</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>7</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>7</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT></DEFAULT>
+              <TYPE>5</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="7">
+              <NAME>PreferredTime</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>8</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>8</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT></DEFAULT>
+              <TYPE>6</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="8">
+              <NAME>NotificationsOptOutList</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>9</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>9</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT></DEFAULT>
+              <TYPE>7</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="9">
+              <NAME>Email</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>10</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>10</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT></DEFAULT>
+              <TYPE>1</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="10">
+              <NAME>Phone</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>11</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>11</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT></DEFAULT>
+              <TYPE>1</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+            <SUBSCRIBER_PREFERENCES elem="11">
+              <NAME>NotificationsOptInList</NAME>
+              <SUBSCRIBER_PREFERENCE_ID>12</SUBSCRIBER_PREFERENCE_ID>
+              <STRING_ID>12</STRING_ID>
+              <STR_VERSION>1</STR_VERSION>
+              <DEFAULT></DEFAULT>
+              <TYPE>7</TYPE>
+            </SUBSCRIBER_PREFERENCES>
+
+
+          </ConfigObject>
+
+        </ObjectList>

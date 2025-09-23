@@ -1,0 +1,45 @@
+#
+# @(#)pin_config_ra_alerts 1.0
+#
+#       Copyright 2004, 2009 Oracle. All rights reserved.
+#
+#       This material is the confidential property of Oracle Corporation
+#       or its licensors and may be used, reproduced, stored or transmitted
+#       only in accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains config info for /config/ra_alerts object.The format for the file is defined as:
+#	The line starting with # defines comment
+
+#	The first noncommented line is expected to be "version" number.
+#	Every Alert information should start with the identifier RA_Alert:(The word is case sensitive).
+
+# 	Following the Alert identifier is the name of the Alert , sender name and locale name of the alert.
+#	The above said should be in  the same line.
+
+#	The next line after Alertidentifier is the Email addr and email type  and these should be in the same line.
+#	Valid fields for email addr type is 1(Mail_To), 2(CC), 3(BCC), 4(Reply_To).
+#	Email Type is optional and if not specified will be taken as 1.
+#	The field delimiter in a line may be space or tab.
+
+#	Space or tab is not allowed in a single field.
+#	A sample format is given below
+
+#	RA_Alert:  <Alert Name>  <Sender Name> <Locale>
+# 	<Email_addr 1> <Email Type> 
+#	<Email_addr 2> <Email Type> 
+#	<Email_addr 3> <Email Type> 
+
+#	RA_Alert:  <Alert Name>  <Sender Name> <Locale>
+# 	<Email_addr 1> <Email Type> 
+#	<Email_addr 2> <Email Type> 
+#	<Email_addr 3> <Email Type> 
+
+
+# Version 1
+
+# RA_Alert:	Rejected_EDRs_Per_Day  RA_NOTIFICATION  en_US 
+# 	RA.admin@mailserver.com		   	1
+#	RA_operator@mailserver.com    		2
+
+
+

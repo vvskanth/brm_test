@@ -1,0 +1,95 @@
+#
+# @(#)pin_config_ra_thresholds 1.0
+#
+#       Copyright 2004, 2009 Oracle. All rights reserved.
+#
+#       This material is the confidential property of Oracle Corporation 
+#       or its licensors and may be used, reproduced, stored or transmitted
+#       only in accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains config info for /config/ra_thresholds object.
+#	The format for the file is defined as:
+#	The line starting with # defines comment
+
+#	The first noncommented line is expected to be "version" number.
+#	Every Threshold information should start with the identifier 
+#	RA_Threshold:(The word is case sensitive).
+
+# 	The next line after the Threshold identifier should be 
+#	ThresholdName, ObjType, DateRangeType(0 or 1 or 2), WeekDay(1-7), 
+#	OffsetTime(In 24Hr Format eg:21:00,9:30), 
+#	Threshold Length(in  Hours or Minutes or Seconds) and the value
+#	should be less than the number of seconds in a week    	
+
+#	DateRangeType of 0 indicates Period Alert.
+#	DateRangeType of 1 indicates Day Alert.
+#	DateRangeType of 2 indicates Weekly Alert.
+
+#	WeekDay 1-7 indicates sunday - saturday
+#	WeekDay is 0 for Day Alert.
+
+#	The Length of Period should be followed by Secs/Mins/Hrs Identifier
+
+#	The next line should be either Filter details or Field_Value_Range 
+#	details with the correspondig identifier 
+#	RA_Filter: and  RA_Field_Value_Range:(Both case sensitive). 
+
+#	Filter details Array is optional while Field_Value_Range details is 
+#	mandatory. 
+
+#	Always Filter details should precced Field_Value_Range_Details
+#	The filter fields should have FilterFieldName, FilterIntValue, 
+#	FilterStringValue (in the same order)
+
+#	The Field Value Range fields should have RangeFieldName, MaxFieldValue,
+#	MinFieldValue (in the same order)
+#	The field delimiter in a line may be space or tab.
+
+#	A sample format is given below
+#	No space or tab is allowed in the same field (eg 21: 30 is invalid)
+
+#  RA_Threshold:
+#  <Threshold Name>  <Obj Type> <Date Range Type> <WeekDay> <Number of Units>  <Start Offset>  <Length of Period > <Secs/Mins/Hrs>
+
+#	RA_Filter:	
+#		<Filter Field Name>	<Filter Int Value>	<Filter String Value>
+#		<Filter Field Name>	<Filter Int Value>	<Filter String Value>
+#		<Filter Field Name>	<Filter Int Value>	<Filter String Value>
+#	RA_Field_Value_Range:
+#		<Field Name>		<Max_Field_Value>	<Min_Field_Value>
+#		<Field Name>		<Max_Field_Value>	<Min_Field_Value>
+#		<Field Name>		<Max_Field_Value>	<Min_Field_Value>
+
+
+#Version 1
+
+#	RA_Threshold:
+#		Rejected_EDRs_Per_Day	/process_audit/batchstat/status	1	1	1	16:00:00	   0   Secs
+
+#		RA_Filter:
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_EDR_STATUS		0	REJECTED
+
+#		RA_Field_Value_Range:
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_EDR_COUNT		100	0
+
+
+#	RA_Threshold:
+#		Rejected_EDRs_Per_WEEK	/process_audit/batchstat/svctype_revstream_status_outputstream	2  2  1  6:00:59  0  Mins
+
+#		RA_Filter:
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_EDR_STATUS	0	REJECTED
+
+#		RA_Field_Value_Range:
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_EDR_COUNT		100	0
+
+
+#	RA_Threshold:
+#		Rejected_SMS_EDRs_Per_DAY	/process_audit/batchstat/svctype_revstream	0  2  0  0:00:00  24  Hrs
+
+#		RA_Filter:
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_EDR_STATUS	0	REJECTED
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_SVC_TYPE		0	SMS
+
+#		RA_Field_Value_Range:
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_EDR_COUNT		50	0
+#			PIN_FLD_GROUP_DETAILS.PIN_FLD_EDR_COUNT		100	0

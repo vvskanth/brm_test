@@ -1,0 +1,211 @@
+##########################################################################
+#
+# Copyright (c) 2007, 2009, Oracle and/or its affiliates. All rights reserved. 
+#     This material is the confidential property of Oracle Corporation 
+#     or its  licensors and may be used, reproduced, stored
+#     or transmitted only in accordance with a valid Oracle license or 
+#     sublicense agreement.
+#
+##########################################################################
+#
+#   File:  license_error.zh_TW
+#
+#   Description:
+#
+#   This file contains localized string object definitions.
+#
+#   Locale:  zh_TW ( Chinese - Taiwan )
+#
+#   Domain:  Feature Control Errors (version = 1)
+#
+#   Rules:
+#
+#   [1] Uniqueness:
+#
+#       The combination of locale, domain, string ID, and string
+#       version must uniquely define a string object within the
+#       universe of all string objects.
+#       
+#       NOTE:
+#       =====
+#       This uniqueness must be ensured while creating or updating
+#       this License Errors file. If there are duplicate entries,
+#       the programs behaviour depends on the option used. If the
+#       -f option is used then the last duplicate string definition
+#       will overwrite any previous ones. If the -f option is not
+#       used then, duplicate string definitions will be rejected.
+#
+#   [2] Locale
+#
+#       Only one locale may be specified in this file.  The locale
+#       definition must be the first non-comment statement.
+#
+#   [3] Domain
+#
+#       There may be multiple domains specified in this file.  The
+#       domain will apply to all string definitions that follow
+#       until the next domain definition statement appears.
+#
+#   [4] String Format:
+#
+#       Within this file all strings must be delimited by an opening
+#       and closing double-quote character.  The quotes will not be
+#       part of the string stored in the database.  A double-quote
+#       character can be an element of the string if it is escaped
+#       with a backslash, for example "Delete \"unneeded\" files."
+#       will be stored as "Delete "unneeded" files.".
+#
+#       Substitution parameters can be specified with %i, where i is
+#       an integer from 0 to 99.  The percent character can be an
+#       element of the string if it is escaped with a backslash, for
+#       example "It is 100\% good.".  Here is an example of an error
+#       string that specifies one substitution parameter:
+#
+#               File %0 not found.
+#
+#       If the substitution string is "pin.conf" the formatted
+#       string will be "File pin.conf not found.".
+#
+#       The STRING and optional HELPSTR are localizable.  This file must
+#       be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#       to be ASCII (no extended-ASCII characters nor multiple byte
+#       characters are allowed).
+#
+#   [5] String ID:
+#
+#       A string ID must be unique within a domain.
+#       
+#       NOTES:
+#       =====
+#       This uniqueness must be ensured while creating or updating
+#       this License Errors file. Please see the note about 
+#       uniqueness above.
+#
+#       The id's chosen in this file SHOULD be kept in sync with
+#       the file pin_license_map.c(feature_name-msg_id mapping file).
+#
+#   [6] String Version:
+#
+#       Each string has an individual version, typically starting
+#       from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "zh_TW" ;
+
+DOMAIN = "功能控制錯誤" ;
+STR
+    ID = 1 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「多張帳單」這個功能，需要個別的「授權」。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 2 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「多個付款」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 3 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「多個餘額」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 4 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「訂購群組」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 5 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「訂閱者群組」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 6 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「追加費用」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 7 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「贊助的追加費用」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 8 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「即時折扣」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 9 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「批次折扣」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 10 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「帳單時間折扣」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 11 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「帳戶階層」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 12 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「贊助」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 13 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「產品相依性」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 14 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「餘額監看」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 15 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「自動監看設定」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 17 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「Telco 架構」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 18 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「A/R 交易」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 19 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「總帳報告」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 20 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「變更集管理員」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 21 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「HA Manager」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 22 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「Payment Suspense Manager」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 23 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「數量型折扣」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END
+STR
+    ID = 24 ;
+    VERSION = 1 ;
+    STRING = "錯誤！ 目前已停用「最佳定價」這個功能，需要個別的授權。 如需詳細資訊，請參閱說明文件或連絡當地的「業務代表」。" ;
+END

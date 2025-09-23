@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_calendar.xsd"
+  configName="/config/calendar/silent_days">
+
+  <ConfigObject>
+    <DESCR>Default Notification Silent Days</DESCR>
+    <NAME>NotificationSilentDays</NAME>
+    <CALENDAR_DATE elem="1">
+      <!-- Thanksgiving -->
+      <CALENDAR_DOM>24</CALENDAR_DOM>
+      <CALENDAR_MOY>11</CALENDAR_MOY>
+      <CALENDAR_YEAR>2022</CALENDAR_YEAR>
+    </CALENDAR_DATE>
+    <CALENDAR_DATE elem="2">
+      <!-- Christmas -->
+      <CALENDAR_DOM>25</CALENDAR_DOM>
+      <CALENDAR_MOY>12</CALENDAR_MOY>
+      <CALENDAR_YEAR>2022</CALENDAR_YEAR>
+    </CALENDAR_DATE>
+  </ConfigObject>
+</ObjectList>

@@ -1,0 +1,955 @@
+##########################################################################
+#
+# Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored
+# or transmitted only in accordance with a valid Oracle license or
+# sublicense agreement.
+#
+##########################################################################
+#
+#   File:  errors.ja
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  ja ( Japanese )
+#
+#	Domain:  Errors
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#	    The STRING and optional HELPSTR are localizable.  This file must be 
+#	    in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#	    to be ASCII (no extended-ASCII characters nor multiple byte 
+#	    characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "ja" ;
+
+DOMAIN = "Errors" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "エラーなし" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "メモリ不足" ;
+	HELPSTR = "操作を完了するのに必要なメモリが足りません。システムのメモリとメモリリークがないかどうかをチェックしてください。" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "一致する値が見つかりません" ;
+	HELPSTR = "検索条件と一致する値を見つけることができませんでした。" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "エントリが見つかりません" ;
+	HELPSTR = "値が見つかりませんでした。" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "引数が不正です" ;
+	HELPSTR = "flist内の必須フィールドが正しくありません。重大なプログラミングエラーです。" ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "不正なXDRデータ" ;
+	HELPSTR = "予期せずにInfranetデータベースとの接続が切断されました。" ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "使用されていません" ;
+	HELPSTR = "使用されていません。" ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "読み込み中にエラーが発生しました" ;
+	HELPSTR = "ネットワークまたはその他のIOデバイスからの読み込みができません。予期せずに接続が切断された可能性があります。" ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "Socket作成エラー" ;
+	HELPSTR = "コンピュータまたはプロセスのオーバーロードが原因でソケット/ファイル記述子が限界に達しました。" ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "無効なフィールドまたはオブジェクトタイプ" ;
+	HELPSTR = "フィールドまたはオブジェクトのタイプに誤りがあります。" ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "重複したストレージオブジェクト" ;
+	HELPSTR = "要求されたIDはすでに使用されているためストーラブルオブジェクトを作成することができません。" ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "非エラーコード" ;
+	HELPSTR = "このエラーコードはエラーではありません。請求FMではこのコードを内部処理に使用しています。" ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "非エラーコード" ;
+	HELPSTR = "このエラーコードはエラーではありません。請求FMではこのコードを内部処理に使用しています。" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "引数がありません" ;
+	HELPSTR = "必要な引数がありません。ログファイルにフィールドが示されていない場合は、OPコードの仕様を参照してください。" ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "不正なPOIDタイプ" ;
+	HELPSTR = "オブジェクトタイプに誤りがあります。" ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "ヘッダを復号/検証できません" ;
+	HELPSTR = "ヘッダを復号/検証できません。" ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "Socketへの書き込みエラー" ;
+	HELPSTR = "Socketへの書き込み中にエラーが発生しました。" ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "重複した構造体" ;
+	HELPSTR = "重複した構造体です。" ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "不正な検索引数" ;
+	HELPSTR = "検索テンプレート/flist内の引数が不明または不正です。" ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "無効なレコードID" ;
+	HELPSTR = "検索内のレコードIDが不正です。" ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "重複した検索引数" ;
+	HELPSTR = "引数リストのエントリが重複しています。" ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "存在しないPOID値" ;
+	HELPSTR = "データベース内にストーラブルオブジェクトが見つかりません。" ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "POID DB番号がゼロです" ;
+	HELPSTR = "設定ファイル内の番号と一致する有効なデータベース番号が渡されているかをチェックしてください。" ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "無効なDB #" ;
+	HELPSTR = "DMへの接続に必要DB番号が有効な番号ではありません。" ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "Socket作成エラー" ;
+	HELPSTR = "コンピュータまたはプロセスのオーバーロードが原因でソケット/ファイル記述子が限界に達しました。" ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "DMに接続できません" ;
+	HELPSTR = "Data Managerが実行されているコンピュータのIPアドレスが見つかりません。データベースのエイリアスをチェックしてください。" ;
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "DMに接続できません" ;
+	HELPSTR = "Data Managerに接続できません。CMの設定ファイルが間違ったDMを指定しているか、DMが実行されていない可能性があります。" ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "DMに接続できません" ;
+	HELPSTR = "アプリケーションの設定ファイルが間違ったCMを指定しているか、CMが実行されていないか、または利用可能な接続が存在しない可能性があります。" ;
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "無効なレコードID" ;
+	HELPSTR = "配列で指定したエレメントのIDが無効です。指定したIDがレコードIDの最大値よりも大きい可能性があります。" ;
+END
+STR
+	ID = 29 ;
+	VERSION = 1 ;
+	STRING = "古いpin.confエントリ" ;
+	HELPSTR = "pin.confエントリが無効です。" ;
+END
+STR
+	ID = 30 ;
+	VERSION = 1 ;
+	STRING = "無効なpin.confエントリ" ;
+	HELPSTR = "pin.confファイルに構文エラーがある可能性があります。" ;
+END
+STR
+	ID = 31 ;
+	VERSION = 1 ;
+	STRING = "誤ったDB" ;
+	HELPSTR = "不正なPOID DB番号です。" ;
+END
+STR
+	ID = 32 ;
+	VERSION = 1 ;
+	STRING = "重複した引数" ;
+	HELPSTR = "flistに重複したフィールドがあります。" ;
+END
+STR
+	ID = 33 ;
+	VERSION = 1 ;
+	STRING = "オブジェクトIDを設定できません" ;
+	HELPSTR = "ストーラブルオブジェクトIDを割り当てることができません。" ;
+END
+STR
+	ID = 34 ;
+	VERSION = 1 ;
+	STRING = "オブジェクトを作成できません" ;
+	HELPSTR = "オブジェクトを作成することができません。" ;
+END
+STR
+	ID = 35 ;
+	VERSION = 1 ;
+	STRING = "不正なフィールド名" ;
+	HELPSTR = "フィールド名を有効なInfranetタイプにマップできません。" ;
+END
+STR
+	ID = 36 ;
+	VERSION = 1 ;
+	STRING = "不正なOPコード" ;
+	HELPSTR = "呼び出したOPコードはInfranetの基本OPコードのセットに含まれていません。" ;
+END
+STR
+	ID = 37 ;
+	VERSION = 1 ;
+	STRING = "トランザクションがすでに開いています" ;
+	HELPSTR = "トランザクションを開こうとしましたが、すでに同じストーラブルオブジェクト上に開かれています。" ;
+END
+STR
+	ID = 38 ;
+	VERSION = 1 ;
+	STRING = "オープントランザクションがありません" ;
+	HELPSTR = "トランザクションの実行または中止を試みましたが、オープントランザクションがありませんでした。" ;
+END
+STR
+	ID = 39 ;
+	VERSION = 1 ;
+	STRING = "Null値" ;
+	HELPSTR = "値が\"null\"に設定されているため取得できませんでした。" ;
+END
+STR
+	ID = 40 ;
+	VERSION = 1 ;
+	STRING = "メモリを解放できません" ;
+	HELPSTR = "不要なメモリの解放を試みましたが失敗しました。" ;
+END
+STR
+	ID = 41 ;
+	VERSION = 1 ;
+	STRING = "ファイルIOエラー" ;
+	HELPSTR = "ファイルの読み込み/書き込みエラーまたは共有ライブラリのロード/オープンエラーです。" ;
+END
+STR
+	ID = 42 ;
+	VERSION = 1 ;
+	STRING = "エレメントがありません" ;
+	HELPSTR = "指定したストーラブルオブジェクト内の配列に指定したエレメントが存在しません。" ;
+END
+STR
+	ID = 43 ;
+	VERSION = 1 ;
+	STRING = "DBへの接続が切断されました" ;
+	HELPSTR = "トランザクションの途中でデータベースへの接続が切断されました。" ;
+END
+STR
+	ID = 44 ;
+	VERSION = 1 ;
+	STRING = "実行しようとしているトランザクションの数が多すぎます" ;
+	HELPSTR = "多くのData Managerに対してトランザクションを実行しようとしました。" ;
+END
+STR
+	ID = 45 ;
+	VERSION = 1 ;
+	STRING = "トランザクションのロスト" ;
+	HELPSTR = "トランザクションが失われました。Data Managerはトランザクションの実行に失敗しました。" ;
+END
+STR
+	ID = 46 ;
+	VERSION = 1 ;
+	STRING = "データを解釈できません" ;
+	HELPSTR = "データベースのデータを解釈することができません。現在のコンテキストで有効なデータではないため、Infranetでは競合を解決できません。" ;
+END
+STR
+	ID = 47 ;
+	VERSION = 1 ;
+	STRING = "クレジットカード処理の一部が行われませんでした" ;
+	HELPSTR = "クレジットカードData Managerにトランザクションのバッチを送信中に一部のクレジットカードが処理されませんでした。" ;
+END
+STR
+	ID = 48 ;
+	VERSION = 1 ;
+	STRING = "操作未完了" ;
+	HELPSTR = "操作(OPコードまたは取引など)を完了できませんでした。" ;
+END
+STR
+	ID = 49 ;
+	VERSION = 1 ;
+	STRING = "データストリームのIOエラー" ;
+	HELPSTR = "Infranetデータベースとのデータの送受信中にエラーが発生しました。通常、このエラーコードはネットワークへの接続が失われたことを意味します。ネットワークが正常に動作している場合は、サーバーに問題がある可能性があります。" ;
+END
+STR
+	ID = 50 ;
+	VERSION = 1 ;
+	STRING = "データストリームのEOF" ;
+	HELPSTR = "予期せずにInfranetデータベースとの接続が切断されました。通常、このエラーコードはネットワークへの接続が失われたことを意味します。ネットワークが正常に動作している場合は、サーバーに問題がある可能性があります。" ;
+END
+STR
+	ID = 51 ;
+	VERSION = 1 ;
+	STRING = "進行中の操作がありません" ;
+	HELPSTR = "進行中の操作がありません。" ;
+END
+STR
+	ID = 52 ;
+	VERSION = 1 ;
+	STRING = "進行中の操作" ;
+	HELPSTR = "操作はすでに進行中です。" ;
+END
+STR
+	ID = 53 ;
+	VERSION = 1 ;
+	STRING = "操作完了" ;
+	HELPSTR = "操作はすでに完了しています。コールバックセットはありません。" ;
+END
+STR
+	ID = 54 ;
+	VERSION = 1 ;
+	STRING = "flist内にデータフィールドがありません" ;
+	HELPSTR = "Data Managerはデータフィールドのないflistを受け取りました。入力flistを確認してください。" ;
+END
+STR
+	ID = 55 ;
+	VERSION = 1 ;
+	STRING = "無効なフィールド" ;
+	HELPSTR = "いくつかの値が無効か、またはフィールドが更新を許可していないため、オブジェクトを作成できません。" ;
+END
+STR
+	ID = 56 ;
+	VERSION = 1 ;
+	STRING = "CMに接続できません" ;
+	HELPSTR = "CMに接続することができません。ログイン名およびパスワードを確認してください。" ;
+END
+STR
+	ID = 57 ;
+	VERSION = 1 ;
+	STRING = "CMアドレスを検索できません" ;
+	HELPSTR = "CMが実行されているコンピュータを見つけることができませんでした。バインド(またはDNS)サービスが間違ったTCP/IPアドレスを指定しているか、ネットワークに問題がある可能性があります。ネットワーク接続を確認するためにCMにpingを実行してみてください。" ;
+END
+STR
+	ID = 58 ;
+	VERSION = 1 ;
+	STRING = "接続をリダイレクトできません" ;
+	HELPSTR = "接続のリダイレクト情報が正しくありません。" ;
+END
+STR
+	ID = 59 ;
+	VERSION = 1 ;
+	STRING = "ログインリダイレクトが多すぎます" ;
+	HELPSTR = "接続のリダイレクトが多すぎます。
+このエラーは設定のループが原因である可能性があります。アプリケーション、CM、およびDMの設定ファイルを確認してください。" ;
+END
+STR
+	ID = 60 ;
+	VERSION = 1 ;
+	STRING = "ステップ検索エラー" ;
+	HELPSTR = "ステップ検索操作は期待通りのSTEP_NEXT/STEP_ENDを見つけることができませんでした。" ;
+END
+STR
+	ID = 61 ;
+	VERSION = 1 ;
+	STRING = "DBへの接続が切断されました" ;
+	HELPSTR = "トランザクションの途中でデータベースとの接続が切断され、接続を再確立することができませんでした。" ;
+END
+STR
+	ID = 62 ;
+	VERSION = 1 ;
+	STRING = "グループのルートではありません" ;
+	HELPSTR = "グループのルートではありません。" ;
+END
+STR
+	ID = 63 ;
+	VERSION = 1 ;
+	STRING = "OSロックエラー" ;
+	HELPSTR = "オペレーティングシステムのロックエラーです。" ;
+END
+STR
+	ID = 64 ;
+	VERSION = 1 ;
+	STRING = "承認に失敗しました" ;
+	HELPSTR = "承認に失敗しました。" ;
+END
+STR
+	ID = 65 ;
+	VERSION = 1 ;
+	STRING = "書き込みできません" ;
+	HELPSTR = "このフィールドは変更できません。" ;
+END
+STR
+	ID = 66 ;
+	VERSION = 1 ;
+	STRING = "不明なC++例外" ;
+	HELPSTR = "不明なC++例外です。" ;
+END
+STR
+	ID = 67 ;
+	VERSION = 1 ;
+	STRING = "サーバーの起動に失敗しました" ;
+	HELPSTR = "Infranetはプロセスを開始できませんでした。" ;
+END
+STR
+	ID = 68 ;
+	VERSION = 1 ;
+	STRING = "サーバーの停止に失敗しました" ;
+	HELPSTR = "Infranetはプロセスを停止できませんでした。" ;
+END
+STR
+	ID = 69 ;
+	VERSION = 1 ;
+	STRING = "無効なキュー" ;
+	HELPSTR = "キューが無効です。" ;
+END
+STR
+	ID = 70 ;
+	VERSION = 1 ;
+	STRING = "大きすぎるデータがあります" ;
+	HELPSTR = "大きすぎるデータがあります。" ;
+END
+STR
+	ID = 71 ;
+	VERSION = 1 ;
+	STRING = "無効なロケール"  ;
+	HELPSTR = "ロケールを認識できません。クライアントアプリケーションが実行されているコンピュータのロケールを確認してください。" ;
+END
+STR
+	ID = 72 ;
+	VERSION = 1 ;
+	STRING = "マルチバイトエンコーディング変換エラー" ;
+	HELPSTR = "Infranetデータベースに含まれているUTF-8フォーマットのデータをクライアントアプリケーションでマルチバイトフォーマットにデータ変換する際に問題が発生しました。クライアントが誤ったロケールを使用しているか、データが破損しています。" ;
+END
+STR
+	ID = 73 ;
+	VERSION = 1 ;
+	STRING = "Unicodeエンコーディング変換エラー" ;
+	HELPSTR = "Infranetデータベースに含まれているUTF-8フォーマットのデータをクライアントアプリケーションでUnicodeフォーマットにデータ変換する際に問題が発生しました。クライアントが誤ったロケールを使用しているか、データが破損しています。" ;
+END
+STR
+	ID = 74 ;
+	VERSION = 1 ;
+	STRING = "無効なMBCSフォーマット" ;
+	HELPSTR = "入力flistには有効なマルチバイトフォーマットではないストリングが含まれています。" ;
+END
+STR
+	ID = 75 ;
+	VERSION = 1 ;
+	STRING = "無効なUnicodeフォーマット" ;
+	HELPSTR = "入力flistには有効なUnicodeフォーマットではないストリングが含まれています。" ;
+END
+STR
+	ID = 76 ;
+	VERSION = 1 ;
+	STRING = "正規化エラー" ;
+	HELPSTR = "正規化の対話エラーです。" ;
+END
+STR
+	ID = 77 ;
+	VERSION = 1 ;
+	STRING = "正規化でサポートされていないロケール" ;
+	HELPSTR = "Infranetではクライアントアプリケーションのロケールの正規化をサポートしていません。" ;
+END
+STR
+	ID = 78 ;
+	VERSION = 1 ;
+	STRING = "親/子の通貨が一致していません" ;
+	HELPSTR = "従属アカウントまたは子アカウントが親アカウントと異なるアカウント通貨を使用しています。" ;
+END
+STR
+	ID = 79 ;
+	VERSION = 1 ;
+	STRING = "リソースの問題によりトランザクションがロールバックされました" ;
+	HELPSTR = "SQLサーバーデータベースに対する2つのスレッドが同じメモリリソースにアクセスしようとしました。一方のスレッドは失敗し、トランザクションはロールバックされました。Data Managerでは自動的にトランザクションを再試行します。このエラーの後にData Managerが操作を再試行するというメッセージが表示されない場合は、Portal Software担当者にお問い合わせください。" ;
+END
+STR
+	ID = 80 ;
+	VERSION = 1 ;
+	STRING = "遡及エラー" ;
+	HELPSTR = "G/Lレポートがすでに計上されているため、調整、帳消し、またはその他の取引を遡及することができません。" ;
+END
+STR
+	ID = 81 ;
+	VERSION = 1 ;
+	STRING = "クレジットの限度額を超えています" ;
+	HELPSTR = "元帳レポートはすでに計上されています。" ;
+END
+STR
+	ID = 82 ;
+	VERSION = 1 ;
+	STRING = "値が\"NULL\"です - 設定できません。" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 83 ;
+	VERSION = 1 ;
+	STRING = "詳細エラー - msg_idは拡張ebufを使用しています。" ;
+	HELPSTR = "" ;
+END
+STR
+	ID = 84 ;
+	VERSION = 1 ;
+	STRING = "残高グループを移動する前に、請求情報のオープンの売掛金勘定アクションを解決してください" ;
+	HELPSTR = "" ;
+END
+STR
+        ID = 85 ;
+        VERSION = 1 ;
+        STRING = "BRMは、アカウント作成日を超えた取引の遡及はできません。";
+        HELPSTR = "BRMは、アカウント作成日を超えた取引の遡及はできません。";
+END
+STR
+        ID = 86 ;
+        VERSION = 1 ;
+        STRING = "G/Lレポートがすでに計上されているため、BRMは取引を遡及できません。";
+        HELPSTR = "G/Lレポートがすでに計上されているため、BRMは取引を遡及できません。";
+END
+STR
+        ID = 87 ;
+        VERSION = 1 ;
+        STRING = "BRMは、サービス作成日を超えた取引の遡及はできません。";
+        HELPSTR = "BRMは、サービス作成日を超えた取引の遡及はできません。";
+END
+STR
+        ID = 88 ;
+        VERSION = 1 ;
+        STRING = "BRMは、プロダクトまたは割引作成日を超えた取引の遡及はできません。";
+        HELPSTR = "BRMは、プロダクトまたは割引作成日を超えた取引の遡及はできません。";
+END
+STR
+        ID = 89 ;
+        VERSION = 1 ;
+        STRING = "購入またはサイクル料金がすでに適用されているため、BRMは開始日を遡及できません。";
+        HELPSTR = "購入またはサイクル料金がすでに適用されているため、BRMは開始日を遡及できません。";
+END
+STR
+        ID = 90 ;
+        VERSION = 1 ;
+        STRING = "ステータスが変更されたため、BRMは取引を遡及できません。";
+        HELPSTR = "ステータスが変更されたため、BRMは取引を遡及できません。";
+END
+STR
+        ID = 91 ;
+        VERSION = 1 ;
+        STRING = "BRMは、購入開始時間前には取引を遡及できません。";
+        HELPSTR = "BRMは、購入開始時間前には取引を遡及できません。";
+END
+STR
+        ID = 92 ;
+        VERSION = 1 ;
+        STRING = "請求時間と現在時間との間の差異がcm pin.confエントリ\valid_forward_interval\または\valid_backward_interval\で指定された値を超えているため、BRMは請求を実行できません。"; 
+        HELPSTR = "請求時間と現在時間との間の差異がcm pin.confエントリ\valid_forward_interval\または\valid_backward_interval\で指定された値を超えているため、BRMは請求を実行できません。"; 
+END
+STR
+        ID = 93 ;
+        VERSION = 1 ;
+        STRING = "請求書オブジェクトがFlist形式ではありません。";
+        HELPSTR = "請求書オブジェクトがFlist形式ではありません。";
+END
+STR
+        ID = 94 ;
+        VERSION = 1 ;
+        STRING = "請求情報のデフォルト残高グループを再指定できません。";
+        HELPSTR = "請求情報のデフォルト残高グループを再指定できません。";
+END
+STR
+        ID = 95 ;
+        VERSION = 1 ;
+        STRING = "アカウント・レベル残高グループを再指定できません。";
+        HELPSTR = "アカウント・レベル残高グループを再指定できません。";
+END
+STR
+        ID = 96 ;
+        VERSION = 1 ;
+        STRING = "プロファイル確認に失敗しました。";
+        HELPSTR = "プロファイル確認に失敗しました。";
+END
+STR
+        ID = 97 ;
+        VERSION = 1 ;
+        STRING = "修正請求機能は無効です。";
+        HELPSTR = "修正請求機能は無効です。";
+END
+STR
+        ID = 98 ;
+        VERSION = 1 ;
+        STRING = "従属請求に対して修正請求を作成できません。";
+        HELPSTR = "従属請求に対して修正請求を作成できません。";
+END
+STR
+        ID = 99 ;
+        VERSION = 1 ;
+        STRING = "修正請求を作成するには、請求を完了する必要があります。";
+        HELPSTR = "修正請求を作成するには、請求を完了する必要があります。";
+END
+STR
+        ID = 100 ;
+        VERSION = 1 ;
+        STRING = "REASON_IDとREASON_DOMAIN_IDの両方のフィールドが入力に存在する必要があります。";
+        HELPSTR = "REASON_IDとREASON_DOMAIN_IDの両方のフィールドが入力に存在する必要があります。";
+END
+STR
+        ID = 101 ;
+        VERSION = 1 ;
+        STRING = "売掛金勘定がない場合、請求書タイプは「置換」である必要があります。";
+        HELPSTR = "売掛金勘定がない場合、請求書タイプは「置換」である必要があります。";
+END
+STR
+        ID = 102 ;
+        VERSION = 1 ;
+        STRING = "売掛金勘定がありません。";
+        HELPSTR = "売掛金勘定がありません。";
+END
+STR
+        ID = 103 ;
+        VERSION = 1 ;
+        STRING = "請求はbalance_forward計算方法の最後の請求ではありません。";
+        HELPSTR = "請求はbalance_forward計算方法の最後の請求ではありません。";
+END
+STR
+        ID = 104 ;
+        VERSION = 1 ;
+        STRING = "請求は全額支払済です。";
+        HELPSTR = "請求は全額支払済です。";
+END
+STR
+        ID = 105 ;
+        VERSION = 1 ;
+        STRING = "請求は支払済です。";
+        HELPSTR = "請求は支払済です。";
+END
+STR
+        ID = 106 ;
+        VERSION = 1 ;
+        STRING = "売掛金勘定が小さすぎます。";
+        HELPSTR = "売掛金勘定が小さすぎます。";
+END
+STR
+        ID = 108 ;
+        VERSION = 1 ;
+        STRING = "REASON_IDまたはREASON_DOMAIN_IDが正しくありません。";
+        HELPSTR = "REASON_IDまたはREASON_DOMAIN_IDが正しくありません。";
+END
+STR
+        ID = 109 ;
+        VERSION = 1 ;
+        STRING = "請求の請求書は、修正請求の生成前に作成する必要があります。";
+        HELPSTR = "請求の請求書は、修正請求の生成前に作成する必要があります。";
+END
+STR
+        ID = 110 ;
+        VERSION = 1 ;
+        STRING = "支払以外の売掛金勘定がありません。";
+        HELPSTR = "支払以外の売掛金勘定がありません。";
+END
+STR
+        ID = 122 ;
+        VERSION = 1 ;
+        STRING = "パスワードが無効です。パスワードが無効な接頭部で始まっています。";
+        HELPSTR = "パスワードが無効です。パスワードが無効な接頭部で始まっています。";
+END
+STR
+        ID = 123 ;
+        VERSION = 1 ;
+        STRING = "値引額と割引率のうち1つのみ使用できます。";
+        HELPSTR = "値引額と割引率のうち1つのみ使用できます。";
+END
+STR
+        ID = 124 ;
+        VERSION = 1 ;
+        STRING = "必須のアクションは取消しできません";
+        HELPSTR = "必須のアクションは取消しできません";
+END
+STR
+        ID = 125 ;
+        VERSION = 1 ;
+        STRING = "取消しアクションの前/間にはアクションを挿入できません。";
+        HELPSTR = "取消しアクションの前/間にはアクションを挿入できません。";
+END
+STR
+	ID = 126 ;
+	VERSION = 1 ;
+	STRING = "この請求情報はすでにコレクション・グループの一部です。";
+	HELPSTR = "この請求情報はすでにコレクション・グループの一部です。";
+END
+STR
+        ID = 127 ;
+	VERSION = 1 ;
+	STRING = "この請求情報はすでに支払約束の義務下にあります。別の約束を呼び出せません。";
+	HELPSTR = "この請求情報はすでに支払約束の義務下にあります。別の約束を呼び出せません。";
+END
+STR
+        ID = 128 ;
+	VERSION = 1 ;
+	STRING = "過去の日付の約束は呼び出せません。";
+	HELPSTR = "過去の日付の約束は呼び出せません。";
+END
+STR        
+	ID = 129 ;
+	VERSION = 1 ;
+	STRING = "このアクションは支払約束期間に追加できません。";
+	HELPSTR = "このアクションは支払約束期間に追加できません。";
+END
+STR
+	ID = 130 ;
+	VERSION = 1 ;
+	STRING = "請求情報が支払約束の義務下にない場合、支払約束アクションは追加できません。";
+	HELPSTR = "請求情報が支払約束の義務下にない場合、支払約束アクションは追加できません。";
+END
+STR
+	ID = 131 ;
+	VERSION = 1 ;
+	STRING = "支払約束アクションは支払約束期間中にのみ追加できます。";
+	HELPSTR = "支払約束アクションは支払約束期間中にのみ追加できます。";
+END
+STR
+	ID = 132 ;
+	VERSION = 1 ;
+	STRING = "アクション・ステータスが保留ではありません。マイルストン金額を更新できません。";
+	HELPSTR = "アクション・ステータスが保留ではありません。マイルストン金額を更新できません。";
+END
+STR
+	ID = 133 ;
+	VERSION = 1 ;
+	STRING = "マイルストン金額およびマイルストン数の両方が見つかりません。いずれかを指定する必要があります。";
+	HELPSTR = "マイルストン金額およびマイルストン数の両方が見つかりません。いずれかを指定する必要があります。";
+END
+STR
+	ID = 134 ;
+	VERSION = 1 ;
+	STRING = "マイルストン金額を延滞金額以下にするか、終了額の最小値にする必要があります。";
+	HELPSTR = "マイルストン金額を延滞金額以下にするか、終了額の最小値にする必要があります。";
+END
+STR
+	ID = 135 ;
+	VERSION = 1 ;
+	STRING = "マイルストン間隔および合計日数の両方が見つかりません。いずれかを指定する必要があります。";
+	HELPSTR = "マイルストン間隔および合計日数の両方が見つかりません。いずれかを指定する必要があります。";
+END
+STR
+	ID = 136 ;
+	VERSION = 1 ;
+	STRING = "入力パラメータの1つがゼロです。";
+	HELPSTR = "入力パラメータの1つがゼロです。";
+END
+STR
+	ID = 137 ;
+	VERSION = 1 ;
+	STRING = "約束金額は終了額より大きくする必要があります。";
+	HELPSTR = "約束金額は終了額より大きくする必要があります。";
+END
+STR
+        ID = 138 ;
+        VERSION = 1 ;
+        STRING = "グループcollections_targetsのメンバーであるため、請求情報を免除できません。";
+        HELPSTR = "グループcollections_targetsのメンバーであるため、請求情報を免除できません。";
+END
+STR
+        ID = 139 ;
+        VERSION = 1 ;
+        STRING = "親とメンバーの間に循環関係が存在します。";
+        HELPSTR = "親とメンバーの間に循環関係が存在します。";
+END
+STR
+        ID = 140 ;
+        VERSION = 1 ;
+        STRING = "グループ名が重複しています。グループを変更できません。";
+        HELPSTR = "グループ名が重複しています。グループを変更できません。";
+END
+STR
+        ID = 141 ;
+        VERSION = 1 ;
+        STRING = "請求情報は従属です。グループに追加できません。";
+        HELPSTR = "請求情報は従属です。グループに追加できません。";
+END
+STR
+        ID = 142 ;
+        VERSION = 1 ;
+        STRING = "Billinfoはすでに免除されています。再び免除することはできません。";
+        HELPSTR = "Billinfoはすでに免除されています。再び免除することはできません。";
+END
+STR
+        ID = 143 ;
+        VERSION = 1 ;
+        STRING = "Billinfoはすでにコレクション・グループ・メンバーです。グループに追加できません。";
+        HELPSTR = "Billinfoはすでにコレクション・グループ・メンバーです。グループに追加できません。";
+END
+STR
+        ID = 144 ;
+        VERSION = 1 ;
+        STRING = "Billinfoはすでにコレクション・グループの親です。グループに追加できません。";
+        HELPSTR = "Billinfoはすでにコレクション・グループの親です。グループに追加できません。";
+END
+STR
+        ID = 145 ;
+        VERSION = 1 ;
+        STRING = "Billinfoはすでにコレクションに含まれています。グループを修正できません。";
+        HELPSTR = "Billinfoはすでにコレクションに含まれています。グループを修正できません。";
+END
+STR
+        ID = 146 ;
+        VERSION = 1 ;
+        STRING = "SEPA支払方法の場合、アカウントの通貨はEUROである必要があります。";
+        HELPSTR = "SEPA支払方法の場合、アカウントの通貨はEUROである必要があります。"; 
+END
+STR
+        ID = 147 ;
+        VERSION = 1 ;
+        STRING = "IBANの長さが、ISO 13616:2007標準に従っていません。";
+        HELPSTR = "IBANの長さが、ISO 13616:2007標準に従っていません。";
+END
+STR
+        ID = 148 ;
+        VERSION = 1 ;
+        STRING = "IBANがISO 13616:2007標準に従っていません。";
+        HELPSTR = "IBANがISO 13616:2007標準に従っていません。";
+END
+STR
+        ID = 149 ;
+        VERSION = 1 ;
+        STRING = "IBANがmod97準拠ではありません。";
+        HELPSTR = "IBANがmod97準拠ではありません。";
+END
+STR
+        ID = 150 ;
+        VERSION = 1 ;
+        STRING = "BICの長さが標準に従っていません。8文字から11文字にする必要があります。";
+        HELPSTR = "BICの長さが標準に従っていません。8文字から11文字にする必要があります。";
+END
+STR
+        ID = 151 ;
+        VERSION = 1 ;
+        STRING = "BICがISO 9362:2009標準に従っていません。";
+        HELPSTR = "BICがISO 9362:2009標準に従っていません。";
+END
+STR
+        ID = 152 ;
+        VERSION = 1 ;
+        STRING = "このUMRはシステムにすでにあります。この値を修正するか、空のままにして生成できるようにします。";
+        HELPSTR = "このUMRはシステムにすでにあります。この値を修正するか、空のままにして生成できるようにします。";
+END
+STR
+        ID = 153 ;
+        VERSION = 1 ;
+        STRING = "MANDATE_SIGNED_Tは将来の日付にできず、アカウント作成日より前にもできません。";
+        HELPSTR = "MANDATE_SIGNED_Tは将来の日付にできず、アカウント作成日より前にもできません。";
+END
+STR
+        ID = 154 ;
+        VERSION = 1 ;
+        STRING = "債権者IDが見つかりません/債権者名が同じです。";
+        HELPSTR = "債権者IDが見つかりません/債権者名が同じです。";
+END
+STR
+        ID = 155 ;
+        VERSION = 1 ;
+        STRING = "存在しない債権者IDです。";
+        HELPSTR = "存在しない債権者IDです。";
+END
+STR
+        ID = 156 ;
+        VERSION = 1 ;
+        STRING = "債権者ID/債権者名の組合せが存在しません。";
+        HELPSTR = "債権者ID/債権者名の組合せが存在しません。";
+END
+STR
+        ID = 157 ;
+        VERSION = 1 ;
+        STRING = "このpayinfoには保留中のSEPA要求があるため削除できません。";
+        HELPSTR = "このpayinfoには保留中のSEPA要求があるため削除できません。";
+END

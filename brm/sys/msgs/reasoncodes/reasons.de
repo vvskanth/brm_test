@@ -1,0 +1,842 @@
+##########################################################################
+#
+# Copyright (c) 1999, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+#      This material is the confidential property of Oracle Corporation
+#      or its  licensors and may be used, reproduced, stored
+#      or transmitted  only in accordance with a valid Oracle license or
+#      sublicense agreement.
+# 
+#
+##########################################################################
+#
+#   File:  reasons.de
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  de ( German )
+#
+#	Domain:  Reason Codes-Active Status Reasons (version = 2)
+#		 Reason Codes-Charge Reasons  (version = 5)
+#		 Reason Codes-Closed Status Reasons (version = 4)
+#		 Reason Codes-Credit Reasons (version = 8)
+#		 Reason Codes-Credit Limit Reasons (version = 7)
+#		 Reason Codes-Debit Reasons (version = 1)
+#		 Reason Codes-Inactive Status Reasons (version = 3)
+#		 Reason Codes-Refund Reasons (version = 6)
+#		 
+#		 Reason Domains for Payment Processing
+#		 reserved from 13 - 20
+#
+#		 Reason Codes-Failed Payment Reasons (version = 13)
+#		 Reason Codes-Suspense Payment Reasons (version = 14)
+#		 Reason Codes-Payment Suspense Management Action Owner (version = 15)
+#		 Reason Codes-Payment Suspense Management, Removal Reason (version = 16)
+#
+#		 Reason Domains for Adjustments, Disputes and settlements
+#		 reserved from 21 - 50
+#
+#		 Reason Codes-Credit Reasons Non-Currency Account
+#			      Adjustments(version = 21)
+#		 Reason Codes-Debit Reasons Non-Currency Account
+#			      Adjustments(version = 22)
+#
+#		 Reason Codes-Credit Reasons Bill Adjustments (version = 23)
+#		 Reason Codes-Debit Reasons Bill Adjustments (version = 24)
+#		 Reason Codes-Credit Reasons Bill Disputes (version = 25)
+#		 Reason Codes-Debit Reasons Bill Disputes (version = 26)
+#		 Reason Codes-Reasons Bill Settlements (version = 27)
+#
+#		 Reason Codes-Credit Reasons Currency Connection
+#			      Adjustments (version = 28)
+#		 Reason Codes-Debit Reasons Currency Connection
+#			      Adjustments (version = 29)
+#		 Reason Codes-Credit Reasons Non-Currency Connection
+#			      Disputes (version = 30)
+#		 Reason Codes-Debit Reasons Non-Currency Connection
+#			      Disputes (version = 31)
+#
+#		 Reason Codes-Credit Reasons Item Adjustments (version = 32)
+#		 Reason Codes-Debit Reasons Item Adjustments (version = 33)
+#		 Reason Codes-Credit Reasons Item Disputes (version = 34)
+#		 Reason Codes-Debit Reasons Item Disputes (version = 35)
+#		 Reason Codes-Reasons Item Settlements (version = 36)
+#		 
+#		 Reason Codes-Credit Reasons Event Adjustments (version = 37)
+#		 Reason Codes-Debit Reasons Event Adjustments (version = 38)
+#		 Reason Codes-Credit Reasons Event Disputes (version = 39)
+#		 Reason Codes-Debit Reasons Event Disputes (version = 40)
+#		 Reason Codes-Reasons Event Settlements (version = 41)
+#
+#		 Reason Codes-Others (version = 100)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this Reason Codes file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected,
+#	    except for the Event-GLID mappings which are always 
+#	    overwritten.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#           The STRING and optional HELPSTR are localizable.  This file must be
+#           in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#           to be ASCII (no extended-ASCII characters nor multiple byte
+#           characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this Reason Codes file. Please see the note about 
+#	    uniqueness above.
+#
+#	[6] String Version:
+#
+#	    For reason codes, this field will be used to specify the
+#	    domain that the reason belongs to, for example, Credit or 
+#           Debit. The values have been predefined; they must not be 
+#	    changed.
+#
+#	[7] Event to G/L ID mapping:
+#
+#	    These mappings are specified in this file. 
+#
+#	    G/L IDs can now be assigned based on Reason Codes. This is
+#	    currently applicable for Account level adjustments only.
+#
+#	    Events associated with specific Debit or Credit reasons are 
+#	    listed under the corresponding reason code and they start
+#	    with the header "EVENT-GLID" and end with "EVENT-GLID-END".
+#
+#	    In the earlier releases of Infranet, G/L ID mappings
+#	    for pre-rated events could be specified using the 
+#	    Policy Configuration tool. Now these mappings must
+#	    be specified in this file. A new domain named "Others"
+#	    has been created for providing the G/L ID mappings
+#	    for these events. 
+#   
+#	    All the mappings shown are examples and need to be
+#	    changed appropriately during setup.
+#
+##########################################################################
+
+LOCALE = "de" ;
+
+DOMAIN = "Reason Codes-Active Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 2 ;
+	STRING = "Vom Kunden angeforderte Reaktivierung" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 2 ;
+	STRING = "Kunde hat Überziehungsgebühren bezahlt" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 2 ;
+	STRING = "Kreditkarte funktioniert nun" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 2 ;
+	STRING = "Anderes Problem gelöst" ;
+END
+
+DOMAIN = "Reason Codes-Charge Reasons" ;
+STR
+	ID = 11 ;
+	VERSION = 5 ;
+	STRING = "Reaktiviertes Konto" ;
+END
+STR
+	ID = 12 ;
+	VERSION = 5 ;
+	STRING = "Validierte Kreditkarte" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 5 ;
+	STRING = "Vorauszahlung vom Kunden gewünscht" ;
+END
+STR
+	ID = 14 ;
+	VERSION = 5 ;
+	STRING = "Neue Kreditkarte" ;
+END
+
+DOMAIN = "Reason Codes-Closed Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 4 ;
+	STRING = "Doppeltes Konto" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 4 ;
+	STRING = "Umzug in neues Gebiet" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 4 ;
+	STRING = "Mit Service unzufrieden" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 4 ;
+	STRING = "Verstoß gegen Unternehmensrichtlinien" ;
+END
+
+DOMAIN = "Reason Codes-Credit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 8 ;
+	STRING = "Kunde mit Dienst unzufrieden" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2 ;
+	VERSION = 8 ;
+	STRING = "Kunde sind Gebühren nicht bekannt" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 3 ;
+	VERSION = 8 ;
+	STRING = "Konto fälschlicherweise belastet" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4 ;
+	VERSION = 8 ;
+	STRING = "Abschreibung für Rückbuchungsfunktion der automatischen Abschreibung" ;
+	EVENT-GLID
+		"/event/billing/writeoff"			110 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 5 ;
+	VERSION = 8 ;
+	STRING = "Gesponserter Bonus. Gutschrift gesponserte Partei" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+
+
+DOMAIN = "Reason Codes-Debit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "Gebühren für technische Unterstützung und Support" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "Dienstegebühren" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "Konto fälschlicherweise entlastet" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "Gesponserter Bonus. Lastschrift gesponserte Partei" ;
+	EVENT-GLID
+		"/event/billing/adjustment/account"		105 ;
+	EVENT-GLID-END
+END
+
+
+DOMAIN = "Reason Codes-Credit Limit Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 7 ;
+	STRING = "Vom Kunden angefordert" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 7 ;
+	STRING = "Positiver Habensaldo, Limit oft überschritten" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 7 ;
+	STRING = "Erforderlich wegen erhöhter Dienstegebühren" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 7 ;
+	STRING = "Besondere Umstände" ;
+END
+
+DOMAIN = "Reason Codes-Inactive Status Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 3 ;
+	STRING = "Vom Kunden angeforderte Deaktivierung" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 3 ;
+	STRING = "Kreditlimit-/Kreditkartenprobleme" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 3 ;
+	STRING = "Rechnung nicht bezahlt" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 3 ;
+	STRING = "Kundenfehlverhalten vermutet" ;
+END
+
+DOMAIN = "Reason Codes-Refund Reasons" ;
+STR
+	ID = 1 ;
+	VERSION = 6 ;
+	STRING = "Kunde mit Dienst unzufrieden" ;
+END
+STR
+	ID = 2 ;
+	VERSION = 6 ;
+	STRING = "Kunde sind Gebühren nicht bekannt" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 6 ;
+	STRING = "Kunde bestreitet, Konto eröffnet zu haben" ;
+END
+STR
+	ID = 4 ;
+	VERSION = 6 ;
+	STRING = "Konto fälschlicherweise belastet" ;
+END
+
+DOMAIN = "Reason Codes-Insert Action" ;
+STR
+        ID = 1 ;
+        VERSION = 10 ;
+        STRING = "Kunde hat Zahlung zum angegebenen Termin zugesichert";
+END
+STR
+        ID = 2 ;
+        VERSION = 10 ;
+        STRING = "Kunde nicht erreichbar";
+END
+STR
+        ID = 3 ;
+        VERSION = 10 ;
+        STRING = "Kunde hat ursprüngliche Mahnung nicht erhalten";
+END
+STR
+        ID = 4 ;
+        VERSION = 10 ;
+        STRING = "Kunde hat nicht wie gewünscht zurückgerufen";
+END
+
+DOMAIN = "Reason Codes-Reschedule Action" ;
+STR
+        ID = 1 ;
+        VERSION = 9 ;
+        STRING = "Kunde nicht erreichbar";
+END
+STR
+        ID = 2 ;
+        VERSION = 9 ;
+        STRING = "Kunde hat Zahlung zum angegebenen Termin zugesichert";
+END
+STR
+        ID = 3 ;
+        VERSION = 9 ;
+        STRING = "Kunde hat ursprüngliche Mahnung nicht erhalten";
+END
+STR
+        ID = 4 ;
+        VERSION = 9 ;
+        STRING = "Kunde hat nicht wie gewünscht zurückgerufen";
+END
+
+DOMAIN = "Reason Codes-Exempt Account" ;
+STR
+        ID = 1 ;
+        VERSION = 11 ;
+        STRING = "Insolvenzantrag gestellt";
+END
+STR
+        ID = 2 ;
+        VERSION = 11 ;
+        STRING = "Gerichtliche Prüfung anhängig";
+END
+STR
+        ID = 3 ;
+        VERSION = 11 ;
+        STRING = "Gerichtsverfahren anhängig" ;
+END
+STR
+        ID = 4 ;
+        VERSION = 11 ;
+        STRING = "Strategisches Konto mit besonderen Vertrags-/Zahlungsbedingungen";
+END
+
+DOMAIN = "Reason codes-Payment Failure Reasons" ;
+STR
+	ID = 1001 ;
+	VERSION = 13 ;
+	STRING = "Ungültige Karte";
+END
+STR
+	ID = 1002 ;
+	VERSION = 13 ;
+	STRING = "Ungültiger Betrag";
+END
+STR
+	ID = 1003 ;
+	VERSION = 13 ;
+	STRING = "Unbekannter Fehler";
+END
+STR
+	ID = 1004 ;
+	VERSION = 13 ;
+	STRING = "Netzwerkfehler";
+END
+STR
+	ID = 1005 ;
+	VERSION = 13 ;
+	STRING = "Nicht ausreichender Kontostand/über Kreditlimit";
+END
+STR
+	ID = 1006 ;
+	VERSION = 13 ;
+	STRING = "Karte abgelehnt";
+END
+STR
+	ID = 1007 ;
+	VERSION = 13 ;
+	STRING = "Aussteller wünscht mündlichen Kontakt mit Karteninhaber";
+END
+STR
+	ID = 1008 ;
+	VERSION = 13 ;
+	STRING = "Genehmigen/ablehnen";
+END
+STR
+	ID = 1009 ;
+	VERSION = 13 ;
+	STRING = "Kartenaussteller wünscht Rückgabe der Karte";
+END
+STR
+	ID = 1010 ;
+	VERSION = 13 ;
+	STRING = "Karte als verloren/gestohlen gemeldet";
+END
+STR
+	ID = 1011 ;
+	VERSION = 13 ;
+	STRING = "Karte abgelaufen";
+END
+STR
+	ID = 1012 ;
+	VERSION = 13 ;
+	STRING = "Allgemeine Ablehnung - Keine weiteren Angaben durch Aussteller";
+END
+STR
+	ID = 1013 ;
+	VERSION = 13 ;
+	STRING = "Karte ungültig, Prüfzifferroutine Mod 10 jedoch OK ";
+END
+STR
+	ID = 1014 ;
+	VERSION = 13 ;
+	STRING = "Karte abgelaufen oder falsches Datum gesendet. Richtiges Datum bestätigen";
+END
+STR
+	ID = 1015 ;
+	VERSION = 13 ;
+	STRING = "Aussteller lässt diese Art der Transaktion nicht zu";
+END
+STR
+	ID = 1016 ;
+	VERSION = 13 ;
+	STRING = "Betrag von Netzwerk nicht akzeptiert";
+END
+STR
+	ID = 1017 ;
+	VERSION = 13 ;
+	STRING = "Karte eingeschränkt";
+END
+STR
+	ID = 1018 ;
+	VERSION = 13 ;
+	STRING = "Paymentech erhielt keine Antwort vom Auth-Netzwerk";
+END
+STR
+	ID = 1019 ;
+	VERSION = 13 ;
+	STRING = "Bearbeitungsfehler - Daten des Adressverifizierungssystems ungültig";
+END
+STR
+	ID = 1020 ;
+	VERSION = 13 ;
+	STRING = "Ungültiger Ort angegeben";
+END
+STR
+	ID = 1021 ;
+	VERSION = 13 ;
+	STRING = "Ungültige Postleitzahl angegeben";
+END
+STR
+	ID = 1022 ;
+	VERSION = 13 ;
+	STRING = "Karte ungültig, Prüfzifferroutine Mod 10 jedoch OK ";
+END
+STR
+	ID = 1023 ;
+	VERSION = 13 ;
+	STRING = "Eingeschränkte Sperre";
+END
+STR
+	ID = 1024 ;
+	VERSION = 13 ;
+	STRING = "System nicht verfügbar oder Zeitüberschreitung";
+END
+STR
+	ID = 1025 ;
+	VERSION = 13 ;
+	STRING = "Nicht eingeschränkte Sperre";
+END
+STR
+	ID = 1026 ;
+	VERSION = 13 ;
+	STRING = "Kein Verrechnungsbetrag";
+END
+STR
+	ID = 1027 ;
+	VERSION = 13 ;
+	STRING = "Ungültiger Befehl";
+END
+STR
+	ID = 1028 ;
+	VERSION = 13 ;
+	STRING = "Auswahl der Elemente fehlgeschlagen";
+END
+STR
+	ID = 1029 ;
+	VERSION = 13 ;
+	STRING = "Ungültiger CVV";
+END
+STR
+	ID = 1030 ;
+	VERSION = 13 ;
+	STRING = "Nicht ausreichender Kontostand/über Kreditlimit";
+END
+STR
+	ID = 1031 ;
+	VERSION = 13 ;
+	STRING = "Logisches Problem";
+END
+STR
+	ID = 1032 ;
+	VERSION = 13 ;
+	STRING = "Formatierung der Kontonummer falsch";
+END
+STR
+	ID = 1033 ;
+	VERSION = 13 ;
+	STRING = "Ungültige Zeichen in Kontonummer";
+END
+STR
+	ID = 1034 ;
+	VERSION = 13 ;
+	STRING = "Systemfehler/-fehlfunktion bei Aussteller";
+END
+
+DOMAIN = "Reason codes-Payment Suspense Management" ;
+STR
+	ID = 2999 ;
+	VERSION = 14 ;
+	STRING = "Standardgrund-ID ";
+	HELPSTR = "Grund-ID nicht angegeben" ;
+END
+STR
+	ID = 2001 ;
+	VERSION = 14 ;
+	STRING = "Kontonr. nicht gefunden";
+	HELPSTR = "Kontonummer nicht in Datenbank gefunden" ;
+END
+STR
+	ID = 2002 ;
+	VERSION = 14 ;
+	STRING = "Kontostatus geschlossen ";
+	HELPSTR = "Kontostatus geschlossen" ;
+END
+STR
+	ID = 2003 ;
+	VERSION = 14 ;
+	STRING = "Rechnung nicht gefunden ";
+	HELPSTR = "Rechnung in der Datenbank nicht gefunden " ;
+END
+STR
+	ID = 2004 ;
+	VERSION = 14 ;
+	STRING = "Ungültige Transaktions-ID ";
+	HELPSTR = "Ungültige Transaktions-ID angegeben " ;
+END
+STR
+	ID = 2005 ;
+	VERSION = 14 ;
+	STRING = "Fehlende Transaktions-ID ";
+	HELPSTR = "Transaktions-ID für fehlgeschlagene Zahlung fehlt" ;
+END
+
+DOMAIN = "Reason Codes-Payment Suspense Management Action Owner" ;
+STR
+	ID = 3999 ;
+	VERSION = 15 ;
+	STRING = "Standardvorgangseigentümer ";
+	HELPSTR = "Standardvorgangseigentümer für Payment Suspense Management " ;
+END
+
+DOMAIN = "Reason Codes-Payment Suspense Management, Removal Reason" ;
+STR
+	ID = 4999 ;
+	VERSION = 16 ;
+	STRING	= "Korrektur der Zahlung nicht möglich" ;
+	HELPSTR = "Korrektur der Zahlung nicht möglich" ; 
+	EVENT-GLID
+		"/event/billing/reversal"		112 ;
+	EVENT-GLID-END
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Non-Currency Account Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 21 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Non-Currency Account Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 22 ;
+        STRING = "Konto fälschlicherweise entlastet";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Bill Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 23 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Bill Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 24 ;
+        STRING = "Dienstegebühren";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Bill Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 25 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Bill Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 26 ;
+        STRING = "Rechnung fälschlicherweise verrechnet";
+END
+
+DOMAIN = "Reason Codes-Reasons Bill Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 27 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Currency Connection Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 28 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Currency Connection Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 29 ;
+        STRING = "Fälschlicherweise verrechnet";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Non-Currency Connection Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 30 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Non-Currency Connection Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 31 ;
+        STRING = "Fälschlicherweise verrechnet";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Item Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 32 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Item Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 33 ;
+        STRING = "Fälschlicherweise verrechnet";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Item Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 34 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Item Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 35 ;
+        STRING = "Fälschlicherweise verrechnet";
+END
+
+DOMAIN = "Reason Codes-Reasons Item Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 36 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Event Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 37 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Event Adjustments" ;
+STR
+        ID = 1 ;
+        VERSION = 38 ;
+        STRING = "Fälschlicherweise verrechnet";
+END
+
+DOMAIN = "Reason Codes-Credit Reasons Event Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 39 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Reason Codes-Debit Reasons Event Disputes" ;
+STR
+        ID = 1 ;
+        VERSION = 40 ;
+        STRING = "Fälschlicherweise verrechnet";
+END
+
+DOMAIN = "Reason Codes-Reasons Event Settlements" ;
+STR
+        ID = 1 ;
+        VERSION = 41 ;
+        STRING = "Kunde mit Dienst unzufrieden";
+END
+
+DOMAIN = "Others" ;
+STR
+	EVENT-GLID
+		"/event/billing/adjustment"		105 ;
+		"/event/billing/adjustment/account"	105 ;
+		"/event/billing/adjustment/item"   	105 ;
+		"/event/billing/payment"		109 ;
+		"/event/billing/reversal"		109 ;
+		"/event/billing/dispute"		107 ;
+		"/event/billing/dispute/item"		107 ;
+		"/event/billing/settlement"		108 ;
+		"/event/billing/settlement/item"	108 ;
+ 		"/event/billing/writeoff"		106 ;
+		"/event/billing/writeoff/item"		106 ;
+		"/event/billing/refund"			109 ;
+		"/event/billing/writeoff_reversal"	111 ;
+		"/event/journal/epsilon"		1512 ;
+	EVENT-GLID-END
+END

@@ -1,0 +1,55 @@
+#############################################################################
+# @(#)% %
+#
+# Copyright (c) 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#############################################################################
+
+###############################################
+# Service provisioning info:
+# GPRS Service provisioning. Current service impacted by the provisioning and
+# information to associate during provisioning. 
+# Syntax: service type, provisioning action, (services fields to be included in the
+# service order)+
+##############################################
+Service provisioning info:
+/service/telco/gprs, A,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_APN,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_QOS_PROFILE_NAME
+PIN_FLD_GPRS_INFO.PIN_FLD_BEARER_SERVICE
+
+Service provisioning info:
+/service/telco/gprs, C,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_APN,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_QOS_PROFILE_NAME
+PIN_FLD_GPRS_INFO.PIN_FLD_BEARER_SERVICE
+
+Service provisioning info:
+/service/telco/gprs, D,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_APN,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_QOS_PROFILE_NAME
+PIN_FLD_GPRS_INFO.PIN_FLD_BEARER_SERVICE
+
+Service provisioning info:
+/service/telco/gprs, R,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_APN,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_QOS_PROFILE_NAME
+PIN_FLD_GPRS_INFO.PIN_FLD_BEARER_SERVICE
+
+Service provisioning info:
+/service/telco/gprs, S,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_APN,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_QOS_PROFILE_NAME
+PIN_FLD_GPRS_INFO.PIN_FLD_BEARER_SERVICE
+
+Service provisioning info:
+/service/telco/gprs, I,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_APN,
+PIN_FLD_APN_ARRAY[*].PIN_FLD_QOS_PROFILE_NAME
+PIN_FLD_GPRS_INFO.PIN_FLD_BEARER_SERVICE
+

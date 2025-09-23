@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BusinessConfiguration 
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+	<!-- Sample file. Modify according to guidelines -->
+	<CalendarConfiguration>
+	<CalendarList>
+	
+		<Calendar name="default">
+			<!-- holiday specific to indicated year -->
+			<Date>
+				<!-- Thanksgiving -->
+				<Day>---25</Day>
+				<Month>--11--</Month>
+				<Year>2004</Year>
+			</Date>
+		</Calendar>
+		
+		<Calendar name="Western Australia">
+			<!-- recurring holiday on same date. use 0 for year value -->
+			<Date>
+				<!-- Christmas -->
+				<Day>---25</Day>
+				<Month>--12--</Month>
+				<Year>0</Year>
+			</Date>
+			<!-- holiday date specific to indicated year -->
+			<Date>
+				<!-- Australia Day -->
+				<Day>---26</Day>
+				<Month>--01--</Month>
+				<Year>2004</Year>
+			</Date>
+			<Date>
+				<!-- Anzac Day -->
+				<Day>---25</Day>
+				<Month>--04--</Month>
+				<Year>2005</Year>
+			</Date>
+		</Calendar>
+
+	</CalendarList>
+	</CalendarConfiguration>
+
+</BusinessConfiguration>

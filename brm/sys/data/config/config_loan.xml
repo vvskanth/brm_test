@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+================================================================================
+ Copyright (c) 2021, Oracle and/or its affiliates. All rights reserved. 
+This material is the confidential property of Oracle Corporation or its
+licensors and may be used, reproduced, stored or transmitted only in
+accordance with a valid Oracle license or sublicense agreement.
+================================================================================
+-->
+<!--
+================================================================================
+ Note: LOAN_FIXED_FEE and LOAN_PERCENTAGE_FEE are mutually exclusive.
+       FIXED_MAXIMUM and SCALED_MAXIMUM are mutually exclusive. 
+================================================================================
+-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_loan.xsd">
+
+  <ConfigObject>
+    <DESCR>Loan configuration</DESCR>
+    <NAME>Loan Resource</NAME>
+    <LOAN_INFO elem="0">
+      <CREDIT_AMOUNT>800</CREDIT_AMOUNT>
+      <LOAN_FIXED_FEE>10</LOAN_FIXED_FEE>
+      <LOAN_PERCENTAGE_FEE>0</LOAN_PERCENTAGE_FEE>
+      <FIXED_MAXIMUM>10000</FIXED_MAXIMUM>
+      <SCALED_MAXIMUM>0</SCALED_MAXIMUM>
+      <RESOURCE_ID>1000095</RESOURCE_ID>
+      <MAX_QUANTITY>10</MAX_QUANTITY>
+      <TAX_CODE></TAX_CODE>
+      <LOAN_TAX_CODE></LOAN_TAX_CODE>
+      <AGE>5</AGE>
+      <LOAN_MINIMUM>1</LOAN_MINIMUM>
+      <UNIT>4</UNIT>
+      <REASON_ID>0</REASON_ID>
+      <REASON_DOMAIN_ID>100</REASON_DOMAIN_ID>
+      <LOCATION_MODE>0</LOCATION_MODE>
+    </LOAN_INFO>
+    <LOCATIONS elem="0">
+        <LOCATION>US</LOCATION>
+    </LOCATIONS>
+  </ConfigObject>
+
+</ObjectList>

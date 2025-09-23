@@ -1,0 +1,556 @@
+#
+# @(#)$Id: pin_telco_provisioning_gsm /cgbubrm_7.5.0.portalbase/1 2012/05/28 22:43:57 ssajjans Exp $
+#
+# Copyright (c) 2006, 2012, Oracle and/or its affiliates. All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration
+
+Device provisioning info:
+
+# SIM Pre provisioning. Syntax: device type, device status that trigger 
+# provisioning, provisioning action, (device fields)+
+
+# Other information required from other device. Syntax: device-type, 
+# provisioning action, fields+
+
+/device/num, I, "MSISDN" "0014085551212"
+
+############################################################################
+
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration
+
+Device provisioning info:
+
+# SIM Pre provisioning. Syntax: device type, device status that trigger 
+# provisioning, provisioning action, (device fields)+
+
+# Other information required from other device. Syntax: device-type, 
+# provisioning action, fields+
+
+/device/sim, I, "SIM" "009100000000001271"
+
+#############################################################################
+
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration 
+
+Service provisioning info:
+
+# GSM Service provisioning. Current service impacted by the provisioning and 
+# information to associate during provisioning. Syntax: service type,
+# provisioning action, (services fields to be included in the
+# service order)+
+
+/service/telco, A,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, A, PIN_FLD_DEVICE_ID "MSISDN" 
+
+Service provisioning info:
+
+/service/telco, C,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, C, PIN_FLD_DEVICE_ID "MSISDN" 
+
+Service provisioning info:
+
+/service/telco, D,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, D, PIN_FLD_DEVICE_ID "MSISDN" 
+
+Service provisioning info:
+
+/service/telco, R,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, R, PIN_FLD_DEVICE_ID "MSISDN" 
+
+Service provisioning info:
+
+/service/telco, S,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, S, PIN_FLD_DEVICE_ID "MSISDN" 
+
+Service provisioning info:
+
+/service/telco, I,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, I, PIN_FLD_DEVICE_ID "MSISDN" 
+
+#############################################################################
+
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration 
+
+Service provisioning info:
+
+# GSM Service provisioning. Current service impacted by the provisioning and 
+# information to associate during provisioning. Syntax: service type,
+# provisioning action, (services fields to be included in the
+# service order)+
+
+/service/telco/gsm, A,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, A, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, A, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm, C,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, C, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, C, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm, D,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, D, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, D, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm, R,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, R, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, R, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm, S,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, S, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, S, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm, I,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# To generate the service order incase
+# only the service login changes
+# Change the above configuration to add the
+# IMEI field as below
+#/service/telco/gsm, I,
+#"NAME" "MOBTEL",
+#PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+#PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE,
+#PIN_FLD_GSM_INFO.PIN_FLD_IMEI
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, I, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, I, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+#############################################################################
+
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration 
+
+Service provisioning info:
+
+# GSM Service provisioning. Current service impacted by the provisioning and 
+# information to associate during provisioning. Syntax: service type,
+# provisioning action, (services fields to be included in the
+# service order)+
+
+/service/telco/gsm/data, A,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, A, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, A, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/data, C,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, C, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, C, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/data, D,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, D, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, D, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/data, R,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, R, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, R, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/data, S,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, S, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, S, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/data, I,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, I, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, I, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+#############################################################################
+
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration 
+
+Service provisioning info:
+
+# GSM Service provisioning. Current service impacted by the provisioning and 
+# information to associate during provisioning. Syntax: service type,
+# provisioning action, (services fields to be included in the
+# service order)+
+
+/service/telco/gsm/fax, A,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, A, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, A, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/fax, C,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, C, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, C, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/fax, D,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, D, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, D, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/fax, R,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, R, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, R, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/fax, S,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, S, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, S, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/fax, I,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, I, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, I, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+#############################################################################
+
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration 
+
+Service provisioning info:
+
+# GSM Service provisioning. Current service impacted by the provisioning and 
+# information to associate during provisioning. Syntax: service type,
+# provisioning action, (services fields to be included in the
+# service order)+
+
+/service/telco/gsm/sms, A,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, A, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, A, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/sms, C,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, C, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, C, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/sms, D,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, D, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, D, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/sms, R,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, R, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, R, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/sms, S,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, S, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, S, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/sms, I,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, I, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, I, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+#############################################################################
+
+# Device mark or service mark, indicating if it's a device configuration or 
+# a service configuration 
+
+Service provisioning info:
+
+# GSM Service provisioning. Current service impacted by the provisioning and 
+# information to associate during provisioning. Syntax: service type,
+# provisioning action, (services fields to be included in the
+# service order)+
+
+/service/telco/gsm/telephony, A,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, A, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, A, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/telephony, C,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, C, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, C, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/telephony, D,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, D, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, D, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/telephony, R,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, R, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, R, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/telephony, S,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, S, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, S, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"
+
+Service provisioning info:
+
+/service/telco/gsm/telephony, I,
+"NAME" "MOBTEL",
+PIN_FLD_TELCO_FEATURES[*].PIN_FLD_NAME,
+PIN_FLD_GSM_INFO.PIN_FLD_BEARER_SERVICE
+
+# Information to get from the device associated with the service. 
+# Syntax: device type, provisioning action, device fields
+/device/num, I, PIN_FLD_DEVICE_ID "MSISDN" 
+/device/sim, I, PIN_FLD_DEVICE_ID "SIM",
+PIN_FLD_DEVICE_SIM.PIN_FLD_IMSI "IMSI"

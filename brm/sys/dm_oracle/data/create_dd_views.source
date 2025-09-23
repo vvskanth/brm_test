@@ -1,0 +1,49 @@
+-- @(#)$Id: create_dd_views.source /portalbase/1 2023/12/11 02:19:20 njuturu Exp $
+-- Copyright (c) 2023 Oracle and/or its affiliates. 
+-- Stored Procedure to convert the DD tables into views in the secondary schemas
+
+
+create or replace PROCEDURE create_dd_views ( i_prim_username IN VARCHAR ) AS
+        v_sqlstmt             VARCHAR(1024);
+        v_errmsg              VARCHAR(2000);
+        v_count               NUMBER := 0;
+        v_table_exists        NUMBER := 0;
+        v_view_creation_error CONSTANT NUMBER := 00942;
+
+
+BEGIN
+        SELECT COUNT(*) INTO v_count FROM USER_TABLES WHERE TABLE_NAME = 'DD_OBJECTS_T';
+
+        v_sqlstmt := 'SELECT COUNT(*) FROM ' || i_prim_username || '.DD_OBJECTS_T';
+        EXECUTE IMMEDIATE v_sqlstmt INTO v_table_exists;
+
+        IF (v_count != 0) THEN
+                -- Dropping all the DD tables
+                v_sqlstmt := 'DROP TABLE DD_OBJECTS_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+                v_sqlstmt := 'DROP TABLE DD_OBJECTS_FIELDS_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+                v_sqlstmt := 'DROP TABLE DD_FIELDS_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+                v_sqlstmt := 'DROP TABLE DD_TYPES_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+
+        END IF;
+
+        IF (v_table_exists != 0) THEN
+        -- Creating DD views.
+                v_sqlstmt := 'CREATE OR REPLACE VIEW DD_OBJECTS_T AS SELECT * FROM ' || i_prim_username || '.DD_OBJECTS_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+                v_sqlstmt := 'CREATE OR REPLACE VIEW DD_OBJECTS_FIELDS_T AS SELECT * FROM ' || i_prim_username || '.DD_OBJECTS_FIELDS_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+                v_sqlstmt := 'CREATE OR REPLACE VIEW DD_FIELDS_T AS SELECT * FROM ' || i_prim_username || '.DD_FIELDS_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+                v_sqlstmt := 'CREATE OR REPLACE VIEW DD_TYPES_T AS SELECT * FROM ' || i_prim_username || '.DD_TYPES_T';
+                EXECUTE IMMEDIATE v_sqlstmt;
+        END IF;
+
+EXCEPTION
+        WHEN OTHERS THEN
+                  RAISE_APPLICATION_ERROR(v_view_creation_error, 'Creation of DD  metadata views failed : create_dd_views'||sqlerrm, TRUE);
+END create_dd_views;
+/

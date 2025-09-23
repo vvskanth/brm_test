@@ -1,0 +1,20 @@
+#@(#)% %
+# Copyright (c) 2003 - 2006 Oracle. All rights reserved.This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted only in accordance with a valid Oracle
+# license or sublicense  agreement.
+
+#
+# This causes PCM_OP_PUBLISH_GEN_PAYLOAD opcode to be called when the
+# following events happen.  
+#
+version 1
+1301	0	/event/customer/status
+1301	0	/event/audit/price/product
+1301	0	/event/audit/price/product_create
+1301	0	/event/audit/price/product_update
+1301	0	/event/audit/price/product_delete
+1301	0	/event/audit/price/product_complete
+1301	0	/event/audit/price/rate_plan
+1301	0	/event/audit/price/rate
+# 1301	0	/event/billing/product
+# 1301	0	/event/billing/product/fee/cycle/cycle_forward_monthly

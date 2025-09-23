@@ -1,0 +1,13 @@
+#
+# This causes PCM_OP_PUBLISH_GEN_PAYLOAD opcode to be called when the
+# following events happen.
+#
+version 2
+
+1301    0      /event/notification/price/products/modify
+1301    0      /event/notification/price/discounts/modify
+1301    0      /event/notification/price/sponsorships/modify
+1301    0      /event/customer/status
+
+# New events for AMT account migration process
+1301    0      /event/notification/amt/AccountInfoChange

@@ -1,0 +1,8 @@
+#New events for First Usage validity
+9071    0      /event/billing/product/fee/cycle/cycle_arrear
+9071    0      /event/billing/product/fee/cycle/cycle_forward_annual
+9071    0      /event/billing/product/fee/cycle/cycle_forward_arrear
+9071    0      /event/billing/product/fee/cycle/cycle_forward_bimonthly
+9071    0      /event/billing/product/fee/cycle/cycle_forward_monthly
+9071    0      /event/billing/product/fee/cycle/cycle_forward_quarterly
+9071    0      /event/billing/product/fee/cycle/cycle_forward_semiannual

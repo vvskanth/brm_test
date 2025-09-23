@@ -1,0 +1,819 @@
+###########################################################################
+#
+# Copyright (c) 2014, 2017, Oracle and/or its affiliates. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation
+#      or its  licensors and may be used, reproduced, stored
+#      or transmitted  only in accordance with a valid Oracle license or
+#      sublicense agreement.
+#
+###########################################################################
+#
+#   File:  newsfeed.en_US
+#
+#   Description:
+#
+#       This file contains localized string object definitions.
+#
+#       Locale:  en_US ( US English )
+#
+#       Domain:  newsfeed (version = 60)
+#	
+#	ID: 1   - 99  (Reserved for PIN_FLD_TYPE of /newsfeed)	
+#	ID: 100 - 170 (Reserved for Financial & NCR PIN_FLD_SUBTYPE of /newsfeed)	
+#	ID: 171 - 210 (Reserved for Account Changes PIN_FLD_SUBTYPE of /newsfeed)	
+#	ID: 211 - 240 (Reserved for Service Changes PIN_FLD_SUBTYPE of /newsfeed)	
+#	ID: 241 - 250 (Reserved for offering details Changes PIN_FLD_SUBTYPE of /newsfeed)	
+#	ID: 251 - 270 (Reserved for Charges PIN_FLD_SUBTYPE of /newsfeed)	
+#	ID: 271 - 300 (Reserved for Group PIN_FLD_SUBTYPE of /newsfeed)	
+#
+#	ID: 301 - 350 (Reserved for Financial & NCR PIN_FLD_SUBTYPE of /newsfeed)	
+#
+#   Rules:
+#
+#       [1] Uniqueness:
+#
+#           The combination of locale, domain, string ID, and string
+#           version must uniquely define a string object within the
+#           universe of all string objects.
+#           
+#           NOTE:
+#           =====
+#           This uniqueness must be ensured while creating or updating
+#           this new Newsfeed file. If there are duplicate entries,
+#           the programs behaviour depends on the option used. If the
+#           -f option is used then the last duplicate string definition
+#           will overwrite any previous ones. If the -f option is not
+#           used then, duplicate string definitions will be rejected.
+#
+#       [2] Locale
+#
+#           Only one locale may be specified in this file.  The locale
+#           definition must be the first non-comment statement.
+#
+#       [3] Domain
+#
+#           There may be multiple domains specified in this file.  The
+#           domain will apply to all string definitions that follow
+#           until the next domain definition statement appears.
+#
+#       [4] String Format:
+#
+#           Within this file all strings must be delimited by an opening
+#           and closing double-quote character.  The quotes will not be
+#           part of the string stored in the database.  A double-quote
+#           character can be an element of the string if it is escaped
+#           with a backslash, for example "Delete \"unneeded\" files."
+#           will be stored as "Delete "unneeded" files.".
+#
+#           Substitution parameters can be specified with %i, where i is
+#           an integer from 0 to 99.  The percent character can be an
+#           element of the string if it is escaped with a backslash, for
+#           example "It is 100\% good.".  Here is an example of an error
+#           string that specifies one substitution parameter:
+#
+#                               File %0 not found.
+#
+#           If the substitution string is "pin.conf" the formatted
+#           string will be "File pin.conf not found.".
+#
+#         The STRING and optional HELPSTR are localizable.  This file must
+#           be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#         to be ASCII (no extended-ASCII characters nor multiple byte
+#         characters are allowed).
+#
+#       [5] String ID:
+#
+#           A string ID must be unique within a domain.
+#           
+#       [6] String Version:
+#
+#           Each string has an individual version, typically starting
+#           from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "en_US" ;
+
+DOMAIN = "newsfeed" ;
+STR
+	ID = 1 ;
+	VERSION = 60 ;
+	STRING = "Financial & NCR" ;
+END 
+STR
+	ID = 2 ;
+	VERSION = 60 ;
+	STRING = "Account changes" ;
+END 
+STR
+	ID = 3 ;
+	VERSION = 60 ;
+	STRING = "Service changes" ;
+END 
+STR
+	ID = 4 ;
+	VERSION = 60 ;
+	STRING = "Charges" ;
+END 
+STR
+        ID = 100 ;
+        VERSION = 60 ;
+        STRING = "Payment" ;
+END
+STR
+        ID = 101 ;
+        VERSION = 60 ;
+        STRING = "Adjustment" ;
+END
+STR
+	ID = 102 ;
+	VERSION = 60 ;
+	STRING = "Write off" ;
+END
+STR
+        ID = 103 ;
+        VERSION = 60 ;
+        STRING = "Non currency adjustments" ;
+END
+STR
+        ID = 104 ;
+        VERSION = 60 ;
+        STRING = "Purchase" ;
+END
+STR
+        ID = 105 ;
+        VERSION = 60 ;
+        STRING = "Cancelled" ;
+END
+STR
+        ID = 106 ;
+        VERSION = 60 ;
+        STRING = "Refund" ;
+END
+STR
+        ID = 107 ;
+        VERSION = 60 ;
+        STRING = "Dispute" ;
+END
+STR
+	ID = 108 ;
+	VERSION = 60 ;
+	STRING = "Dispute Closed" ;
+END
+STR
+	ID = 109 ;
+	VERSION = 60 ;
+	STRING = "Collections" ;
+END
+STR
+	ID = 110 ;
+	VERSION = 60 ;
+	STRING = "Fully allocated" ;
+END
+STR
+	ID = 111 ;
+	VERSION = 60 ;
+	STRING = "Unallocated to account" ;
+END
+STR
+	ID = 112 ;
+	VERSION = 60 ;
+	STRING = "Partially allocated" ;
+END
+STR
+        ID = 113 ;
+        VERSION = 60 ;
+        STRING = "Write off bill" ;
+END
+STR
+        ID = 114 ;
+        VERSION = 60 ;
+        STRING = "Write off account" ;
+END
+STR
+        ID = 115 ;
+        VERSION = 60 ;
+        STRING = "Non currency adjustment multiple impact" ;
+END
+STR
+        ID = 116 ;
+        VERSION = 60 ;
+        STRING = "Refund issued" ;
+END
+STR
+        ID = 117 ;
+        VERSION = 60 ;
+        STRING = "Refund initiated" ;
+END
+STR
+        ID = 118 ;
+        VERSION = 60 ;
+        STRING = "Bill dispute opened" ;
+END
+STR
+        ID = 119 ;
+        VERSION = 60 ;
+        STRING = "Item dispute opened" ;
+END
+STR
+        ID = 120 ;
+        VERSION = 60 ;
+        STRING = "Event dispute opened" ;
+END
+STR
+        ID = 121 ;
+        VERSION = 60 ;
+        STRING = "Bill dispute settled" ;
+END
+STR
+        ID = 122 ;
+        VERSION = 60 ;
+        STRING = "Item dispute settled" ;
+END
+STR
+        ID = 123 ;
+        VERSION = 60 ;
+        STRING = "Event dispute settled" ;
+END
+STR
+        ID = 124 ;
+        VERSION = 60 ;
+        STRING = "Fully granted" ;
+END
+STR
+        ID = 125 ;
+        VERSION = 60 ;
+        STRING = "Partially granted" ;
+END
+STR
+        ID = 126 ;
+        VERSION = 60 ;
+        STRING = "Denied" ;
+END
+STR
+        ID = 127 ;
+        VERSION = 60 ;
+        STRING = "Past due goes into collections" ;
+END
+STR
+        ID = 128 ;
+        VERSION = 60 ;
+        STRING = "%s days overdue" ;
+END
+STR
+        ID = 129 ;
+        VERSION = 60 ;
+        STRING = "Out of collections" ;
+END
+STR
+        ID = 130 ;
+        VERSION = 60 ;
+        STRING = "Multiple impact adjustment" ;
+END
+STR
+        ID = 131 ;
+        VERSION = 60 ;
+        STRING = "Payment reversal" ;
+END
+STR
+        ID = 132 ;
+        VERSION = 60 ;
+        STRING = "Payment reversed" ;
+END
+STR
+        ID = 133 ;
+        VERSION = 60 ;
+        STRING = "%s original payment, %s" ;
+END
+STR
+        ID = 134 ;
+        VERSION = 60 ;
+        STRING = "Allocation" ;
+END
+STR
+        ID = 135 ;
+        VERSION = 60 ;
+        STRING = "Allocated %s" ;
+END
+STR
+        ID = 136 ;
+        VERSION = 60 ;
+        STRING = "Fully allocated to bill" ;
+END
+STR
+        ID = 137 ;
+        VERSION = 60 ;
+        STRING = "Fully allocated to item" ;
+END
+STR
+        ID = 138 ;
+        VERSION = 60 ;
+        STRING = "Fully allocated to event" ;
+END
+STR
+        ID = 139 ;
+        VERSION = 60 ;
+        STRING = "Partially allocated to item" ;
+END
+STR
+        ID = 140 ;
+        VERSION = 60 ;
+        STRING = "Partially allocated to event" ;
+END
+STR
+        ID = 141 ;
+        VERSION = 60 ;
+        STRING = "Partially allocated to bill" ;
+END
+STR
+        ID = 142 ;
+        VERSION = 60 ;
+        STRING = "Write off item" ;
+END
+STR
+        ID = 143 ;
+        VERSION = 60 ;
+        STRING = "%s of %s" ;
+END
+STR
+        ID = 144 ;
+        VERSION = 60 ;
+        STRING = "%s completed" ;
+END
+STR
+        ID = 145 ;
+        VERSION = 60 ;
+        STRING = "%s cancelled" ;
+END
+STR
+        ID = 146 ;
+        VERSION = 60 ;
+        STRING = "%s error, action not performed" ;
+END
+STR
+        ID = 147 ;
+        VERSION = 60 ;
+        STRING = "%s skipped" ;
+END
+STR
+        ID = 148 ;
+        VERSION = 60 ;
+        STRING = ", action performed on all members of collections group" ;
+END
+STR
+        ID = 149 ;
+        VERSION = 60 ;
+        STRING = ", action performed on children members of collections group" ;
+END
+STR
+        ID = 150 ;
+        VERSION = 60 ;
+        STRING = "Payment moved to Payment Suspense" ;
+END
+STR
+        ID = 151 ;
+        VERSION = 60 ;
+        STRING = "Payment moved from suspense to this account" ;
+END
+STR
+        ID = 152 ;
+        VERSION = 60 ;
+        STRING = "Moved from: Payment Suspense" ;
+END
+STR
+        ID = 153 ;
+        VERSION = 60 ;
+        STRING = "Moved to: This Account" ;
+END
+STR
+        ID = 154 ;
+        VERSION = 60 ;
+        STRING = "Show payment in Suspense" ;
+END
+STR
+        ID = 155 ;
+        VERSION = 60 ;
+        STRING = "Promise to Pay added" ;
+END
+STR
+        ID = 156 ;
+        VERSION = 60 ;
+        STRING = "Promise to Pay agreement canceled" ;
+END
+STR
+        ID = 157 ;
+        VERSION = 60 ;
+        STRING = "Collections scenario replaced" ;
+END
+STR
+        ID = 158 ;
+        VERSION = 60 ;
+        STRING = "Scheduled: %s" ; 
+END
+STR
+        ID = 159 ;
+        VERSION = 60 ;
+        STRING = "Promise to Pay agreement breached" ;
+END
+STR
+        ID = 160 ;
+        VERSION = 60 ;
+        STRING = "Write off reversal" ;
+END
+STR
+        ID = 161 ;
+        VERSION = 60 ;
+        STRING = "Write off reversed" ;
+END
+STR
+        ID = 162 ;
+        VERSION = 60 ;
+        STRING = "%s original write off" ;
+END
+STR
+        ID = 163 ;
+        VERSION = 60 ;
+        STRING = "Collections agent assigned" ;
+END
+STR
+        ID = 164 ;
+        VERSION = 60 ;
+        STRING = "%s added" ;
+END
+STR
+        ID = 165 ;
+        VERSION = 60 ;
+        STRING = "%s updated" ;
+END
+STR
+        ID = 166 ;
+        VERSION = 60 ;
+        STRING = "Bill unit exempted from collections" ;
+END
+STR
+        ID = 167 ;
+        VERSION = 60 ;
+        STRING = "Bill unit removed from exemption" ;
+END
+STR
+        ID = 168 ;
+        VERSION = 60 ;
+        STRING = "From: Unassigned" ;
+END
+STR
+        ID = 169 ;
+        VERSION = 60 ;
+        STRING = "To: Unassigned" ;
+END
+STR
+	ID = 171 ;
+	VERSION = 60 ;
+	STRING = "Name change" ;
+END 
+STR
+	ID = 172 ;
+	VERSION = 60 ;
+	STRING = "Account status change" ;
+END 
+STR
+	ID = 173 ;
+	VERSION = 60 ;
+	STRING = "Deferred action" ;
+END 
+STR
+	ID = 174 ;
+	VERSION = 60 ;
+	STRING = "Payinfo changes" ;
+END 
+STR
+	ID = 175 ;
+	VERSION = 60 ;
+	STRING = "From: %s To: %s" ;
+END
+STR
+	ID = 176 ;
+	VERSION = 60 ;
+	STRING = "Account status" ;
+END
+STR
+	ID = 177 ;
+	VERSION = 60 ;
+	STRING = "Deferred action created" ;
+END
+STR
+	ID = 178 ;
+	VERSION = 60 ;
+	STRING = "Deferred action executed" ;
+END
+STR
+	ID = 179 ;
+	VERSION = 60 ;
+	STRING = "Payment method change" ;
+END 
+STR
+	ID = 180 ;
+	VERSION = 60 ;
+	STRING = "Inactive to Active" ;
+END
+STR
+	ID = 181 ;
+	VERSION = 60 ;
+	STRING = "Inactive to Closed" ;
+END 
+STR
+	ID = 182 ;
+	VERSION = 60 ;
+	STRING = "Active to Inactive" ;
+END
+STR
+	ID = 183 ;
+	VERSION = 60 ;
+	STRING = "Active to Closed" ;
+END
+STR
+	ID = 184 ;
+	VERSION = 60 ;
+	STRING = "Closed to Inactive" ;
+END
+STR
+	ID = 185 ;
+	VERSION = 60 ;
+	STRING = "Closed to Active" ;
+END
+STR
+	ID = 186 ;
+	VERSION = 60 ;
+	STRING = "Updated payment method" ;
+END
+STR
+	ID = 187 ;
+	VERSION = 60 ;
+	STRING = "New payment method" ;
+END
+STR
+	ID = 188 ;
+	VERSION = 60 ;
+	STRING = "Billing frequency change" ;
+END
+STR
+	ID = 189 ;
+	VERSION = 60 ;
+	STRING = "Billing day change" ;
+END
+STR
+	ID = 190 ;
+	VERSION = 60 ;
+	STRING = "Billing type change" ;
+END
+STR
+	ID = 191 ;
+	VERSION = 60 ;
+	STRING = "Deleted payment method" ;
+END
+STR
+	ID = 192 ;
+	VERSION = 60 ;
+	STRING = "Bill unit created" ;
+END
+STR
+	ID = 193 ;
+	VERSION = 60 ;
+	STRING = "Bill unit deleted" ;
+END
+STR
+	ID = 194 ;
+	VERSION = 60 ;
+	STRING = "Payment method assignment change" ;
+END
+STR
+	ID = 195 ;
+	VERSION = 60 ;
+	STRING = "Service transfer" ;
+END
+STR
+        ID = 196 ;
+        VERSION = 60 ;
+        STRING = "Transition Type: %s" ;
+END
+STR
+	ID = 211 ;
+	VERSION = 60 ;
+	STRING = "Service status change" ;
+END
+STR
+	ID = 212 ;
+	VERSION = 60 ;
+	STRING = "Service to device" ;
+END
+STR
+	ID = 213 ;
+	VERSION = 60 ;
+	STRING = "Service status" ;
+END
+STR
+	ID = 214 ;
+	VERSION = 60 ;
+	STRING = "Service attached" ;
+END
+STR
+	ID = 215 ;
+	VERSION = 60 ;
+	STRING = "Service detached" ;
+END
+STR
+	ID = 231 ;
+	VERSION = 60 ;
+	STRING = "Corrective bill issued" ;
+END
+STR
+	ID = 232 ;
+	VERSION = 60 ;
+	STRING = "Recurring charge" ;
+END
+STR
+	ID = 233 ;
+	VERSION = 60 ;
+	STRING = "Bill issued" ;
+END
+STR
+	ID = 234 ;
+	VERSION = 60 ;
+	STRING = "Bill issued mid-cycle" ;
+END
+STR
+	ID = 235 ;
+	VERSION = 60 ;
+	STRING = "One-time charge" ;
+END
+STR
+	ID = 241 ;
+	VERSION = 60 ;
+	STRING = "Item Activated" ;
+END
+STR
+	ID = 242 ;
+	VERSION = 60 ;
+	STRING = "Item Inactivated" ;
+END
+STR
+	ID = 243 ;
+	VERSION = 60 ;
+	STRING = "Item Terminated" ;
+END
+STR
+	ID = 244 ;
+	VERSION = 60 ;
+	STRING = "Service : %s" ;
+END
+STR
+	ID = 245 ;
+	VERSION = 60 ;
+	STRING = "Plan : %s" ;
+END
+STR
+	ID = 246 ;
+	VERSION = 60 ;
+	STRING = "Package transition" ;
+END
+STR
+	ID = 247 ;
+	VERSION = 60 ;
+	STRING = "Bundle transition" ;
+END
+STR
+        ID = 251 ;
+        VERSION = 60 ;
+        STRING = "Limit" ;
+END
+STR
+        ID = 252 ;
+        VERSION = 60 ;
+        STRING = "Floor" ;
+END
+STR
+        ID = 253 ;
+        VERSION = 60 ;
+        STRING = "Threshold" ;
+END
+STR
+        ID = 254 ;
+        VERSION = 60 ;
+        STRING = "Fixed threshold" ;
+END
+STR
+	ID = 255 ;
+	VERSION = 60 ;
+	STRING = "Credit limit updated" ;
+END
+STR
+	ID = 256 ;
+	VERSION = 60 ;
+	STRING = "Threshold updated" ;
+END
+STR
+	ID = 271 ;
+	VERSION = 60 ;
+	STRING = "Charge share" ;
+END
+STR
+	ID = 272 ;
+	VERSION = 60 ;
+	STRING = "Discount share" ;
+END
+STR
+	ID = 273 ;
+	VERSION = 60 ;
+	STRING = "Profile share" ;
+END
+STR
+	ID = 274 ;
+	VERSION = 60 ;
+	STRING = "Collections group" ;
+END
+STR
+	ID = 275 ;
+	VERSION = 60 ;
+	STRING = "Sharing group created" ;
+END
+STR
+	ID = 276 ;
+	VERSION = 60 ;
+	STRING = "Sharing group updated" ;
+END
+STR
+	ID = 277 ;
+	VERSION = 60 ;
+	STRING = "Sharing group deleted";
+END
+STR
+	ID = 278 ;
+	VERSION = 60 ;
+	STRING = "Sharing group members removed" ;
+END
+STR
+	ID = 279 ;
+	VERSION = 60 ;
+	STRING = "Sharing group members added";
+END
+STR
+	ID = 280 ;
+	VERSION = 60 ;
+	STRING = "Added to sharing group" ;
+END
+STR
+	ID = 281 ;
+	VERSION = 60 ;
+	STRING = "Removed from sharing group" ;
+END
+STR
+        ID = 301 ;
+        VERSION = 60 ;
+        STRING = "Number of installments: %s" ;
+END
+STR
+        ID = 302 ;
+        VERSION = 60 ;
+        STRING = "Installment interval: %s" ;
+END
+STR
+        ID = 992 ;
+        VERSION = 60 ;
+        STRING = "From: %s" ;
+END
+STR
+        ID = 993 ;
+        VERSION = 60 ;
+        STRING = "To: %s" ;
+END
+STR
+        ID = 994 ;
+        VERSION = 60 ;
+        STRING = "%s To %s" ;
+END
+STR
+        ID = 995 ;
+        VERSION = 60 ;
+        STRING = "" ;
+        HELPSTR = "This string is used for adding action specific reasons for newsfeed";
+END
+STR
+        ID = 996 ;
+        VERSION = 60 ;
+        STRING = "from %s" ;
+END
+STR
+        ID = 997 ;
+        VERSION = 60 ;
+        STRING = "by %s" ;
+END
+STR
+        ID = 998 ;
+        VERSION = 60 ;
+        STRING = "on %s" ;
+END
+STR
+        ID = 999 ;
+        VERSION = 60 ;
+        STRING = "%s" ;
+END

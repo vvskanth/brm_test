@@ -1,0 +1,43 @@
+--
+-- @(#)create_cmt_reference_index.sql 2
+--
+-- Copyright (c) 2004, 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted 
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+
+create index i_stage__id on cmt_reference_t ( stage_id )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED ;
+
+create unique index i_input_id_n_obj_type on cmt_reference_t ( input_id, obj_type )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED ;
+
+create unique index i_poid_id0_n_obj_type on cmt_reference_t ( poid_id0, obj_type )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED ;
+
+create index i_account_obj_id0 on journal_t ( account_obj_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED ;
+
+create unique index i_au_account_poid_id0 on au_account_t ( poid_id0 )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED ;
+
+create unique index i_sync_id on batch_cmt_t ( sync_id )
+	$PIN_CONF_TBLSPACEX0
+	$PIN_CONF_STORAGE_MED ;
+
+create unique index i_cmt_reference_t on cmt_reference_t ( input_id, poid_id, obj_type )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED ;
+		
+create unique index i_purchased_bundle_t on purchased_bundle_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX0
+        $PIN_CONF_STORAGE_MED ;	

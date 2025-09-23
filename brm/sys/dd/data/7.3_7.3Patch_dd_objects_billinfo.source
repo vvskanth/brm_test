@@ -1,0 +1,64 @@
+# @(#)% %
+#
+# Copyright (c) 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 6
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 11
+1     PIN_FLD_STATUS                    ENUM [0] 3
+1     PIN_FLD_CREATE_ACCESS              STR [0] "Any"
+1     PIN_FLD_SM_INFO                    STR [0] NULL
+1     PIN_FLD_RESIDENCY_TYPE             INT [0] 0
+1     PIN_FLD_IS_PARTITIONED             INT [0] 1
+1     PIN_FLD_WRITE_ACCESS               STR [0] "BrandLineage"
+1     PIN_FLD_READ_ACCESS                STR [0] "BrandLineage"
+1     PIN_FLD_NAME                       STR [0] "/event/customer/billinfo"
+1     PIN_FLD_AUDIT_FLAG                 INT [0] 0
+1     PIN_FLD_PARTITION_MODE             STR [0] "Finite"
+1     PIN_FLD_OBJ_ELEM                 ARRAY [0] allocated 10, used 10
+2         PIN_FLD_FIELD_NAME             STR [0] "PIN_FLD_BILLINFO"
+2         PIN_FLD_SM_INFO                STR [0] " "
+2         PIN_FLD_SERIALIZABLE           INT [0] 0
+2         PIN_FLD_ORDER              DECIMAL [0] 0
+2         PIN_FLD_SM_ITEM_NAME           STR [0] "event_customer_billinfo_t"
+2         PIN_FLD_AUDITABLE              INT [0] 0
+2         PIN_FLD_FIELD_TYPE             INT [0] 9
+2         PIN_FLD_ACTION                 STR [0] "MODIFY"
+2         PIN_FLD_OBJ_ELEM             ARRAY [0] allocated 13, used 13
+3             PIN_FLD_FIELD_NAME         STR [0] "PIN_FLD_FUTURE_BILL_T"
+3             PIN_FLD_MOD_PERMISSION     STR [0] "Not_Writeable"
+3             PIN_FLD_CREATE_PERMISSION  STR [0] "Optional"
+3             PIN_FLD_SM_INFO            STR [0] NULL
+3             PIN_FLD_SERIALIZABLE       INT [0] 0
+3             PIN_FLD_ORDER          DECIMAL [0] 0
+3             PIN_FLD_SM_ITEM_NAME       STR [0] "future_bill_t"
+3             PIN_FLD_ENCRYPTABLE        INT [0] 0
+3             PIN_FLD_AUDITABLE          INT [0] 0
+3             PIN_FLD_FIELD_TYPE         INT [0] 8
+3             PIN_FLD_DESCR              STR [0] "Same as in /billinfo."
+3             PIN_FLD_LENGTH             INT [0] 0
+3             PIN_FLD_LABEL              STR [0] NULL
+3             PIN_FLD_ACTION             STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM             ARRAY [1] allocated 13, used 13
+3             PIN_FLD_FIELD_NAME         STR [0] "PIN_FLD_LAST_BILL_T"
+3             PIN_FLD_MOD_PERMISSION     STR [0] "Not_Writeable"
+3             PIN_FLD_CREATE_PERMISSION  STR [0] "Optional"
+3             PIN_FLD_SM_INFO            STR [0] NULL
+3             PIN_FLD_SERIALIZABLE       INT [0] 0
+3             PIN_FLD_ORDER          DECIMAL [0] 0
+3             PIN_FLD_SM_ITEM_NAME       STR [0] "last_bill_t"
+3             PIN_FLD_ENCRYPTABLE        INT [0] 0
+3             PIN_FLD_AUDITABLE          INT [0] 0
+3             PIN_FLD_FIELD_TYPE         INT [0] 8
+3             PIN_FLD_DESCR              STR [0] "Same as in /billinfo."
+3             PIN_FLD_LENGTH             INT [0] 0
+3             PIN_FLD_LABEL              STR [0] NULL
+3             PIN_FLD_ACTION             STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>
+

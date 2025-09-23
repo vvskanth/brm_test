@@ -1,0 +1,1521 @@
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:52 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 17
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/active_session/telco"
+1     PIN_FLD_DESCR           STR [0] " Records data about an active telco prepaid session, such as a wireless phone call. These objects can be  stored in the TIMOS DM memory or the Portal database."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 6
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing telco specific informationin a Telco Session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "Unique reference to used to bundle chained calls.  E.g: The 'A to C' and 'C to B' legs in a call forwarding scenario must be treated as separate calls, but linked together."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_CORRELATION_ID"
+3             PIN_FLD_DESCR           STR [0] "Network session correlation identifier, used to correlate Main and Sub-session."
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_correl_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIGIN_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Network code from which the call or message was routed. "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "origin_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESTINATION_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Is the network towards which the call or message is routed."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "destination_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PRIMARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the MIN of the user and in GSM network this represnt the MSISDN."
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "primary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SECONDARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the ESN number of the user and in GSM network this represnt the IMSI."
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "secondary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLING_FROM"
+3             PIN_FLD_DESCR           STR [0] "Originating phone number of the call.  Can be different from the phone number of the user in case of calling card scenario for example.  Also called A number."
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "calling_from"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLED_TO"
+3             PIN_FLD_DESCR           STR [0] "Destination number of the call.  Also called B number."
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "called_to"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Uniquely defines the type of basic service. "
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_CODE"
+3             PIN_FLD_DESCR           STR [0] "Either a Teleservice Code or Bearer Service Code as determined by Service Type. "
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TERMINATE_CAUSE"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether a call was correctly completed or not. The values are specific to network element."
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "terminate_cause"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_CLASS"
+3             PIN_FLD_DESCR           STR [0] "Classification describes the specific format related call scenario.  E.g. Call forwarding, roaming, mailbox request, local call, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "usage_class"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BYTES_DOWNLINK"
+3             PIN_FLD_DESCR           STR [0] "Volume in bytes received by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bytes_downlink"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BYTES_UPLINK"
+3             PIN_FLD_DESCR           STR [0] "Volume in bytes sent by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bytes_uplink"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "active_session_telco_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/active_session/telco.PIN_FLD_TELCO_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_CODES"
+2         PIN_FLD_DESCR           STR [0] "Array containing possible Supplementary Service activity occuring during this session."
+2         PIN_FLD_ORDER        DECIMAL [0] 14
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_ACTION_CODE"
+3             PIN_FLD_DESCR           STR [0] "This qualifies the way in which the supplementary service is used.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_action_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_CODE"
+3             PIN_FLD_DESCR           STR [0] "This uniquely defines the supplementary service or a group of supplementary services.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_code"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "as_telco_svc_codes_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/active_session/telco.PIN_FLD_SERVICE_CODES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/service/telco"
+1     PIN_FLD_DESCR           STR [0] "Contains generalized telco information.Information about a specific service is contained in substructs or arrays in subclasses of this class, such as /service/telco/gsm."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 5
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct to hold telco service-specific information."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PRIMARY_NUMBER"
+3             PIN_FLD_DESCR           STR [0] "An indicator used to identify if this service contains the primary number."
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "primary_number"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "service_telco_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/service/telco.PIN_FLD_TELCO_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_FEATURES"
+2         PIN_FLD_DESCR           STR [0] "Array containing all features associated with this service object. A feature represents a  supplementary service.  Egs: Call Forwarding, Call Waiting."
+2         PIN_FLD_ORDER        DECIMAL [0] 1
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "Feature name as described thru the provisioning tag mechanism."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "Feature Provisioning Status. Values are: Processing, Failed, Complete"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "service_telco_features_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/service/telco.PIN_FLD_TELCO_FEATURES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 10
+1     PIN_FLD_NAME            STR [0] "/event/activity/telco"
+1     PIN_FLD_DESCR           STR [0] "Records the data about a Telco activity event"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_PREPAID"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing information about a call."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "Session ID as provided by the network"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_CORRELATION_ID"
+3             PIN_FLD_DESCR           STR [0] "Network session correlation identifier, used to correlate Main and Sub-session."
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_correl_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIGIN_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Network code from which the call or message was routed. "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "origin_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESTINATION_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Is the network towards which the call or message is routed."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "destination_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PRIMARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the MIN of the user and in GSM network this represnt the MSISDN."
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "primary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SECONDARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the ESN number of the user and in GSM network this represnt the IMSI."
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "secondary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLING_FROM"
+3             PIN_FLD_DESCR           STR [0] "Originating phone number of the call.  Can be different from the phone number of the user in case of calling card scenario for example.  Also called A number."
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "calling_from"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLED_TO"
+3             PIN_FLD_DESCR           STR [0] "Destination number of the call.  Also called B number."
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "called_to"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Uniquely defines the type of basic service. "
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_CODE"
+3             PIN_FLD_DESCR           STR [0] "Either a Teleservice Code or Bearer Service Code as determined by Service Type. "
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TERMINATE_CAUSE"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether a call was correctly completed or not. "
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "terminate_cause"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_CLASS"
+3             PIN_FLD_DESCR           STR [0] "Classification describes the specific format related call scenario.  E.g. Call forwarding, roaming, mailbox request, local call, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "usage_class"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_activity_tlcs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/activity/telco.PIN_FLD_TELCO_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_CODES"
+2         PIN_FLD_DESCR           STR [0] "Array containing possible Supplementary Service activity occuring during this session."
+2         PIN_FLD_ORDER        DECIMAL [0] 12
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_ACTION_CODE"
+3             PIN_FLD_DESCR           STR [0] "This qualifies the way in which the supplementary service is used.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_action_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_CODE"
+3             PIN_FLD_DESCR           STR [0] "This uniquely defines the supplementary service or a group of supplementary services.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_code"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_actv_tlcs_svc_codes_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/activity/telco.PIN_FLD_SERVICE_CODES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 10
+1     PIN_FLD_NAME            STR [0] "/event/session/telco"
+1     PIN_FLD_DESCR           STR [0] " Contains a general telco substruct that contains the  common telco information. The common information is  inherited by the service-specific subclasses of this storable class. Subclasses of /event/session/telco, such as /event/session/telco/gsm, contain domain data for a specific wireless or wireline services in a substruct or array."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_PREPAID"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing telco specific informationin a Telco Session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "Unique reference to used to bundle chained calls.  E.g: The 'A to C' and 'C to B' legs in a call forwarding scenario must be treated as separate calls, but linked together."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_CORRELATION_ID"
+3             PIN_FLD_DESCR           STR [0] "Network Session correlation identifier, used to correlate Main and Sub-sessions."
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_correl_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIGIN_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Network code from which the call or message was routed. "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "origin_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESTINATION_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Is the network towards which the call or message is routed."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "destination_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PRIMARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the MIN of the user and in GSM network this represnt the MSISDN."
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "primary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SECONDARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the ESN number of the user and in GSM network this represnt the IMSI."
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "secondary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLING_FROM"
+3             PIN_FLD_DESCR           STR [0] "Originating phone number of the call.  Can be different from the phone number of the user in case of calling card scenario for example.  Also called A number."
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "calling_from"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLED_TO"
+3             PIN_FLD_DESCR           STR [0] "Destination number of the call.  Also called B number."
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "called_to"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Uniquely defines the type of basic service. "
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_CODE"
+3             PIN_FLD_DESCR           STR [0] "Either a Teleservice Code or Bearer Service Code as determined by Service Type. "
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TERMINATE_CAUSE"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether a call was correctly completed or not. This is specific to network element."
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "terminate_cause"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_CLASS"
+3             PIN_FLD_DESCR           STR [0] "Classification describes the specific format related call scenario.  E.g. Call forwarding, roaming, mailbox request, local call, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "usage_class"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BYTES_DOWNLINK"
+3             PIN_FLD_DESCR           STR [0] "Volume in bytes received by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bytes_downlink"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BYTES_UPLINK"
+3             PIN_FLD_DESCR           STR [0] "Volume in bytes sent by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bytes_uplink"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_session_tlcs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/session/telco.PIN_FLD_TELCO_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_CODES"
+2         PIN_FLD_DESCR           STR [0] "Array containing possible Supplementary Service activity occuring during this session."
+2         PIN_FLD_ORDER        DECIMAL [0] 14
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_ACTION_CODE"
+3             PIN_FLD_DESCR           STR [0] "This qualifies the way in which the supplementary service is used.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_action_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_CODE"
+3             PIN_FLD_DESCR           STR [0] "This uniquely defines the supplementary service or a group of supplementary services.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_code"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_sess_tlcs_svc_codes_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/session/telco.PIN_FLD_SERVICE_CODES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 10
+1     PIN_FLD_NAME            STR [0] "/event/delayed/activity/telco"
+1     PIN_FLD_DESCR           STR [0] "Records the data about a delayed Telco activity event"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_POSTPAID"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing information about a call."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "Session ID as provided by the network"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIGIN_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Network code from which the call or message was routed. "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "origin_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESTINATION_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Is the network towards which the call or message is routed."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "destination_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PRIMARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the MIN of the user and in GSM network this represnt the MSISDN."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "primary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SECONDARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the ESN number of the user and in GSM network this represnt the IMSI."
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "secondary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLING_FROM"
+3             PIN_FLD_DESCR           STR [0] "Originating phone number of the call.  Can be different from the phone number of the user in case of calling card scenario for example.  Also called A number."
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "calling_from"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLED_TO"
+3             PIN_FLD_DESCR           STR [0] "Destination number of the call.  Also called B number."
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "called_to"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Uniquely defines the type of basic service. "
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_CODE"
+3             PIN_FLD_DESCR           STR [0] "Either a Teleservice Code or Bearer Service Code as determined by Service Type. "
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TERMINATE_CAUSE"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether a call was correctly completed or not. "
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "terminate_cause"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_CLASS"
+3             PIN_FLD_DESCR           STR [0] "Classification describes the specific format related call scenario.  E.g. Call forwarding, roaming, mailbox request, local call, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "usage_class"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Type describes the specific customer related call scenario.  E.g. Customer-to-customer call, birthdate call, closed-user-group calls, friends & family, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "usage_type"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_dlay_actv_tlcs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/delayed/activity/telco.PIN_FLD_TELCO_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_CODES"
+2         PIN_FLD_DESCR           STR [0] "Array containing possible Supplementary Service activity occuring during this session."
+2         PIN_FLD_ORDER        DECIMAL [0] 12
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_ACTION_CODE"
+3             PIN_FLD_DESCR           STR [0] "This qualifies the way in which the supplementary service is used.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_action_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_CODE"
+3             PIN_FLD_DESCR           STR [0] "This uniquely defines the supplementary service or a group of supplementary services.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_code"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_dlay_actv_tlcs_svc_cds_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/delayed/activity/telco.PIN_FLD_SERVICE_CODES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 10
+1     PIN_FLD_NAME            STR [0] "/event/delayed/session/telco"
+1     PIN_FLD_DESCR           STR [0] "Stores fields associated with telco CDRs for prerated events loaded by the RE Loader."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_POSTPAID"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing information about a call."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "Unique reference to used to bundle chained calls.  E.g: The 'A to C' and 'C to B' legs in a call forwarding scenario must be treated as separate calls, but linked together."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIGIN_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Network code from which the call or message was routed. "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "origin_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESTINATION_NETWORK"
+3             PIN_FLD_DESCR           STR [0] "Is the network towards which the call or message is routed."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "destination_network"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PRIMARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the MIN of the user and in GSM network this represnt the MSISDN."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "primary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SECONDARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Mobile station ID of the user. In CDMA network this represent the ESN number of the user and in GSM network this represnt the IMSI."
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "secondary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLING_FROM"
+3             PIN_FLD_DESCR           STR [0] "Originating phone number of the call.  Can be different from the phone number of the user in case of calling card scenario for example.  Also called A number."
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "calling_from"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CALLED_TO"
+3             PIN_FLD_DESCR           STR [0] "Destination number of the call.  Also called B number."
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "called_to"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Uniquely defines the type of basic service. "
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_CODE"
+3             PIN_FLD_DESCR           STR [0] "Either a Teleservice Code or Bearer Service Code as determined by Service Type.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TERMINATE_CAUSE"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether a call was correctly completed or not. "
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "terminate_cause"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_CLASS"
+3             PIN_FLD_DESCR           STR [0] "Classification describes the specific format related call scenario.  E.g. Call forwarding, roaming, mailbox request, local call, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "usage_class"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Type describes the specific customer related call scenario.  E.g. Customer-to-customer call, birthdate call, closed-user-group calls, friends & family, etc."
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "usage_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BYTES_DOWNLINK"
+3             PIN_FLD_DESCR           STR [0] "Volume in bytes received by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bytes_downlink"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BYTES_UPLINK"
+3             PIN_FLD_DESCR           STR [0] "Volume in bytes sent by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bytes_uplink"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_dlay_sess_tlcs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/delayed/session/telco.PIN_FLD_TELCO_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_CODES"
+2         PIN_FLD_DESCR           STR [0] "Array containing possible Supplementary Service activity occuring during this session."
+2         PIN_FLD_ORDER        DECIMAL [0] 12
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_ACTION_CODE"
+3             PIN_FLD_DESCR           STR [0] "This qualifies the way in which the supplementary service is used.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_action_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SS_CODE"
+3             PIN_FLD_DESCR           STR [0] "This uniquely defines the supplementary service or a group of supplementary services.  "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ss_code"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_dlay_sess_tlcs_svc_cds_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/delayed/session/telco.PIN_FLD_SERVICE_CODES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [6] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/delayed/session/telco/roaming"
+1     PIN_FLD_DESCR           STR [0] "Delayed session events for Roaming usage. Use to store roaming usage against roaming partner's portal account "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_POSTPAID"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [7] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/telco"
+1     PIN_FLD_DESCR           STR [0] "This configuration class is a base class that maps provisioning tag names and values for all the /service/telco storable sub classes."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 12
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROD_PROVISIONING_TAGS"
+2         PIN_FLD_DESCR           STR [0] "Array of Provisioning tags.  Each element in this array represents a different provisioning tag."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROVISIONING_TAG"
+3             PIN_FLD_DESCR           STR [0] "Provisioning Tag name"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "provisioning_tag"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESCR"
+3             PIN_FLD_DESCR           STR [0] "Description of Provisioning Tag"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "descr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DATE_CHANGE_IMPACT"
+3             PIN_FLD_DESCR           STR [0] "Indicates if product change should trigger provisioning or not"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "date_change_impact"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TELCO_FEATURES"
+3             PIN_FLD_DESCR           STR [0] "List of features for the current product"
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "Feature name, ie CFU, CB, etc,."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 64
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_telco_features_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco.PIN_FLD_PROD_PROVISIONING_TAGS.PIN_FLD_TELCO_FEATURES'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 11
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXT_RA"
+3             PIN_FLD_DESCR           STR [0] "Array of ERA name for the current provisioning tag "
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "ERA name, for example F&F.. Integrate DB key "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 64
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STRING_ID"
+4                 PIN_FLD_DESCR           STR [0] "String ID for ERA name. Key to local display name "
+4                 PIN_FLD_ORDER        DECIMAL [0] 1
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "string_id"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 3
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NEED_PROVISIONING"
+4                 PIN_FLD_DESCR           STR [0] "Indicates if this ERA has a provisioning impact or not"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "need_provisioning"
+3             PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOCALE_DESC_ID"
+4                 PIN_FLD_DESCR           STR [0] "String ID for description of the extended rating attribute feature. "
+4                 PIN_FLD_ORDER        DECIMAL [0] 3
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "locale_desc_id"
+3             PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LABEL"
+4                 PIN_FLD_DESCR           STR [0] "ERA label name which stores ERA type "
+4                 PIN_FLD_ORDER        DECIMAL [0] 4
+4                 PIN_FLD_LENGTH          INT [0] 64
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "label"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_telco_ext_ra_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco.PIN_FLD_PROD_PROVISIONING_TAGS.PIN_FLD_EXT_RA'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_EXTENSIONS"
+3             PIN_FLD_DESCR           STR [0] "Array of Service Extenstions.  For example, It can be used to put GSM Bearer Service in case of GSM Service. "
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "Service Extension Name"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VALUE"
+4                 PIN_FLD_DESCR           STR [0] "Service Extension Value"
+4                 PIN_FLD_ORDER        DECIMAL [0] 1
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "value"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_telco_serv_extn_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco.PIN_FLD_PROD_PROVISIONING_TAGS.PIN_FLD_SERVICE_EXTENSIONS'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_telco_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco.PIN_FLD_PROD_PROVISIONING_TAGS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [8] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/config/telco/provisioning"
+1     PIN_FLD_DESCR           STR [0] "Stores information that maps relationships between a service or a device and a provisioning service order.Objects in this class determine which fields are read from the /service/telco and /device objects when a service order is created. Only one object of this type exists in a Portal database."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 12
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEVICES"
+2         PIN_FLD_DESCR           STR [0] "Each array element specifies the provisioning configuration for a type of service order and a device status type"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE_STR"
+3             PIN_FLD_DESCR           STR [0] "The device type, for example: /device/sim"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "type_str"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "The device status that triggered the SO"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION"
+3             PIN_FLD_DESCR           STR [0] "The type of provisioning action/service order. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate)  "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT"
+3             PIN_FLD_DESCR           STR [0] "Link to device field list Array of object describing the field needed in the service order from the device object"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "object"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICES"
+3             PIN_FLD_DESCR           STR [0] "Specifies the provisioning configuration of a service for a type of service order and a device type"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE_STR"
+4                 PIN_FLD_DESCR           STR [0] "The service type:"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "type_str"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION"
+4                 PIN_FLD_DESCR           STR [0] "The type of provisioning action The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate), I(Ignore), C(Change) "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "action"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 7
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT"
+4                 PIN_FLD_DESCR           STR [0] "Link to service field list Array of object describing the field needed in the service order from the service object"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "object"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_prov_dev_serv_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/provisioning.PIN_FLD_DEVICES.PIN_FLD_SERVICES'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROVISIONING_INFO"
+3             PIN_FLD_DESCR           STR [0] "Each array element specifies the provisioning configuration of a device for a type of service order and a device type"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE_STR"
+4                 PIN_FLD_DESCR           STR [0] "The device type: "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "type_str"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION"
+4                 PIN_FLD_DESCR           STR [0] "The type of provisioning action to be included in the SO for this device. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate), I(Ignore), C(Change)"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "action"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 7
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT"
+4                 PIN_FLD_DESCR           STR [0] "Link to device field list Array of object describing the field needed in the service order from this device object"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "object"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_prov_dev_prov_info_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/provisioning.PIN_FLD_DEVICES.PIN_FLD_PROVISIONING_INFO'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_prov_dev_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/provisioning.PIN_FLD_DEVICES'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICES"
+2         PIN_FLD_DESCR           STR [0] "Each array element specifies the provisioning configuration for a type of service order and a service type"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE_STR"
+3             PIN_FLD_DESCR           STR [0] "The service type: "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "type_str"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION"
+3             PIN_FLD_DESCR           STR [0] "The type of provisioning action/service order. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate)  "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT"
+3             PIN_FLD_DESCR           STR [0] "Link to service field list Array of object describing the field needed in the service order from the service object"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "object"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEVICES"
+3             PIN_FLD_DESCR           STR [0] "Each array element specifies the provisioning configuration of a device for a type of service order and a service type"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE_STR"
+4                 PIN_FLD_DESCR           STR [0] "The device type: "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "type_str"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION"
+4                 PIN_FLD_DESCR           STR [0] "The type of provisioning action to be included in the SO for this device. The possible values are : A(Activate), D(Deactivate), S(Suspend) R(Reactivate), I(Ignore), C(Change)"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "action"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 7
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT"
+4                 PIN_FLD_DESCR           STR [0] "Link to device field list Array of object describing the field needed in the service order from this device object"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "object"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_prov_serv_dev_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/provisioning.PIN_FLD_SERVICES.PIN_FLD_DEVICES'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_prov_serv_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/provisioning.PIN_FLD_SERVICES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [9] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/telco/provisioning/fieldlist"
+1     PIN_FLD_DESCR           STR [0] "Specifies fields to be included in service order from  /service/telco and /device objects."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 12
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJ_ELEM"
+2         PIN_FLD_DESCR           STR [0] "Array of object describing some fields  of an object"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FIELD_TYPE"
+3             PIN_FLD_DESCR           STR [0] "The type of field: Array, substruct, other."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "field_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FIELD_NUM"
+3             PIN_FLD_DESCR           STR [0] "The field number as in pin_flds.h."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "field_num"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "The field name in the SO"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VALUE"
+3             PIN_FLD_DESCR           STR [0] "The possible field hard coded value."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "value"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ELEMENT_ID"
+3             PIN_FLD_DESCR           STR [0] "In case of array the element if -1 = all element id"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "element_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT"
+3             PIN_FLD_DESCR           STR [0] "Link to field list containing an Array or a substruct Link to a config.fieldlist object"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "object"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_prov_flist_obj_elem_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/provisioning/fieldlist.PIN_FLD_OBJ_ELEM'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [10] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/telco/service_order_state"
+1     PIN_FLD_DESCR           STR [0] "Base class for specifying the valid state transitions and the policy opcodes to call for different state transition."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 11
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_ORDER_STATES"
+2         PIN_FLD_DESCR           STR [0] "Array of service order states. Each element describe the one state and all the states can be transited to. Opcode can be defined with each transition. That opcode will be called as a policy during the transition. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_ID"
+3             PIN_FLD_DESCR           STR [0] "The id of the state. Out of the box values can be NEW(1), READY(2), PROCESSING(3), COMPLETED(4), FAILED(5). "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "state_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OPCODE"
+3             PIN_FLD_DESCR           STR [0] "State policy opcode number. This policy will be executed after the transition is done."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "opcode"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FLAGS"
+3             PIN_FLD_DESCR           STR [0] "State policy opcode flag. 0 by default."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "flags"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_TYPE"
+3             PIN_FLD_DESCR           STR [0] "The type of this state. All types are defined in pin_service_order.h file. Values can be RAW(0), INIT(1), NORMAL(2), END(3). "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "state_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NEXT_STATES"
+3             PIN_FLD_DESCR           STR [0] "Array of next states can be transited from this state, including the opcode definition. There could be multiple array elements with the same next state ID to support calling multiple opcodes for the same transition. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_ID"
+4                 PIN_FLD_DESCR           STR [0] "The id of the end state of the transition. "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "state_id"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OPCODE"
+4                 PIN_FLD_DESCR           STR [0] "Transition policy opcode number. This opcode is called before the state transition is done. "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "opcode"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FLAGS"
+4                 PIN_FLD_DESCR           STR [0] "Transition policy opcode flag. 0 by default."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "flags"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_svc_order_nxt_stts_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/service_order_state.PIN_FLD_SERVICE_ORDER_STATES.PIN_FLD_NEXT_STATES'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_tlc_svc_order_stts_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/telco/service_order_state.PIN_FLD_SERVICE_ORDER_STATES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [11] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/event/provisioning/service_order/telco"
+1     PIN_FLD_DESCR           STR [0] "Stores information required by the network to provision the device or service. Created when a device or telco service requires provisioning. Subclasses of this class, such as /event/provisioning/service_order/telco/gsm, contain provisioning information for a particular type of service."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_ORDER_INFO"
+2         PIN_FLD_DESCR           STR [0] "Array to hold provisioning for Services, Devices, Profiles etc.."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+3             PIN_FLD_DESCR           STR [0] "The Poid of the Service, Device or Provisioning Object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION"
+3             PIN_FLD_DESCR           STR [0] "Action to be performed. The possible values are : A(Activate),D(Deactivate),S(Suspend) C(Change),R(Reactivate), I(Ignore). "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "Name of the Object to be Provisioned.For Services: MOBTEL, MOBFAX, MOBDATA, etc..For Profile: Home Cell, Home Region, etc.."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 60
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 11
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARAMS"
+3             PIN_FLD_DESCR           STR [0] "Information needed for Provisioning."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION"
+4                 PIN_FLD_DESCR           STR [0] "Action to be performed."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 30
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "action"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "Name of the Parameter,  For Services:CF1,CB1 etc..,  For Devices : IMSI,KI etc.."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 90
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VALUE"
+4                 PIN_FLD_DESCR           STR [0] "Value of the Parameter corresponding to the Field name in the PIN_FLD_NAME. "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 90
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "value"
+3             PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 3
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+4                 PIN_FLD_DESCR           STR [0] "Provisioning Status values: SUCCESS(0), FAILED(1), PROVISIONIONG(2), PRE_PROVISIONING(3)."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+3             PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS_MSG"
+4                 PIN_FLD_DESCR           STR [0] "Brief message for Status. "
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 1023
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "status_msg"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "event_prov_order_tlc_param_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/provisioning/service_order/telco.PIN_FLD_SERVICE_ORDER_INFO.PIN_FLD_PARAMS'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_prov_serv_order_tlc_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/provisioning/service_order/telco.PIN_FLD_SERVICE_ORDER_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [12] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/event/svc_order"
+1     PIN_FLD_DESCR           STR [0] "Base class for storing service order data."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 6
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SVC_ORDER"
+2         PIN_FLD_DESCR           STR [0] "Substruct to hold the service order related fields."
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT"
+3             PIN_FLD_DESCR           STR [0] "The poid of the service order instance."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "svc_order_object"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_svc_order_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/svc_order.PIN_FLD_SVC_ORDER'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [13] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/event/svc_order/state"
+1     PIN_FLD_DESCR           STR [0] "Used to record state transition for a service order."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct holds the related state details."
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_STATE"
+3             PIN_FLD_DESCR           STR [0] "The old state before the transition."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "old_state"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NEW_STATE"
+3             PIN_FLD_DESCR           STR [0] "The new state after the transition."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "new_state"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_svc_order_state_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/svc_order/state.PIN_FLD_STATE_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [14] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/svc_order/attribute"
+1     PIN_FLD_DESCR           STR [0] "Used to record attribute changes to a service order."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [15] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/service_framework"
+1     PIN_FLD_DESCR           STR [0] "Abstract class which contains the set of configuration objects related to BRM services framework"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [16] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/service_framework/permitted_service_types"
+1     PIN_FLD_DESCR           STR [0] "This configuration class is used to configure the set of non-telco services to be supported by TCF, along with the configuration type details."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PERMITTED_SERVICE_TYPES"
+2         PIN_FLD_DESCR           STR [0] "Array of Permitted service types in TCF."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Service type. Example : /service/ip"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "service_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_TYPE_PROV_DTLS"
+3             PIN_FLD_DESCR           STR [0] "Configuration object type where Provisioning details are defined.Provisioning details attributes that needs to be added to output service order. Example: /config/telco/provisioning/ip "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_type_prov_dtls"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_TYPE_SVC_ORDER_STATE"
+3             PIN_FLD_DESCR           STR [0] "Configuration type where service order state is defined.  Example: /config/telco/service_order_state/ip"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_type_svc_order_state"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROVISIONING_MODE"
+3             PIN_FLD_DESCR           STR [0] "Provisioning mode to be supported for the given service type. 0 - Queued mode, 1 - Confirmed mode. By defult Provisioning mode is Queued mode. "
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "provisioning_mode"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_svcfw_perm_svc_types_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/service_framework/permitted_service_types.PIN_FLD_PERMITTED_SERVICE_TYPES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

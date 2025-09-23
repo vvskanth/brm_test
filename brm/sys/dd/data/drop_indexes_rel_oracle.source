@@ -1,0 +1,18 @@
+--
+-- Copyright (c) 2015, Oracle and/or its affiliates. All rights reserved.
+--
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	on Wed May 29 05:16:36 2024.
+--
+
+drop index i_batch_rel__id;
+drop index i_rel_sub_proc__id;
+drop index i_rel_evt_ext_sync__id;
+drop index i_tmp_profile_event_order__id;
+drop index i_batch_rel_input_fname__id;

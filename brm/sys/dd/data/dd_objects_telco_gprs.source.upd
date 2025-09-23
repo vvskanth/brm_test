@@ -1,0 +1,1210 @@
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:51 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 13
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/active_session/telco/gprs"
+1     PIN_FLD_DESCR           STR [0] "The GPRS Session Event. The class describes most of the fields you find in the GPRS S-CDRs and G-CDRs as defined by ETSI. It is created either when a GPRS session (sub-class: master) is started by the user or when a bucket of volume exchange occurs during such session (sub-class subsession)"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 6
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 83, used 46
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GPRS_INFO"
+2         PIN_FLD_DESCR           STR [0] "The structure describing the specific GPRS attributes for G-CDRs and S-CDRs"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ROUTING_AREA"
+3             PIN_FLD_DESCR           STR [0] "Routing Area at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "routing_area"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOC_AREA_CODE"
+3             PIN_FLD_DESCR           STR [0] "Location Area Code at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "loc_area_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CELL_ID"
+3             PIN_FLD_DESCR           STR [0] "Cell Id at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cell_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "PDP Context identifier used to identify this PDP context in different records created by GSNs. This field is a charging identifer."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "Current SGSN address used "
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "IP Address of the GGSN currently used"
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ggsn_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NODE_ID"
+3             PIN_FLD_DESCR           STR [0] "Name of the recording entity, could be the charging gateway name for example"
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "node_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TRANS_ID"
+3             PIN_FLD_DESCR           STR [0] "This field contains a unique incrementing sequence numberwhich the recording entity generates(NODE_ID). The number isallocated sequentially including all CDR types.  It links togetherthe CDR of a same recording entity"
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "trans_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUB_TRANS_ID"
+3             PIN_FLD_DESCR           STR [0] "Partial record sequence number. This field contains a running sequence number which links the partial recordsgenerated for a PDP context/GPRS session. It can be used in post processing to detect missing CDRs for a GPRS session. It links together the CDRs/active_sessions of a same session"
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sub_trans_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXTENSIONS"
+3             PIN_FLD_DESCR           STR [0] "A set of network/manufacturer specific extensions to the record"
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "extensions"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "Infranet status code explaining how the session was loggedout. This is NOT the CDR terminate cause. The valid valuesare: NOT_SET for open sessions (0), OK (1), DROP(2), NOK(3), RESET (4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NI_PDP"
+3             PIN_FLD_DESCR           STR [0] "Network Initiated PDP context True or False. The network initiated a context when it calls a ME. So possible values are: PIN_FLD_TRUE and PIN_FLD_FALSE"
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ni_pdp"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ANONYMOUS_LOGIN"
+3             PIN_FLD_DESCR           STR [0] "Indicate anonymous access"
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "anonymous_login"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_TYPE"
+3             PIN_FLD_DESCR           STR [0] "PDP Type: X.25, IP, PPP, IHOSS:OSP"
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "PDP address of the served IMSI (Ipv4, IPv6, X.121)"
+3             PIN_FLD_ORDER        DECIMAL [0] 14
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_RADDRESS"
+3             PIN_FLD_DESCR           STR [0] "List of PDP address of remote host (comma separated value, G-CDR only, X25 only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 15
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_raddress"
+2         PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_DYNADDR"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether PDP address has been dynamically allocated for that particular PDP contextdynamic. So possible values are:PIN_FLD_TRUE and PIN_FLD_FALSE"
+3             PIN_FLD_ORDER        DECIMAL [0] 16
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_dynaddr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [17] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DIAGNOSTICS"
+3             PIN_FLD_DESCR           STR [0] "A more detailed reason for the release of record"
+3             PIN_FLD_ORDER        DECIMAL [0] 17
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "diagnostics"
+2         PIN_FLD_OBJ_ELEM      ARRAY [18] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_APN"
+3             PIN_FLD_DESCR           STR [0] "The logical name of the connected access point to the external packet data network.  APN comprises of network identifier and operator identifier.  APN can also be a wildcard."
+3             PIN_FLD_ORDER        DECIMAL [0] 18
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "apn"
+2         PIN_FLD_OBJ_ELEM      ARRAY [19] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUMBER_OF_UNITS"
+3             PIN_FLD_DESCR           STR [0] "number of units sent by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 19
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "number_of_units"
+2         PIN_FLD_OBJ_ELEM      ARRAY [20] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_CAPABILITY"
+3             PIN_FLD_DESCR           STR [0] "This field contains the MS Network Capability field which contains the MS network capability value of the MS network capability information element of the served MS on PDP context activation or on GPRS attachment as defined in GSM 04.08 [16]"
+3             PIN_FLD_ORDER        DECIMAL [0] 20
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_capability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [21] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_CHANGE"
+3             PIN_FLD_DESCR           STR [0] "Indicates if the SGSN change during the session"
+3             PIN_FLD_ORDER        DECIMAL [0] 21
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_change"
+2         PIN_FLD_OBJ_ELEM      ARRAY [22] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CHANGE_CONDITION"
+3             PIN_FLD_DESCR           STR [0] "The condition that triggers the creation of this volume container as defined by ETSI. It can have three values: PIN_GPRS_CC_QOS_CHANGE(0) PIN_GPRS_CC_TARIFF_TIME(1) PIN_GPRS_CC_RECORD_CLOSURE(2)"
+3             PIN_FLD_ORDER        DECIMAL [0] 22
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "change_condition"
+2         PIN_FLD_OBJ_ELEM      ARRAY [23] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_PRECEDENCE"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS precedence class, defined by ETSI, that can have three values: PIN_GPRS_QOS_PRECEDENCE_HIGH(1) PIN_GPRS_QOS_PRECEDENCE_NORMAL(2) PIN_GPRS_QOS_PRECEDENCE_LOW(3)"
+3             PIN_FLD_ORDER        DECIMAL [0] 23
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_precedence"
+2         PIN_FLD_OBJ_ELEM      ARRAY [24] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_DELAY"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS delay class, defined by ETSI, that can have four values: PIN_GPRS_QOS_DELAY_ONE(1) PIN_GPRS_QOS_DELAY_TWO(2) PIN_GPRS_QOS_DELAY_THREE(3) PIN_GPRS_QOS_DELAY_FOUR(4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 24
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_delay"
+2         PIN_FLD_OBJ_ELEM      ARRAY [25] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_RELIABILITY"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS reliability class, defined by ETSI, that can have five values: PIN_GPRS_QOS_RELIABILITY_AAPA(1) PIN_GPRS_QOS_RELIABILITY_UAPA(2) PIN_GPRS_QOS_RELIABILITY_UUPA(3) PIN_GPRS_QOS_RELIABILITY_UUPU(4) PIN_GPRS_QOS_RELIABILITY_UUUU(5)"
+3             PIN_FLD_ORDER        DECIMAL [0] 25
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_reliability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [26] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_PEAK_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS peak throughput class, defined  by ETSI, that can have nine values: PIN_GPRS_QOS_PEAK_THROUGH_8(1) PIN_GPRS_QOS_PEAK_THROUGH_16(2) PIN_GPRS_QOS_PEAK_THROUGH_32(3) PIN_GPRS_QOS_PEAK_THROUGH_64(4) PIN_GPRS_QOS_PEAK_THROUGH_128(5) PIN_GPRS_QOS_PEAK_THROUGH_256(6) PIN_GPRS_QOS_PEAK_THROUGH_512(7) PIN_GPRS_QOS_PEAK_THROUGH_1024(8) PIN_GPRS_QOS_PEAK_THROUGH_2048(9)"
+3             PIN_FLD_ORDER        DECIMAL [0] 26
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_peak_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [27] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_MEAN_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS mean throughput class, defined  by ETSI, that can have nineteen values: PIN_GPRS_QOS_MEAN_THROUGH_0022(1) PIN_GPRS_QOS_MEAN_THROUGH_0044(2) PIN_GPRS_QOS_MEAN_THROUGH_0111(3) PIN_GPRS_QOS_MEAN_THROUGH_0220(4) PIN_GPRS_QOS_MEAN_THROUGH_0440(5) PIN_GPRS_QOS_MEAN_THROUGH_1110(6) PIN_GPRS_QOS_MEAN_THROUGH_2200(7) PIN_GPRS_QOS_MEAN_THROUGH_4400(8) PIN_GPRS_QOS_MEAN_THROUGH_0011K(9) PIN_GPRS_QOS_MEAN_THROUGH_0022K(10) PIN_GPRS_QOS_MEAN_THROUGH_0044K(11) PIN_GPRS_QOS_MEAN_THROUGH_0111K(12) PIN_GPRS_QOS_MEAN_THROUGH_0220K(13) PIN_GPRS_QOS_MEAN_THROUGH_0440K(14) PIN_GPRS_QOS_MEAN_THROUGH_1110K(15) PIN_GPRS_QOS_MEAN_THROUGH_2200K(16) PIN_GPRS_QOS_MEAN_THROUGH_4400K(17) PIN_GPRS_QOS_MEAN_THROUGH_11100K(18) PIN_GPRS_QOS_MEAN_THROUGH_BEST(31)"
+3             PIN_FLD_ORDER        DECIMAL [0] 27
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_mean_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [28] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_PRECEDENCE"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS precedence class, defined by ETSI, that can have three values: PIN_GPRS_QOS_PRECEDENCE_HIGH(1) PIN_GPRS_QOS_PRECEDENCE_NORMAL(2) PIN_GPRS_QOS_PRECEDENCE_LOW(3)"
+3             PIN_FLD_ORDER        DECIMAL [0] 28
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_precedence"
+2         PIN_FLD_OBJ_ELEM      ARRAY [29] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_DELAY"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS delay class, defined by ETSI, that can have four values: PIN_GPRS_QOS_DELAY_ONE(1) PIN_GPRS_QOS_DELAY_TWO(2) PIN_GPRS_QOS_DELAY_THREE(3) PIN_GPRS_QOS_DELAY_FOUR(4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 29
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_delay"
+2         PIN_FLD_OBJ_ELEM      ARRAY [30] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_RELIABILITY"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS reliability class, defined by ETSI, that can have five values: PIN_GPRS_QOS_RELIABILITY_AAPA(1) PIN_GPRS_QOS_RELIABILITY_UAPA(2) PIN_GPRS_QOS_RELIABILITY_UUPA(3) PIN_GPRS_QOS_RELIABILITY_UUPU(4) PIN_GPRS_QOS_RELIABILITY_UUUU(5)"
+3             PIN_FLD_ORDER        DECIMAL [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_reliability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [31] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_PEAK_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS peak throughput class, defined by ETSI, that can have nine values: PIN_GPRS_QOS_PEAK_THROUGH_8(1) PIN_GPRS_QOS_PEAK_THROUGH_16(2) PIN_GPRS_QOS_PEAK_THROUGH_32(3) PIN_GPRS_QOS_PEAK_THROUGH_64(4) PIN_GPRS_QOS_PEAK_THROUGH_128(5) PIN_GPRS_QOS_PEAK_THROUGH_256(6) PIN_GPRS_QOS_PEAK_THROUGH_512(7) PIN_GPRS_QOS_PEAK_THROUGH_1024(8) PIN_GPRS_QOS_PEAK_THROUGH_2048(9)"
+3             PIN_FLD_ORDER        DECIMAL [0] 31
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_peak_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [32] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_MEAN_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS mean throughput class, defined by ETSI, that can have nineteen values: PIN_GPRS_QOS_MEAN_THROUGH_0022(1) PIN_GPRS_QOS_MEAN_THROUGH_0044(2) PIN_GPRS_QOS_MEAN_THROUGH_0111(3) PIN_GPRS_QOS_MEAN_THROUGH_0220(4) PIN_GPRS_QOS_MEAN_THROUGH_0440(5) PIN_GPRS_QOS_MEAN_THROUGH_1110(6) PIN_GPRS_QOS_MEAN_THROUGH_2200(7) PIN_GPRS_QOS_MEAN_THROUGH_4400(8) PIN_GPRS_QOS_MEAN_THROUGH_0011K(9) PIN_GPRS_QOS_MEAN_THROUGH_0022K(10) PIN_GPRS_QOS_MEAN_THROUGH_0044K(11) PIN_GPRS_QOS_MEAN_THROUGH_0111K(12) PIN_GPRS_QOS_MEAN_THROUGH_0220K(13) PIN_GPRS_QOS_MEAN_THROUGH_0440K(14) PIN_GPRS_QOS_MEAN_THROUGH_1110K(15) PIN_GPRS_QOS_MEAN_THROUGH_2200K(16) PIN_GPRS_QOS_MEAN_THROUGH_4400K(17) PIN_GPRS_QOS_MEAN_THROUGH_11100K(18) PIN_GPRS_QOS_MEAN_THROUGH_BEST(31)"
+3             PIN_FLD_ORDER        DECIMAL [0] 32
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_mean_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [33] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_PLMN_ID"
+3             PIN_FLD_DESCR           STR [0] " This field contains a SGSN PLMN Identifier (Mobile CountryCode and Mobile Network Code), for the SGSNs which have beenconnected during the record. This implies that when the MS moves toanother PLMN, the G-CDR has to be closed."
+3             PIN_FLD_ORDER        DECIMAL [0] 33
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_plmn_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [34] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MM_STATE"
+3             PIN_FLD_DESCR           STR [0] " Mobility management state, IDLE, STANDBY, READY, PMM-DETACHED, PMM-IDLE, or PMM-CONNECTED."
+3             PIN_FLD_ORDER        DECIMAL [0] 34
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "mm_state"
+2         PIN_FLD_OBJ_ELEM      ARRAY [35] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PTMSI"
+3             PIN_FLD_DESCR           STR [0] " Packet Temporary Mobile Subscriber Identity."
+3             PIN_FLD_ORDER        DECIMAL [0] 35
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ptmsi"
+2         PIN_FLD_OBJ_ELEM      ARRAY [36] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PTMSI_SIGNATURE"
+3             PIN_FLD_DESCR           STR [0] " A signature used for identification checking purposes."
+3             PIN_FLD_ORDER        DECIMAL [0] 36
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ptmsi_signature"
+2         PIN_FLD_OBJ_ELEM      ARRAY [37] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_AREA_CODE"
+3             PIN_FLD_DESCR           STR [0] " Last known SAC when initial UE message was received orLocation Reporting procedure was executed"
+3             PIN_FLD_ORDER        DECIMAL [0] 37
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "service_area_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [38] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXT_CHARGING_ID"
+3             PIN_FLD_DESCR           STR [0] "Holds a Charging Identifier and is present only if it is received froma non-GPRS,external network entity"
+3             PIN_FLD_ORDER        DECIMAL [0] 38
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ext_charging_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [39] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PS_CHARGING_DESCR"
+3             PIN_FLD_DESCR           STR [0] " PS Furnish charging information (Online charging session specific information)"
+3             PIN_FLD_ORDER        DECIMAL [0] 39
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ps_charging_descr"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "active_session_telco_gprs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/active_session/telco/gprs.PIN_FLD_GPRS_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/active_session/telco/gprs/master"
+1     PIN_FLD_DESCR           STR [0] "GPRS Master session Object. Contains information about the data exchanged for a period of time during a GPRS session. ETSI defined the volume exchanged during a GPRS session as a set of containers, each describing a partial volume exchange during a period of time.  This object represents one of this container."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 6
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/active_session/telco/gprs/subsession"
+1     PIN_FLD_DESCR           STR [0] " GPRS Subsession Object. Contains information about the data exchanged for a period of time during a GPRS session. ETSI defined the volume exchanged during a GPRS session as a set of containers, each describing a partial volume exchange during a period of time.  This object represents one of this container."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 6
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/telco/gprs"
+1     PIN_FLD_DESCR           STR [0] " This configuration class  maps provisioning tag names and values for the  /service/telco/gprs storable sub classes."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/telco/service_order_state/gprs"
+1     PIN_FLD_DESCR           STR [0] "Config object that stores the service order state transitions for /service/telco/gprs."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 9
+1     PIN_FLD_NAME            STR [0] "/event/delayed/session/telco/gprs"
+1     PIN_FLD_DESCR           STR [0] "Stores fields associated with GPRS CDRs for prerated events loaded by the RE Loader."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_POSTPAID"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 83, used 45
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GPRS_INFO"
+2         PIN_FLD_DESCR           STR [0] "The structure describing the specific GPRS attributes for G-CDRs and S-CDRs"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ROUTING_AREA"
+3             PIN_FLD_DESCR           STR [0] "Routing Area at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "routing_area"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOC_AREA_CODE"
+3             PIN_FLD_DESCR           STR [0] "Location Area Code at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "loc_area_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CELL_ID"
+3             PIN_FLD_DESCR           STR [0] "Cell Id at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cell_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "PDP Context identifier used to identify this PDP context in different records created by GSNs. This field is a charging identifer."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "Current SGSN address used."
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "IP Address of the GGSN currently used"
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ggsn_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NODE_ID"
+3             PIN_FLD_DESCR           STR [0] "Name of the recording entity.  Eg: The charging gateway name."
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "node_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TRANS_ID"
+3             PIN_FLD_DESCR           STR [0] "This field contains a unique incrementing sequence number which the recording entity generates(NODE_ID). The number is allocated sequentially including all CDR types.  It links together the CDR of a same recording entity."
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "trans_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUB_TRANS_ID"
+3             PIN_FLD_DESCR           STR [0] "Partial record sequence number. This field contains a running sequence number which links the partial records generated for a PDP context/GPRS session. It can be used in post processing to detect missing CDRs for a GPRS session.  It links together the CDRs/events of the same session."
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sub_trans_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXTENSIONS"
+3             PIN_FLD_DESCR           STR [0] "A set of network/manufacturer specific extensions to the record."
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "extensions"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "Infranet status code explaining how the session was logged out.  This is NOT the CDR terminate cause. (See CLOSE_CAUSE).  See pin_gprs.h. The valid values are: NOT_SET for open sessions (0), OK (1), DROP(2), NOK (3), RESET (4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NI_PDP"
+3             PIN_FLD_DESCR           STR [0] "Network Initiated PDP context True or False.  The network initiated a context when it calls a ME.  So possible values are: PIN_FLD_TRUE and PIN_FLD_FALSE"
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ni_pdp"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ANONYMOUS_LOGIN"
+3             PIN_FLD_DESCR           STR [0] "Indicate anonymous access"
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "anonymous_login"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_TYPE"
+3             PIN_FLD_DESCR           STR [0] "PDP Type: X.25, IP, PPP, IHOSS:OSP"
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "PDP address of the served IMSI (Ipv4, IPv6, X.121)"
+3             PIN_FLD_ORDER        DECIMAL [0] 14
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_RADDRESS"
+3             PIN_FLD_DESCR           STR [0] "List of PDP address of remote host (comma separated value, G-CDR only, X25 only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 15
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_raddress"
+2         PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_DYNADDR"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether PDP address has been dynamically allocated for that particular PDP context.  So possible values are: PIN_FLD_TRUE and PIN_FLD_FALSE"
+3             PIN_FLD_ORDER        DECIMAL [0] 16
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_dynaddr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [17] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DIAGNOSTICS"
+3             PIN_FLD_DESCR           STR [0] "A more detailed reason for the release of record"
+3             PIN_FLD_ORDER        DECIMAL [0] 17
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "diagnostics"
+2         PIN_FLD_OBJ_ELEM      ARRAY [18] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_APN"
+3             PIN_FLD_DESCR           STR [0] "The logical name of the connected access point to the external packet data network.  APN comprises of network identifier and operator identifier.  APN can also be a wildcard."
+3             PIN_FLD_ORDER        DECIMAL [0] 18
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "apn"
+2         PIN_FLD_OBJ_ELEM      ARRAY [19] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUMBER_OF_UNITS"
+3             PIN_FLD_DESCR           STR [0] "number of units sent by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 19
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "number_of_units"
+2         PIN_FLD_OBJ_ELEM      ARRAY [20] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_CAPABILITY"
+3             PIN_FLD_DESCR           STR [0] "This field contains the MS Network Capability field which contains the MS network capability value of the MS network capability information element of the served MS on PDP context activation or on GPRS attachment as defined in GSM 04.08 [16]"
+3             PIN_FLD_ORDER        DECIMAL [0] 20
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_capability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [21] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_CHANGE"
+3             PIN_FLD_DESCR           STR [0] "Indicates if the SGSN change during the session"
+3             PIN_FLD_ORDER        DECIMAL [0] 21
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_change"
+2         PIN_FLD_OBJ_ELEM      ARRAY [22] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CHANGE_CONDITION"
+3             PIN_FLD_DESCR           STR [0] "The condition that triggers the creation of this volume container as defined by ETSI. It can have three values: PIN_GPRS_CC_QOS_CHANGE(0) PIN_GPRS_CC_TARIFF_TIME(1) PIN_GPRS_CC_RECORD_CLOSURE(2)"
+3             PIN_FLD_ORDER        DECIMAL [0] 22
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "change_condition"
+2         PIN_FLD_OBJ_ELEM      ARRAY [23] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_PRECEDENCE"
+3             PIN_FLD_DESCR           STR [0] "QOS precedence class, defined by ETSI, that can have three values: PIN_GPRS_QOS_PRECEDENCE_HIGH(1) PIN_GPRS_QOS_PRECEDENCE_NORMAL(2) PIN_GPRS_QOS_PRECEDENCE_LOW(3)"
+3             PIN_FLD_ORDER        DECIMAL [0] 23
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_precedence"
+2         PIN_FLD_OBJ_ELEM      ARRAY [24] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_DELAY"
+3             PIN_FLD_DESCR           STR [0] "QOS delay class, defined by ETSI, that can have four values: PIN_GPRS_QOS_DELAY_ONE(1) PIN_GPRS_QOS_DELAY_TWO(2) PIN_GPRS_QOS_DELAY_THREE(3) PIN_GPRS_QOS_DELAY_FOUR(4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 24
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_delay"
+2         PIN_FLD_OBJ_ELEM      ARRAY [25] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_RELIABILITY"
+3             PIN_FLD_DESCR           STR [0] "QOS reliability class, defined by ETSI, that can have five values: PIN_GPRS_QOS_RELIABILITY_AAPA(1) PIN_GPRS_QOS_RELIABILITY_UAPA(2) PIN_GPRS_QOS_RELIABILITY_UUPA(3) PIN_GPRS_QOS_RELIABILITY_UUPU(4) PIN_GPRS_QOS_RELIABILITY_UUUU(5)"
+3             PIN_FLD_ORDER        DECIMAL [0] 25
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_reliability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [26] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_PEAK_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "QOS peak throughput class, defined  by ETSI, that can have nine values: PIN_GPRS_QOS_PEAK_THROUGH_8(1) PIN_GPRS_QOS_PEAK_THROUGH_16(2) PIN_GPRS_QOS_PEAK_THROUGH_32(3) PIN_GPRS_QOS_PEAK_THROUGH_64(4) PIN_GPRS_QOS_PEAK_THROUGH_128(5) PIN_GPRS_QOS_PEAK_THROUGH_256(6) PIN_GPRS_QOS_PEAK_THROUGH_512(7) PIN_GPRS_QOS_PEAK_THROUGH_1024(8) PIN_GPRS_QOS_PEAK_THROUGH_2048(9)"
+3             PIN_FLD_ORDER        DECIMAL [0] 26
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_peak_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [27] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_MEAN_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "QOS mean throughput class, defined  by ETSI, that can have nineteen values: PIN_GPRS_QOS_MEAN_THROUGH_0022(1) PIN_GPRS_QOS_MEAN_THROUGH_0044(2) PIN_GPRS_QOS_MEAN_THROUGH_0111(3) PIN_GPRS_QOS_MEAN_THROUGH_0220(4) PIN_GPRS_QOS_MEAN_THROUGH_0440(5) PIN_GPRS_QOS_MEAN_THROUGH_1110(6) PIN_GPRS_QOS_MEAN_THROUGH_2200(7) PIN_GPRS_QOS_MEAN_THROUGH_4400(8) PIN_GPRS_QOS_MEAN_THROUGH_0011K(9) PIN_GPRS_QOS_MEAN_THROUGH_0022K(10) PIN_GPRS_QOS_MEAN_THROUGH_0044K(11) PIN_GPRS_QOS_MEAN_THROUGH_0111K(12) PIN_GPRS_QOS_MEAN_THROUGH_0220K(13) PIN_GPRS_QOS_MEAN_THROUGH_0440K(14) PIN_GPRS_QOS_MEAN_THROUGH_1110K(15) PIN_GPRS_QOS_MEAN_THROUGH_2200K(16) PIN_GPRS_QOS_MEAN_THROUGH_4400K(17) PIN_GPRS_QOS_MEAN_THROUGH_11100K(18) PIN_GPRS_QOS_MEAN_THROUGH_BEST(31)"
+3             PIN_FLD_ORDER        DECIMAL [0] 27
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_mean_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [28] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_PRECEDENCE"
+3             PIN_FLD_DESCR           STR [0] "QOS precedence class, defined by ETSI, that can have three values: PIN_GPRS_QOS_PRECEDENCE_HIGH(1) PIN_GPRS_QOS_PRECEDENCE_NORMAL(2) PIN_GPRS_QOS_PRECEDENCE_LOW(3)"
+3             PIN_FLD_ORDER        DECIMAL [0] 28
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_precedence"
+2         PIN_FLD_OBJ_ELEM      ARRAY [29] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_DELAY"
+3             PIN_FLD_DESCR           STR [0] "QOS delay class, defined by ETSI, that can have four values: PIN_GPRS_QOS_DELAY_ONE(1) PIN_GPRS_QOS_DELAY_TWO(2) PIN_GPRS_QOS_DELAY_THREE(3) PIN_GPRS_QOS_DELAY_FOUR(4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 29
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_delay"
+2         PIN_FLD_OBJ_ELEM      ARRAY [30] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_RELIABILITY"
+3             PIN_FLD_DESCR           STR [0] "QOS reliability class, defined by ETSI, that can have five values: PIN_GPRS_QOS_RELIABILITY_AAPA(1) PIN_GPRS_QOS_RELIABILITY_UAPA(2) PIN_GPRS_QOS_RELIABILITY_UUPA(3) PIN_GPRS_QOS_RELIABILITY_UUPU(4) PIN_GPRS_QOS_RELIABILITY_UUUU(5)"
+3             PIN_FLD_ORDER        DECIMAL [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_reliability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [31] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_PEAK_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "QOS peak throughput class, defined by ETSI, that can have nine values: PIN_GPRS_QOS_PEAK_THROUGH_8(1) PIN_GPRS_QOS_PEAK_THROUGH_16(2) PIN_GPRS_QOS_PEAK_THROUGH_32(3) PIN_GPRS_QOS_PEAK_THROUGH_64(4) PIN_GPRS_QOS_PEAK_THROUGH_128(5) PIN_GPRS_QOS_PEAK_THROUGH_256(6) PIN_GPRS_QOS_PEAK_THROUGH_512(7) PIN_GPRS_QOS_PEAK_THROUGH_1024(8) PIN_GPRS_QOS_PEAK_THROUGH_2048(9)"
+3             PIN_FLD_ORDER        DECIMAL [0] 31
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_peak_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [32] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_MEAN_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "QOS mean throughput class, defined by ETSI, that can have nineteen values: PIN_GPRS_QOS_MEAN_THROUGH_0022(1) PIN_GPRS_QOS_MEAN_THROUGH_0044(2) PIN_GPRS_QOS_MEAN_THROUGH_0111(3) PIN_GPRS_QOS_MEAN_THROUGH_0220(4) PIN_GPRS_QOS_MEAN_THROUGH_0440(5) PIN_GPRS_QOS_MEAN_THROUGH_1110(6) PIN_GPRS_QOS_MEAN_THROUGH_2200(7) PIN_GPRS_QOS_MEAN_THROUGH_4400(8) PIN_GPRS_QOS_MEAN_THROUGH_0011K(9) PIN_GPRS_QOS_MEAN_THROUGH_0022K(10) PIN_GPRS_QOS_MEAN_THROUGH_0044K(11) PIN_GPRS_QOS_MEAN_THROUGH_0111K(12) PIN_GPRS_QOS_MEAN_THROUGH_0220K(13) PIN_GPRS_QOS_MEAN_THROUGH_0440K(14) PIN_GPRS_QOS_MEAN_THROUGH_1110K(15) PIN_GPRS_QOS_MEAN_THROUGH_2200K(16) PIN_GPRS_QOS_MEAN_THROUGH_4400K(17) PIN_GPRS_QOS_MEAN_THROUGH_11100K(18) PIN_GPRS_QOS_MEAN_THROUGH_BEST(31)"
+3             PIN_FLD_ORDER        DECIMAL [0] 32
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_mean_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [33] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_PLMN_ID"
+3             PIN_FLD_DESCR           STR [0] " This field contains a SGSN PLMN Identifier (Mobile Countryconnected during the record. This implies that when the MS moves toanother PLMN, the G-CDR has to be closed."
+3             PIN_FLD_ORDER        DECIMAL [0] 33
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_plmn_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [34] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MM_STATE"
+3             PIN_FLD_DESCR           STR [0] " Mobility management state, IDLE, STANDBY, READY, PMM- DETACHED, PMM-IDLE, or PMM-CONNECTED."
+3             PIN_FLD_ORDER        DECIMAL [0] 34
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "mm_state"
+2         PIN_FLD_OBJ_ELEM      ARRAY [35] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PTMSI"
+3             PIN_FLD_DESCR           STR [0] " Packet Temporary Mobile Subscriber Identity."
+3             PIN_FLD_ORDER        DECIMAL [0] 35
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ptmsi"
+2         PIN_FLD_OBJ_ELEM      ARRAY [36] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PTMSI_SIGNATURE"
+3             PIN_FLD_DESCR           STR [0] " A signature used for identification checking purposes."
+3             PIN_FLD_ORDER        DECIMAL [0] 36
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ptmsi_signature"
+2         PIN_FLD_OBJ_ELEM      ARRAY [37] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_AREA_CODE"
+3             PIN_FLD_DESCR           STR [0] " Last known SAC when initial UE message was received orLocation Reporting procedure was executed"
+3             PIN_FLD_ORDER        DECIMAL [0] 37
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "service_area_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [38] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXT_CHARGING_ID"
+3             PIN_FLD_DESCR           STR [0] "Holds a Charging Identifier and is present only if it is received froma non-GPRS,external network entity"
+3             PIN_FLD_ORDER        DECIMAL [0] 38
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ext_charging_id"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_dlyd_session_tlco_gprs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/delayed/session/telco/gprs.PIN_FLD_GPRS_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [6] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/delayed/session/telco/gprs/roaming"
+1     PIN_FLD_DESCR           STR [0] "This describes a roaming gprs call, which should be billedto a subscriber."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_POSTPAID"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [7] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/event/provisioning/service_order/telco/gprs"
+1     PIN_FLD_DESCR           STR [0] "Event object created for Services that need Provisioning. This class represents the service order event for GPRS service"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [8] allocated 20, used 9
+1     PIN_FLD_NAME            STR [0] "/event/session/telco/gprs"
+1     PIN_FLD_DESCR           STR [0] "The GPRS Session Event. This class is an abstract class which describes most of the fields you find in the GPRS S-CDRs and G-CDRs as defined by ETSI. It is created either when a GPRS session (sub-class: master) is started by the user or when a bucket of volume exchange occurs during such session (sub-class subsession)"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_PREPAID"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 83, used 46
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GPRS_INFO"
+2         PIN_FLD_DESCR           STR [0] "The structure describing the specific GPRS attributes for G-CDRs and S-CDRs"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ROUTING_AREA"
+3             PIN_FLD_DESCR           STR [0] "Routing Area at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "routing_area"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOC_AREA_CODE"
+3             PIN_FLD_DESCR           STR [0] "Location Area Code at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "loc_area_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CELL_ID"
+3             PIN_FLD_DESCR           STR [0] "Cell Id at the time of the record creation. (S-CDR only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cell_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SESSION_ID"
+3             PIN_FLD_DESCR           STR [0] "PDP Context identifier used to identify this PDP context in different records created by GSNs. This field is a charging identifer."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "session_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "Current SGSN address used "
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "IP Address of the GGSN currently used"
+3             PIN_FLD_ORDER        DECIMAL [0] 5
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ggsn_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NODE_ID"
+3             PIN_FLD_DESCR           STR [0] "Name of the recording entity, could be the charging gateway name for example"
+3             PIN_FLD_ORDER        DECIMAL [0] 6
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "node_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TRANS_ID"
+3             PIN_FLD_DESCR           STR [0] "This field contains a unique incrementing sequence numberwhich the recording entity generates(NODE_ID). The number isallocated sequentially including all CDR types.  It links togetherthe CDR of a same recording entity"
+3             PIN_FLD_ORDER        DECIMAL [0] 7
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "trans_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUB_TRANS_ID"
+3             PIN_FLD_DESCR           STR [0] "Partial record sequence number. This field contains a running sequence number which links the partial recordsgenerated for a PDP context/GPRS session. It can be used in post processing to detect missing CDRs for a GPRS session. It links together the CDRs/events of a same session"
+3             PIN_FLD_ORDER        DECIMAL [0] 8
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sub_trans_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXTENSIONS"
+3             PIN_FLD_DESCR           STR [0] "A set of network/manufacturer specific extensions to the record"
+3             PIN_FLD_ORDER        DECIMAL [0] 9
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "extensions"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "Infranet status code explaining how the session was loggedout. This is NOT the CDR terminate cause. The valid valuesare: NOT_SET for open sessions (0), OK (1), DROP(2), NOK(3), RESET (4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NI_PDP"
+3             PIN_FLD_DESCR           STR [0] "Network Initiated PDP context True or False. The network initiated a context when it calls a ME. So possible values are: PIN_FLD_TRUE and PIN_FLD_FALSE"
+3             PIN_FLD_ORDER        DECIMAL [0] 11
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ni_pdp"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ANONYMOUS_LOGIN"
+3             PIN_FLD_DESCR           STR [0] "Indicate anonymous access"
+3             PIN_FLD_ORDER        DECIMAL [0] 12
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "anonymous_login"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_TYPE"
+3             PIN_FLD_DESCR           STR [0] "PDP Type: X.25, IP, PPP, IHOSS:OSP"
+3             PIN_FLD_ORDER        DECIMAL [0] 13
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "PDP address of the served IMSI (Ipv4, IPv6, X.121)"
+3             PIN_FLD_ORDER        DECIMAL [0] 14
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_RADDRESS"
+3             PIN_FLD_DESCR           STR [0] "List of PDP address of remote host (comma separated value, G-CDR only, X25 only)"
+3             PIN_FLD_ORDER        DECIMAL [0] 15
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_raddress"
+2         PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PDP_DYNADDR"
+3             PIN_FLD_DESCR           STR [0] "Indicates whether PDP address has been dynamically allocated for that particular PDP contextdynamic. So possible values are:PIN_FLD_TRUE and PIN_FLD_FALSE"
+3             PIN_FLD_ORDER        DECIMAL [0] 16
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "pdp_dynaddr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [17] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DIAGNOSTICS"
+3             PIN_FLD_DESCR           STR [0] "A more detailed reason for the release of record"
+3             PIN_FLD_ORDER        DECIMAL [0] 17
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "diagnostics"
+2         PIN_FLD_OBJ_ELEM      ARRAY [18] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_APN"
+3             PIN_FLD_DESCR           STR [0] "The logical name of the connected access point to the external packet data network.  APN comprises of network identifier and operator identifier.  APN can also be a wildcard."
+3             PIN_FLD_ORDER        DECIMAL [0] 18
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "apn"
+2         PIN_FLD_OBJ_ELEM      ARRAY [19] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUMBER_OF_UNITS"
+3             PIN_FLD_DESCR           STR [0] "number of units sent by the call initiator."
+3             PIN_FLD_ORDER        DECIMAL [0] 19
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "number_of_units"
+2         PIN_FLD_OBJ_ELEM      ARRAY [20] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NETWORK_CAPABILITY"
+3             PIN_FLD_DESCR           STR [0] "This field contains the MS Network Capability field which contains the MS network capability value of the MS network capability information element of the served MS on PDP context activation or on GPRS attachment as defined in GSM 04.08 [16]"
+3             PIN_FLD_ORDER        DECIMAL [0] 20
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "network_capability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [21] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_CHANGE"
+3             PIN_FLD_DESCR           STR [0] "Indicates if the SGSN change during the session"
+3             PIN_FLD_ORDER        DECIMAL [0] 21
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_change"
+2         PIN_FLD_OBJ_ELEM      ARRAY [22] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CHANGE_CONDITION"
+3             PIN_FLD_DESCR           STR [0] "The condition that triggers the creation of this volume container as defined by ETSI. It can have three values: PIN_GPRS_CC_QOS_CHANGE(0) PIN_GPRS_CC_TARIFF_TIME(1) PIN_GPRS_CC_RECORD_CLOSURE(2)"
+3             PIN_FLD_ORDER        DECIMAL [0] 22
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "change_condition"
+2         PIN_FLD_OBJ_ELEM      ARRAY [23] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_PRECEDENCE"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS precedence class, defined by ETSI, that can have three values: PIN_GPRS_QOS_PRECEDENCE_HIGH(1) PIN_GPRS_QOS_PRECEDENCE_NORMAL(2) PIN_GPRS_QOS_PRECEDENCE_LOW(3)"
+3             PIN_FLD_ORDER        DECIMAL [0] 23
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_precedence"
+2         PIN_FLD_OBJ_ELEM      ARRAY [24] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_DELAY"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS delay class, defined by ETSI, that can have four values: PIN_GPRS_QOS_DELAY_ONE(1) PIN_GPRS_QOS_DELAY_TWO(2) PIN_GPRS_QOS_DELAY_THREE(3) PIN_GPRS_QOS_DELAY_FOUR(4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 24
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_delay"
+2         PIN_FLD_OBJ_ELEM      ARRAY [25] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_RELIABILITY"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS reliability class, defined by ETSI, that can have five values: PIN_GPRS_QOS_RELIABILITY_AAPA(1) PIN_GPRS_QOS_RELIABILITY_UAPA(2) PIN_GPRS_QOS_RELIABILITY_UUPA(3) PIN_GPRS_QOS_RELIABILITY_UUPU(4) PIN_GPRS_QOS_RELIABILITY_UUUU(5)"
+3             PIN_FLD_ORDER        DECIMAL [0] 25
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_reliability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [26] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_PEAK_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS peak throughput class, defined  by ETSI, that can have nine values: PIN_GPRS_QOS_PEAK_THROUGH_8(1) PIN_GPRS_QOS_PEAK_THROUGH_16(2) PIN_GPRS_QOS_PEAK_THROUGH_32(3) PIN_GPRS_QOS_PEAK_THROUGH_64(4) PIN_GPRS_QOS_PEAK_THROUGH_128(5) PIN_GPRS_QOS_PEAK_THROUGH_256(6) PIN_GPRS_QOS_PEAK_THROUGH_512(7) PIN_GPRS_QOS_PEAK_THROUGH_1024(8) PIN_GPRS_QOS_PEAK_THROUGH_2048(9)"
+3             PIN_FLD_ORDER        DECIMAL [0] 26
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_peak_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [27] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_REQ_MEAN_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Requested QOS mean throughput class, defined  by ETSI, that can have nineteen values: PIN_GPRS_QOS_MEAN_THROUGH_0022(1) PIN_GPRS_QOS_MEAN_THROUGH_0044(2) PIN_GPRS_QOS_MEAN_THROUGH_0111(3) PIN_GPRS_QOS_MEAN_THROUGH_0220(4) PIN_GPRS_QOS_MEAN_THROUGH_0440(5) PIN_GPRS_QOS_MEAN_THROUGH_1110(6) PIN_GPRS_QOS_MEAN_THROUGH_2200(7) PIN_GPRS_QOS_MEAN_THROUGH_4400(8) PIN_GPRS_QOS_MEAN_THROUGH_0011K(9) PIN_GPRS_QOS_MEAN_THROUGH_0022K(10) PIN_GPRS_QOS_MEAN_THROUGH_0044K(11) PIN_GPRS_QOS_MEAN_THROUGH_0111K(12) PIN_GPRS_QOS_MEAN_THROUGH_0220K(13) PIN_GPRS_QOS_MEAN_THROUGH_0440K(14) PIN_GPRS_QOS_MEAN_THROUGH_1110K(15) PIN_GPRS_QOS_MEAN_THROUGH_2200K(16) PIN_GPRS_QOS_MEAN_THROUGH_4400K(17) PIN_GPRS_QOS_MEAN_THROUGH_11100K(18) PIN_GPRS_QOS_MEAN_THROUGH_BEST(31)"
+3             PIN_FLD_ORDER        DECIMAL [0] 27
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_req_mean_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [28] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_PRECEDENCE"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS precedence class, defined by ETSI, that can have three values: PIN_GPRS_QOS_PRECEDENCE_HIGH(1) PIN_GPRS_QOS_PRECEDENCE_NORMAL(2) PIN_GPRS_QOS_PRECEDENCE_LOW(3)"
+3             PIN_FLD_ORDER        DECIMAL [0] 28
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_precedence"
+2         PIN_FLD_OBJ_ELEM      ARRAY [29] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_DELAY"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS delay class, defined by ETSI, that can have four values: PIN_GPRS_QOS_DELAY_ONE(1) PIN_GPRS_QOS_DELAY_TWO(2) PIN_GPRS_QOS_DELAY_THREE(3) PIN_GPRS_QOS_DELAY_FOUR(4)"
+3             PIN_FLD_ORDER        DECIMAL [0] 29
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_delay"
+2         PIN_FLD_OBJ_ELEM      ARRAY [30] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_RELIABILITY"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS reliability class, defined by ETSI, that can have five values: PIN_GPRS_QOS_RELIABILITY_AAPA(1) PIN_GPRS_QOS_RELIABILITY_UAPA(2) PIN_GPRS_QOS_RELIABILITY_UUPA(3) PIN_GPRS_QOS_RELIABILITY_UUPU(4) PIN_GPRS_QOS_RELIABILITY_UUUU(5)"
+3             PIN_FLD_ORDER        DECIMAL [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_reliability"
+2         PIN_FLD_OBJ_ELEM      ARRAY [31] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_PEAK_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS peak throughput class, defined by ETSI, that can have nine values: PIN_GPRS_QOS_PEAK_THROUGH_8(1) PIN_GPRS_QOS_PEAK_THROUGH_16(2) PIN_GPRS_QOS_PEAK_THROUGH_32(3) PIN_GPRS_QOS_PEAK_THROUGH_64(4) PIN_GPRS_QOS_PEAK_THROUGH_128(5) PIN_GPRS_QOS_PEAK_THROUGH_256(6) PIN_GPRS_QOS_PEAK_THROUGH_512(7) PIN_GPRS_QOS_PEAK_THROUGH_1024(8) PIN_GPRS_QOS_PEAK_THROUGH_2048(9)"
+3             PIN_FLD_ORDER        DECIMAL [0] 31
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_peak_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [32] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_NEGO_MEAN_THROUGH"
+3             PIN_FLD_DESCR           STR [0] "Negotiated QOS mean throughput class, defined by ETSI, that can have nineteen values: PIN_GPRS_QOS_MEAN_THROUGH_0022(1) PIN_GPRS_QOS_MEAN_THROUGH_0044(2) PIN_GPRS_QOS_MEAN_THROUGH_0111(3) PIN_GPRS_QOS_MEAN_THROUGH_0220(4) PIN_GPRS_QOS_MEAN_THROUGH_0440(5) PIN_GPRS_QOS_MEAN_THROUGH_1110(6) PIN_GPRS_QOS_MEAN_THROUGH_2200(7) PIN_GPRS_QOS_MEAN_THROUGH_4400(8) PIN_GPRS_QOS_MEAN_THROUGH_0011K(9) PIN_GPRS_QOS_MEAN_THROUGH_0022K(10) PIN_GPRS_QOS_MEAN_THROUGH_0044K(11) PIN_GPRS_QOS_MEAN_THROUGH_0111K(12) PIN_GPRS_QOS_MEAN_THROUGH_0220K(13) PIN_GPRS_QOS_MEAN_THROUGH_0440K(14) PIN_GPRS_QOS_MEAN_THROUGH_1110K(15) PIN_GPRS_QOS_MEAN_THROUGH_2200K(16) PIN_GPRS_QOS_MEAN_THROUGH_4400K(17) PIN_GPRS_QOS_MEAN_THROUGH_11100K(18) PIN_GPRS_QOS_MEAN_THROUGH_BEST(31)"
+3             PIN_FLD_ORDER        DECIMAL [0] 32
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_nego_mean_through"
+2         PIN_FLD_OBJ_ELEM      ARRAY [33] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_PLMN_ID"
+3             PIN_FLD_DESCR           STR [0] " This field contains a SGSN PLMN Identifier (Mobile CountryCode and Mobile Network Code), for the SGSNs which have beenconnected during the record. This implies that when the MS moves toanother PLMN, the G-CDR has to be closed."
+3             PIN_FLD_ORDER        DECIMAL [0] 33
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_plmn_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [34] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MM_STATE"
+3             PIN_FLD_DESCR           STR [0] " Mobility management state, IDLE, STANDBY, READY, PMM-DETACHED, PMM-IDLE, or PMM-CONNECTED."
+3             PIN_FLD_ORDER        DECIMAL [0] 34
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "mm_state"
+2         PIN_FLD_OBJ_ELEM      ARRAY [35] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PTMSI"
+3             PIN_FLD_DESCR           STR [0] " Packet Temporary Mobile Subscriber Identity."
+3             PIN_FLD_ORDER        DECIMAL [0] 35
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ptmsi"
+2         PIN_FLD_OBJ_ELEM      ARRAY [36] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PTMSI_SIGNATURE"
+3             PIN_FLD_DESCR           STR [0] " A signature used for identification checking purposes."
+3             PIN_FLD_ORDER        DECIMAL [0] 36
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ptmsi_signature"
+2         PIN_FLD_OBJ_ELEM      ARRAY [37] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_AREA_CODE"
+3             PIN_FLD_DESCR           STR [0] " Last known SAC when initial UE message was received orLocation Reporting procedure was executed"
+3             PIN_FLD_ORDER        DECIMAL [0] 37
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "service_area_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [38] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXT_CHARGING_ID"
+3             PIN_FLD_DESCR           STR [0] "Holds a Charging Identifier and is present only if it is received froma non-GPRS,external network entity"
+3             PIN_FLD_ORDER        DECIMAL [0] 38
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ext_charging_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [39] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PS_CHARGING_DESCR"
+3             PIN_FLD_DESCR           STR [0] " PS Furnish charging information (Online charging session specific information)"
+3             PIN_FLD_ORDER        DECIMAL [0] 39
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ps_charging_descr"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_session_telco_gprs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/session/telco/gprs.PIN_FLD_GPRS_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [9] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/event/session/telco/gprs/master"
+1     PIN_FLD_DESCR           STR [0] "GPRS Master session Object. Contains information about the data exchanged for a period of time during a GPRS session. ETSI defined the volume exchanged during a GPRS session as a set of containers, each describing a partial volume exchange during a period of time.  This object represents one of this container."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_PREPAID"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [10] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/event/session/telco/gprs/subsession"
+1     PIN_FLD_DESCR           STR [0] " GPRS Subsession Object. Contains information about the data exchanged for a period of time during a GPRS session. ETSI defined the volume exchanged during a GPRS session as a set of containers, each describing a partial volume exchange during a period of time.  This object represents one of this container."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_EVENT_TYPE      STR [0] "USAGE_PREPAID"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [11] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/service/telco/gprs"
+1     PIN_FLD_DESCR           STR [0] "This a base class for all Telco based GPRS services. This class includes fileds for all GPRS service configuration."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 5
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GPRS_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct to hold GPRS service-specific information."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ROUTING_AREA"
+3             PIN_FLD_DESCR           STR [0] "Current Routing Area"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "routing_area"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOC_AREA_CODE"
+3             PIN_FLD_DESCR           STR [0] " Current Location Area Code"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "loc_area_code"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CELL_ID"
+3             PIN_FLD_DESCR           STR [0] " Current Cell Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 10
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cell_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BEARER_SERVICE"
+3             PIN_FLD_DESCR           STR [0] "This field holds the bearer service information."
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bearer_service"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "service_telco_gprs_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/service/telco/gprs.PIN_FLD_GPRS_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_APN_ARRAY"
+2         PIN_FLD_DESCR           STR [0] "An array to hold the APN name and the QoS Information"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_APN"
+3             PIN_FLD_DESCR           STR [0] "The logical name of the connected access point tothe external packet data network. APN comprises ofnetwork identifier and operator identifier. APN can alsobe a wildcard"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "apn"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QOS_PROFILE_NAME"
+3             PIN_FLD_DESCR           STR [0] "This field contains the QoS profile name, which canrepresent any of the QoS parameters defined by ETSI"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "qos_profile_name"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "service_telco_gprs_apn_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/service/telco/gprs.PIN_FLD_APN_ARRAY'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [12] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/service/telco/gprs/roaming"
+1     PIN_FLD_DESCR           STR [0] "Service telco gprs Roaming Object. Use to track the roaming gprs service for roaming subscribers"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

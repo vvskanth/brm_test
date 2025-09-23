@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+================================================================================
+ Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved.
+This material is the confidential property of Oracle Corporation or its
+licensors and may be used, reproduced, stored or transmitted only in
+accordance with a valid Oracle license or sublicense agreement.
+================================================================================
+-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_delivery_methods.xsd">
+<ConfigObject>
+	<POID>0.0.0.1 /config/delivery_methods -1 0</POID>
+	<ACCOUNT_OBJ>0.0.0.1 /account 1 0</ACCOUNT_OBJ>
+	<DESCR></DESCR>
+	<HOSTNAME>-</HOSTNAME>
+	<NAME>config_notification_spec</NAME>
+	<PROGRAM_NAME>Notification Spec testnap creation</PROGRAM_NAME>
+        <DELIVERY_METHODS elem="0">
+                <NAME>IVR</NAME>
+                <TYPE>1</TYPE>
+		<DELIVERY_IDENTIFIER_TAG>Phone</DELIVERY_IDENTIFIER_TAG>
+        </DELIVERY_METHODS>
+	<DELIVERY_METHODS elem="1">
+		<NAME>SMS</NAME>
+		<TYPE>2</TYPE>
+		<DELIVERY_IDENTIFIER_TAG>Phone</DELIVERY_IDENTIFIER_TAG>
+	</DELIVERY_METHODS>
+	<DELIVERY_METHODS elem="2">
+		<NAME>EMAIL</NAME>
+		<TYPE>3</TYPE>
+		<DELIVERY_IDENTIFIER_TAG>Email</DELIVERY_IDENTIFIER_TAG>
+	</DELIVERY_METHODS>
+</ConfigObject>
+</ObjectList>

@@ -1,0 +1,79 @@
+-- @(#)$Id: 7.4PS2_create_indexes_collections_AIA.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:47:04 nishahan Exp $
+--
+-- Copyright (c) 2009, 2010, Oracle and/or its affiliates. 
+-- All rights reserved. 
+--
+-- This material is the confidential property of Oracle Corporation or its
+-- licensors and may be used, reproduced, stored or transmitted only in
+-- accordance with a valid Oracle license or sublicense agreement.
+--
+
+DECLARE
+
+	v_ddl_stmt	VARCHAR2(4000);
+	v_count		NUMBER;
+	v_errmsg	VARCHAR2(200);
+	v_index_creation_error CONSTANT NUMBER := -20001;
+BEGIN
+	v_ddl_stmt := 'ALTER SESSION FORCE PARALLEL dml';
+	EXECUTE IMMEDIATE v_ddl_stmt;
+
+	v_ddl_stmt := 'ALTER SESSION FORCE PARALLEL ddl';
+	EXECUTE IMMEDIATE v_ddl_stmt;
+
+	BEGIN
+
+	IF (NOT ((pin_upg_common.INDEX_EXISTS('i_au_coll_action_created__id', v_errmsg))
+		OR (pin_upg_common.INDEX_EXISTS('i_au_coll_action__created_t', v_errmsg)))) THEN 
+		IF (pin_upg_common.table_EXISTS('au_collections_action_t', v_errmsg)) THEN
+			v_ddl_stmt := 'CREATE INDEX i_au_coll_action_created__id ON au_collections_action_t ( created_t )
+			$PIN_CONF_TBLSPACEX13
+			$PIN_CONF_STORAGE_MED_INS';
+
+			EXECUTE IMMEDIATE v_ddl_stmt;
+		END IF;
+	END IF;
+        
+	EXCEPTION
+		WHEN OTHERS THEN
+			RAISE_APPLICATION_ERROR(v_index_creation_error, 'INDEX CREATION FAILED FOR i_au_coll_action_created__id '||sqlerrm, TRUE);
+	END;
+        
+	BEGIN
+        
+	IF (NOT ((pin_upg_common.INDEX_EXISTS('i_coll_scenario_mod__id', v_errmsg))
+		OR (pin_upg_common.INDEX_EXISTS('i_coll_scenario__mod_t', v_errmsg)))) THEN 
+		IF (pin_upg_common.table_EXISTS('collections_scenario_t', v_errmsg)) THEN
+			v_ddl_stmt := 'CREATE INDEX i_coll_scenario_mod__id ON  collections_scenario_t ( mod_t )
+			$PIN_CONF_TBLSPACEX13
+			$PIN_CONF_STORAGE_MED_INS';
+
+			EXECUTE IMMEDIATE v_ddl_stmt;
+		END IF;
+	END IF;
+        
+	EXCEPTION
+		WHEN OTHERS THEN
+			RAISE_APPLICATION_ERROR(v_index_creation_error, 'INDEX CREATION FAILED FOR i_coll_scenario_mod__id'||sqlerrm, TRUE);
+	END;
+        
+	BEGIN
+        
+	IF (NOT ((pin_upg_common.INDEX_EXISTS('i_coll_scenario_created__id', v_errmsg)) 
+		OR (pin_upg_common.INDEX_EXISTS('i_coll_scenario__created_t', v_errmsg)))) THEN
+		IF (pin_upg_common.table_EXISTS('collections_scenario_t', v_errmsg)) THEN
+			v_ddl_stmt := 'CREATE INDEX i_coll_scenario_created__id ON collections_scenario_t ( created_t )
+			$PIN_CONF_TBLSPACEX13
+			$PIN_CONF_STORAGE_MED_INS';
+
+			EXECUTE IMMEDIATE v_ddl_stmt;
+		END IF;
+	END IF;
+        
+	EXCEPTION
+		WHEN OTHERS THEN
+			RAISE_APPLICATION_ERROR(v_index_creation_error, 'INDEX CREATION FAILED FOR i_coll_scenario_created__id'||sqlerrm, TRUE);
+	END;
+            
+END;
+/

@@ -1,0 +1,14 @@
+#
+# This causes PCM_OP_ACT_POL_EVENT_NOTIFY opcode to be called when the
+# following events happen.  
+# The following events are used for LDAP integration.
+#
+version 1
+
+301	0	/event/customer/billinfo
+301	0	/event/customer/nameinfo
+301	0	/event/customer/product_status
+301	0	/event/customer/login
+301	0	/event/customer/password
+301	0	/event/customer/status
+301	0	/event/notification/service

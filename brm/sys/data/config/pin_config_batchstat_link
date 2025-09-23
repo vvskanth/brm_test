@@ -1,0 +1,30 @@
+#
+# @(#)% %
+#
+# Copyright (c) 2003, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+#       This material is the confidential property of Oracle corporation
+#       its licensors and may be used, reproduced, stored or transmitted
+#       only in accordance with a valid Oracle license or sublicense agreement.
+#
+# After defining the config file , run the 'load_pin_config_batchstat_link'
+# utility to load the config object into the Infranet database.
+#
+# Use the following syntax for specifying values for the config:
+#
+#   version 1
+#   <object_type> <control_point> <parent_object_type> <parent_control_point> <link_level>
+#
+#   object_type            : the type of the process_audit object to link
+#   control_point          : control point where the data was collected
+#   parent_object_type     : type of the process_audit object to link with
+#   parent_control_point   : control point where the data for parent object was collected
+#   link_level             : 0 for linking between same level of batches i.e. mediation <-> mediation 
+#                              or rerating <-> rerating
+#                            1 for linking between rerating <-> mediation or recycled <-> mediation
+#
+#
+#================================================================
+
+version 1
+/process_audit/batchstat/simple CP_Rerating /process_audit/batchstat/simple CP_Mediation 1

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==================================================================================
+	Copyright (c) 2007 Oracle. All rights reserved.
+	This material is the confidential property of Oracle Corporation or its
+	licensors and may be used, reproduced, stored or transmitted only in
+	accordance with a valid Oracle license or sublicense agreement.
+	=================================================================================-->
+<BusinessConfiguration 
+  xmlns="http://www.portal.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+
+<GLReportConfiguration> 
+ <SourceSystemID>Germany</SourceSystemID>
+ <OutputDirectory>
+	/home/users/GL
+ </OutputDirectory>
+
+ <FileNamePrefix>
+	AAA
+ </FileNamePrefix>
+
+<ReportInitialStartDate>
+  <Segment name=".">
+   <Year>2007</Year>
+   <Month>--01--</Month>
+   <Day>---10</Day>
+  </Segment>
+  <Segment name=".east">
+   <Year>2007</Year>
+   <Month>--02--</Month>
+   <Day>---15</Day>
+  </Segment>
+</ReportInitialStartDate>
+<SegmentList>
+		<Segment name =".east">
+			<Frequency>Monthly</Frequency>
+			<DayOfMonth>---30</DayOfMonth>
+			<RevenueTypeList>
+				<RevenueType>Billed earned</RevenueType>
+				<RevenueType>Unbilled earned</RevenueType>
+			</RevenueTypeList>
+			<ReportLevel>Summary</ReportLevel>
+			<ResourceType>Non-monetary</ResourceType>
+			<ExcludeNonMonetary>
+				<ResourceID>111111111</ResourceID>
+			</ExcludeNonMonetary>
+		</Segment>
+		<Segment name =".west">
+			<Frequency>Yearly</Frequency>
+			<Date>
+				<DayOfMonth>---01</DayOfMonth>
+				<Month>--06--</Month>
+			</Date>
+			<RevenueTypeList>
+				<RevenueType>Billed</RevenueType>
+				<RevenueType>Billed earned</RevenueType>
+				<RevenueType>Previously billed earned</RevenueType>
+			</RevenueTypeList>
+			<ReportLevel>Summary</ReportLevel>
+			<ResourceType>Monetary</ResourceType>
+		</Segment>
+		<Segment name =".north">
+			<Frequency>Specific Dates</Frequency>
+			<Date>
+				<DayOfMonth>---28</DayOfMonth>
+				<Month>--02--</Month>
+			</Date>
+			<Date>
+				<DayOfMonth>---31</DayOfMonth>
+				<Month>--07--</Month>
+			</Date>
+			<RevenueTypeList>
+				<RevenueType>Unbilled</RevenueType>
+				<RevenueType>Unbilled earned</RevenueType>
+				<RevenueType>Previously billed earned</RevenueType>
+			</RevenueTypeList>
+			<ReportLevel>Detailed</ReportLevel>
+			<ResourceType>Non-monetary</ResourceType>
+			<IncludeNonMonetary>
+				<ResourceID>333333333</ResourceID>
+				<ResourceID>222222222</ResourceID>
+			</IncludeNonMonetary>
+		</Segment>
+		<Segment name =".south">
+			<Frequency>Weekly</Frequency>
+			<Day>Tuesday</Day>
+			<RevenueTypeList>
+				<RevenueType>Billed earned</RevenueType>
+				<RevenueType>Unbilled earned</RevenueType>
+			</RevenueTypeList>
+			<ReportLevel>Summary</ReportLevel>
+			<ResourceType>Monetary</ResourceType>
+		</Segment>
+</SegmentList>
+</GLReportConfiguration>
+</BusinessConfiguration> 

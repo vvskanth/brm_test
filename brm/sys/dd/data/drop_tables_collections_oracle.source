@@ -1,0 +1,47 @@
+--
+-- Copyright (c) 2015, 2017, Oracle and/or its affiliates. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	from object specifications on Wed May 29 05:16:06 2024.
+--
+--	USE THIS FILE WITH CAUTION: NOT FOR USE IN PRODUCTION ENVIRONMENTS
+--
+
+
+drop table config_collections_action_t;
+drop table config_collections_latefee_t;
+drop table config_collections_fcharge_t;
+drop table config_collections_scenario_t;
+drop table config_collections_actions_t;
+drop table conf_coll_scen_profile_data_t;
+drop table config_coll_scenario_params_t;
+drop table conf_coll_scen_params_values_t;
+drop table config_collections_profile_t;
+drop table config_promise_to_pay_spec_t;
+drop table config_collections_buckets_t;
+drop table collections_action_t;
+drop table au_collections_action_t;
+drop table collections_collect_payment_t;
+drop table au_collections_collect_payment_t;
+drop table collections_dunning_t;
+drop table au_collections_dunning_t;
+drop table collections_dunning_buf_t;
+drop table au_collections_dunning_buf_t;
+drop table collections_inv_reminder_t;
+drop table au_collections_inv_reminder_t;
+drop table collections_promise_to_pay_t;
+drop table au_collections_promise_to_pay_t;
+drop table collections_scenario_t;
+drop table coll_scen_promisetopay_t;
+drop table event_act_coll_exempt_t;
+drop table event_act_coll_prmstopay_t;
+drop table event_act_coll_p2p_unequal_t;
+drop table event_act_coll_repl_scen_t;
+drop table profile_collections_params_t;
+drop table au_profile_collections_params_t;

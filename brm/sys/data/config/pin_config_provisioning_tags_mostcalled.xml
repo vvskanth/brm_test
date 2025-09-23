@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--==================================================================================
+ Copyright (c) 2006, 2009, Oracle and/or its affiliates. All rights reserved. 
+                This material is the confidential property of Oracl corporation or its
+                licensors and may be used, reproduced, stored or transmitted only in 
+                accordance with a valid Oracle license or sublicense agreement.
+        =================================================================================-->
+
+<BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+ <ProvisioningTagConfiguration>
+  <ProvisioningTagList>
+    <ProvisioningTag name="DFF1">
+        <PermittedTypes>/service/telco/gsm/telephony</PermittedTypes >
+        <OpcodeList>
+            <OpcodeName>PCM_OP_CUST_CREATE_PROFILE</OpcodeName >
+            <OpcodeNumber>68</OpcodeNumber>
+            <OpcodeMode>0</OpcodeMode>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_POID</OpcodeParamName>
+                <OpcodeParamValue>0.0.0.1 /profile/mostcalled -1 </OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_ACCOUNT_OBJ</OpcodeParamName>
+                <OpcodeParamValue>$ACCOUNT$</OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_SERVICE_OBJ</OpcodeParamName>
+                <OpcodeParamValue>$SERVICE$</OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_NAME</OpcodeParamName>
+                <OpcodeParamValue>MOST_CALLED</OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_MOST_CALLED_INFO.PIN_FLD_OFFERING_OBJ</OpcodeParamName>
+                <OpcodeParamValue>$OFFERING$</OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_MOST_CALLED_INFO.PIN_FLD_COUNT</OpcodeParamName>
+                <OpcodeParamValue>5</OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_MOST_CALLED_INFO.PIN_FLD_IMPACT_CATEGORY</OpcodeParamName>
+                <OpcodeParamValue></OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_MOST_CALLED_INFO.PIN_FLD_CRITERION</OpcodeParamName>
+                <OpcodeParamValue>COST</OpcodeParamValue >
+            </OpcodeParamsList>
+            <OpcodeParamsList>
+                <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_MOST_CALLED_INFO.PIN_FLD_EVENT_TYPE</OpcodeParamName>
+                <OpcodeParamValue>/event/delayed/session/telco/gsm</OpcodeParamValue >
+            </OpcodeParamsList>
+        </OpcodeList>
+   </ProvisioningTag>
+  </ProvisioningTagList>
+ </ProvisioningTagConfiguration>
+</BusinessConfiguration>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!--
+  **************************************************************************
+* Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+  *
+  * This material is the confidential property of Oracle Corporation
+  * or its licensors and may be used, reproduced, stored or transmitted
+  * only in accordance with a valid Oracle license or sublicense agreement.
+  **************************************************************************
+  -->
+
+<BusinessConfiguration
+	xmlns="http://www.portal.com/schemas/BusinessConfig"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+	
+	<!-- Sample file. Modify according to guidelines. -->
+	
+	<BusParamConfigurationClass>
+		
+		<BusParamsAR>
+			<SearchBillAmount>disabled</SearchBillAmount>
+			<AutoWriteOffReversal>disabled</AutoWriteOffReversal>
+			<WriteOffLevel>account</WriteOffLevel>
+			<PaymentIncentive>disabled</PaymentIncentive>
+			<PaymentSuspense>disabled</PaymentSuspense>			
+			<NonrefundableCreditItems>/item/refund</NonrefundableCreditItems>			
+			<EventOverAdjust>disabled</EventOverAdjust>
+			<ItemOverAllocation>enabled</ItemOverAllocation>
+                        <MinimumPayment>2.00</MinimumPayment>
+                        <MinimumRefund>2.00</MinimumRefund>
+			<BillPaymentDeallocation>disabled</BillPaymentDeallocation>
+			<UseEventRoundingRulesForAdjustment>disabled</UseEventRoundingRulesForAdjustment>
+			<PINlessDebitProcessing>disabled</PINlessDebitProcessing>
+			<CidRequired>disabled</CidRequired>
+			<Cvv2Required>disabled</Cvv2Required>
+			<DDcollect>enabled</DDcollect>
+			<DDRevalidationInterval>3600</DDRevalidationInterval>
+			<CCRevalidationInterval>3600</CCRevalidationInterval>
+			<CCcollect>enabled</CCcollect>
+			<EventAdjustmentUnallocation>disabled</EventAdjustmentUnallocation>
+		</BusParamsAR>
+
+	</BusParamConfigurationClass>
+</BusinessConfiguration>

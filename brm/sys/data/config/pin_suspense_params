@@ -1,0 +1,57 @@
+#
+# (#)$Id: pin_suspense_params /cgbubrm_7.5.0.portalbase/1 2015/11/27 04:11:33 nishahan Exp $
+#
+version 1
+#======================================================================
+#
+# Copyright (c) 2005, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+# 	Use this file to define suspenes parameters
+#	The text data defined in this file will be loaded into the 
+#	/config/suspense_params. 
+#
+# 	Loading this file will replace existing object with the one 
+#	defined below.
+#
+# 	Use the following syntax for defining the suspense paramters
+#	ParamName  ParamValue ParamDescription
+#
+#	ParamName                   ParamValue      ParamDescription
+# 	max_transaction_size        100000          maximum transaction size
+# 	deferred_delete_duration    0               used to defer the deletes
+#      
+#       Note #1: max_transaction_size must not be configured to negative value.
+#       Zero "0" value of max_transaction_size parameter means user
+#       wants everything to be commited in one transaction. The request will
+#       not be broken into multiple transaction if value of this parameter 
+#       is 0. 
+#
+#       Note #2: deferred_delete_duration (in seconds) is used defer the deletes 
+#       till Revenue Assurance processes the revenue impacts of writeoff operation. 
+#       Value of this should be zero ( is also the default value) if RA is not 
+#       used, else recommended value is 604800 seconds (7 days)
+#
+#       Param name and value must be a single word and can not contain 
+#       any spaces
+#
+#	Duplicate params in this file will cause an error 
+#	the file will not be loaded into the configuration object.
+#
+# Usage:
+#	$ load_pin_suspense_params <pin_suspense_params>
+#
+#======================================================================
+#
+# Sample file:
+#======================================================================
+#
+#	ParamName		    ParamValue		ParamDescrption
+	max_transaction_size	     100000		 maximum number of records allowed in one transaction 		
+	deferred_delete_duration     0		         used to defer the deletes till RA processes write-offs

@@ -1,0 +1,24 @@
+--
+-- @(#)create_indexes_collections_AIA.source 1.0 09/22/09
+--
+-- Copyright (c) 2009, 2017, Oracle and/or its affiliates. All rights reserved.
+--
+--     This material is the confidential property of Oracle Corporation
+--     or its licensors and may be used, reproduced, stored or transmitted
+--     only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- SOURCE OF sql file to create the indexes for the PIN database
+--
+
+create  index i_au_coll_action_created__id ON au_collections_action_t ( created_t )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS ;
+
+create  index i_coll_scenario_mod__id ON  collections_scenario_t ( mod_t )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS ;
+
+create  index i_coll_scenario_created__id ON collections_scenario_t ( created_t )
+        $PIN_CONF_TBLSPACEX13
+        $PIN_CONF_STORAGE_MED_INS ;

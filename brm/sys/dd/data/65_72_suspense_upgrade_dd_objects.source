@@ -1,0 +1,178 @@
+#
+# Copyright (c) 2006, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Thu Mar 09 18:54:40 2006.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 3
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/suspended_usage/telco/gsm"
+1     PIN_FLD_DESCR           STR [0] "Queryable fields from EDR for telco/gsm service."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GSM_INFO"
+2         PIN_FLD_DESCR           STR [0] "Queryable fields from EDR for telco/gsm."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CELL_ID"
+3             PIN_FLD_DESCR           STR [0] "Cell id from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "cell_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESTINATION_SID"
+3             PIN_FLD_DESCR           STR [0] "Destination MSC or switch id from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "destination_sid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DIALED_NUMBER"
+3             PIN_FLD_DESCR           STR [0] "Dialed number from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "dialed_number"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIGIN_SID"
+3             PIN_FLD_DESCR           STR [0] "Origin MSC or switch id from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "origin_sid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SECONDARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Secondary MSID - IMSI field from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "secondary_msid"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "susp_usage_telco_gsm_info_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/suspended_usage/telco/gsm.PIN_FLD_GSM_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/suspended_usage/telco/gprs"
+1     PIN_FLD_DESCR           STR [0] "Queryable fields from EDR for telco/gprs service."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "AncestralLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GPRS_INFO"
+2         PIN_FLD_DESCR           STR [0] "Queryable fields from EDR for telco/gprs."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_APN"
+3             PIN_FLD_DESCR           STR [0] "APN address from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "apn"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "GGSN address from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "ggsn_address"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NODE_ID"
+3             PIN_FLD_DESCR           STR [0] "Node id from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "node_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SECONDARY_MSID"
+3             PIN_FLD_DESCR           STR [0] "Secondary MSID - IMSI field from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "secondary_msid"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SGSN_ADDRESS"
+3             PIN_FLD_DESCR           STR [0] "SGSN address from EDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sgsn_address"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "susp_usage_telco_gprs_info_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/suspended_usage/telco/gprs.PIN_FLD_GPRS_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/suspense_override_reason"
+1     PIN_FLD_DESCR           STR [0] "A singleton configuration object of this class is used to set up the list of the override suspense reason code."
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSE_REASONS"
+2         PIN_FLD_DESCR           STR [0] "Array of suspense reasons. Each element in this array represents a different override suspense reason code."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENSE_REASON"
+3             PIN_FLD_DESCR           STR [0] "User defined override suspense reason code."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "override_reason"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "cfg_susp_ode_res_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/suspense_override_reason.PIN_FLD_SUSPENSE_REASONS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

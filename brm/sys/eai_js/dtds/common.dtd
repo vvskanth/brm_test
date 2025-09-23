@@ -1,0 +1,223 @@
+<!--
+POID, the Portal object id is represented as a string in the format
+"database-number	object-type	object-id	object-revision".  For type
+only POIDs the object-id will be -1 and the revision will be 0.  See 
+individual events where POIDs are complete POIDs or type only POIDs.
+-->
+
+<!ENTITY % POID "(#PCDATA)">
+<!ELEMENT AccountObj %POID; >
+<!ELEMENT BillInfoObj %POID; >
+<!ELEMENT PlanObj %POID; >
+<!ELEMENT DealObj %POID; >
+<!ELEMENT Parent %POID; >
+<!ELEMENT ProductObj %POID; >
+<!ELEMENT ServiceObj %POID; >
+<!ELEMENT ProfileObj %POID; >
+
+<!ELEMENT Login (#PCDATA)>
+<!ELEMENT Passwd (#PCDATA)>
+<!ELEMENT Status (#PCDATA)>
+<!ELEMENT StatusFlags (#PCDATA)>
+<!ELEMENT Merchant (#PCDATA)>
+<!ELEMENT Currency (#PCDATA)>
+<!ELEMENT AccessCode1 (#PCDATA)>
+<!ELEMENT AccessCode2 (#PCDATA)>
+<!ELEMENT BillType (#PCDATA)>
+<!ELEMENT AccountNo (#PCDATA)>
+<!ELEMENT NodeLocation (#PCDATA)>
+<!ELEMENT ElementId (#PCDATA)>
+<!ELEMENT Salutation (#PCDATA)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT MiddleName (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Company (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT State (#PCDATA)>
+<!ELEMENT Zip (#PCDATA)>
+<!ELEMENT Country (#PCDATA)>
+<!ELEMENT EmailAddr (#PCDATA)>
+<!ELEMENT Locale (#PCDATA)>
+<!ELEMENT ContactType (#PCDATA)>
+<!ELEMENT BillInfoId (#PCDATA)>
+<!ELEMENT PIN_FLD_RECEIPT_NO (#PCDATA)>
+<!ELEMENT PIN_FLD_CHECK_NO (#PCDATA)>
+<!ELEMENT PIN_FLD_EFFECTIVE_T (#PCDATA)>
+<!--
+Phone type can be of the following:
+0 - Unknown
+1 - Home
+2 - Work
+3 - Fax
+4 - Pager
+5 - Portable
+6 - Pop
+7 - Support
+-->
+<!ELEMENT Phones (Phone,Type)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT Type (#PCDATA)>
+
+<!ELEMENT Quantity (#PCDATA)>
+
+<!ELEMENT MailServerId (#PCDATA)>
+<!ELEMENT MaxMboxSize (#PCDATA)>
+<!ELEMENT MaxMsgCnt (#PCDATA)>
+<!ELEMENT MaxMsgSize (#PCDATA)>
+<!ELEMENT Path (#PCDATA)>
+<!ELEMENT Compression (#PCDATA)>
+<!ELEMENT Ipaddr (#PCDATA)>
+<!ELEMENT Protocol (#PCDATA)>
+<!ELEMENT Dn (#PCDATA)>
+<!ELEMENT ProvisioningTag (#PCDATA)>
+<!--
+Supported values for Billtype are:
+10000 - Prepaid
+10001 - Invoice
+10002 - Debit
+10003 - Credit Card
+10004 - French Direct Debit
+10005 - US Direct Debit
+10006 - Smart Card
+10007 - Sub-ordinate
+10008 - Beta
+10009 - Internal
+10010 - Guest
+10011 - Cash
+10012 - Check
+10013 - Wire Transfer
+10014 - Pay-order
+10015 - Postal Order
+-->
+<!--
+AccountNo can be used to store an external system's account number 
+corresponding to the Portal Account-id.
+-->
+
+<!ELEMENT BillInfo (BillType,Merchant?,Currency?,AccessCode1?,
+AccessCode2?,Parent?, AccountNo?)>
+
+<!ELEMENT PayInfo (PayInfo.CC|PayInfo.DD|PayInfo.Invoice)?>
+<!ELEMENT PayInfo.CC (DebitNum, DebitExp, Name?, Address?, City?, 
+State?, Zip?, Country?, SecurityId?)>
+
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT DebitNum (#PCDATA)>
+
+<!--
+Expiry should be in the MMYY format.
+-->
+<!ELEMENT DebitExp (#PCDATA)>
+
+<!--
+SecurityId carries the CVV/CID information.
+-->
+<!ELEMENT SecurityId (#PCDATA)>
+
+<!--
+Valid values for DDType are -
+1 - Checking
+2 - Saving
+3 - Corporate
+-->
+
+<!ELEMENT PayInfo.DD (BankNo, DebitNum, DDType, Name?, Address?, City?,
+State?, Zip?, Country?)>
+
+<!-- 
+Bank routing number.
+-->
+<!ELEMENT BankNo (#PCDATA)>
+<!ELEMENT DDType (#PCDATA)>
+<!--
+Invoice status can be one of these -
+0 - None
+1 - NewPO
+3 - AmtThresholdReached
+4 - OvrAmtLimit
+5 - DateThreshold
+6 - DateLimit
+-->
+<!--
+Invoice type can be one of these -
+0 - None
+1 - TimeBased
+2 - AmtBased
+3 - TimeAndAmtBased
+-->
+
+<!ELEMENT PayInfo.Invoice (Name?, Address?, City?, State?, Zip?, 
+Country?, DeliveryDesc?, DeliveryPrefer?, EmailAddr?, InvInstr?, 
+POAmount?, POBalThreshold?, POExp?, POExpThreshold?, POOrderNo?, 
+Status?, InvType?) >
+<!ELEMENT DeliveryDesc (#PCDATA)>
+<!ELEMENT DeliveryPrefer (#PCDATA)>
+<!ELEMENT InvInstr (#PCDATA)>
+<!ELEMENT POAmount (#PCDATA)>
+<!ELEMENT POBalThreshold (#PCDATA)>
+<!ELEMENT POExp (#PCDATA)>
+<!ELEMENT POExpThreshold (#PCDATA)>
+<!ELEMENT POOrderNo (#PCDATA)>
+<!ELEMENT InvType (#PCDATA)>
+<!--
+ElementId 1 and 2 have special meaning.  ElementId '1' is for billing 
+address and ElementId '2' is for mailing address.
+-->
+
+<!ELEMENT NameInfo (ElementId,Salutation?,FirstName?,MiddleName?,
+LastName?,Title?, Company?,Address?,City?,State?,Zip?,Country?,
+EmailAddr?,Phones*,Locale?,ContactType?)>
+
+<!--
+During publication of customer registration event the ServiceObj will 
+be a complete POID.  During subscription ServiceObj is a type only POID.
+Service status can have one of the following values:
+10100 - Active
+10102 - Inactive
+10103 - Closed
+The field passwd will be of the format "type|value".  
+For e.g. "clear|jdoe".
+-->
+
+<!ELEMENT Service (ServiceObj,Login,Passwd,Status,StatusFlags,DealObj?,
+(ServiceEmail|ServiceIp)?)>
+
+<!--
+During publication of customer registration event the ProfileObj will 
+be a complete POID.  During subscription ProfId is a type only POID.
+-->
+
+<!ELEMENT Profile (ProfileObj,LdapInfo?)>
+
+<!ELEMENT LdapInfo (Dn)>
+<!ELEMENT DealInfo (DealObj)>
+
+<!ELEMENT ProductInfo (Product, ActionInfo)>
+
+<!ELEMENT Product (ProductObj, NodeLocation)>
+
+<!ELEMENT ActionInfo (Quantity, Status?, DealObj?, PlanObj?)>
+
+<!ELEMENT Passwords (Passwd)>
+
+<!ELEMENT Logins (Login)>
+
+<!ELEMENT Statuses (Status, StatusFlags)>
+
+<!ELEMENT ServiceEmail (MailServerId?,MaxMboxSize?,MaxMsgCnt?,
+MaxMsgSize?,Path?)>
+
+<!ELEMENT ServiceIp (Compression?, Ipaddr?, Protocol?)>
+
+<!ELEMENT ProductDetail (ProductObj, ProvisioningTag?)>
+
+
+<!--
+Publication pf payment event
+-->
+<!ELEMENT Amount (#PCDATA)>
+<!ELEMENT TransactionId (#PCDATA)>
+<!ELEMENT PayType (#PCDATA)>
+

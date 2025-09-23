@@ -1,0 +1,52 @@
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:51 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 1
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/account_era"
+1     PIN_FLD_DESCR           STR [0] "Config object describing allowed account extended rating attributes, like: Birthday, SLA..."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXT_RA"
+2         PIN_FLD_DESCR           STR [0] "Array containing the list of allowed account extended rating attributes"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "Name of the extended rating attribute feature ie Special_day, Corporate Agreement... Integrate DB key "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STRING_ID"
+3             PIN_FLD_DESCR           STR [0] "String ID for name of the extended rating attribute feature ie Special_day, Corporate Agreement... Key to local display name. "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "string_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOCALE_DESC_ID"
+3             PIN_FLD_DESCR           STR [0] "String ID for description of the extended rating attribute feature. Key to local description. "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "locale_desc_id"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_account_era_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/account_era.PIN_FLD_EXT_RA'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

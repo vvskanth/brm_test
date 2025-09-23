@@ -1,0 +1,110 @@
+#
+# @(#)events.file 
+#
+# Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved. 
+#
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+
+#--------------------------------------------------------------
+#  Sample Events file for pin_load_invoice_events.pl utility
+#--------------------------------------------------------------
+/event/billing/debit 
+/event/billing/adjustment/account                                               
+/event/billing/adjustment/event                                                 
+/event/billing/adjustment/item                                                  
+/event/billing/adjustment/tax_event                                             
+/event/billing/cycle/tax     
+/event/billing/cycle/discount 
+/event/billing/cycle/discount/mostcalled 
+/event/billing/cycle/fold 
+/event/billing/payment/cash                                                     
+/event/billing/payment/cc                                                       
+/event/billing/payment/check                                                    
+/event/billing/payment/dd                                                       
+/event/billing/payment/payorder                                                 
+/event/billing/payment/postalorder                                              
+/event/billing/payment/wtransfer     
+/event/billing/payment/voucher 
+/event/billing/vouchertopup
+/event/billing/incentive
+/event/billing/fee/failed_payment                                            
+/event/billing/product/fee/cancel                                               
+/event/billing/product/fee/cycle                                                
+/event/billing/product/fee/cycle/cycle_arrear      
+/event/billing/product/fee/cycle/cycle_forward_arrear               
+/event/billing/product/fee/cycle/cycle_forward_bimonthly                        
+/event/billing/product/fee/cycle/cycle_forward_monthly                          
+/event/billing/product/fee/cycle/cycle_forward_quarterly                        
+/event/billing/product/fee/cycle/cycle_forward_semiannual 
+/event/billing/product/fee/cycle/cycle_forward_annual                      
+/event/billing/product/fee/purchase                                             
+/event/billing/refund/cash                                                      
+/event/billing/refund/cc                                                        
+/event/billing/refund/check                                                     
+/event/billing/refund/dd                                                        
+/event/billing/refund/payorder                                                  
+/event/billing/refund/postalorder                                               
+/event/billing/refund/wtransfer                                                 
+/event/billing/reversal/cc                                                      
+/event/billing/reversal/check                                                   
+/event/billing/reversal/dd                                                      
+/event/billing/reversal/payorder                                                
+/event/billing/reversal/postalorder                                             
+/event/billing/reversal/wtransfer 
+/event/billing/reversal/voucher 
+/event/billing/reversal/failed
+/event/billing/settlement/event 
+/event/billing/settlement/item 
+/event/billing/settlement/tax_event 
+/event/billing/writeoff/account                                                 
+/event/billing/writeoff/bill                                                    
+/event/billing/writeoff/billinfo 
+/event/billing/writeoff/item                                                    
+/event/billing/writeoff/tax_account                                             
+/event/billing/writeoff/tax_bill               
+/event/billing/writeoff/tax_billinfo 
+/event/billing/writeoff_reversal 
+/event/billing/writeoff_reversal/tax                                  
+/event/billing/writeoff/tax_item
+/event/billing/dispute/event
+/event/billing/dispute/item 
+/event/billing/dispute/tax_event 
+/event/session                                                
+/event/session/dialup  
+/event/billing/cycle/rollover/monthly
+/event/billing/cycle/rollover_transfer 
+/event/billing/cycle/rollover_correction 
+/event/device/associate
+/event/device/disassociate
+/event/billing/corrective_bill
+/event/billing/item/transfer
+#--------------------------------------------------------------
+#  The following nine objects are created as part of the 
+#  GSM/GPRS Managers. This is commented out because if
+#  the GSM/GPRS Manager is not installed, loading of this
+#  file will error out. Once the GSM/GPRS Manager is installed
+#  then please uncomment the nine events and reload this file
+#  if you want these events to show up in the invoice.
+#--------------------------------------------------------------
+#/event/session/telco
+#/event/session/telco/gsm
+#/event/session/telco/gprs
+#/event/delayed/session/telco                                                  
+#/event/delayed/session/telco/gsm    
+#/event/delayed/session/telco/gprs
+#/event/delayed/session/telco/gprs/roaming
+#/event/delayed/session/telco/gsm/roaming
+#/event/delayed/session/telco/roaming
+#--------------------------------------------------------------
+#  The following two objects are created as part of the 
+#  Collections Manager. This is commented out because if
+#  the Collections Manager is not installed, loading of this
+#  file will error out. Once the Collections Manager is installed
+#  then please uncomment the two events and reload this file
+#  if you want these events to show up in the invoice.
+#--------------------------------------------------------------
+# /event/billing/finance_charge
+# /event/billing/late_fee

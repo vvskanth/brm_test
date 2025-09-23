@@ -1,0 +1,506 @@
+#
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:51 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 4
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 9
+1     PIN_FLD_NAME            STR [0] "/batch/rel"
+1     PIN_FLD_DESCR           STR [0] "A batch subclass used to record Rated Event Loader session information. The session object of the events loaded by this Batch REL session refer to this object's Portal object id."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 17
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REL_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct containing information about this Batch REL session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATION_PROCESS"
+3             PIN_FLD_DESCR           STR [0] "An optional label representing the name of the process which created the input data file. Example labels include: RATING_PIPELINE, RERATING_PIPELINE, PIN_REL_TRANSFORM_CDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 32
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "creation_process"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_END_POID_ID0"
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the last object loaded."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "end_poid_id0"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INPUT_FILE_NAME"
+3             PIN_FLD_DESCR           STR [0] "Fully-qualified name of the data file loaded by this Batch REL session."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "input_file_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_TOTAL_RECORDS"
+3             PIN_FLD_DESCR           STR [0] "The quantity of records read in from the data file.  This is not necessarily equivalent to the line count of the data file."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_total_records"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARTITION_NUMBER"
+3             PIN_FLD_DESCR           STR [0] "This value represents the load partition used by the Batch REL session to load data.  The partition number (1 to 8) is embedded in the four high-bits of the Portal object id for the objects which the session loads.  Note that this partition data is not tied directly to the time based partitions."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "partition_number"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SEQUENCE_NUM"
+3             PIN_FLD_DESCR           STR [0] "An optional value related to the input file which can be used for tracking and auditing purposes.  For example, Infranet re-rating functionality in the Event Extraction Tool can select objects based on this value."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sequence_num"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_POID_ID0"
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the first object loaded."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "start_poid_id0"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TABLES"
+3             PIN_FLD_DESCR           STR [0] "A semicolon delimited list of the table names loaded by this session."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "tables"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SYNC_ID"
+3             PIN_FLD_DESCR           STR [0] "A unique identifier for this Batch REL session used for synchronizing critical sections with other running Batch REL sessions."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sync_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SENDER"
+3             PIN_FLD_DESCR           STR [0] "Operator name who is sending the TAP file"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 32
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sender_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECIPIENT"
+3             PIN_FLD_DESCR           STR [0] "Operator name who is receiving the TAP file"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 32
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "recipient_name"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "batch_rel_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/batch/rel.PIN_FLD_REL_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 18
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUB_PROCESSES"
+2         PIN_FLD_DESCR           STR [0] "Each element in this array corresponds to a sub-process of this batch REL session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_POID_ID0"
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the first object processed."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "start_poid_id0"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_END_POID_ID0"
+3             PIN_FLD_DESCR           STR [0] "Portal object id of the last object processed."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "end_poid_id0"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TOTAL_RECORDS"
+3             PIN_FLD_DESCR           STR [0] "The number of objects which should be processed between the PIN_FLD_START_POID_ID0 and PIN_FLD_END_POID_ID0 values."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "total_records"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_PROCESSED"
+3             PIN_FLD_DESCR           STR [0] "The quantity of records processed thus far."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_processed"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_SUB_BAL_PROCESSED"
+3             PIN_FLD_DESCR           STR [0] "The quantity of sub-balance records processed thus far."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_sub_bal_processed"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "Status for this sub-process."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATION_PROCESS"
+3             PIN_FLD_DESCR           STR [0] "An optional label representing the name of the process which created the input data file. Example labels include: RATING_PIPELINE, RERATING_PIPELINE, PIN_REL_TRANSFORM_CDR."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 32
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "creation_process"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TABLES"
+3             PIN_FLD_DESCR           STR [0] "A semicolon delimited list of the table names used to process this sub-process element."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "tables"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "The name of the process to operate on this element."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_SIZE"
+3             PIN_FLD_DESCR           STR [0] "The number of database operations (i.e. updates) to perform before committing the work."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "batch_size"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARAMETERS"
+3             PIN_FLD_DESCR           STR [0] "Additional parameters the process uses to operate on this element."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "parameters"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS_MSG"
+3             PIN_FLD_DESCR           STR [0] "The failure message reported from processing this sub-process element."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 1000
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status_msg"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "rel_sub_processes_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/batch/rel.PIN_FLD_SUB_PROCESSES'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FILES"
+2         PIN_FLD_DESCR           STR [0] "Each element in this array corresponds to a file of CDR data for this batch REL session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SERIALIZABLE    INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "The processing status of the file: COMPLETE(0), INSERTING(1), READY(2), PROCESSING(3), DATA_ERROR(4), PROCESS_ERROR(5)"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 11
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FILENAME"
+3             PIN_FLD_DESCR           STR [0] "The tracking filename used for this CDR data file."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "filename"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_TOTAL_RECORDS"
+3             PIN_FLD_DESCR           STR [0] "The number of distinct events in the data file."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_records"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 11
+3             PIN_FLD_FIELD_TYPE      INT [0] 6
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BUFFER"
+3             PIN_FLD_DESCR           STR [0] "This holds the content of a CDR file in ZIP format."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "C=buffer T=batch_rel_zip_file_buf_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/batch/rel.PIN_FLD_FILES.PIN_FLD_BUFFER'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "batch_rel_zip_file_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/batch/rel.PIN_FLD_FILES'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUSES"
+2         PIN_FLD_DESCR           STR [0] "Each element in this array corresponds to the status of a retry attempt for a REL session."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SERIALIZABLE    INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+3             PIN_FLD_DESCR           STR [0] "The time this retry record was created."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROCESS_START_T"
+3             PIN_FLD_DESCR           STR [0] "The time the processing of this retry attempt started."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "process_start_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROCESS_END_T"
+3             PIN_FLD_DESCR           STR [0] "The time the processing of this retry attempt completed."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "process_end_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "The processing state of the retry attempt COMPLETE(0), READY(1), PROCESSING(2)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "batch_rel_retry_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/batch/rel.PIN_FLD_STATUSES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/batch/rel/timos"
+1     PIN_FLD_DESCR           STR [0] "A batch subclass used to manage the lifecycle of a Timos Rated Event Loader session."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/delayed/tmp_profile_event_ordering"
+1     PIN_FLD_DESCR           STR [0] " Class to store the start time of last event processed  within the configured Criteria and balance group combination  for the account. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_PARTITION_MODE    STR [0] "Historic"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 11
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OOD_CRITERIA"
+2         PIN_FLD_DESCR           STR [0] "Array to hold rerating information specificto chronological ordering of events."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BAL_GRP_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Balance group object"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bal_grp_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CRITERIA_NAME"
+3             PIN_FLD_DESCR           STR [0] "Criteria name"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "criteria_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LAST_EVENT_PROCESS_T"
+3             PIN_FLD_DESCR           STR [0] "Last event process time for current accounting cycle. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "last_event_process_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILL_CYCLE_T"
+3             PIN_FLD_DESCR           STR [0] "Start time of the billing cycle of the event. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "bill_cycle_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROFILE_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Poid of The  /profile/event_ordering object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "profile_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "tmp_profile_event_ordering_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/delayed/tmp_profile_event_ordering.PIN_FLD_OOD_CRITERIA'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 18
+1     PIN_FLD_NAME            STR [0] "/rel_event_extract_sync"
+1     PIN_FLD_DESCR           STR [0] "Base object allows process synchronization between iREL,REL,event extract"
+1     PIN_FLD_SEQ_START       INT [0] 1
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_DESCR           STR [0] "Portal object id of this rel sync object."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_LABEL           STR [0] "Poid"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_DESCR           STR [0] "Time this rel sync object is created."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_LABEL           STR [0] "CreatedT"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_DESCR           STR [0] "Time this rel sync object was last modified."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_LABEL           STR [0] "ModT"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SESSION_ID"
+2         PIN_FLD_DESCR           STR [0] "A value that applications can synchronize on"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_LABEL           STR [0] "id"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "session_id"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SESSION_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Poid of the rel_session_info object - used for diagnostic only"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_LABEL           STR [0] "Session poid"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "session_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed read access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed write access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BATCH_TYPE"
+2         PIN_FLD_DESCR           STR [0] "Indicates which process is running 0=none 1=iREL 2=RREL 3=Event Extraction"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_LABEL           STR [0] "Batch_app_type"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "batch_type"
+1     PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_COUNT"
+2         PIN_FLD_DESCR           STR [0] "Indicates the number of processes running"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_LABEL           STR [0] "Number of instances"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "count"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "rel_event_extract_sync_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/rel_event_extract_sync'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

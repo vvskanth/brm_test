@@ -1,0 +1,67 @@
+#
+# @(#)pin_notify_ra 1.0 2004/06/04
+#
+version 1
+#======================================================================
+#
+#       Copyright 2005, 2009 Oracle. All rights reserved. 
+#
+#       This material is the confidential property of Oracle Corporation
+#       or its licensors and may be used, reproduced, stored or transmitted
+#       only in accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#
+#
+#======================================================================
+# Use this file to map an event to the opcode you want
+# Infranet to call when that event occurs.
+#
+# After defining the events and the corresponding opcodes,
+# run the 'load_pin_notify' utility to create the new config/notify
+# storable object and load this notification list into the Infranet
+# database. Then restart the Connection Manager for these changes
+# to take effect. When the event occurs, the system passes the
+# entire /event storable object as the input flist to the opcode.
+#
+# Use the following syntax for defining event notification:
+#
+# <opcode_number>  <opcode_flag>  <event>
+#
+# Where:
+#  <opcode_number> is the identifying number of the opcode
+#       that you want called when the event occurs. You can find
+#       the identifying numbers for standard policy opcodes in the
+#       pcm_ops.h file in the /include directory. For custom
+#       opcodes, define their numbers either in the pcm_ops.h file
+#       or in a different header file that you link with the code.
+#       The numbers from 1 through 10000 are reserved for standard
+#       Infranet opcodes.
+#  <opcode_flag> is the flag that is passed to the opcode when
+#       Infranet calls the opcode.
+#  <event> is the event that triggers the notification. You can use
+#       standard event types or a custom event type, as long as
+#       the event type has a corresponding /event storable
+#       object in the database.
+#
+# Note: You can have more than one notification opcode for an
+#       event. Infranet calls the opcodes in the order they appear
+#       in the list.
+#======================================================================
+#
+#
+#======================================================================
+# The following entry set up Infranet to automatically notify 
+# configured users by email about the notification alerts generated
+# by Revenue Assurance Notification Framework as result of configured 
+# thresholds crossing the defined limits.
+# When alert is generated, opcode PCM_OP_PROCESS_AUDIT_POL_ALERT (#4305)
+# is called which sends emails to configured users.
+
+4305     0       /event/notification/ra_threshold
+
+# The following entry set up Infranet to automatically call
+# opcode PCM_OP_PROCESS_AUDIT_CREATE_WRITEOFF_SUMMARY(#4306)
+# /event/suspense/writeoff is generated in suspense manager
+
+4306     0       /event/notification/suspense/writeoff

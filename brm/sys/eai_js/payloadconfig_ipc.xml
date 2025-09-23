@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+
+<!--  $Header: optional_mgrs_vob/ifw_sync/config/payloadconfig_ipc.xml /cgbubrm_7.5.0.portalbase/3 2013/02/20 01:29:24 hgbhat Exp $ -->
+
+<!-- 
+ Copyright (c) 2012, 2013, Oracle and/or its affiliates. All rights reserved. 
+
+   NAME
+     payloadconfig_ipc.xml 
+
+   DESCRIPTION
+     For IPC, the payload information for offer profile create/update/delete and
+     threshold breach.
+
+   MODIFIED   (MM/DD/YY)
+   sdoddi      08/16/12 - Creation
+
+-->
+<PayloadConfig>
+        <PublisherDefs>
+                <Publisher DB="0.0.9.9" Format="XML">
+                        OfferProfileCreate,
+                        OfferProfileUpdate,
+                        OfferProfileDelete,
+                        OfferProfileThresholdBreach,
+			ProductPurchase,
+			ProductCancel,
+			ProductModify,
+			ProductStatusChange,
+			DiscountPurchase,
+			DiscountCancel,
+			DiscountModify,
+			DiscountStatusChange,
+                        CreateProfile,
+                        ModifyProfile,
+                        DeleteProfile
+                </Publisher>
+        </PublisherDefs>
+
+        <ElementDefs>
+                <OfferProfileInfo Source="EVENT" PinFld="PIN_FLD_OFFER_PROFILES"
+                        DataFrom="PIN_FLD_OFFER_PROFILES" Tag="offer_profile_info">
+                     <Field PinFld="PIN_FLD_POID"       Tag="offer_profile_poid" />
+                     <Field PinFld="PIN_FLD_NAME"     Tag="offer_profile_name"/>
+                     <Field PinFld="PIN_FLD_CODE"     Tag="offer_profile_code"/>
+                     <Field PinFld="PIN_FLD_DESCR"    Tag="offer_profile_descr"/>
+                     <ExtendedInfo PinFld="PIN_FLD_POLICY_LABELS" Tag="policy_label_info">
+                         <Field PinFld="PIN_FLD_LABEL" Tag="label"/>
+                         <Field PinFld="PIN_FLD_RESOURCE_ID" Tag="resource_id"/>
+                         <Field PinFld="PIN_FLD_RESOURCE_NAME" Tag="resource_name"/>
+                         <Field PinFld="PIN_FLD_UNIT" Tag="unit"/>
+                         <ExtendedInfo PinFld="PIN_FLD_TIERS" Tag="tiers">
+                             <Field PinFld="PIN_FLD_STATUS_LABEL" Tag="status_label"/>
+                             <Field PinFld="PIN_FLD_TIER_START_RANGE" Tag="tier_start_range"/>
+                             <Field PinFld="PIN_FLD_TIER_END_RANGE" Tag="tier_end_range"/>
+                         </ExtendedInfo>
+                     </ExtendedInfo>
+                </OfferProfileInfo>
+
+                <AliasListInfo Source="EVENT" PinFld="PIN_FLD_ALIAS_LIST"
+                        DataFrom="PIN_FLD_ALIAS_LIST" Tag="alias_list">
+                        <Field PinFld="PIN_FLD_NAME" Tag="name"/>
+                </AliasListInfo>
+
+                <ResourcesInfo Source="EVENT" PinFld="PIN_FLD_RESOURCE_INFO"
+                        DataFrom="PIN_FLD_RESOURCE_INFO" Tag="resource_list">
+                        <Field PinFld="PIN_FLD_RESOURCE_NAME" Tag="resource_name"/>
+                        <Field PinFld="PIN_FLD_RESOURCE_ID" Tag="resource_id"/>
+                        <Field PinFld="PIN_FLD_CURRENT_BAL" Tag="current_bal"/>
+                        <Field PinFld="PIN_FLD_CONSUMED_RESERVED_AMOUNT" Tag="consumed_reserved_amount"/>
+                        <Field PinFld="PIN_FLD_UNIT" Tag="unit"/>
+                        <ExtendedInfo PinFld="PIN_FLD_THRESHOLDS" Tag="threshold_breach">
+                                <Field PinFld="PIN_FLD_STATUS_LABEL" Tag="status_label"/>
+                                <Field PinFld="PIN_FLD_TIER_DELTA" Tag="delta_to_next_threshold"/>
+                                <Field PinFld="PIN_FLD_LABEL" Tag="policy_label"/>
+                                <Field PinFld="PIN_FLD_NAME" Tag="offer_profile_name"/>
+                        </ExtendedInfo>
+                </ResourcesInfo>
+
+		<PurchasedOfferInfo Source="EVENT" PinFld="PIN_FLD_ACTION_INFO"
+			DataFrom="PIN_FLD_ACTION_INFO" Tag="offer_details">
+			<Field PinFld="PIN_FLD_STATUS" Tag="offer_status"/>
+		</PurchasedOfferInfo>
+
+		<ProductInfo Source="EVENT" PinFld="PIN_FLD_PRODUCT"
+			DataFrom="PIN_FLD_PRODUCT" Tag="product">
+			<Field PinFld="PIN_FLD_OFFERING_OBJ" Tag="purchased_product"/>	
+		</ProductInfo>
+
+                <DiscountInfo Source="EVENT" PinFld="PIN_FLD_AC_DISCOUNT"
+                        DataFrom="PIN_FLD_AC_DISCOUNT" Tag="discount">
+			<Field PinFld="PIN_FLD_OFFERING_OBJ" Tag="purchased_discount"/>
+                </DiscountInfo>
+
+                <StaticInfo Source="EVENT" PinFld="PIN_FLD_OFFER_PROFILES"
+                        DataFrom="PIN_FLD_OFFER_PROFILES" Tag="static_info">
+                     <Field PinFld="PIN_FLD_POID"       Tag="offer_profile_poid" />
+                     <Field PinFld="PIN_FLD_NAME"     Tag="offer_profile_name"/>
+                     <Field PinFld="PIN_FLD_VALID_FROM"     Tag="valid_from"/>
+                     <Field PinFld="PIN_FLD_VALID_TO"    Tag="valid_to"/>
+                     <ExtendedInfo PinFld="PIN_FLD_POLICY_LABELS" Tag="policy_label_info">
+                         <Field PinFld="PIN_FLD_LABEL" Tag="label"/>
+                         <Field PinFld="PIN_FLD_RESOURCE_ID" Tag="resource_id"/>
+                         <Field PinFld="PIN_FLD_RESOURCE_NAME" Tag="resource_name"/>
+                         <Field PinFld="PIN_FLD_UNIT" Tag="unit"/>
+                         <ExtendedInfo PinFld="PIN_FLD_TIERS" Tag="tiers">
+                             <Field PinFld="PIN_FLD_STATUS_LABEL" Tag="status_label"/>
+                             <Field PinFld="PIN_FLD_TIER_START_RANGE" Tag="tier_start_range"/>
+                             <Field PinFld="PIN_FLD_TIER_END_RANGE" Tag="tier_end_range"/>
+                         </ExtendedInfo>
+                     </ExtendedInfo>
+                </StaticInfo>
+                <SubscriberPreferencesInfo Source="/profile/subscriber_preferences" Tag="subscriber_prefs_info">
+                        <Search SearchFld="PIN_FLD_POID" SearchVal="PIN_FLD_PROFILE_OBJ"/>
+                         <ExtendedInfo PinFld="PIN_FLD_SUBSCRIBER_PREFERENCES" Tag="subs_prefs">
+                          <Field PinFld="PIN_FLD_NAME" Tag="prefs_name"/>
+                          <Field PinFld="PIN_FLD_SUBSCRIBER_PREFERENCE_ID" Tag="prefs_id"/>
+                          <Field PinFld="PIN_FLD_VALUE" Tag="prefs_value"/>
+                         </ExtendedInfo>
+                </SubscriberPreferencesInfo>
+
+        </ElementDefs>
+
+        <EventDefs>
+                <OfferProfileCreate Source="EVENT"
+                Tag="OfferProfileCreate"
+                StartEvent="/event/notification/offer_profile/create">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/OfferProfileCreate.xsd"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="OfferProfileInfo"
+                         OnEvent="/event/notification/offer_profile/create" />
+                </OfferProfileCreate>
+
+                <OfferProfileUpdate Source="EVENT"
+                Tag="OfferProfileUpdate"
+                StartEvent="/event/notification/offer_profile/update">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/OfferProfileUpdate.xsd"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="OfferProfileInfo"
+                         OnEvent="/event/notification/offer_profile/update" />
+                </OfferProfileUpdate>
+
+                <OfferProfileDelete Source="EVENT"
+                Tag="OfferProfileDelete"
+                StartEvent="/event/notification/offer_profile/delete">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/OfferProfileDelete.xsd"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="OfferProfileInfo"
+                         OnEvent="/event/notification/offer_profile/delete" />
+                </OfferProfileDelete>
+
+                <OfferProfileThresholdBreach Source="EVENT"
+                        Tag="OfferProfileThresholdBreach"
+                        StartEvent="/event/notification/offer_profile/ThresholdBreach">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/OfferProfileThresholdBreach.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <Field PinFld="PIN_FLD_LOGIN" Tag="login"/>
+                        <SubElement Name="AliasListInfo"
+                        OnEvent="/event/notification/offer_profile/ThresholdBreach" />
+                        <SubElement Name="ResourcesInfo"
+                        OnEvent="/event/notification/offer_profile/ThresholdBreach" />
+                </OfferProfileThresholdBreach>
+
+		<DiscountPurchase Source="EVENT"
+			Tag="DiscountPurchase"
+			StartEvent="/event/billing/discount/action/purchase">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/DiscountPurchase.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+			<SubElement Name="DiscountInfo"
+			OnEvent="/event/billing/discount/action/purchase"/>
+			<SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/discount/action/purchase"/>
+			<SubElement Name="StaticInfo"
+			OnEvent="/event/billing/discount/action/purchase"/>
+		</DiscountPurchase>
+
+                <ProductPurchase Source="EVENT"
+                        Tag="ProductPurchase"
+                        StartEvent="/event/billing/product/action/purchase">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/ProductPurchase.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="ProductInfo"
+			OnEvent="/event/billing/product/action/purchase"/>
+                        <SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/product/action/purchase"/>
+                        <SubElement Name="StaticInfo"
+			OnEvent="/event/billing/product/action/purchase"/>
+                </ProductPurchase>
+
+
+                <DiscountCancel Source="EVENT"
+                        Tag="DiscountCancel"
+                        StartEvent="/event/billing/discount/action/cancel">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/DiscountCancel.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="DiscountInfo"
+			OnEvent="/event/billing/discount/action/cancel"/>
+                        <SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/discount/action/cancel"/>
+                        <SubElement Name="StaticInfo"
+			OnEvent="/event/billing/discount/action/cancel"/>
+                </DiscountCancel>
+
+                <ProductCancel Source="EVENT"
+                        Tag="ProductCancel"
+                        StartEvent="/event/billing/product/action/cancel">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/ProductCancel.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="ProductInfo"
+			OnEvent="/event/billing/product/action/cancel"/>
+                        <SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/product/action/cancel"/>
+                        <SubElement Name="StaticInfo"
+			OnEvent="/event/billing/product/action/cancel"/>
+                </ProductCancel>
+
+                <DiscountModify Source="EVENT"
+                        Tag="DiscountModify"
+                        StartEvent="/event/billing/discount/action/modify">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/DiscountModify.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="DiscountInfo"
+			OnEvent="/event/billing/discount/action/modify"/>
+                        <SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/discount/action/modify"/>
+                        <SubElement Name="StaticInfo"
+			OnEvent="/event/billing/discount/action/modify"/>
+                </DiscountModify>
+
+                <ProductModify Source="EVENT"
+                        Tag="ProductModify"
+                        StartEvent="/event/billing/product/action/modify">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/ProductModify.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="ProductInfo"
+			OnEvent="/event/billing/product/action/modify"/>
+                        <SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/product/action/modify"/>
+                        <SubElement Name="StaticInfo"
+			OnEvent="/event/billing/product/action/modify"/>
+                </ProductModify>
+
+                <ProductStatusChange Source="EVENT"
+                        Tag="ProductStatusChange"
+                        StartEvent="/event/billing/product/action/modify/status">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/ProductStatusChange.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="ProductInfo"
+			OnEvent="/event/billing/product/action/modify/status"/>
+                        <SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/product/action/modify/status"/>
+                        <SubElement Name="StaticInfo"
+			OnEvent="/event/billing/product/action/modify/status"/>
+                </ProductStatusChange>
+
+                <DiscountStatusChange Source="EVENT"
+                        Tag="DiscountStatusChange"
+                        StartEvent="/event/billing/discount/action/modify/status">
+                        <Attribute Tag="InstanceId" Value="BRM"/>
+                        <Attribute Tag="xmlns" Value="http://xmlns.oracle.com/communications/schemas/IPC"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://xmlns.oracle.com/communications/schemas/IPC/DiscountStatusChange.xsd"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <SubElement Name="DiscountInfo"
+			OnEvent="/event/billing/discount/action/modify/status"/>
+                        <SubElement Name="PurchasedOfferInfo"
+			OnEvent="/event/billing/discount/action/modify/status"/>
+                        <SubElement Name="StaticInfo"
+			OnEvent="/event/billing/discount/action/modify/status"/>
+                </DiscountStatusChange>
+                <CreateProfile Source="EVENT"
+                Tag="CreateProfile"
+                StartEvent="/event/notification/profile/create" >
+                        <Attribute Tag="Version" Value="1.0"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_PROFILE_OBJ" Tag="profile_obj"/>
+                        <SubElement Name="SubscriberPreferencesInfo"
+                        OnEvent="/event/notification/profile/create" />
+                </CreateProfile>
+                <ModifyProfile Source="EVENT"
+                Tag="ModifyProfile"
+                StartEvent="/event/notification/profile/modify" >
+                        <Attribute Tag="Version" Value="1.0"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_PROFILE_OBJ" Tag="profile_obj"/>
+                        <SubElement Name="SubscriberPreferencesInfo"
+                        OnEvent="/event/notification/profile/modify" />
+                </ModifyProfile>
+                <DeleteProfile Source="EVENT"
+                Tag="DeleteProfile"
+                StartEvent="/event/notification/profile/delete" >
+                        <Attribute Tag="Version" Value="1.0"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="account_obj"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="service_obj"/>
+                        <Field PinFld="PIN_FLD_PROFILE_OBJ" Tag="profile_obj"/>
+                        <SubElement Name="SubscriberPreferencesInfo"
+                        OnEvent="/event/notification/profile/delete" />
+                </DeleteProfile>
+        </EventDefs>
+</PayloadConfig>
+

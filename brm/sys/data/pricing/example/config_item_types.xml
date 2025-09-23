@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<ItemTypeConfiguration xmlns="http://www.portal.com/PortalXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.portal.com/PortalXMLSchema ../../../../xsd/config_item_types.xsd">
+   <ItemTypeElement>
+      <ItemTag>cycle_arrear</ItemTag>
+      <ItemDescription>Cycle arrear</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_arrear</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cycle_forward_arrear</ItemTag>
+      <ItemDescription>Cycle forward arrear</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward_arrear</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cycle_forward</ItemTag>
+      <ItemDescription>Cycle forward</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "recurring">/item/cycle_forward</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>installment_debit</ItemTag>
+      <ItemDescription>Installment charge</ItemDescription>
+      <ItemType precreate="false" type="individual">/item/installment/debit</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>remittance</ItemTag>
+      <ItemDescription>Remittance</ItemDescription>
+      <ItemType precreate="false" type="cumulative" sub_type = "remitt">/item/remittance</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>incentive</ItemTag>
+      <ItemDescription>Incentive</ItemDescription>
+      <ItemType precreate="false" type="individual">/item/incentive</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>cycle_tax</ItemTag>
+      <ItemDescription>Cycle Tax</ItemDescription>
+      <ItemType precreate="false" type="cumulative">/item/cycle_tax</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>roaming_settlement</ItemTag>
+      <ItemDescription>Roaming Settlement</ItemDescription>
+      <ItemType precreate="true" type="cumulative">/item/settlement/roaming</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>credit_interest</ItemTag>
+      <ItemDescription>Credit Interest deposit item</ItemDescription>
+      <ItemType precreate="false" type="individual">/item/deposit/credit_interest</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>debit_interest</ItemTag>
+      <ItemDescription>Debit Interest deposit item</ItemDescription>
+      <ItemType precreate="false" type="individual">/item/deposit/debit_interest</ItemType>
+   </ItemTypeElement>
+   <ItemTypeElement>
+      <ItemTag>deposit_charge</ItemTag>
+      <ItemDescription>Deposit Charge item</ItemDescription>
+      <ItemType precreate="false" type="individual">/item/deposit/charge</ItemType>
+   </ItemTypeElement>
+</ItemTypeConfiguration>

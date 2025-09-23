@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--  $Header: bus_platform_vob/financial/config/load/config_creditor.xml /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:06:39 nishahan Exp $ -->
+
+<!-- 
+ Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     config_creditor.xml 
+
+   DESCRIPTION
+     A skeleton XML file compliant with the /config/creditor schema.
+
+   NOTES
+     This is just a skeleton XML. Values must be populated before 
+     loading config creditor using this XML.
+
+   MODIFIED   (MM/DD/YY)
+   kpramod     05/20/14 - Creation
+
+-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_creditor.xsd">
+
+  <ConfigObject>
+        <POID>0.0.0.1 /config/creditor -1 0</POID>
+        <ACCOUNT_OBJ>0.0.0.1 /account 1 0</ACCOUNT_OBJ>
+        <DESCR>Stores SEPA related information of the creditor</DESCR>
+        <HOSTNAME>-</HOSTNAME>
+        <NAME>Config Creditor</NAME>
+        <PROGRAM_NAME>-</PROGRAM_NAME>
+        <CREDITOR_INFO elem="0">
+                <ADDRESS></ADDRESS>
+                <BIC></BIC>
+                <BRAND_OBJ></BRAND_OBJ>
+                <CITY></CITY>
+                <COUNTRY></COUNTRY>
+                <CREDITOR_ID></CREDITOR_ID>
+                <CURRENCY></CURRENCY>
+                <IBAN></IBAN>
+                <NAME></NAME>
+                <REF_PARTY></REF_PARTY>
+                <REF_PARTY_ID_CODE></REF_PARTY_ID_CODE>
+                <ZIP></ZIP>
+        </CREDITOR_INFO>
+  </ConfigObject>
+
+</ObjectList>

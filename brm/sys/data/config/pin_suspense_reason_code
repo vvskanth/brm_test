@@ -1,0 +1,213 @@
+#
+# @(#)pin_suspense_reason_code 1.0 09/25/03
+#
+version 1
+#======================================================================
+#
+#      
+# Copyright (c) 1996, 2016, Oracle and/or its affiliates. All rights reserved.
+#      
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+# 	Use this file to define the mapping between the pipeline error 
+#	codes to suspense reason and subreason codes.
+#
+#	The text data defined in this file will be loaded into the 
+#	/config/suspense_reason_code.
+#
+# 	Loading this file will replace existing object with the one 
+#	defined below.
+#
+# 	Use the following syntax for defining the mapping between 
+#	Integrate Error Codes and Suspense reason and subreason codes
+#
+#	Error Codes		Suspense Reason		SuspenseSubreason 
+# 	   1				2			3 
+#
+#	Duplicate error codes in this file will cause an error code and
+#	the file will not be loaded into the configuration object.
+#
+#	Error code of 0 is the default error code. User has to define
+#	the default Suspense Reason and Subreason codes for this
+#	default error code. If the default error code (0) is not defined
+#	in this file an error code will be set and this file will not 
+#	be loaded.
+#
+# Usage:
+#	$ load_suspense_reason_code <pin_suspense_reason_code>
+#
+#======================================================================
+#
+# Sample file:
+#======================================================================
+#
+#	ErrorCodes		SuspenseReason		SuspenseSubReason
+# Default error (error that is not specified in this file)
+	00000			0		 	0	
+# Framework errors
+	00464			1			1
+        00479			1			1
+        00496			1			1
+        00497			1			1
+        00480			1			1
+	00481			1			1
+	00482			1			1
+
+	00208			9 			0
+	00209			7 			0
+
+	00461			1			0
+	00217			1			2
+	
+	00467			3			0
+	00231			1			3
+
+
+
+# DAT Account
+	30063			9			1
+	30064			9			1	
+	30065			9			1
+	30001			9			0
+	30002			9			0
+	30003			9			0
+	30004			9			0
+	30005			9			0
+	30006			9			0
+	30007			9			0
+	30008			9			0
+	30009			9			0
+	30010			9			0
+	30011			9			0
+	30012			9			1
+	31101			9			1
+	31102			9			1
+	
+# FCT_AggreGate
+	15707			8			0
+	15710			8			0
+
+# FCT_BalancePlugIn error 
+	15901			6			0
+
+# FCT_CallAssembling errors
+	15409			4			0
+	15413			4			0
+	15415			4			0
+	15416			4			0
+# FCT_CustomerRating errors 
+	16101			3			4
+	16103			3			4
+# FCT_Discount errors 
+	18002			2			0
+	18003			2			0
+	18004			2			0
+	18005			2			0
+	18006			2			0
+	18007			2			0
+	18008			2			0
+	18009			2			0
+	18010			2			0
+	18011			2			0
+	18012			2			0
+	18013			2			0
+	18015			2			0
+	18016			2			0
+	18017			2			0
+	18018			2			0
+	18019			2			0
+	18020			2			0
+	18021			2			0
+	18022			2			0
+	18023			2			0
+	18025			2			0
+	18026			2			0
+	18027			2			0
+	18028			2			0
+	18029			2			0
+	18030			2			0
+	18031			2			0
+	18033			2			0
+	18035			2			0
+	18036			2			0
+# FCT_EnhancedSplitting errors
+	16401			7			0
+
+# FCT_ExchangeRate errors
+	18101			3			5
+	18102			3			5
+	18103			3			5
+
+# FCT_MainRating errors
+	16501			3			0
+	16502			3			0
+	16503			3			2
+	16504			3			1
+	16505			3			2
+	16506			3			1
+	16507			3			1
+	16508			3			1
+	16509			3			1
+	16510			3			3
+	16511			3			3
+
+# FCT_PreRating errors 
+	16601			3			0
+	16602			3			0
+	16603			3			0
+	16604			3			0
+# FCT_Tadig2PlmnPlugIn error
+	17501			5			0
+
+# Ciber
+	00491			10			0
+# Tap3
+	00490			10			1
+
+# FCT_AccountRouter Errors
+	15603			11			0
+
+# FCT_TriggerBill Errors
+	18000			11			1
+
+# FCT_Account Errors
+	15502			11			2
+
+# FCT_Filter_Set Errors
+	05001			12			0
+	05002			12			1
+
+
+# Network Mediation Error 
+	60001			13			0
+	60002			13			1
+	60003			13			2
+	60004			13			3
+	60005			13			4
+	60006			13			5
+	60007			13			6
+	60008			13			7
+	60009			13			8
+	60010			13			9
+	60011			13			10
+	60012			13			11
+	60013			13			12
+	60014			13			13
+	60015			13			14
+	60016			13			15
+	60017			13			16
+	60018			13			17
+	60019			13			18
+	60020			13			19
+	60021			13			20
+	60022			13			21
+	60023			13			22
+	60024			13			23
+	60025			13			24
+	60026			13			25
+	60027			13			26

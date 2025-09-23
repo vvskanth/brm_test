@@ -1,0 +1,97 @@
+<!--
+ *
+ * @(#)payloadconfig.xml 1.0 
+
+ * Copyright (c) 2003- 2006 Oracle. All rights reserved.
+ * This material is the confidential property of Oracle Corporation or its licensors and may be used,
+ * reproduced, stored or transmitted only in accordance with a valid Oracle license or sublicense agreement.
+
+-->
+
+<PayloadConfig>
+	<PublisherDefs>
+	<!--
+		For each additional publisher, add an entry of element type
+		Publisher, with the events to be published.
+	-->
+		<Publisher DB="0.0.9.1" Format="XML">
+			ProductCreate, ProductUpdate, StatusUpdate
+		</Publisher>
+	</PublisherDefs>
+		
+	<ElementDefs>
+		<EventTypeInfo Source="/rate_plan" Tag="EventTypeInfo" 
+		PinFld="PIN_FLD_EVENT_AUDIT" >
+			<Search SearchFld="PIN_FLD_POID" 
+			SearchVal="PIN_FLD_OBJECT" 
+			SearchValFrom="PIN_FLD_EVENT_AUDIT" />
+			<Field PinFld="PIN_FLD_EVENT_TYPE" Tag="RateTypeEvent"/>
+			<ExtendedInfo PinFld="PIN_FLD_RATE_TIERS" Tag="RateTiers">
+			<Field PinFld="PIN_FLD_Name" Tag="TierName"/>
+			</ExtendedInfo>
+		</EventTypeInfo>
+		<PriceInfo Source="/rate" Tag="PriceInfo" 
+		DataFrom="PIN_FLD_QUANTITY_TIERS"
+		PinFld="PIN_FLD_QUANTITY_TIERS" >
+			<Search SearchFld="PIN_FLD_POID" 
+			SearchVal="PIN_FLD_OBJECT" 
+			SearchValFrom="PIN_FLD_EVENT_AUDIT" />
+			<Field PinFld="PIN_FLD_DESCR" Tag="RateTypeDescr"/>
+			<ExtendedInfo PinFld="PIN_FLD_BAL_IMPACTS" Tag="PriceAmt">
+			<Field PinFld="PIN_FLD_SCALED_AMOUNT" Tag="RateAmt"/>
+			<Field PinFld="PIN_FLD_ELEMENT_ID" Tag="CurrencyCode"/>
+			</ExtendedInfo>
+		</PriceInfo>
+		<Statuses Source="EVENT" PinFld="PIN_FLD_STATUSES"
+                DataFrom="PIN_FLD_STATUSES" Tag="Statuses" UseOnlyElement="1">
+                        <Field PinFld="PIN_FLD_STATUS" Tag="Status"/>
+                        <Field PinFld="PIN_FLD_STATUS_FLAGS" Tag="StatusFlags"/>
+                </Statuses>
+	</ElementDefs>
+
+	<EventDefs>
+		<ProductCreate Source="/product" 
+		PinFld="PIN_FLD_EVENT_AUDIT"
+		Tag="ListOfProduct" 
+		StartEvent="/event/audit/price/product_create"
+		EndEvent="/event/audit/price/product_complete">
+			<Attribute Tag="Message" Value="ProductCreate"/>
+			<Search SearchFld="PIN_FLD_POID" 
+			SearchVal="PIN_FLD_OBJECT" 
+			SearchValFrom="PIN_FLD_EVENT_AUDIT" />
+			<Field PinFld="PIN_FLD_POID" Tag="ProductPoid" />
+			<Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+			<Field PinFld="PIN_FLD_DESCR" Tag="Description"/>
+			<Field PinFld="PIN_FLD_PERMITTED" Tag="ServiceType"/>
+			<SubElement Name="EventTypeInfo" 
+			OnEvent="/event/audit/price/rate_plan"/>
+			<SubElement Name="PriceInfo" 
+			OnEvent="/event/audit/price/rate"/>
+		</ProductCreate>	
+		<ProductUpdate Source="/product" 
+		PinFld="PIN_FLD_EVENT_AUDIT"
+		Tag="ListOfProduct" 
+		StartEvent="/event/audit/price/product_update"
+		EndEvent="/event/audit/price/product_complete">
+			<Attribute Tag="Message" Value="ProductUpdate"/>
+			<Search SearchFld="PIN_FLD_POID" 
+			SearchVal="PIN_FLD_OBJECT" 
+			SearchValFrom="PIN_FLD_EVENT_AUDIT" />
+			<Field PinFld="PIN_FLD_POID" Tag="ProductPoid" />
+			<Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+			<Field PinFld="PIN_FLD_DESCR" Tag="Description"/>
+		</ProductUpdate>	
+                <StatusUpdate Source="EVENT"
+                Tag="StatusChange"
+                StartEvent="/event/customer/status">
+						<Attribute Tag="Message" Value="AccountStatus"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountPoid"/>
+                        <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="ServicePoid"/>
+                        <SubElement Name="Statuses"
+                        OnEvent="/event/customer/status"/>
+                </StatusUpdate>
+	</EventDefs>
+</PayloadConfig>
+
+
+

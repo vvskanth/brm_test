@@ -1,0 +1,149 @@
+--
+-- @(#)create_collections_view_AIA.source v1 09/22/09
+--     create_collections_view_AIA.source v2 08/15/12 : Bug 14327081 - MULTI SCHEMA SOLUTION FOR COMMS AIA
+--     create_collections_view_AIA.source v3 03/22/13 : Bug 14835760 - MULTI SCHEMA COLLECTIONS SOLUTION FOR COMMS AIA
+--
+-- Copyright (c) 2009, 2013, Oracle and/or its affiliates. All rights reserved.
+--
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+--
+--
+-- sql file to create the collections views.These views will be read by AIA. 
+--
+
+CREATE OR REPLACE VIEW "COLL_ACTION_IF_VIEW"
+    ( "AccountObj", "BillInfoObj", "AccountingType", "EventDescr",
+      "ActionPoid", "ActionName", "ActionDescr", "ActionType", "Status",
+      "OverdueAmount", "OverdueDate", "Currency", "CompletedDate",
+      "DueDate", "CollGenDate", "CREATED_T", "ID")
+AS
+  SELECT  ('0.0.0.' || CA.ACCOUNT_OBJ_DB
+            || ' '  || CA.ACCOUNT_OBJ_TYPE
+            || ' '  || CA.ACCOUNT_OBJ_ID0
+            || ' 0' ) "AccountObj"          ,
+          ('0.0.0.' || CA.BILLINFO_OBJ_DB
+            || ' '  || CA.BILLINFO_OBJ_TYPE
+            || ' '  || CA.BILLINFO_OBJ_ID0
+            || ' 0' ) "BillInfoObj"         ,
+          BI.ACTG_TYPE "AccountingType"     ,
+          CASE(CA.AU_PARENT_OBJ_REV)
+            WHEN 0 
+            THEN 'Action Created'
+	    WHEN 1
+	    THEN
+		CASE (CA.AU_PARENT_OBJ_TYPE)
+		   WHEN '/collections_action/manual_action'
+		   THEN 'Action Updated'
+		   WHEN '/collections_action/refer_to_outside_agency'
+		   THEN 'Action Updated'
+		   ELSE 'Action Created' 
+		END
+            ELSE 'Action Updated'
+          END AS "EventDescr"         ,
+          ('0.0.0.1'
+            || ' '  || CA.AU_PARENT_OBJ_TYPE
+            || ' '  || CA.AU_PARENT_OBJ_ID0
+            || ' 0' ) "ActionPoid" ,
+          CCA.ACTION_NAME  "ActionName"     ,
+          CCA.ACTION_DESCR "ActionDescr"    ,
+          CASE(CCA.OPCODE)
+            WHEN 0 THEN     'Manual Action'
+            WHEN 3883 THEN  'Custom Action'
+            ELSE            'System Action'
+          END                AS "ActionType"    ,
+          CA.STATUS          AS "Status"        ,
+          CS.OVERDUE_AMOUNT  AS "OverdueAmount" ,
+          TO_DATE('19700101', 'YYYYMMDD') + (CS.OVERDUE_T/86400) AS "OverdueDate"   ,
+          BI.CURRENCY AS "Currency",
+          CASE(CA.COMPLETED_T)
+            WHEN 0 THEN NULL
+            ELSE TO_DATE('19700101', 'YYYYMMDD') + (CA.COMPLETED_T/86400)
+          END                                                AS "CompletedDate",
+          TO_DATE('19700101', 'YYYYMMDD') + (CA.DUE_T/86400) AS "DueDate"      ,
+          TO_DATE('19700101', 'YYYYMMDD') + (CA.MOD_T/86400) AS "CollGenDate"  ,
+          CA.CREATED_T "CREATED_T" ,
+          CA.AU_PARENT_OBJ_ID0 "ID"
+  FROM  AU_COLLECTIONS_ACTION_T CA      ,
+        CONFIG_COLLECTIONS_ACTION_T CCA ,
+        COLLECTIONS_SCENARIO_T CS       ,
+        BILLINFO_T BI
+  WHERE CA.CONFIG_ACTION_OBJ_ID0 = CCA.OBJ_ID0
+    AND CA.SCENARIO_OBJ_ID0      = CS.POID_ID0
+    AND CA.BILLINFO_OBJ_ID0      = BI.POID_ID0
+  ORDER BY CA.CREATED_T;
+
+CREATE OR REPLACE VIEW "COLL_SCENARIO_IF_VIEW" 
+	("AccountObj", "BillInfoObj", "AccountingType", "EventDescr", 
+	"ActionPoid", "ActionName", "ActionDescr", "ActionType", "Status", 
+	"OverdueAmount", "OverdueDate", "Currency", "CompletedDate", 
+	"DueDate", "CollGenDate", "CREATED_T", "ID", "ScenarioID", "ScenarioName") 
+  AS   
+  SELECT * FROM
+  (
+  SELECT  ('0.0.0.' || CS.ACCOUNT_OBJ_DB
+            || ' '  || CS.ACCOUNT_OBJ_TYPE
+            || ' '  || CS.ACCOUNT_OBJ_ID0
+            || ' 0' ) "AccountObj"          ,
+          ('0.0.0.' || CS.BILLINFO_OBJ_DB
+            || ' '  || CS.BILLINFO_OBJ_TYPE
+            || ' '  || CS.BILLINFO_OBJ_ID0
+            || ' 0' ) "BillInfoObj"         ,
+          BI.ACTG_TYPE "AccountingType"     ,
+          'Entered collections' AS "EventDescr"         ,
+          NULL "ActionPoid" ,
+          'No Action - Entered collections' AS "ActionName"         ,
+          NULL AS "ActionDescr"    ,
+          NULL AS "ActionType"     ,
+          NULL AS "Status"         ,
+          CS.OVERDUE_AMOUNT  AS "OverdueAmount" ,
+          TO_DATE('19700101', 'YYYYMMDD') + (CS.OVERDUE_T/86400) AS "OverdueDate",
+          BI.CURRENCY AS "Currency",
+          NULL AS "CompletedDate",
+          NULL AS "DueDate"      ,
+          TO_DATE('19700101', 'YYYYMMDD') + (CS.ENTRY_T/86400) AS "CollGenDate"  ,
+          CS.CREATED_T "CREATED_T" ,
+          CS.POID_ID0 "ID" ,
+          CS.CONFIG_SCENARIO_OBJ_ID0 "ScenarioID" ,
+          CCS.SCENARIO_NAME "ScenarioName"
+  FROM  COLLECTIONS_SCENARIO_T CS       ,
+        CONFIG_COLLECTIONS_SCENARIO_T CCS ,
+        BILLINFO_T BI
+  WHERE CS.CONFIG_SCENARIO_OBJ_ID0 = CCS.OBJ_ID0
+   AND CS.BILLINFO_OBJ_ID0         = BI.POID_ID0
+  UNION
+  SELECT  ('0.0.0.' || CS.ACCOUNT_OBJ_DB
+            || ' '  || CS.ACCOUNT_OBJ_TYPE
+            || ' '  || CS.ACCOUNT_OBJ_ID0
+            || ' 0' ) "AccountObj"          ,
+          ('0.0.0.' || CS.BILLINFO_OBJ_DB
+            || ' '  || CS.BILLINFO_OBJ_TYPE
+            || ' '  || CS.BILLINFO_OBJ_ID0
+            || ' 0' ) "BillInfoObj"         ,
+          BI.ACTG_TYPE "AccountingType"     ,
+          'Exited collections' AS "EventDescr"         ,
+          NULL "ActionPoid" ,
+          'No Action - Exited collections' AS "ActionName"         ,
+          NULL AS "ActionDescr"    ,
+          NULL AS "ActionType"     ,
+          NULL AS "Status"         ,
+          CS.OVERDUE_AMOUNT  AS "OverdueAmount" ,
+          TO_DATE('19700101', 'YYYYMMDD') + (CS.OVERDUE_T/86400) AS "OverdueDate",
+          BI.CURRENCY AS "Currency",
+          TO_DATE('19700101', 'YYYYMMDD') + (CS.EXIT_T/86400) AS "CompletedDate",
+          NULL AS "DueDate"      ,
+          TO_DATE('19700101', 'YYYYMMDD') + (CS.ENTRY_T/86400) AS "CollGenDate"  ,
+          CS.MOD_T "CREATED_T" ,
+          CS.POID_ID0 "ID" ,
+          CS.CONFIG_SCENARIO_OBJ_ID0 "ScenarioID" ,
+          CCS.SCENARIO_NAME "ScenarioName"
+  FROM  COLLECTIONS_SCENARIO_T CS       ,
+        CONFIG_COLLECTIONS_SCENARIO_T CCS ,
+        BILLINFO_T BI
+  WHERE CS.CONFIG_SCENARIO_OBJ_ID0 = CCS.OBJ_ID0
+   AND CS.BILLINFO_OBJ_ID0        = BI.POID_ID0
+   AND CS.EXIT_T > 0
+  )
+  ORDER BY "CREATED_T";

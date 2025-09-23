@@ -1,0 +1,54 @@
+--
+-- @(#)%Portal Version: create_indexes_order.source:BillingVelocityInt:2:2006-Mar-26 20:24:12 %
+--
+-- Copyright (c) 2003, 2024, Oracle and/or its affiliates.All rights reserved. 
+--
+--      This material is the confidential property of Oracle Corporation.
+--      or its licensors and may be used, reproduced, stored 
+--      or transmitted only in accordance with a valid Oracle license or
+--      sublicense agreement.
+--
+--
+-- SOURCE OF sql file to create the indexes for the PIN database
+--
+
+-- /order
+create unique index i_order__id on order_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/order.INDEX_CLAUSE'} ;
+
+-- /event/order
+create index i_event_order__id on event_order_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/order/associate
+create index i_event_order_associate__id on event_order_associate_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/order/attribute
+create index i_event_order_attribute__id on event_order_attribute_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_IND ;
+
+-- /event/order/brand
+create index i_event_order_brand__id on event_order_brand_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_IND ;
+-- /event/order/disassociate
+create index i_event_order_disassociate__id on event_order_disassociate_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/event.INDEX_CLAUSE'} ;
+
+--  /event/order/state
+create index i_event_order_state__id on event_order_state_t ( obj_id0 )
+        $PIN_CONF_TBLSPACEX7
+        $PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/event.INDEX_CLAUSE'} ;

@@ -1,0 +1,1499 @@
+# @(#)$Id: init_objects.source /cgbubrm_mainbrm.portalbase/1 2022/07/07 11:30:00 mkothari Exp $
+#
+# Copyright (c) 1996, 2023, Oracle and/or its affiliates.
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in
+# accordance with a valid Oracle license or sublicense agreement.
+#=============================================================================#
+
+# root account object
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_ACCOUNT_TYPE	 ENUM [0] 1
+0 PIN_FLD_BRAND_OBJ	 POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_ACCOUNT_TYPE   ENUM [0] 2
+0 PIN_FLD_INTERNAL_NOTES    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_LINEAGE	  STR [0] "/"
+0 PIN_FLD_NAME            STR [0] "Brand Host"
+0 PIN_FLD_NAMEINFO      ARRAY [1] allocated 18, used 18
+1     PIN_FLD_FIRST_CANON     STR [0] "system"
+1     PIN_FLD_FIRST_NAME      STR [0] "System"
+1     PIN_FLD_LAST_CANON      STR [0] "administrator"
+1     PIN_FLD_LAST_NAME       STR [0] "Administrator"
+</PCM_OP> 
+
+
+
+# Prohibited fields in the account object are created separately using
+# a WFLDS opcode.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_ACCOUNT_NO      STR [0] "ROOT"
+0 PIN_FLD_CURRENCY        INT [0] $PIN_CONF_SYS_CURRENCY
+0 PIN_FLD_ITEM_POID_LIST STR [0] "$PIN_CONF_DB_NO|/item/misc 1 0"
+0 PIN_FLD_LASTSTAT_CMNT   STR [0] ""
+0 PIN_FLD_CLOSE_WHEN_T   TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+</PCM_OP>
+
+#
+#=============================================================================#
+
+# default bill object for the top level account
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /bill 1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_NAME            STR [0] "top bill obj"
+0 PIN_FLD_BILLINFO_OBJ	POID [0] $PIN_CONF_DB_NO /billinfo 1 0
+0 PIN_FLD_START_T      TSTAMP [0] ($PIN_CONF_DATE_NOW)
+0 PIN_FLD_END_T        TSTAMP [0] (0) <null>
+</PCM_OP> 
+
+#=============================================================================#
+
+# default payinfo object for the top level account
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /payinfo 1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_INVOICE_OBJ    POID [0] $PIN_CONF_DB_NO /invoice 1 0
+0 PIN_FLD_NAME            STR [0] "top payinfo obj"
+</PCM_OP> 
+
+#=============================================================================#
+
+# balance_group object for the top level account
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BILLINFO_OBJ   POID [0] $PIN_CONF_DB_NO /billinfo 1 0
+0 PIN_FLD_BALANCES      ARRAY [840] allocated 4, used 4
+1     PIN_FLD_CREDIT_PROFILE    INT [0] 0
+1     PIN_FLD_NEXT_BAL     DECIMAL [0] 0
+1     PIN_FLD_RESERVED_AMOUNT DECIMAL [0] 0
+1     PIN_FLD_SUB_BALANCES  ARRAY [0] allocated 5, used 5
+2         PIN_FLD_CONTRIBUTOR_STR    STR [0] ""
+2         PIN_FLD_CURRENT_BAL  DECIMAL [0] 0
+2         PIN_FLD_ROLLOVER_DATA    INT [0] 0
+2         PIN_FLD_VALID_FROM   TSTAMP [0] (0) <null>
+2         PIN_FLD_VALID_TO     TSTAMP [0] (0) <null>
+</PCM_OP> 
+
+# /billinfo object for the top level account 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /billinfo 1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_AR_BILLINFO_OBJ    POID [0] $PIN_CONF_DB_NO /billinfo 1 0
+0 PIN_FLD_BILLINFO_ID	STR [0] "top billinfo obj" 
+0 PIN_FLD_CURRENCY        INT [0] $PIN_CONF_SYS_CURRENCY
+0 PIN_FLD_BILL_OBJ       POID [0] $PIN_CONF_DB_NO /bill 1 0
+0 PIN_FLD_BILL_WHEN       INT [0] 0
+0 PIN_FLD_ACTG_CYCLE_DOM   INT [0] 0
+0 PIN_FLD_ACTG_TYPE      ENUM [0] 2
+0 PIN_FLD_ACTG_NEXT_T   TSTAMP [0] (2147483647)
+0 PIN_FLD_LAST_BILL_OBJ  POID [0] 0.0.0.0  0 0
+0 PIN_FLD_NEXT_BILL_T  TSTAMP [0] (0) <null>
+0 PIN_FLD_PENDING_RECV DECIMAL [0] 0.000000
+0 PIN_FLD_PAYINFO_OBJ    POID [0] $PIN_CONF_DB_NO /payinfo 1 0
+0 PIN_FLD_PAY_TYPE      ENUM [0] 0
+</PCM_OP> 
+
+# item object for the top level account
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /item/usage 1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BILL_OBJ       POID [0] $PIN_CONF_DB_NO /bill 1 0
+0 PIN_FLD_BILLINFO_OBJ	 POID [0] $PIN_CONF_DB_NO /billinfo 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_NAME            STR [0] "top item obj"
+0 PIN_FLD_GL_SEGMENT      STR [0] "."
+0 PIN_FLD_STATUS         ENUM [0] 0
+</PCM_OP> 
+
+#=============================================================================#
+
+# create top /service/pcm_client object
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "root.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "top /service/pcm_client obj"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|5150D0A34041CAB01DCC8B367234A4D5A06F1A4114EC5E6D983B047F9D9D0E1349CB80F2B51FCA3C46A931AAEDE07E797A689284A239B125AB46B1E9A7E3501F|BC585CF065039F3823E81F513CA69B83"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0 
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0] 
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] 0.0.0.0 0 0 
+</PCM_OP> 
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 1 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP> 
+
+
+#=============================================================================#
+
+# create top /service/admin_client object and give it permissions
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 2 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "root.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "top /service/admin_client obj"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|5150D0A34041CAB01DCC8B367234A4D5A06F1A4114EC5E6D983B047F9D9D0E1349CB80F2B51FCA3C46A931AAEDE07E797A689284A239B125AB46B1E9A7E3501F|BC585CF065039F3823E81F513CA69B83"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_PERMITTEDS    ARRAY [0] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/permissions"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [1] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/araccess"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [2] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/password/*"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [3] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/refund"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 1000000000000.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [4] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/product/modify"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [5] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/product/cancel"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [6] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/deal/customize"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [7] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/adjustment/credit"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 1000000000000.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [8] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/adjustment/debit"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 1000000000000.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [9] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/credit"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 1000000000000.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [10] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/debit"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 1000000000000.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [11] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/creditlimit"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 1000000000000.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [12] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/charge"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 1000000000000.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [13] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/status/change"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [14] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/product/purchase"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [15] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/creditcard"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [16] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/billnow"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [17] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/debitcard"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [18] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/backdate"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [19] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/hierarchy"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [20] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/sponsorship"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [21] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/contact"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [22] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/summary/customertype"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [23] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/services/details/email"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [24] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/services/details/ip"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [25] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/plans/productdetails/purchase"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [26] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/plans/productdetails/cycle"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [27] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/plans/productdetails/usage"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [28] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/summary/securitycode1"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [29] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/summary/securitycode2"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [30] allocated 4, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/payments/paymethod"
+1     PIN_FLD_MAXIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_MINIMUM     DECIMAL [0] 0.000000
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0] 0
+1     PIN_FLD_LOCK_STATUS    ENUM [0] 0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0] 
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] 0.0.0.0 0 0
+</PCM_OP> 
+
+# Prohibited args for /service/admin_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 2 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP> 
+
+#=============================================================================#
+
+#=============================================================================#
+
+# top level /data object
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data 1 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ""
+0 PIN_FLD_NAME            STR [0] "top DATA"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP> 
+
+#=============================================================================#
+
+# accounting transid /data object
+# DB_NO /data 2
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data 2 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ""
+0 PIN_FLD_NAME            STR [0] "billing transid"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP> 
+
+#=============================================================================#
+
+# registration loginid /data object
+# DB_NO /data 3
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data 3 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ""
+0 PIN_FLD_NAME            STR [0] "reg loginid"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP> 
+
+#=============================================================================#
+
+# DATA SEQUENCE OBJECTS.
+ 
+# /data/sequence objects. 300. PIN_SEQUENCE_TYPE_TRANS_ID
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 300 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":,:T$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_TRANS_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+ 
+# /data/sequence objects. 301. PIN_SEQUENCE_TYPE_BILL_NO
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 301 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:B$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_BILL_NO"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+ 
+# /data/sequence objects. 302. PIN_SEQUENCE_TYPE_PAYMENT
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 302 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:P$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_PAYMENT"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+ 
+# /data/sequence objects. 303. PIN_SEQUENCE_TYPE_DISPUTE
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 303 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:D$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_DISPUTE"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+ 
+# /data/sequence objects. 304. PIN_SEQUENCE_TYPE_ADJUSTMENT
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 304 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:A$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_ADJUSTMENT"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+ 
+# /data/sequence objects. 305. PIN_SEQUENCE_TYPE_SETTLEMENT
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 305 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:S$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_SETTLEMENT"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+ 
+# /data/sequence objects. 306. PIN_SEQUENCE_TYPE_WRITEOFF
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 306 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:W$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_WRITEOFF"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+ 
+# /data/sequence objects. 307. PIN_SEQUENCE_TYPE_ACCOUNT
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 307 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:C$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_ACCOUNT"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 308. PIN_SEQUENCE_TYPE_REFUND
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 308 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:R$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_REFUND"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 309. PIN_SEQUENCE_TYPE_FIAS_ID
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 309 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:FI$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_FIAS_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+
+# /data/journal 310 - default data journal
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/journal 310 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+0 PIN_FLD_JOURNAL_INFO		ARRAY [0]
+1	PIN_FLD_EVENT_OBJ	POID [0] $PIN_CONF_DB_NO /event 1 0
+1	PIN_FLD_LAST_POSTED_T	TSTAMP [0] (0)
+</PCM_OP>
+
+# /data/sequence objects. 311. PIN_SEQUENCE_TYPE_PACKAGE_ID
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 311 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:FI$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_PACKAGE_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+#=============================================================================#
+
+# DATA SEQUENCE LOCK OBJECTS.
+ 
+# /data/sequence_lock objects. POID_IDS2
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence_lock 312 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM      INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ""
+0 PIN_FLD_NAME            STR [0] "POID_IDS2"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 313. PIN_SEQUENCE_TYPE_CORR_BILL_NO
+ 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 313 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:CB$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_CORR_BILL_NO"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+#=============================================================================#
+
+# /data/sequence objects. 314. PIN_SEQUENCE_TYPE_SDD_MSG_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 314 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:SDD$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_SDD_MSG_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 315. PIN_SEQUENCE_TYPE_SCT_MSG_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 315 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:SCT$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_SCT_MSG_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 316. PIN_SEQUENCE_TYPE_REV_MSG_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 316 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:SDD-REV$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_REV_MSG_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 317. PIN_SEQUENCE_TYPE_PYMTINFO_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 317 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:PMTID$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_PYMTINFO_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 318. PIN_SEQUENCE_TYPE_MANDATE_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 318 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:MNID$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_MANDATE_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+#PS5 /data/sequence objects
+
+# /data/sequence objects. 320. PIN_SEQUENCE_TYPE_BAL_EXT_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 320 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:BG$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_BAL_EXT_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 321. PIN_SEQUENCE_TYPE_SUB_BAL_EXT_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 321 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:BG-SB$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_SUB_BAL_EXT_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 322. PIN_SEQUENCE_TYPE_PAYINFO_EXT_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 322 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:PI$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_PAYINFO_EXT_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 323. PIN_SEQUENCE_TYPE_BILLINFO_EXT_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 323 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:BI$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_BILLINFO_EXT_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 324. PIN_SEQUENCE_TYPE_EVENT_EXT_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 324 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:E$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_EVENT_EXT_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+# /data/sequence objects. 325. PIN_SEQUENCE_TYPE_LOAN_ID
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/sequence 325 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BUFFER          BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_HEADER_STR      STR [0] ":-:L$BILL_DB_NO"
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TYPE_LOAN_ID"
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+</PCM_OP>
+
+#=============================================================================#
+
+# /data/archiving - object to track the state of data archiving
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/archiving 4 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_NAME            STR [0] "Data Archiving State"
+0 PIN_FLD_CREATED_T    TSTAMP [0] ($PIN_CONF_DATE_NOW)
+0 PIN_FLD_MOD_T        TSTAMP [0] (0)
+0 PIN_FLD_PARENT         POID [0] 0.0.0.0  0 0
+0 PIN_FLD_ARCHIVING_STATE SUBSTRUCT [0]
+1 	PIN_FLD_ARCHIVING_ID		INT [0] 0
+1 	PIN_FLD_STATUS			ENUM [0] 0
+1 	PIN_FLD_ARCHIVE_ROWS_DELETED	 INT [0] 0
+1 	PIN_FLD_ARCHIVE_ROWS_TO_BACKUP	 INT [0] 0
+1 	PIN_FLD_ARCHIVE_ROWS_TO_PUSH	 INT [0] 0
+1 	PIN_FLD_ARCHIVE_PREPARE_T	TSTAMP [0] (0)
+</PCM_OP> 
+
+# /data/price_list_changed - object to track the changes of price list 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/price_list_changed 5 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+</PCM_OP> 
+
+# /data/trial_bill_sequence - object to track the trial bill run count of subords 
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /data/trial_bill_sequence 319 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_HEADER_NUM     INT64 [0] 0
+0 PIN_FLD_NAME            STR [0] "PIN_SEQUENCE_TRIAL"
+</PCM_OP> 
+
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=0x00> 
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /group/acl 0 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "ACL group for root access"
+0 PIN_FLD_NAME            STR [0] "ACL group for root access"
+0 PIN_FLD_PARENT	 POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_PERMITTEDS    ARRAY [1] allocated 4, used 4
+1     PIN_FLD_OBJ_TYPE    STR [0] "/service/admin_client"
+0 PIN_FLD_STATUS	 ENUM [0] 0
+0 PIN_FLD_TYPE_STR	  STR [0] "/group/acl"
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for billing applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 402 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "billing.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with billing"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 402 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 402 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+
+# create default /service/pcm_client object associated with /config/role for invoicing applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 403 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "invoicing.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with invoicing"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 403 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 403 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+
+# create super /service/pcm_client object associated with /config/role
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 3 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "super_user.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "super /service/pcm_client obj"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 1 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 3 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+
+# create super /service/admin_client object associated with /config/role
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 4 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "super_user.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "super /service/admin_client obj"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0] 0
+1     PIN_FLD_LOCK_STATUS    ENUM [0] 0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 1 0
+</PCM_OP>
+
+
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 4 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+
+# create default /service/pcm_client object associated with /config/role for payment applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 404 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "payments.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with payment"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 404 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 404 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for crypt utils applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 405 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "crypt_utils.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with crypt utils"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 405 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 405 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for customer manager applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 406 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "cust_mgnt.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with customer manager"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 406 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 406 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for rerating utils applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 407 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "rerating.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with rerating applications"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 407 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 407 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for AR applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 408 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "acct_recv.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with Accounts Receivable"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 408 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 408 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object with /config/role for Java applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 409 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "java_client.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with Java Applications"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 409 0
+</PCM_OP>
+
+# Prohibited  args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 409 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object with /config/role for Java applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 410 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "java_client.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/admin_client associated with java applications"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0] 0
+1     PIN_FLD_LOCK_STATUS    ENUM [0] 0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 410 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 410 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for collections utility applications
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 411 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "collections.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with collections utilities"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 411 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 411 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with combined /config/role for Billing, Invoicing, Payments and Cust mgmt Applications.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 412 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "bill_inv_pymt_sub.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with combined billing, invoicing, cust mgmt and payments applications"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 412 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 412 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for all load utilities.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 413 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "load_utils.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with load utilities"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 413 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 413 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for BOC client.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 414 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "boc_client.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with BOC client"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 414 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 414 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/admin_client object associated with /config/role for BOC client.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 415 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "boc_client.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/admin_client associated with BOC client"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 415 0
+</PCM_OP>
+
+# Prohibited args for /service/admin_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 415 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/admin_client object associated with /config/role for BC client.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 416 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "bc_client.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/admin_client associated with BillingCare client"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 416 0
+</PCM_OP>
+
+# Prohibited args for /service/admin_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 416 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/admin_client object associated with /config/role for Customer Center.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 417 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "cust_center.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/admin_client associated with Customer Center"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+1 PIN_FLD_PROFILE    INT [0] 1
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 417 0
+0 PIN_FLD_PERMITTEDS    ARRAY [0] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/permissions"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [1] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/araccess"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [2] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/password/*"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [3] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/refund"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 1000000000000
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [4] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/product/modify"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [5] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/product/cancel"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [6] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/deal/customize"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [7] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/adjustment/credit"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 1000000000000
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [8] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/adjustment/debit"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 1000000000000
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [9] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/credit"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 1000000000000
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [10] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/debit"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 1000000000000
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [11] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/creditlimit"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 1000000000000
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [12] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/charge"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 1000000000000
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [13] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/status/change"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [14] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/product/purchase"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [15] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/creditcard"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [16] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/billnow"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [17] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/debitcard"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [18] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/backdate"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [19] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/hierarchy"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [20] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/sponsorship"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [21] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/contact"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [22] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/summary/customertype"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [23] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/services/details/email"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [24] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/services/details/ip"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [25] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/plans/productdetails/purchase"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [26] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/plans/productdetails/cycle"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [27] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/plans/productdetails/usage"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [28] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/summary/securitycode1"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [29] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/summary/securitycode2"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [30] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/customercenter/payments/paymethod"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [31] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/ClientTool/CustomerCenter"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [32] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/gsm/sim"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [33] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/accounttool/gsm/number"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+</PCM_OP>
+
+# Prohibited args for /service/admin_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 417 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/admin_client object associated with /config/role for PCC client.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 418 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "pcc_client.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/admin_client associated with PCC client"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 418 0
+</PCM_OP>
+
+# Prohibited args for /service/admin_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 418 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/admin_client object associated with /config/role for RSM.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 419 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "rsm.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/admin_client associated with Rest Services Manager"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 419 0
+</PCM_OP>
+
+# Prohibited args for /service/admin_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 419 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/admin_client object associated with /config/role for Thick Clients.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 420 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "ui_client.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/admin_client associated with Thick Clients"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_SERVICE_ADMINCLIENT SUBSTRUCT [0]
+1 PIN_FLD_USER_PREFS    BUF [0] flag/size/offset 0x0 0 0 NULL data ptr
+1 PIN_FLD_PROFILE    INT [0] 1
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 420 0
+0 PIN_FLD_PERMITTEDS    ARRAY [0] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/pricingcenter"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [1] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/pricingcenter/databaseaccess"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [2] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/pricingcenter/filesystemaccess"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [3] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/provisioningtags"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [4] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/ZoneMapper"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [5] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/ResourceEditor"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [6] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/IPAdmin"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [7] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/collectionconfig"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [8] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/racenter"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [9] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/paymentcenter"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+0 PIN_FLD_PERMITTEDS    ARRAY [10] allocated 20, used 4
+1     PIN_FLD_ACTION          STR [0] "/appcenter/suspensemgt"
+1     PIN_FLD_MAXIMUM      DECIMAL [0] 0
+1     PIN_FLD_MINIMUM      DECIMAL [0] 0
+1     PIN_FLD_TYPE           ENUM [0] 2
+</PCM_OP>
+
+# Prohibited args for /service/admin_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/admin_client 420 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>
+
+# create default /service/pcm_client object associated with /config/role for ECE.
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 421 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_BAL_GRP_OBJ    POID [0] $PIN_CONF_DB_NO /balance_group 1 0
+0 PIN_FLD_LOGIN           STR [0] "ece.$PIN_CONF_DB_NO"
+0 PIN_FLD_NAME            STR [0] "/service/pcm_client associated with ECE"
+0 PIN_FLD_PASSWD          STR [0] "pbkdf2|528FE97A7F59D1BB1054427A3BC2ABD271A72FE9ACC0245C2FF481C0D5B51F067F30745E2EBD26A05A06AAF84D8C78A2447818ED98307AF7D1C31071AC0B0821|5450AC41F9CFF2EF57BC97D15CE76880"
+0 PIN_FLD_PASSWD_STATUS  ENUM [0]  0
+0 PIN_FLD_LOCK_INFO SUBSTRUCT [0]
+1     PIN_FLD_LOGIN_ATTEMPTS  INT [0]  0
+1     PIN_FLD_LOCK_STATUS    ENUM [0]  0
+0 PIN_FLD_CONFIG_ROLE SUBSTRUCT [0]
+1     PIN_FLD_CONFIG_PROFILE_OBJ   POID [0] $PIN_CONF_DB_NO /config/role 421 0
+</PCM_OP>
+
+# Prohibited args for /service/pcm_client using WFLDS.
+<PCM_OP $PIN_OPNAME=PCM_OP_WRITE_FLDS; $PIN_OPFLAGS=$PIN_CONF_INIT_OPFLAGS>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /service/pcm_client 421 0
+0 PIN_FLD_STATUS         ENUM [0] 10100
+0 PIN_FLD_CLOSE_WHEN_T TSTAMP [0] (0) <null>
+0 PIN_FLD_STATUS_FLAGS    INT [0] 0
+</PCM_OP>

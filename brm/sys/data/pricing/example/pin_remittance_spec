@@ -1,0 +1,417 @@
+#
+# "@(#)$Id: pin_remittance_spec /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:15:06 nishahan Exp $" 
+#
+#======================================================================
+# Remittance Specification File
+#======================================================================
+# Copyright (c) 1999, 2009, Oracle and/or its affiliates.All rights reserved. 
+#
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+# Use this file to specify rules for paying funds to service 
+# providers and other third parties. Creating and loading this
+# file is required to use the Infranet remittance feature.
+# 
+# This file contains one or more remittance specifications. Each
+# specification defines the criteria that determine which third party
+# receives remittance and specifies the product Infranet uses to
+# calculate remittance when the criteria are met.
+#
+# The 'pin_remittance' application calculates the amount owed 
+# to third parties for all events that meet criteria you define in
+# this file. 
+# 
+#---------------------------------------------
+# Prerequisites
+#---------------------------------------------
+# 
+# Before creating and loading your remittance specification, you need
+# to: 
+# 
+# *  Create remittance products, and include them in the appropriate
+#    deals and plans in the Pricing Tool.
+# 
+# *  Create the accounts that receive remittance in Customer Center or
+#    Administrator. 
+# 
+# *  Load the pin_remittance_flds file. This file contains the 
+#    remittance fields you use to define criteria in your remittance
+#    specifications.
+# 
+# See the Infranet online documentation for detailed descriptions of
+# each of these prerequisites.
+# 
+#---------------------------------------------
+# Defining Specifications
+#---------------------------------------------
+# 
+# This remittance specification file must contain one or more
+# remittance specifications for each third party that receives 
+# payments from you. 
+# 
+# Each specification starts with ACCOUNT_BEGIN and ends with 
+# ACCOUNT_END. Within each specification, include the following: 
+# 
+# Remittance account number
+#-------------------------
+# 
+#    The account number of a third party who receives remittance. For
+#    example:
+# 
+#    remittance_account_number   0.0.0.1-12554
+# 
+# Remittance type
+# ---------------
+# 
+#    The status of an event before it can be included in the 
+#    remittance calculation. You don't pay the third party its share 
+#    of funds for an event until the event meets the status you 
+#    define here.
+# 
+#    Enter one of these values:
+# 
+#    B: Billed. Infranet does not include the event in its remittance 
+#    calculation until the event has been billed. 
+# 
+#    P: Paid. Infranet does not credit the remittance account until
+#    the event that triggers the remittance has been paid and the
+#    corresponding bill item closed.
+#
+#    A bill item is closed for online payments when you run
+#    pin_collect and for non-online payments when you submit a batch
+#    of payments through the Payment Tool. You might also close a 
+#    bill item when you transfer amounts between bill items through
+#    the A/R window in Administrator. 
+# 
+#    U: Unbilled. Infranet includes the event in its remittance 
+#    calculation whether or not the event has been billed or paid. 
+# 
+#    For example: 
+# 
+#    remittance_type   U
+# 
+#    If you create multiple specifications for a single remittance 
+#    account, those specifications must have the same value for 
+#    remittance type. 
+# 
+# Remittance product
+# ------------------ 
+# 
+#    The product used to compute remittance. The remittance account you 
+#    specify must own this product. 
+# 
+#    For example: 
+# 
+#    remittance_product_name  Internet Access Remittance
+# 
+#    You can't use the same combination of account number and 
+#    remittance_product_name in more than one specification.
+# 
+# Remittance criteria
+# -------------------
+# 
+#    A set of one or more conditions that determines which events are 
+#    included to calculate the amount to be remitted to the specified 
+#    remittance account. 
+# 
+#    You can specify multiple sets of criteria for a single remittance 
+#    specification. 
+# 
+#    The remittance criteria consist of: 
+# 
+#    <field name>  <operator>  <value> 
+# 
+#    where: 
+# 
+#    <field name>  is the name of a field from the remittance fields 
+#       file. You can use any of the four reserved fields and any 
+#       custom fields defined in that file. One of the reserved fields,
+#       event_type, is required in each specification.
+#
+#       The reserved fields are: 
+# 
+#       service_type: The name of the service associated with the 
+#       event. For example: /service/ip.
+# 
+#       event_type: The type of event. You must specify an event type 
+#       as one criteria. 
+#       For example: /event/session/dialup.
+# 
+#       product_name: The name of a product associated with the event. 
+#       For example: IP Unlimited. 
+# 
+#       profile_name: The name of a customer profile associated with an 
+#       Infranet account.
+# 
+#       Field names are not case-sensitive.
+# 
+#    <operator>  is one of the following relational operators: 
+# 
+#       =  equals to  (Can be used for numeric or string data)
+# 
+#       >  greater than (Can be used for numeric or string data) 
+# 
+#       >= greater than or equal to (string or numeric data )
+# 
+#       <  less than (string or numeric data )
+# 
+#       <= less than or equal to (string or numeric data)
+# 
+#       != not equal to (string or numeric data)
+# 
+#       contains  The field contains the specified value. This operator 
+#          can only be used with string data. You cannot use any 
+#          wildcards.
+# 
+#       beginswith  The field begins with the specified value. This 
+#          operator can only be used with string data. You cannot use 
+#          any wildcards.
+# 
+#       endswith  The field ends with the specified value. This 
+#          operator can only be used with string data. You cannot use 
+#          any wildcards.
+# 
+#       Guidelines for using operators:
+# 
+#       * For reserved fields, you can only use the = (equal 
+#         to) operator.
+#       * Operators are not case sensitive. 
+# 
+#    <value>  The value of the field that you want to check against. 
+#       For example, /service/ip could be the value for the field 
+#       service_type.
+#  
+#       Wildcards are not allowed within a value. For pattern matching 
+#       of strings use the "contains", "beginswith" and "endswith" 
+#       operators.
+# 
+#       Guidelines for entering values:
+# 
+#       *  Wildcards are not allowed.
+#       *  Values are case-sensitive. 
+# 
+#       Here is a sample set of remittance criteria: 
+# 
+#    CRITERIA_BEGIN
+#       field   service_type  =  /service/ip 
+#       field   product_name  =  Product 1a - Internet Access 
+#       field   event_type    =  /event/session/dialup
+#       field   brand_name    contains  Brand 1 
+#    CRITERIA_END
+# 
+#    In the above example, brand_name is a custom field, while the 
+#    others are reserved fields. 
+# 
+#    If you have one set of criteria, an event must meet all the 
+#    criteria in the set to contribute remittance funds to the 
+#    account you specified. If you have two sets of criteria, an 
+#    event must meet all the criteria in one set or the other, but 
+#    not in both sets. 
+# 
+#---------------------------------------------
+# Loading the Specification
+#---------------------------------------------
+# 
+# Use the 'load_pin_remittance_spec' utility to load the remittance 
+# specification into Infranet. Any time you modify this file, load 
+# the complete file into Infranet again. After you load it, restart 
+# the Connection Manager. 
+# 
+# The load utility checks for the following:
+# 
+# *  that all fields used for criteria exist in the pin_remittance_flds 
+#    file and have been loaded into Infranet.
+# 
+# *  that all criteria include valid operators.
+# 
+# *  that event_type is one of the criteria defined for each 
+#    specification.
+# 
+# *  that = (equal to) is the only operator used with reserved fields 
+#    in the criteria.
+# 
+# *  that the remittance type is the same for all specifications that 
+#    include the same remittance account number.  
+# 
+# *  that each remittance account exists in your Infranet system.
+# 
+# *  that each combination of remittance account and remittance product  
+#    name is unique across all specifications in this file.
+# 
+#---------------------------------------------
+# Examples of Remittance Specifications
+#---------------------------------------------
+# 
+# Example 1: Specification with one set of criteria
+# ------------------------------------------------- 
+# 
+# ACCOUNT_BEGIN
+# 
+#   remittance_account_number  0.0.0.1-12574
+#   remittance_type  U
+#   remittance_product_name   Remittance Product
+# 
+#   CRITERIA_BEGIN
+#     field  service_type     =   /service/ip 
+#     field  product_name     =  IP unlimited 
+#     field  event_type       =  /event/session/ipt/call
+#     field  destination_gw   =  120.255.412.322
+#     field  origin_phone_no  beginswith  408
+#   CRITERIA_END
+# 
+# ACCOUNT_END
+# 
+# 
+# Infranet evaluates the criteria in the previous example as follows:
+# 
+# if service_type = /service/ip and
+#    product_name = IP unlimited and
+#    event_type   = /event/session/ipt/call and
+#    destination_gw = 120.255.412.322 and
+#    origin_phone_no beginswith 408 
+# 
+# then
+#   the event shall be remitted to 0.0.0.1-12574  using
+#   the remittance product IP unlimited
+# 
+# Example 2: Specification with two sets of criteria
+# --------------------------------------------------
+#  
+# To specify multiple sets of criteria for the same account, create
+# additional blocks of CRITERIA_BEGIN and CRITERIA_END within
+# ACCOUNT_BEGIN and ACCOUNT_END. For example:
+# 
+# ACCOUNT_BEGIN
+# 
+#   remittance_account_number  0.0.0.1-12574
+#   remittance_type            U
+#   remittance_product_name    IP long distance remittance
+# 
+#   CRITERIA_BEGIN
+#     field  service_type    =   /service/ip 
+#     field  product_name    =   IP unlimited 
+#     field  event_type      =   /event/session/ipt/call
+#     field  origination_gw  !=  120.255.412.322
+#     field  destination_gw  =   120.255.412.322
+#   CRITERIA_END
+# 
+#   CRITERIA_BEGIN
+#     field  service_type    =   /service/ip 
+#     field  product_name    =   IP unlimited 
+#     field  event_type      =   /event/session/ipt/call
+#     field  origination_gw  =   120.255.412.322
+#     field  destination_gw  !=  120.255.412.322
+#   CRITERIA_END
+# 
+# ACCOUNT_END
+# 
+# Infranet evaluates the criteria in the previous example as follows:
+# 
+# if ( service_type   =  /service/ip AND
+#      product_name   =  IP unlimited AND
+#      event_type     =  /event/session/ipt/call AND
+#      destination_gw =  120.255.412.322 
+#      origination_gw != 120.255.412.322  )
+# 
+# or ( service_type   =  /service/ip AND
+#      product_name   =  IP unlimited AND
+#      event_type     =  /event/session/ipt/call AND
+#      destination_gw != 120.255.412.322 
+#      origination_gw =  120.255.412.322  )
+# 
+# then
+#    the event shall be remitted to 0.0.0.1-12574 using
+#    the remittance product IP unlimited
+# 
+#======================================================================
+# Sample remittance specification definitions
+# 
+# ACCOUNT_BEGIN
+# 
+#  remittance_account_number  ROOT
+#  remittance_type            U
+#  remittance_product_name    Product 1a - Internet Access remittance
+# 
+#   CRITERIA_BEGIN
+#     field  service_type    =   /service/ip 
+#     field  product_name    =   IP async unlimited 
+#     field  event_type      =   /event/session/ipt/call
+#     field  destination_gw  =   120.255.412.322
+#     field  origination_gw  !=  120.255.412.322
+#   CRITERIA_END
+# 
+#   CRITERIA_BEGIN
+#     field  service_type    =   /service/ip 
+#     field  product_name    =   IP async measured 
+#     field  event_type      =   /event/session/ipt/call
+#     field  origination_gw  =   120.255.412.322
+#     field  destination_gw  !=  120.255.412.322
+#   CRITERIA_END
+# 
+# ACCOUNT_END
+# 
+# ACCOUNT_BEGIN
+# 
+#   remittance_account_number  ROOT
+#   remittance_type            U
+#   remittance_product_name    Product 1b - Email Account remittance
+# 
+#   CRITERIA_BEGIN
+#     field  service_type    =   /service/ip 
+#     field  product_name    =   IPT Cross-Product 
+#     field  event_type      =   /event/session/ipt/call
+#     field  origination_gw  =   120.255.412.322
+#     field  destination_gw  =   120.255.412.322
+#   CRITERIA_END
+# 
+# ACCOUNT_END
+# 
+# ACCOUNT_BEGIN
+# 
+#   remittance_account_number  ROOT
+#   remittance_type            B
+#   remittance_product_name    Product 1a - Internet Access remittance
+# 
+#   CRITERIA_BEGIN
+#     field  service_type  =   /service/ip 
+#     field  product_name  =   IP async bulk 10 
+#     field  event_type    =   /event/session/ipt/call
+#     field  brand_name  contains  Brand 1 
+#   CRITERIA_END
+# 
+# ACCOUNT_END
+# 
+# ACCOUNT_BEGIN
+# 
+#   remittance_account_number  ROOT
+#   remittance_type            P
+#   remittance_product_name    Product 2b - Email Account, No Fees
+# 
+#   CRITERIA_BEGIN
+#     field  service_type   =  /service/ip 
+#     field  product_name   =  IP async bulk 30 
+#     field  event_type     =  /event/session/ipt/call
+#     field  profile_name   beginswith   Reseller
+#     field  profile_value  contains     Reseller 1
+#   CRITERIA_END
+# 
+# ACCOUNT_END
+# 
+#======================================================================
+# Enter new remittance specifications below.
+#======================================================================
+
+ACCOUNT_BEGIN
+
+  remittance_account_number	0.0.0.1-22336
+  remittance_type		U
+  remittance_product_name	Remittance
+
+  CRITERIA_BEGIN
+     field service_type		= /service/ip
+  CRITERIA_END
+
+ACCOUNT_END

@@ -1,0 +1,663 @@
+--
+--      @(#)$Id: create_amt_indexes.source /cgbubrm_mainbrm.portalbase/1 2017/10/27 03:08:46 njuturu Exp $
+--
+--
+-- Copyright (c) 1996, 2017, Oracle and/or its affiliates. All rights reserved.
+--
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+-- SOURCE OF sql file to create the indexes on tables used by AMT
+
+DECLARE
+
+v_errmsg VARCHAR2(200);
+TableName ALL_TAB_COLUMNS.TABLE_NAME%TYPE;
+ColumnName ALL_TAB_COLUMNS.COLUMN_NAME%TYPE;
+IsTableColExist NUMBER;
+V_INDEX_CREATION_ERROR CONSTANT number := -20001;
+v1_SQL VARCHAR2(1000);
+v2_SQL VARCHAR2(1000);
+
+BEGIN
+
+ColumnName := 'ACCOUNT_OBJ_ID0';
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'ACTIVE_SESSION_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_ACTIVE_SESSION_T_AMT__ID ON ACTIVE_SESSION_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX6 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_ACTIVE_SESSION_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_ACTIVE_SESSION_T_AMT__ID Index Index creation failed');
+
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'ADMIN_ACTION_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_ADMIN_ACTION_T_AMT__ID ON ADMIN_ACTION_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX5 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_ADMIN_ACTION_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_ADMIN_ACTION_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'ASSOCIATED_BUS_PROFILE_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_ASSOCIATED_BUS_T_AMT__ID ON ASSOCIATED_BUS_PROFILE_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_ASSOCIATED_BUS_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_ASSOCIATED_BUS_T_AMT__ID Index Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'AU_BILLINFO_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_AU_BILLINFO_T_AMT__ID ON AU_BILLINFO_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX13 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_AU_BILLINFO_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_AU_BILLINFO_T_AMT__ID Index Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'AU_DEVICE_SERVICES_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_AU_DEVICE_SERV_T_AMT__ID ON AU_DEVICE_SERVICES_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_AU_DEVICE_SERV_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_AU_DEVICE_SERV_T_AMT__ID Index Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'AU_DEVICE_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_AU_DEVICE_T_AMT__ID ON AU_DEVICE_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_AU_DEVICE_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_AU_DEVICE_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'AU_GROUP_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_AU_GROUP_T_AMT__ID ON AU_GROUP_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX11 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_AU_GROUP_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_AU_GROUP_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'AU_ORDERED_BALGROUP_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_AU_ORDERED_BAL_T_AMT__ID ON AU_ORDERED_BALGROUP_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_LARGE_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_AU_ORDERED_BAL_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_AU_ORDERED_BAL_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'AU_PAYINFO_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_AU_PAYINFO_T_AMT__ID ON AU_PAYINFO_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_AU_PAYINFO_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_AU_PAYINFO_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'BATCH_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_BATCH_T_AMT__ID ON BATCH_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX5 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_BATCH_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_BATCH_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'BEST_PRICING_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_BEST_PRICING_T_AMT__ID ON BEST_PRICING_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX11 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_BEST_PRICING_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_BEST_PRICING_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'BULKACCT_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_BULKACCT_T_AMT__ID ON BULKACCT_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX1 $PIN_CONF_STORAGE_SMALL NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_BULKACCT_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_BULKACCT_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'COLLECTIONS_ACTION_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_COLLECTIONS_T_AMT__ID ON COLLECTIONS_ACTION_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX1 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_COLLECTIONS_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_COLLECTIONS_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'DATA_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_DATA_T_AMT__ID ON DATA_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX9 $PIN_CONF_STORAGE_SMALL NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_DATA_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_DATA_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'DEVICE_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_DEVICE_T_AMT__ID ON DEVICE_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX7 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_DEVICE_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_DEVICE_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'FILTER_SET_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_FILTER_SET_T_AMT__ID ON FILTER_SET_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_FILTER_SET_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_FILTER_SET_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'HISTORY_BILLS_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_HISTORY_BILLS_T_AMT__ID ON HISTORY_BILLS_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX2 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_HISTORY_BILLS_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_HISTORY_BILLS_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'INVOICE_DETAIL_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_INVOICE_DETAIL_T_AMT__ID ON INVOICE_DETAIL_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_INVOICE_DETAIL_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_INVOICE_DETAIL_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'INVOICE_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_INVOICE_T_AMT__ID ON INVOICE_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_INVOICE_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_INVOICE_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'JOURNAL_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_ACCOUNT_OBJ_ID0 ON JOURNAL_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX12 $PIN_CONF_STORAGE_LARGE_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_ACCOUNT_OBJ_ID0 Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_ACCOUNT_OBJ_ID0 Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'LEDGER_REPORT_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_LEDGER_REPORT_T_AMT__ID ON LEDGER_REPORT_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX6 $PIN_CONF_STORAGE_SMALL NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_LEDGER_REPORT_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_LEDGER_REPORT_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'MONITOR_QUEUE_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_MONITOR_QUEUE_T_AMT__ID ON MONITOR_QUEUE_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_MONITOR_QUEUE_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_MONITOR_QUEUE_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'OFFER_PROFILE_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_OFFER_PROFILE_T_AMT__ID ON OFFER_PROFILE_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX6 $PIN_CONF_STORAGE_SMALL NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_OFFER_PROFILE_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_OFFER_PROFILE_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'ORDER_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_ORDER_T_AMT__ID ON ORDER_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX7 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_ORDER_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_ORDER_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'PROC_AUD_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_PROC_AUD_T_AMT__ID ON PROC_AUD_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX1 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_PROC_AUD_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_PROC_AUD_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'PURCHASED_BUNDLE_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_PURCHASED_BUNDLE_T_AMT__ID ON PURCHASED_BUNDLE_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_PURCHASED_BUNDLE_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_PURCHASED_BUNDLE_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'RA_THRESHOLD_STATUS_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_RA_THRESHOLD_T_AMT__ID ON RA_THRESHOLD_STATUS_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_RA_THRESHOLD_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_RA_THRESHOLD_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'REL_EVENT_EXTRACT_SYNC_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_REL_EVENT_T_AMT__ID ON REL_EVENT_EXTRACT_SYNC_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX5 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_REL_EVENT_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_REL_EVENT_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'REMIT_INFO_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_REMIT_INFO_T_AMT__ID ON REMIT_INFO_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX1 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_REMIT_INFO_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_REMIT_INFO_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'RERATE_SESSION_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_RERATE_SESSION_T_AMT__ID ON RERATE_SESSION_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_RERATE_SESSION_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_RERATE_SESSION_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'RESERVATION_LIST_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_RESERVATION_LIST_T_AMT__ID ON RESERVATION_LIST_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX6 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_RESERVATION_LIST_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_RESERVATION_LIST_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'SMS_SETTLE_RPT_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_SMS_SETTLE_RPT_T_AMT__ID ON SMS_SETTLE_RPT_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_SMS_SETTLE_RPT_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_SMS_SETTLE_RPT_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'SUSPENDED_BATCH_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_SUSPENDED_BATCH_T_AMT__ID ON SUSPENDED_BATCH_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_SUSPENDED_BATCH_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_SUSPENDED_BATCH_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'TMP_UNPROCESSED_EVENTS_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_TMP_UNPROCESSED_T_AMT__ID ON TMP_UNPROCESSED_EVENTS_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX1 $PIN_CONF_STORAGE_SMALL NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_TMP_UNPROCESSED_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_TMP_UNPROCESSED_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'USER_ACTIVITY_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_USER_ACTIVITY_T_AMT__ID ON USER_ACTIVITY_T (ACCOUNT_OBJ_ID0) $PIN_CONF_TBLSPACEX13 $PIN_CONF_STORAGE_MED_INS NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_USER_ACTIVITY_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_USER_ACTIVITY_T_AMT__ID Index creation failed');
+END;
+
+
+ColumnName := 'OBJ_ID0';
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'JOB_AMT_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_JOB_AMT_T_AMT__ID ON JOB_AMT_T (OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_JOB_AMT_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_JOB_AMT_T_AMT__ID Index creation failed');
+END;
+
+BEGIN
+
+IsTableColExist := 0;
+TableName := 'JOB_BATCH_AMT_T';
+
+v1_SQL := 'SELECT COUNT(*) FROM ALL_TAB_COLUMNS A WHERE A.TABLE_NAME = '''||TableName||''' AND A.COLUMN_NAME = '''||ColumnName||'''';
+execute immediate v1_SQL INTO IsTableColExist;
+IF IsTableColExist > 0 THEN
+        v2_SQL := 'CREATE INDEX I_JOB_BATCH_AMT_T_AMT__ID ON JOB_BATCH_AMT_T (OBJ_ID0) $PIN_CONF_TBLSPACEX15 $PIN_CONF_STORAGE_MED NOLOGGING PARALLEL';
+        execute immediate v2_SQL;
+        dbms_output.put_line('I_JOB_BATCH_AMT_T_AMT__ID Index got created');
+END IF;
+EXCEPTION
+   WHEN OTHERS THEN
+      dbms_output.put_line('I_JOB_BATCH_AMT_T_AMT__ID Index creation failed');
+END;
+
+END;
+/

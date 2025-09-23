@@ -1,0 +1,76 @@
+# @(#)$Id: pin_notify_telco /cgbubrm_7.5.0.portalbase/1 2012/02/01 01:57:17 samhegde Exp $
+#
+version 1
+#
+# Copyright (c) 2003, 2012, Oracle and/or its affiliates. All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+#
+
+#
+# To enable the provisioning uncomment the entires and load them. 
+# 
+
+# This causes CREATE_SVC_ORDER opcode to be called when the
+# following events happen.
+#
+
+4016    0       /event/notification/service/pre_create
+4016    0       /event/notification/service/create
+4016    0       /event/notification/service/pre_change
+4016    0       /event/notification/service/post_change
+4016    0       /event/device/associate
+4016    0       /event/device/disassociate
+4016    0       /event/device/replace
+4016    0       /event/notification/profile/pre_modify
+4016    0       /event/notification/profile/modify
+4016    0       /event/device/state
+
+
+#
+# This causes HANDLE_SVC_ORDER opcode to be called when
+# the following events happen. When adding new event provide the complete event name.
+#
+
+4017    0	/event/provisioning/service_order/telco
+4017    0	/event/provisioning/service_order/telco/gsm
+4017    0	/event/provisioning/service_order/telco/gsm/telephony
+4017    0	/event/provisioning/service_order/telco/gsm/data
+4017    0	/event/provisioning/service_order/telco/gsm/fax
+4017    0	/event/provisioning/service_order/telco/gsm/sms
+4017    0	/event/provisioning/service_order/telco/gprs
+
+
+#
+# This causes UPDATE_PROV_OBJECT opcode to be called when
+# the following events happen. When adding new event provide the complete event name.
+#
+4019    0	/event/provisioning/service_order/telco
+4019    0	/event/provisioning/service_order/telco/gsm
+4019    0	/event/provisioning/service_order/telco/gsm/telephony
+4019    0	/event/provisioning/service_order/telco/gsm/data
+4019    0	/event/provisioning/service_order/telco/gsm/fax
+4019    0	/event/provisioning/service_order/telco/gsm/sms
+4019    0	/event/provisioning/service_order/telco/gprs
+
+
+
+
+# This causes SVC_LISTENER opcode to be called when the following
+# events happen.
+4008    0       /event/billing/deal/purchase
+4008    0       /event/billing/product/action/modify
+4008    0       /event/billing/deal/cancel
+4008    0       /event/billing/product/action/cancel
+4008    0       /event/billing/product/action/purchase
+#4008	0	/event/billing/discount/action/purchase
+#4008	0	/event/billing/discount/action/modify
+#4008	0	/event/billing/discount/action/cancel
+
+# This causes PROPAGATE_STATUS opcode to be called 
+# when the following events happen.
+4010    0	/event/customer/status
+

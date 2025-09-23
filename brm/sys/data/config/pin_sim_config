@@ -1,0 +1,39 @@
+#
+# @(#)$Id: pin_sim_config /cgbubrm_7.3.2.portalbase/1 2009/11/18 02:14:03 mvenkate Exp $
+#
+version 1
+#======================================================================
+#
+#
+# Copyright (c) 2001, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+# Use this file to set the pre-provisioning service that will be
+# associated with the SIM devices during the pre-provisioning of the SIM 
+# cards on the network 
+#
+# The user has to define and create the pre-provisioning service. The poid 
+# of the pre-provisioning service will be included in this config file.
+#
+# Loading this file will replace existing object with the one defined 
+# below.
+#
+# Use the following syntax for defining service pre-provisioning poid:
+#
+# <tag>:<value>
+# where: 
+# <tag> is equal to Service_Poid
+#
+#
+#
+#
+#======================================================================
+#
+# Sample file:
+#======================================================================
+#Service_Poid:0.0.0.1 /service/telco/gsm/telephony 0 0
+#

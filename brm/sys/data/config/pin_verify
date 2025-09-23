@@ -1,0 +1,82 @@
+#
+# @(#)pin_verify 1.4 99/04/27
+#
+version 1
+#======================================================================
+#
+#      Copyright (c) 1999 - 2006 Oracle. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation
+#      or its licensors and may be used, reproduced, stored or transmitted
+#      only in accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#======================================================================
+# Use this file to specify the types of customer authentication and 
+# authorization failures you want to record. This file contains a list 
+# of predefined failures. You can specify which of these events you 
+# want to record and edit their descriptions. You can also add new 
+# customized events to the list. 
+#
+# You can also record successful events, but doing this slows 
+# Infranet performance.
+# 
+# After editing this file, run the 'load_pin_verify' application 
+# to create the new config/verify storable object and load the 
+# information in this file into the database. Then restart the 
+# Connection Manager.
+#
+# The failure description is returned in the return flist of the 
+# PCM_OP_ACT_FIND_VERIFY opcode, in the PIN_FLD_DESCR field. You 
+# can view log-in failures by searching for events of the type 
+# /event/activity/verify in the Event Browser.
+#
+# To later change your preferences, edit this file, re-run
+# 'load_pin_verify', and restart the Connection Manager.
+#
+# Use the following syntax to specify log-in failures you want to 
+# record:
+#
+# <type>  <yes/no flag>  <description>
+#
+# Where:
+#
+# <type> is a unique number that identifies a specific type 
+#      of log-in failure. This file already contains types 0 
+#      through 8, which are predefined failure events. Use types 
+#      greater than 100000 to add custom failure types. The type 
+#      appears when you display a verification event in the Event 
+#      Browser.
+#
+# <yes/no flag> indicates whether or not the system records the 
+#      failure. Set this flag to 0 for No or to 1 for Yes.  
+#
+# <description> is a message describing the specific log-in failure. 
+#      This message appears when you display a verification event in 
+#      the Event Browser.
+#
+# This is an example of a custom failure type:
+#
+# 100001	1	Application-Specific Failure
+#======================================================================
+#
+#
+#======================================================================
+# Predefined Authentication and Authorization Failure Events
+# You can change the yes/no flag or the description.
+#
+# Type   Yes/No   Description
+#
+  0      0        Success
+  1      0        Account Type Failure
+  2      1        Account Status Failure
+  3      0        Account Password Failure
+  4      0        Service Type Failure
+  5      1        Service Status Failure
+  6      1        Service Password Failure
+  7      0        Credit Limit Failure
+  8      0        Duplicate Session Failure
+#
+#======================================================================
+# Custom Failure Events
+#

@@ -1,0 +1,273 @@
+
+<!--  
+  * Sccs_id[] = "@(#)$Id: payloadconfig_sfdc_sync.xml /cgbubrm_mainbrm.portalbase/1 2018/07/19 15:40:40 meiyang Exp $";
+  *
+  * @(#)payloadconfig_sfdc_sync.xml 0.1 
+  *
+* Copyright (c) 2015, 2018, Oracle and/or its affiliates. All rights reserved.
+  *  
+  *    This material is the confidential property of Oracle Corporation or 
+  *    its licensors and may be used, reproduced, stored or transmitted only
+  *    in accordance with a valid Oracle license or sublicense agreement.
+  *
+-->
+
+
+<PayloadConfig>
+
+    <PublisherDefs>
+        <Publisher DB="0.0.9.7" Format="XML">
+        <!--
+          * Pricing Catalog Events 
+        -->
+        ProductInfoChange,
+        DiscountInfoChange,
+        DealInfoChange,
+        PlanInfoChange,
+        PlanlistInfoChange,
+        AccountStatusUpdate
+        </Publisher>
+    </PublisherDefs>
+
+    <ElementDefs>
+        <ProductInfo Source="EVENT" PinFld="PIN_FLD_PRODUCTS"
+        DataFrom="PIN_FLD_PRODUCTS" Tag="ProductInfo"
+        UseElementId="1">
+            <Field PinFld="PIN_FLD_POID" Tag="Poid"/>
+            <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+            <Field PinFld="PIN_FLD_DESCR" Tag="Descr"/>
+            <Field PinFld="PIN_FLD_PERMITTED" Tag="Permitted"/>
+            <Field PinFld="PIN_FLD_PURCHASE_MIN" Tag="PurchaseMin"/>
+            <Field PinFld="PIN_FLD_PURCHASE_MAX" Tag="PurchaseMax"/>
+            <Field PinFld="PIN_FLD_START_T" Tag="ProductStartTime"/>
+            <Field PinFld="PIN_FLD_END_T" Tag="ProductEndTime"/>
+            <Field PinFld="PIN_FLD_PRIORITY" Tag="Priority"/>
+            <Field PinFld="PIN_FLD_TYPE" Tag="Type"/>
+            <Field PinFld="PIN_FLD_CODE" Tag="Code"/>
+            <ExtendedInfo PinFld="PIN_FLD_USAGE_MAP" Tag="UsageMap"
+            UseElementId="1">
+                <Field PinFld="PIN_FLD_EVENT_TYPE" Tag="EventType"/>
+                <Field PinFld="PIN_FLD_RATE_PLAN_NAME" Tag="RatePlanName"/>
+                <Field PinFld="PIN_FLD_RUM_NAME" Tag="RumName"/>
+                <Field PinFld="PIN_FLD_RATE_PLAN_SELECTOR_OBJ" Tag="RatePlanSelectorObj"/>
+                <ExtendedInfo PinFld="PIN_FLD_RATE_PLAN_SELECTOR" Tag="RatePlanSelector">
+                    <Field PinFld="PIN_FLD_POID" Tag="SelectorPoid"/>
+                    <ExtendedInfo PinFld="PIN_FLD_COLUMNS" Tag="Columns" UseElementId="1">
+                        <Field PinFld="PIN_FLD_SEPARATOR" Tag="Separator"/>
+                        <Field PinFld="PIN_FLD_OPERATOR" Tag="Operator"/>
+                        <Field PinFld="PIN_FLD_FIELD_NAME" Tag="FieldName"/>
+                    </ExtendedInfo>
+                    <ExtendedInfo PinFld="PIN_FLD_VALUE_RANGES" Tag="ValueRanges" UseElementId="1">
+                        <Field PinFld="PIN_FLD_VALUE" Tag="Value"/>
+                        <Field PinFld="PIN_FLD_RATE_PLAN_NAME" Tag="RatePlanName"/>
+                        <Field PinFld="PIN_FLD_IMPACT_CATEGORY" Tag="ImpactCategory"/>
+                    </ExtendedInfo>
+                </ExtendedInfo>
+                <ExtendedInfo PinFld="PIN_FLD_RATE_PLANS" Tag="RatePlan" UseElementId="1">
+                    <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+                    <Field PinFld="PIN_FLD_CURRENCY" Tag="Currency"/>
+                    <ExtendedInfo PinFld="PIN_FLD_RATE_TIERS" Tag="RateTiers" UseElementId="1">
+                        <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+                        <Field PinFld="PIN_FLD_DATE_RANGE_TYPE" Tag="DateRangeType"/>
+                        <Field PinFld="PIN_FLD_RATE_OBJ" Tag="RateObj"/>
+                        <Field PinFld="PIN_FLD_PRIORITY" Tag="Priority"/>
+                        <Field PinFld="PIN_FLD_RATE_INDEX" Tag="RateIndex"/>
+                        <ExtendedInfo PinFld="PIN_FLD_DATE_RANGES" Tag="DateRanges" UseElementId="1">
+                            <Field PinFld="PIN_FLD_RATE_OBJ" Tag="RateObj"/>
+                            <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+                            <Field PinFld="PIN_FLD_RATE_INDEX" Tag="RateIndex"/>
+                            <Field PinFld="PIN_FLD_LINEAGE" Tag="Lineage"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_END_UNIT" Tag="RelativeEndUnit"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_START_UNIT" Tag="RelativeStartUnit"/>
+                            <Field PinFld="PIN_FLD_END_T" Tag="EndT"/>
+                            <Field PinFld="PIN_FLD_START_T" Tag="StartT"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_END_OFFSET" Tag="RelativeEndOffset"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_START_OFFSET" Tag="RelativeStartOffset"/>
+                        </ExtendedInfo>
+                    </ExtendedInfo>
+                <ExtendedInfo PinFld="PIN_FLD_RATES" Tag="RateDetails" UseElementId="1">
+                    <Field PinFld="PIN_FLD_POID" Tag="RateObj"/>
+                    <Field PinFld="PIN_FLD_RATE_PLAN_OBJ" Tag="RatePlanObj"/>
+                    <ExtendedInfo PinFld="PIN_FLD_QUANTITY_TIERS" Tag="QuantityTiers" UseElementId="1">
+                        <Field PinFld="PIN_FLD_STEP_MAX" Tag="StepMax"/>
+                        <Field PinFld="PIN_FLD_STEP_MIN" Tag="StepMin"/>
+                        <ExtendedInfo PinFld="PIN_FLD_BAL_IMPACTS" Tag="BalImpacts" UseElementId="1">
+                            <Field PinFld="PIN_FLD_ELEMENT_ID" Tag="ResourceId"/>
+                            <Field PinFld="PIN_FLD_FIXED_AMOUNT" Tag="FixedAmount"/>
+                            <Field PinFld="PIN_FLD_SCALED_AMOUNT" Tag="ScaledAmount"/>
+                            <Field PinFld="PIN_FLD_SCALED_UNIT" Tag="ScaledUnit"/>
+                            <Field PinFld="PIN_FLD_START_T" Tag="StartT"/>
+                            <Field PinFld="PIN_FLD_END_T" Tag="EndT"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_START_OFFSET" Tag="RelativeStartOffset"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_END_OFFSET" Tag="RelativeEndOffset"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_START_UNIT" Tag="RelativeStartUnit"/>
+                            <Field PinFld="PIN_FLD_RELATIVE_END_UNIT" Tag="RelativeEndUnit"/>
+                            <Field PinFld="PIN_FLD_FLAGS" Tag="Flags"/>
+                            <Field PinFld="PIN_FLD_GL_ID" Tag="GlId"/>
+                            <Field PinFld="PIN_FLD_IMPACT_CATEGORY" Tag="ImpactCategory"/>
+                            </ExtendedInfo>
+                        </ExtendedInfo>
+                    </ExtendedInfo>
+                </ExtendedInfo>
+            </ExtendedInfo>
+            <ExtendedInfo PinFld="PIN_FLD_PROVISIONING_TAG_INFO" Tag="ProvisioningTagInfo" UseElementId="1">
+                <Field PinFld="PIN_FLD_PROVISIONING_TAG" Tag="ProvisioningTagName"/>
+                <ExtendedInfo PinFld="PIN_FLD_EXT_RA" Tag="EraDetails" UseElementId="1">
+                    <Field PinFld="PIN_FLD_ERA_CODE" Tag="EraCode"/>
+                    <Field PinFld="PIN_FLD_ERA_NAME" Tag="EraName"/>
+                    <Field PinFld="PIN_FLD_DESCR" Tag="EraDescription"/>
+                    <Field PinFld="PIN_FLD_LABEL" Tag="EraLabel"/>
+                </ExtendedInfo>
+            </ExtendedInfo>
+        </ProductInfo>
+
+        <DiscountInfo Source="EVENT" PinFld="PIN_FLD_DISCOUNTS"
+        DataFrom="PIN_FLD_DISCOUNTS" Tag="DiscountInfo"
+        UseElementId="1">
+            <Field PinFld="PIN_FLD_POID" Tag="Poid"/>
+            <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+            <Field PinFld="PIN_FLD_DESCR" Tag="Descr"/>
+            <Field PinFld="PIN_FLD_PERMITTED" Tag="Permitted"/>
+            <Field PinFld="PIN_FLD_PURCHASE_MIN" Tag="PurchaseMin"/>
+            <Field PinFld="PIN_FLD_PURCHASE_MAX" Tag="PurchaseMax"/>
+            <Field PinFld="PIN_FLD_START_T" Tag="DiscountStartTime"/>
+            <Field PinFld="PIN_FLD_END_T" Tag="DiscountEndTime"/>
+            <Field PinFld="PIN_FLD_PRIORITY" Tag="Priority"/>
+            <Field PinFld="PIN_FLD_TYPE" Tag="Type"/>
+            <Field PinFld="PIN_FLD_CODE" Tag="Code"/>
+            <ExtendedInfo PinFld="PIN_FLD_USAGE_MAP" Tag="UsageMap"
+            UseElementId="1">
+                <Field PinFld="PIN_FLD_EVENT_TYPE" Tag="EventType"/>
+                <ExtendedInfo PinFld="PIN_FLD_BAL_IMPACTS" Tag="BalImpacts" UseElementId="1">
+                    <Field PinFld="PIN_FLD_RESOURCE_ID" Tag="ResourceId"/>
+                    <Field PinFld="PIN_FLD_AMOUNT" Tag="Amount"/>
+                    <Field PinFld="PIN_FLD_TYPE_STR" Tag="AmountType"/>
+                </ExtendedInfo>
+            </ExtendedInfo>
+        </DiscountInfo>
+
+        <DealInfo Source="EVENT" PinFld="PIN_FLD_DEALS"
+        DataFrom="PIN_FLD_DEALS" Tag="DealInfo"
+        UseElementId="1">
+            <Field PinFld="PIN_FLD_POID" Tag="Poid"/>
+            <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+            <Field PinFld="PIN_FLD_DESCR" Tag="Descr"/>
+            <Field PinFld="PIN_FLD_PERMITTED" Tag="Permitted"/>
+            <Field PinFld="PIN_FLD_START_T" Tag="StartT"/>
+            <Field PinFld="PIN_FLD_END_T" Tag="EndT"/>
+            <ExtendedInfo PinFld="PIN_FLD_PRODUCTS" Tag="Products"
+            UseElementId="1">
+                <Field PinFld="PIN_FLD_PRODUCT_OBJ" Tag="ProductObj"/>
+                <Field PinFld="PIN_FLD_PROD_NAME" Tag="ProdName"/>
+            </ExtendedInfo>
+            <ExtendedInfo PinFld="PIN_FLD_DISCOUNTS" Tag="Discounts"
+            UseElementId="1">
+                <Field PinFld="PIN_FLD_DISCOUNT_OBJ" Tag="DiscountObj"/>
+                <Field PinFld="PIN_FLD_DISC_NAME" Tag="DiscName"/>
+            </ExtendedInfo>
+        </DealInfo>
+
+        <PlanInfo Source="EVENT" PinFld="PIN_FLD_PLAN"
+        DataFrom="PIN_FLD_PLAN" Tag="PlanInfo"
+        UseElementId="1">
+            <Field PinFld="PIN_FLD_POID" Tag="Poid"/>
+            <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+            <Field PinFld="PIN_FLD_DESCR" Tag="Descr"/>
+            <Field PinFld="PIN_FLD_CREATED_T" Tag="CreatedT"/>
+            <Field PinFld="PIN_FLD_MOD_T" Tag="ModT"/>
+            <Field PinFld="PIN_FLD_DEAL_OBJ" Tag="DealObj"/>
+            <Field PinFld="PIN_FLD_DEAL_NAME" Tag="DealName"/>
+            <ExtendedInfo PinFld="PIN_FLD_SERVICES" Tag="Services"
+            UseElementId="1">
+                <Field PinFld="PIN_FLD_DEAL_OBJ" Tag="DealObj"/>
+                <Field PinFld="PIN_FLD_DEAL_NAME" Tag="DealName"/>
+                <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="ServiceObj"/>
+                <ExtendedInfo PinFld="PIN_FLD_DEALS" Tag="Deals"
+                UseElementId="1">
+                    <Field PinFld="PIN_FLD_DEAL_OBJ" Tag="DealObj"/>
+                    <Field PinFld="PIN_FLD_DEAL_NAME" Tag="DealName"/>
+                    <Field PinFld="PIN_FLD_TYPE" Tag="Type"/>
+                </ExtendedInfo>
+            </ExtendedInfo>
+        </PlanInfo>
+
+        <PlanlistInfo Source="EVENT" PinFld="PIN_FLD_PLAN_LISTS"
+        DataFrom="PIN_FLD_PLAN_LISTS" Tag="PlanlistInfo"
+        UseElementId="1">
+            <Field PinFld="PIN_FLD_POID" Tag="Poid"/>
+            <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+            <Field PinFld="PIN_FLD_DESCR" Tag="Descr"/>
+            <Field PinFld="PIN_FLD_TYPE_STR" Tag="TypeStr"/>
+            <Field PinFld="PIN_FLD_STATUS" Tag="Status"/>
+            <ExtendedInfo PinFld="PIN_FLD_MEMBERS" Tag="Plans"
+            UseElementId="1">
+                <Field PinFld="PIN_FLD_OBJECT" Tag="PlanObj"/>
+                <Field PinFld="PIN_FLD_NAME" Tag="PlanName"/>
+            </ExtendedInfo>
+        </PlanlistInfo>
+
+        <StatusInfo Source="EVENT" PinFld="PIN_FLD_STATUSES"
+        DataFrom="PIN_FLD_STATUSES" Tag="StatusInfo"
+        UseOnlyElement="1">
+            <Field PinFld="PIN_FLD_STATUS" Tag="Status"/>
+            <Field PinFld="PIN_FLD_STATUS_FLAGS" Tag="StatusFlags"/>
+        </StatusInfo>
+
+    </ElementDefs>
+
+    <EventDefs>
+        <ProductInfoChange Source="EVENT"
+        Tag="ProductInfoChange"
+        StartEvent="/event/notification/price/products/modify">
+            <Attribute Tag="Version" Value="1.0"/>
+            <SubElement Name="ProductInfo"
+            OnEvent="/event/notification/price/products/modify"/>
+        </ProductInfoChange>
+
+        <DiscountInfoChange Source="EVENT"
+        Tag="DiscountInfoChange"
+        StartEvent="/event/notification/price/discounts/modify">
+            <Attribute Tag="Version" Value="1.0"/>
+            <SubElement Name="DiscountInfo"
+            OnEvent="/event/notification/price/discounts/modify"/>
+        </DiscountInfoChange>
+
+        <DealInfoChange Source="EVENT"
+        Tag="DealInfoChange"
+        StartEvent="/event/notification/price/deals/modify">
+            <Attribute Tag="Version" Value="1.0"/>
+            <SubElement Name="DealInfo"
+            OnEvent="/event/notification/price/deals/modify"/>
+        </DealInfoChange>
+
+        <PlanInfoChange Source="EVENT"
+        Tag="PlanInfoChange"
+        StartEvent="/event/notification/price/plans/modify">
+            <Attribute Tag="Version" Value="1.0"/>
+            <SubElement Name="PlanInfo"
+            OnEvent="/event/notification/price/plans/modify"/>
+        </PlanInfoChange>
+
+        <PlanlistInfoChange Source="EVENT"
+        Tag="PlanlistInfoChange"
+        StartEvent="/event/notification/price/plan_lists/modify">
+            <Attribute Tag="Version" Value="1.0"/>
+            <SubElement Name="PlanlistInfo"
+            OnEvent="/event/notification/price/plan_lists/modify"/>
+        </PlanlistInfoChange>
+
+        <AccountStatusUpdate Source="EVENT" 
+        Tag="AccountStatusUpdate" 
+        StartEvent="/event/customer/status" >
+            <Attribute Tag="Version" Value="1.0"/>
+            <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+            <Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="ServiceObj"/>
+            <Field PinFld="PIN_FLD_END_T" Tag="EndT"/>
+            <SubElement Name="StatusInfo"
+            OnEvent="/event/customer/status"/>
+        </AccountStatusUpdate>
+
+    </EventDefs>
+
+</PayloadConfig>
+

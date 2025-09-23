@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<!--  $Header: bus_platform_vob/slm/config/load/config_service_state_map.xml /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:50:12 nishahan Exp $ -->
+
+<!--
+ Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved. 
+
+   NAME
+     config_service_state_map.xml - Input XML to load_config to create /config/service_state_map object.
+
+   DESCRIPTION
+     Input XML to load_config to create /config/service_state_map object.
+
+   NOTES
+     <other useful comments, qualifications, etc.>
+
+   MODIFIED   (MM/DD/YY)
+   crunkana    01/06/12 - Creation
+   crunkana    01/26/12 - Bug 13627223
+
+-->
+
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_service_state_map.xsd">
+
+   <ConfigObject>
+
+        <DESCR>This object stores mapping between old BRM service status and new lifecycle state</DESCR>
+        <NAME>SERVICE STATE MAP</NAME>
+
+        <STATES elem="0">
+                <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>101</LIFECYCLE_STATE>
+                <STATUS>10102</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+        <STATES elem="1">
+                <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>102</LIFECYCLE_STATE>
+                <STATUS>10100</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+        <STATES elem="2">
+                <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>103</LIFECYCLE_STATE>
+                <STATUS>10100</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+        <STATES elem="3">
+                <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>104</LIFECYCLE_STATE>
+                <STATUS>10100</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+        <STATES elem="4">
+                <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>105</LIFECYCLE_STATE>
+                <STATUS>10100</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+        <STATES elem="5">
+                <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>106</LIFECYCLE_STATE>
+                <STATUS>10100</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+        <STATES elem="6">
+                <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>107</LIFECYCLE_STATE>
+                <STATUS>10102</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+        <STATES elem="8">
+                <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>108</LIFECYCLE_STATE>
+                <STATUS>10103</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+	<STATES elem="9">
+                <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                <LIFECYCLE_STATE>109</LIFECYCLE_STATE>
+                <STATUS>10100</STATUS>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+        </STATES>
+   </ConfigObject>
+
+</ObjectList>
+

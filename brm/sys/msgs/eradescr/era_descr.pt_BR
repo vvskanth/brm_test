@@ -1,0 +1,247 @@
+
+##########################################################################
+#
+# Copyright (c) 2001, 2011, Oracle and/or its affiliates. All rights reserved. 
+#     This material is the confidential property of Oracle Corporation 
+#     or its  licensors and may be used, reproduced, stored
+#     or transmitted only in accordance with a valid Oracle license or 
+#     sublicense agreement.
+#
+##########################################################################
+#
+#   File:  era_descr.pt_BR
+#
+#   Description:
+#
+#	This file contains localized string object definitions.
+#
+#	Locale:  pt_BR (Portuguese - Brazilian)
+#
+#	Domain:  era_descr (version = 1)
+#
+#   Rules:
+#
+#	[1] Uniqueness:
+#
+#	    The combination of locale, domain, string ID, and string
+#	    version must uniquely define a string object within the
+#	    universe of all string objects.
+#	    
+#	    NOTE:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. If there are duplicate entries,
+#	    the programs behaviour depends on the option used. If the
+#	    -f option is used then the last duplicate string definition
+#	    will overwrite any previous ones. If the -f option is not
+#	    used then, duplicate string definitions will be rejected.
+#
+#	[2] Locale
+#
+#	    Only one locale may be specified in this file.  The locale
+#	    definition must be the first non-comment statement.
+#
+#	[3] Domain
+#
+#	    There may be multiple domains specified in this file.  The
+#	    domain will apply to all string definitions that follow
+#	    until the next domain definition statement appears.
+#
+#	[4] String Format:
+#
+#	    Within this file all strings must be delimited by an opening
+#	    and closing double-quote character.  The quotes will not be
+#	    part of the string stored in the database.  A double-quote
+#	    character can be an element of the string if it is escaped
+#	    with a backslash, for example "Delete \"unneeded\" files."
+#	    will be stored as "Delete "unneeded" files.".
+#
+#	    Substitution parameters can be specified with %i, where i is
+#	    an integer from 0 to 99.  The percent character can be an
+#	    element of the string if it is escaped with a backslash, for
+#	    example "It is 100\% good.".  Here is an example of an error
+#	    string that specifies one substitution parameter:
+#
+#				File %0 not found.
+#
+#	    If the substitution string is "pin.conf" the formatted
+#	    string will be "File pin.conf not found.".
+#
+#         The STRING and optional HELPSTR are localizable.  This file must
+#	    be in UTF-8 encoding. The LOCALE and DOMAIN strings are assumed
+#         to be ASCII (no extended-ASCII characters nor multiple byte
+#         characters are allowed).
+#
+#	[5] String ID:
+#
+#	    A string ID must be unique within a domain.
+#	    
+#	    NOTES:
+#	    =====
+#	    This uniqueness must be ensured while creating or updating
+#	    this ERA name, description file. Please see the note about 
+#	    uniqueness above.
+#
+#	    The id's and version's chosen in this file should be kept in
+#	    sync with the pin_device_state_sim configuration file.
+#
+#	[6] String Version:
+#
+#	    Each string has an individual version, typically starting
+#	    from 1, that the string owner assigns.
+#
+##########################################################################
+
+LOCALE = "pt_BR" ;
+
+DOMAIN = "era_descr" ;
+STR
+	ID = 0 ;
+	VERSION = 1 ;
+	STRING = "Classificação" ;
+END
+STR
+	ID = 1 ;
+	VERSION = 1 ;
+	STRING = "Esta opção atribui a conta a um grupo de contas pertencentes a uma organização, como uma empresa, uma escola ou uma organização particular. As chamadas efetuadas entre os membros do grupo são descontadas. Uma conta pode pertencer a apenas um grupo. Para oferecer essa promoção, digite a palavra TYPE no campo Nome e o nome do grupo no campo Valor. Esta opção também concede vários descontos conforme definido pela sua empresa. Uma conta pode ter mais de um tipo de opção de qualidade. Para oferecer essa promoção, digite a palavra QUALITY no campo Nome e o código da promoção de qualidade no campo Valor." ;
+END
+STR
+	ID = 2 ;
+	VERSION = 1 ;
+	STRING = "Dia especial" ;
+END
+STR
+	ID = 3 ;
+	VERSION = 1 ;
+	STRING = "Esta opção concede descontos em chamadas efetuadas no seu aniversário. Uma conta pode ter apenas um Aniversário. Para oferecer essa promoção, digite a palavra BIRTHDAY no campo Nome e o aniversário do cliente no campo Valor." ;
+END
+STR
+	ID = 4 ;
+	VERSION = 1 ;
+	STRING = "Corporativa" ;
+END
+STR
+	ID = 5 ;
+	VERSION = 1 ;
+	STRING = "Esta opção atribui a conta a um grupo de contas que compartilham determinadas propriedades de telefonia; por exemplo, um grupo de contas que podem efetuar chamadas internas na empresa entre si. As chamadas feitas entre os membros do grupo são descontadas. Uma conta pode pertencer a apenas um grupo. Para oferecer essa promoção, digite a palavra AGREEMENT no campo Nome e o nome da promoção no campo Valor." ;
+END
+STR
+	ID = 6 ;
+	VERSION = 1 ;
+	STRING = "Datawarehouse" ;
+END
+STR
+	ID = 7 ;
+	VERSION = 1 ;
+	STRING = "Esta opção identifica contas para fins de coleta de dados de marketing. Uma conta pode ter mais de um tipo dessa promoção. Para oferecê-la, digite a palavra SEGMENT no campo Nome e o nome da promoção no campo Valor." ;
+END
+STR
+	ID = 8 ;
+	VERSION = 1 ;
+	STRING = "Grupo de usuários fechado" ;
+END
+STR
+	ID = 9 ;
+	VERSION = 1 ;
+	STRING = "Esta opção cria grupos de usuários fechados. As chamadas efetuadas entre números do mesmo grupo são descontadas. Para oferecer essa promoção, digite o telefone ou a ID de logon da conta no campo Nome e o nome do grupo de usuários fechado no campo Valor." ;
+END
+STR
+	ID = 10 ;
+	VERSION = 1 ;
+	STRING = "Nível de serviço" ;
+END
+STR
+	ID = 11 ;
+	VERSION = 1 ;
+	STRING = "Esta opção atribui uma Qualidade de serviço a um serviço. Um serviço pode ter mais de um tipo de opção de Qualidade de serviço. Para oferecer essa promoção, digite a palavra AGREEMENT no campo Nome e o nome da promoção no campo Valor." ;
+END
+STR
+	ID = 12 ;
+	VERSION = 1 ;
+	STRING = "Amigos e familiares" ;
+END
+STR
+	ID = 13 ;
+	VERSION = 1 ;
+	STRING = "Esta opção concede descontos a chamadas efetuadas para números específicos; por exemplo, amigos e familiares. Uma conta pode incluir diversos números de amigos e familiares. Para oferecer essa promoção, digite a palavra NUMBER no campo Nome e o telefone no campo Valor. Em vez do telefone, você pode digitar a ID de logon de um outro cliente." ;
+END
+STR
+	ID = 14 ;
+	VERSION = 1 ;
+	STRING = "Região local" ;
+END
+STR
+	ID = 15 ;
+	VERSION = 1 ;
+	STRING = "Esta opção concede descontos a chamadas efetuadas para números específicos ou para regiões, como todos os números de um país ou de um código de área. Uma conta pode incluir diversos números de regiões locais. Para oferecer essa promoção, digite a palavra NUMBER no campo Nome. No campo Valor, digite um telefone, uma ID de logon ou um indicador de região, como um código de país ou de área." ;
+END
+STR
+	ID = 16 ;
+	VERSION = 1 ;
+	STRING = "Célula local" ;
+END
+STR
+	ID = 17 ;
+	VERSION = 1 ;
+	STRING = "Esta opção define as células locais de uma conta. As chamadas efetuadas fora de uma célula local são cobradas de forma diferente daquelas feitas internamente. Uma conta pode incluir diversas entradas de célula local. Para oferecer essa promoção, digite a palavra CELL_ID no campo Nome. No campo Valor, digite o código da célula local." ;
+END
+STR
+	ID = 18 ;
+	VERSION = 1 ;
+	STRING = "Plano de taxa" ;
+END
+STR
+	ID = 19 ;
+	VERSION = 1 ;
+	STRING = "Esta opção fornece informações adicionais sobre taxas que não foram incluídas nos produtos do cliente. Para oferecer essa promoção, digite a prioridade do plano de taxa no campo Nome. Um número baixo significa uma classificação alta. Digite o código do plano de taxa IntegRate no campo Valor." ;
+END
+STR
+	ID = 20 ;
+	VERSION = 1 ;
+	STRING = "Modelo de desconto" ;
+END
+STR
+	ID = 21 ;
+	VERSION = 1 ;
+	STRING = "Esta opção fornece informações adicionais sobre taxas que não foram incluídas nos produtos do cliente. Para oferecer essa promoção, digite a palavra INTEGRATE no campo Nome.  Digite o código do modelo de desconto IntegRate no campo Valor." ;
+END
+STR
+	ID = 22 ;
+	VERSION = 1 ;
+	STRING = "Conta de desconto" ;
+END
+STR
+	ID = 23 ;
+	VERSION = 1 ;
+	STRING = "Esta opção especifica uma conta que concede descontos de volume a diversas contas. Uma conta pode ter apenas uma dessas promoções. Para oferecer essa promoção, digite a palavra INTEGRATE no campo Nome e a ID da conta de desconto principal no campo Valor." ;
+END
+STR
+	ID = 24 ;
+	VERSION = 1 ;
+	STRING = "Grupo de Descontos" ;
+END
+STR
+	ID = 25 ;
+	VERSION = 1 ;
+	STRING = "Esta opção especifica o subconjunto de regras de desconto que serão consideradas durante a desativação. As regras de desconto serão consideradas sequencialmente na ordem de prioridade definida para o modelo de desconto, mas cada regra de desconto só será aplicada se todas as regras de desconto de maior prioridade já tiverem sido totalmente usadas. Todas as regras de desconto para um modelo de desconto serão consideradas se nenhuma ERA DiscountBundle for especificada. Para oferecer essa promoção, digite o código da regra de desconto no campo VALOR.";
+END
+STR
+	ID = 26 ;
+	VERSION = 1 ;
+	STRING = "Proprietário do Desconto" ;
+END
+STR
+	ID = 27 ;
+	VERSION = 1 ;
+	STRING = "Esta opção especifica o proprietário do saldo de desconto para uma regra de desconto. Isso permite que diversas contas compartilhem um desconto. A conta atual será tratada como o proprietário de desconto se nenhuma ERA DiscountOwner for especificada. Para oferecer esta promoção, digite o nome da regra de desconto no campo NOME e o POID da Conta do proprietário do desconto no campo VALOR.";
+END
+STR
+	ID = 28 ;
+	VERSION = 1 ;
+	STRING = "Chamada Interrompida" ;
+END
+STR
+	ID = 29 ;
+	VERSION = 1 ;
+	STRING = "This option provides discounts to the dropped call in the continuous call. To give this promotion enter the SAME_CALLED_PARTY, MAX_TIME_TO_CONTINUATION_CALL, MAX_INTERVENING_CALLS in the Name field and their corresponding value in the Value fields. SAME_CALLED_PARTY specify whether continuation calls must be to the same called number as the dropped call or if calls to other numbers can be continuation calls. If value is not specified, continuation calls must be to the same called number as the dropped call. MAX_TIME_TO_CONTINUATION_CALL specifies the allowable duration, in seconds, between the end of the dropped call and the start of the continuation call. If value is not specified, there's no time limit between the dropped call and the continuation call, as long as they both occur within the same billing cycle. MAX_INTERVENING_CALLS specifies the allowable number of intermediate calls between a dropped call and a continuation call. If value is not specified, all the calls are considered.";
+END

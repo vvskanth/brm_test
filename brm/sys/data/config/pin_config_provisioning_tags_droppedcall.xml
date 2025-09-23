@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--==================================================================================
+ Copyright (c) 2006, 2009, Oracle and/or its affiliates.All rights reserved. 
+ 
+        This material is the confidential property of Oracle Corporation or its
+        licensors and may be used, reproduced, stored or transmitted only in
+        accordance with a valid Oracle license or sublicense agreement.
+        =================================================================================-->
+
+<BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+ <ProvisioningTagConfiguration>
+  <ProvisioningTagList>
+   <ProvisioningTag name="DroppedCall">
+
+                        <PermittedTypes>/service/telco/gsm/telephony</PermittedTypes>
+
+                        <OpcodeList>
+                                <OpcodeName>PCM_OP_SUBSCRIPTION_PROVISION_ERA</OpcodeName>
+                                <OpcodeNumber>9066</OpcodeNumber>
+                                <OpcodeMode>0</OpcodeMode>
+
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_POID</OpcodeParamName>
+                                        <OpcodeParamValue>0.0.0.0 /profile/serv_extrating -1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_FLAGS</OpcodeParamName>
+                                        <OpcodeParamValue>0</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_ACCOUNT_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$ACCOUNT$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SERVICE_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$SERVICE$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>DROPPED_CALL</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_STR_VAL</OpcodeParamName>
+                                        <OpcodeParamValue>28,29</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_EXTRATING.PIN_FLD_REFERENCE_COUNT</OpcodeParamName>
+                                        <OpcodeParamValue>1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_DATA_ARRAY[0].PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>MAX_INTERVENING_CALLS</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_DATA_ARRAY[0].PIN_FLD_VALUE</OpcodeParamName
+>
+                                        <OpcodeParamValue>10</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_DATA_ARRAY[1].PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>SAME_CALLED_PARTY</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_DATA_ARRAY[1].PIN_FLD_VALUE</OpcodeParamName
+>
+                                        <OpcodeParamValue>1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_DATA_ARRAY[2].PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>MAX_TIME_TO_CONTINUATION_CALL</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_INHERITED_INFO.PIN_FLD_DATA_ARRAY[2].PIN_FLD_VALUE</OpcodeParamName
+>
+                                        <OpcodeParamValue>600</OpcodeParamValue>
+                                </OpcodeParamsList>
+                        </OpcodeList>
+
+                        <OpcodeList>
+                                <OpcodeName>PCM_OP_SUBSCRIPTION_PROVISION_ERA</OpcodeName>
+                                <OpcodeNumber>9066</OpcodeNumber>
+                                <OpcodeMode>1</OpcodeMode>
+
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_POID</OpcodeParamName>
+                                        <OpcodeParamValue>0.0.0.0 /profile/serv_extrating -1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_FLAGS</OpcodeParamName>
+                                        <OpcodeParamValue>0</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_ACCOUNT_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$ACCOUNT$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SERVICE_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$SERVICE$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>DROPPED_CALL</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_STR_VAL</OpcodeParamName>
+                                        <OpcodeParamValue>28,29</OpcodeParamValue>
+                                </OpcodeParamsList>
+                        </OpcodeList>
+
+   </ProvisioningTag>
+  </ProvisioningTagList>
+ </ProvisioningTagConfiguration>
+</BusinessConfiguration>

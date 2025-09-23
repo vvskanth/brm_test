@@ -1,0 +1,105 @@
+#
+# @(#)pin_content_srvc_profiles 1.0
+#
+# Copyright (c) 2001 - 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or
+# its licensors and may be used, reproduced, stored or transmitted only
+# in accordance with a valid Oracle license or sublicense agreement.
+#
+# You use this file to create service profiles for content services.
+# When content services are created and the product has a
+# provisionig tag, the service profile object is looked up and
+# its poid is used as the profile poid of the service object.
+#
+# After defining the profile, run the 'load_content_srvc_profiles'
+# utility to load the profiles into the Infranet database.
+#
+#
+# Use the following syntax for specifying values for the profiles:
+#
+#   <tag>:<value>
+#   where:
+#       <tag> can be one of the following:
+#               Provisioning_Tag
+#               Mode
+#               Content_Category
+#
+# Use these rules for assigning filter modes:
+#
+#       Use Modes that are defined in pin_wireless.h
+#
+# Use these rules for specifying values:
+#      You must specify the Root_or_Brand_Tag immediately after the
+#       Provisioning_Tag.
+#
+# When you load profiles using this app, the old profile tag information
+# will be replaced by the current values.
+#
+#       Sample file:
+#       #comment
+#       #comment
+#
+#
+#================================================================
+# commment
+# comment
+
+Provisioning_Tag: ContentPackage
+Root_or_Brand_Tag:0.0.0.1 /account 1 1
+Filter_Mode:1
+Content_Category:Traffic
+Content_Category:Sports
+Content_Category:Stocks
+Content_Category:Weather
+Content_Category:News
+Content_Category:MCommerce
+Content_Category:Movies
+Content_Category:Horoscopes
+Content_Category:Lottery
+Content_Category:Jokes
+Content_Category:FunFacts
+Content_Category:Messaging
+Content_Category:FodorsHotels
+Content_Category:Directory
+Content_Category:RingTones
+Content_Category:Icons
+Content_Category:Alerts
+Content_Category:InstantMessaging
+Content_Category:ZagatsRestaurants
+
+
+# commment
+# comment
+
+Provisioning_Tag: Games
+Root_or_Brand_Tag:0.0.0.1 /account 1 1
+Filter_Mode:1
+Content_Category: Hearts 
+Content_Category: Solitaire 
+Content_Category: SKT 
+Content_Category: VirtualGolf 
+Content_Category: Trivia 
+Content_Category: InteractiveChess 
+
+# commment
+# comment
+
+Provisioning_Tag:RewardGamesPackage
+Root_or_Brand_Tag:0.0.0.1 /account 1 1
+Filter_Mode:1
+Content_Category: BlackJack 
+Content_Category: Slots 
+Content_Category: Poker 
+
+# commment
+# comment
+
+Provisioning_Tag: TeenPackage
+Root_or_Brand_Tag:0.0.0.1 /account 1 1
+Filter_Mode:1
+Content_Category:Music
+Content_Category:TeenEvents
+Content_Category:LocalTeenEvents
+Content_Category:ChatRooms
+Content_Category:PhotoSharing

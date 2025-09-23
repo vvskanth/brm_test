@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--  $Header: bus_platform_vob/customer/config/load/config_business_events.xml /cgbubrm_7.5.0.portalbase/2 2016/07/01 05:33:32 thakuppu Exp $ -->
+
+<!-- 
+ Copyright (c) 2016, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     config_business_events.xml 
+
+   DESCRIPTION
+     A skeleton XML file compliant with the /config/business_events schema.
+
+   NOTES
+     This is just a skeleton XML. Values must be populated before 
+     loading config business_events using this XML.
+
+   MODIFIED   (MM/DD/YY)
+   thakuppu     05/24/16 - Creation
+
+-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_business_events.xsd">
+
+  <ConfigObject>
+        <POID>0.0.0.1 /config/business_events -1 0</POID>
+        <ACCOUNT_OBJ>0.0.0.1 /account 1 0</ACCOUNT_OBJ>
+        <DESCR>Publishing state (Enable/Disable) of individual business events</DESCR>
+        <HOSTNAME>-</HOSTNAME>
+        <NAME>Business Events</NAME>
+        <PROGRAM_NAME>-</PROGRAM_NAME>
+	<EVENTS elem="0">
+                <DESCR>CustCreate</DESCR>
+                <EVENT_NAME>CustCreate</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CustCreate</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="1">
+                <DESCR>CustDelete</DESCR>
+                <EVENT_NAME>CustDelete</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CustDelete</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="2">
+                <DESCR>BillInfoUpdate</DESCR>
+                <EVENT_NAME>BillInfoUpdate</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>BillInfoUpdate</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="3">
+                <DESCR>ProductPurchase</DESCR>
+                <EVENT_NAME>ProductPurchase</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ProductPurchase</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="4">
+                <DESCR>ProductCancel</DESCR>
+                <EVENT_NAME>ProductCancel</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ProductCancel</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="5">
+                <DESCR>DiscountPurchase</DESCR>
+                <EVENT_NAME>DiscountPurchase</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DiscountPurchase</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="6">
+                <DESCR>DiscountCancel</DESCR>
+                <EVENT_NAME>DiscountCancel</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DiscountCancel</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="7">
+                <DESCR>AccountStatusUpdate</DESCR>
+                <EVENT_NAME>AccountStatusUpdate</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>AccountStatusUpdate</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="8">
+                <DESCR>ProductStatusUpdate</DESCR>
+                <EVENT_NAME>ProductStatusUpdate</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ProductStatusUpdate</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="9">
+                <DESCR>ProductModify</DESCR>
+                <EVENT_NAME>ProductModify</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ProductModify</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="10">
+                <DESCR>ProductSetValidity</DESCR>
+                <EVENT_NAME>ProductSetValidity</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ProductSetValidity</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="11">
+                <DESCR>DiscountStatusUpdate</DESCR>
+                <EVENT_NAME>DiscountStatusUpdate</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DiscountStatusUpdate</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="12">
+                <DESCR>DiscountModify</DESCR>
+                <EVENT_NAME>DiscountModify</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DiscountModify</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="13">
+                <DESCR>DiscountSetValidity</DESCR>
+                <EVENT_NAME>DiscountSetValidity</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DiscountSetValidity</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="14">
+                <DESCR>CreateGroupSharingDiscounts</DESCR>
+                <EVENT_NAME>CreateGroupSharingDiscounts</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CreateGroupSharingDiscounts</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="15">
+                <DESCR>ModifyGroupSharingDiscounts</DESCR>
+                <EVENT_NAME>ModifyGroupSharingDiscounts</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyGroupSharingDiscounts</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="16">
+                <DESCR>DeleteGroupSharingDiscounts</DESCR>
+                <EVENT_NAME>DeleteGroupSharingDiscounts</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeleteGroupSharingDiscounts</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="17">
+                <DESCR>CreateGroupSharingCharges</DESCR>
+                <EVENT_NAME>CreateGroupSharingCharges</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CreateGroupSharingCharges</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="18">
+                <DESCR>ModifyGroupSharingCharges</DESCR>
+                <EVENT_NAME>ModifyGroupSharingCharges</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyGroupSharingCharges</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="19">
+                <DESCR>DeleteGroupSharingCharges</DESCR>
+                <EVENT_NAME>DeleteGroupSharingCharges</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeleteGroupSharingCharges</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="20">
+                <DESCR>CreateGroupSharingProfiles</DESCR>
+                <EVENT_NAME>CreateGroupSharingProfiles</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CreateGroupSharingProfiles</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="21">
+                <DESCR>ModifyGroupSharingProfiles</DESCR>
+                <EVENT_NAME>ModifyGroupSharingProfiles</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyGroupSharingProfiles</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="22">
+                <DESCR>DeleteGroupSharingProfiles</DESCR>
+                <EVENT_NAME>DeleteGroupSharingProfiles</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeleteGroupSharingProfiles</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="23">
+                <DESCR>AddBillInfo</DESCR>
+                <EVENT_NAME>AddBillInfo</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>AddBillInfo</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="24">
+                <DESCR>ModifyBillInfo</DESCR>
+                <EVENT_NAME>ModifyBillInfo</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyBillInfo</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="25">
+                <DESCR>AddBalanceGroup</DESCR>
+                <EVENT_NAME>AddBalanceGroup</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>AddBalanceGroup</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="26">
+                <DESCR>ModifyBalanceGroup</DESCR>
+                <EVENT_NAME>ModifyBalanceGroup</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyBalanceGroup</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="27">
+                <DESCR>ModifyMappingTable</DESCR>
+                <EVENT_NAME>ModifyMappingTable</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyMappingTable</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="28">
+                <DESCR>AddOrderedBalanceGroup</DESCR>
+                <EVENT_NAME>AddOrderedBalanceGroup</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>AddOrderedBalanceGroup</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="29">
+                <DESCR>ModifyOrderedBalanceGroup</DESCR>
+                <EVENT_NAME>ModifyOrderedBalanceGroup</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyOrderedBalanceGroup</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="30">
+                <DESCR>DeleteOrderedBalanceGroup</DESCR>
+                <EVENT_NAME>DeleteOrderedBalanceGroup</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeleteOrderedBalanceGroup</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="31">
+                <DESCR>CreateProfile</DESCR>
+                <EVENT_NAME>CreateProfile</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CreateProfile</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="32">
+                <DESCR>ModifyProfile</DESCR>
+                <EVENT_NAME>ModifyProfile</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyProfile</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="33">
+                <DESCR>DeleteProfile</DESCR>
+                <EVENT_NAME>DeleteProfile</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeleteProfile</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="34">
+                <DESCR>UpdateServices</DESCR>
+                <EVENT_NAME>UpdateServices</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>UpdateServices</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="35">
+                <DESCR>DeviceReplace</DESCR>
+                <EVENT_NAME>DeviceReplace</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeviceReplace</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="36">
+                <DESCR>ServiceLogin</DESCR>
+                <EVENT_NAME>ServiceLogin</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ServiceLogin</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="37">
+                <DESCR>LineTransfer</DESCR>
+                <EVENT_NAME>LineTransfer</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>LineTransfer</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="38">
+                <DESCR>BillNow</DESCR>
+                <EVENT_NAME>BillNow</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>BillNow</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="39">
+                <DESCR>OpenNewActgCycle</DESCR>
+                <EVENT_NAME>OpenNewActgCycle</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>OpenNewActgCycle</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="40">
+                <DESCR>PartialBilling</DESCR>
+                <EVENT_NAME>PartialBilling</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PartialBilling</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="41">
+                <DESCR>BillDelay</DESCR>
+                <EVENT_NAME>BillDelay</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>BillDelay</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="42">
+                <DESCR>ModifyAccountNumber</DESCR>
+                <EVENT_NAME>ModifyAccountNumber</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyAccountNumber</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="43">
+                <DESCR>ServiceBalanceGroupTransfer</DESCR>
+                <EVENT_NAME>ServiceBalanceGroupTransfer</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ServiceBalanceGroupTransfer</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="44">
+                <DESCR>BestPricing</DESCR>
+                <EVENT_NAME>BestPricing</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>BestPricing</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="45">
+                <DESCR>EventAdjustment</DESCR>
+                <EVENT_NAME>EventAdjustment</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>EventAdjustment</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="46">
+                <DESCR>ResourceAdjustment</DESCR>
+                <EVENT_NAME>ResourceAdjustment</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ResourceAdjustment</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="47">
+                <DESCR>CycleForward</DESCR>
+                <EVENT_NAME>CycleForward</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CycleForward</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="48">
+                <DESCR>CycleRollover</DESCR>
+                <EVENT_NAME>CycleRollover</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CycleRollover</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="49">
+                <DESCR>Purchase</DESCR>
+                <EVENT_NAME>Purchase</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>Purchase</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="50">
+                <DESCR>RecycleRequest</DESCR>
+                <EVENT_NAME>RecycleRequest</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>RecycleRequest</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="51">
+                <DESCR>ResubmitBatchRequest</DESCR>
+                <EVENT_NAME>ResubmitBatchRequest</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ResubmitBatchRequest</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="52">
+                <DESCR>ModifySubBalValidity</DESCR>
+                <EVENT_NAME>ModifySubBalValidity</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifySubBalValidity</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="53">
+                <DESCR>HoldCDRProcessing</DESCR>
+                <EVENT_NAME>HoldCDRProcessing</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>HoldCDRProcessing</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="54">
+                <DESCR>ResumeCDRProcessing</DESCR>
+                <EVENT_NAME>ResumeCDRProcessing</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ResumeCDRProcessing</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="55">
+                <DESCR>MigrateAcct</DESCR>
+                <EVENT_NAME>MigrateAcct</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>MigrateAcct</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="56">
+                <DESCR>MigrateSource</DESCR>
+                <EVENT_NAME>MigrateSource</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>MigrateSource</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="57">
+                <DESCR>MigrateDestination</DESCR>
+                <EVENT_NAME>MigrateDestination</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>MigrateDestination</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="58">
+                <DESCR>UpdateLogicalPartition</DESCR>
+                <EVENT_NAME>UpdateLogicalPartition</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>UpdateLogicalPartition</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="59">
+                <DESCR>PrepareToRerate</DESCR>
+                <EVENT_NAME>PrepareToRerate</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PrepareToRerate</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="60">
+                <DESCR>Rerating</DESCR>
+                <EVENT_NAME>Rerating</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>Rerating</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="61">
+                <DESCR>ReratingCompleted</DESCR>
+                <EVENT_NAME>ReratingCompleted</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ReratingCompleted</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="62">
+                <DESCR>ProductInfoChange</DESCR>
+                <EVENT_NAME>ProductInfoChange</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ProductInfoChange</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="63">
+                <DESCR>CreateGroupSharingMonitors</DESCR>
+                <EVENT_NAME>CreateGroupSharingMonitors</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CreateGroupSharingMonitors</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="64">
+                <DESCR>ModifyGroupSharingMonitors</DESCR>
+                <EVENT_NAME>ModifyGroupSharingMonitors</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyGroupSharingMonitors</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="65">
+                <DESCR>DeleteGroupSharingMonitors</DESCR>
+                <EVENT_NAME>DeleteGroupSharingMonitors</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeleteGroupSharingMonitors</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="66">
+                <DESCR>TailorMadeProductCreate</DESCR>
+                <EVENT_NAME>TailorMadeProductCreate</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>TailorMadeProductCreate</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="67">
+                <DESCR>TailorMadeProductModify</DESCR>
+                <EVENT_NAME>TailorMadeProductModify</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>TailorMadeProductModify</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="68">
+                <DESCR>BalanceExpiry</DESCR>
+                <EVENT_NAME>BalanceExpiry</EVENT_NAME>
+                <EVENT_TYPE>IN-ADVANCE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>BalanceExpiry</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3722</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>6</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="69">
+                <DESCR>ProductExpiry</DESCR>
+                <EVENT_NAME>ProductExpiry</EVENT_NAME>
+                <EVENT_TYPE>IN-ADVANCE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ProductExpiry</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3795</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>10</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="70">
+                <DESCR>SubscriptionRenewalDue</DESCR>
+                <EVENT_NAME>SubscriptionRenewalDue</EVENT_NAME>
+                <EVENT_TYPE>IN-ADVANCE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>SubscriptionRenewalDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3796</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>10</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="71">
+                <DESCR>SubscriptionRenewal</DESCR>
+                <EVENT_NAME>SubscriptionRenewal</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>SubscriptionRenewal</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="72">
+                <DESCR>RentalFailure</DESCR>
+                <EVENT_NAME>RentalFailure</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>RentalFailure</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="73">
+                <DESCR>BillDue</DESCR>
+                <EVENT_NAME>BillDue</EVENT_NAME>
+                <EVENT_TYPE>IN-ADVANCE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>BillDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>1110</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="74">
+                <DESCR>CollectionsActionDue</DESCR>
+                <EVENT_NAME>CollectionsActionDue</EVENT_NAME>
+                <EVENT_TYPE>IN-ADVANCE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CollectionsActionDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3855</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="75">
+                <DESCR>PayinfoChange</DESCR>
+                <EVENT_NAME>PayinfoChange</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PayinfoChange</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="76">
+                <DESCR>Payment</DESCR>
+                <EVENT_NAME>Payment</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>Payment</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="77">
+                <DESCR>FailedPayment</DESCR>
+                <EVENT_NAME>FailedPayment</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>FailedPayment</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="78">
+                <DESCR>Refund</DESCR>
+                <EVENT_NAME>Refund</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>Refund</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="79">
+                <DESCR>Reversal</DESCR>
+                <EVENT_NAME>Reversal</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>Reversal</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        <EVENTS elem="80">
+                <DESCR>InstallmentDue</DESCR>
+                <EVENT_NAME>InstallmentDue</EVENT_NAME>
+                <EVENT_TYPE>IN-ADVANCE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>InstallmentDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>5840</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+	<EVENTS elem="81">
+                <DESCR>TemporaryLimit</DESCR>
+                <EVENT_NAME>TemporaryLimit</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>TemporaryLimit</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+	<EVENTS elem="82">
+                <DESCR>TemporaryLimitExpiry</DESCR>
+                <EVENT_NAME>TemporaryLimitExpiry</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>TemporaryLimitExpiry</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+	<EVENTS elem="83">
+                <DESCR>PostSubscriptionRenewalDue</DESCR>
+                <EVENT_NAME>PostSubscriptionRenewalDue</EVENT_NAME>
+                <EVENT_TYPE>AFTER-DUE-DATE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PostSubscriptionRenewalDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3796</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>10</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="84">
+                <DESCR>PostProductExpiry</DESCR>
+                <EVENT_NAME>PostProductExpiry</EVENT_NAME>
+                <EVENT_TYPE>AFTER-DUE-DATE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PostProductExpiry</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3795</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>10</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="85">
+                <DESCR>PostBalanceExpiry</DESCR>
+                <EVENT_NAME>PostBalanceExpiry</EVENT_NAME>
+                <EVENT_TYPE>AFTER-DUE-DATE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PostBalanceExpiry</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3722</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>6</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="86">
+                <DESCR>PostBillDue</DESCR>
+                <EVENT_NAME>PostBillDue</EVENT_NAME>
+                <EVENT_TYPE>AFTER-DUE-DATE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PostBillDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>1110</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="87">
+                <DESCR>PostCollectionsActionDue</DESCR>
+                <EVENT_NAME>PostCollectionsActionDue</EVENT_NAME>
+                <EVENT_TYPE>AFTER-DUE-DATE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PostCollectionsActionDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3855</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="88">
+                <DESCR>PostInstallmentDue</DESCR>
+                <EVENT_NAME>PostInstallmentDue</EVENT_NAME>
+                <EVENT_TYPE>AFTER-DUE-DATE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PostInstallmentDue</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>5840</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="89">
+                <DESCR>CreateGroupSharingProducts</DESCR>
+                <EVENT_NAME>CreateGroupSharingProducts</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>CreateGroupSharingProducts</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="90">
+                <DESCR>ModifyGroupSharingProducts</DESCR>
+                <EVENT_NAME>ModifyGroupSharingProducts</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ModifyGroupSharingProducts</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+		<EVENTS elem="91">
+                <DESCR>DeleteGroupSharingProducts</DESCR>
+                <EVENT_NAME>DeleteGroupSharingProducts</EVENT_NAME>
+                <EVENT_TYPE>REGULAR</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>DeleteGroupSharingProducts</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>0</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>1</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        	<EVENTS elem="92">
+                <DESCR>ServiceLifeStateChangeExpiry</DESCR>
+                <EVENT_NAME>ServiceLifeStateChangeExpiry</EVENT_NAME>
+                <EVENT_TYPE>IN-ADVANCE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>ServiceLifeStateChangeExpiry</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3977</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+        	<EVENTS elem="93">
+                <DESCR>PostServiceLifeStateChangeExpiry</DESCR>
+                <EVENT_NAME>PostServiceLifeStateChangeExpiry</EVENT_NAME>
+                <EVENT_TYPE>AFTER-DUE-DATE</EVENT_TYPE>
+                <FLAGS>1</FLAGS>
+                <NAME>PostServiceLifeStateChangeExpiry</NAME>
+                <STATUS_FLAGS>0</STATUS_FLAGS>
+                <NOTIFY_OPCODE>3977</NOTIFY_OPCODE>
+		<NOTIFY_SEARCH_LEVEL>3</NOTIFY_SEARCH_LEVEL>
+        </EVENTS>
+
+  </ConfigObject>
+
+</ObjectList>

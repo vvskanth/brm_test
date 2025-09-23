@@ -1,0 +1,113 @@
+#
+# @(#)65_67_collections_class_upg_dd_objects.source 1.0 08/03/06
+#
+#
+#       Copyright (c) 2007 Oracle Software, Inc. All rights reserved.
+#
+#       This material is the confidential property of Oracle Software, Inc.
+#       or its subsidiaries or licensors and may be used, reproduced,
+#       stored or transmitted only in accordance with a valid Oracle license
+#       or sublicense agreement.
+#
+#       This file upgrades the collections from 6.5 to 6.7 architecture
+#
+#
+#       1. New storable classes are defined ,and it doesnt have any extra
+#               fields of its own
+#
+#       /collections_action/inactivate_billinfo
+#       /collections_action/close_billinfo
+#       /collections_action/writeoff_billinfo
+#
+#       2. Following storable class definitions were missing in 6.5 Collections
+#               hence we need to take care of defining it during the upgrade
+#
+#       /collections_action/close_account
+#       /collections_action/inactivate_account
+#       /collections_action/writeoff_account
+#       /collections_action/finance_charge
+#       /collections_action/late_fee
+#       /collections_action/manual_action
+#       /collections_action/policy_action
+#       /collections_action/refer_to_outside_agency
+#=============================================================================#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/inactivate_billinfo"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store inactivate billinfo action information.This object i
+s created when inactivate billinfo actionis scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/writeoff_billinfo"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store writeoff billinfo information. This object is create
+d when writeoff billinfo action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/close_billinfo"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store close billinfo information. This object is created w
+hen close billinfo action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/inactivate_account"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store inactivate account information. This object is creat
+ed when inactivate account action is scheduled for an account"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/writeoff_account"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store writeoff account information. This object is created
+ when writeoff account action is scheduled for an account"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/close_account"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store close account information. This object is created wh
+en close account action is scheduled for an account"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [6] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/finance_charge"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store finance charge information. This object is created w
+hen finance charge action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [7] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/late_fee"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store late fee information. This object is created when la
+te fee action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [8] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/manual_action"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store manual action information. This object is created wh
+en manual action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [9] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/policy_action"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store policy action information. This object is created wh
+en policy action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [10] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/refer_to_outside_agency"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store refer outside agency  action information. This objec
+t is created when refer to outside agency action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

@@ -1,0 +1,201 @@
+--
+--	@(#)%: create_dd.source:BillingVelocityInt:4:2006-Sep-14 18:49:48 %
+--
+-- Copyright (c) 1996, 2023, Oracle and/or its affiliates.
+--     
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+-- Create sequences
+create sequence obj_ids start with 1002;
+create sequence poid_ids2 start with 10000;
+
+-- /dd/fields ARRAY PIN_FLD_FIELD
+create table dd_fields_t (
+	obj_id0			int,
+	rec_id			int,
+	----
+	field_name		varchar2(255),	-- PIN_FLD_FIELD_NAME
+	field_num		int,		-- PIN_FLD_FIELD_NUM
+	field_type		int,		-- PIN_FLD_FIELD_TYPE
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	status			int		-- PIN_FLD_DESCR
+) $PIN_CONF_SM_INFO{'/dd/fields.PIN_FLD_FIELD'};
+
+-- /dd/objects ARRAY PIN_FLD_OBJ_DESC
+create table dd_objects_t (
+	obj_id0			int,
+	name			varchar2(255),	-- PIN_FLD_NAME
+	mod_t			number,		-- PIN_FLD_MOD_T
+	state			int,		-- PIN_FLD_STATE
+	permission		int,		-- PIN_FLD_PERMISSION
+	label			varchar2(255),	-- PIN_FLD_LABEL
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	sm_info			varchar2(1023),	-- PIN_FLD_SM_INFO
+	seq_start		int,		-- PIN_FLD_SEQ_START
+	read_access		varchar2(1),	-- PIN_FLD_READ_ACCESS
+	write_access		varchar2(1),	-- PIN_FLD_WRITE_ACCESS
+	create_access		varchar2(1),	-- PIN_FLD_CREATE_ACCESS
+	audit_flag		int,		-- PIN_FLD_AUDIT_FLAG
+	audit_scheme		int,		-- PIN_FLD_AUDIT_SCHEME
+	virtual_flag		int,		-- PIN_FLD_VIRTUAL_FLAG
+	au_sm_info		varchar2(1023),	-- PIN_FLD_AU_SM_INFO
+	is_partitioned		int,		-- PIN_FLD_IS_PARTITIONED
+	partition_mode          int,            -- PIN_FLD_PARTITION_MODE
+	residency_type          int,   		-- PIN_FLD_RESIDENCY_TYPE
+	event_type		varchar2(40)	default 'NONE' 	-- PIN_FLD_EVENT_TYPE
+) $PIN_CONF_SM_INFO{'/dd/objects.PIN_FLD_OBJ_DESC'};
+
+-- /dd/objects ARRAY PIN_FLD_OBJ_ELEM
+create table dd_objects_fields_t (
+	obj_id0			int,
+	rec_id			int,
+	----
+	parent_element_id	int,		-- PIN_FLD_PARENT_ELEMENT_ID
+	field_name		varchar2(255),	-- PIN_FLD_FIELD_NAME
+	field_type		int,		-- PIN_FLD_FIELD_TYPE
+	label			varchar2(255),	-- PIN_FLD_LABEL
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	state			int,		-- PIN_FLD_STATE
+	permission		int,		-- PIN_FLD_PERMISSION
+	field_order		int,		-- PIN_FLD_ORDER
+	length			int,		-- PIN_FLD_LENGTH
+	sm_item_name		varchar2(255),	-- PIN_FLD_SM_ITEM_NAME
+	sm_item_vw_name		varchar2(255),	-- PIN_FLD_SM_ITEM_VW_NAME
+	sm_info			varchar2(1023),	-- PIN_FLD_SM_INFO
+	auditable		int,		-- PIN_FLD_AUDIT
+	queryable_on_audit	int,		-- PIN_FLD_QUERYABLE_ON_AUDIT
+	ignore_on_audit		int,		-- PIN_FLD_IGNORE_ON_AUDIT
+	encryptable		int,		-- PIN_FLD_ENCRYPT
+	serializable		int		-- PIN_FLD_SERIALIZABLE
+) $PIN_CONF_SM_INFO{'/dd/objects.PIN_FLD_OBJ_ELEM'};
+
+-- New table for storing encrypted-Aes keys
+-- cryptkey_t
+create table cryptkey_t (
+	crypt_scheme 		varchar2(10),           -- to store scheme name
+	crypt_key_id 		int,		        -- to store key_id
+	crypt_key 		varchar2(255),          -- to store actual key
+        upgraded                number(1)  DEFAULT 1    -- to identify if the keys are upgraded or not
+) $PIN_CONF_SM_INFO{'/cryptkey'};
+
+-- New table for storing the converted table information
+create table aes_crypt_details_t (
+                table_name            varchar2(32),
+                field_name            varchar2(32),
+                old_size              int,
+                new_size              int
+) $PIN_CONF_SM_INFO{'/aes_crypt_details'};
+
+-- /dd/types ARRAY PIN_FLD_TYPES
+create table dd_types_t (
+	obj_id0			int,
+	name	        	varchar2(255),  -- PIN_FLD_TYPENAME_OBJ
+	descr			varchar2(1023),	-- PIN_FLD_DESCR
+	status			int		-- PIN_FLD_STATUS
+) $PIN_CONF_SM_INFO{'/dd/fields.PIN_FLD_TYPES'};
+
+-- /dd
+create unique index i_dd_objects__id on dd_objects_t ( obj_id0 )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_dd_objects_fields__id on dd_objects_fields_t ( obj_id0, rec_id, parent_element_id, field_name)
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_MED;
+
+create unique index i_dd_fields__id on dd_fields_t ( obj_id0, rec_id )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_dd_types__name on dd_types_t ( name )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+-- crypt
+create unique index i_cryptkey__scheme on cryptkey_t ( crypt_scheme, crypt_key_id )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+
+create unique index i_aes_crypt_details__dtls on aes_crypt_details_t ( table_name, field_name )
+	$PIN_CONF_TBLSPACEX0 $PIN_CONF_STORAGE_SMALL;
+
+-- data_t table creation for pin sequence package
+create table data_t (
+        poid_db                 int,
+        poid_id0                int,
+        poid_type               varchar2(255),
+        poid_rev                int,
+        created_t               int,
+        mod_t                   int,
+        read_access             varchar2(1),
+        write_access            varchar2(1),
+        account_obj_db          int,
+        account_obj_id0         int,
+        account_obj_type        varchar2(255),
+        account_obj_rev         int,
+        buffer_size             int,
+        header_num              int,
+        header_str              varchar2(255),
+        name                    varchar2(255),
+        parent_db               int,
+        parent_id0              int,
+        parent_type             varchar2(255),
+        parent_rev              int,
+        inc_by                  int
+) $PIN_CONF_SM_INFO{'/data'};
+
+-- data_buffer_buf table creation for buffer storage
+create table data_buffer_buf (
+        obj_id0                 int,
+        buffer_buf              blob
+) $PIN_CONF_SM_INFO{'/data.PIN_FLD_BUFFER'};
+
+
+-- /data
+create unique index i_data__id on data_t ( poid_id0 )
+        $PIN_CONF_TBLSPACEX9
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/data.INDEX_CLAUSE'} ;
+create unique index i_data_buffer__id on data_buffer_buf ( obj_id0 )
+        $PIN_CONF_TBLSPACEX10
+        $PIN_CONF_STORAGE_SMALL
+        $PIN_CONF_PARTITION_INFO{'/data.INDEX_CLAUSE'} ;
+
+--insert statement for /data/sequence row in data_t for pin sequence package
+INSERT INTO data_t VALUES
+                        (1, 326, '/data/sequence', 0,
+                        $PIN_CONF_DATE_NOW, $PIN_CONF_DATE_NOW, 'G', 'G',
+                        1, 1, '/account', 0,
+                        0, 10000, '', 'STANDARD_POIDS',
+                        0, 0, '', 0, 1);
+
+insert into DD_OBJECTS_T (
+        OBJ_ID0, NAME,MOD_T, STATE,PERMISSION, LABEL, DESCR, SM_INFO, SEQ_START, READ_ACCESS,
+        WRITE_ACCESS, CREATE_ACCESS, AUDIT_FLAG, AUDIT_SCHEME, VIRTUAL_FLAG, AU_SM_INFO, IS_PARTITIONED,
+        PARTITION_MODE, RESIDENCY_TYPE, EVENT_TYPE)
+         values (
+        1000,'/data',0,3,0,null,
+        'Generic data class to hold arbitrary information. Recommeded approach is to subtype this generic class to hold specific types of data. For example, define ''/data/photo'' to hold the image of a person. Note that when subtyping in Infranet, you do not need to add additional fields in the derived class.',
+        '$PIN_CONF_SM_INFO{'/data'}',1000,'L','L','N',
+        0,0,0,null,0,-1,0,'NONE');
+
+
+-- insert rows for data_t in dd_objects_fields_t;
+insert into DD_OBJECTS_FIELDS_T values (
+        1000,0,1001,'PIN_FLD_ACCOUNT_OBJ',7,null,'Link to account object for which this object was created.',1,1,0,0,':account_obj',null,null,0,0,0,0,0);
+
+insert into DD_OBJECTS_FIELDS_T values (
+        1000,0,1001,'PIN_FLD_BUFFER',6,null,'Container to hold the actual data.',1,2,0,0,'C=:buffer T=data_buffer_buf',null, '$PIN_CONF_SM_INFO{'/data.PIN_FLD_BUFFER'}',0,0,0,0,0);
+
+insert into DD_OBJECTS_FIELDS_T values (
+        1000,0,1001,'PIN_FLD_HEADER_NUM',17,null,'A generic user-definable header number field.',1,2,0,0,':header_num',null,null,0,0,0,0,0);
+
+insert into DD_OBJECTS_FIELDS_T values (
+        1000,0,1001,'PIN_FLD_HEADER_STR',5,null,'A generic user-definable header string field.',1,2,0,255,':header_str',null,null,0,0,0,0,0);
+
+insert into DD_OBJECTS_FIELDS_T values (
+        1000,0,1001,'PIN_FLD_NAME',5,null,'Name of the data object instance.',1,2,0,255,':name',null,null,0,0,0,0,0);
+
+insert into DD_OBJECTS_FIELDS_T values (
+        1000,0,1001,'PIN_FLD_PARENT',7,null,'Link to an arbitrary object that owns this data object.',1,2,0,0,':parent',null,null,0,0,0,0,0);
+
+insert into dd_objects_fields_t values (
+        1000, 1001, 0, 'PIN_FLD_MAIN', 11, null, null, 1,1,0,0,'data_t',null,null,0,0,0,0,0);

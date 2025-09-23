@@ -1,0 +1,63 @@
+#
+# @(#)pin_batch_suspense_reason_code 1.0 08/30/05
+#
+version 1
+#======================================================================
+#
+#      
+#      Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+#      
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# Description:
+# 	Use this file to define the mapping between the pipeline error 
+#	codes to batch suspense reason codes.
+#
+#	The text data defined in this file will be loaded into the 
+#	/config/batch_suspense_reason_code.
+#
+# 	Loading this file will replace existing object with the one 
+#	defined below.
+#
+# 	Use the following syntax for defining the mapping between 
+#	Pipeline Error Codes and Batch suspense reason codes
+#
+#	Error Codes		     Batch Suspense Reason
+# 	   1				2 
+#
+#	Duplicate error codes in this file will cause an error code and
+#	the file will not be loaded into the configuration object.
+#
+#	Error code of 0 is the default error code. User has to define
+#	the default Batch Suspense Reason codes for this 
+#	default error code. If the default error code (0) is not defined
+#	in this file an error code will be set and this file will not 
+#	be loaded.
+#	
+#	The error code that need not require batch suspension must map to "-1"
+#       batch suspense reason.
+#
+# Usage:
+#	$ load_batch_suspense_reason_code <pin_batch_suspense_reason_code>
+#
+#======================================================================
+#
+# Sample file:
+#======================================================================
+#
+#	ErrorCodes		BatchSuspenseReason
+# Default error (error that is not specified in this file)
+	00000			0
+# Framework errors
+	00471			1
+        00119			2
+        00120			2
+	00126			2
+	00127			2
+	00147			2
+	00148			2
+

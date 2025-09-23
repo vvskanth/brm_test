@@ -1,0 +1,58 @@
+--
+-- Copyright (c) 2015, 2017, Oracle and/or its affiliates. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	from object specifications on Wed May 29 05:16:06 2024.
+--
+--	USE THIS FILE WITH CAUTION: NOT FOR USE IN PRODUCTION ENVIRONMENTS
+--
+
+
+drop table proc_aud_pipe_line_t;
+drop table proc_aud_pipeline_err_cdr_t;
+drop table proc_aud_bill_t;
+drop table proc_aud_bill_segments_t;
+drop table proc_aud_bill_revenues_t;
+drop table proc_aud_bill_suppress_t;
+drop table proc_aud_bill_err_acct_t;
+drop table proc_aud_gl_report_t;
+drop table proc_aud_price_sync_t;
+drop table pricing_details_t;
+drop table pricing_failure_details_t;
+drop table conf_proc_aud_t;
+drop table conf_proc_aud_fld_nm_t;
+drop table config_ra_alerts_t;
+drop table config_ra_alerts_rec_t;
+drop table config_ra_flows_t;
+drop table config_ra_ctrl_pt_t;
+drop table config_ra_threshold_t;
+drop table config_ra_filter_t;
+drop table config_ra_val_rngs_t;
+drop table batchstat_links_t;
+drop table config_controlpoints_links_t;
+drop table proc_aud_sce_flink_t;
+drop table proc_aud_sce_blink_t;
+drop table proc_aud_bstat_t;
+drop table gdtls_ostrm_t;
+drop table gdtls_rel_t;
+drop table gdtls_rstrm_t;
+drop table gdtls_rstrm_sts_t;
+drop table gdtls_rstrm_stype_t;
+drop table gdtls_rstrm_stype_sts_t;
+drop table gdtls_t;
+drop table gdtls_sts_t;
+drop table gdtls_suspense_t;
+drop table gdtls_stype_t;
+drop table gdtls_stype_rstrm_t;
+drop table gdtls_stype_rstrm_ostrm_t;
+drop table gdtls_stype_rstrm_sts_t;
+drop table gdtls_stype_rstrm_sts_ostrm_t;
+drop table gdtls_stype_sts_t;
+drop table ra_threshold_status_t;
+drop table ra_thrld_sts_thrlds_t;

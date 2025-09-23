@@ -1,0 +1,96 @@
+# continuus file information --- $Id: pin_invoice_data_map /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:07:44 nishahan Exp $
+#
+# @(#) %full_filespec: pin_invoice_data_map~2:ascii:1 %
+#
+# Copyright (c) 2003, 2015, Oracle and/or its affiliates. All rights reserved.
+# 
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+######################################################################
+
+# The storable class to be loaded
+# /config/invoice_data_map
+
+######################################################################
+# Syntax:
+#
+# ID name
+# <level> <pin field name>
+# <level> <pin field name>
+# <level> <pin field name>
+# <level> <pin field name>
+# ...
+#
+# ID name2
+# <level> <pin field name>
+# <level> <pin field name>
+# ...
+#
+#
+# Here's the sample out of the box config file.
+#
+# ID INTEGRATE
+# 0  PIN_FLD_CALLING_NUMBER         
+# 0  PIN_FLD_CALLED_NUMBER    
+# 0  PIN_FLD_SVC_CODE       
+# 0  PIN_FLD_NUMBER_OF_UNITS
+# 0  PIN_FLD_USAGE_CLASS   
+# 0  PIN_FLD_DNIS         
+# 0  PIN_FLD_BAL_IMPACTS 
+# 1     PIN_FLD_ITEM_OBJ
+# 1     PIN_FLD_RESOURCE_ID
+# 1     PIN_FLD_QUANTITY
+# 1     PIN_FLD_RATE_TAG   
+# 1     PIN_FLD_AMOUNT 
+# 1     PIN_FLD_IMPACT_TYPE
+#
+# for example for the input FLIST of PCM_OP_INV_DECODE_INVOICE_DATA given below.
+#
+# 0 PIN_FLD_POID           POID [0] 0.0.0.1 /event/delayed/session/telco/gsm/voice 1444951799135594294 0
+# 0 PIN_FLD_INVOICE_DATA    STR [0] "@INTEGRATE#004917165210#0049171235292#11#0#USAGE#GSMThing#<1 /item 3456 1#1234#10.0#rateTag#1.000000#4|1 /item 5678 1#6789#20.0#rateTag#1.000000#4>"
+# 
+# the config specification above will generate the following FLIST.
+#
+# 0 PIN_FLD_POID           POID [0] 0.0.0.1 /event/delayed/session/telco/gsm/voice 1444951799135594294 0
+# 0 PIN_FLD_EXTENDED_INFO SUBSTRUCT [0] allocated 20, used 8
+# 1     PIN_FLD_CALLING_NUMBER    STR [0] "004917165210"
+# 1     PIN_FLD_CALLED_NUMBER    STR [0] "0049171235292"
+# 1     PIN_FLD_SVC_CODE        STR [0] "11"
+# 1     PIN_FLD_NUMBER_OF_UNITS    INT [0] 0
+# 1     PIN_FLD_USAGE_CLASS     STR [0] "USAGE"
+# 1     PIN_FLD_DNIS            STR [0] "GSMThing"
+# 1     PIN_FLD_BAL_IMPACTS   ARRAY [0] allocated 20, used 6
+# 2         PIN_FLD_ITEM_OBJ       POID [0] 0.0.0.1 /item 3456 1
+# 2         PIN_FLD_RESOURCE_ID     INT [0] 1234
+# 2         PIN_FLD_QUANTITY     DECIMAL [0] 10
+# 2         PIN_FLD_RATE_TAG        STR [0] "rateTag"
+# 2         PIN_FLD_AMOUNT       DECIMAL [0] 1
+# 2         PIN_FLD_IMPACT_TYPE    ENUM [0] 4
+# 1     PIN_FLD_BAL_IMPACTS   ARRAY [1] allocated 20, used 6
+# 2         PIN_FLD_ITEM_OBJ       POID [0] 0.0.0.1 /item 5678 1
+# 2         PIN_FLD_RESOURCE_ID     INT [0] 6789
+# 2         PIN_FLD_QUANTITY     DECIMAL [0] 20
+# 2         PIN_FLD_RATE_TAG        STR [0] "rateTag"
+# 2         PIN_FLD_AMOUNT       DECIMAL [0] 1
+# 2         PIN_FLD_IMPACT_TYPE    ENUM [0] 4
+#
+
+# Begin actual config data
+
+ID INTEGRATE
+0  PIN_FLD_CALLING_NUMBER         
+0  PIN_FLD_CALLED_NUMBER    
+0  PIN_FLD_SVC_CODE       
+0  PIN_FLD_NUMBER_OF_UNITS
+0  PIN_FLD_USAGE_CLASS   
+0  PIN_FLD_DNIS         
+0  PIN_FLD_BAL_IMPACTS
+1     PIN_FLD_ITEM_OBJ
+1     PIN_FLD_RESOURCE_ID
+1     PIN_FLD_QUANTITY
+1     PIN_FLD_RATE_TAG   
+1     PIN_FLD_AMOUNT 
+1     PIN_FLD_IMPACT_TYPE
+
+# End actual config data

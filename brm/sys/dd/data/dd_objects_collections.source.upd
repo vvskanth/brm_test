@@ -1,0 +1,1361 @@
+#	Copyright (c) 1996 - 2006 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed May 29 05:15:52 2024.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 41, used 35
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/collections"
+1     PIN_FLD_DESCR           STR [0] "Abstract class which hosts a number of config classes to be used by the collections applications "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/collections/action"
+1     PIN_FLD_DESCR           STR [0] "Collections action object.  Contains information for  each individual action. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 12
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_ACTION_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains the action information."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_NAME"
+3             PIN_FLD_DESCR           STR [0] "Action name to be displayed on GUI tools"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_DESCR"
+3             PIN_FLD_DESCR           STR [0] "Action description."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action_descr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_TYPE"
+3             PIN_FLD_DESCR           STR [0] "The action type string. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TARGET_ACTION"
+3             PIN_FLD_DESCR           STR [0] "To which billinfos this action targetted to. Values are PIN_TARGET_ACTION_TO_ITSELF (0), PIN_TARGET_ACTION_TO_PARENT_AND_ALL_MEMBERS (1) and PIN_TARGET_ACTION_TO_ALL_MEMBERS (2). "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "target_action"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OPCODE"
+3             PIN_FLD_DESCR           STR [0] "Opcode (ID) to be called for this action."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "opcode"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TEMPLATE_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the template object. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "template_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_action_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/action.PIN_FLD_CONFIG_ACTION_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/collections/action/custom"
+1     PIN_FLD_DESCR           STR [0] "Define brand level actions (policy or manual actions)."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/collections/action/custom/late_fee"
+1     PIN_FLD_DESCR           STR [0] "Define late fees action."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LATE_FEE_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains additional fields for late fees."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "Fixed amount to charge"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PERCENT"
+3             PIN_FLD_DESCR           STR [0] "Percentage for overdue amount to charge"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "percent"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OPTIONS"
+3             PIN_FLD_DESCR           STR [0] "Determine how the fixed amount and the percentage work together to get the late fee. Possible values are: PIN_OPTION_EITHER (0), PIN_OPTION_MIN (1), PIN_OPTION_MAX (2) and PIN_OPTION_BOTH (3)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "options"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CURRENCY"
+3             PIN_FLD_DESCR           STR [0] "Numeric value of a currency resource. A value of 0 implies that the default currency will be used to calculate the late fee. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "currency"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_latefee_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/action/custom/late_fee.PIN_FLD_LATE_FEE_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/collections/action/custom/finance_charge"
+1     PIN_FLD_DESCR           STR [0] "Define finance charge action."
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FINANCE_CHARGE_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains additional fields for finance charges."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PERCENT"
+3             PIN_FLD_DESCR           STR [0] "Rate for the finance charge"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "percent"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_fcharge_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/action/custom/finance_charge.PIN_FLD_FINANCE_CHARGE_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 9
+1     PIN_FLD_NAME            STR [0] "/config/collections/scenario"
+1     PIN_FLD_DESCR           STR [0] "Collections scenario object.  Contains information for  each scenario. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCENARIO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substructure to hold scenario specific info. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCENARIO_NAME"
+3             PIN_FLD_DESCR           STR [0] "Scenario name to be displayed on GUI tools"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "scenario_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCENARIO_DESCR"
+3             PIN_FLD_DESCR           STR [0] "Scenario description."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "scenario_descr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_PROFILE_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Profile poid linked to the collections profile object. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "profile_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENTRY_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "The minimum over-due amount for entering the scenario. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "entry_amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENTRY_DAYS"
+3             PIN_FLD_DESCR           STR [0] "The minimum over-due days for entering the scenario. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "entry_days"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXIT_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "The maximum over-due amount for exiting the scenario. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "exit_amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SEVERITY"
+3             PIN_FLD_DESCR           STR [0] "This field describes the severity of the scenario. Lower the number, higher the severity. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "scenario_severity"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_scenario_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/scenario.PIN_FLD_SCENARIO_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTIONS"
+2         PIN_FLD_DESCR           STR [0] "List all actions to be conducted in this scenario. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DUE_DAY"
+3             PIN_FLD_DESCR           STR [0] "The due day for the action to be completed."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "due_day"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_ACTION_OBJ"
+3             PIN_FLD_DESCR           STR [0] "The config action poid linked to a /config/collections/action object. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_MODE"
+3             PIN_FLD_DESCR           STR [0] "This value indicates whether the respective action must be executed, in case, if, billinfo enters the collections after the action execution date. PIN_ACTION_MUST_EXECUTE (0) This action will be executed in any case. PIN_ACTION_OPTIONAL_EXECUTE (1) This actions will be executed only if execution date is not passed. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "action_mode"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_actions_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/scenario.PIN_FLD_ACTIONS'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROFILE_DATA_ARRAY"
+2         PIN_FLD_DESCR           STR [0] "This array is used to hold the additional configurable parameters (say, credit score, customer tenure.) that are used to evaluate assignment or replacement scenario. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STRING_ID"
+3             PIN_FLD_DESCR           STR [0] "This field is link to the elem_id of the corresponding /config/collections/scenario_params element"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "string_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VALUE"
+3             PIN_FLD_DESCR           STR [0] "This field is value which is a combination of field, operator and value. EX: (pay_type = 10003 OR pay_type = 10005)"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "value"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "conf_coll_scen_profile_data_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/scenario.PIN_FLD_PROFILE_DATA_ARRAY'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [6] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/collections/scenario_params"
+1     PIN_FLD_DESCR           STR [0] "This object is used to hold the additional attribute information for scenario assignment/replacement"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARAMS"
+2         PIN_FLD_DESCR           STR [0] "This array is used to hold the configuration data for the additional parameters that are used to evaluate assignment/replacement of collections scenario. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARAM_NAME"
+3             PIN_FLD_DESCR           STR [0] "The name of the parameter."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "param_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STRING_ID"
+3             PIN_FLD_DESCR           STR [0] "String ID of the parameter name. Used for localization."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "param_string_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STR_VERSION"
+3             PIN_FLD_DESCR           STR [0] "The version of the localized string within domain.Used for localization."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "string_version"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE"
+3             PIN_FLD_DESCR           STR [0] "The type of the parameter: STR: 1, INT: 2, ENUM: 3, DECIMAL: 4, TIMESTAMP: 5. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "param_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CLASS_NAME"
+3             PIN_FLD_DESCR           STR [0] "The class object to be referenced. For example: /account. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "class_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FIELD_NAME"
+3             PIN_FLD_DESCR           STR [0] "The field name in the class. For example: account_type. Make sure the name is same as in the object. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "field_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VALUES"
+3             PIN_FLD_DESCR           STR [0] "The array which will hold the permitted set of values for the particular parameter. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "The name"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VALUE"
+4                 PIN_FLD_DESCR           STR [0] "The value"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "value"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STRING_ID"
+4                 PIN_FLD_DESCR           STR [0] "String ID of the name. Used for localization."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "name_string_id"
+3             PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STR_VERSION"
+4                 PIN_FLD_DESCR           STR [0] "The version of the localized string within domain.Used for localization."
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "string_version"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "conf_coll_scen_params_values_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/scenario_params.PIN_FLD_PARAMS.PIN_FLD_VALUES'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_coll_scenario_params_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/scenario_params.PIN_FLD_PARAMS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [7] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/collections/profile"
+1     PIN_FLD_DESCR           STR [0] "Collections profile object.  Contains information to define the collections profiles. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROFILE_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substructure to hold profile specific info. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROFILE_NAME"
+3             PIN_FLD_DESCR           STR [0] "Collections profile name to be displayed on GUI tools"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "profile_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROFILE_DESCR"
+3             PIN_FLD_DESCR           STR [0] "Collections profile description."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "profile_descr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CURRENCY"
+3             PIN_FLD_DESCR           STR [0] "Numeric value of a currency resource. A value of 0 implies that no currency is tied with the profile. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "currency"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_profile_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/profile.PIN_FLD_PROFILE_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [8] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/collections/profile/default"
+1     PIN_FLD_DESCR           STR [0] "Contains defininition for default collection profiles that can be globally seen. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [9] allocated 20, used 9
+1     PIN_FLD_NAME            STR [0] "/config/collections/promise_to_pay_spec"
+1     PIN_FLD_READ_ACCESS     STR [0] "Global"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_DESCR           STR [0] "This class holds the configurations for the Promise to pay specifications. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_IS_PARTITIONED    INT [0] 0
+1     PIN_FLD_EVENT_TYPE      STR [0] "NONE"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 15
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROMISE_TO_PAY_SPEC"
+2         PIN_FLD_DESCR           STR [0] "Array of promise to pay specification to capture its details. It is significant to hold only one array for single object."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2         PIN_FLD_SERIALIZABLE    INT [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MAX_UNEQUAL_INSTALLMENTS"
+3             PIN_FLD_DESCR           STR [0] "Maximum number of unequal installments"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "max_unequal_installments"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MAX_UNEQUAL_INTERVALS"
+3             PIN_FLD_DESCR           STR [0] "Maximum unequal installments in days"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "max_unequal_intervals"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MINIMUM"
+3             PIN_FLD_DESCR           STR [0] "Minimum installment amount/percentage"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "minimum"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MIN_PERCENTAGE_THRESHOLD"
+3             PIN_FLD_DESCR           STR [0] "Minimum initial installment percentage"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "min_perc_threshold"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Promise to pay installment type. It can be percentage (value = 1) or absolute (value = 0)."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 10
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREDIT_LIMIT_FLAG"
+3             PIN_FLD_DESCR           STR [0] "Flag to auto increase/decrease credit limit when entering /exiting payment arrangements.Enable (1) and Disable(0). Default value is disabled."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_AUDITABLE       INT [0] 0
+3             PIN_FLD_ENCRYPTABLE     INT [0] 0
+3             PIN_FLD_SERIALIZABLE    INT [0] 0
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "credit_limit_flag"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_promise_to_pay_spec_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/promise_to_pay_spec.PIN_FLD_PROMISE_TO_PAY_SPEC'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [10] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/config/collections/aging_buckets"
+1     PIN_FLD_DESCR           STR [0] "Define the aging buckets for this brand. "
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BUCKETS"
+2         PIN_FLD_DESCR           STR [0] "Array of bucket "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DAYS"
+3             PIN_FLD_DESCR           STR [0] "Number of over-due days for the bucket. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "days"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_collections_buckets_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/collections/aging_buckets.PIN_FLD_BUCKETS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [11] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/invoice_templates/dunning"
+1     PIN_FLD_DESCR           STR [0] "This is sub class of /config/invoice_templates/ objects.This class is used to hold the HTML templates and stylesheets that are applied during dunning letter viewing. A command line util can be used to load the style sheetsor HTML templates into the config objects"
+1     PIN_FLD_RESIDENCY_TYPE    INT [0] 8
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [12] allocated 41, used 27
+1     PIN_FLD_NAME            STR [0] "/collections_action"
+1     PIN_FLD_DESCR           STR [0] "Defines an instance of a collections action. "
+1     PIN_FLD_SEQ_START       INT [0] 2000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_DESCR           STR [0] "Poid for the action."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_ACTION_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Action poid linked to /config/collections/action object."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_action_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /account object. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCENARIO_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /collections_scenario object. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "scenario_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCHEDULE_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /schedule object. Used when the action is a system action"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 1
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "schedule_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AGENT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to an special /account object, which denotes a collection agent. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 1
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "agent_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+2         PIN_FLD_DESCR           STR [0] "Status of the action. Values are PENDING (0), CANCELLED (1), COMPLETED (2), ERROR (3) and NO_EXECUTE (4). "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 1
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+1     PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TARGET_ACTION"
+2         PIN_FLD_DESCR           STR [0] "To which billinfos this action targetted to. Values are PIN_TARGET_ACTION_TO_ITSELF (0), PIN_TARGET_ACTION_TO_PARENT_AND_ALL_MEMBERS (1) and PIN_TARGET_ACTION_TO_ALL_MEMBERS (2). "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 1
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "target_action"
+1     PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DUE_T"
+2         PIN_FLD_DESCR           STR [0] "Due date for this action to be completed. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 1
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "due_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_COMPLETED_T"
+2         PIN_FLD_DESCR           STR [0] "Actual date when this action is completed. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "completed_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is first created. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is last modified. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed read access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed write access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /billinfo object. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACTION_MODE"
+2         PIN_FLD_DESCR           STR [0] "This value indicates whether the respective action must be executed, in case, if, billinfo enters the collections after the action execution date. PIN_ACTION_MUST_EXECUTE (0) This action will be executed in any case. PIN_ACTION_OPTIONAL_EXECUTE (1) This actions will be executed only if execution date is not passed. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "action_mode"
+1     PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXTERNAL_USER"
+2         PIN_FLD_DESCR           STR [0] "External user assigned as collections agent"
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 1
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "external_user"
+1     PIN_FLD_OBJ_ELEM      ARRAY [17] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LAST_NOTIFICATION_T"
+2         PIN_FLD_DESCR           STR [0] "The last time this object was processed/checked for collections due notification."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "last_notification_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [18] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LAST_NOTIFICATION_OFFSET"
+2         PIN_FLD_DESCR           STR [0] "The offset with which the last time this object was processed/checked for collections due notification."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_LENGTH          INT [0] 64
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "last_notification_offset"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "collections_action_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_action'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [13] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/close_billinfo"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store close billinfo information This object is created when close billinfo action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [14] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/collections_action/collect_payment"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store additional information for collect_payment action. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PAYMENT"
+2         PIN_FLD_DESCR           STR [0] "Substructure to hold collect payment action info. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "Amount to be paid. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PAYINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the /payinfo/cc or /payinfo/dd object. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "payinfo_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "collections_collect_payment_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_action/collect_payment.PIN_FLD_PAYMENT'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [15] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/late_fee"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store latefee information This object is created when late fee action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [16] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/finance_charge"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store finance charge information This object is created when finance charge action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [17] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/collections_action/dunning_letter"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store additional information for dunning_letter action "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DUNNING_INFO"
+2         PIN_FLD_DESCR           STR [0] "To save the dunning letter data and status. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 6
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DUNNING_DATA"
+3             PIN_FLD_DESCR           STR [0] "Hold the dunning data to be used to generate a real dunning letter.  It is in XML format."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "C=dunning_data T=collections_dunning_buf_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_action/dunning_letter.PIN_FLD_DUNNING_INFO.PIN_FLD_DUNNING_DATA'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DELIVERY_STATUS"
+3             PIN_FLD_DESCR           STR [0] "Has the dunning letter been sent\? Valid values are 0 - not sent and 1 - sent. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "delivery_status"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "collections_dunning_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_action/dunning_letter.PIN_FLD_DUNNING_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [18] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/inactivate_billinfo"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store inactivate billinfo actioninformation.This object is created when inactivate billinfo actionis scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [19] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/collections_action/invoice_reminder"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store additional information for invoice_reminder action "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REMINDER_INFO"
+2         PIN_FLD_DESCR           STR [0] "Additional info for invoice reminder action. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MESSAGE_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the /message object, which holds the actual invoice reminder message. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "message_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "collections_inv_reminder_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_action/invoice_reminder.PIN_FLD_REMINDER_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [20] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/manual_action"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store manual action information This object is created when manual action is scheduled for abillinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [21] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/policy_action"
+1     PIN_FLD_DESCR           STR [0] "Subclass of/collections_action to store policy action information This object is created when policy action is scheduled for abillinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [22] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/collections_action/promise_to_pay"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store additional information for promise_to_pay action. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROMISE_TO_PAY_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substructure to hold promise to pay action info. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "Amount to be paid in this milestone. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PAYINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the /payinfo/cc or /payinfo/dd object. If NULL only validation is done, otherwise the promised amount is auto-collected. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "payinfo_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EVENT_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to collections activity event object. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "event_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "collections_promise_to_pay_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_action/promise_to_pay.PIN_FLD_PROMISE_TO_PAY_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [23] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/refer_to_outside_agency"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store refer outside agencyinformation.This object is created when refer to outside agencyaction is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [24] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/collections_action/writeoff_billinfo"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /collections_action to store writeoff billinfo information This object is created when writeoff billinfo action is scheduled for a billinfo"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [25] allocated 41, used 26
+1     PIN_FLD_NAME            STR [0] "/collections_scenario"
+1     PIN_FLD_DESCR           STR [0] "Defines an instance of a collections scenario. "
+1     PIN_FLD_SEQ_START       INT [0] 2000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_DESCR           STR [0] "Poid of the scenario."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_SCENARIO_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /config/collections/scenario object. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_scenario_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /account object that is in collections. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AGENT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the agent object that is assigned to this scenario. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "agent_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OVERDUE_T"
+2         PIN_FLD_DESCR           STR [0] "The current overdue date for this account. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "overdue_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 14
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OVERDUE_AMOUNT"
+2         PIN_FLD_DESCR           STR [0] "The current overdue amount for the scenario. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "overdue_amount"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENTRY_T"
+2         PIN_FLD_DESCR           STR [0] "Actual entry date. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "entry_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 14
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENTRY_AMOUNT"
+2         PIN_FLD_DESCR           STR [0] "Actual entry amount. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "entry_amount"
+1     PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXIT_T"
+2         PIN_FLD_DESCR           STR [0] "Actual exit date. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "exit_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 14
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXIT_AMOUNT"
+2         PIN_FLD_DESCR           STR [0] "Actual exit amount. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "exit_amount"
+1     PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 3
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REASON"
+2         PIN_FLD_DESCR           STR [0] "Reason code for exiting the scenario. Two valid values: 0 -- Normal, 1 -- Manual(enforced) "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "reason"
+1     PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is first created. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is last modified. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed read access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed write access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the /billinfo object that is in collections. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 11
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROMISE_TO_PAY"
+2         PIN_FLD_DESCR           STR [0] "Single element array to hold common promise to pay information. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "Overdue amount at the time of promise. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EVENT_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to collections activity event object. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "event_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INVOKE_T"
+3             PIN_FLD_DESCR           STR [0] "Time when promise to pay is invoked. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "invoke_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATUS"
+3             PIN_FLD_DESCR           STR [0] "Status of the action. Values are PENDING (0), CANCELLED (1), COMPLETED (2), KEPT(3) and BROKEN(4). "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONFIG_SPEC_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to /config/collections/promise_to_pay_spec object"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "coll_scen_promisetopay_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_scenario.PIN_FLD_PROMISE_TO_PAY'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [17] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXTERNAL_USER"
+2         PIN_FLD_DESCR           STR [0] "External user assigned as collections agent"
+2         PIN_FLD_LENGTH          INT [0] 255
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "external_user"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "collections_scenario_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/collections_scenario'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [26] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/activity/collections"
+1     PIN_FLD_DESCR           STR [0] "Abstract class to categorize activities related to collections. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [27] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/event/activity/collections/exemption"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /event/activity/collections to represent collections exempt activity. It holds billinfo information which are exempted/un-exemptedfrom the collections. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 6
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INHERITED_INFO"
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the billinfo object which are exempted/un-exempted from the collections. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EXEMPT_FROM_COLLECTIONS"
+3             PIN_FLD_DESCR           STR [0] "A flag which represents exempt/un-exempt of billinfo from collections. 1-billinfo is exempted, 8-billinfo is removed from exemption"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "exempt_from_collections"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_act_coll_exempt_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/activity/collections/exemption.PIN_FLD_INHERITED_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [28] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/activity/collections/promise_to_pay"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /event/activity/collections to represent promise to pay activity. It holds all the parameter information provided while invoking promise to pay. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 16
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROMISE_TO_PAY_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains the promise to pay information. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INVOKE_T"
+3             PIN_FLD_DESCR           STR [0] "Time when promise to pay is effective (first milestone date). "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "invoke_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_MILESTONES"
+3             PIN_FLD_DESCR           STR [0] "Number of milestones using which the total promised amount will be paid. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "num_milestones"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MILESTONE_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "Amount that will be paid in each milestone. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "milestone_amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OVERDUE_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "The total overdue amount.If promise amount is not specified, then this will be taken as total promise amount. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "overdue_amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "The total amount for which the promis is made. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DAYS"
+3             PIN_FLD_DESCR           STR [0] "Total number of days within which total promised amount will be paid. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "days"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MILESTONE_INTERVAL"
+3             PIN_FLD_DESCR           STR [0] "Number of days between each milestone. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "milestone_interval"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PAYINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the /payinfo/cc or /payinfo/dd object. If NULL only validation is done, otherwise the promised amount is auto-collected. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "payinfo_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCENARIO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the collections scenario object under which promise to pay is invoked for the billinfo. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "scenario_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the billinfo object under collections for which promise to pay is invoked. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_act_coll_prmstopay_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/activity/collections/promise_to_pay.PIN_FLD_PROMISE_TO_PAY_INFO'}"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MILESTONES"
+2         PIN_FLD_DESCR           STR [0] "Contains the promise to pay information for unequal installments and unequal intervals "
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MILESTONE_AMOUNT"
+3             PIN_FLD_DESCR           STR [0] "Amount that will be paid in each milestone."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "milestone_amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MILESTONE_PERCENTAGE"
+3             PIN_FLD_DESCR           STR [0] "Percentage of promised amount to be paid"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "milestone_percentage"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MILESTONE_INTERVAL"
+3             PIN_FLD_DESCR           STR [0] "Number of days between each milestone. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "milestone_interval"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_act_coll_p2p_unequal_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/activity/collections/promise_to_pay.PIN_FLD_MILESTONES'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [29] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/activity/collections/replace_scenario"
+1     PIN_FLD_DESCR           STR [0] "Subclass of /event/activity/collections object to represent scenario replacement activity. It holds all the parameter information provided while replacing the existing the scenario for a billinfo with a new one. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 12
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REPLACE_SCENARIO_INFO"
+2         PIN_FLD_DESCR           STR [0] "Contains the scenario replacement information. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the /billinfo object for which scenario replacement is triggered. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FROM_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the /config/collections/scenario object which needs to be replaced. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "from_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Link to the new /config/collections/scenario object which will replace the existing scenario. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "to_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCHEDULE_MODE"
+3             PIN_FLD_DESCR           STR [0] "Collections action scheduling mode during scenario replacement. Could be one of the following values: PIN_ACTION_SCHEDULE_BILL_DUE_DATE (0), PIN_ACTION_SCHEDULE_USER_DATE (1). "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "schedule_mode"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SCHEDULE_T"
+3             PIN_FLD_DESCR           STR [0] "Date with reference to which the new scenario actions are to be scheduled. If mode is PIN_ACTION_SCHEDULE_USER_DATE and no date is specified, current date will be considered. Else specified date is considered. If no date is specified, current date is taken. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "schedule_date"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FLAGS"
+3             PIN_FLD_DESCR           STR [0] "Specifies whether to consider scenario entry dates also while calculating due date for replacement scenario actions. Value: 0 - Ignore replacement scenario's entry days (default)\t1 - Consider replacement scenario's entry days "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "flags"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_act_coll_repl_scen_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/event/activity/collections/replace_scenario.PIN_FLD_REPLACE_SCENARIO_INFO'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [30] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/audit/collections"
+1     PIN_FLD_DESCR           STR [0] "Class to categorize all changes to collections."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [31] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/audit/collections/action"
+1     PIN_FLD_DESCR           STR [0] "Class to categorize all changes to collections action. "
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "Self"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [32] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/billing/late_fee"
+1     PIN_FLD_DESCR           STR [0] "Events created when there is a late fee charged."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [33] allocated 20, used 7
+1     PIN_FLD_NAME            STR [0] "/event/billing/finance_charge"
+1     PIN_FLD_DESCR           STR [0] "Events created when a finance charge is applied."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_IS_PARTITIONED    INT [0] 1
+1     PIN_FLD_PARTITION_MODE    STR [0] "Finite"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [34] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/profile/collections_params"
+1     PIN_FLD_DESCR           STR [0] "This profile object holds collections params info for scenario assignment feature."
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_COLLECTIONS_PARAMS"
+2         PIN_FLD_DESCR           STR [0] "This array will hold the collections params. OOB only billinfo POID is present."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BILLINFO_OBJ"
+3             PIN_FLD_DESCR           STR [0] "Sender's billinfo obj"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "billinfo_obj"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "profile_collections_params_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/profile/collections_params.PIN_FLD_COLLECTIONS_PARAMS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

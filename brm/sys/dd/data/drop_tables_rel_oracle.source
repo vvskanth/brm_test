@@ -1,0 +1,24 @@
+--
+-- Copyright (c) 2015, 2017, Oracle and/or its affiliates. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	from object specifications on Wed May 29 05:16:02 2024.
+--
+--	USE THIS FILE WITH CAUTION: NOT FOR USE IN PRODUCTION ENVIRONMENTS
+--
+
+
+drop table rel_update_status_t;
+drop table batch_rel_t;
+drop table rel_sub_processes_t;
+drop table batch_rel_zip_file_t;
+drop table batch_rel_zip_file_buf_t;
+drop table batch_rel_retry_t;
+drop table tmp_profile_event_ordering_t;
+drop table rel_event_extract_sync_t;

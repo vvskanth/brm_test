@@ -1,0 +1,402 @@
+#-------------------------------------------------------------------------
+# @(#)% %
+#
+#======================================================================
+# Configuration File for dm_prov_telco
+#======================================================================
+#
+#======================================================================
+# A copy of this configuration file is automatically installed and 
+# configured with default values when you install Infranet. However,
+# you can edit this file to suit your specific configuration:
+#  -- You can change the default value of an entry.
+#  -- You can exclude an optional entry by adding the # symbol
+#     at the beginning of the line.
+#  -- You can include a commented entry by removing the # symbol.
+#
+# Before you make any changes to this file, save a backup copy.
+#
+# To edit this file, follow the instructions in the commented sections.
+# For more information on the general syntax of configuration entries,
+# see "Reference Guide to Infranet Configuration Files" in the Infranet
+# online documentation.
+#======================================================================
+
+#**********************************************************************
+# Queue Management Information
+#
+# Use the entries in this section to specify how this Infranet process
+# should manage transactions.
+#
+# For information on tuning the queuing entries to improve
+# performance, see "Improving System Performance" in the online 
+# documentation.
+#**********************************************************************
+#
+
+#======================================================================
+# dm_n_fe
+# 
+# Number of front ends this DM creates and uses.
+#
+# Allowable values:
+#  -- Minimum: 1
+#  -- Maximum: 16
+#
+#======================================================================
+- dm dm_n_fe		4
+
+
+#======================================================================
+# dm_max_per_fe
+# 
+# Maximum number of connections for each front end.
+#
+# Allowable values:
+#  -- Minimum      : 8
+#  -- Maximum(NT)  : 63
+#  -- Maximum(UNIX): 512
+#======================================================================
+- dm dm_max_per_fe	16
+
+
+#======================================================================
+# dm_n_be
+# 
+# Number of back ends this DM creates and uses.
+#
+# Allowable values:
+#  -- Minimum: 1
+#  -- Maximum: 256
+#
+# Important: Creating an Infranet account requires two connections,
+#       one transaction connection and one regular connection. You
+#       must have at least two back ends for each account you are
+#       creating at one time. See "Improving System Performance" 
+#       in the online documentation for more information.
+#======================================================================
+- dm dm_n_be		8
+
+
+#======================================================================
+# dm_trans_be_max
+# 
+# Maximum number of back ends that can be used for processing
+# transactions.
+#
+# By default, up to half of the back ends can process transactions. 
+# To increase the number of back ends for processing transactions, 
+# remove the # symbol from the beginning of the line for this 
+# entry and enter the number you want. The number must be no 
+# more than the total number of back ends (dm_n_be).
+#======================================================================
+#- dm dm_trans_be_max		4
+
+
+#======================================================================
+# dm_shmsize
+#
+# Size of shared memory segment, in bytes, that is shared between
+# the front ends and back ends for this DM.
+#
+# Allowable values:
+#  -- Minimum: 2097152 bytes
+#  -- Maximum: 2147483647 bytes
+#
+# Solaris: You must edit the /etc/system file because the system 
+# default for the maximum allowable shared memory segment is too low. 
+# See the online documentation.
+#
+# Note: This entry applies to UNIX systems only.
+#======================================================================
+- dm dm_shmsize		14680064
+
+
+#======================================================================
+# dm_bigsize
+#
+# Size of shared memory for "big" shared memory structures, such as
+# those used for large searches (those with more than 128 results)
+# or for PIN_FLDT_BUF fields larger than 4 K.
+# 
+# Allowable values:
+#  -- Minimum: 262144 bytes (256 KB)
+#  -- Maximum: 1610612735 bytes (1.5 GB)
+#
+# This value cannot be more than the value specified in the
+# qm_shmsize entry.
+#
+# If you get memory errors, increase the value.
+#
+# Note: This entry applies to UNIX systems only.
+#======================================================================
+- dm dm_bigsize		2097152
+
+
+#======================================================================
+# dm_port
+#
+# Port number for this DM.
+#
+# This number was assigned to the DM at installation. If you change 
+# the port, make sure the port number does not conflict with 
+# another service. This number must be greater than 1000, unless 
+# you start the process as root.
+#
+# There must be a corresponding dm_pointer entry with the same port
+# number in the CM configuration file. 
+#======================================================================
+- dm dm_port		10970
+
+
+#======================================================================
+# dm_name
+#
+# Name of the computer where this DM runs.
+# 
+# The name can be:
+#  -- "-": specifies that Infranet can use any IP address on the DM
+#          machine.
+#  -- "hostname or IP address": specifies that Infranet should use
+#          a particular IP address on the DM machine.
+#
+# This entry is optional. If you remove it from the file, Infranet
+# uses gethostname to determine the IP address of the DM machine.
+#======================================================================
+- dm dm_name		-
+
+#========================================================================
+# dm_process_name
+#
+# Specifies friendly names for dm process.
+# Useful when more than one dm runs on a host to determine which
+# process number is which. For example, assume we’re running one dm for RAC1,
+# one for RAC2. We can specify names dm_RAC1, dm_RAC2.
+#========================================================================
+#- dm dm_process_name <dm_name>
+
+#======================================================================
+# dm_db_no
+#
+# Database number for this DM.
+#
+# The default database number for the Infranet Data Manager (Oracle
+# or SQL Server) is 1, expressed in the format "0.0.0.1 / 0". The 
+# default database number for the Taxware DM is 4.
+#======================================================================
+- dm dm_db_no		0.0.10.1 / 0
+
+
+#======================================================================
+# dm_logfile
+#
+# Name and location of the log file used by this DM.
+#
+# You can enter any valid path.
+#======================================================================
+- dm dm_logfile		/var/portal/15.0/dm_prov_telco/dm_prov_telco.pinlog
+
+
+#======================================================================
+# dm_restart_children
+#
+# Replace child processes.
+#
+# If the value is "1", the default, the DM main process replaces 
+# the child DM processes that die. If the value is "0", the DM
+# doesn't replace child processes.
+#======================================================================
+- dm dm_restart_children	1
+
+
+#=======================================================================
+# dm_restart_delay
+#
+# Specify interval delay when spawning and respawning dm back ends. 
+# If not specified, the default value "0" will be used. That is, 
+# there is no delay between spawning and respawning dm back ends.
+# This is required when you want to control the dm spawning or
+# connection bahavior. 
+#
+# For NT system, this value is based on milliseconds.
+# For Unix system, this value is based on microseconds.
+#========================================================================
+#- dm dm_restart_delay	0 
+
+
+#======================================================================
+# dm_sm_obj
+#
+# Pointer to Storage Manager shared library that contains the code
+# used by the Data Manager to interact with the database.
+#
+# Infranet was set up with the correct file when you installed the
+# program; do not change this configuration entry.
+#======================================================================
+- dm dm_sm_obj		./dm_prov_telco.so 
+
+
+#======================================================================
+# dm_trans_timeout
+#
+# Timeout value in minutes used by dm back-end processes
+# in receiving the next opcode of a transaction.
+#
+# If the value is "0", the default, a DM back-end process waits  
+# infinitely for the next opcode request.
+# If the value is greater than "0", a DM back-end process waits
+# until the number of minutes specified has elapsed and
+# if no opcode request has arrived, the transaction is aborted.
+# If the value is less than "0", it is as if "0" is specified.
+# This parameter takes effect if and only if a dm back-end process
+# is doing a transaction.
+#======================================================================
+- dm dm_trans_timeout	0
+
+
+#========================================================================
+# extra_search
+#
+# Specifies if we want to do extra search count(*) on sub tables
+# so we can allocate memory optimally
+#
+# The value for this entry can be:
+#
+#    0                  = (Default) not do the extra search
+#    1                  = do the extra search and allocate memory optimally.
+#========================================================================
+- dm extra_search 0
+
+#========================================================================
+# 
+# internal option
+# specify to disable the NAGLE algorithm for sockets.
+# default 0 is to enable the NAGLE algorithm
+# 
+#========================================================================
+- - pcm_nagle_disable 0
+
+#=========================================================================
+# nullable_obj_id0 
+#
+# Enable/Disable the nullable feature.     
+#                     
+# The value for this entry can be:                              
+#
+# 	false - (Default) Disable the nullable feature.                         
+# 	true - Enable the nullable feature.                           
+#=========================================================================
+- dm nullable_obj_id0  false
+
+#=========================================================================
+# nullable_obj_id0_classes
+#
+# Specifies the set of classes for which the nullable feature   
+# would be turned on.                                           
+#
+# Value for this entry can be any storable class name.          
+#
+# The storable class names should be separated by ","           
+# There can be any number of entries. 
+#=======================================================
+# - dm nullable_obj_id0_classes /event
+
+#===============================================================
+# The Data set is upgraded or not.                                 
+#
+# The value for this entry can be:                              
+#
+# 	false - (Default) The data set is not yet fully upgraded.                         
+#	true - The data set is fully upgraded.                           
+#===============================================================
+- dm nullable_obj_id0_state false
+
+#========================================================================
+# aq_event_map_file
+#
+# File contains the queue object name for each databasequeue names and 
+# which events are sent to which queues.
+#========================================================================
+- dm aq_event_map_file ./aq_event_map
+###########
+#
+# @(#)% %
+#
+# Copyright (c) 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+###########
+
+#======================================================================
+# dm_loglevel
+#
+# How much information dm_provision should log.
+# 
+# The value for this entry can be:
+#  -- 0: no logging
+#  -- 1: log error messages only (default)
+#  -- 2: log error messages and warnings
+#  -- 3: log error messages, warnings, and debugging messages
+#======================================================================
+- dm loglevel 1
+
+#**********************************************************************
+# Communication with Infranet Provisioning Agent.
+#**********************************************************************
+#======================================================================
+# dm_provision_prov_ptr
+#
+# Specifies a pointer to the Infranet provisioning agent.
+#
+# The entry includes three values:
+# 
+#     <protocol> = "ip", for this release
+#     <host>     = the name or IP address of the computer running the
+#                    Infranet agent
+#     <port>     = the TCP port number of the Infranet agent on
+#                    this computer
+#
+#======================================================================
+- dm_provision prov_ptr ip <hostname> 20000
+
+#**********************************************************************
+# Timeout for responses Infranet Provisioning Agent.
+#**********************************************************************
+#======================================================================
+# dm_provision_prov_timeout
+#
+# Specifies a timeout when waiting for responses from Infranet
+# agent.  The value is specified in seconds.  0 means no timeout.
+# This timeout is mostly useful for "confirmed" orders, where
+# the response is not returned until the order has been completely
+# processed.
+#
+#======================================================================
+- dm_provision prov_timeout 20
+
+
+#**********************************************************************
+# Reconnecting to Infranet agent
+#**********************************************************************
+#======================================================================
+# dm_provision_connect_retries
+#
+# Specifies the number of times dm_provision tries to retry to
+# connect to the Infranet agent when connecting fails.  Before
+# each retry, dm_provision waits the interval specified in
+# connect_retry_interval.
+#
+#======================================================================
+- dm_provision connect_retries 1
+
+#======================================================================
+# dm_provision_connect_retry_interval
+#
+# Specifies how many seconds to wait before retrying to connect
+# to the Infranet agent when connecting fails.  0 means no wait.
+#
+#======================================================================
+- dm_provision connect_retry_interval 2

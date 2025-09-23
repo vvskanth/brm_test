@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--==================================================================================
+ Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved. 
+ 
+        This material is the confidential property of Oracle Corporation or its
+        licensors and may be used, reproduced, stored or transmitted only in
+        accordance with a valid Oracle license or sublicense agreement.
+        =================================================================================-->
+
+<BusinessConfiguration
+        xmlns="http://www.portal.com/schemas/BusinessConfig"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.portal.com/schemas/BusinessConfig business_configuration.xsd">
+ <ProvisioningTagConfiguration>
+  <ProvisioningTagList>
+   <ProvisioningTag name="Platinum">
+
+                        <PermittedTypes>/service/email</PermittedTypes>
+                        <PermittedTypes>/service/ip/gprs</PermittedTypes>
+                        <PermittedTypes>/service/content</PermittedTypes>
+                        <PermittedTypes>/service/vpdn</PermittedTypes>
+                        <PermittedTypes>/service/ip</PermittedTypes>
+                        <PermittedTypes>/service/fax</PermittedTypes>
+                        <PermittedTypes>/service/ip/gprs</PermittedTypes>
+                        <PermittedTypes>/service/telco</PermittedTypes>
+                        <PermittedTypes>/service/telco/gsm</PermittedTypes>
+                        <PermittedTypes>/service/telco/gsm/data</PermittedTypes>
+                        <PermittedTypes>/service/telco/gsm/fax</PermittedTypes>
+                        <PermittedTypes>/service/telco/gsm/sms</PermittedTypes>
+                        <PermittedTypes>/service/telco/gsm/telephony</PermittedTypes>
+
+                        <OpcodeList>
+                                <OpcodeName>PCM_OP_CUST_SET_SUBSCRIBER_PREFERENCES</OpcodeName>
+                                <OpcodeNumber>3916</OpcodeNumber>
+                                <OpcodeMode>0</OpcodeMode>
+
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_POID</OpcodeParamName>
+                                        <OpcodeParamValue>0.0.0.0 /profile/subscriber_preferences -1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_DELETED_FLAG</OpcodeParamName>
+                                        <OpcodeParamValue>0</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_ACCOUNT_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$ACCOUNT$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SERVICE_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$SERVICE$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>SET_SUBSCRIBER_PREFERENCES</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SUBSCRIBER_PREFERENCES[0].PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>Language</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SUBSCRIBER_PREFERENCES[0].PIN_FLD_VALUE</OpcodeParamName>
+                                        <OpcodeParamValue>English</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SUBSCRIBER_PREFERENCES[0].PIN_FLD_SUBSCRIBER_PREFERENCE_ID</OpcodeParamName>
+                                        <OpcodeParamValue>1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SUBSCRIBER_PREFERENCES[1].PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>Channel</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SUBSCRIBER_PREFERENCES[1].PIN_FLD_VALUE</OpcodeParamName>
+                                        <OpcodeParamValue>IVR</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SUBSCRIBER_PREFERENCES[1].PIN_FLD_SUBSCRIBER_PREFERENCE_ID</OpcodeParamName>
+                                        <OpcodeParamValue>2</OpcodeParamValue>
+                                </OpcodeParamsList>
+                        </OpcodeList>
+                        <OpcodeList>
+                                <OpcodeName>PCM_OP_CUST_SET_SUBSCRIBER_PREFERENCES</OpcodeName>
+                                <OpcodeNumber>3916</OpcodeNumber>
+                                <OpcodeMode>1</OpcodeMode>
+
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_POID</OpcodeParamName>
+                                        <OpcodeParamValue>0.0.0.0 /profile/subscriber_preferences -1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_DELETED_FLAG</OpcodeParamName>
+                                        <OpcodeParamValue>1</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_ACCOUNT_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$ACCOUNT$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_SERVICE_OBJ</OpcodeParamName>
+                                        <OpcodeParamValue>$SERVICE$</OpcodeParamValue>
+                                </OpcodeParamsList>
+                                <OpcodeParamsList>
+                                        <OpcodeParamName>PIN_FLD_NAME</OpcodeParamName>
+                                        <OpcodeParamValue>DEL_SUBSCRIBER_PREFERENCES</OpcodeParamValue>
+                                </OpcodeParamsList>
+                        </OpcodeList>
+
+   </ProvisioningTag>
+  </ProvisioningTagList>
+ </ProvisioningTagConfiguration>
+</BusinessConfiguration>

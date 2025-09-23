@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<!--  $Header: bus_platform_vob/financial/config/load/config_rev_rec_map.xml /cgbubrm_mainbrm.portalbase/1 2017/06/20 23:58:43 sagaur Exp $ -->
+
+<!-- 
+ Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+	This material is the confidential property of Oracle Corporation or
+	its licensors and may be used, reproduced, stored or transmitted only
+	in accordance with a valid Oracle license or sublicense agreement.
+
+	NAME
+	config_rev_rec_map.xml - Input XML file to create /config/rev_rec_map object.
+
+	DESCRIPTION
+	Input XML file to create /config/rev_rec_map object.
+
+	MODIFIED   (MM/DD/YY)
+	sagaur    04/27/17 - Creation
+-->
+
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_rev_rec_map.xsd">
+
+   <ConfigObject>
+
+	<DESCR>Mapping of attributes to revenue recognition schedule</DESCR>
+        <NAME>Rev Rec Map</NAME>
+	<MAP elem="0">
+		<EVENT_TYPE>/event/billing/product/action/purchase</EVENT_TYPE>
+		<SERVICE_TYPE>/service/email</SERVICE_TYPE>
+		<RULES elem="0">
+			<GL_ID>100</GL_ID>
+			<TYPE_STR>Charge</TYPE_STR>
+			<RATE_TAG>Rate 1</RATE_TAG>
+			<RESOURCE_ID>840</RESOURCE_ID>
+			<NAME>Purchase Schedule One</NAME>
+		</RULES>
+		<RULES elem="1">
+			<GL_ID>102</GL_ID>
+			<TYPE_STR>Discount</TYPE_STR>
+			<RATE_TAG>Rate 4</RATE_TAG>
+			<RESOURCE_ID>840</RESOURCE_ID>
+			<NAME>Purchase Schedule Two</NAME>
+		</RULES>
+	</MAP>
+	<MAP elem="1">
+		<EVENT_TYPE>/event/billing/product/action/purchase</EVENT_TYPE>
+		<SERVICE_TYPE>/service/*</SERVICE_TYPE>
+		<RULES elem="0">
+			<GL_ID>101</GL_ID>
+			<TYPE_STR>Charge</TYPE_STR>
+			<RATE_TAG>Rate 2</RATE_TAG>
+			<NAME>Purchase Schedule Three</NAME>
+		</RULES>
+		<RULES elem="1">
+			<TYPE_STR>Discount</TYPE_STR>
+			<RATE_TAG>Rate 3</RATE_TAG>
+			<RESOURCE_ID>840</RESOURCE_ID>
+			<CODE>987654321</CODE>
+		</RULES>
+	</MAP>
+
+   </ConfigObject>
+
+</ObjectList>

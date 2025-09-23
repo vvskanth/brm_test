@@ -1,0 +1,51 @@
+#
+# @(#)pin_snowball_distribution 1.0 2004/1/16 
+#
+#############################################################################
+#
+# Copyright (c) 2004, 2009, Oracle and/or its affiliates. All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation 
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#############################################################################
+#
+#
+#======================================================================
+# Use this file to specify the snowball distribution rule for 
+# snowball discounts.
+# 
+#======================================================================
+#
+#======================================================================
+# After editing the file, run the load_pin_snowball_distribution program to load 
+# the contents of the file into the Infranet database and create the 
+# /config/snowball_distribution object. 
+#======================================================================
+#
+#======================================================================
+# Syntax:
+# <snowball discount name> : <resource_id> 
+#
+# Parameters:
+#
+#    <snowball discount name>
+#      Indicates the snowball discount name.  You need to load the pricelist first.
+#
+#    <resource_id>
+#      if the value is 0, it indicates that for this entry's snowball discount, even
+#		distribution will be done; if the value is greater than 0, then it will be 
+#		treated as a resource id, and based on the contribution for this resource id by
+#		different contributor, the snowball discount will be distributed.
+#      So you need to first successfully load the pin_beid before loading this file.
+#
+#	the default contributors will be '*'.
+
+# 	Following is an example:
+#	snowball one		:	0
+#	snowball two		:	1000003
+#======================================================================
+#
+#======================================================================

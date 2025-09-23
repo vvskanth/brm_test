@@ -1,0 +1,46 @@
+# Copyright (c) 2008, Oracle and/or its affiliates.All rights reserved. 
+#
+# This material is the confidential property of Oracle Corporation or its
+# licensors and may be used, reproduced, stored or transmitted only in
+# accordance with a valid Oracle license or sublicense agreement.
+#
+
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/device/num"
+1     PIN_FLD_DESCR           STR [0] "Used to represent a unique telephone number."
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 13
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DEVICE_NUM"
+2         PIN_FLD_DESCR           STR [0] "Used to contain /device/num attributes."
+2         PIN_FLD_ORDER        DECIMAL [0] 2
+2         PIN_FLD_AUDITABLE       INT [0] 0
+2         PIN_FLD_ENCRYPTABLE     INT [0] 0
+2     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 10
+3         PIN_FLD_FIELD_TYPE      INT [0] 5
+3         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIG_NETWORK_ID"
+3         PIN_FLD_DESCR           STR [0] "Original Network identifier."
+3         PIN_FLD_ORDER        DECIMAL [0] 2
+3         PIN_FLD_LENGTH          INT [0] 255
+3         PIN_FLD_ACTION          STR [0] "ADD"
+3         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3         PIN_FLD_AUDITABLE       INT [0] 0
+3         PIN_FLD_ENCRYPTABLE     INT [0] 0
+3         PIN_FLD_SM_ITEM_NAME    STR [0] "orig_network_id"
+2     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 10
+3         PIN_FLD_FIELD_TYPE      INT [0] 5
+3         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECENT_NETWORK_ID"
+3         PIN_FLD_DESCR           STR [0] "Recent Network identifier."
+3         PIN_FLD_ORDER        DECIMAL [0] 2
+3         PIN_FLD_LENGTH          INT [0] 255
+3         PIN_FLD_ACTION          STR [0] "ADD"
+3         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3         PIN_FLD_AUDITABLE       INT [0] 0
+3         PIN_FLD_ENCRYPTABLE     INT [0] 0
+3         PIN_FLD_SM_ITEM_NAME    STR [0] "recent_network_id"
+2     PIN_FLD_SM_ITEM_NAME    STR [0] "device_num_t"
+2     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/device/num.PIN_FLD_DEVICE_NUM'}"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

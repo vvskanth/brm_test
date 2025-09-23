@@ -1,0 +1,51 @@
+######################################################################
+#
+# File: pin_device_permit_map_voucher
+#
+# Copyright (c) 2004 - 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation
+# or its licensors and may be used, reproduced, stored or transmitted
+# only in accordance with a valid Oracle license or sublicense agreement.
+#
+# Description:
+# This file specifies the services with which voucher devices can be 
+# associated. It also specifies that voucher devices can be associated
+# with /account objects. This file can be used to load voucher device-
+# to-service and voucher device-to-/account object associations into
+# your Portal database.
+#
+#
+# Important:  If you do not load these associations into your database,
+#             Portal cannot associate voucher devices with services or
+#             accounts.
+#
+# Syntax:
+# device_type    :<service_type>
+#                :<service_type>
+#                .
+#                .
+#                :<service_type>
+#
+# Where:
+# device_type    The type of device that can be
+#		 associated with a service or an account.
+#
+# service_type   A service type to associate with a specified 
+#                device type. An unlimited number of service types 
+#                can be associated with any device type.
+#
+#                Note that the /account object is included in the
+#                default list of service types to enable vouchers to be
+#                associated with accounts.
+#
+######################################################################
+
+##
+# Voucher devices can be associated with the following services:
+##
+/device/voucher    :/service/telco/gsm/telephony
+                   :/service/telco/gsm/sms
+                   :/service/telco/gsm/fax
+                   :/service/telco/gsm/data
+                   :/account

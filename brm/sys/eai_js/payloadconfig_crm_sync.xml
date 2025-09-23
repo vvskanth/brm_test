@@ -1,0 +1,265 @@
+<!-- 
+ * @(#)%Portal Version: payloadconfig_crm_sync.xml:PortalBase7.3.1Int:2:2009-Oct-17 05:36:28 % 
+ *
+ * @(#)payloadconfig_crm_sync.xml 1.5
+ *
+* Copyright (c) 2007, 2015, Oracle and/or its affiliates. All rights reserved.
+ * or its licensors and may be used, reproduced, stored or transmitted only in accordance with a valid Oracle
+ * license or sublicense  agreement.
+ *
+-->
+
+<PayloadConfig>
+	<PublisherDefs>
+	<!--
+		For each additional publisher, add an entry of element type
+		Publisher, with the events to be published.
+	-->
+		<Publisher DB="0.0.0.0" Format="XML">
+			ProductInfoChange,
+			DiscountInfoChange,
+                        SponsorshipInfoChange,
+			AccountStatusUpdate,
+			AccountInfoChange,
+                        InstallmentNotification
+		</Publisher>
+	</PublisherDefs>
+
+	<ConditionDefs>
+	<!--
+		Define the condition for which the event can be published.
+		The possible value for Operator are:
+			EQ		- EQualto
+			NE		- Not-Equalto
+			LT		- LessThan
+			GT		- GreaterThan
+			LE		- Lessthan-Equalto
+			GE		- Greaterthan-Equalto
+			CHECK-BITS	- For checking specified bits for Integers.
+		You can group the BooleanExpressions using the following mode:
+			<AndExpression>
+			<OrExpression>
+			<NotExpression>
+
+		Example:
+			<NotExpression>
+				<BooleanExpression PinFld="OP_FLAGS" Value="0x8000" Operator="CHECK-BITS"/>
+			</NotExpression>
+
+			<BooleanExpression PinFld="PIN_FLD_FLAGS" Value="128" Operator="NE"/>
+	-->
+		<ReratingCondition>
+			<NotExpression>
+				<BooleanExpression PinFld="OP_FLAGS" Value="0x8000" Operator="CHECK-BITS"/>
+			</NotExpression>
+		</ReratingCondition>
+	</ConditionDefs>
+
+	<ElementDefs>
+	<ProductInfo Source="EVENT" PinFld="PIN_FLD_PRODUCTS"
+	DataFrom="PIN_FLD_PRODUCTS" Tag="ProductInfo">
+	<Field PinFld="PIN_FLD_POID" Tag="ProductPoid"/>
+	<Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+	<Field PinFld="PIN_FLD_START_T" Tag="ProductStartTime"/>
+	<Field PinFld="PIN_FLD_END_T" Tag="ProductEndTime"/>
+	<Field PinFld="PIN_FLD_PERMITTED" Tag="PermittedTypes"/>
+	<Field PinFld="PIN_FLD_PRIORITY" Tag="Priority"/>
+	<Field PinFld="PIN_FLD_TYPE" Tag="Type"/>
+	<Field PinFld="PIN_FLD_DESCR" Tag="Description"/>
+	<Field PinFld="PIN_FLD_CODE" Tag="Code"/>
+	<ExtendedInfo PinFld="PIN_FLD_USAGE_MAP" Tag="UsageMap">
+		<Field PinFld="PIN_FLD_EVENT_TYPE" Tag="UsageEventType"/>
+		<Field PinFld="PIN_FLD_RATE_PLAN_NAME" Tag="RatePlanName"/>
+		<Field PinFld="PIN_FLD_RUM_NAME" Tag="RumName"/>
+		<Field PinFld="PIN_FLD_RATE_PLAN_SELECTOR_OBJ" Tag="RatePlanSelectorObj"/>
+		<ExtendedInfo PinFld="PIN_FLD_RATE_PLAN_SELECTOR" Tag="RatePlanSelector">
+			<Field PinFld="PIN_FLD_POID" Tag="SelectorPoid"/>
+			<ExtendedInfo PinFld="PIN_FLD_COLUMNS" Tag="Columns">
+				<Field PinFld="PIN_FLD_SEPARATOR" Tag="Separator"/>
+				<Field PinFld="PIN_FLD_OPERATOR" Tag="Operator"/>
+				<Field PinFld="PIN_FLD_FIELD_NAME" Tag="FieldName"/>
+			</ExtendedInfo>
+			<ExtendedInfo PinFld="PIN_FLD_VALUE_RANGES" Tag="ValueRanges">
+				<Field PinFld="PIN_FLD_VALUE" Tag="Value"/>
+				<Field PinFld="PIN_FLD_RATE_PLAN_NAME" Tag="RatePlanName"/>
+				<Field PinFld="PIN_FLD_IMPACT_CATEGORY" Tag="ImpactCategory"/>
+			</ExtendedInfo>
+		</ExtendedInfo>
+		<ExtendedInfo PinFld="PIN_FLD_RATE_PLANS" Tag="RatePlan">
+			<Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+			<Field PinFld="PIN_FLD_CURRENCY" Tag="Currency"/>
+			<ExtendedInfo PinFld="PIN_FLD_RATE_TIERS" Tag="RateTiers">
+				<Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+				<Field PinFld="PIN_FLD_DATE_RANGE_TYPE" Tag="DateRangeType"/>
+				<Field PinFld="PIN_FLD_RATE_OBJ" Tag="RateObj"/>
+				<Field PinFld="PIN_FLD_PRIORITY" Tag="Priority"/>
+				<Field PinFld="PIN_FLD_RATE_INDEX" Tag="RateIndex"/>
+				<ExtendedInfo PinFld="PIN_FLD_DATE_RANGES" Tag="DateRanges">
+					<Field PinFld="PIN_FLD_RATE_OBJ" Tag="RateObj"/>
+					<Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+					<Field PinFld="PIN_FLD_RATE_INDEX" Tag="RateIndex"/>
+					<Field PinFld="PIN_FLD_LINEAGE" Tag="Lineage"/>
+					<Field PinFld="PIN_FLD_RELATIVE_END_UNIT" Tag="RelativeEndUnit"/>
+					<Field PinFld="PIN_FLD_RELATIVE_START_UNIT" Tag="RelativeStartUnit"/>
+					<Field PinFld="PIN_FLD_END_T" Tag="EndT"/>
+					<Field PinFld="PIN_FLD_START_T" Tag="StartT"/>
+					<Field PinFld="PIN_FLD_RELATIVE_END_OFFSET" Tag="RelativeEndOffset"/>
+					<Field PinFld="PIN_FLD_RELATIVE_START_OFFSET" Tag="RelativeStartOffset"/>
+				</ExtendedInfo>
+			</ExtendedInfo>
+			<ExtendedInfo PinFld="PIN_FLD_RATES" Tag="RateDetails">
+				<Field PinFld="PIN_FLD_POID" Tag="RateObj"/>
+				<Field PinFld="PIN_FLD_RATE_PLAN_OBJ" Tag="RatePlanObj"/>
+				<ExtendedInfo PinFld="PIN_FLD_QUANTITY_TIERS" Tag="QuantityTiers">
+					<Field PinFld="PIN_FLD_STEP_MAX" Tag="StepMax"/>
+					<Field PinFld="PIN_FLD_STEP_MIN" Tag="StepMin"/>
+						<ExtendedInfo PinFld="PIN_FLD_BAL_IMPACTS" Tag="BalImpacts">
+							<Field PinFld="PIN_FLD_ELEMENT_ID" Tag="ResourceId"/>
+							<Field PinFld="PIN_FLD_FIXED_AMOUNT" Tag="FixedAmount"/>
+							<Field PinFld="PIN_FLD_SCALED_AMOUNT" Tag="ScaledAmount"/>
+							<Field PinFld="PIN_FLD_SCALED_UNIT" Tag="ScaledUnit"/>
+							<Field PinFld="PIN_FLD_START_T" Tag="StartT"/>
+							<Field PinFld="PIN_FLD_END_T" Tag="EndT"/>
+							<Field PinFld="PIN_FLD_RELATIVE_START_OFFSET" Tag="RelativeStartOffset"/>
+							<Field PinFld="PIN_FLD_RELATIVE_END_OFFSET" Tag="RelativeEndOffset"/>
+							<Field PinFld="PIN_FLD_RELATIVE_START_UNIT" Tag="RelativeStartUnit"/>
+							<Field PinFld="PIN_FLD_RELATIVE_END_UNIT" Tag="RelativeEndUnit"/>
+							<Field PinFld="PIN_FLD_FLAGS" Tag="Flags"/>
+							<Field PinFld="PIN_FLD_GL_ID" Tag="GlId"/>
+							<Field PinFld="PIN_FLD_IMPACT_CATEGORY" Tag="ImpactCategory"/>
+						</ExtendedInfo>                                		
+				</ExtendedInfo>
+			</ExtendedInfo>
+		</ExtendedInfo>
+	</ExtendedInfo>
+        <ExtendedInfo PinFld="PIN_FLD_PROVISIONING_TAG_INFO"
+                Tag="ProvisioningTagInfo">
+        <Field PinFld="PIN_FLD_PROVISIONING_TAG" Tag="ProvisioningTagName"/>
+        <ExtendedInfo PinFld="PIN_FLD_EXT_RA" Tag="EraDetails">
+        <Field PinFld="PIN_FLD_ERA_CODE" Tag="EraCode"/>
+        <Field PinFld="PIN_FLD_ERA_NAME" Tag="EraName"/>
+        <Field PinFld="PIN_FLD_DESCR" Tag="EraDescription"/>
+        <Field PinFld="PIN_FLD_LABEL" Tag="EraLabel"/>
+        </ExtendedInfo>
+        </ExtendedInfo>
+	</ProductInfo>
+	<DiscountInfo Source="EVENT" PinFld="PIN_FLD_DISCOUNTS"
+   		DataFrom="PIN_FLD_DISCOUNTS" Tag="DiscountInfo">
+	    <Field PinFld="PIN_FLD_POID" Tag="DiscountPoid"/>
+	    <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+	    <Field PinFld="PIN_FLD_START_T" Tag="DiscountStartTime"/>
+	    <Field PinFld="PIN_FLD_END_T" Tag="DiscountEndTime"/>
+	    <Field PinFld="PIN_FLD_PERMITTED" Tag="PermittedTypes"/>
+	    <Field PinFld="PIN_FLD_PRIORITY" Tag="Priority"/>
+	    <Field PinFld="PIN_FLD_TYPE" Tag="Type"/>
+	    <Field PinFld="PIN_FLD_DESCR" Tag="Description"/>
+	    <Field PinFld="PIN_FLD_CODE" Tag="Code"/>
+	    <ExtendedInfo PinFld="PIN_FLD_USAGE_MAP" Tag="UsageMap">
+            	<Field PinFld="PIN_FLD_EVENT_TYPE" Tag="UsageEventType"/>
+                <ExtendedInfo PinFld="PIN_FLD_BAL_IMPACTS" Tag="BalImpacts">
+            	    <Field PinFld="PIN_FLD_RESOURCE_ID" Tag="ResourceId"/>
+            	    <Field PinFld="PIN_FLD_AMOUNT" Tag="Amount"/>
+            	    <Field PinFld="PIN_FLD_TYPE_STR" Tag="AmountType"/>
+	        </ExtendedInfo>
+  	    </ExtendedInfo>
+	</DiscountInfo>
+        <SponsorshipInfo Source="EVENT" PinFld="PIN_FLD_SPONSORSHIPS"
+                DataFrom="PIN_FLD_SPONSORSHIPS" Tag="SponsorshipInfo">
+            <Field PinFld="PIN_FLD_POID" Tag="SponsorshipPoid"/>
+            <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+            <Field PinFld="PIN_FLD_CODE" Tag="Code"/>
+            <Field PinFld="PIN_FLD_START_T" Tag="SponsorshipStartTime"/>
+            <Field PinFld="PIN_FLD_END_T" Tag="SponsorshipEndTime"/>
+            <Field PinFld="PIN_FLD_DESCR" Tag="Description"/>
+        </SponsorshipInfo>
+        <JobBatches Source="EVENT" PinFld="PIN_FLD_BATCHES"
+        DataFrom="PIN_FLD_BATCHES" Tag="Batches" >
+                <Field PinFld="PIN_FLD_OBJECT" Tag="BatchObj" />
+        </JobBatches>
+        <StatusInfo Source="EVENT" PinFld="PIN_FLD_STATUSES"
+                DataFrom="PIN_FLD_STATUSES" Tag="StatusInfo" UseOnlyElement="1">
+            <Field PinFld="PIN_FLD_STATUS" Tag="Status"/>
+            <Field PinFld="PIN_FLD_STATUS_FLAGS" Tag="StatusFlags"/>
+        </StatusInfo>
+	</ElementDefs>
+
+	<EventDefs>
+		<AccountInfoChange Source="EVENT"
+		Tag="AccountInfoChange"
+		StartEvent="/event/notification/amt/AccountInfoChange">
+			<Attribute Tag="InstanceId" Value="Portal"/>
+			<Attribute Tag="xmlns" Value="http://www.portal.com/schemas/CRMSync"/>
+			<Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+			<Attribute Tag="xsi:schemaLocation" Value="http://www.portal.com/schemas/CRMSync/AccountInfoChange.xsd"/>
+			<Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+			<SubElement Name="JobBatches"
+			OnEvent="/event/notification/amt/AccountInfoChange" />
+		</AccountInfoChange>
+		<ProductInfoChange Source="EVENT"
+		Tag="ProductInfoChange"
+		StartEvent="/event/notification/price/products/modify">
+			<Attribute Tag="InstanceId" Value="Portal"/>
+			<Attribute Tag="xmlns" Value="http://www.portal.com/schemas/CRMSync"/>
+			<Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+			<Attribute Tag="xsi:schemaLocation" Value="http://www.portal.com/schemas/CRMSync/ProductInfoChange.xsd"/>
+			<Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+			<SubElement Name="ProductInfo"
+			OnEvent="/event/notification/price/products/modify" />
+		</ProductInfoChange>
+		<DiscountInfoChange Source="EVENT" 
+		Tag="DiscountInfoChange"
+		StartEvent="/event/notification/price/discounts/modify">
+			<Attribute Tag="InstanceId" Value="Portal"/>
+			<Attribute Tag="xmlns" Value="http://www.portal.com/schemas/CRMSync"/>
+			<Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+			<Attribute Tag="xsi:schemaLocation" Value="http://www.portal.com/schemas/CRMSync/DiscountInfoChange.xsd"/>
+			<Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+			<SubElement Name="DiscountInfo"
+			OnEvent="/event/notification/price/discounts/modify"/>
+		</DiscountInfoChange>
+                <SponsorshipInfoChange Source="EVENT"
+                Tag="SponsorshipInfoChange"
+                StartEvent="/event/notification/price/sponsorships/modify">
+                        <Attribute Tag="InstanceId" Value="Portal"/>
+                        <Attribute Tag="xmlns" Value="http://www.portal.com/schemas/CRMSync"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation" Value="http://www.portal.com/schemas/CRMSync/SponsorshipInfoChange.xsd"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+                        <SubElement Name="SponsorshipInfo"
+                        OnEvent="/event/notification/price/sponsorships/modify"/>
+                </SponsorshipInfoChange>
+		<AccountStatusUpdate Source="EVENT" 
+		Tag="AccountStatusUpdate" 
+		StartEvent="/event/customer/status" >
+			<Attribute Tag="InstanceId" Value="Portal"/>
+			<Attribute Tag="xmlns" Value="http://www.portal.com/schemas/CRMSync"/>
+			<Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+			<Attribute Tag="xsi:schemaLocation" Value="http://www.portal.com/schemas/CRMSync/AccountStatusUpdate.xsd"/>
+			<Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+			<Field PinFld="PIN_FLD_SERVICE_OBJ" Tag="ServiceObj"/>
+			<Field PinFld="PIN_FLD_END_T"     Tag="EndT"/>
+			<SubElement Name="StatusInfo"
+			OnEvent="/event/customer/status"/>
+		</AccountStatusUpdate>
+                <InstallmentNotification Source="EVENT"
+                StartEvent="/event/notification/installment/due"
+                Tag="InstallmentNotification">
+                        <Attribute Tag="InstanceId" Value="Installment"/>
+                        <Attribute Tag="xmlns" Value="http://www.portal.com/schemas/CRMSync"/>
+                        <Attribute Tag="xmlns:xsi" Value="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <Attribute Tag="xsi:schemaLocation"
+                                Value="http://www.portal.com/schemas/CRMSync/InstallmentNotification.xsd"/>
+                        <Field PinFld="PIN_FLD_POID" Tag="EventObj"/>
+                        <Field PinFld="PIN_FLD_ACCOUNT_OBJ" Tag="AccountObj"/>
+                        <Field PinFld="PIN_FLD_START_T" Tag="StartT"/>
+                        <Field PinFld="PIN_FLD_END_T" Tag="EndT"/>
+                        <Field PinFld="PIN_FLD_NAME" Tag="Name"/>
+                        <Field PinFld="PIN_FLD_PROGRAM_NAME" Tag="ProgramName"/>
+                        <Field PinFld="PIN_FLD_INSTALLMENT_OBJ" Tag="InstallmentObj"/>
+                        <Field PinFld="PIN_FLD_EFFECTIVE_T" Tag="EffectiveT"/>
+                        <Field PinFld="PIN_FLD_STATUS" Tag="Status"/>
+                        <Field PinFld="PIN_FLD_AMOUNT" Tag="Amount"/>
+                </InstallmentNotification>
+	</EventDefs>
+
+</PayloadConfig>

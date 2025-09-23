@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--==================================================================================
+        Copyright (c) 2021, 2022, Oracle and/or its affiliates. All rights reserved.
+        This material is the confidential property of Oracl corporation or its
+        licensors and may be used, reproduced, stored or transmitted only in
+        accordance with a valid Oracle license or sublicense agreement.
+ =================================================================================-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_event_promo_tag_map.xsd">
+
+<ConfigObject>
+	<DESCR>Event Promo Tag Map Configuration</DESCR>
+	<HOSTNAME>-</HOSTNAME>
+	<NAME>Event Promo Tag Map</NAME>
+	<PROGRAM_NAME>load_config</PROGRAM_NAME>
+	<EVENT_MAP elem="0">
+		<PROMO_EVENT_TYPE>/event/promotion/birthday</PROMO_EVENT_TYPE>
+		<PROMO_TAG>BIRTHDAY</PROMO_TAG>
+	</EVENT_MAP>
+	<EVENT_MAP elem="1">
+		<PROMO_EVENT_TYPE>/event/promotion/tier_reward</PROMO_EVENT_TYPE>
+		<PROMO_TAG>TierReward</PROMO_TAG>
+	</EVENT_MAP>
+	<EVENT_MAP elem="2">
+		<PROMO_EVENT_TYPE>/event/promotion/anniversary</PROMO_EVENT_TYPE>
+		<PROMO_TAG>ANNIVERSARY</PROMO_TAG>
+	</EVENT_MAP>
+</ConfigObject>
+
+</ObjectList>

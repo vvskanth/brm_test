@@ -1,0 +1,39 @@
+#
+# @(#)pin_network_element 1.0 01/05/21
+#
+version 1
+#======================================================================
+#
+# @(#)% %
+#
+# Copyright (c) 2001 - 2006 Oracle. All rights reserved.
+#
+# This material is the confidential property of Oracle Corporation or its 
+# licensors and may be used, reproduced, stored or transmitted only in 
+# accordance with a valid Oracle license or sublicense agreement.
+#
+#
+#======================================================================
+# Use this file to list a global set of network element, or HLR,
+# identifiers.  Loading this file will replace existing objects with
+# the ones defined below.
+#
+# Note: Since this is a global list, only the root login should
+#       use this file and utility to manage it.  Brand administrators
+#       are not able to replace existing values with this file and
+#       utility.
+#
+# Use the following syntax for defining network elemnts:
+#
+# <network_element>
+#
+# Where:
+#   <network_element> is an identification string for an HLR.
+#
+#======================================================================
+#
+#
+#======================================================================
+sample_network_element_1
+sample_network_element_2
+#

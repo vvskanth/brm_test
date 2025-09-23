@@ -1,0 +1,404 @@
+#
+#      Copyright (c) 2006 - 2009 Oracle. All rights reserved.
+#      This material is the confidential property of Oracle Corporation
+#      or its licensors and may be used, reproduced, stored or transmitted
+#      only in accordance with a valid Oracle license or sublicense agreement.
+#
+#       This file contains the definitions of Storable Classes used by
+#       PortalBase.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 20, used 11
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 20, used 12
+1     PIN_FLD_NAME            STR [0] "/order"
+1     PIN_FLD_DESCR           STR [0] "This represents the order object"
+1     PIN_FLD_SEQ_START       INT [0] 1
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 14
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QUANTITY"
+2         PIN_FLD_DESCR           STR [0] "Total order quantity."
+2         PIN_FLD_ORDER        DECIMAL [0] 7
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2	  PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "quantity"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Link to the parent order object - if any"
+2         PIN_FLD_ORDER        DECIMAL [0] 9
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2	  PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "parent_order_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RESULTS_DATA"
+2         PIN_FLD_DESCR           STR [0] "Array containing specific information with respect to the response files received from the voucher. "
+2         PIN_FLD_ORDER        DECIMAL [0] 11
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_QUANTITY_APPLIED"
+3             PIN_FLD_DESCR           STR [0] "Represents received quantity. "
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3	      PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "quantity_applied"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PARAMETERS"
+3             PIN_FLD_DESCR           STR [0] "The starting number for thedevices "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3	      PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "parameters"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECEIVED_T"
+3             PIN_FLD_DESCR           STR [0] "Response file receive time. "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_LENGTH          INT [0] 30
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3	      PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "received_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RES_FILE_NAME"
+3             PIN_FLD_DESCR           STR [0] "The response file name. "
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3	      PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "res_file_name"
+2	  PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "order_results_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FILES"
+2         PIN_FLD_DESCR           STR [0] "Array containing information about the request files associated with this order "
+2         PIN_FLD_ORDER        DECIMAL [0] 12
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ENCRYPTION_TYPE"
+3             PIN_FLD_DESCR           STR [0] "The encryption of the request file"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3	      PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "encryption_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FILENAME"
+3             PIN_FLD_DESCR           STR [0] "Name of the request file  with full path"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_LENGTH          INT [0] 255
+3	      PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "req_file_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+3             PIN_FLD_DESCR           STR [0] "Time the request file was created. "
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3	      PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "order_files_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDERS_DATA"
+2         PIN_FLD_DESCR           STR [0] "Array containing order object poids "
+2         PIN_FLD_ORDER        DECIMAL [0] 13
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_OBJ"
+3             PIN_FLD_DESCR           STR [0] "The sub orders poid"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "order_obj"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "order_orders_t"
+1     PIN_FLD_ACTION          STR [0] "MODIFY"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "order_t"
+0 PIN_FLD_OBJ_DESC      ARRAY [1] allocated 20, used 8
+1     PIN_FLD_NAME            STR [0] "/config/order_state"
+1     PIN_FLD_DESCR           STR [0] "The config order object configure order's life cycle"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_CREATE_ACCESS    STR [0] "BrandOwner"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE_INFO"
+2         PIN_FLD_DESCR           STR [0] "Array containing specific information with respect to the response files received from the voucher. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Represents order type"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "order_type"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_order_type_info_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 11
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_STATES"
+2         PIN_FLD_DESCR           STR [0] "Array of order state"
+2         PIN_FLD_ORDER        DECIMAL [0] 1
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_ID"
+3             PIN_FLD_DESCR           STR [0] "The encryption of the request file"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "state_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STR_VERSION"
+3             PIN_FLD_DESCR           STR [0] "The version of the localized string within domain: Reason Codes-Credit Reasons or Reason Codes-Debit Reasons."
+3             PIN_FLD_LABEL           STR [0] "Reason code str ver"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "str_version"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STRING_ID"
+3             PIN_FLD_DESCR           STR [0] "The string ID within the String Version. It identifies the reason code to which this G/L ID has been assigned."
+3             PIN_FLD_LABEL           STR [0] "Reason code str ID"
+3             PIN_FLD_ORDER        DECIMAL [0] 2
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "string_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_TYPE"
+3             PIN_FLD_DESCR           STR [0] "The state type of the order. It could be raw state, initial state, termination state, or normal state."
+3             PIN_FLD_ORDER        DECIMAL [0] 3
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "state_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NEXT_STATES"
+3             PIN_FLD_DESCR           STR [0] "Array of order state"
+3             PIN_FLD_ORDER        DECIMAL [0] 4
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_ID"
+4                 PIN_FLD_LABEL           STR [0] "order states"
+4                 PIN_FLD_ORDER        DECIMAL [0] 0
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_ACTION          STR [0] "ADD"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "state_id"
+3                 PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_order_next_states_t"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_order_states_t"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [2] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/order"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct to hold order poids"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_OBJ"
+3             PIN_FLD_DESCR           STR [0] "The order object of the event."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_LENGTH          INT [0] 64
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "order_obj"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_order_t"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [3] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/order/associate"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order state change events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUB_ORDER_INFO"
+2         PIN_FLD_DESCR           STR [0] "The substruct to hold the sub order object info"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_OBJ"
+3             PIN_FLD_DESCR           STR [0] "The poid of the sub order object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "order_obj"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_order_associate_t"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/order/attribute"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order state change events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ATTRIBUTE_INFO"
+2         PIN_FLD_DESCR           STR [0] "The substruct to hold the order attributes."
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+3             PIN_FLD_DESCR           STR [0] "The physical id of the order object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_ID"
+3             PIN_FLD_DESCR           STR [0] "The physical id of the order object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "order_id"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_order_attribute_t"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/order/brand"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order state change events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_BRAND_INFO"
+2         PIN_FLD_DESCR           STR [0] "Substruct to hold the brand info"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_BRAND"
+3             PIN_FLD_DESCR           STR [0] "The old brand of order"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "old_brand"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NEW_BRAND"
+3             PIN_FLD_DESCR           STR [0] "The new brand of order"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "new_brand"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_order_brand_t"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [6] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/event/order/create"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order create events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [7] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/event/order/delete"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order delete events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [8] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/order/disassociate"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order state change events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUB_ORDER_INFO"
+2         PIN_FLD_DESCR           STR [0] "The substruct to hold the sub order object info"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 7
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORDER_OBJ"
+3             PIN_FLD_DESCR           STR [0] "The poid of the sub order object."
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "order_obj"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_order_disassociate_t"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [9] allocated 20, used 5
+1     PIN_FLD_NAME            STR [0] "/event/order/process"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order process events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [10] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/event/order/state"
+1     PIN_FLD_DESCR           STR [0] "The event object to store order state change events"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 10
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STATE_INFO"
+2         PIN_FLD_DESCR           STR [0] "Order state information"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_STATE"
+3             PIN_FLD_DESCR           STR [0] "The old state of order"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "old_state"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NEW_STATE"
+3             PIN_FLD_DESCR           STR [0] "The new state of order"
+3             PIN_FLD_ORDER        DECIMAL [0] 0
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "new_state"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "event_order_state_t"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

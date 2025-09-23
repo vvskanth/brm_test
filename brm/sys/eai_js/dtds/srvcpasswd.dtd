@@ -1,0 +1,16 @@
+<!--
+Infranet Service password modification event.
+-->
+
+<!--
+Common element definitions....
+-->
+
+<!ENTITY % Common SYSTEM "common.dtd">
+%Common;
+
+<!ELEMENT Portal.Infranet.Events.ServicePasswd (AccountObj,ServiceObj,
+Passwords)>
+<!ATTLIST Portal.Infranet.Events.ServicePasswd Version 
+CDATA #FIXED "1.0" >
+

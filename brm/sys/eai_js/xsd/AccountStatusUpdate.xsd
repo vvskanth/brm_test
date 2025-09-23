@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xs:schema elementFormDefault="qualified"
+            targetNamespace="http://www.portal.com/schemas/CRMSync"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.portal.com/schemas/CRMSync">
+	<xs:element name="AccountStatusUpdate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AccountObj" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="ServiceObj" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="EndT" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="StatusInfo" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute ref="InstanceId" use="required"/>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="AccountObj" type="xs:string"/>
+	<xs:element name="ServiceObj" type="xs:string"/>
+	<xs:element name="EndT" type="xs:string"/>
+	<xs:element name="StatusInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Status"/>
+				<xs:element ref="StatusFlags"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Status" type="xs:int"/>
+	<xs:element name="StatusFlags" type="xs:int"/>
+	<xs:attribute name="InstanceId" type="xs:string"/>
+</xs:schema> 

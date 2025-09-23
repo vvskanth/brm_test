@@ -1,0 +1,23 @@
+#
+#version 2
+#=================================================================
+#
+# Copyright (c) 1999, 2012, Oracle and/or its affiliates. All rights reserved. 
+#
+#	This material is the confidential property of Oracle 
+#	Corporation or its licensors and may be used, reproduced, 
+#	stored or transmitted only in accordance with a valid 
+#	Oracle license or sublicense agreement.
+#
+#======================================================================
+#
+# This causes PCM_OP_COLLECTIONS_PUBLISH_EVENT opcode 
+# to be called when the following event occurs.
+#
+3825    0      /event/audit/collections/action
+
+
+# This causes PCM_OP_PUBLISH_GEN_PAYLOAD opcode to be called
+# when the following events happen.
+#
+1301    0      /event/notification/collections/info_change

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--==================================================================================
+        Copyright (c) 2021, 2022, Oracle and/or its affiliates. All rights reserved.
+        This material is the confidential property of Oracl corporation or its
+        licensors and may be used, reproduced, stored or transmitted only in
+        accordance with a valid Oracle license or sublicense agreement.
+ =================================================================================-->
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_event_promo_map.xsd">
+
+<ConfigObject>
+	<DESCR>Event Promo Map Configuration</DESCR>
+	<HOSTNAME>-</HOSTNAME>
+	<NAME>Event Promo Map</NAME>
+	<PROGRAM_NAME>load_config</PROGRAM_NAME>
+	<EVENT_MAP elem="0">
+		<EVENT_TYPE>/event/billing/topup</EVENT_TYPE>
+		<FIELD_NUM>55</FIELD_NUM>
+		<FIELD_VALUE>Topup Event (acct)</FIELD_VALUE>
+		<PROMO_EVENT_TYPE>/event/promotion/topup</PROMO_EVENT_TYPE>
+	</EVENT_MAP>
+	<EVENT_MAP elem="1">
+		<EVENT_TYPE>/event/billing/product/action/set_validity</EVENT_TYPE>
+		<FIELD_NUM>0</FIELD_NUM>
+		<FIELD_VALUE></FIELD_VALUE>
+		<PROMO_EVENT_TYPE>/event/promotion/first_call</PROMO_EVENT_TYPE>
+	</EVENT_MAP>
+	<EVENT_MAP elem="2">
+		<EVENT_TYPE>/event/billing/product/action/purchase</EVENT_TYPE>
+		<FIELD_NUM>55</FIELD_NUM>
+		<FIELD_VALUE>Purchase Product (srvc): Product 1a - Internet Access</FIELD_VALUE>
+		<PROMO_EVENT_TYPE>/event/promotion/purchase_product</PROMO_EVENT_TYPE>
+	</EVENT_MAP>
+	<EVENT_MAP elem="3">
+		<EVENT_TYPE>/event/notification/profile/create</EVENT_TYPE>
+		<FIELD_NUM>601</FIELD_NUM>
+		<FIELD_VALUE>CLOSEDUSERGROUP</FIELD_VALUE>
+		<PROMO_EVENT_TYPE>/event/promotion/cug</PROMO_EVENT_TYPE>
+	</EVENT_MAP>
+</ConfigObject>
+
+</ObjectList>

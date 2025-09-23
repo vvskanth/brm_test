@@ -1,0 +1,13 @@
+<!--
+Infranet customer delete event.
+-->
+
+<!--
+Common element definitions....
+-->
+
+<!ENTITY % Common SYSTEM "common.dtd">
+%Common;
+
+<!ELEMENT Portal.Infranet.Events.CustDelete (AccountObj)>
+<!ATTLIST Portal.Infranet.Events.CustDelete Version CDATA #FIXED "1.0" >

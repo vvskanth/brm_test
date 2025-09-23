@@ -1,0 +1,102 @@
+--
+-- Copyright (c) 2021, Oracle.All rights reserved.
+--
+-- This material is the confidential property of Oracle Corporation.
+-- or its licensors and may be used, reproduced, stored or transmitted
+-- only in accordance with a valid Oracle license or sublicense agreement.
+--
+--
+-- SOURCE of sql file to create the views.
+
+-- To create a main view for getting buckets from balance group.
+CREATE OR REPLACE VIEW balance_bucket_v AS
+SELECT TO_NUMBER(TO_CHAR(bg.poid_id0)|| TO_CHAR(bgb.rec_id)|| TO_CHAR(bgsb.rec_id)) as poid_id0,
+    bg.poid_db,
+    '/balance_bucket' as poid_type,
+    bg.poid_rev,
+    UTL_RAW.CAST_TO_VARCHAR2(UTL_ENCODE.BASE64_ENCODE(UTL_RAW.CAST_TO_RAW(TO_CHAR(bg.poid_id0)||'+'||TO_CHAR(bgb.rec_id)||'+'||TO_CHAR(bgsb.rec_id)))) as code,
+    bg.poid_db as bal_grp_obj_db,
+    bg.poid_id0 as bal_grp_obj_id0,
+    bg.poid_type as bal_grp_obj_type,
+    bg.poid_rev as bal_grp_obj_rev,
+    bg.account_obj_db,
+    bg.account_obj_id0,
+    bg.account_obj_type,
+    bg.account_obj_rev,
+    bg.billinfo_obj_db,
+    bg.billinfo_obj_id0,
+    bg.billinfo_obj_type,
+    bg.billinfo_obj_rev,
+    bg.created_t,
+    bg.mod_t,
+    bg.read_access,
+    bg.write_access,
+    bg.effective_t,
+    bg.name as name,
+    bgb.rec_id as resource_id,
+    bgb.credit_profile,
+    bgb.reserved_amount,
+    bgb.consumption_rule,
+    bgb.consumed_reserved_amount,
+    bgsb.rec_id as element_id,
+    bgsb.valid_from,
+    bgsb.valid_from_details,
+    bgsb.valid_to,
+    bgsb.valid_to_details,
+    bgsb.current_bal,
+    bgsb.next_bal,
+    bgsb.delayed_bal,
+    bgsb.granted_bal,
+    bgsb.grantor_obj_db,
+    bgsb.grantor_obj_id0,
+    bgsb.grantor_obj_type,
+    bgsb.grantor_obj_rev,
+    bgsb.rollover_data,
+    bgsb.contributor,
+    bgsb.unique_id,
+    bgsb.subtype,
+    cb.name as resource_name,
+    cb.beid_str_code,
+    cb.symbol,
+    b.status as status_flags
+FROM bal_grp_t bg, bal_grp_bals_t bgb, bal_grp_sub_bals_t bgsb, config_beid_balances_t cb, billinfo_t b
+WHERE bg.poid_id0 = bgb.obj_id0
+    AND bgb.rec_id = bgsb.rec_id2
+    AND bgb.obj_id0 = bgsb.obj_id0
+    AND bgsb.rec_id2 = cb.rec_id
+    AND b.poid_id0 = bg.billinfo_obj_id0;
+
+-- To create a view to get account details associated with a bucket.
+CREATE OR REPLACE VIEW balance_bucket_account_v AS 
+SELECT bb.poid_id0  as obj_id0,       
+    an.first_name,   
+    an.last_name,   
+    a.status as status,	   
+    an.rec_id as rec_id
+FROM balance_bucket_v bb, account_nameinfo_t an, account_t a
+WHERE bb.account_obj_id0 = an.obj_id0
+    AND a.poid_id0 = an.obj_id0;
+
+-- To create a view to get service details associated with a bucket.
+CREATE OR REPLACE VIEW balance_bucket_service_v AS 
+SELECT bb.poid_id0  as obj_id0, 
+    s.poid_id0 as service_obj_id0,       
+    s.poid_type as service_obj_type,   
+    s.poid_db as service_obj_db,   
+    s.poid_rev as service_obj_rev,   
+    s.login as login,   
+    (row_number() OVER(PARTITION BY bb.poid_id0 ORDER BY bb.poid_id0 ) -1) as rec_id
+FROM balance_bucket_v bb, service_t s   
+WHERE bb.bal_grp_obj_id0 = s.bal_grp_obj_id0;
+
+-- To create a view to get service alias linked to a service which is associated with that bucket.
+CREATE OR REPLACE VIEW balance_bucket_service_alias_v AS 
+SELECT bb.poid_id0  as obj_id0, 
+    sl.name as name,
+    sl.rec_id as rec_id,     
+    bs.rec_id as rec_id2
+FROM  balance_bucket_v bb, balance_bucket_service_v bs, service_t s
+INNER JOIN service_alias_list_t sl ON s.poid_id0 = sl.obj_id0
+WHERE bb.bal_grp_obj_id0 = s.bal_grp_obj_id0
+    AND bs.obj_id0 = bb.poid_id0
+    AND bs.service_obj_id0 = s.poid_id0;

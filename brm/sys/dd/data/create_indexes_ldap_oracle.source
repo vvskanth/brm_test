@@ -1,0 +1,34 @@
+--
+--	@(#)%Portal Version: create_indexes_ldap.source:BillingVelocityInt:3:2006-Sep-14 18:49:19 %
+--
+--      Copyright (c) 1996 - 2006 Oracle. All rights reserved.
+--     
+--      This material is the confidential property of Oracle Corporation or its
+--      licensors and may be used, reproduced, stored or transmitted only in
+--      accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+-- SOURCE OF sql file to create ldap integration related indexes for the 
+-- PIN database
+-- DEFINES FOR:
+--	$PIN_CONF_TBLSPACEX	-- for tablespace to put all these in
+--	$PIN_CONF_STORAGE_SMALL	-- for storage phrase
+
+----------------------------
+
+-- /account
+create index i_account__created_t on account_t ( created_t )
+	$PIN_CONF_TBLSPACEX14
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/account.INDEX_CLAUSE'} ;
+
+-- /service
+create index i_service__created_t on service_t ( created_t )
+	$PIN_CONF_TBLSPACEX10
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;
+create index i_service__mod_t on service_t ( mod_t )
+	$PIN_CONF_TBLSPACEX12
+	$PIN_CONF_STORAGE_MED
+	$PIN_CONF_PARTITION_INFO{'/service.INDEX_CLAUSE'} ;

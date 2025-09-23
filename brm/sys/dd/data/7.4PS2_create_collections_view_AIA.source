@@ -1,0 +1,282 @@
+-- @(#)$Id: 7.4PS2_create_collections_view_AIA.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:47:02 nishahan Exp $
+--
+-- 7.4PS2_create_collections_view_AIA.source v1 02/03/2010
+-- 7.4PS2_create_collections_view_AIA.source v2 08/15/2012 : Bug 14327081 - MULTI SCHEMA SOLUTION FOR COMMS AIA
+-- 7.4PS2_create_collections_view_AIA.source v3 10/30/2012 : Bug 14835772 - MULTI SCHEMA COLLECTIONS SOLUTION FOR COMMS AIA
+-- 7.4PS2_create_collections_view_AIA.source v3 11/19/2012 : Bug 15897287 - 75PS3 AUGUSTA CE: LOADING OF 7.4PS2_CREATE_COLLECTIONS_VIEW_AIA.SOURCE IS FAILIN
+-- 7.4PS2_create_collections_view_AIA.source v4 03/22/2013 : Bug 14835760 - MULTI SCHEMA COLLECTIONS SOLUTION FOR COMMS AIA
+--
+-- Copyright (c) 2009, 2014, Oracle and/or its affiliates. All rights reserved.
+--
+-- This material is the confidential property of Oracle Corporation or its
+-- licensors and may be used, reproduced, stored or transmitted only in
+-- accordance with a valid Oracle license or sublicense agreement.
+--
+
+DECLARE
+
+	v_ddl_stmt	VARCHAR2(4000);
+	v_count		NUMBER;
+	v_errmsg	VARCHAR2(200);
+	cmnts		VARCHAR2(200);
+	v_view_creation_error CONSTANT NUMBER := -20002;
+
+	BEGIN
+	v_ddl_stmt := 'ALTER SESSION FORCE PARALLEL dml';
+	EXECUTE IMMEDIATE v_ddl_stmt;
+
+	v_ddl_stmt := 'ALTER SESSION FORCE PARALLEL ddl';
+	EXECUTE IMMEDIATE v_ddl_stmt;
+
+	--
+	-- The views are dropped and recreated with correct data.
+	-- As a hint that views have correct data ,comments are added to 
+	-- column DueDate of coll_action_if_view.
+	-- 
+	IF (pin_upg_common.VIEW_EXISTS('COLL_ACTION_IF_VIEW', v_errmsg)) THEN
+		SELECT COMMENTS INTO cmnts FROM USER_COL_COMMENTS WHERE TABLE_NAME ='COLL_ACTION_IF_VIEW' 
+		and COLUMN_NAME = 'DueDate';
+		IF ( cmnts IS NULL OR cmnts <> 'Returns Due Date in __TZ__ format') THEN
+			v_ddl_stmt := 'DROP VIEW COLL_ACTION_IF_VIEW';
+			EXECUTE IMMEDIATE v_ddl_stmt;
+			v_ddl_stmt := 'DROP VIEW COLL_SCENARIO_IF_VIEW';
+			EXECUTE IMMEDIATE v_ddl_stmt;
+		END IF;
+	END IF;
+
+	BEGIN
+
+	--
+	-- Need not check for existence of view, as we are doing a create or replace
+	--
+
+		IF ((pin_upg_common.table_EXISTS('AU_COLLECTIONS_ACTION_T', v_errmsg))
+			AND ((pin_upg_common.view_EXISTS('CONFIG_COLLECTIONS_ACTION_T',v_errmsg))
+			OR   (pin_upg_common.table_EXISTS('CONFIG_COLLECTIONS_ACTION_T',v_errmsg)))
+			AND (pin_upg_common.table_EXISTS('COLLECTIONS_SCENARIO_T',v_errmsg))
+			AND (pin_upg_common.table_EXISTS('BILLINFO_T',v_errmsg))) THEN
+
+			v_ddl_stmt := 'CREATE OR REPLACE VIEW "COLL_ACTION_IF_VIEW"'||
+				'( "AccountObj", "BillInfoObj", "AccountingType", "EventDescr",'||
+				'"ActionPoid", "ActionName", "ActionDescr", "ActionType", "Status",'||
+				'"OverdueAmount", "OverdueDate", "Currency", "CompletedDate",'||
+				'"DueDate", "CollGenDate", "CREATED_T", "ID")'||
+				' AS '||
+					'SELECT  ('||'''0.0.0.'||'''||'||'CA.ACCOUNT_OBJ_DB||' ||
+						''' ''||'|| 'CA.ACCOUNT_OBJ_TYPE||'||
+						''' ''||'||'CA.ACCOUNT_OBJ_ID0||'||
+						''' ''||'||'''0'') "AccountObj" ,'||
+						'('||'''0.0.0.'||'''||'||'CA.BILLINFO_OBJ_DB||' ||
+						''' ''||'||'CA.BILLINFO_OBJ_TYPE||'||
+						''' ''||'||'CA.BILLINFO_OBJ_ID0||'||
+						''' ''||'||'''0'') "BillInfoObj" ,'||
+
+						'BI.ACTG_TYPE "AccountingType" ,'||
+
+						' CASE (CA.AU_PARENT_OBJ_REV) '||
+							' WHEN 0 '|| 
+								' THEN ''Action Created'''||
+							' WHEN 1 '||
+								' THEN '||
+							' CASE (CA.AU_PARENT_OBJ_TYPE) '||
+								' WHEN ''/collections_action/manual_action'''||
+									' THEN ''Action Updated'''||
+							' ELSE ''Action Created'''|| 
+							' END '||
+						' ELSE ''Action Updated'''||
+						' END AS "EventDescr", '||
+
+						' ('||'''0.0.0.1'||'''||'||
+						''' ''||'||'CA.AU_PARENT_OBJ_TYPE||'||
+						''' ''||'||'CA.AU_PARENT_OBJ_ID0||'||
+						''' ''||'||'''0'') "ActionPoid" ,'||
+
+						' CCA.ACTION_NAME  "ActionName" ,'||
+						' CCA.ACTION_DESCR "ActionDescr" ,'||
+
+						' CASE(CCA.OPCODE)  WHEN 0 THEN ''Manual Action'''||
+						' WHEN 3883 THEN  ''Custom Action'''||
+						' ELSE ''System Action'''||
+						' END AS "ActionType" ,'||
+
+						' CA.STATUS AS "Status" ,'||
+						' CS.OVERDUE_AMOUNT  AS "OverdueAmount" ,'||
+
+						' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+						''''||'YYYYMMDD'||''''||') + ceil(CS.OVERDUE_T/86400) AS TIMESTAMP),'
+						||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+						AS DATE) AS "OverdueDate" ,'||
+
+						' BI.CURRENCY AS "Currency", '||
+
+						' CASE(CA.COMPLETED_T) '||
+							' WHEN 0 THEN NULL '||
+
+						' ELSE CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+						''''||'YYYYMMDD'||''''||') + ceil(CA.COMPLETED_T/86400) AS TIMESTAMP),'
+						||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+						AS DATE) END AS "CompletedDate" ,'||
+
+
+						' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+						''''||'YYYYMMDD'||''''||') + ceil(CA.DUE_T/86400) AS TIMESTAMP),'
+						||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+						AS DATE) AS "DueDate" ,'||
+
+						' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+						''''||'YYYYMMDD'||''''||') + ceil(CA.MOD_T/86400) AS TIMESTAMP),'
+						||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+						AS DATE) AS "CollGenDate" ,'||			
+					
+						' CA.CREATED_T "CREATED_T",'||
+						' CA.AU_PARENT_OBJ_ID0 "ID" '||
+
+						' FROM  AU_COLLECTIONS_ACTION_T CA ,'||
+							' CONFIG_COLLECTIONS_ACTION_T CCA ,'||
+							' COLLECTIONS_SCENARIO_T CS ,'||
+							' BILLINFO_T BI '||
+						' WHERE CA.CONFIG_ACTION_OBJ_ID0 = CCA.OBJ_ID0 '||
+						' AND CA.SCENARIO_OBJ_ID0 = CS.POID_ID0 '||
+						' AND CA.BILLINFO_OBJ_ID0 = BI.POID_ID0 '||
+						' ORDER BY CA.CREATED_T ';
+			EXECUTE IMMEDIATE v_ddl_stmt;
+		END IF;
+
+	EXCEPTION
+		WHEN OTHERS THEN
+			RAISE_APPLICATION_ERROR(v_view_creation_error, 
+				'VIEW CREATION FAILED FOR COLL_ACTION_IF_VIEW '||sqlerrm, TRUE);
+	END;
+
+	BEGIN
+
+	--
+	-- Need not check for existence of view, as we are doing a create or replace
+	--
+
+		IF ((pin_upg_common.table_EXISTS('COLLECTIONS_SCENARIO_T', v_errmsg))
+			AND ((pin_upg_common.view_EXISTS('CONFIG_COLLECTIONS_SCENARIO_T',v_errmsg))
+			OR   (pin_upg_common.table_EXISTS('CONFIG_COLLECTIONS_SCENARIO_T',v_errmsg)))
+			AND (pin_upg_common.table_EXISTS('COLLECTIONS_SCENARIO_T', v_errmsg))
+			AND (pin_upg_common.table_EXISTS('BILLINFO_T', v_errmsg))) THEN
+
+			v_ddl_stmt := 'CREATE OR REPLACE VIEW "COLL_SCENARIO_IF_VIEW" '||
+				'( "AccountObj", "BillInfoObj", "AccountingType", "EventDescr" ,'||
+				'"ActionPoid", "ActionName", "ActionDescr", "ActionType", "Status" ,'||
+				'"OverdueAmount", "OverdueDate", "Currency", "CompletedDate" ,'||
+				'"DueDate", "CollGenDate", "CREATED_T", "ID")'||
+				' AS '||  
+					'SELECT * FROM '||
+						'( '||
+						'SELECT  ('||'''0.0.0.'||'''||'||'CS.ACCOUNT_OBJ_DB||' ||
+							''' ''||'||'CS.ACCOUNT_OBJ_TYPE||'|| 
+							''' ''||'||'CS.ACCOUNT_OBJ_ID0||'||
+							''' ''||'||'''0'') "AccountObj" ,'||
+
+							'('||'''0.0.0.'||'''||'||'CS.BILLINFO_OBJ_DB||' ||
+							''' ''||'||'CS.BILLINFO_OBJ_TYPE||'||
+							''' ''||'||'CS.BILLINFO_OBJ_ID0||'||
+							''' ''||'||'''0'') "BillInfoObj" ,'||
+
+							' BI.ACTG_TYPE "AccountingType" ,'||
+							'''Entered collections'' AS "EventDescr" ,'||
+							' NULL "ActionPoid",'||
+							'''No Action - Entered collections'' AS "ActionName" ,'||
+							' NULL AS "ActionDescr" ,'||
+							' NULL AS "ActionType" ,'||
+							' NULL AS "Status" ,'||
+							' CS.OVERDUE_AMOUNT  AS "OverdueAmount" ,'||
+
+							' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+							''''||'YYYYMMDD'||''''||') + ceil(CS.OVERDUE_T/86400) AS TIMESTAMP),'
+							||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+							AS DATE) AS "OverdueDate" ,'||
+	
+							' BI.CURRENCY AS "Currency", '||
+							' NULL AS "CompletedDate",'||
+							' NULL AS "DueDate",'||
+
+							' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+							''''||'YYYYMMDD'||''''||') + ceil(CS.ENTRY_T/86400) AS TIMESTAMP),'
+							||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+							AS DATE) AS "CollGenDate" ,'||		
+	
+							' CS.CREATED_T "CREATED_T" ,'||
+							' CS.POID_ID0 "ID" '||
+
+							' FROM  COLLECTIONS_SCENARIO_T CS ,'||
+								' CONFIG_COLLECTIONS_SCENARIO_T CCS ,'||
+								' BILLINFO_T BI '||
+							' WHERE CS.CONFIG_SCENARIO_OBJ_ID0 = CCS.OBJ_ID0 '||
+							' AND CS.BILLINFO_OBJ_ID0 = BI.POID_ID0 '||
+
+					'UNION '||
+
+					' SELECT  ('||'''0.0.0.'||'''||'||'CS.ACCOUNT_OBJ_DB||' ||
+						''' ''||'||'CS.ACCOUNT_OBJ_TYPE||'|| 
+						''' ''||'||'CS.ACCOUNT_OBJ_ID0||'||
+						''' ''||'||'''0'') "AccountObj" ,'||
+						'('||'''0.0.0.'||'''||'||'CS.BILLINFO_OBJ_DB||' ||
+						''' ''||'||'CS.BILLINFO_OBJ_TYPE||'||
+						''' ''||'||'CS.BILLINFO_OBJ_ID0||'||
+						''' ''||'||'''0'') "BillInfoObj" ,'||
+						
+						'BI.ACTG_TYPE "AccountingType" ,'||
+						'''Exited collections'' AS "EventDescr" ,'||
+						' NULL "ActionPoid" ,'||
+						'''No Action - Exited collections'' AS "ActionName" ,'||
+						' NULL AS "ActionDescr" ,'||
+						' NULL AS "ActionType" ,'||
+						' NULL AS "Status" ,'||
+						' CS.OVERDUE_AMOUNT  AS "OverdueAmount" ,'||
+
+						' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+						''''||'YYYYMMDD'||''''||') + ceil(CS.OVERDUE_T/86400) AS TIMESTAMP),'
+						||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' AS DATE) 
+						AS "OverdueDate" ,'||	
+	
+						' BI.CURRENCY AS "Currency" ,'||
+
+						' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+						''''||'YYYYMMDD'||''''||') + ceil(CS.EXIT_T/86400) AS TIMESTAMP),'
+						||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+						AS DATE) AS "CompletedDate" ,'||
+	
+						' NULL AS "DueDate" ,'||
+
+						' CAST(FROM_TZ(CAST(TO_DATE('||''''||'19700101'||''''||','||
+						''''||'YYYYMMDD'||''''||') + ceil(CS.ENTRY_T/86400) AS TIMESTAMP),'
+						||''''||'GMT'||''''||') AT TIME ZONE'||''''||'$TIMEZONE_VALUE'||''''||' 
+						AS DATE) AS "CollGenDate" ,'||	
+	
+						' CS.MOD_T "CREATED_T" ,'||
+						' CS.POID_ID0 "ID" '||
+
+						' FROM  COLLECTIONS_SCENARIO_T CS ,'||
+							' CONFIG_COLLECTIONS_SCENARIO_T CCS ,'||
+							' BILLINFO_T BI '||
+						' WHERE CS.CONFIG_SCENARIO_OBJ_ID0 = CCS.OBJ_ID0 '||
+							' AND CS.BILLINFO_OBJ_ID0 = BI.POID_ID0 '||
+							' AND CS.EXIT_T > 0 '||
+						' )'||
+						' ORDER BY CREATED_T ';
+			EXECUTE IMMEDIATE v_ddl_stmt;
+		END IF;
+
+        IF (pin_upg_common.VIEW_EXISTS('COLL_ACTION_IF_VIEW', v_errmsg)) THEN
+                	v_ddl_stmt := 'COMMENT ON COLUMN COLL_ACTION_IF_VIEW."DueDate" IS ''Returns Due Date in __TZ__ format''';
+                	EXECUTE IMMEDIATE v_ddl_stmt;
+        END IF;
+
+	EXCEPTION
+		WHEN OTHERS THEN
+			RAISE_APPLICATION_ERROR(v_view_creation_error, 
+				'VIEW CREATION FAILED FOR COLL_SCENARIO_IF_VIEW '||sqlerrm, TRUE);
+	END;
+
+	EXCEPTION
+		WHEN others THEN
+			RAISE_APPLICATION_ERROR(v_view_creation_error, 
+				'ERROR ENCOUNTERED WHILE CREATING VIEW '||sqlerrm, TRUE);
+END;
+/

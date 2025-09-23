@@ -1,0 +1,47 @@
+--
+-- Copyright (c) 2015, 2017, Oracle and/or its affiliates. All rights reserved.
+--	
+--	This material is the confidential property of Oracle Corporation or its
+--	licensors and may be used, reproduced, stored or transmitted only in
+--	accordance with a valid Oracle license or sublicense agreement.
+--
+
+--
+--	This file has been generated automatically at build time
+--	from object specifications on Wed May 29 05:16:07 2024.
+--
+--	USE THIS FILE WITH CAUTION: NOT FOR USE IN PRODUCTION ENVIRONMENTS
+--
+
+
+drop table active_session_telco_t;
+drop table as_telco_svc_codes_t;
+drop table service_telco_t;
+drop table au_service_telco_t;
+drop table service_telco_features_t;
+drop table au_service_telco_features_t;
+drop table event_activity_tlcs_t;
+drop table event_actv_tlcs_svc_codes_t;
+drop table event_session_tlcs_t;
+drop table event_sess_tlcs_svc_codes_t;
+drop table event_dlay_actv_tlcs_t;
+drop table event_dlay_actv_tlcs_svc_cds_t;
+drop table event_dlay_sess_tlcs_t;
+drop table event_dlay_sess_tlcs_svc_cds_t;
+drop table config_telco_t;
+drop table config_telco_features_t;
+drop table config_telco_ext_ra_t;
+drop table config_telco_serv_extn_t;
+drop table cfg_tlc_prov_dev_t;
+drop table cfg_tlc_prov_dev_serv_t;
+drop table cfg_tlc_prov_dev_prov_info_t;
+drop table cfg_tlc_prov_serv_t;
+drop table cfg_tlc_prov_serv_dev_t;
+drop table cfg_tlc_prov_flist_obj_elem_t;
+drop table cfg_tlc_svc_order_stts_t;
+drop table cfg_tlc_svc_order_nxt_stts_t;
+drop table event_prov_serv_order_tlc_t;
+drop table event_prov_order_tlc_param_t;
+drop table event_svc_order_t;
+drop table event_svc_order_state_t;
+drop table config_svcfw_perm_svc_types_t;

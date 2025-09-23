@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--  $Header: bus_platform_vob/financial/config/load/config_rev_rec_map.xml /cgbubrm_mainbrm.portalbase/1 2017/06/20 23:58:43 sagaur Exp $ -->
+
+<!-- 
+ 	Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
+	This material is the confidential property of Oracle Corporation or
+	its licensors and may be used, reproduced, stored or transmitted only
+	in accordance with a valid Oracle license or sublicense agreement.
+-->
+
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_object.xsd">
+
+<ConfigObject configName="/deliverable" configMode="replace">
+	<DESCR>iPhone 8</DESCR>
+	<NAME>iPhone 8 deliverable</NAME>
+	<CODE>879720b69-8610-4003-afe1-9b6425fe0742</CODE>
+	<PERMITTED>/account</PERMITTED>
+	<PRODUCT_DELIVERABLE_INFO>
+		<TYPE>1</TYPE>
+		<REVENUE_GLID>106</REVENUE_GLID>
+		<RBIS elem ="0">
+			<NAME>Internal 25 Mbps monthly ssp price</NAME>
+			<AMOUNT>300</AMOUNT>
+			<CURRENCY>840</CURRENCY>
+			<TIME_UNIT>1</TIME_UNIT>
+			<TIME_VALUE>1</TIME_VALUE>
+			<SCALABLE_FLAG>1</SCALABLE_FLAG>
+			<MILESTONE_FLAG>1</MILESTONE_FLAG>
+			<RATE_RBI_INFO elem="0">
+				<RESOURCE_ID>1000095</RESOURCE_ID>
+				<QUANTITY>100</QUANTITY>
+			</RATE_RBI_INFO>
+		</RBIS>
+	</PRODUCT_DELIVERABLE_INFO>
+</ConfigObject>
+</ObjectList>

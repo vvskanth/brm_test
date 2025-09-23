@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<!--  $Header: bus_platform_vob/slm/config/load/config_lifecycle_states.xml /cgbubrm_mainbrm.portalbase/1 2018/02/27 01:33:40 nameen Exp $ -->
+
+
+<!--
+ Copyright (c) 2012, 2018, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     config_lifecycle_states.xml - Input XML file to create /config/lifecycle_states object.
+   DESCRIPTION
+     Input XML file to create /config/lifecycle_states object.
+
+   NOTES
+     <other useful comments, qualifications, etc.>
+
+   MODIFIED   (MM/DD/YY)
+   nameen      02/26/18 - XbranchMerge nameen_bug-27523818 from
+                          cgbubrm_7.5.0.portalbase
+   crunkana    01/06/12 - Creation
+   crunkana    01/26/12 - Bug 13627223
+   crunkana    03/08/12 - Bug 13777879
+
+-->
+
+<?xml-stylesheet href="/home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/config_lifecycle_states.xsl" type="text/xml"?>
+
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig /home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/config_lifecycle_states.xsd">
+
+   <ConfigObject>
+
+        <DESCR>Default Lifecycle State config Object</DESCR>
+        <NAME>Default Lifecycle Configuration</NAME>
+        <PERMITTED_SERVICE_TYPES elem="0">
+                <SERVICE_TYPE>/service/telco/gsm/telephony</SERVICE_TYPE>
+        </PERMITTED_SERVICE_TYPES>
+        <STATES elem="0">
+                <INITIAL_STATE>1</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>0</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>101</STATE_ID>
+                <STATE_NAME>Preactive</STATE_NAME>
+                <STRING_ID>101</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MO_ENABLED</NAME>
+                       <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                       <VALUE>No</VALUE>
+                </RULES>
+                <TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                        <NEXT_STATE>102</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+        <STATES elem="1">
+                <INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>90:00</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>102</STATE_ID>
+                <STATE_NAME>Active</STATE_NAME>
+                <STRING_ID>102</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MO_ENABLED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                        <NEXT_STATE>103</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="1">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>105</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="2">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>106</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="3">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>107</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="4">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>108</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+		<TRANSITIONS elem="5">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>109</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+        <STATES elem="2">
+                <INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>30:00</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>103</STATE_ID>
+                <STATE_NAME>Recharge Only</STATE_NAME>
+                <STRING_ID>103</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MO_ENABLED</NAME>
+                       <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="3">
+                        <MODULE>AAA</MODULE>
+                        <NAME>TFN_ENABLED</NAME>
+                       <VALUE>No</VALUE>
+                </RULES>
+                <TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                        <NEXT_STATE>104</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="1">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>102</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="2">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>107</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="3">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>108</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+		<TRANSITIONS elem="4">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>109</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+        <STATES elem="3">
+                <INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>15:00</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>104</STATE_ID>
+                <STATE_NAME>Credit Expired</STATE_NAME>
+                <STRING_ID>104</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MO_ENABLED</NAME>
+                       <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="3">
+                        <MODULE>AAA</MODULE>
+                        <NAME>TFN_ALLOWED</NAME>
+                       <VALUE>Yes</VALUE>
+                </RULES>
+                <TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>108</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="1">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>102</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="2">
+                        <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                        <NEXT_STATE>107</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+		<TRANSITIONS elem="3">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>109</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+        <STATES elem="4">
+                <INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>365:00</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>105</STATE_ID>
+                <STATE_NAME>Dormant</STATE_NAME>
+                <STRING_ID>105</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MO_ENABLED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                        <VALUE>Yes</VALUE>
+                </RULES>
+                <TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                        <NEXT_STATE>102</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="1">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>107</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="2">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>108</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+		<TRANSITIONS elem="3">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>109</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+        <STATES elem="5">
+                <INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>180:00</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>106</STATE_ID>
+                <STATE_NAME>Fraud Investigated</STATE_NAME>
+                <STRING_ID>106</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MO_ENABLED</NAME>
+                       <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                       <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="3">
+                        <MODULE>AAA</MODULE>
+                        <NAME>TFN_ALLOWED</NAME>
+                       <VALUE>Yes</VALUE>
+                </RULES>
+                <TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>102</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="1">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>107</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="2">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>108</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+		<TRANSITIONS elem="3">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>109</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+        <STATES elem="6">
+                <INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>180:00</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>107</STATE_ID>
+                <STATE_NAME>Suspended</STATE_NAME>
+                <STRING_ID>107</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MO_ENABLED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="3">
+                        <MODULE>AAA</MODULE>
+                        <NAME>TFN_ALLOWED</NAME>
+                       <VALUE>No</VALUE>
+                </RULES>
+                <TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>0</DEFAULT_FLAG>
+                        <NEXT_STATE>102</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+                <TRANSITIONS elem="1">
+                        <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                        <NEXT_STATE>108</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+        <STATES elem="7">
+                <INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>15:00</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>108</STATE_ID>
+                <STATE_NAME>Closed</STATE_NAME>
+                <STRING_ID>108</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                       <NAME>MO_ENABLED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+        </STATES>
+	<STATES elem="8">
+		<INITIAL_STATE>0</INITIAL_STATE>
+                <SERVICE_STATE_EXPIRATION_T>0</SERVICE_STATE_EXPIRATION_T>
+                <STATE_ID>109</STATE_ID>
+                <STATE_NAME>SuspendedActive</STATE_NAME>
+                <STRING_ID>109</STRING_ID>
+                <STR_VERSION>1</STR_VERSION>
+                <RULES elem="0">
+                        <MODULE>AAA</MODULE>
+                        <NAME>REQ_ALLOWED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="1">
+                        <MODULE>AAA</MODULE>
+                       <NAME>MO_ENABLED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+                <RULES elem="2">
+                        <MODULE>AAA</MODULE>
+                        <NAME>MT_ENABLED</NAME>
+                        <VALUE>No</VALUE>
+                </RULES>
+		<TRANSITIONS elem="0">
+                        <DEFAULT_FLAG>1</DEFAULT_FLAG>
+                        <NEXT_STATE>102</NEXT_STATE>
+                        <POST_OPCODE>0</POST_OPCODE>
+                        <PRE_OPCODE>0</PRE_OPCODE>
+                </TRANSITIONS>
+        </STATES>
+   </ConfigObject>
+
+</ObjectList>
+

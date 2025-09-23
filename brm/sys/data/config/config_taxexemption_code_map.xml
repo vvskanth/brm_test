@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+     ================================================================================
+Copyright (c) 2021, Oracle and/or its affiliates. All rights reserved.
+This material is the confidential property of Oracle Corporation or its
+licensors and may be used, reproduced, stored or transmitted only in
+accordance with a valid Oracle license or sublicense agreement.
+================================================================================
+-->
+
+<ObjectList
+  xmlns="http://www.oracle.com/schemas/BusinessConfig"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oracle.com/schemas/BusinessConfig ../../../xsd/config_object.xsd">
+
+  <ConfigObject configName="/config/taxexemption_code_map" configMode="recreate">
+
+    <DESCR>Tax exemption code Map Configuration</DESCR>
+    <NAME>taxexemption_code_map</NAME>
+    <EXEMPTIONS elem="1">
+      <TAX_EXEMPTION_CODE>student</TAX_EXEMPTION_CODE>
+      <VALID_FROM_STR>01/01/2010</VALID_FROM_STR>
+      <VALID_TO_STR>01/01/2032</VALID_TO_STR>
+      <PERCENT>0.10</PERCENT>
+      <TAX_JURISDICTION>Fed</TAX_JURISDICTION>
+    </EXEMPTIONS>
+    <EXEMPTIONS elem="2">
+      <TAX_EXEMPTION_CODE>tax_exempt</TAX_EXEMPTION_CODE>
+      <VALID_FROM_STR>01/01/2012</VALID_FROM_STR>
+      <VALID_TO_STR>01/01/2028</VALID_TO_STR>
+      <PERCENT>0.15</PERCENT>
+      <TAX_JURISDICTION>Sta</TAX_JURISDICTION>
+    </EXEMPTIONS>
+    <EXEMPTIONS elem="3">
+      <TAX_EXEMPTION_CODE>employee</TAX_EXEMPTION_CODE>
+      <VALID_FROM_STR>01/01/2012</VALID_FROM_STR>
+      <VALID_TO_STR>12/01/2021</VALID_TO_STR>
+      <PERCENT>0.20</PERCENT>
+      <TAX_JURISDICTION>Cou</TAX_JURISDICTION>
+    </EXEMPTIONS>
+    <EXEMPTIONS elem="4">
+      <TAX_EXEMPTION_CODE>veterans</TAX_EXEMPTION_CODE>
+      <VALID_FROM_STR>07/09/2010</VALID_FROM_STR>
+      <VALID_TO_STR>01/12/2032</VALID_TO_STR>
+      <PERCENT>0.30</PERCENT>
+      <TAX_JURISDICTION>Cit</TAX_JURISDICTION>
+    </EXEMPTIONS>
+
+  </ConfigObject>
+
+</ObjectList>

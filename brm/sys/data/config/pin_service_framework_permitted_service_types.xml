@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<ServiceFrameworkPermittedTypesConfiguration xmlns="http://www.portal.com/PortalXMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.portal.com/PortalXMLSchema /home/applmgr/app/brm111/BRM/15.0.1/BRM15/BRM/xsd/pin_service_framework_permitted_service_types.xsd">
+	<!-- Sample File OOB there will not be any support
+        <PermittedServiceTypesList>
+                <PermittedServiceTypes>
+                        <ServiceType>/service/ip</ServiceType>
+                        <ConfigTypeProvisioningDetails>/config/telco/provisioning/ip</ConfigTypeProvisioningDetails>
+			<ConfigTypeServiceOrderState>/config/telco/service_order_state/ip</ConfigTypeServiceOrderState>
+                        <ProvisioningMode>1</ProvisioningMode>
+                </PermittedServiceTypes>
+        </PermittedServiceTypesList>
+		--> 
+</ServiceFrameworkPermittedTypesConfiguration>

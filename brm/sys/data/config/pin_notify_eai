@@ -1,0 +1,36 @@
+#
+# This causes PCM_OP_PUBLISH_GEN_PAYLOAD opcode to be called when the
+# following events happen.  
+#
+version 1
+1301	0	/event/customer/nameinfo
+1301	0	/event/customer/billinfo
+1301	0	/event/billing/deal/purchase
+3626	0	/event/billing/product/action/purchase
+1301	0	/event/billing/deal/cancel
+1301	0	/event/billing/product/action/cancel
+1301	0	/event/customer/login
+1301	0	/event/customer/password
+1301	0	/event/notification/account/delete
+1301	0	/event/notification/service/delete
+1301	0	/event/customer/status
+1301	0	/event/audit/customer/payinfo/cc
+1301	0	/event/audit/customer/payinfo/dd
+1301	0	/event/audit/customer/payinfo/invoice
+1301	0	/event/notification/customer/reg_complete
+1301	0	/event/notification/account/create
+
+#AR notifications
+1301    0       /event/notification/payment
+1301    0       /event/notification/payment/failed
+1301    0       /event/billing/refund/cc
+1301    0       /event/billing/refund/dd
+1301    0       /event/billing/refund/cash
+1301    0       /event/billing/refund/check
+1301    0       /event/billing/refund/sepa
+1301    0       /event/notification/billinfo/paytype/modify
+1301    0       /event/billing/reversal/cc
+1301    0       /event/billing/reversal/dd
+1301    0       /event/billing/reversal/check
+1301    0       /event/billing/reversal/cash
+1301    0       /event/billing/reversal/sepa

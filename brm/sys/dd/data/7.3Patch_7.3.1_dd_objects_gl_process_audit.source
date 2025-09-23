@@ -1,0 +1,148 @@
+#
+#	Copyright (c) 2007 Oracle. All rights reserved.#
+#	This material is the confidential property of Oracle Corporation or its
+#	licensors and may be used, reproduced, stored or transmitted only in
+#	accordance with a valid Oracle license or sublicense agreement.
+#
+#       This file contains the definitions of Storable Classes used by
+#       PortalBase created on Jul 06 2007.
+#       Revision Date: 24/08/2007
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 41, used 23
+1     PIN_FLD_NAME            STR [0] "/process_audit"
+1     PIN_FLD_DESCR           STR [0] "Defines an instance of base audit info class. "
+1     PIN_FLD_SEQ_START       INT [0] 5000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_DESCR           STR [0] "Poid of the audit object"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is first created. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is last modified. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed read access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed write access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Poid of the Account object"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "Account_Obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROGRAM_NAME"
+2         PIN_FLD_DESCR           STR [0] "Name of the Program which is creating the audit info is generated"
+2         PIN_FLD_LENGTH          INT [0] 30
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "program_name"
+1     PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROCESS_NAME"
+2         PIN_FLD_DESCR           STR [0] "Name of the Process from which the audit info is recorded"
+2         PIN_FLD_LENGTH          INT [0] 30
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "process_name"
+1     PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_HOSTNAME"
+2         PIN_FLD_DESCR           STR [0] "Process Host Id"
+2         PIN_FLD_LENGTH          INT [0] 30
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "ProcesHostId"
+1     PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TOTAL_RECORDS"
+2         PIN_FLD_DESCR           STR [0] "Number of input records"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "InputRecords"
+1     PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUCCESSFUL_RECORDS"
+2         PIN_FLD_DESCR           STR [0] "Number of successsful records"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "SuccessRecords"
+1     PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FAILED_RECORDS"
+2         PIN_FLD_DESCR           STR [0] "Number of Failed records"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "FailRecords"
+1     PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROCESS_START_T"
+2         PIN_FLD_DESCR           STR [0] "The process start time. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "Process_Start"
+1     PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_PROCESS_END_T"
+2         PIN_FLD_DESCR           STR [0] "The process end time. "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "Process_End"
+1     PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VERSION_ID"
+2         PIN_FLD_DESCR           STR [0] "Version Number of Object "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "version_id"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "proc_aud_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0 
+</PCM_OP> 
+

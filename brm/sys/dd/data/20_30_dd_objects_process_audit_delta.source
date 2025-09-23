@@ -1,0 +1,1297 @@
+#
+# Copyright (c) 2004, 2009, Oracle and/or its affiliates. All rights reserved. 
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+#	This file contains the definitions of Storable Classes used by
+#	Infranet. This file was auto-generated from Object Specification
+#	Files on Wed Jun 23 16:46:42 2004.
+#
+<PCM_OP $PIN_OPNAME=PCM_OP_SET_DD; $PIN_OPFLAGS=0>
+# number of field entries allocated 41, used 26
+0 PIN_FLD_OBJ_DESC      ARRAY [0] allocated 41, used 23
+1     PIN_FLD_NAME            STR [0] "/process_audit"
+1     PIN_FLD_DESCR           STR [0] "Defines an instance of base audit info class. "
+1     PIN_FLD_SEQ_START       INT [0] 5000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 1
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VERSION_ID"
+2         PIN_FLD_DESCR           STR [0] "Version Number of Object "
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "version_id"
+2         PIN_FLD_ACTION          STR [0] "ADD"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "proc_aud_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit'}"
+0 PIN_FLD_OBJ_DESC      ARRAY [4] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/ra_alerts"
+1     PIN_FLD_DESCR           STR [0] "Stores alert info"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 10
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_THRESHOLDS"
+2         PIN_FLD_DESCR           STR [0] "Threshold Details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "Alert Name"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "alert_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LOCALE"
+3             PIN_FLD_DESCR           STR [0] "Locale Name"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "locale_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SENDER"
+3             PIN_FLD_DESCR           STR [0] "Sender Details"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "sender_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RECIPIENTS"
+3             PIN_FLD_DESCR           STR [0] "Receipients Info"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EMAIL_ADDR"
+4                 PIN_FLD_DESCR           STR [0] "Receipents Email Address"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_LENGTH          INT [0] 80
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "email_address"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 3
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_TYPE"
+4                 PIN_FLD_DESCR           STR [0] "Email Type"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "mail_type"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_ra_alerts_rec_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/ra_alerts.PIN_FLD_THRESHOLDS.PIN_FLD_RECIPIENTS'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_ra_alerts_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/ra_alerts.PIN_FLD_THRESHOLDS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [5] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/ra_flows"
+1     PIN_FLD_DESCR           STR [0] "Stores flow info"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 9
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RA_FLOWS"
+2         PIN_FLD_DESCR           STR [0] "Revenue Assurance Flow Details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "Flow Name"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "flow_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESCR"
+3             PIN_FLD_DESCR           STR [0] "Description About flow"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 255
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "flow_descr"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 9
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CONTROL_POINTS"
+3             PIN_FLD_DESCR           STR [0] "Control Point Info"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "Control Point name"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_LENGTH          INT [0] 80
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "cp_name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DESCR"
+4                 PIN_FLD_DESCR           STR [0] "Control Point Descrition"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_LENGTH          INT [0] 255
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "cp_descr"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT_TYPE"
+4                 PIN_FLD_DESCR           STR [0] "Object Name "
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_LENGTH          INT [0] 80
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "obj_type"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_ra_ctrl_pt_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/ra_flows.PIN_FLD_RA_FLOWS.PIN_FLD_CONTROL_POINTS'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_ra_flows_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/ra_flows.PIN_FLD_RA_FLOWS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [6] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/config/ra_thresholds"
+1     PIN_FLD_DESCR           STR [0] "Stores threshold info"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 15
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_THRESHOLDS"
+2         PIN_FLD_DESCR           STR [0] "Threshold details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "Threshold Name"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "threshold_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OBJECT_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Object Type"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "obj_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DATE_RANGE_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Time Range Type"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "time_range_type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 3
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DAY"
+3             PIN_FLD_DESCR           STR [0] "Days since Sunday(1-7)"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "week_day"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_OFFSET"
+3             PIN_FLD_DESCR           STR [0] "Alert Time Period - Start Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "alert_start_time"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_LENGTH"
+3             PIN_FLD_DESCR           STR [0] "Alert Time Period - Length of Period"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "period_length"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NUM_UNITS"
+3             PIN_FLD_DESCR           STR [0] "Number Of Days or Weeks "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "no_of_days_weeks"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FILTER_DETAILS"
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FIELD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "Filter Field Name"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_LENGTH          INT [0] 80
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "filter_field_name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 1
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_INT_VAL"
+4                 PIN_FLD_DESCR           STR [0] "Filter Integer Value"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "filter_int_value"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_STR_VAL"
+4                 PIN_FLD_DESCR           STR [0] "Filter String Value"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_LENGTH          INT [0] 80
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "filter_string_value"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_ra_filter_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/ra_thresholds.PIN_FLD_THRESHOLDS.PIN_FLD_FILTER_DETAILS'}"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 9
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VALUE_RANGES"
+3             PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+4                 PIN_FLD_FIELD_TYPE      INT [0] 5
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_FIELD_NAME"
+4                 PIN_FLD_DESCR           STR [0] "Threshold Field name"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_LENGTH          INT [0] 80
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "threshold_field_name"
+3             PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 14
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MAXIMUM"
+4                 PIN_FLD_DESCR           STR [0] "Max Value"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "max_value"
+3             PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+4                 PIN_FLD_FIELD_TYPE      INT [0] 14
+4                 PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MINIMUM"
+4                 PIN_FLD_DESCR           STR [0] "Min Value"
+4                 PIN_FLD_ORDER        DECIMAL [0] 2
+4                 PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+4                 PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+4                 PIN_FLD_SM_ITEM_NAME    STR [0] "min_value"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "config_ra_val_rngs_t"
+3             PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/ra_thresholds.PIN_FLD_THRESHOLDS.PIN_FLD_VALUE_RANGES'}"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "config_ra_threshold_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/config/ra_thresholds.PIN_FLD_THRESHOLDS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [10] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/outputstream"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Output Stream"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_ostrm_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/outputstream.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [12] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/revstream"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Revenue Stream"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_rstrm_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/revstream.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [13] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/revstream_status"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Revenue Stream and Status"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 21
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_rstrm_sts_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/revstream_status.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [14] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/revstream_svctype"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Revenue Stream and Service Type"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 21
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 1
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_rstrm_stype_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/revstream_svctype.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [15] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/revstream_svctype_status"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Revenue Stream, Service Type and Status"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_rstrm_stype_sts_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/revstream_svctype_status.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [16] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/simple"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 19
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/simple.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [17] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/status"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on EDR Status"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_sts_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/status.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [18] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/suspense"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Suspense Code"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_suspense_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/suspense.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [19] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/svctype"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Service Type"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 20
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_stype_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/svctype.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [20] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/svctype_revstream"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Service Type and Revenue Stream"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 21
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_stype_rstrm_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/svctype_revstream.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [21] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/svctype_revstream_outputstream"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Service Type, Revenue Stream and Output Stream"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_stype_rstrm_ostrm_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/svctype_revstream_outputstream.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [22] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/svctype_revstream_status"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Service Type, Revenue Stream and Status"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 22
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_stype_rstrm_sts_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/svctype_revstream_status.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [23] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/svctype_revstream_status_outputstream"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Service Type, Revenue Stream, Status and Output Stream"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 23
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ORIGINAL_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Original batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Original_Batch_id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 1
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EVENT_COUNT"
+3             PIN_FLD_DESCR           STR [0] "Total number of EDRs"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Total_Count"
+2         PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EVENT_DURATION"
+3             PIN_FLD_DESCR           STR [0] "Total Duration"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Total_Duration"
+2         PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VOLUME_SENT"
+3             PIN_FLD_DESCR           STR [0] "Total volume of data sent"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Total_Volume_Sent"
+2         PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_VOLUME_RECEIVED"
+3             PIN_FLD_DESCR           STR [0] "Total volume of data received"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Total_Volume_Received"
+2         PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Total Retail charge amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Total_Retail_Amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WHOLESALE_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Total wholesale charge amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Total_Wholesale_Amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [7] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Total Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Total_Discount_Value"
+2         PIN_FLD_OBJ_ELEM      ARRAY [8] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SERVICE_TYPE"
+3             PIN_FLD_DESCR           STR [0] "Service Type Identifier"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Service_Type"
+2         PIN_FLD_OBJ_ELEM      ARRAY [9] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_REVENUE_STREAM"
+3             PIN_FLD_DESCR           STR [0] "Revenue Stream Identifier"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Revenue_stream"
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_EDR_STATUS"
+3             PIN_FLD_DESCR           STR [0] "EDR Status Identifier"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Edr_Status"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OUTPUT_STREAM"
+3             PIN_FLD_DESCR           STR [0] "Output Stream Identifier"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Output_stream"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+2         PIN_FLD_OBJ_ELEM      ARRAY [15] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+2         PIN_FLD_OBJ_ELEM      ARRAY [16] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_stype_rstrm_sts_ostrm_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/svctype_revstream_status_outputstream.PIN_FLD_GROUP_DETAILS'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_OBJ_DESC      ARRAY [24] allocated 20, used 6
+1     PIN_FLD_NAME            STR [0] "/process_audit/batchstat/svctype_status"
+1     PIN_FLD_DESCR           STR [0] "Stores revenue summary of an EDR Batch based on Service Type and Status"
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 41, used 21
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_GROUP_DETAILS"
+2         PIN_FLD_DESCR           STR [0] "Group details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [10] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_START_T"
+3             PIN_FLD_DESCR           STR [0] "Earliest Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_Start_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [11] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_USAGE_END_T"
+3             PIN_FLD_DESCR           STR [0] "Last Call Time"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Usage_End_t"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [12] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_SUSPENDED_FROM_BATCH_ID"
+3             PIN_FLD_DESCR           STR [0] "Suspended From batch Id"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Not_Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Suspended_From_Batch_Id"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [13] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_RETAIL_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Retail Amount"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Retail_Amount"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_OBJ_ELEM      ARRAY [14] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 14
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_OLD_DISCOUNT_VALUE"
+3             PIN_FLD_DESCR           STR [0] "Old Discount Value"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Optional"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "Old_Discount_Value"
+3             PIN_FLD_ACTION          STR [0] "ADD"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "gdtls_stype_sts_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/process_audit/batchstat/svctype_status.PIN_FLD_GROUP_DETAILS'}"
+2         PIN_FLD_ACTION          STR [0] "MODIFY"
+0 PIN_FLD_OBJ_DESC      ARRAY [25] allocated 20, used 15
+1     PIN_FLD_NAME            STR [0] "/ra_threshold_status"
+1     PIN_FLD_DESCR           STR [0] "Defines an instance of ra_threshold info class"
+1     PIN_FLD_SEQ_START       INT [0] 1000
+1     PIN_FLD_READ_ACCESS     STR [0] "BrandLineage"
+1     PIN_FLD_WRITE_ACCESS    STR [0] "BrandLineage"
+1     PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_POID"
+2         PIN_FLD_DESCR           STR [0] "Poid of the ra_threshold_status object"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "poid"
+1     PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_CREATED_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is first created"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "created_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [2] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 8
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_MOD_T"
+2         PIN_FLD_DESCR           STR [0] "Time the object is last modified"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "mod_t"
+1     PIN_FLD_OBJ_ELEM      ARRAY [3] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_READ_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed read access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "read_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [4] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 5
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_WRITE_ACCESS"
+2         PIN_FLD_DESCR           STR [0] "System managed write access level for object. Possible values are (S)elf, (G)lobal, Brand (L)ineage (B)rand Group, and (A)ncestral Lineage. "
+2         PIN_FLD_LENGTH          INT [0] 1
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "System"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "System"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "write_access"
+1     PIN_FLD_OBJ_ELEM      ARRAY [5] allocated 20, used 7
+2         PIN_FLD_FIELD_TYPE      INT [0] 7
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_ACCOUNT_OBJ"
+2         PIN_FLD_DESCR           STR [0] "Poid of the Account object"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+2         PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "account_obj"
+1     PIN_FLD_OBJ_ELEM      ARRAY [6] allocated 20, used 8
+2         PIN_FLD_FIELD_TYPE      INT [0] 9
+2         PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_THRESHOLDS"
+2         PIN_FLD_DESCR           STR [0] "Threshold Details"
+2         PIN_FLD_ORDER        DECIMAL [0] 0
+2         PIN_FLD_OBJ_ELEM      ARRAY [0] allocated 20, used 8
+3             PIN_FLD_FIELD_TYPE      INT [0] 5
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_NAME"
+3             PIN_FLD_DESCR           STR [0] "Alert Name"
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_LENGTH          INT [0] 80
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "alert_name"
+2         PIN_FLD_OBJ_ELEM      ARRAY [1] allocated 20, used 7
+3             PIN_FLD_FIELD_TYPE      INT [0] 8
+3             PIN_FLD_FIELD_NAME      STR [0] "PIN_FLD_START_T"
+3             PIN_FLD_DESCR           STR [0] "Alert Start Time. "
+3             PIN_FLD_ORDER        DECIMAL [0] 1
+3             PIN_FLD_CREATE_PERMISSION    STR [0] "Required"
+3             PIN_FLD_MOD_PERMISSION    STR [0] "Writeable"
+3             PIN_FLD_SM_ITEM_NAME    STR [0] "alert_start_time"
+2         PIN_FLD_SM_ITEM_NAME    STR [0] "ra_thrld_sts_thrlds_t"
+2         PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/ra_threshold_status.PIN_FLD_THRESHOLDS'}"
+1     PIN_FLD_SM_ITEM_NAME    STR [0] "ra_threshold_status_t"
+1     PIN_FLD_SM_INFO         STR [0] "$PIN_CONF_SM_INFO{'/ra_threshold_status'}"
+1     PIN_FLD_ACTION          STR [0] "ADD"
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /dd/objects 0 0
+</PCM_OP>

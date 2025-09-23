@@ -1,0 +1,43 @@
+#==============================================================================
+#
+# @(#)% % 
+#
+#      Copyright (c) 2007 Oracle. All rights reserved.
+#
+#      This material is the confidential property of Oracle Corporation
+#      or its licensors and may be used, reproduced, stored or transmitted
+#      only in accordance with a valid Oracle license or sublicense agreement.
+#
+#==============================================================================
+#
+# After configuring this file, run the 'load_pin_config_controlpoint_link'
+# utility to load control point links into the Infranet database.
+#
+# Use the following syntax for specifying values for the config:
+#
+#   version 1
+#   <object_type> <control_point> <parent_object_type> <parent_control_point> <usage>
+#
+#   object_type          : the type of the process_audit object to correlate
+#   control_point        : control point where the data was collected
+#   parent_object_type   : type of the process_audit object to correlate with
+#   parent_control_point : control point where the data for parent object was collected
+#   usage                : 0 => links a rating control point to its
+#                               corresponding re-rating control point
+#                          1 => links a rating or re-rating control point
+#                               to its corresponding writeoff control point
+#                          The valid range of values for 'usage' are:
+#                               Usage Range        Reserved for
+#                               -----------        --------------
+#                               0 - 999            Portal Only
+#                               1000+              Customer Use
+#
+#==============================================================================
+
+version 1
+
+#<object_type>				<control_point>		<parent_object_type>  			<parent_control_point>	<usage>
+/process_audit/batchstat/status 	RP1_PostReRating	/process_audit/batchstat/status		P1_Post_Rating		0
+/process_audit/batchstat/status		RP2_PostReRating	/process_audit/batchstat/status		P2_Post_Rating		0
+/process_audit/batchstat/status 	CP_SuspenseWriteOff	/process_audit/batchstat/status		P1_Post_Rating		1
+/process_audit/batchstat/status 	CP_SuspenseWriteOff	/process_audit/batchstat/status		P2_Post_Rating		1

@@ -1,0 +1,19 @@
+#
+#  @(#)$Id: init_objects_content.source /cgbubrm_7.5.0.portalbase/1 2015/11/27 05:44:16 nishahan Exp $
+#
+# Copyright (c) 2001, 2009, Oracle and/or its affiliates. All rights reserved. 
+#      This material is the confidential property of Oracle Corporation or its
+#      licensors and may be used, reproduced, stored or transmitted only in
+#      accordance with a valid Oracle license or sublicense agreement.
+#
+
+#=============================================================================#
+# /config/content  - default content profile configuration
+<PCM_OP $PIN_OPNAME=$PIN_CONF_INIT_OPNAME; $PIN_OPFLAGS=0x00>
+0 PIN_FLD_POID           POID [0] $PIN_CONF_DB_NO /config/content 0 0
+0 PIN_FLD_ACCOUNT_OBJ    POID [0] $PIN_CONF_DB_NO /account 1 0
+0 PIN_FLD_DESCR           STR [0] "default content profile configuration"
+0 PIN_FLD_HOSTNAME        STR [0] "-"
+0 PIN_FLD_NAME            STR [0] "default content profile config"
+0 PIN_FLD_PROGRAM_NAME    STR [0] "-"
+</PCM_OP>
