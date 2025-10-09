@@ -16,6 +16,8 @@ static const char Sccs_id[] = "@(#)%Portal Version: fm_act_pol_custom_config.c:C
 #include "ops/act.h"
 #include "pcm.h"
 #include "cm_fm.h"
+#include "pin_errs.h"
+#include "pinlog.h"
 
 
 /*******************************************************************
