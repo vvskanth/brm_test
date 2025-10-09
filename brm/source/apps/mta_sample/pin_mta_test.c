@@ -52,6 +52,8 @@ pin_mta_config(
 	}
 	PIN_ERRBUF_CLEAR (ebufp);
 
+	pin_flist_t abc_flistp = PIN_FLIST_CREATE(ebufp);
+
 	PIN_ERR_LOG_FLIST (PIN_ERR_LEVEL_DEBUG, "pin_mta_config parameters flist", 
 					   param_flistp);
 	PIN_ERR_LOG_FLIST (PIN_ERR_LEVEL_DEBUG, "pin_mta_config application info flist", 
