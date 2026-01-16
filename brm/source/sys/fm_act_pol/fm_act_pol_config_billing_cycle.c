@@ -105,6 +105,9 @@ op_act_pol_config_billing_cycle(
 			"op_act_pol_config_billing_cycle output flist", 
 			*r_flistpp);
 	}
+
+	PIN_ERR_LOG_MSG(PIN_ERR_LEVEL_DEBUG, "op_act_pol_config_billing_cycle completed");
+
 	return;
 }
 
