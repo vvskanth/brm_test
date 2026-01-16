@@ -345,7 +345,7 @@ pin_mta_init_search(
 	pin_flist_t	*s_flistp = NULL;
 	char		template[64] = {"select X from /data where F1 = V1 "};
 	int32		s_flags = 0;
-	poid_t		*s_pdp = NULL;
+	poid_t		*s_pdp1 = NULL;
 	int64		id = -1;
 	int64		db = 0;
 	void		*vp = NULL;
