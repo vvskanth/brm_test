@@ -1,0 +1,110 @@
+/*
+ *      @(#)$Id: pin_contract.h /cgbubrm_omc.19.main.portalbase/1 2019/03/07 16:29:03 bmaturi Exp $
+ *
+* Copyright (c) 1996, 2019, Oracle and/or its affiliates. All rights reserved.
+ *
+ *      This material is the confidential property of Oracle Corporation or its
+ *      licensors and may be used, reproduced, stored or transmitted only in
+ *      accordance with a valid Oracle license or sublicense agreement.
+ */
+
+/*
+ * This file contains definitions of the field elements in the BRMC API.
+ */
+
+#ifndef _PIN_CONTRACT_H
+#define _PIN_CONTRACT_H
+
+#include "ops/contract.h"
+
+/* Contract PIN_FLD_STATUS  */
+#define PIN_CONTRACT_STATUS_PENDING		0
+#define PIN_CONTRACT_STATUS_ACTIVE		1
+#define PIN_CONTRACT_STATUS_SUSPENDED		2
+#define PIN_CONTRACT_STATUS_FINISHED		3
+#define PIN_CONTRACT_STATUS_CLOSED		4
+#define PIN_CONTRACT_STATUS_GRACE_PERIOD	5
+#define PIN_CONTRACT_STATUS_CANCELED		6
+#define PIN_CONTRACT_STATUS_RENEWED		7
+#define PIN_CONTRACT_STATUS_PENDING_RENEW       8
+
+#define PIN_CONTRACT_NOTIFICATION_STATUS_PENDING	0
+#define PIN_CONTRACT_NOTIFICATION_STATUS_SENT		1
+
+/*  contract flags  PIN_FLD_CONTRACT_FLAGS */
+#define PIN_CONTRACT_REVENUE_DISTRIBUTION_DISABLED  	0x0
+#define PIN_CONTRACT_REVENUE_DISTRIBUTION_ENABLED 	0x01
+#define PIN_CONTRACT_REVENUE_DISTRIBUTION_ONLY          0x02
+#define PIN_CONTRACT_REVENUE_CALCULATION_ONLY          0x04
+
+/* Renewal flags */
+#define PIN_CONTRACT_RENEW_DISABLED		0
+#define PIN_CONTRACT_RENEW_ENABLED		1
+#define PIN_CONTRACT_RENEW_EVERGREEN		2
+
+/* Cancel flags PIN_FLD_FLAGS*/
+#define PIN_CONTRACT_CANCEL_WAIVE_FIXED                 0x01
+#define PIN_CONTRACT_CANCEL_WAIVE_PRORATE               0x02
+#define PIN_CONTRACT_CANCEL_WAIVE_FEES                  0x0F
+#define PIN_CONTRACT_CANCEL_SKIP_PROD_DISCS             0x04
+#define PIN_CONTRACT_CANCEL_SKIP_GL_SSP_CALL            0x08
+#define PIN_CONTRACT_CANCEL_PROD_DISCS_SKIP_SRVC        0x10
+
+/*  status_flags  PIN_FLD_STATUS_FLAGS */
+#define PIN_CONTRACT_ERROR		0X01
+
+/*  inclusion_flags  PIN_FLD_INCLUSION_FLAGS */
+#define PIN_CONTRACT_INCLUDE_ALL_CONTRACTS		0X01
+#define PIN_CONTRACT_INCLUDE_ALL_ACTIVE_CONTRACTS	0X02
+
+/* Time in seconds in advance that a contract is renewed */
+#define PIN_CONTRACT_RENEW_ADVANCE_TIME	86400
+
+/* Opcode result constants */
+#define PIN_CONTRACT_RESULT_FAILED		0
+#define PIN_CONTRACT_RESULT_SUCCESS		1
+#define PIN_CONTRACT_RESULT_WRONG_STATUS	2
+#define PIN_CONTRACT_RESULT_NOT_ELIGIBLE	3
+
+#define PIN_CONTRACT_RENEW_STATUS_SUCCESS	1
+#define PIN_CONTRACT_RENEW_STATUS_PHASE_ACTIVE	2
+#define PIN_CONTRACT_RENEW_STATUS_FINISHED	3
+#define PIN_CONTRACT_RENEW_STATUS_ERROR	4
+
+
+#define PIN_CONTRACT_NOTIFY_STATUS_SUCCESS	1
+#define PIN_CONTRACT_NOTIFY_STATUS_NOT_ACTIVE	2
+#define PIN_CONTRACT_NOTIFY_STATUS_NOT_DUE	3
+#define PIN_CONTRACT_NOTIFY_STATUS_ERROR	4
+
+/* Enabled notifications_flags */
+#define PIN_CONTRACT_NOTIFICATION_CREATE	0x01
+#define PIN_CONTRACT_NOTIFICATION_CANCEL	0x02
+#define PIN_CONTRACT_NOTIFICATION_END		0x04
+#define PIN_CONTRACT_NOTIFICATION_MODIFY	0x08
+#define PIN_CONTRACT_NOTIFICATION_PHASE_START	0x10
+#define PIN_CONTRACT_NOTIFICATION_PHASE_END	0x20
+#define PIN_CONTRACT_NOTIFICATION_PHASE_END_UPCOMING	0x40
+#define PIN_CONTRACT_NOTIFICATION_GRACE_END	0x80
+
+/* From fm_subs.h  */
+#define PIN_CONTRACT_UNIT_DAYS			4
+#define PIN_CONTRACT_UNIT_MONTHS		5
+#define PIN_CONTRACT_UNIT_YEARS			6
+#define PIN_CONTRACT_UNIT_WEEKS			7
+
+
+/* Penalty options for penalty charges */
+#define PIN_CONTRACT_PENALTY_APPLY_FULL_CHARGE                         0
+#define PIN_CONTRACT_PENALTY_APPLY_BASED_ON_USED_CONTRACT_UNITS        1
+#define PIN_CONTRACT_PENALTY_APPLY_BASED_ON_REMAIN_BALANCE             2
+#define PIN_CONTRACT_PENALTY_NO_PENALTY             		       100
+
+/* Contract flags values for PIN_FLD_CONTRACT_FLAGS*/
+#define PIN_CONTRACT_COMPUTE_PENALTY_CHARGES_ONLY       0x01  
+#define PIN_CONTRACT_CANCEL_CONTRACT                    0x02  
+#define PIN_CONTRACT_CANCEL_ALLOW_CANCEL_OFFERINGS      0x04
+
+#define PIN_CONTRACT_NO_COMMITMENT_CONTRACT_NAME        "No Commitment"
+#endif
+# /* !_PIN_CONTRACT_H */
