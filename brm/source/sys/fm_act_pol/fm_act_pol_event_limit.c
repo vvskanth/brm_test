@@ -75,6 +75,7 @@ op_act_pol_event_limit(
 	pcm_context_t		*ctxp = connp->dm_ctx;
 	poid_t			*e_pdp = NULL;
 	const char			*poid_type = NULL;
+	pin_flist_t		*test_flistp = NULL;
 
 	if (PIN_ERR_IS_ERR(ebufp))
 		return;
